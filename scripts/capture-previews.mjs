@@ -59,7 +59,16 @@ async function main() {
       for (const iteration of ["1", "2", "3", "4", "5"]) {
         const url = `${baseUrl}/${group}/${model}/${iteration}?preview=1`;
         const outputPath = path.join(outputDir, `${iteration}.png`);
-        await page.goto(url, { waitUntil: "networkidle" });
+        const response = await page.goto(url, { waitUntil: "networkidle" });
+        if (!response || !response.ok()) {
+          throw new Error(`Preview capture failed for ${url} with status ${response?.status() ?? "unknown"}`);
+        }
+
+        const bodyText = await page.locator("body").innerText();
+        if (bodyText.includes("This page could not be found.")) {
+          throw new Error(`Preview capture resolved to a 404 page for ${url}`);
+        }
+
         await page.screenshot({ path: outputPath });
       }
     }
