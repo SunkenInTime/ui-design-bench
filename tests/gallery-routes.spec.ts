@@ -21,6 +21,28 @@ test("home page renders twelve model cards", async ({ page }) => {
   await expect(page.locator("article")).toHaveCount(12);
 });
 
+test("gallery shell background stays light after client navigation into a variant", async ({ page }) => {
+  await page.emulateMedia({ colorScheme: "dark" });
+  await page.goto("/");
+
+  const initialShellStyles = await page.evaluate(() => ({
+    htmlBackgroundColor: window.getComputedStyle(document.documentElement).backgroundColor,
+    bodyBackgroundImage: window.getComputedStyle(document.body).backgroundImage,
+  }));
+
+  await page.locator("a[href='/without-design-skill/composer-2.0/1']").first().click();
+  await expect(page).toHaveURL("/without-design-skill/composer-2.0/1");
+  await page.getByRole("link", { name: /Gallery/ }).click();
+  await expect(page).toHaveURL("/");
+
+  const shellStylesAfterReturn = await page.evaluate(() => ({
+    htmlBackgroundColor: window.getComputedStyle(document.documentElement).backgroundColor,
+    bodyBackgroundImage: window.getComputedStyle(document.body).backgroundImage,
+  }));
+
+  expect(shellStylesAfterReturn).toEqual(initialShellStyles);
+});
+
 for (const [group, model] of entries) {
   test(`model page renders for ${group}/${model}`, async ({ page }) => {
     await page.goto(`/${group}/${model}`);

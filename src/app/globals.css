@@ -1,19 +1,23 @@
 @import "tailwindcss";
 
 :root {
-  color-scheme: light;
+  color-scheme: light !important;
+  --gallery-html-bg: #f7f3ee;
+  --gallery-body-text: #1f2937;
+  --gallery-body-bg:
+    radial-gradient(circle at top, rgba(247, 198, 109, 0.28), transparent 38%),
+    linear-gradient(180deg, #faf7f2 0%, #f2eee8 52%, #ebe5dd 100%);
 }
 
 html {
-  background: #f7f3ee;
+  background: var(--gallery-html-bg) !important;
 }
 
 body {
   min-height: 100vh;
-  background:
-    radial-gradient(circle at top, rgba(247, 198, 109, 0.28), transparent 38%),
-    linear-gradient(180deg, #faf7f2 0%, #f2eee8 52%, #ebe5dd 100%);
-  color: #1f2937;
+  /* Variant bundles can bring their own global body rules. Keep the gallery shell stable. */
+  background: var(--gallery-body-bg) !important;
+  color: var(--gallery-body-text) !important;
 }
 
 * {
