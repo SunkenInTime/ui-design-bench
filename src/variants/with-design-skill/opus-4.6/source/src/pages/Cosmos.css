@@ -1,0 +1,535 @@
+.cosmos {
+  --navy: #080818;
+  --deep: #0c0c24;
+  --gold: #d4a843;
+  --gold-dim: rgba(212, 168, 67, 0.15);
+  --lavender: #b8a0d8;
+  --text: #c8c0d8;
+  --muted: #6a6080;
+  --surface: rgba(255, 255, 255, 0.03);
+
+  min-height: 100vh;
+  background: var(--navy);
+  color: var(--text);
+  font-family: 'Syne', sans-serif;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.cosmos-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.cosmos-radial {
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 30% 20%, rgba(212, 168, 67, 0.04) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 80%, rgba(184, 160, 216, 0.03) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.cosmos-nav {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 28px 56px;
+}
+
+.cosmos-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cosmos-logo-ring {
+  width: 28px;
+  height: 28px;
+  border: 1.5px solid var(--gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: cosmos-spin 12s linear infinite;
+}
+
+@keyframes cosmos-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.cosmos-logo-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--gold);
+}
+
+.cosmos-logo-text {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  color: #fff;
+}
+
+.cosmos-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.cosmos-nav-link {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+  transition: color 0.2s;
+}
+
+.cosmos-nav-link:hover {
+  color: var(--gold);
+}
+
+.cosmos-nav-cta {
+  padding: 8px 20px;
+  border: 1px solid var(--gold);
+  border-radius: 999px;
+  color: var(--gold) !important;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  transition: all 0.3s;
+}
+
+.cosmos-nav-cta:hover {
+  background: var(--gold);
+  color: var(--navy) !important;
+}
+
+.cosmos-hero {
+  position: relative;
+  z-index: 10;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 56px 100px;
+}
+
+.cosmos-hero-inner {
+  display: flex;
+  flex-direction: column;
+}
+
+.cosmos-orbit-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  border: 1px solid var(--gold-dim);
+  border-radius: 999px;
+  font-size: 12px;
+  color: var(--gold);
+  margin-bottom: 36px;
+  width: fit-content;
+  letter-spacing: 0.03em;
+}
+
+.cosmos-orbit-ring {
+  width: 8px;
+  height: 8px;
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+  animation: cosmos-pulse 3s infinite;
+}
+
+@keyframes cosmos-pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.5); opacity: 0.3; }
+}
+
+.cosmos-title {
+  display: flex;
+  flex-direction: column;
+  font-size: clamp(38px, 4.5vw, 60px);
+  line-height: 1.1;
+  margin-bottom: 24px;
+}
+
+.cosmos-title-thin {
+  font-weight: 400;
+  color: var(--text);
+  letter-spacing: -0.01em;
+}
+
+.cosmos-title-bold {
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, #fff 0%, var(--gold) 50%, var(--lavender) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.cosmos-subtitle {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--muted);
+  max-width: 440px;
+  margin-bottom: 36px;
+  font-weight: 400;
+}
+
+.cosmos-hero-ctas {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.cosmos-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  background: linear-gradient(135deg, var(--gold), #c49430);
+  color: var(--navy);
+  border: none;
+  border-radius: 999px;
+  font-family: 'Syne', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s;
+  letter-spacing: 0.02em;
+}
+
+.cosmos-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(212, 168, 67, 0.3);
+}
+
+.cosmos-btn-lg {
+  padding: 18px 36px;
+  font-size: 16px;
+}
+
+.cosmos-btn-glass {
+  padding: 14px 28px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text);
+  border-radius: 999px;
+  font-family: 'Syne', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s;
+  backdrop-filter: blur(10px);
+}
+
+.cosmos-btn-glass:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.cosmos-hero-diagram {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cosmos-diagram {
+  position: relative;
+  width: 380px;
+  height: 380px;
+}
+
+.cosmos-diagram-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(212, 168, 67, 0.08);
+}
+
+.cosmos-ring-1 {
+  inset: 60px;
+  animation: cosmos-spin 20s linear infinite;
+}
+
+.cosmos-ring-2 {
+  inset: 30px;
+  border-color: rgba(184, 160, 216, 0.06);
+  animation: cosmos-spin 30s linear infinite reverse;
+}
+
+.cosmos-ring-3 {
+  inset: 0;
+  border-color: rgba(255, 255, 255, 0.03);
+  animation: cosmos-spin 40s linear infinite;
+}
+
+.cosmos-diagram-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  color: var(--muted);
+}
+
+.cosmos-diagram-center strong {
+  font-size: 16px;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: 0.15em;
+}
+
+.cosmos-node {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.cosmos-node-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 12px rgba(212, 168, 67, 0.4);
+}
+
+.cosmos-node-label {
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.cosmos-metrics {
+  position: relative;
+  z-index: 10;
+  padding: 0 56px;
+}
+
+.cosmos-metrics-inner {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 48px 0;
+  border-top: 1px solid rgba(212, 168, 67, 0.08);
+  border-bottom: 1px solid rgba(212, 168, 67, 0.08);
+}
+
+.cosmos-metric {
+  text-align: center;
+}
+
+.cosmos-metric-value {
+  font-size: 32px;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 8px;
+  letter-spacing: -0.02em;
+}
+
+.cosmos-metric-label {
+  font-size: 12px;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.cosmos-features {
+  position: relative;
+  z-index: 10;
+  padding: 100px 56px;
+}
+
+.cosmos-features-header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.cosmos-section-kicker {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  margin-bottom: 16px;
+}
+
+.cosmos-section-title {
+  font-size: clamp(30px, 3.5vw, 46px);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.15;
+}
+
+.cosmos-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.cosmos-feature {
+  padding: 36px 28px;
+  background: var(--surface);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 16px;
+  transition: all 0.3s;
+}
+
+.cosmos-feature:hover {
+  border-color: var(--gold-dim);
+  background: rgba(212, 168, 67, 0.03);
+  transform: translateY(-4px);
+}
+
+.cosmos-feature-icon {
+  font-size: 24px;
+  color: var(--gold);
+  margin-bottom: 16px;
+  opacity: 0.7;
+}
+
+.cosmos-feature-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.cosmos-feature-desc {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--muted);
+  font-weight: 400;
+}
+
+.cosmos-quote {
+  position: relative;
+  z-index: 10;
+  padding: 60px 56px;
+  text-align: center;
+}
+
+.cosmos-quote blockquote {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.cosmos-quote p {
+  font-size: clamp(18px, 2vw, 24px);
+  line-height: 1.5;
+  color: var(--text);
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+.cosmos-quote cite {
+  font-size: 14px;
+  color: var(--gold);
+  font-style: normal;
+  letter-spacing: 0.04em;
+}
+
+.cosmos-cta {
+  position: relative;
+  z-index: 10;
+  padding: 100px 56px;
+  text-align: center;
+}
+
+.cosmos-cta-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cosmos-cta-stars {
+  font-size: 14px;
+  color: var(--gold);
+  margin-bottom: 28px;
+  letter-spacing: 12px;
+  opacity: 0.6;
+}
+
+.cosmos-cta-title {
+  font-size: clamp(30px, 4vw, 50px);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.15;
+  margin-bottom: 36px;
+}
+
+.cosmos-cta-sub {
+  margin-top: 20px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.cosmos-footer {
+  position: relative;
+  z-index: 10;
+  padding: 36px 56px;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.cosmos-footer-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  font-size: 12px;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+}
+
+.cosmos-footer-logo {
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--text);
+}
+
+.cosmos-footer-sep {
+  opacity: 0.3;
+}
+
+@media (max-width: 768px) {
+  .cosmos-nav {
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px 24px;
+  }
+  .cosmos-hero {
+    grid-template-columns: 1fr;
+    padding: 40px 24px;
+  }
+  .cosmos-hero-diagram { display: none; }
+  .cosmos-metrics-inner { grid-template-columns: repeat(2, 1fr); gap: 28px; }
+  .cosmos-feature-grid { grid-template-columns: 1fr; }
+  .cosmos-hero-ctas { flex-direction: column; }
+}
