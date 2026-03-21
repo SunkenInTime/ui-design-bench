@@ -3,6 +3,8 @@ import { galleryManifest } from "@/lib/gallery-manifest";
 
 export default function HomePage() {
   const groups = ["with-design-skill", "without-design-skill"] as const;
+  const generationPrompt =
+    "I want you to design the landing page for a note-taking application as essentially a second brain. You should design five iterations and each of them should be accessible within the slash one, slash two, slash three like pages directory. And then you should add a little button that lets me switch between them easily.";
 
   return (
     <main className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
@@ -10,6 +12,17 @@ export default function HomePage() {
         <p className="text-sm font-semibold uppercase tracking-[0.32em] text-stone-500">
           Unified Gallery
         </p>
+        <p className="mt-4 text-base leading-7 text-stone-700">
+          This website is a test of how well different AI models handle UI design. It also
+          compares how those same models respond when the frontend design skill is used versus
+          when it is not.
+        </p>
+        <div className="mt-6 rounded-3xl border border-stone-200/80 bg-white/70 p-5 shadow-sm">
+          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-stone-500">
+            Generation Prompt
+          </p>
+          <p className="mt-3 text-sm leading-7 text-stone-600">{generationPrompt}</p>
+        </div>
         <h1 className="mt-4 text-5xl font-semibold tracking-tight text-stone-950">
           Browse every generated variation from one Next.js site.
         </h1>
