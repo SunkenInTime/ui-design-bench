@@ -24,20 +24,39 @@ export default function HomePage() {
             Generation Prompt
           </p>
           <p className="mt-3 text-sm leading-7 text-stone-600">{generationPrompt}</p>
-          <Link
-            href="https://github.com/sunkenintime"
-            target="_blank"
-            rel="noreferrer"
-            className="mt-4 inline-flex items-center gap-2 text-sm text-stone-500 transition hover:text-stone-950"
-          >
-            <Github className="h-4 w-4" aria-hidden="true" />
-            <span>
-              Built by{" "}
-              <span className="font-medium text-stone-800 underline decoration-stone-300 underline-offset-4">
-                Dara A.
+          <div className="mt-4 flex flex-wrap items-center gap-4 text-sm text-stone-500">
+            <Link
+              href="https://github.com/sunkenintime"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 transition hover:text-stone-950"
+            >
+              <Github className="h-4 w-4" aria-hidden="true" />
+              <span>
+                Built by{" "}
+                <span className="font-medium text-stone-800 underline decoration-stone-300 underline-offset-4">
+                  Dara A.
+                </span>
               </span>
-            </span>
-          </Link>
+            </Link>
+            <Link
+              href="https://x.com/daradoescode"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 transition hover:text-stone-950"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+                className="h-4 w-4 fill-current"
+              >
+                <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932 6.064-6.932Zm-1.29 19.493h2.039L6.486 3.238H4.298z" />
+              </svg>
+              <span className="font-medium text-stone-800 underline decoration-stone-300 underline-offset-4">
+                @daradoescode
+              </span>
+            </Link>
+          </div>
         </div>
         <h1 className="mt-4 text-5xl font-semibold tracking-tight text-stone-950">
           Browse every generated variation from one Next.js site.
