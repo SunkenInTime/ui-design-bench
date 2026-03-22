@@ -1,3 +1,5 @@
+import Link from "next/link";
+import { Github } from "lucide-react";
 import { GalleryCard } from "@/components/gallery/gallery-card";
 import { galleryManifest } from "@/lib/gallery-manifest";
 
@@ -22,6 +24,20 @@ export default function HomePage() {
             Generation Prompt
           </p>
           <p className="mt-3 text-sm leading-7 text-stone-600">{generationPrompt}</p>
+          <Link
+            href="https://github.com/sunkenintime"
+            target="_blank"
+            rel="noreferrer"
+            className="mt-4 inline-flex items-center gap-2 text-sm text-stone-500 transition hover:text-stone-950"
+          >
+            <Github className="h-4 w-4" aria-hidden="true" />
+            <span>
+              Built by{" "}
+              <span className="font-medium text-stone-800 underline decoration-stone-300 underline-offset-4">
+                Dara A.
+              </span>
+            </span>
+          </Link>
         </div>
         <h1 className="mt-4 text-5xl font-semibold tracking-tight text-stone-950">
           Browse every generated variation from one Next.js site.
