@@ -48,6 +48,9 @@ export default function HomePage() {
             <span>@daradoescode</span>
           </Link>
         </div>
+        <p className="mt-6 text-sm italic text-neutral-400">
+          This site was designed by Composer 2.0 LOL
+        </p>
       </header>
 
       <div className="mt-20 space-y-20">
