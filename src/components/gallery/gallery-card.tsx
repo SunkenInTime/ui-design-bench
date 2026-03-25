@@ -5,45 +5,46 @@ import { buildModelHref, buildVariantHref } from "@/lib/gallery-paths";
 
 export function GalleryCard({ entry }: { entry: GalleryEntry }) {
   return (
-    <article className="overflow-hidden rounded-[28px] border border-stone-200 bg-white shadow-[0_20px_70px_rgba(15,23,42,0.08)]">
+    <article className="group flex flex-col overflow-hidden rounded-lg border border-neutral-200 bg-white">
       <Link
         href={buildVariantHref(entry.group, entry.model, entry.defaultIteration)}
-        className="block border-b border-stone-200 bg-stone-100"
+        className="block bg-neutral-100"
       >
         <div className="relative aspect-[16/10]">
           <Image
             src={entry.iterations[0].thumbnailPath}
             alt={`${entry.modelLabel} preview`}
             fill
-            className="object-cover"
+            className="object-cover transition-opacity duration-300 group-hover:opacity-95"
           />
         </div>
       </Link>
-      <div className="space-y-4 p-5">
+      <div className="flex flex-1 flex-col gap-4 p-5">
         <div className="space-y-1">
-          <p className="text-xs font-semibold uppercase tracking-[0.28em] text-stone-500">
-            {entry.groupLabel}
-          </p>
-          <h2 className="text-2xl font-semibold text-stone-950">{entry.modelLabel}</h2>
-          <p className="text-sm leading-6 text-stone-600">{entry.summary}</p>
+          <p className="text-xs text-neutral-500">{entry.groupLabel}</p>
+          <h3 className="text-lg font-medium tracking-tight text-neutral-900">
+            {entry.modelLabel}
+          </h3>
         </div>
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-1.5">
           {entry.iterations.map((iteration) => (
             <Link
               key={iteration.id}
               href={buildVariantHref(entry.group, entry.model, iteration.id)}
-              className="rounded-full border border-stone-300 px-3 py-1 text-sm text-stone-700 transition hover:border-stone-900 hover:text-stone-900"
+              className="rounded-md border border-neutral-200 bg-neutral-50 px-2 py-0.5 text-xs text-neutral-600 transition-colors hover:border-neutral-300 hover:bg-white hover:text-neutral-900"
             >
               {iteration.id}
             </Link>
           ))}
         </div>
-        <Link
-          href={buildModelHref(entry.group, entry.model)}
-          className="inline-flex items-center rounded-full bg-stone-950 px-4 py-2 text-sm font-medium text-white transition hover:bg-stone-800"
-        >
-          Open model
-        </Link>
+        <div className="mt-auto pt-1">
+          <Link
+            href={buildModelHref(entry.group, entry.model)}
+            className="text-sm font-medium text-neutral-900 underline decoration-neutral-300 underline-offset-4 transition-colors hover:decoration-neutral-900"
+          >
+            Model overview
+          </Link>
+        </div>
       </div>
     </article>
   );

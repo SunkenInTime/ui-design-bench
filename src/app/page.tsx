@@ -9,83 +9,60 @@ export default function HomePage() {
     "I want you to design the landing page for a note-taking application as essentially a second brain. You should design five iterations and each of them should be accessible within the slash one, slash two, slash three like pages directory. And then you should add a little button that lets me switch between them easily.";
 
   return (
-    <main className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
-      <section className="max-w-3xl">
-        <p className="text-sm font-semibold uppercase tracking-[0.32em] text-stone-500">
-          Unified Gallery
-        </p>
-        <p className="mt-4 text-base leading-7 text-stone-700">
-          This website is a test of how well different AI models handle UI design. It also
-          compares how those same models respond when the frontend design skill is used versus
-          when it is not.
-        </p>
-        <div className="mt-6 rounded-3xl border border-stone-200/80 bg-white/70 p-5 shadow-sm">
-          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-stone-500">
-            Generation Prompt
-          </p>
-          <p className="mt-3 text-sm leading-7 text-stone-600">{generationPrompt}</p>
-          <div className="mt-4 flex flex-wrap items-center gap-4 text-sm text-stone-500">
-            <Link
-              href="https://github.com/sunkenintime"
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-2 transition hover:text-stone-950"
-            >
-              <Github className="h-4 w-4" aria-hidden="true" />
-              <span>
-                Built by{" "}
-                <span className="font-medium text-stone-800 underline decoration-stone-300 underline-offset-4">
-                  Dara A.
-                </span>
-              </span>
-            </Link>
-            <Link
-              href="https://x.com/daradoescode"
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-2 transition hover:text-stone-950"
-            >
-              <svg
-                viewBox="0 0 24 24"
-                aria-hidden="true"
-                className="h-4 w-4 fill-current"
-              >
-                <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932 6.064-6.932Zm-1.29 19.493h2.039L6.486 3.238H4.298z" />
-              </svg>
-              <span className="font-medium text-stone-800 underline decoration-stone-300 underline-offset-4">
-                @daradoescode
-              </span>
-            </Link>
-          </div>
-        </div>
-        <h1 className="mt-4 text-5xl font-semibold tracking-tight text-stone-950">
-          Browse every generated variation from one Next.js site.
+    <main className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
+      <header className="max-w-2xl">
+        <h1 className="text-3xl font-medium tracking-tight text-neutral-900 sm:text-4xl">
+          Composer Bench Gallery
         </h1>
-        <p className="mt-4 text-lg leading-8 text-stone-600">
-          Each card below opens a migrated model overview and every iteration lives under a
-          stable namespaced route.
+        <p className="mt-5 text-[15px] leading-relaxed text-neutral-600">
+          A comparison of how different AI models approach UI design, with and without a
+          frontend design skill enabled.
         </p>
-      </section>
+        <blockquote className="mt-8 border-l border-neutral-300 pl-5 text-[15px] leading-relaxed text-neutral-600">
+          <span className="text-neutral-400">Prompt · </span>
+          {generationPrompt}
+        </blockquote>
+        <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm text-neutral-500">
+          <Link
+            href="https://github.com/sunkenintime"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-2 transition-colors hover:text-neutral-900"
+          >
+            <Github className="h-4 w-4 shrink-0 opacity-70" aria-hidden="true" />
+            <span>Dara A.</span>
+          </Link>
+          <Link
+            href="https://x.com/daradoescode"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-2 transition-colors hover:text-neutral-900"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+              className="h-4 w-4 shrink-0 fill-current opacity-70"
+            >
+              <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932 6.064-6.932Zm-1.29 19.493h2.039L6.486 3.238H4.298z" />
+            </svg>
+            <span>@daradoescode</span>
+          </Link>
+        </div>
+      </header>
 
-      <div className="mt-12 space-y-12">
+      <div className="mt-20 space-y-20">
         {groups.map((group) => {
           const entries = galleryManifest.filter((entry) => entry.group === group);
+          const label = entries[0]?.groupLabel ?? group;
           return (
-            <section key={group} className="space-y-6">
-              <div className="flex items-end justify-between gap-6">
-                <div>
-                  <p className="text-sm font-semibold uppercase tracking-[0.28em] text-stone-500">
-                    {entries[0]?.groupLabel}
-                  </p>
-                  <h2 className="mt-2 text-3xl font-semibold text-stone-950">
-                    {entries[0]?.groupLabel}
-                  </h2>
-                </div>
-                <p className="max-w-xl text-sm leading-6 text-stone-600">
-                  Six models, five iterations each, collected into a single deployable runtime.
+            <section key={group} className="space-y-8">
+              <div className="flex flex-col gap-3 border-t border-neutral-200 pt-10 sm:flex-row sm:items-baseline sm:justify-between sm:gap-8">
+                <h2 className="text-xl font-medium tracking-tight text-neutral-900">{label}</h2>
+                <p className="max-w-md text-sm leading-relaxed text-neutral-500">
+                  Six models, five iterations each, in one deployable app.
                 </p>
               </div>
-              <div className="grid gap-6 lg:grid-cols-2 xl:grid-cols-3">
+              <div className="grid gap-8 sm:grid-cols-2 xl:grid-cols-3">
                 {entries.map((entry) => (
                   <GalleryCard key={`${entry.group}-${entry.model}`} entry={entry} />
                 ))}
