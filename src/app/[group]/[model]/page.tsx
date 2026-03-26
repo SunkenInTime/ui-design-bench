@@ -20,31 +20,29 @@ export default async function ModelPage({
   }
 
   return (
-    <main className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-      <div className="space-y-5">
+    <main className="mx-auto max-w-6xl px-5 py-12 sm:px-8 sm:py-16">
+      <div className="space-y-6">
         <GalleryBreadcrumb entry={entry} />
-        <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
-          <div className="max-w-3xl space-y-4">
-            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-stone-500">
-              {entry.groupLabel}
-            </p>
-            <h1 className="text-4xl font-semibold tracking-tight text-stone-950">
+        <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
+          <div className="max-w-2xl space-y-3">
+            <p className="text-xs text-neutral-500">{entry.groupLabel}</p>
+            <h1 className="text-3xl font-medium tracking-tight text-neutral-900 sm:text-4xl">
               {entry.modelLabel}
             </h1>
-            <p className="text-lg leading-8 text-stone-600">{entry.summary}</p>
+            <p className="text-[15px] leading-relaxed text-neutral-600">{entry.summary}</p>
           </div>
           <IterationLinks entry={entry} />
         </div>
       </div>
 
-      <section className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+      <section className="mt-14 grid gap-8 sm:grid-cols-2 xl:grid-cols-3">
         {entry.iterations.map((iteration) => (
           <article
             key={iteration.id}
-            className="overflow-hidden rounded-[28px] border border-stone-200 bg-white shadow-[0_20px_70px_rgba(15,23,42,0.08)]"
+            className="flex flex-col overflow-hidden rounded-lg border border-neutral-200 bg-white"
           >
-            <a href={buildVariantHref(entry.group, entry.model, iteration.id)} className="block">
-              <div className="relative aspect-[16/10] border-b border-stone-200 bg-stone-100">
+            <a href={buildVariantHref(entry.group, entry.model, iteration.id)} className="block bg-neutral-100">
+              <div className="relative aspect-[16/10]">
                 <Image
                   src={iteration.thumbnailPath}
                   alt={`${entry.modelLabel} iteration ${iteration.id}`}
@@ -53,17 +51,17 @@ export default async function ModelPage({
                 />
               </div>
             </a>
-            <div className="space-y-3 p-5">
-              <p className="text-xs font-semibold uppercase tracking-[0.28em] text-stone-500">
-                Iteration {iteration.id}
-              </p>
-              <h2 className="text-2xl font-semibold text-stone-950">{iteration.title}</h2>
-              <p className="text-sm leading-6 text-stone-600">
-                Source slug: <code>{iteration.sourceSlug}</code>
+            <div className="flex flex-1 flex-col gap-3 p-5">
+              <p className="text-xs text-neutral-500">Iteration {iteration.id}</p>
+              <h2 className="text-lg font-medium tracking-tight text-neutral-900">{iteration.title}</h2>
+              <p className="text-sm text-neutral-500">
+                <code className="rounded bg-neutral-100 px-1.5 py-0.5 text-xs text-neutral-700">
+                  {iteration.sourceSlug}
+                </code>
               </p>
               <a
                 href={buildVariantHref(entry.group, entry.model, iteration.id)}
-                className="inline-flex rounded-full bg-stone-950 px-4 py-2 text-sm font-medium text-white transition hover:bg-stone-800"
+                className="mt-auto inline-flex text-sm font-medium text-neutral-900 underline decoration-neutral-300 underline-offset-4 transition-colors hover:decoration-neutral-900"
               >
                 Open iteration
               </a>

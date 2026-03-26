@@ -9,16 +9,21 @@ export function GalleryBreadcrumb({
   entry: GalleryEntry;
 }) {
   return (
-    <div className="flex items-center gap-2 text-sm text-stone-500">
-      <Link href="/" className="inline-flex items-center gap-2 hover:text-stone-900">
-        <ArrowLeft className="size-4" />
+    <nav className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-neutral-500">
+      <Link href="/" className="inline-flex items-center gap-1.5 transition-colors hover:text-neutral-900">
+        <ArrowLeft className="size-3.5 opacity-60" aria-hidden="true" />
         Gallery
       </Link>
-      <span>/</span>
-      <Link href={buildModelHref(entry.group, entry.model)} className="hover:text-stone-900">
+      <span className="text-neutral-300" aria-hidden="true">
+        /
+      </span>
+      <Link
+        href={buildModelHref(entry.group, entry.model)}
+        className="transition-colors hover:text-neutral-900"
+      >
         {entry.modelLabel}
       </Link>
-    </div>
+    </nav>
   );
 }
 
@@ -30,17 +35,17 @@ export function IterationLinks({
   currentIteration?: IterationId;
 }) {
   return (
-    <div className="flex flex-wrap gap-2">
+    <div className="flex flex-wrap gap-1">
       {entry.iterations.map((iteration) => {
         const active = iteration.id === currentIteration;
         return (
           <Link
             key={iteration.id}
             href={buildVariantHref(entry.group, entry.model, iteration.id)}
-            className={`rounded-full border px-3 py-1 text-sm transition ${
+            className={`rounded-md px-2.5 py-1 text-sm transition-colors ${
               active
-                ? "border-stone-900 bg-stone-900 text-white"
-                : "border-stone-300 bg-white text-stone-700 hover:border-stone-900 hover:text-stone-900"
+                ? "bg-neutral-900 text-white"
+                : "text-neutral-600 hover:bg-neutral-100 hover:text-neutral-900"
             }`}
           >
             {iteration.id}

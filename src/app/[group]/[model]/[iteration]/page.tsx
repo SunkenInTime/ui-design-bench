@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { VariantHeader } from "@/components/gallery/variant-header";
+import { VariantSwitcher } from "@/components/gallery/variant-header";
 import { getGalleryEntry } from "@/lib/gallery-manifest";
 import { getVariantModule } from "@/lib/gallery-registry";
 import { isGalleryGroup, isIterationId } from "@/lib/gallery-paths";
@@ -27,8 +27,8 @@ export default async function IterationPage({
   const previewMode = preview === "1";
 
   return (
-    <main className="min-h-screen bg-stone-100">
-      {!previewMode ? <VariantHeader entry={entry} iteration={iteration} /> : null}
+    <main className="min-h-screen bg-white">
+      {!previewMode ? <VariantSwitcher entry={entry} iteration={iteration} /> : null}
       {variantModule.render({ entry, iteration, preview: previewMode })}
     </main>
   );
