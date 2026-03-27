@@ -18,8 +18,36 @@ export function IterationSwitcher() {
   }, [pathname]);
 
   return (
-    <div className="fixed right-4 bottom-4 z-50 sm:right-6 sm:bottom-6">
+    <div className="fixed right-4 top-4 z-50 sm:right-6 sm:top-6">
       <div className="flex flex-col items-end gap-3">
+        <button
+          type="button"
+          aria-expanded={open}
+          aria-controls="iteration-switcher-menu"
+          onClick={() => setOpen((current) => !current)}
+          className="group flex items-center gap-3 rounded-full border border-white/15 bg-black/72 px-4 py-3 text-left text-white shadow-[0_20px_60px_rgba(0,0,0,0.34)] backdrop-blur-xl transition hover:bg-black/82"
+        >
+          <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-[0.72rem] font-semibold tracking-[0.22em] text-black">
+            {activeIteration.label}
+          </span>
+          <span className="min-w-0">
+            <span className="block text-[0.62rem] uppercase tracking-[0.28em] text-white/55">
+              Switch concept
+            </span>
+            <span className="block truncate text-sm font-semibold">
+              {activeIteration.title}
+            </span>
+          </span>
+          <span
+            aria-hidden="true"
+            className={`text-lg leading-none text-white/70 transition-transform ${
+              open ? "rotate-45" : ""
+            }`}
+          >
+            +
+          </span>
+        </button>
+
         {open ? (
           <nav
             id="iteration-switcher-menu"
@@ -62,34 +90,6 @@ export function IterationSwitcher() {
             </ul>
           </nav>
         ) : null}
-
-        <button
-          type="button"
-          aria-expanded={open}
-          aria-controls="iteration-switcher-menu"
-          onClick={() => setOpen((current) => !current)}
-          className="group flex items-center gap-3 rounded-full border border-white/15 bg-black/72 px-4 py-3 text-left text-white shadow-[0_20px_60px_rgba(0,0,0,0.34)] backdrop-blur-xl transition hover:bg-black/82"
-        >
-          <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-[0.72rem] font-semibold tracking-[0.22em] text-black">
-            {activeIteration.label}
-          </span>
-          <span className="min-w-0">
-            <span className="block text-[0.62rem] uppercase tracking-[0.28em] text-white/55">
-              Switch concept
-            </span>
-            <span className="block truncate text-sm font-semibold">
-              {activeIteration.title}
-            </span>
-          </span>
-          <span
-            aria-hidden="true"
-            className={`text-lg leading-none text-white/70 transition-transform ${
-              open ? "rotate-45" : ""
-            }`}
-          >
-            +
-          </span>
-        </button>
       </div>
     </div>
   );
