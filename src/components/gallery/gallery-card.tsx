@@ -5,7 +5,7 @@ import { buildModelHref, buildVariantHref } from "@/lib/gallery-paths";
 
 export function GalleryCard({ entry }: { entry: GalleryEntry }) {
   return (
-    <article className="group flex flex-col overflow-hidden rounded-lg border border-neutral-200 bg-white">
+    <article className="group flex flex-col overflow-hidden rounded-lg border border-neutral-200 bg-white transition-transform duration-300 ease-out hover:-translate-y-1.5 hover:shadow-lg">
       <Link
         href={buildVariantHref(entry.group, entry.model, entry.defaultIteration)}
         className="block bg-neutral-100"
