@@ -7,6 +7,9 @@
   --gallery-body-bg: #fafafa;
   --gallery-border: #e5e5e5;
   --gallery-muted: #737373;
+  /* Pink–purple with a warm, slightly reddish cast (design skill accent) */
+  --gallery-accent: #b84a8c;
+  --gallery-accent-foreground: #fafafa;
 }
 
 html {
