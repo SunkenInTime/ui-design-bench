@@ -44,7 +44,7 @@ export function IterationLinks({
             href={buildVariantHref(entry.group, entry.model, iteration.id)}
             className={`rounded-md px-2.5 py-1 text-sm transition-colors ${
               active
-                ? "bg-neutral-900 text-white"
+                ? "bg-[var(--gallery-accent)] text-[var(--gallery-accent-foreground)]"
                 : "text-neutral-600 hover:bg-neutral-100 hover:text-neutral-900"
             }`}
           >

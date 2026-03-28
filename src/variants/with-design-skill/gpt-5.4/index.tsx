@@ -5,7 +5,6 @@ import {
   IBM_Plex_Sans,
 } from "next/font/google";
 import type { VariantModule } from "@/lib/gallery-types";
-import { IterationSwitcher } from "@/variants/with-design-skill/gpt-5.4/source/src/components/iteration-switcher";
 import { renderIteration } from "@/variants/with-design-skill/gpt-5.4/source/src/components/landing-iterations";
 
 const bodyFont = IBM_Plex_Sans({
@@ -46,7 +45,6 @@ const module: VariantModule = {
       <div
         className={`${bodyFont.variable} ${displayFont.variable} ${editorialFont.variable} ${monoFont.variable} min-h-full overflow-x-hidden bg-[#050816] text-white [font-family:var(--font-body)]`}
       >
-        <IterationSwitcher />
         {renderIteration(sourceIds[iteration])}
       </div>
     );
