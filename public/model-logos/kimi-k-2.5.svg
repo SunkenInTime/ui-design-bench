@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+  <rect width="64" height="64" rx="14" fill="#fafafa" stroke="#e5e5e5" />
+  <path
+    d="M44 40c0 8-6 14-14 14a14 14 0 0 1-14-14c0-10 14-22 14-30 0 8 14 20 14 30Z"
+    stroke="#171717"
+    stroke-width="2"
+    stroke-linejoin="round"
+    fill="none"
+    opacity="0.9"
+  />
+</svg>

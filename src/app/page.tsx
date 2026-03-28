@@ -48,8 +48,14 @@ export default function HomePage() {
             <span>@daradoescode</span>
           </Link>
         </div>
-        <p className="mt-6 text-sm italic text-neutral-400">
-          This site was designed by Composer 2.0 LOL
+        <p className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm">
+          <Link
+            href="/rankings"
+            className="font-medium text-neutral-900 underline decoration-neutral-300 underline-offset-4 transition-colors hover:decoration-neutral-900"
+          >
+            Model rankings
+          </Link>
+          <span className="italic text-neutral-400">This site was designed by Composer 2.0 LOL</span>
         </p>
       </header>
 

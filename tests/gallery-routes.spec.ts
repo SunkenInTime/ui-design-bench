@@ -17,8 +17,14 @@ const entries = [
 
 test("home page renders twelve model cards", async ({ page }) => {
   await page.goto("/");
-  await expect(page.getByRole("heading", { name: "Browse every generated variation from one Next.js site." })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Composer Bench Gallery" })).toBeVisible();
   await expect(page.locator("article")).toHaveCount(12);
+});
+
+test("rankings page renders six model sections", async ({ page }) => {
+  await page.goto("/rankings");
+  await expect(page.getByRole("heading", { name: "Rankings" })).toBeVisible();
+  await expect(page.getByRole("heading", { level: 2 })).toHaveCount(6);
 });
 
 test("gallery shell background stays light after client navigation into a variant", async ({ page }) => {
