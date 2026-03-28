@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { GalleryEntry } from "@/lib/gallery-types";
 import { buildModelHref, buildVariantHref } from "@/lib/gallery-paths";
+import { getModelBrandLogoPath } from "@/lib/model-brand-logo";
 
 export function GalleryCard({ entry }: { entry: GalleryEntry }) {
   return (
@@ -22,8 +23,16 @@ export function GalleryCard({ entry }: { entry: GalleryEntry }) {
       <div className="flex flex-1 flex-col gap-4 p-5">
         <div className="space-y-1">
           <p className="text-xs text-neutral-500">{entry.groupLabel}</p>
-          <h3 className="text-lg font-medium tracking-tight text-neutral-900">
-            {entry.modelLabel}
+          <h3 className="flex flex-wrap items-center gap-2 text-lg font-medium tracking-tight text-neutral-900">
+            <span>{entry.modelLabel}</span>
+            <Image
+              src={getModelBrandLogoPath(entry.model)}
+              alt=""
+              width={28}
+              height={28}
+              className="h-[1em] w-auto shrink-0 object-contain"
+              aria-hidden
+            />
           </h3>
         </div>
         <div className="flex flex-wrap gap-1.5">
