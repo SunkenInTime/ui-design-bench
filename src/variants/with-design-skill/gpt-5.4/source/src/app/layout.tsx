@@ -6,7 +6,6 @@ import {
   IBM_Plex_Sans,
 } from "next/font/google";
 
-import { IterationSwitcher } from "@/variants/with-design-skill/gpt-5.4/source/src/components/iteration-switcher";
 import "./globals.css";
 
 const bodyFont = IBM_Plex_Sans({
@@ -50,7 +49,6 @@ export default function RootLayout({
       className={`${bodyFont.variable} ${displayFont.variable} ${editorialFont.variable} ${monoFont.variable} h-full antialiased`}
     >
       <body className="min-h-full overflow-x-hidden bg-[#050816] text-white [font-family:var(--font-body)]">
-        <IterationSwitcher />
         {children}
       </body>
     </html>
