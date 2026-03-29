@@ -58,7 +58,7 @@ async function main() {
       }
 
       for (const iteration of ["1", "2", "3", "4", "5"]) {
-        const url = `${baseUrl}/${group}/${model}/${iteration}?preview=1`;
+        const url = `${baseUrl}/preview/${group}/${model}/${iteration}`;
         const outputPath = path.join(outputDir, `${iteration}.png`);
         const response = await page.goto(url, { waitUntil: "networkidle" });
         if (!response || !response.ok()) {

@@ -38,7 +38,7 @@ test("gallery shell background stays light after client navigation into a varian
 
   await page.locator("a[href='/without-design-skill/composer-2.0/1']").first().click();
   await expect(page).toHaveURL("/without-design-skill/composer-2.0/1");
-  await page.getByRole("link", { name: /Gallery/ }).click();
+  await page.getByRole("link", { name: /Back to Which AI Made This/ }).click();
   await expect(page).toHaveURL("/");
 
   const shellStylesAfterReturn = await page.evaluate(() => ({
