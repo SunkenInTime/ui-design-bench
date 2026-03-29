@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { GalleryEntry } from "@/lib/gallery-types";
-import { buildModelHref, buildVariantHref } from "@/lib/gallery-paths";
+import { buildVariantHref } from "@/lib/gallery-paths";
 import { getModelBrandLogoPath } from "@/lib/model-brand-logo";
 
 export function GalleryCard({ entry }: { entry: GalleryEntry }) {
@@ -45,14 +45,6 @@ export function GalleryCard({ entry }: { entry: GalleryEntry }) {
               {iteration.id}
             </Link>
           ))}
-        </div>
-        <div className="mt-auto pt-1">
-          <Link
-            href={buildModelHref(entry.group, entry.model)}
-            className="text-sm font-medium text-neutral-900 underline decoration-neutral-300 underline-offset-4 transition-colors hover:decoration-neutral-900"
-          >
-            Model overview
-          </Link>
         </div>
       </div>
     </article>
