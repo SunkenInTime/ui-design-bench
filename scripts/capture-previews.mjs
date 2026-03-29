@@ -21,6 +21,7 @@ const entries = [
 ];
 
 const baseUrl = "http://127.0.0.1:3000";
+const preScreenshotDelayMs = 5000;
 const npmCommand = process.platform === "win32" ? "npm.cmd" : "npm";
 
 async function waitForServer(url, timeoutMs = 120_000) {
@@ -69,6 +70,7 @@ async function main() {
           throw new Error(`Preview capture resolved to a 404 page for ${url}`);
         }
 
+        await page.waitForTimeout(preScreenshotDelayMs);
         await page.screenshot({ path: outputPath });
       }
     }

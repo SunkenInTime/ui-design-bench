@@ -21,7 +21,7 @@ export function VariantSwitcher({
     >
       <Link
         href="/"
-        aria-label="Back to Composer Bench Gallery"
+        aria-label="Back to Which AI Made This?"
         className="inline-flex size-7 items-center justify-center rounded-md text-neutral-600 transition-colors hover:bg-black/[0.04] hover:text-neutral-900"
       >
         <Home className="size-4 shrink-0 opacity-80" aria-hidden="true" />

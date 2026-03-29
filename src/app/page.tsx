@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Github } from "lucide-react";
+import { GalleryRankingsNav } from "@/components/gallery/gallery-rankings-nav";
 import { GalleryCard } from "@/components/gallery/gallery-card";
 import { galleryManifest } from "@/lib/gallery-manifest";
 
@@ -9,13 +10,15 @@ export default function HomePage() {
     "I want you to design the landing page for a note-taking application as essentially a second brain. You should design five iterations and each of them should be accessible within the slash one, slash two, slash three like pages directory. And then you should add a little button that lets me switch between them easily.";
 
   return (
-    <main className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
+    <>
+      <GalleryRankingsNav />
+      <main className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
       <header className="max-w-2xl">
         <h1 className="text-3xl font-medium tracking-tight text-neutral-900 sm:text-4xl">
-          Composer Bench Gallery
+          Which AI Made This?
         </h1>
         <p className="mt-5 text-[15px] leading-relaxed text-neutral-600">
-          A comparison of how different AI models approach UI design, with and without a
+          Six models, one prompt. Compare how each tackles UI design, with and without a
           frontend design skill enabled.
         </p>
         <blockquote className="mt-8 border-l border-neutral-300 pl-5 text-[15px] leading-relaxed text-neutral-600">
@@ -75,5 +78,6 @@ export default function HomePage() {
         })}
       </div>
     </main>
+    </>
   );
 }
