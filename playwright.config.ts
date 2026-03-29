@@ -8,9 +8,9 @@ export default defineConfig({
     trace: "retain-on-failure",
   },
   webServer: {
-    command: "npm run dev -- --port 3100",
+    command: "npm run start -- -p 3100",
     url: "http://127.0.0.1:3100",
-    reuseExistingServer: false,
+    reuseExistingServer: true,
     timeout: 120_000,
   },
   projects: [
