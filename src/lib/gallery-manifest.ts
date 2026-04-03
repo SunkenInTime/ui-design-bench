@@ -150,6 +150,48 @@ export const galleryManifest: GalleryEntry[] = [
     summary: "Five conventional routes with a persistent switcher and a more restrained visual baseline.",
     iterations: iterations(["1", "2", "3", "4", "5"], "without-design-skill", "opus-4.6"),
   },
+  {
+    group: "miscellaneous",
+    groupLabel: "Miscellaneous",
+    model: "gpt-5.4",
+    modelLabel: "GPT-5.4",
+    sourceDir: "with-uncodexify-skill/gpt-5.4",
+    sourceAppType: "next",
+    defaultIteration: "1",
+    summary: "Five uncodexify-generated Commonplace landings, integrated into the gallery without the original in-app route switcher.",
+    iterations: [
+      {
+        id: "1",
+        title: "Workspace",
+        sourceSlug: "1",
+        thumbnailPath: "/gallery-previews/miscellaneous/gpt-5.4/preview.svg",
+      },
+      {
+        id: "2",
+        title: "Library",
+        sourceSlug: "2",
+        thumbnailPath: "/gallery-previews/miscellaneous/gpt-5.4/preview.svg",
+      },
+      {
+        id: "3",
+        title: "Desk",
+        sourceSlug: "3",
+        thumbnailPath: "/gallery-previews/miscellaneous/gpt-5.4/preview.svg",
+      },
+      {
+        id: "4",
+        title: "Search",
+        sourceSlug: "4",
+        thumbnailPath: "/gallery-previews/miscellaneous/gpt-5.4/preview.svg",
+      },
+      {
+        id: "5",
+        title: "Review",
+        sourceSlug: "5",
+        thumbnailPath: "/gallery-previews/miscellaneous/gpt-5.4/preview.svg",
+      },
+    ],
+  },
 ];
 
 export function getGalleryEntry(group: string, model: string) {

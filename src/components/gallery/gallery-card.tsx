@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { LayoutDashboard } from "lucide-react";
 import type { GalleryEntry } from "@/lib/gallery-types";
 import { buildModelHref, buildVariantHref } from "@/lib/gallery-paths";
 import { getModelBrandLogoPath } from "@/lib/model-brand-logo";
@@ -20,7 +21,7 @@ export function GalleryCard({ entry }: { entry: GalleryEntry }) {
           />
         </div>
       </Link>
-      <div className="flex flex-1 flex-col gap-4 p-5">
+      <div className="flex flex-1 flex-col gap-2 p-5">
         <div className="space-y-1">
           <p className="text-xs text-neutral-500">{entry.groupLabel}</p>
           <h3 className="flex flex-wrap items-center gap-2 text-lg font-medium tracking-tight text-neutral-900">
@@ -35,23 +36,25 @@ export function GalleryCard({ entry }: { entry: GalleryEntry }) {
             />
           </h3>
         </div>
-        <div className="flex flex-wrap gap-1.5">
-          {entry.iterations.map((iteration) => (
-            <Link
-              key={iteration.id}
-              href={buildVariantHref(entry.group, entry.model, iteration.id)}
-              className="rounded-md border border-neutral-200 bg-neutral-50 px-2 py-0.5 text-xs text-neutral-600 transition-colors hover:border-neutral-300 hover:bg-white hover:text-neutral-900"
-            >
-              {iteration.id}
-            </Link>
-          ))}
-        </div>
-        <div className="mt-auto pt-1">
+        <div className="mt-auto flex flex-wrap items-center justify-between gap-x-2 gap-y-1.5">
+          <div className="flex min-w-0 flex-wrap gap-1.5">
+            {entry.iterations.map((iteration) => (
+              <Link
+                key={iteration.id}
+                href={buildVariantHref(entry.group, entry.model, iteration.id)}
+                className="inline-flex size-8 items-center justify-center rounded-md border border-neutral-200 bg-neutral-50 text-xs font-medium tabular-nums leading-none text-neutral-600 transition-colors hover:border-neutral-300 hover:bg-white hover:text-neutral-900"
+              >
+                {iteration.id}
+              </Link>
+            ))}
+          </div>
           <Link
             href={buildModelHref(entry.group, entry.model)}
-            className="text-sm font-medium text-neutral-900 underline decoration-neutral-300 underline-offset-4 transition-colors hover:decoration-neutral-900"
+            className="inline-flex size-8 shrink-0 items-center justify-center rounded-md border border-neutral-200 bg-neutral-50 text-neutral-600 transition-colors hover:border-neutral-300 hover:bg-white hover:text-neutral-900"
+            aria-label="Model overview"
+            title="Model overview"
           >
-            Model overview
+            <LayoutDashboard className="size-4" strokeWidth={1.75} aria-hidden />
           </Link>
         </div>
       </div>

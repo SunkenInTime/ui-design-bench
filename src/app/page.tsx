@@ -1,10 +1,15 @@
 import Link from "next/link";
 import { Github } from "lucide-react";
 import { GalleryCard } from "@/components/gallery/gallery-card";
+import { ANTHROPIC_FRONTEND_DESIGN_SKILL_URL } from "@/lib/gallery-anthropic-skill";
 import { galleryManifest } from "@/lib/gallery-manifest";
 
 export default function HomePage() {
-  const groups = ["with-design-skill", "without-design-skill"] as const;
+  const groups = [
+    "with-design-skill",
+    "without-design-skill",
+    "miscellaneous",
+  ] as const;
   const generationPrompt =
     "I want you to design the landing page for a note-taking application as essentially a second brain. You should design five iterations and each of them should be accessible within the slash one, slash two, slash three like pages directory. And then you should add a little button that lets me switch between them easily.";
 
@@ -15,8 +20,16 @@ export default function HomePage() {
           Composer Bench Gallery
         </h1>
         <p className="mt-5 text-[15px] leading-relaxed text-neutral-600">
-          A comparison of how different AI models approach UI design, with and without a
-          frontend design skill enabled.
+          A comparison of how different AI models approach UI design, with and without{" "}
+          <Link
+            href={ANTHROPIC_FRONTEND_DESIGN_SKILL_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-medium text-neutral-800 underline decoration-neutral-300 underline-offset-2 transition-colors hover:decoration-neutral-900"
+          >
+            Anthropic's frontend design skill
+          </Link>{" "}
+          enabled.
         </p>
         <blockquote className="mt-8 border-l border-neutral-300 pl-5 text-[15px] leading-relaxed text-neutral-600">
           <span className="text-neutral-400">Prompt · </span>
@@ -57,12 +70,29 @@ export default function HomePage() {
         {groups.map((group) => {
           const entries = galleryManifest.filter((entry) => entry.group === group);
           const label = entries[0]?.groupLabel ?? group;
+          const modelCountLabel = `${entries.length} model${entries.length === 1 ? "" : "s"}`;
           return (
             <section key={group} className="space-y-8">
               <div className="flex flex-col gap-3 border-t border-neutral-200 pt-10 sm:flex-row sm:items-baseline sm:justify-between sm:gap-8">
-                <h2 className="text-xl font-medium tracking-tight text-neutral-900">{label}</h2>
+                <h2 className="text-xl font-medium tracking-tight text-neutral-900">
+                  {group === "with-design-skill" ? (
+                    <>
+                      With{" "}
+                      <Link
+                        href={ANTHROPIC_FRONTEND_DESIGN_SKILL_URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="underline decoration-2 decoration-neutral-500 underline-offset-[6px] transition-colors hover:decoration-neutral-800"
+                      >
+                        Design Skill
+                      </Link>
+                    </>
+                  ) : (
+                    label
+                  )}
+                </h2>
                 <p className="max-w-md text-sm leading-relaxed text-neutral-500">
-                  Six models, five iterations each, in one deployable app.
+                  {modelCountLabel}, five iterations each, in one deployable app.
                 </p>
               </div>
               <div className="grid gap-8 sm:grid-cols-2 xl:grid-cols-3">

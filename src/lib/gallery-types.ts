@@ -1,6 +1,9 @@
 import type { ReactNode } from "react";
 
-export type GalleryGroupSlug = "with-design-skill" | "without-design-skill";
+export type GalleryGroupSlug =
+  | "with-design-skill"
+  | "without-design-skill"
+  | "miscellaneous";
 export type ModelSlug =
   | "composer-1.5"
   | "composer-2.0"

@@ -5,6 +5,7 @@ import withGemini from "@/variants/with-design-skill/gemini";
 import withGpt54 from "@/variants/with-design-skill/gpt-5.4";
 import withKimi from "@/variants/with-design-skill/kimi-k-2.5";
 import withOpus from "@/variants/with-design-skill/opus-4.6";
+import miscGpt54 from "@/variants/miscellaneous/gpt-5.4";
 import withoutComposer15 from "@/variants/without-design-skill/composer-1.5";
 import withoutComposer20 from "@/variants/without-design-skill/composer-2.0";
 import withoutGemini from "@/variants/without-design-skill/gemini";
@@ -14,13 +15,14 @@ import withoutOpus from "@/variants/without-design-skill/opus-4.6";
 
 type RegistryKey = `${GalleryGroupSlug}:${ModelSlug}`;
 
-const registry: Record<RegistryKey, VariantModule> = {
+const registry: Partial<Record<RegistryKey, VariantModule>> = {
   "with-design-skill:composer-1.5": withComposer15,
   "with-design-skill:composer-2.0": withComposer20,
   "with-design-skill:gemini": withGemini,
   "with-design-skill:gpt-5.4": withGpt54,
   "with-design-skill:kimi-k-2.5": withKimi,
   "with-design-skill:opus-4.6": withOpus,
+  "miscellaneous:gpt-5.4": miscGpt54,
   "without-design-skill:composer-1.5": withoutComposer15,
   "without-design-skill:composer-2.0": withoutComposer20,
   "without-design-skill:gemini": withoutGemini,

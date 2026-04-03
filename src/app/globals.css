@@ -39,8 +39,11 @@ body {
   box-sizing: border-box;
 }
 
-a {
-  text-decoration: none;
+/* Keep in @layer base so Tailwind utilities (e.g. underline) can override. */
+@layer base {
+  a {
+    text-decoration: none;
+  }
 }
 
 ::selection {

@@ -1,0 +1,29 @@
+<svg width="1280" height="800" viewBox="0 0 1280 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1280" height="800" fill="#FAF8F5"/>
+  <rect x="80" y="80" width="1120" height="640" rx="32" fill="#FFFDF8" stroke="#D7C8BB" stroke-width="4"/>
+  <rect x="132" y="140" width="220" height="500" rx="20" fill="#FFF8ED" stroke="#E7DDD3" stroke-width="3"/>
+  <rect x="164" y="176" width="156" height="34" rx="10" fill="#FFFFFF" stroke="#E7DDD3" stroke-width="3"/>
+  <rect x="164" y="244" width="132" height="28" rx="10" fill="#FFFFFF"/>
+  <rect x="164" y="288" width="148" height="28" rx="10" fill="#FFFFFF"/>
+  <rect x="164" y="332" width="116" height="28" rx="10" fill="#FFFFFF"/>
+  <rect x="164" y="376" width="140" height="28" rx="10" fill="#FFFFFF"/>
+  <rect x="396" y="140" width="428" height="500" rx="20" fill="#FFFFFF" stroke="#E7DDD3" stroke-width="3"/>
+  <rect x="444" y="196" width="220" height="24" rx="12" fill="#2F241B"/>
+  <rect x="444" y="240" width="316" height="16" rx="8" fill="#8B6B55"/>
+  <rect x="444" y="270" width="284" height="16" rx="8" fill="#8B6B55"/>
+  <rect x="444" y="300" width="302" height="16" rx="8" fill="#8B6B55"/>
+  <rect x="444" y="372" width="156" height="16" rx="8" fill="#2F241B"/>
+  <rect x="444" y="408" width="332" height="14" rx="7" fill="#A98B75"/>
+  <rect x="444" y="434" width="296" height="14" rx="7" fill="#A98B75"/>
+  <rect x="862" y="140" width="286" height="500" rx="20" fill="#FFF8ED" stroke="#E7DDD3" stroke-width="3"/>
+  <rect x="906" y="188" width="120" height="18" rx="9" fill="#2F241B"/>
+  <rect x="906" y="234" width="170" height="14" rx="7" fill="#8B6B55"/>
+  <rect x="906" y="260" width="154" height="14" rx="7" fill="#8B6B55"/>
+  <rect x="906" y="286" width="178" height="14" rx="7" fill="#8B6B55"/>
+  <text x="132" y="706" fill="#8B5A2B" font-family="ui-sans-serif, system-ui, sans-serif" font-size="34" font-weight="600">
+    Uncodexify GPT-5.4
+  </text>
+  <text x="132" y="748" fill="#6B4F3C" font-family="ui-sans-serif, system-ui, sans-serif" font-size="26">
+    Commonplace landing concepts for the gallery miscellaneous section
+  </text>
+</svg>
