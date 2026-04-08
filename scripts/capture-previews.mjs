@@ -3,6 +3,7 @@ import { mkdir, writeFile } from "node:fs/promises";
 import { existsSync } from "node:fs";
 import path from "node:path";
 import process from "node:process";
+import sharp from "sharp";
 import { chromium } from "@playwright/test";
 
 const entries = [
@@ -84,7 +85,7 @@ async function main() {
 
       for (const iteration of ["1", "2", "3", "4", "5"]) {
         const url = `${baseUrl}/${group}/${model}/${iteration}?preview=1`;
-        const outputPath = path.join(outputDir, `${iteration}.png`);
+        const outputPath = path.join(outputDir, `${iteration}.webp`);
         const response = await page.goto(url, { waitUntil: "networkidle" });
         if (!response || !response.ok()) {
           throw new Error(`Preview capture failed for ${url} with status ${response?.status() ?? "unknown"}`);
@@ -97,8 +98,9 @@ async function main() {
 
         await sleep(PREVIEW_SETTLE_MS);
 
-        const buffer = await page.screenshot();
-        await writeScreenshotWithRetry(outputPath, buffer);
+        const pngBuffer = await page.screenshot();
+        const webpBuffer = await sharp(pngBuffer).webp({ quality: 85 }).toBuffer();
+        await writeScreenshotWithRetry(outputPath, webpBuffer);
       }
     }
 

@@ -13,7 +13,7 @@ function iterations(sourceSlugs: readonly string[], group: GalleryEntry["group"]
     id: String(index + 1) as GalleryEntry["iterations"][number]["id"],
     title: DEFAULT_TITLES[index],
     sourceSlug,
-    thumbnailPath: `/gallery-previews/${group}/${model}/${index + 1}.png`,
+    thumbnailPath: `/gallery-previews/${group}/${model}/${index + 1}.webp`,
   }));
 }
 
@@ -209,31 +209,31 @@ export const galleryManifest: GalleryEntry[] = [
         id: "1",
         title: "Workspace",
         sourceSlug: "1",
-        thumbnailPath: "/gallery-previews/miscellaneous/gpt-5.4/preview.svg",
+        thumbnailPath: "/gallery-previews/miscellaneous/gpt-5.4/preview.webp",
       },
       {
         id: "2",
         title: "Library",
         sourceSlug: "2",
-        thumbnailPath: "/gallery-previews/miscellaneous/gpt-5.4/preview.svg",
+        thumbnailPath: "/gallery-previews/miscellaneous/gpt-5.4/preview.webp",
       },
       {
         id: "3",
         title: "Desk",
         sourceSlug: "3",
-        thumbnailPath: "/gallery-previews/miscellaneous/gpt-5.4/preview.svg",
+        thumbnailPath: "/gallery-previews/miscellaneous/gpt-5.4/preview.webp",
       },
       {
         id: "4",
         title: "Search",
         sourceSlug: "4",
-        thumbnailPath: "/gallery-previews/miscellaneous/gpt-5.4/preview.svg",
+        thumbnailPath: "/gallery-previews/miscellaneous/gpt-5.4/preview.webp",
       },
       {
         id: "5",
         title: "Review",
         sourceSlug: "5",
-        thumbnailPath: "/gallery-previews/miscellaneous/gpt-5.4/preview.svg",
+        thumbnailPath: "/gallery-previews/miscellaneous/gpt-5.4/preview.webp",
       },
     ],
   },
