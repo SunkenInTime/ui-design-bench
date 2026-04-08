@@ -8,6 +8,8 @@ export type ModelSlug =
   | "composer-1.5"
   | "composer-2.0"
   | "gemini"
+  | "glm-5-turbo"
+  | "glm-5.1"
   | "gpt-5.4"
   | "kimi-k-2.5"
   | "opus-4.6";

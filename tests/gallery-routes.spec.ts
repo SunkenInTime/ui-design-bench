@@ -7,18 +7,22 @@ const entries = [
   ["with-design-skill", "gpt-5.4"],
   ["with-design-skill", "kimi-k-2.5"],
   ["with-design-skill", "opus-4.6"],
+  ["with-design-skill", "glm-5-turbo"],
+  ["with-design-skill", "glm-5.1"],
   ["without-design-skill", "composer-1.5"],
   ["without-design-skill", "composer-2.0"],
   ["without-design-skill", "gemini"],
   ["without-design-skill", "gpt-5.4"],
   ["without-design-skill", "kimi-k-2.5"],
   ["without-design-skill", "opus-4.6"],
+  ["without-design-skill", "glm-5-turbo"],
+  ["without-design-skill", "glm-5.1"],
 ] as const;
 
-test("home page renders twelve model cards", async ({ page }) => {
+test("home page renders every model card", async ({ page }) => {
   await page.goto("/");
-  await expect(page.getByRole("heading", { name: "Browse every generated variation from one Next.js site." })).toBeVisible();
-  await expect(page.locator("article")).toHaveCount(12);
+  await expect(page.getByRole("heading", { name: "Composer Bench Gallery" })).toBeVisible();
+  await expect(page.locator("article")).toHaveCount(17);
 });
 
 test("gallery shell background stays light after client navigation into a variant", async ({ page }) => {

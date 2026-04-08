@@ -13,5 +13,5 @@ test("gallery header renders in normal mode", async ({ page }) => {
 test("mobile layout stays navigable", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("/");
-  await expect(page.getByRole("heading", { name: "Browse every generated variation from one Next.js site." })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Composer Bench Gallery" })).toBeVisible();
 });

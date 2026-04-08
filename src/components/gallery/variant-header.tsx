@@ -21,8 +21,9 @@ export function VariantSwitcher({
         : entry.groupLabel;
   const isWithDesignSkill = entry.group === "with-design-skill";
   const isWithoutSkill = entry.group === "without-design-skill";
+  const isUncodexifySkill = entry.group === "miscellaneous";
   const paletteTone =
-    isWithDesignSkill
+    isWithDesignSkill || isUncodexifySkill
       ? "text-[var(--gallery-accent)]"
       : "text-neutral-400 opacity-55";
 

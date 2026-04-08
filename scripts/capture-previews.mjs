@@ -1,5 +1,5 @@
 import { spawn } from "node:child_process";
-import { mkdir } from "node:fs/promises";
+import { mkdir, writeFile } from "node:fs/promises";
 import { existsSync } from "node:fs";
 import path from "node:path";
 import process from "node:process";
@@ -12,16 +12,42 @@ const entries = [
   ["with-design-skill", "gpt-5.4"],
   ["with-design-skill", "kimi-k-2.5"],
   ["with-design-skill", "opus-4.6"],
+  ["with-design-skill", "glm-5-turbo"],
+  ["with-design-skill", "glm-5.1"],
   ["without-design-skill", "composer-1.5"],
   ["without-design-skill", "composer-2.0"],
   ["without-design-skill", "gemini"],
   ["without-design-skill", "gpt-5.4"],
   ["without-design-skill", "kimi-k-2.5"],
   ["without-design-skill", "opus-4.6"],
+  ["without-design-skill", "glm-5-turbo"],
+  ["without-design-skill", "glm-5.1"],
 ];
 
 const baseUrl = "http://127.0.0.1:3000";
 const npmCommand = process.platform === "win32" ? "npm.cmd" : "npm";
+
+/** Let CSS/JS animations settle before every screenshot. */
+const PREVIEW_SETTLE_MS = 5000;
+
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+async function writeScreenshotWithRetry(outputPath, buffer) {
+  const attempts = 6;
+  for (let i = 0; i < attempts; i++) {
+    try {
+      await writeFile(outputPath, buffer);
+      return;
+    } catch (err) {
+      if (i === attempts - 1) {
+        throw err;
+      }
+      await new Promise((r) => setTimeout(r, 120 * (i + 1)));
+    }
+  }
+}
 
 async function waitForServer(url, timeoutMs = 120_000) {
   const start = Date.now();
@@ -69,7 +95,10 @@ async function main() {
           throw new Error(`Preview capture resolved to a 404 page for ${url}`);
         }
 
-        await page.screenshot({ path: outputPath });
+        await sleep(PREVIEW_SETTLE_MS);
+
+        const buffer = await page.screenshot();
+        await writeScreenshotWithRetry(outputPath, buffer);
       }
     }
 

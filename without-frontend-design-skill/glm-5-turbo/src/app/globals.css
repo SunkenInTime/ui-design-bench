@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.05);
+  }
+}
+
+@utility animate-pulse-slow {
+  animation: pulse-slow 6s ease-in-out infinite;
+}
+
+@utility animate-pulse-slower {
+  animation: pulse-slow 8s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+@utility animate-pulse-slowest {
+  animation: pulse-slow 10s ease-in-out infinite;
+  animation-delay: 4s;
+}
