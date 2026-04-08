@@ -7,11 +7,13 @@ test("variant header hides in preview mode", async ({ page }) => {
 
 test("gallery header renders in normal mode", async ({ page }) => {
   await page.goto("/without-design-skill/composer-2.0/2");
-  await expect(page.getByRole("heading", { name: "Composer 2.0" })).toBeVisible();
+  await expect(
+    page.getByRole("navigation", { name: "Composer 2.0 gallery navigation" }),
+  ).toBeVisible();
 });
 
 test("mobile layout stays navigable", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("/");
-  await expect(page.getByRole("heading", { name: "Composer Bench Gallery" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Which AI Made This?" })).toBeVisible();
 });

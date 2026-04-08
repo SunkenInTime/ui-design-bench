@@ -2,7 +2,14 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { GalleryBreadcrumb, IterationLinks } from "@/components/gallery/gallery-shell";
 import { getGalleryEntry } from "@/lib/gallery-manifest";
+import { getStaticGalleryModelParams } from "@/lib/gallery-static-params";
 import { buildVariantHref, isGalleryGroup } from "@/lib/gallery-paths";
+
+export const dynamicParams = false;
+
+export function generateStaticParams() {
+  return getStaticGalleryModelParams();
+}
 
 export default async function ModelPage({
   params,
