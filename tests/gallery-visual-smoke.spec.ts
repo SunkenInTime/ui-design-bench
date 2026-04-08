@@ -1,7 +1,7 @@
 import { test, expect } from "@playwright/test";
 
 test("variant header hides in preview mode", async ({ page }) => {
-  await page.goto("/preview/with-design-skill/gpt-5.4/1");
+  await page.goto("/with-design-skill/gpt-5.4/1?preview=1");
   await expect(page.getByRole("heading", { name: "GPT-5.4" })).toHaveCount(0);
 });
 

@@ -13,6 +13,19 @@ export function VariantSwitcher({
   iteration: IterationId;
 }) {
   const logoSrc = getModelBrandLogoPath(entry.model);
+  const groupLabel =
+    entry.group === "with-design-skill"
+      ? "With Design Skill"
+      : entry.group === "without-design-skill"
+        ? "Without skill"
+        : entry.groupLabel;
+  const isWithDesignSkill = entry.group === "with-design-skill";
+  const isWithoutSkill = entry.group === "without-design-skill";
+  const isUncodexifySkill = entry.group === "miscellaneous";
+  const paletteTone =
+    isWithDesignSkill || isUncodexifySkill
+      ? "text-[var(--gallery-accent)]"
+      : "text-neutral-400 opacity-55";
 
   return (
     <nav
@@ -57,20 +70,14 @@ export function VariantSwitcher({
         </span>
         <span
           className="group/skill relative inline-flex size-4 shrink-0 cursor-default items-center justify-center"
-          aria-label={
-            entry.group === "with-design-skill" ? "With skill" : "Without skill"
-          }
+          aria-label={groupLabel}
         >
           <Palette
-            className={`size-3.5 shrink-0 ${
-              entry.group === "with-design-skill"
-                ? "text-[var(--gallery-accent)]"
-                : "text-neutral-400 opacity-55"
-            }`}
+            className={`size-3.5 shrink-0 ${paletteTone}`}
             strokeWidth={2}
             aria-hidden
           />
-          {entry.group === "without-design-skill" ? (
+          {isWithoutSkill ? (
             <span
               className="pointer-events-none absolute inset-0 flex items-center justify-center"
               aria-hidden
@@ -86,9 +93,7 @@ export function VariantSwitcher({
               role="tooltip"
               className="whitespace-nowrap rounded-md border border-[var(--gallery-border)] bg-white/95 px-2.5 py-1.5 text-left text-xs font-medium tracking-tight text-neutral-800 shadow-[0_4px_20px_rgba(0,0,0,0.1)] backdrop-blur-[12px] opacity-0 transition-opacity duration-200 ease-out group-hover/skill:opacity-100"
             >
-              {entry.group === "with-design-skill"
-                ? "With skill"
-                : "Without skill"}
+              {groupLabel}
             </span>
           </span>
         </span>
