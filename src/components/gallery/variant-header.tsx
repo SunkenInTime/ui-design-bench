@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Home, Palette } from "lucide-react";
+import { buildCompareHrefForSelection } from "@/lib/compare";
 import type { GalleryEntry, IterationId } from "@/lib/gallery-types";
 import { buildVariantHref } from "@/lib/gallery-paths";
 import { getModelBrandLogoPath } from "@/lib/model-brand-logo";
@@ -38,6 +39,21 @@ export function VariantSwitcher({
         className="inline-flex size-7 items-center justify-center rounded-md text-neutral-600 transition-colors hover:bg-black/[0.04] hover:text-neutral-900"
       >
         <Home className="size-4 shrink-0 opacity-80" aria-hidden="true" />
+      </Link>
+      <div
+        className="h-px w-full shrink-0 bg-[var(--gallery-border)]"
+        aria-hidden="true"
+      />
+      <Link
+        href={buildCompareHrefForSelection({
+          group: entry.group,
+          model: entry.model,
+          iteration,
+        })}
+        aria-label={`Compare ${entry.modelLabel} iteration ${iteration}`}
+        className="inline-flex size-7 items-center justify-center rounded-md text-[10px] font-semibold tracking-[0.12em] text-neutral-600 transition-colors hover:bg-black/[0.04] hover:text-neutral-900"
+      >
+        VS
       </Link>
       <div
         className="h-px w-full shrink-0 bg-[var(--gallery-border)]"

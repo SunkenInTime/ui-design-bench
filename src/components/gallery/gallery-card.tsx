@@ -1,8 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import { LayoutDashboard } from "lucide-react";
+import { ArrowLeftRight } from "lucide-react";
+import { buildCompareHrefForSelection } from "@/lib/compare";
 import type { GalleryEntry } from "@/lib/gallery-types";
-import { buildModelHref, buildVariantHref } from "@/lib/gallery-paths";
+import { buildVariantHref } from "@/lib/gallery-paths";
 import { getModelBrandLogoPath } from "@/lib/model-brand-logo";
 
 export function GalleryCard({ entry }: { entry: GalleryEntry }) {
@@ -18,6 +19,11 @@ export function GalleryCard({ entry }: { entry: GalleryEntry }) {
             alt={`${entry.modelLabel} preview`}
             fill
             className="object-cover transition-opacity duration-300 group-hover:opacity-95"
+          />
+          {/* Box-shadow paints beneath the filled Image; overlay gradient is visible on top. */}
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_top,rgb(0_0_0_/_0.05)_0%,transparent_38%)]"
           />
         </div>
       </Link>
@@ -49,12 +55,16 @@ export function GalleryCard({ entry }: { entry: GalleryEntry }) {
             ))}
           </div>
           <Link
-            href={buildModelHref(entry.group, entry.model)}
+            href={buildCompareHrefForSelection({
+              group: entry.group,
+              model: entry.model,
+              iteration: "1",
+            })}
             className="inline-flex size-8 shrink-0 items-center justify-center rounded-md border border-neutral-200 bg-neutral-50 text-neutral-600 transition-colors hover:border-neutral-300 hover:bg-white hover:text-neutral-900"
-            aria-label="Model overview"
-            title="Model overview"
+            aria-label={`Compare ${entry.groupLabel} ${entry.modelLabel}`}
+            title="Compare"
           >
-            <LayoutDashboard className="size-4" strokeWidth={1.75} aria-hidden />
+            <ArrowLeftRight className="size-4" strokeWidth={1.75} aria-hidden />
           </Link>
         </div>
       </div>

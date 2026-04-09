@@ -2,7 +2,10 @@ import Link from "next/link";
 import { Github } from "lucide-react";
 import { GalleryRankingsNav } from "@/components/gallery/gallery-rankings-nav";
 import { GalleryCard } from "@/components/gallery/gallery-card";
-import { ANTHROPIC_FRONTEND_DESIGN_SKILL_URL } from "@/lib/gallery-anthropic-skill";
+import {
+  ANTHROPIC_FRONTEND_DESIGN_SKILL_URL,
+  UNCODEXIFY_SKILL_URL,
+} from "@/lib/gallery-anthropic-skill";
 import { galleryManifest } from "@/lib/gallery-manifest";
 
 export default function HomePage() {
@@ -28,7 +31,7 @@ export default function HomePage() {
               href={ANTHROPIC_FRONTEND_DESIGN_SKILL_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="font-medium text-neutral-800 underline decoration-neutral-300 underline-offset-2 transition-colors hover:decoration-neutral-900"
+              className="font-medium text-neutral-800 underline decoration-neutral-300 underline-offset-2 transition-colors hover:text-[var(--gallery-accent)] hover:decoration-[var(--gallery-accent)]"
             >
               Anthropic's frontend design skill
             </Link>{" "}
@@ -69,35 +72,53 @@ export default function HomePage() {
           </p>
         </header>
 
-        <div className="mt-20 space-y-20">
+        <div className="mt-10 space-y-12">
           {groups.map((group) => {
             const entries = galleryManifest.filter((entry) => entry.group === group);
             const label = entries[0]?.groupLabel ?? group;
-            const modelCountLabel = `${entries.length} model${entries.length === 1 ? "" : "s"}`;
             return (
               <section key={group} className="space-y-8">
-                <div className="flex flex-col gap-3 border-t border-neutral-200 pt-10 sm:flex-row sm:items-baseline sm:justify-between sm:gap-8">
-                  <h2 className="text-xl font-medium tracking-tight text-neutral-900">
-                    {group === "with-design-skill" ? (
-                      <>
-                        With{" "}
-                        <Link
-                          href={ANTHROPIC_FRONTEND_DESIGN_SKILL_URL}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="underline decoration-2 decoration-neutral-500 underline-offset-[6px] transition-colors hover:decoration-neutral-800"
-                        >
-                          Design Skill
-                        </Link>
-                      </>
-                    ) : (
-                      label
-                    )}
-                  </h2>
-                  <p className="max-w-md text-sm leading-relaxed text-neutral-500">
-                    {modelCountLabel}, five iterations each, in one deployable app.
-                  </p>
-                </div>
+                <h2 className="text-xl font-medium tracking-tight text-neutral-900">
+                  {group === "with-design-skill" ? (
+                    <>
+                      With{" "}
+                      <Link
+                        href={ANTHROPIC_FRONTEND_DESIGN_SKILL_URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="underline decoration-2 decoration-neutral-500 underline-offset-[6px] transition-colors hover:text-[var(--gallery-accent)] hover:decoration-[var(--gallery-accent)]"
+                      >
+                        Design Skill
+                      </Link>
+                    </>
+                  ) : group === "without-design-skill" ? (
+                    <>
+                      Without{" "}
+                      <Link
+                        href={ANTHROPIC_FRONTEND_DESIGN_SKILL_URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="underline decoration-2 decoration-neutral-500 underline-offset-[6px] transition-colors hover:text-[var(--gallery-accent)] hover:decoration-[var(--gallery-accent)]"
+                      >
+                        Design Skill
+                      </Link>
+                    </>
+                  ) : group === "miscellaneous" ? (
+                    <>
+                      With{" "}
+                      <Link
+                        href={UNCODEXIFY_SKILL_URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="underline decoration-2 decoration-neutral-500 underline-offset-[6px] transition-colors hover:text-[var(--gallery-accent)] hover:decoration-[var(--gallery-accent)]"
+                      >
+                        Uncodexify skill
+                      </Link>
+                    </>
+                  ) : (
+                    label
+                  )}
+                </h2>
                 <div className="grid gap-8 sm:grid-cols-2 xl:grid-cols-3">
                   {entries.map((entry) => (
                     <GalleryCard key={`${entry.group}-${entry.model}`} entry={entry} />

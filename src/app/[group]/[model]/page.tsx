@@ -1,6 +1,8 @@
 import Image from "next/image";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { GalleryBreadcrumb, IterationLinks } from "@/components/gallery/gallery-shell";
+import { buildCompareHrefForSelection } from "@/lib/compare";
 import { getGalleryEntry } from "@/lib/gallery-manifest";
 import { getStaticGalleryModelParams } from "@/lib/gallery-static-params";
 import { buildVariantHref, isGalleryGroup } from "@/lib/gallery-paths";
@@ -38,7 +40,20 @@ export default async function ModelPage({
             </h1>
             <p className="text-[15px] leading-relaxed text-neutral-600">{entry.summary}</p>
           </div>
-          <IterationLinks entry={entry} />
+          <div className="flex flex-col items-start gap-4">
+            <IterationLinks entry={entry} />
+            <Link
+              href={buildCompareHrefForSelection({
+                group: entry.group,
+                model: entry.model,
+                iteration: "1",
+              })}
+              className="inline-flex items-center rounded-full border border-neutral-300 bg-white px-4 py-2 text-sm font-medium text-neutral-700 transition-colors hover:border-neutral-400 hover:text-neutral-900"
+              aria-label="Compare this model"
+            >
+              Compare model
+            </Link>
+          </div>
         </div>
       </div>
 
@@ -66,12 +81,25 @@ export default async function ModelPage({
                   {iteration.sourceSlug}
                 </code>
               </p>
-              <a
-                href={buildVariantHref(entry.group, entry.model, iteration.id)}
-                className="mt-auto inline-flex text-sm font-medium text-neutral-900 underline decoration-neutral-300 underline-offset-4 transition-colors hover:decoration-neutral-900"
-              >
-                Open iteration
-              </a>
+              <div className="mt-auto flex items-center gap-4">
+                <a
+                  href={buildVariantHref(entry.group, entry.model, iteration.id)}
+                  className="inline-flex text-sm font-medium text-neutral-900 underline decoration-neutral-300 underline-offset-4 transition-colors hover:decoration-neutral-900"
+                >
+                  Open iteration
+                </a>
+                <Link
+                  href={buildCompareHrefForSelection({
+                    group: entry.group,
+                    model: entry.model,
+                    iteration: iteration.id,
+                  })}
+                  className="inline-flex text-sm font-medium text-neutral-600 underline decoration-neutral-300 underline-offset-4 transition-colors hover:text-neutral-900 hover:decoration-neutral-900"
+                  aria-label={`Compare ${entry.modelLabel} iteration ${iteration.id}`}
+                >
+                  Compare
+                </Link>
+              </div>
             </div>
           </article>
         ))}
