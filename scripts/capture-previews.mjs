@@ -13,6 +13,7 @@ const entries = [
   ["with-design-skill", "gpt-5.4"],
   ["with-design-skill", "kimi-k-2.5"],
   ["with-design-skill", "opus-4.6"],
+  ["with-design-skill", "opus-4.7"],
   ["with-design-skill", "glm-5-turbo"],
   ["with-design-skill", "glm-5.1"],
   ["without-design-skill", "composer-1.5"],
@@ -21,6 +22,7 @@ const entries = [
   ["without-design-skill", "gpt-5.4"],
   ["without-design-skill", "kimi-k-2.5"],
   ["without-design-skill", "opus-4.6"],
+  ["without-design-skill", "opus-4.7"],
   ["without-design-skill", "glm-5-turbo"],
   ["without-design-skill", "glm-5.1"],
 ];

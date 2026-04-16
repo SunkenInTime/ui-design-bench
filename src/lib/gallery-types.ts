@@ -12,7 +12,8 @@ export type ModelSlug =
   | "glm-5.1"
   | "gpt-5.4"
   | "kimi-k-2.5"
-  | "opus-4.6";
+  | "opus-4.6"
+  | "opus-4.7";
 export type IterationId = "1" | "2" | "3" | "4" | "5";
 export type SourceAppType = "next" | "vite";
 
