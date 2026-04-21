@@ -33,7 +33,7 @@ export default function HomePage() {
               rel="noopener noreferrer"
               className="font-medium text-neutral-800 underline decoration-neutral-300 underline-offset-2 transition-colors hover:text-[var(--gallery-accent)] hover:decoration-[var(--gallery-accent)]"
             >
-              Anthropic's frontend design skill
+              Anthropic&apos;s frontend design skill
             </Link>{" "}
             enabled.
           </p>

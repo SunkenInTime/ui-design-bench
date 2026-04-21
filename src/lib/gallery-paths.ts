@@ -10,6 +10,14 @@ export function buildVariantHref(
   return `/${group}/${model}/${iteration}`;
 }
 
+export function buildPreviewHref(
+  group: GalleryGroupSlug,
+  model: ModelSlug,
+  iteration: IterationId,
+): string {
+  return `/preview/${group}/${model}/${iteration}`;
+}
+
 export function buildModelHref(group: GalleryGroupSlug, model: ModelSlug): string {
   return `/${group}/${model}`;
 }
