@@ -2,7 +2,7 @@
 
 import clsx from "clsx";
 import Image from "next/image";
-import { ChevronDown } from "lucide-react";
+import { Check, ChevronDown, Share2 } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { galleryManifest } from "@/lib/gallery-manifest";
 import { buildPreviewHref, buildVariantHref } from "@/lib/gallery-paths";
@@ -99,6 +99,87 @@ function getRoundStatus(round: Round): "correct" | "wrong" | "active" {
   return "active";
 }
 
+type RoundTier = "one" | "two" | "three" | "miss";
+
+function getRoundTier(round: Round): RoundTier {
+  if (!round.solved) return "miss";
+  if (round.attempts.length <= 1) return "one";
+  if (round.attempts.length === 2) return "two";
+  return "three";
+}
+
+const TIER_TILE_CLASS: Record<RoundTier, string> = {
+  one: "bg-emerald-500",
+  two: "bg-emerald-400",
+  three: "bg-amber-400",
+  miss: "bg-neutral-800",
+};
+
+const TIER_EMOJI: Record<RoundTier, string> = {
+  one: "\u{1F7E9}",
+  two: "\u{1F7E9}",
+  three: "\u{1F7E8}",
+  miss: "\u2B1B",
+};
+
+function computeBestStreak(rounds: Round[]): number {
+  let max = 0;
+  let current = 0;
+  for (const round of rounds) {
+    if (round.solved) {
+      current += 1;
+      if (current > max) max = current;
+    } else {
+      current = 0;
+    }
+  }
+  return max;
+}
+
+function getRankTitle(score: number, total: number): { title: string; subtitle: string } {
+  if (score === total) {
+    return {
+      title: "Model Whisperer",
+      subtitle: "You can spot an AI's fingerprints from a mile away.",
+    };
+  }
+  const ratio = score / total;
+  if (ratio >= 0.83) {
+    return {
+      title: "Signal Reader",
+      subtitle: "Near-perfect read on the labs. One got past you.",
+    };
+  }
+  if (ratio >= 0.66) {
+    return {
+      title: "Pattern Matcher",
+      subtitle: "You're picking up on the little tells each model leaves behind.",
+    };
+  }
+  if (ratio >= 0.5) {
+    return {
+      title: "Getting Warmer",
+      subtitle: "The models are starting to reveal themselves.",
+    };
+  }
+  if (ratio >= 0.34) {
+    return {
+      title: "Coin Flipper",
+      subtitle: "Lady luck showed up today more than your eye did.",
+    };
+  }
+  if (ratio > 0) {
+    return {
+      title: "Rookie Eye",
+      subtitle: "Every expert was once a beginner. Run it back.",
+    };
+  }
+  return {
+    title: "Back to the Lab",
+    subtitle: "Zero hits \u2014 you're due for a streak. Try again.",
+  };
+}
+
 function getGuessTone(round: Round, lab: LabSlug, selectedGuess: LabSlug | null): GuessTone {
   if (round.attempts.includes(lab)) {
     return lab === round.answer ? "yes" : "no";
@@ -117,7 +198,9 @@ export function ModelLabWordle() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [selectedGuess, setSelectedGuess] = useState<LabSlug | null>(null);
   const [isAdvancing, setIsAdvancing] = useState(false);
+  const [shareCopied, setShareCopied] = useState(false);
   const advanceTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const shareTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const dropdownRef = useRef<HTMLDivElement | null>(null);
 
   const activeRound = rounds[currentRound];
@@ -130,20 +213,41 @@ export function ModelLabWordle() {
     [rounds],
   );
 
-  const distribution = useMemo(() => {
-    const buckets = [0, 0, 0, 0];
-    rounds.forEach((round) => {
-      if (!round.solved) {
-        buckets[3] += 1;
-        return;
-      }
-      const idx = Math.max(0, Math.min(2, round.attempts.length - 1));
-      buckets[idx] += 1;
-    });
-    return buckets;
-  }, [rounds]);
+  const perfectRounds = useMemo(
+    () => rounds.filter((round) => round.solved && round.attempts.length === 1).length,
+    [rounds],
+  );
+
+  const bestStreak = useMemo(() => computeBestStreak(rounds), [rounds]);
+
+  const solvedAttempts = useMemo(
+    () =>
+      rounds.reduce(
+        (acc, round) => {
+          if (!round.solved) return acc;
+          return { sum: acc.sum + round.attempts.length, count: acc.count + 1 };
+        },
+        { sum: 0, count: 0 },
+      ),
+    [rounds],
+  );
+
+  const avgGuessesPerSolved = solvedAttempts.count
+    ? solvedAttempts.sum / solvedAttempts.count
+    : 0;
+
+  const accuracyPct = rounds.length
+    ? Math.round((correctCount / rounds.length) * 100)
+    : 0;
+
+  const rank = useMemo(() => getRankTitle(correctCount, TOTAL_ROUNDS), [correctCount]);
+  const isPerfectRun = correctCount === TOTAL_ROUNDS && rounds.length > 0;
 
   const selectedOption = getGuessOption(selectedGuess);
+  const wrongGuessCount = activeRound
+    ? activeRound.attempts.filter((attempt) => attempt !== activeRound.answer).length
+    : 0;
+  const wrongGuessFill = `${(wrongGuessCount / MAX_GUESSES) * 100}%`;
 
   const guessButtonLabel = (() => {
     if (isAdvancing && activeRound?.solved) return "Correct";
@@ -174,6 +278,9 @@ export function ModelLabWordle() {
     return () => {
       if (advanceTimerRef.current !== null) {
         clearTimeout(advanceTimerRef.current);
+      }
+      if (shareTimerRef.current !== null) {
+        clearTimeout(shareTimerRef.current);
       }
     };
   }, []);
@@ -250,12 +357,50 @@ export function ModelLabWordle() {
       clearTimeout(advanceTimerRef.current);
       advanceTimerRef.current = null;
     }
+    if (shareTimerRef.current !== null) {
+      clearTimeout(shareTimerRef.current);
+      shareTimerRef.current = null;
+    }
 
     setRounds(createRounds());
     setCurrentRound(0);
     setDropdownOpen(false);
     setSelectedGuess(null);
     setIsAdvancing(false);
+    setShareCopied(false);
+  }
+
+  function buildShareText(): string {
+    const grid = rounds.map((round) => TIER_EMOJI[getRoundTier(round)]).join("");
+    const origin =
+      typeof window !== "undefined" && window.location ? window.location.origin : "";
+    const lines = [
+      `Which AI Made This? \u2014 ${correctCount}/${TOTAL_ROUNDS} in ${attemptsUsed} guesses`,
+      grid,
+      `Perfect: ${perfectRounds} \u00B7 Best streak: ${bestStreak} \u00B7 ${accuracyPct}% accuracy`,
+    ];
+    if (origin) lines.push(origin);
+    return lines.join("\n");
+  }
+
+  async function handleShare() {
+    const text = buildShareText();
+    try {
+      if (typeof navigator !== "undefined" && navigator.clipboard) {
+        await navigator.clipboard.writeText(text);
+      }
+    } catch {
+      // Clipboard access may be blocked; fall through to the visual confirmation anyway.
+    }
+
+    setShareCopied(true);
+    if (shareTimerRef.current !== null) {
+      clearTimeout(shareTimerRef.current);
+    }
+    shareTimerRef.current = setTimeout(() => {
+      setShareCopied(false);
+      shareTimerRef.current = null;
+    }, 2200);
   }
 
   return (
@@ -283,25 +428,21 @@ export function ModelLabWordle() {
                 className="block h-[calc(100dvh-11rem)] min-h-[640px] w-full bg-white sm:h-[calc(100dvh-13rem)]"
               />
 
-              <div className="pointer-events-auto absolute top-4 right-4 z-20 rounded-xl border border-neutral-200 bg-white/92 px-3 py-3 shadow-[0_16px_36px_rgba(0,0,0,0.12)] backdrop-blur-md sm:top-6 sm:right-6">
-                <div className="flex gap-2">
-                  {Array.from({ length: MAX_GUESSES }).map((_, idx) => {
-                    const used = idx < activeRound.attempts.length;
-                    const solvedOnThisGuess =
-                      activeRound.solved && idx === activeRound.attempts.length - 1;
-
-                    return (
+              <div className="pointer-events-auto absolute top-4 right-4 z-20 rounded-lg border border-[var(--gallery-border)] bg-white/85 px-1 py-1 text-neutral-500 shadow-[0_1px_2px_rgba(0,0,0,0.04)] backdrop-blur-[12px] sm:top-6 sm:right-6">
+                <div className="flex flex-col items-center gap-1">
+                  <div className="flex flex-col gap-1.5" aria-label={`Round ${currentRound + 1} of ${TOTAL_ROUNDS}`}>
+                    {rounds.map((round, idx) => (
                       <span
-                        key={idx}
+                        key={round.id}
                         className={clsx(
                           "size-2.5 rounded-full border",
-                          !used && "border-neutral-300 bg-white",
-                          used && !solvedOnThisGuess && "border-rose-400 bg-rose-400",
-                          solvedOnThisGuess && "border-emerald-500 bg-emerald-500",
+                          getRoundStatus(round) === "correct" && "border-emerald-500 bg-emerald-500",
+                          getRoundStatus(round) === "wrong" && "border-rose-500 bg-rose-500",
+                          getRoundStatus(round) === "active" && "border-neutral-300 bg-white",
                         )}
                       />
-                    );
-                  })}
+                    ))}
+                  </div>
                 </div>
               </div>
 
@@ -317,11 +458,17 @@ export function ModelLabWordle() {
                       disabled={isAdvancing}
                       className={clsx(
                         pickerTriggerClass,
-                        "w-full",
+                        "relative w-full overflow-hidden",
+                        wrongGuessCount > 0 && "border-rose-300",
                         isAdvancing && "cursor-default opacity-80",
                       )}
                     >
-                      <span className="flex items-center gap-3">
+                      <span
+                        aria-hidden
+                        className="pointer-events-none absolute inset-y-0 left-0 rounded-[inherit] bg-rose-500/16 transition-[width] duration-200"
+                        style={{ width: wrongGuessFill }}
+                      />
+                      <span className="relative z-10 flex items-center gap-3">
                         {selectedOption ? (
                           <Image
                             src={selectedOption.logoPath}
@@ -335,9 +482,14 @@ export function ModelLabWordle() {
                         )}
                         <span>{selectedOption?.label ?? "Choose a model family"}</span>
                       </span>
+                      {wrongGuessCount > 0 ? (
+                        <span className="relative z-10 ml-auto mr-2 shrink-0 text-[11px] font-semibold uppercase tracking-[0.18em] text-rose-700">
+                          {wrongGuessCount}/{MAX_GUESSES}
+                        </span>
+                      ) : null}
                       <ChevronDown
                         className={clsx(
-                          "ml-auto size-4 shrink-0 text-neutral-400 transition-transform",
+                          "relative z-10 size-4 shrink-0 text-neutral-400 transition-transform",
                           dropdownOpen && "rotate-180",
                         )}
                         aria-hidden
@@ -394,16 +546,15 @@ export function ModelLabWordle() {
                   onClick={submitGuess}
                   disabled={!selectedGuess || isAdvancing}
                   className={clsx(
-                    "pointer-events-auto absolute bottom-4 right-4 inline-flex min-w-36 items-center justify-center rounded-xl border px-4 py-3 text-sm font-semibold shadow-[0_18px_40px_rgba(0,0,0,0.18)] transition sm:bottom-6 sm:right-6",
+                    "pointer-events-auto absolute bottom-4 right-4 inline-flex h-[42px] min-w-36 items-center justify-center rounded-lg border px-4 text-sm font-medium shadow-[0_1px_2px_rgba(0,0,0,0.04)] backdrop-blur-[12px] transition-colors outline-none sm:bottom-6 sm:right-6 focus-visible:border-[var(--gallery-accent)] focus-visible:ring-1 focus-visible:ring-[var(--gallery-accent)] disabled:cursor-not-allowed disabled:opacity-70",
                     guessButtonTone === "yes" &&
-                      "border-emerald-500 bg-emerald-500 text-white",
+                      "border-emerald-200 bg-emerald-50/95 text-emerald-700",
                     guessButtonTone === "no" &&
-                      "border-rose-500 bg-rose-500 text-white",
+                      "border-rose-200 bg-rose-50/95 text-rose-700",
                     guessButtonTone === "maybe" &&
-                      "border-amber-400 bg-amber-400 text-amber-950 hover:bg-amber-300",
+                      "border-[var(--gallery-accent)] bg-[var(--gallery-accent)] text-[var(--gallery-accent-foreground)] hover:bg-[color-mix(in_srgb,var(--gallery-accent)_88%,black)]",
                     guessButtonTone === "idle" &&
-                      "border-neutral-900 bg-neutral-900 text-white",
-                    (!selectedGuess || isAdvancing) && "cursor-not-allowed opacity-70",
+                      "border-[color-mix(in_srgb,var(--gallery-accent)_20%,white)] bg-[color-mix(in_srgb,var(--gallery-accent)_10%,white)] text-[var(--gallery-accent)]",
                   )}
                 >
                   {guessButtonLabel}
@@ -415,69 +566,196 @@ export function ModelLabWordle() {
       ) : null}
 
       {rounds.length > 0 && gameOver ? (
-        <section className="mt-10 space-y-6 rounded-2xl border border-neutral-200 bg-white p-6">
-          <div>
-            <h2 className="text-2xl font-medium tracking-tight text-neutral-900">Results</h2>
-            <p className="mt-2 text-sm text-neutral-600">
-              You got <span className="font-medium text-neutral-900">{correctCount}</span> / {TOTAL_ROUNDS}
-              correct in {attemptsUsed} total guesses.
-            </p>
-          </div>
+        <section
+          className={clsx(
+            "relative mt-10 overflow-hidden rounded-2xl border bg-white p-6 sm:p-8",
+            isPerfectRun
+              ? "border-emerald-200 shadow-[0_0_0_6px_rgba(16,185,129,0.06)]"
+              : "border-neutral-200",
+          )}
+        >
+          {isPerfectRun ? (
+            <div
+              aria-hidden
+              className="pointer-events-none absolute -top-24 -right-24 h-64 w-64 rounded-full bg-emerald-200/40 blur-3xl"
+            />
+          ) : null}
 
-          <div>
-            <p className="mb-3 text-xs font-medium tracking-wide text-neutral-500 uppercase">
-              Wordle-style board
-            </p>
-            <div className="flex flex-wrap gap-2">
-              {rounds.map((round) => (
-                <div
-                  key={round.id}
-                  className={clsx(
-                    "size-8 rounded-sm border",
-                    getRoundStatus(round) === "correct" && "border-emerald-300 bg-emerald-500",
-                    getRoundStatus(round) === "wrong" && "border-neutral-300 bg-neutral-700",
-                    getRoundStatus(round) === "active" && "border-neutral-300 bg-neutral-200",
-                  )}
-                  title={`${round.modelLabel} - ${round.answerLabel}`}
-                />
-              ))}
+          <div className="relative flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+            <div className="max-w-md">
+              <p className="text-[11px] font-semibold tracking-[0.22em] text-neutral-400 uppercase">
+                Your rank
+              </p>
+              <h2 className="mt-2 text-3xl font-medium tracking-tight text-neutral-900 sm:text-4xl">
+                {rank.title}
+                {isPerfectRun ? (
+                  <span className="ml-3 inline-flex -translate-y-1 items-center rounded-full bg-emerald-500/10 px-2.5 py-1 align-middle text-xs font-semibold tracking-wide text-emerald-700 uppercase">
+                    Flawless
+                  </span>
+                ) : null}
+              </h2>
+              <p className="mt-3 text-[15px] leading-relaxed text-neutral-600">{rank.subtitle}</p>
+            </div>
+
+            <div className="flex items-baseline gap-3 self-start sm:self-end">
+              <span className="text-6xl font-medium tracking-tight text-neutral-900 tabular-nums sm:text-7xl">
+                {correctCount}
+              </span>
+              <div className="flex flex-col items-start leading-none">
+                <span className="text-2xl font-medium tracking-tight text-neutral-300 tabular-nums">
+                  / {TOTAL_ROUNDS}
+                </span>
+                <span className="mt-2 text-xs font-medium tracking-wide text-neutral-500 uppercase">
+                  {attemptsUsed} guesses
+                </span>
+              </div>
             </div>
           </div>
 
-          <div className="space-y-2">
-            <p className="text-xs font-medium tracking-wide text-neutral-500 uppercase">Guess distribution</p>
-            {["Solved in 1", "Solved in 2", "Solved in 3", "Missed"].map((label, idx) => (
-              <div key={label} className="flex items-center gap-3 text-sm">
-                <span className="w-24 shrink-0 text-neutral-600">{label}</span>
-                <div className="h-6 flex-1 overflow-hidden rounded bg-neutral-100">
-                  <div
-                    className="h-full bg-neutral-800"
-                    style={{ width: `${(distribution[idx] / TOTAL_ROUNDS) * 100}%` }}
-                  />
-                </div>
-                <span className="w-5 text-right tabular-nums text-neutral-700">{distribution[idx]}</span>
+          <div className="relative mt-7 flex flex-wrap gap-2">
+            {rounds.map((round, idx) => {
+              const tier = getRoundTier(round);
+              return (
+                <div
+                  key={round.id}
+                  title={`Round ${idx + 1} \u00B7 ${round.modelLabel} \u2192 ${round.answerLabel}`}
+                  className={clsx(
+                    "size-10 rounded-[4px] shadow-[inset_0_-2px_0_rgba(0,0,0,0.08)] sm:size-12",
+                    TIER_TILE_CLASS[tier],
+                  )}
+                />
+              );
+            })}
+          </div>
+
+          <div className="relative mt-7 grid gap-2 sm:grid-cols-4">
+            {[
+              { label: "Accuracy", value: `${accuracyPct}%` },
+              { label: "Perfect rounds", value: perfectRounds, hint: "Solved on first try" },
+              { label: "Best streak", value: bestStreak, hint: "In a row" },
+              {
+                label: "Avg guesses",
+                value: solvedAttempts.count ? avgGuessesPerSolved.toFixed(1) : "\u2014",
+                hint: "Per solved round",
+              },
+            ].map((stat) => (
+              <div
+                key={stat.label}
+                className="rounded-xl border border-neutral-200 bg-neutral-50/70 px-4 py-4"
+              >
+                <p className="text-[11px] font-medium tracking-[0.14em] text-neutral-500 uppercase">
+                  {stat.label}
+                </p>
+                <p className="mt-1 text-2xl font-medium tracking-tight text-neutral-900 tabular-nums">
+                  {stat.value}
+                </p>
+                {stat.hint ? (
+                  <p className="mt-1 text-xs text-neutral-500">{stat.hint}</p>
+                ) : null}
               </div>
             ))}
           </div>
 
-          <div className="rounded-lg border border-neutral-200 bg-neutral-50 p-4 text-sm text-neutral-600">
-            <p className="font-medium text-neutral-800">Answers</p>
-            <ul className="mt-2 space-y-1">
-              {rounds.map((round, idx) => (
-                <li key={round.id}>
-                  {idx + 1}. {round.modelLabel} {"->"} {round.answerLabel}
-                </li>
-              ))}
+          <div className="relative mt-7">
+            <p className="mb-3 text-[11px] font-semibold tracking-[0.22em] text-neutral-400 uppercase">
+              Round breakdown
+            </p>
+            <ul className="divide-y divide-neutral-200 overflow-hidden rounded-xl border border-neutral-200">
+              {rounds.map((round, idx) => {
+                const answerOption = getGuessOption(round.answer);
+                return (
+                  <li
+                    key={round.id}
+                    className="flex items-center gap-3 bg-white px-4 py-3 sm:gap-4"
+                  >
+                    <span className="w-5 shrink-0 text-xs font-medium tabular-nums text-neutral-400">
+                      {idx + 1}
+                    </span>
+                    {answerOption ? (
+                      <Image
+                        src={answerOption.logoPath}
+                        alt=""
+                        width={22}
+                        height={22}
+                        className="size-[22px] shrink-0 rounded-sm object-contain"
+                      />
+                    ) : (
+                      <span className="size-[22px] shrink-0 rounded-sm bg-neutral-100" />
+                    )}
+                    <div className="flex min-w-0 flex-1 items-baseline gap-2">
+                      <span className="truncate text-sm font-medium text-neutral-900">
+                        {round.answerLabel}
+                      </span>
+                      <span className="truncate text-xs text-neutral-400">
+                        {round.modelLabel}
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-1.5" aria-hidden>
+                      {Array.from({ length: MAX_GUESSES }).map((_, i) => {
+                        const attempt = round.attempts[i];
+                        const isCorrect = attempt === round.answer;
+                        return (
+                          <span
+                            key={i}
+                            className={clsx(
+                              "size-2 rounded-full",
+                              !attempt && "bg-neutral-200",
+                              attempt && isCorrect && "bg-emerald-500",
+                              attempt && !isCorrect && "bg-rose-300",
+                            )}
+                          />
+                        );
+                      })}
+                    </div>
+                    <span
+                      className={clsx(
+                        "w-12 shrink-0 text-right text-xs font-medium tabular-nums",
+                        round.solved ? "text-emerald-600" : "text-neutral-400",
+                      )}
+                    >
+                      {round.solved
+                        ? round.attempts.length === 1
+                          ? "Ace"
+                          : `${round.attempts.length} tries`
+                        : "Missed"}
+                    </span>
+                  </li>
+                );
+              })}
             </ul>
           </div>
 
-          <button
-            type="button"
-            onClick={resetGame}
-            className="inline-flex rounded-md border border-neutral-300 bg-white px-4 py-2 text-sm font-medium text-neutral-800 transition hover:border-neutral-400 hover:bg-neutral-50"
-          >
-            Play again
-          </button>
+          <div className="relative mt-7 flex flex-col gap-3 sm:flex-row">
+            <button
+              type="button"
+              onClick={handleShare}
+              className={clsx(
+                "inline-flex items-center justify-center gap-2 rounded-lg border px-4 py-2.5 text-sm font-medium transition-colors outline-none focus-visible:ring-1 focus-visible:ring-[var(--gallery-accent)]",
+                shareCopied
+                  ? "border-emerald-300 bg-emerald-50 text-emerald-700"
+                  : "border-transparent bg-[var(--gallery-accent)] text-[var(--gallery-accent-foreground)] hover:bg-[color-mix(in_srgb,var(--gallery-accent)_88%,black)]",
+              )}
+            >
+              {shareCopied ? (
+                <>
+                  <Check className="size-4" aria-hidden />
+                  Copied to clipboard
+                </>
+              ) : (
+                <>
+                  <Share2 className="size-4" aria-hidden />
+                  Share your score
+                </>
+              )}
+            </button>
+            <button
+              type="button"
+              onClick={resetGame}
+              className="inline-flex items-center justify-center rounded-lg border border-neutral-300 bg-white px-4 py-2.5 text-sm font-medium text-neutral-800 transition hover:border-neutral-400 hover:bg-neutral-50"
+            >
+              Play again
+            </button>
+          </div>
         </section>
       ) : null}
     </main>
