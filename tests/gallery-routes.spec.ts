@@ -1,4 +1,5 @@
 import { test, expect } from "@playwright/test";
+import { galleryManifest } from "@/lib/gallery-manifest";
 
 const entries = [
   ["with-design-skill", "composer-1.5"],
@@ -6,7 +7,9 @@ const entries = [
   ["with-design-skill", "gemini"],
   ["with-design-skill", "gpt-5.4"],
   ["with-design-skill", "kimi-k-2.5"],
+  ["with-design-skill", "kimi-k-2.6"],
   ["with-design-skill", "opus-4.6"],
+  ["with-design-skill", "opus-4.7"],
   ["with-design-skill", "glm-5-turbo"],
   ["with-design-skill", "glm-5.1"],
   ["without-design-skill", "composer-1.5"],
@@ -14,21 +17,25 @@ const entries = [
   ["without-design-skill", "gemini"],
   ["without-design-skill", "gpt-5.4"],
   ["without-design-skill", "kimi-k-2.5"],
+  ["without-design-skill", "kimi-k-2.6"],
   ["without-design-skill", "opus-4.6"],
+  ["without-design-skill", "opus-4.7"],
   ["without-design-skill", "glm-5-turbo"],
   ["without-design-skill", "glm-5.1"],
+  ["miscellaneous", "gpt-5.4"],
+  ["ui-sh", "gpt-5.4"],
 ] as const;
 
 test("home page renders every model card", async ({ page }) => {
   await page.goto("/");
   await expect(page.getByRole("heading", { name: "Which AI Made This?" })).toBeVisible();
-  await expect(page.locator("article")).toHaveCount(17);
+  await expect(page.locator("article")).toHaveCount(22);
 });
 
-test("rankings page lists six models with previews", async ({ page }) => {
+test("rankings page lists eight models with previews", async ({ page }) => {
   await page.goto("/rankings");
   await expect(page.getByRole("heading", { name: "Model rankings" })).toBeVisible();
-  await expect(page.getByRole("listitem")).toHaveCount(6);
+  await expect(page.getByRole("listitem")).toHaveCount(8);
 });
 
 test("gallery shell background stays light after client navigation into a variant", async ({ page }) => {
@@ -54,13 +61,18 @@ test("gallery shell background stays light after client navigation into a varian
 });
 
 for (const [group, model] of entries) {
+  const entry = galleryManifest.find((item) => item.group === group && item.model === model);
+  if (!entry) {
+    throw new Error(`Missing gallery manifest entry for ${group}/${model}`);
+  }
+
   test(`model page renders for ${group}/${model}`, async ({ page }) => {
     await page.goto(`/${group}/${model}`);
     await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
-    await expect(page.locator("article")).toHaveCount(5);
+    await expect(page.locator("article")).toHaveCount(entry.iterations.length);
   });
 
-  for (const iteration of ["1", "2", "3", "4", "5"]) {
+  for (const iteration of entry.iterations.map((item) => item.id)) {
     test(`iteration page renders for ${group}/${model}/${iteration}`, async ({ page }) => {
       await page.goto(`/${group}/${model}/${iteration}`);
       await expect(page.getByRole("main").first()).toBeVisible();

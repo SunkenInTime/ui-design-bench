@@ -43,6 +43,7 @@
     "node_modules",
     "with-frontend-design-skill",
     "without-frontend-design-skill",
-    "with-uncodexify-skill"
+    "with-uncodexify-skill",
+    "with-ui-sh-skill"
   ]
 }

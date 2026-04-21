@@ -75,6 +75,14 @@ It still has Composer sickness: it does the bare minimum. Landings here tend to 
     bestIteration: "4",
     notes: `Taste isn’t the main problem; delivery is. You ask for a landing page and get something more like a square with three sentences (minimal to the point of not doing the job), so it loses points on ambition and creative range for the brief.`,
   },
+  {
+    rank: 8,
+    model: "kimi-k-2.6",
+    modelLabel: "Kimi K 2.6",
+    previewGroup: "with-design-skill",
+    bestIteration: "1",
+    notes: `Bench slot for Kimi K 2.6; update notes after the gallery run is reviewed.`,
+  },
 ];
 
 export function getRankingPreviewPath(ranking: ModelRanking): string | undefined {

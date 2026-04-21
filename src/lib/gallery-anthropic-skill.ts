@@ -5,3 +5,6 @@ export const ANTHROPIC_FRONTEND_DESIGN_SKILL_URL =
 /** Uncodexify skill (skills.sh). */
 export const UNCODEXIFY_SKILL_URL =
   "https://skills.sh/cyxzdev/uncodixfy/uncodixfy";
+
+/** UI.sh skill hub / registry. */
+export const UI_SH_SKILL_URL = "https://ui.sh";

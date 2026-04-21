@@ -26,6 +26,11 @@ test("invalid group/model/iteration combinations 404", async ({ page }) => {
     "/compare?leftGroup=miscellaneous&leftModel=gemini&leftIteration=1&rightGroup=without-design-skill&rightModel=gpt-5.4&rightIteration=1",
   );
   expect(response?.status()).toBe(404);
+
+  const responseUiSh = await page.goto(
+    "/compare?leftGroup=ui-sh&leftModel=gemini&leftIteration=1&rightGroup=without-design-skill&rightModel=gpt-5.4&rightIteration=1",
+  );
+  expect(responseUiSh?.status()).toBe(404);
 });
 
 test("a valid cross-group same-model compare URL renders", async ({ page }) => {
@@ -66,6 +71,16 @@ test("compare CTAs on home, model, and iteration pages point to valid compare UR
   await expect(page.getByRole("link", { name: "Compare GPT-5.4 iteration 4" })).toHaveAttribute(
     "href",
     "/compare?leftGroup=miscellaneous&leftModel=gpt-5.4&leftIteration=4&rightGroup=without-design-skill&rightModel=gpt-5.4&rightIteration=1",
+  );
+
+  await page.goto("/ui-sh/gpt-5.4");
+  await expect(page.getByRole("link", { name: "Compare this model" })).toHaveAttribute(
+    "href",
+    "/compare?leftGroup=ui-sh&leftModel=gpt-5.4&leftIteration=1&rightGroup=without-design-skill&rightModel=gpt-5.4&rightIteration=1",
+  );
+  await expect(page.getByRole("link", { name: "Compare GPT-5.4 iteration 4" })).toHaveAttribute(
+    "href",
+    "/compare?leftGroup=ui-sh&leftModel=gpt-5.4&leftIteration=4&rightGroup=without-design-skill&rightModel=gpt-5.4&rightIteration=1",
   );
 
   await page.goto("/with-design-skill/composer-2.0/4");

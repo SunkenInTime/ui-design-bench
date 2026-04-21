@@ -3,7 +3,8 @@ import type { ReactNode } from "react";
 export type GalleryGroupSlug =
   | "with-design-skill"
   | "without-design-skill"
-  | "miscellaneous";
+  | "miscellaneous"
+  | "ui-sh";
 export type ModelSlug =
   | "composer-1.5"
   | "composer-2.0"
@@ -12,6 +13,7 @@ export type ModelSlug =
   | "glm-5.1"
   | "gpt-5.4"
   | "kimi-k-2.5"
+  | "kimi-k-2.6"
   | "opus-4.6"
   | "opus-4.7";
 export type IterationId = "1" | "2" | "3" | "4" | "5";
