@@ -64,6 +64,44 @@ test("gallery shell background stays light after client navigation into a varian
   expect(shellStylesAfterReturn).toEqual(initialShellStyles);
 });
 
+test("gallery switcher text colors stay isolated from generated variant CSS", async ({ page }) => {
+  await page.goto("/with-design-skill/gpt-5.5-low/1");
+
+  const homeLink = page.getByRole("link", { name: /Back to Which AI Made This/ });
+  const activeIteration = page.getByRole("link", { name: "Open iteration 1" });
+  const inactiveIteration = page.getByRole("link", { name: "Open iteration 2" });
+
+  await expect(homeLink).toBeVisible();
+  await expect(activeIteration).toBeVisible();
+  await expect(inactiveIteration).toBeVisible();
+
+  const switcherColors = await page.evaluate(() => {
+    const home = document.querySelector<HTMLAnchorElement>('nav[aria-label$="gallery navigation"] a[href="/"]');
+    const active = document.querySelector<HTMLAnchorElement>(
+      'nav[aria-label$="gallery navigation"] a[aria-current="page"]',
+    );
+    const inactive = document.querySelector<HTMLAnchorElement>(
+      'nav[aria-label$="gallery navigation"] a[aria-label="Open iteration 2"]',
+    );
+
+    if (!home || !active || !inactive) {
+      throw new Error("Missing gallery switcher controls");
+    }
+
+    return {
+      active: window.getComputedStyle(active).color,
+      inactive: window.getComputedStyle(inactive).color,
+      home: window.getComputedStyle(home).color,
+    };
+  });
+
+  expect(switcherColors).toEqual({
+    active: "rgb(250, 250, 250)",
+    inactive: "rgb(63, 63, 70)",
+    home: "rgb(63, 63, 70)",
+  });
+});
+
 for (const [group, model] of entries) {
   const entry = galleryManifest.find((item) => item.group === group && item.model === model);
   if (!entry) {

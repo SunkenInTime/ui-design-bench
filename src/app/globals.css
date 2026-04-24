@@ -53,6 +53,19 @@ body {
   color: inherit;
 }
 
+.gallery-variant-switcher .gallery-variant-switcher__iteration {
+  color: #525252;
+}
+
+.gallery-variant-switcher .gallery-variant-switcher__iteration:hover {
+  color: #171717 !important;
+}
+
+.gallery-variant-switcher .gallery-variant-switcher__iteration[aria-current="page"],
+.gallery-variant-switcher .gallery-variant-switcher__iteration[aria-pressed="true"] {
+  color: var(--gallery-accent-foreground) !important;
+}
+
 .design-switcher {
   --switcher-bg: rgba(255, 255, 255, 0.85);
   --switcher-fg: #525252;

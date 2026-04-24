@@ -144,7 +144,7 @@ function ComparePanel({
         <div
           role="group"
           aria-label={`${sideLabel} iterations`}
-          className="absolute top-4 right-1 z-10 flex flex-col items-center gap-1 rounded-lg border border-[var(--gallery-border)] bg-white/85 px-1 py-1 text-neutral-500 shadow-[0_1px_2px_rgba(0,0,0,0.04)] backdrop-blur-[12px] sm:top-5 sm:right-1"
+          className="gallery-variant-switcher absolute top-4 right-1 z-10 flex flex-col items-center gap-1 rounded-lg border border-[var(--gallery-border)] bg-white/85 px-1 py-1 text-neutral-500 shadow-[0_1px_2px_rgba(0,0,0,0.04)] backdrop-blur-[12px] sm:top-5 sm:right-1"
         >
           {ITERATION_OPTIONS.map((iteration) => {
             const active = iteration === selection.iteration;
@@ -155,7 +155,7 @@ function ComparePanel({
                 onClick={() =>
                   onSelectionChange(resolveSelection(selection.group, selection.model, iteration))
                 }
-                className={`inline-flex size-7 shrink-0 cursor-pointer items-center justify-center rounded-md text-[11px] font-medium tabular-nums leading-none transition-colors ${
+                className={`gallery-variant-switcher__iteration inline-flex size-7 shrink-0 cursor-pointer items-center justify-center rounded-md text-[11px] font-medium tabular-nums leading-none transition-colors ${
                   active
                     ? "bg-[var(--gallery-accent)] text-[var(--gallery-accent-foreground)]"
                     : "text-neutral-600 hover:bg-black/[0.04] hover:text-neutral-900"
