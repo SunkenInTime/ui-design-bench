@@ -6,6 +6,8 @@ const entries = [
   ["with-design-skill", "composer-2.0"],
   ["with-design-skill", "gemini"],
   ["with-design-skill", "gpt-5.4"],
+  ["with-design-skill", "gpt-5.5-low"],
+  ["with-design-skill", "gpt-5.5-high"],
   ["with-design-skill", "kimi-k-2.5"],
   ["with-design-skill", "kimi-k-2.6"],
   ["with-design-skill", "opus-4.6"],
@@ -16,6 +18,8 @@ const entries = [
   ["without-design-skill", "composer-2.0"],
   ["without-design-skill", "gemini"],
   ["without-design-skill", "gpt-5.4"],
+  ["without-design-skill", "gpt-5.5-low"],
+  ["without-design-skill", "gpt-5.5-high"],
   ["without-design-skill", "kimi-k-2.5"],
   ["without-design-skill", "kimi-k-2.6"],
   ["without-design-skill", "opus-4.6"],
@@ -29,7 +33,7 @@ const entries = [
 test("home page renders every model card", async ({ page }) => {
   await page.goto("/");
   await expect(page.getByRole("heading", { name: "Which AI Made This?" })).toBeVisible();
-  await expect(page.locator("article")).toHaveCount(22);
+  await expect(page.locator("article")).toHaveCount(entries.length);
 });
 
 test("rankings page lists eight models with previews", async ({ page }) => {

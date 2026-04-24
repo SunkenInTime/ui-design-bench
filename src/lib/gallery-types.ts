@@ -12,6 +12,8 @@ export type ModelSlug =
   | "glm-5-turbo"
   | "glm-5.1"
   | "gpt-5.4"
+  | "gpt-5.5-low"
+  | "gpt-5.5-high"
   | "kimi-k-2.5"
   | "kimi-k-2.6"
   | "opus-4.6"
