@@ -12,7 +12,6 @@ import withOpus47 from "@/variants/with-design-skill/opus-4.7";
 import withGlm5Turbo from "@/variants/with-design-skill/glm-5-turbo";
 import withGlm51 from "@/variants/with-design-skill/glm-5.1";
 import miscGpt54 from "@/variants/miscellaneous/gpt-5.4";
-import uiShGpt54 from "@/variants/ui-sh/gpt-5.4";
 import withoutComposer15 from "@/variants/without-design-skill/composer-1.5";
 import withoutComposer20 from "@/variants/without-design-skill/composer-2.0";
 import withoutGemini from "@/variants/without-design-skill/gemini";
@@ -42,7 +41,6 @@ const registry: Partial<Record<RegistryKey, VariantModule>> = {
   "with-design-skill:glm-5-turbo": withGlm5Turbo,
   "with-design-skill:glm-5.1": withGlm51,
   "miscellaneous:gpt-5.4": miscGpt54,
-  "ui-sh:gpt-5.4": uiShGpt54,
   "without-design-skill:composer-1.5": withoutComposer15,
   "without-design-skill:composer-2.0": withoutComposer20,
   "without-design-skill:gemini": withoutGemini,

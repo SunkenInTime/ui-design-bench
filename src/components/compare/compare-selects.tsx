@@ -11,7 +11,6 @@ const GROUP_ICONS: Record<GalleryGroupSlug, typeof Sparkles> = {
   "with-design-skill": Sparkles,
   "without-design-skill": Code2,
   miscellaneous: Layers,
-  "ui-sh": Layers,
 };
 
 const triggerClass =

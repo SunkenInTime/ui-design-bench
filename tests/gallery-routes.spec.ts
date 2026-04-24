@@ -27,13 +27,12 @@ const entries = [
   ["without-design-skill", "glm-5-turbo"],
   ["without-design-skill", "glm-5.1"],
   ["miscellaneous", "gpt-5.4"],
-  ["ui-sh", "gpt-5.4"],
 ] as const;
 
 test("home page renders every model card", async ({ page }) => {
   await page.goto("/");
   await expect(page.getByRole("heading", { name: "Which AI Made This?" })).toBeVisible();
-  await expect(page.locator("article")).toHaveCount(entries.length);
+  await expect(page.locator('a[title="Compare"]')).toHaveCount(entries.length);
 });
 
 test("rankings page lists eight models with previews", async ({ page }) => {

@@ -18,8 +18,7 @@ export function isGalleryGroup(value: string): value is GalleryGroupSlug {
   return (
     value === "with-design-skill" ||
     value === "without-design-skill" ||
-    value === "miscellaneous" ||
-    value === "ui-sh"
+    value === "miscellaneous"
   );
 }
 

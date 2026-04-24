@@ -3,8 +3,7 @@ import type { ReactNode } from "react";
 export type GalleryGroupSlug =
   | "with-design-skill"
   | "without-design-skill"
-  | "miscellaneous"
-  | "ui-sh";
+  | "miscellaneous";
 export type ModelSlug =
   | "composer-1.5"
   | "composer-2.0"

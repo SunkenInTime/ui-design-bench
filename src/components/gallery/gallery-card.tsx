@@ -8,7 +8,10 @@ import { getModelBrandLogoPath } from "@/lib/model-brand-logo";
 
 export function GalleryCard({ entry }: { entry: GalleryEntry }) {
   return (
-    <article className="group flex flex-col overflow-hidden rounded-lg border border-neutral-300 bg-white transition-transform duration-300 ease-out hover:-translate-y-1.5 hover:shadow-lg">
+    <article
+      data-testid="gallery-card"
+      className="group flex flex-col overflow-hidden rounded-lg border border-neutral-300 bg-white transition-transform duration-300 ease-out hover:-translate-y-1.5 hover:shadow-lg"
+    >
       <Link
         href={buildVariantHref(entry.group, entry.model, entry.defaultIteration)}
         className="block bg-neutral-100"

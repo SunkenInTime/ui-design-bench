@@ -4,7 +4,6 @@ import { GalleryRankingsNav } from "@/components/gallery/gallery-rankings-nav";
 import { GalleryCard } from "@/components/gallery/gallery-card";
 import {
   ANTHROPIC_FRONTEND_DESIGN_SKILL_URL,
-  UI_SH_SKILL_URL,
   UNCODEXIFY_SKILL_URL,
 } from "@/lib/gallery-anthropic-skill";
 import { galleryManifest } from "@/lib/gallery-manifest";
@@ -14,7 +13,6 @@ export default function HomePage() {
     "with-design-skill",
     "without-design-skill",
     "miscellaneous",
-    "ui-sh",
   ] as const;
   const generationPrompt =
     "I want you to design the landing page for a note-taking application as essentially a second brain. You should design five iterations and each of them should be accessible within the slash one, slash two, slash three like pages directory. And then you should add a little button that lets me switch between them easily.";
@@ -115,18 +113,6 @@ export default function HomePage() {
                         className="underline decoration-2 decoration-neutral-500 underline-offset-[6px] transition-colors hover:text-[var(--gallery-accent)] hover:decoration-[var(--gallery-accent)]"
                       >
                         Uncodexify skill
-                      </Link>
-                    </>
-                  ) : group === "ui-sh" ? (
-                    <>
-                      With{" "}
-                      <Link
-                        href={UI_SH_SKILL_URL}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="underline decoration-2 decoration-neutral-500 underline-offset-[6px] transition-colors hover:text-[var(--gallery-accent)] hover:decoration-[var(--gallery-accent)]"
-                      >
-                        UI.sh skill
                       </Link>
                     </>
                   ) : (

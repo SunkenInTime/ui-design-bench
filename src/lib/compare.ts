@@ -41,7 +41,6 @@ export const compareGroupOrder = [
   "with-design-skill",
   "without-design-skill",
   "miscellaneous",
-  "ui-sh",
 ] as const satisfies readonly GalleryGroupSlug[];
 
 export const DEFAULT_COMPARE_STATE: CompareState = {
@@ -183,7 +182,7 @@ export function parseCompareSearchParams(
 }
 
 export function getCounterpartSelection(selection: CompareSelection): CompareSelection | null {
-  if (selection.group === "miscellaneous" || selection.group === "ui-sh") {
+  if (selection.group === "miscellaneous") {
     return null;
   }
 

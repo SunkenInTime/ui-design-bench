@@ -22,7 +22,7 @@ export function VariantSwitcher({
         : entry.groupLabel;
   const isWithDesignSkill = entry.group === "with-design-skill";
   const isWithoutSkill = entry.group === "without-design-skill";
-  const isMiscSkillGroup = entry.group === "miscellaneous" || entry.group === "ui-sh";
+  const isMiscSkillGroup = entry.group === "miscellaneous";
   const paletteTone =
     isWithDesignSkill || isMiscSkillGroup
       ? "text-[var(--gallery-accent)]"
@@ -69,7 +69,7 @@ export function VariantSwitcher({
             alt=""
             width={22}
             height={22}
-            className="max-h-[1.375rem] w-auto object-contain opacity-90 transition-opacity duration-200 group-hover/logo:opacity-100"
+            className="size-[1.375rem] object-contain opacity-90 transition-opacity duration-200 group-hover/logo:opacity-100"
             aria-hidden
           />
           <span

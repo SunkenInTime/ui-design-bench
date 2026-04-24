@@ -325,49 +325,6 @@ export const galleryManifest: GalleryEntry[] = [
       },
     ],
   },
-  {
-    group: "ui-sh",
-    groupLabel: "With UI.sh skill",
-    model: "gpt-5.4",
-    modelLabel: "GPT-5.4",
-    sourceDir: "with-ui-sh-skill/gpt-5.4",
-    sourceAppType: "next",
-    defaultIteration: "1",
-    summary:
-      "These screens were produced with the UI.sh skill (not the frontend design skill): five Commonplace-themed landings from GPT-5.4, integrated here without the original in-app route switcher.",
-    iterations: [
-      {
-        id: "1",
-        title: "Workspace",
-        sourceSlug: "1",
-        thumbnailPath: "/gallery-previews/ui-sh/gpt-5.4/preview.webp",
-      },
-      {
-        id: "2",
-        title: "Library",
-        sourceSlug: "2",
-        thumbnailPath: "/gallery-previews/ui-sh/gpt-5.4/preview.webp",
-      },
-      {
-        id: "3",
-        title: "Desk",
-        sourceSlug: "3",
-        thumbnailPath: "/gallery-previews/ui-sh/gpt-5.4/preview.webp",
-      },
-      {
-        id: "4",
-        title: "Search",
-        sourceSlug: "4",
-        thumbnailPath: "/gallery-previews/ui-sh/gpt-5.4/preview.webp",
-      },
-      {
-        id: "5",
-        title: "Review",
-        sourceSlug: "5",
-        thumbnailPath: "/gallery-previews/ui-sh/gpt-5.4/preview.webp",
-      },
-    ],
-  },
 ];
 
 export function getGalleryEntry(group: string, model: string) {

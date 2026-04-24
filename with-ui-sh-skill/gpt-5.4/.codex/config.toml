@@ -1,7 +1,0 @@
-
-[mcp_servers.uidotsh]
-url = "https://ui.sh/mcp?agent=codex"
-http_headers = { Authorization = "Bearer TC70HSNddWYGBTjaW4QyIosDmR34ijaN" }
-
-[mcp_servers.uidotsh.tools.uidotsh_fetch]
-approval_mode = "approve"
