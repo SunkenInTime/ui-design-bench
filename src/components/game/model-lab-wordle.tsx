@@ -1,6 +1,7 @@
 "use client";
 
 import clsx from "clsx";
+import { toBlob } from "html-to-image";
 import Image from "next/image";
 import { Check, ChevronDown, Share2 } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
@@ -32,6 +33,8 @@ const MAX_GUESSES = 3;
 const ROUND_ADVANCE_DELAY_MS = 950;
 const WRONG_GUESS_SHAKE_MS = 420;
 const CORRECT_GUESS_POP_MS = 620;
+const SHARE_URL = "whichai.dev";
+const SCORE_IMAGE_MARGIN_PX = 32;
 
 const pickerTriggerClass =
   "flex w-full min-w-0 cursor-pointer items-center gap-2 rounded-lg border border-[var(--gallery-border)] bg-white/85 px-3 py-2.5 text-left text-sm font-medium text-neutral-900 shadow-[0_1px_2px_rgba(0,0,0,0.04)] backdrop-blur-[12px] transition outline-none hover:border-neutral-300 hover:bg-white focus-visible:border-[var(--gallery-accent)] focus-visible:ring-1 focus-visible:ring-[var(--gallery-accent)]";
@@ -204,11 +207,16 @@ export function ModelLabWordle() {
   const [shakeWrongGuess, setShakeWrongGuess] = useState(false);
   const [popCorrectGuess, setPopCorrectGuess] = useState(false);
   const [shareCopied, setShareCopied] = useState(false);
+  const [imageShareState, setImageShareState] = useState<"idle" | "copied" | "downloaded" | "failed">(
+    "idle",
+  );
   const advanceTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const shakeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const correctTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const shareTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const imageShareTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const dropdownRef = useRef<HTMLDivElement | null>(null);
+  const resultCardRef = useRef<HTMLElement | null>(null);
 
   const activeRound = rounds[currentRound];
   const gameOver = currentRound >= rounds.length;
@@ -294,6 +302,9 @@ export function ModelLabWordle() {
       }
       if (shareTimerRef.current !== null) {
         clearTimeout(shareTimerRef.current);
+      }
+      if (imageShareTimerRef.current !== null) {
+        clearTimeout(imageShareTimerRef.current);
       }
     };
   }, []);
@@ -406,6 +417,10 @@ export function ModelLabWordle() {
       clearTimeout(shareTimerRef.current);
       shareTimerRef.current = null;
     }
+    if (imageShareTimerRef.current !== null) {
+      clearTimeout(imageShareTimerRef.current);
+      imageShareTimerRef.current = null;
+    }
 
     setRounds(createRounds());
     setCurrentRound(0);
@@ -415,19 +430,62 @@ export function ModelLabWordle() {
     setShakeWrongGuess(false);
     setPopCorrectGuess(false);
     setShareCopied(false);
+    setImageShareState("idle");
   }
 
   function buildShareText(): string {
     const grid = rounds.map((round) => TIER_EMOJI[getRoundTier(round)]).join("");
-    const origin =
-      typeof window !== "undefined" && window.location ? window.location.origin : "";
     const lines = [
       `Which AI Made This? \u2014 ${correctCount}/${TOTAL_ROUNDS} in ${attemptsUsed} guesses`,
       grid,
       `Perfect: ${perfectRounds} \u00B7 Best streak: ${bestStreak} \u00B7 ${accuracyPct}% accuracy`,
+      SHARE_URL,
     ];
-    if (origin) lines.push(origin);
     return lines.join("\n");
+  }
+
+  function scheduleImageShareStateReset() {
+    if (imageShareTimerRef.current !== null) {
+      clearTimeout(imageShareTimerRef.current);
+    }
+    imageShareTimerRef.current = setTimeout(() => {
+      setImageShareState("idle");
+      imageShareTimerRef.current = null;
+    }, 2200);
+  }
+
+  async function buildScoreImageBlob(): Promise<Blob> {
+    const card = resultCardRef.current;
+    if (!card) {
+      throw new Error("Score card is unavailable.");
+    }
+
+    const m = SCORE_IMAGE_MARGIN_PX;
+    const innerW = Math.ceil(Math.max(card.scrollWidth, card.offsetWidth));
+    const innerH = Math.ceil(Math.max(card.scrollHeight, card.offsetHeight));
+
+    const blob = await toBlob(card, {
+      width: innerW + m * 2,
+      height: innerH + m * 2,
+      backgroundColor: "#ffffff",
+      cacheBust: true,
+      pixelRatio: 2,
+      style: {
+        padding: `${m}px`,
+        boxSizing: "border-box",
+        overflow: "visible",
+      },
+    });
+
+    if (!blob) {
+      throw new Error("Could not create score image.");
+    }
+
+    if (blob.type === "image/png") {
+      return blob;
+    }
+
+    return new Blob([await blob.arrayBuffer()], { type: "image/png" });
   }
 
   async function handleShare() {
@@ -448,6 +506,47 @@ export function ModelLabWordle() {
       setShareCopied(false);
       shareTimerRef.current = null;
     }, 2200);
+  }
+
+  async function handleImageShare() {
+    const supportsClipboardWrite =
+      typeof ClipboardItem !== "undefined" &&
+      typeof navigator !== "undefined" &&
+      typeof navigator.clipboard?.write === "function";
+
+    if (supportsClipboardWrite) {
+      try {
+        // Pass the Promise<Blob> directly so the user-activation context survives
+        // the async toBlob() work (Safari + recent Chrome require this).
+        const item = new ClipboardItem({
+          "image/png": buildScoreImageBlob(),
+        });
+        await navigator.clipboard.write([item]);
+        setImageShareState("copied");
+        scheduleImageShareStateReset();
+        return;
+      } catch (error) {
+        console.error("Score image clipboard copy failed", error);
+      }
+    }
+
+    try {
+      const blob = await buildScoreImageBlob();
+      const objectUrl = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = objectUrl;
+      link.download = "which-ai-score.png";
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      setTimeout(() => URL.revokeObjectURL(objectUrl), 0);
+      setImageShareState("downloaded");
+    } catch (error) {
+      console.error("Score image generation failed", error);
+      setImageShareState("failed");
+    }
+
+    scheduleImageShareStateReset();
   }
 
   return (
@@ -478,7 +577,7 @@ export function ModelLabWordle() {
               <div className="pointer-events-auto absolute top-4 right-4 z-20 rounded-lg border border-[var(--gallery-border)] bg-white/85 px-1 py-1 text-neutral-500 shadow-[0_1px_2px_rgba(0,0,0,0.04)] backdrop-blur-[12px] sm:top-6 sm:right-6">
                 <div className="flex flex-col items-center gap-1">
                   <div className="flex flex-col gap-1.5" aria-label={`Round ${currentRound + 1} of ${TOTAL_ROUNDS}`}>
-                    {rounds.map((round, idx) => (
+                    {rounds.map((round) => (
                       <span
                         key={round.id}
                         className={clsx(
@@ -619,6 +718,8 @@ export function ModelLabWordle() {
 
       {rounds.length > 0 && gameOver ? (
         <section
+          ref={resultCardRef}
+          aria-label="Game results"
           className={clsx(
             "relative mt-10 overflow-hidden rounded-2xl border bg-white p-6 sm:p-8",
             isPerfectRun
@@ -777,7 +878,7 @@ export function ModelLabWordle() {
             </ul>
           </div>
 
-          <div className="relative mt-7 flex flex-col gap-3 sm:flex-row">
+          <div className="relative mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
             <button
               type="button"
               onClick={handleShare}
@@ -802,11 +903,41 @@ export function ModelLabWordle() {
             </button>
             <button
               type="button"
+              onClick={handleImageShare}
+              className={clsx(
+                "inline-flex items-center justify-center gap-2 rounded-lg border px-4 py-2.5 text-sm font-medium transition-colors outline-none focus-visible:ring-1 focus-visible:ring-[var(--gallery-accent)]",
+                imageShareState === "copied" &&
+                  "border-emerald-300 bg-emerald-50 text-emerald-700",
+                imageShareState === "downloaded" &&
+                  "border-neutral-300 bg-neutral-50 text-neutral-800",
+                imageShareState === "failed" && "border-rose-300 bg-rose-50 text-rose-700",
+                imageShareState === "idle" &&
+                  "border-neutral-300 bg-white text-neutral-800 hover:border-neutral-400 hover:bg-neutral-50",
+              )}
+            >
+              {imageShareState === "copied" ? (
+                <>
+                  <Check className="size-4" aria-hidden />
+                  Image copied
+                </>
+              ) : imageShareState === "downloaded" ? (
+                "Image downloaded"
+              ) : imageShareState === "failed" ? (
+                "Image copy failed"
+              ) : (
+                "Copy score image"
+              )}
+            </button>
+            <button
+              type="button"
               onClick={resetGame}
               className="inline-flex items-center justify-center rounded-lg border border-neutral-300 bg-white px-4 py-2.5 text-sm font-medium text-neutral-800 transition hover:border-neutral-400 hover:bg-neutral-50"
             >
               Play again
             </button>
+            <span className="ml-auto shrink-0 rounded-lg bg-white/90 px-[0.55rem] py-[0.35rem] text-sm font-bold tracking-wide text-[#b84a8c]">
+              {SHARE_URL}
+            </span>
           </div>
         </section>
       ) : null}
