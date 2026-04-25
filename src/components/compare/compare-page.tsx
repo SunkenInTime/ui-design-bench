@@ -16,13 +16,10 @@ import {
   type CompareState,
 } from "@/lib/compare";
 import { getGalleryEntry } from "@/lib/gallery-manifest";
+import { buildPreviewHref } from "@/lib/gallery-paths";
 import type { GalleryGroupSlug, IterationId, ModelSlug } from "@/lib/gallery-types";
 
 const ITERATION_OPTIONS = ["1", "2", "3", "4", "5"] as const satisfies readonly IterationId[];
-
-function buildPreviewHref(selection: CompareSelection): string {
-  return `/preview/${selection.group}/${selection.model}/${selection.iteration}`;
-}
 
 function getGroupLabel(group: GalleryGroupSlug): string {
   return getModelsForGroup(group)[0]?.groupLabel ?? group;
@@ -169,7 +166,7 @@ function ComparePanel({
         </div>
         <iframe
           title={iframeTitle}
-          src={buildPreviewHref(selection)}
+          src={buildPreviewHref(selection.group, selection.model, selection.iteration)}
           className="block h-[min(70dvh,720px)] w-full bg-white lg:h-[min(calc(100dvh-13rem),900px)]"
         />
       </div>
