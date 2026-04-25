@@ -28,7 +28,15 @@ export function GalleryIterationView({
   return (
     <main className="min-h-screen bg-white">
       {!preview ? <VariantSwitcher entry={entry} iteration={iteration} /> : null}
-      {variantModule.render({ entry, iteration, preview })}
+      <div
+        className="gallery-generation"
+        data-gallery-generation
+        data-gallery-group={entry.group}
+        data-gallery-model={entry.model}
+        data-gallery-iteration={iteration}
+      >
+        {variantModule.render({ entry, iteration, preview })}
+      </div>
     </main>
   );
 }

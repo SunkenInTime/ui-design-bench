@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import "./globals.css";
+import "@/generated/scoped-variant-css/with-design-skill/glm-5.1/source/src/app/globals.css";
 
 export const metadata: Metadata = {
   title: "Cortex — Your Second Brain",

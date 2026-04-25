@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 import { motion } from 'motion/react'
-import './Cosmos.css'
+import '@/generated/scoped-variant-css/with-design-skill/opus-4.6/source/src/pages/Cosmos.css';
 
 function Starfield() {
   const canvasRef = useRef(null)

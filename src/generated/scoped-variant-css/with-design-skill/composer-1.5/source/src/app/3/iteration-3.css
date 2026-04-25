@@ -1,0 +1,141 @@
+/* Iteration 3: Organic / natural - warm earth tones */
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="composer-1.5"]) .iteration-3 {
+  --iter3-bg: #faf7f2;
+  --iter3-fg: #2c2416;
+  --iter3-accent: #5a7c59;
+  --iter3-warm: #c4a77d;
+  --iter3-muted: #6b5d4f;
+  min-height: 100vh;
+  background: var(--iter3-bg);
+  color: var(--iter3-fg);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="composer-1.5"]) .iteration-3 .design-switcher {
+  --switcher-bg: rgba(44, 36, 22, 0.06);
+  --switcher-fg: var(--iter3-fg);
+  --switcher-active: var(--iter3-accent);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="composer-1.5"]) .iteration-3__main {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 60px);
+  padding: 3rem 2rem;
+  overflow: hidden;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="composer-1.5"]) .iteration-3__bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="composer-1.5"]) .iteration-3__blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.5;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="composer-1.5"]) .iteration-3__blob--1 {
+  width: 400px;
+  height: 400px;
+  background: #e8dcc8;
+  top: -100px;
+  right: -100px;
+  animation: gallery-with-design-skill-composer-1-5-source-src-app-3-iteration-3-iter3-float 15s ease-in-out infinite;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="composer-1.5"]) .iteration-3__blob--2 {
+  width: 300px;
+  height: 300px;
+  background: #d4e4d4;
+  bottom: -50px;
+  left: -50px;
+  animation: gallery-with-design-skill-composer-1-5-source-src-app-3-iteration-3-iter3-float 18s ease-in-out infinite reverse;
+  animation-delay: -5s;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="composer-1.5"]) .iteration-3__blob--3 {
+  width: 250px;
+  height: 250px;
+  background: #e8e0d0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: gallery-with-design-skill-composer-1-5-source-src-app-3-iteration-3-iter3-float 12s ease-in-out infinite;
+  animation-delay: -2s;
+}
+
+@keyframes gallery-with-design-skill-composer-1-5-source-src-app-3-iteration-3-iter3-float {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  33% {
+    transform: translate(20px, -20px);
+  }
+  66% {
+    transform: translate(-15px, 15px);
+  }
+}
+
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="composer-1.5"]) .iteration-3__content {
+  position: relative;
+  max-width: 40rem;
+  animation: gallery-with-design-skill-composer-1-5-source-src-app-3-iteration-3-iter3-enter 1s ease-out both;
+}
+
+@keyframes gallery-with-design-skill-composer-1-5-source-src-app-3-iteration-3-iter3-enter {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="composer-1.5"]) .iteration-3__eyebrow {
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--iter3-accent);
+  margin-bottom: 1.5rem;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="composer-1.5"]) .iteration-3__headline {
+  font-size: clamp(3rem, 7vw, 4.5rem);
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--iter3-fg);
+  margin-bottom: 1.5rem;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="composer-1.5"]) .iteration-3__body {
+  font-size: 1.25rem;
+  line-height: 1.7;
+  color: var(--iter3-muted);
+  margin-bottom: 2.5rem;
+  max-width: 36ch;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="composer-1.5"]) .iteration-3__cta {
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: 500;
+  color: white;
+  background: var(--iter3-accent);
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 2rem;
+  transition: background 0.2s, transform 0.2s;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="composer-1.5"]) .iteration-3__cta:hover {
+  background: #4a6a49;
+  transform: translateY(-2px);
+}

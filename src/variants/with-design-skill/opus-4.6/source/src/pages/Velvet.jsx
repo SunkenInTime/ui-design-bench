@@ -1,5 +1,5 @@
 import { motion } from 'motion/react'
-import './Velvet.css'
+import '@/generated/scoped-variant-css/with-design-skill/opus-4.6/source/src/pages/Velvet.css';
 
 const stagger = {
   hidden: {},

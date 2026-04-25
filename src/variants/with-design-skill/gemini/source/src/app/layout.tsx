@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import "@/generated/scoped-variant-css/with-design-skill/gemini/source/src/app/globals.css";
 import { Switcher } from "@/variants/with-design-skill/gemini/source/src/components/Switcher";
 
 const geistSans = Geist({

@@ -26,6 +26,7 @@ test("invalid group/model/iteration combinations 404", async ({ page }) => {
     "/compare?leftGroup=miscellaneous&leftModel=gemini&leftIteration=1&rightGroup=without-design-skill&rightModel=gpt-5.4&rightIteration=1",
   );
   expect(response?.status()).toBe(404);
+
 });
 
 test("a valid cross-group same-model compare URL renders", async ({ page }) => {

@@ -1,0 +1,76 @@
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="kimi-k-2.5"]) {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="kimi-k-2.5"]) * {
+  box-sizing: border-box;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="kimi-k-2.5"]) {
+  scroll-behavior: smooth;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="kimi-k-2.5"]) {
+  background: var(--background);
+  color: var(--foreground);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+/* Custom scrollbar for webkit browsers */
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="kimi-k-2.5"]) ::-webkit-scrollbar {
+  width: 8px;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="kimi-k-2.5"]) ::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="kimi-k-2.5"]) ::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="kimi-k-2.5"]) ::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/* Animation utilities */
+@keyframes gallery-with-design-skill-kimi-k-2-5-source-src-app-globals-fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes gallery-with-design-skill-kimi-k-2-5-source-src-app-globals-slideInFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="kimi-k-2.5"]) .animate-in {
+  animation: gallery-with-design-skill-kimi-k-2-5-source-src-app-globals-fadeIn 0.2s ease-out;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="kimi-k-2.5"]) .fade-in {
+  animation-name: gallery-with-design-skill-kimi-k-2-5-source-src-app-globals-fadeIn;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="kimi-k-2.5"]) .slide-in-from-top-2 {
+  animation-name: gallery-with-design-skill-kimi-k-2-5-source-src-app-globals-slideInFromTop;
+}
+
+/* Selection colors */
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="kimi-k-2.5"]) ::selection {
+  background: rgba(139, 157, 119, 0.3);
+}

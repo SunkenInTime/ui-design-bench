@@ -1,0 +1,101 @@
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-5.4"]) {
+  --background: #050816;
+  --foreground: #f5f0e8;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-5.4"]) * {
+  box-sizing: border-box;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-5.4"]) {
+  scroll-behavior: smooth;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-5.4"]) {
+  min-height: 100vh;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body), sans-serif;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-5.4"]) ::selection {
+  background: rgba(255, 255, 255, 0.22);
+  color: inherit;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-5.4"]) a,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-5.4"]) 
+button {
+  cursor: pointer;
+}
+
+@keyframes gallery-with-design-skill-gpt-5-4-source-src-app-globals-float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -10px, 0);
+  }
+}
+
+@keyframes gallery-with-design-skill-gpt-5-4-source-src-app-globals-float-delayed {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, 12px, 0);
+  }
+}
+
+@keyframes gallery-with-design-skill-gpt-5-4-source-src-app-globals-pulse-slow {
+  0%,
+  100% {
+    opacity: 0.42;
+    transform: scale(0.98);
+  }
+  50% {
+    opacity: 0.78;
+    transform: scale(1.03);
+  }
+}
+
+@keyframes gallery-with-design-skill-gpt-5-4-source-src-app-globals-spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-5.4"]) .animate-float {
+  animation: gallery-with-design-skill-gpt-5-4-source-src-app-globals-float 8s ease-in-out infinite;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-5.4"]) .animate-float-delayed {
+  animation: gallery-with-design-skill-gpt-5-4-source-src-app-globals-float-delayed 10s ease-in-out infinite;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-5.4"]) .animate-pulse-slow {
+  animation: gallery-with-design-skill-gpt-5-4-source-src-app-globals-pulse-slow 8s ease-in-out infinite;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-5.4"]) .animate-spin-slow {
+  animation: gallery-with-design-skill-gpt-5-4-source-src-app-globals-spin-slow 28s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-5.4"]) {
+    scroll-behavior: auto;
+  }
+
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-5.4"]) *,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-5.4"]) 
+  *::before,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-5.4"]) 
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

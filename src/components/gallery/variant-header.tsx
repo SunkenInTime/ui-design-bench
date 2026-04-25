@@ -22,16 +22,16 @@ export function VariantSwitcher({
         : entry.groupLabel;
   const isWithDesignSkill = entry.group === "with-design-skill";
   const isWithoutSkill = entry.group === "without-design-skill";
-  const isUncodexifySkill = entry.group === "miscellaneous";
+  const isMiscSkillGroup = entry.group === "miscellaneous";
   const paletteTone =
-    isWithDesignSkill || isUncodexifySkill
+    isWithDesignSkill || isMiscSkillGroup
       ? "text-[var(--gallery-accent)]"
       : "text-neutral-400 opacity-55";
 
   return (
     <nav
       aria-label={`${entry.modelLabel} gallery navigation`}
-      className="fixed top-5 right-5 z-[100] flex w-auto flex-col items-center gap-1 rounded-lg border border-[var(--gallery-border)] bg-white/85 px-1 py-1 text-neutral-500 shadow-[0_1px_2px_rgba(0,0,0,0.04)] backdrop-blur-[12px] sm:top-6 sm:right-6"
+      className="gallery-variant-switcher fixed top-5 right-5 z-[100] flex w-auto flex-col items-center gap-1 rounded-lg border border-[var(--gallery-border)] bg-white/85 px-1 py-1 text-neutral-500 shadow-[0_1px_2px_rgba(0,0,0,0.04)] backdrop-blur-[12px] sm:top-6 sm:right-6"
     >
       <Link
         href="/"
@@ -69,7 +69,7 @@ export function VariantSwitcher({
             alt=""
             width={22}
             height={22}
-            className="max-h-[1.375rem] w-auto object-contain opacity-90 transition-opacity duration-200 group-hover/logo:opacity-100"
+            className="size-[1.375rem] object-contain opacity-90 transition-opacity duration-200 group-hover/logo:opacity-100"
             aria-hidden
           />
           <span
@@ -131,7 +131,7 @@ export function VariantSwitcher({
               href={buildVariantHref(entry.group, entry.model, item.id)}
               aria-current={active ? "page" : undefined}
               aria-label={`Open iteration ${item.id}`}
-              className={`inline-flex size-7 shrink-0 items-center justify-center rounded-md text-[11px] font-medium tabular-nums leading-none transition-colors ${
+              className={`gallery-variant-switcher__iteration inline-flex size-7 shrink-0 items-center justify-center rounded-md text-[11px] font-medium tabular-nums leading-none transition-colors ${
                 active
                   ? "bg-[var(--gallery-accent)] text-[var(--gallery-accent-foreground)]"
                   : "text-neutral-600 hover:bg-black/[0.04] hover:text-neutral-900"

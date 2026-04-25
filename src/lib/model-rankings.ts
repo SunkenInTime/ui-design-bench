@@ -19,14 +19,22 @@ export interface ModelRanking {
 export const modelRankings: ModelRanking[] = [
   {
     rank: 1,
+    model: "opus-4.7",
+    modelLabel: "Claude Opus 4.7",
+    previewGroup: "with-design-skill",
+    bestIteration: "3",
+    notes: `It’s not just “4.6 except the lowest generations got pulled up.” That undersells it. It’s quite a job: not only layout-wise, but how you take all these different things, customize assets, and put them together so they fit the style of what you’re building. I’m noticing a lot of intentional custom assets. Iteration two’s ASCII for each vault name, the type treatment, and the session live section all read deliberate. Page three on iteration three is the one that got me: a full mushroom illustration, and card icons that look like proper SVG marks instead of the random emoji some Opus runs lean on. Field notes in the right font, imagery that fits the site even when it’s a little silly. Iteration five does the same thing, where every illustration feels like someone actually styled this. Down in practice objects and invitation, the one, two, three kanji touches are just beautiful.`,
+  },
+  {
+    rank: 2,
     model: "opus-4.6",
     modelLabel: "Claude Opus 4.6",
     previewGroup: "with-design-skill",
     bestIteration: "2",
-    notes: `The undisputed top here: it folds the little strengths you see lower in the stack into something cohesive top to bottom. Even iteration one’s terminal concept (not usually my thing) reads tasteful: the refresh animation and how the terminal loads feel intentional. Iteration two’s editorial layout is my favorite, with cards that ease away slightly on hover. Great micro-detail, full-page cohesion, and a first prompt you could plausibly ship. That “first generation is prod-shaped” thing is real.`,
+    notes: `Hard to beat on cohesion: it folds the little strengths you see lower in the stack into something cohesive top to bottom. Even iteration one’s terminal concept (not usually my thing) reads tasteful: the refresh animation and how the terminal loads feel intentional. Iteration two’s editorial layout is my favorite, with cards that ease away slightly on hover. Great micro-detail, full-page cohesion, and a first prompt you could plausibly ship. That “first generation is prod-shaped” thing is real; 4.7 just raised the floor on the rest.`,
   },
   {
-    rank: 2,
+    rank: 3,
     model: "gemini",
     modelLabel: "Gemini 3.1 Pro",
     previewGroup: "with-design-skill",
@@ -34,7 +42,7 @@ export const modelRankings: ModelRanking[] = [
     notes: `What Gemini doesn’t lack is creativity: iterations usually diverge instead of repeating the same layout recipe, and motion is often a strength. Getting it to do exactly what you asked is another story: tooling flakes, outages, brittle instruction-following (that may age fast). In this gallery it’s strong at inventing new directions; next to Claude it falls short for tight, iterative UI polish.`,
   },
   {
-    rank: 3,
+    rank: 4,
     model: "composer-2.0",
     modelLabel: "Composer 2.0",
     previewGroup: "with-design-skill",
@@ -44,7 +52,7 @@ export const modelRankings: ModelRanking[] = [
 It still has Composer sickness: it does the bare minimum. Landings here tend to be one screen tall (nothing to scroll), because it rarely goes past what you literally asked.`,
   },
   {
-    rank: 4,
+    rank: 5,
     model: "gpt-5.4",
     modelLabel: "GPT-5.4",
     previewGroup: "with-design-skill",
@@ -52,7 +60,7 @@ It still has Composer sickness: it does the bare minimum. Landings here tend to 
     notes: `In the beginning there was nothing; then Sam Altman gave us cards. Cards, cards, cards galore: the pattern stack gets played out fast, and the whole thing trends tasteless even when individual choices look “fine.” If you already know exactly what you want, you can steer it; otherwise it’s a lot of default UI noise.`,
   },
   {
-    rank: 5,
+    rank: 6,
     model: "kimi-k-2.5",
     modelLabel: "Kimi K 2.5",
     previewGroup: "with-design-skill",
@@ -60,12 +68,20 @@ It still has Composer sickness: it does the bare minimum. Landings here tend to 
     notes: `Results are middling: animation is fine, but stacked against GPT‑5.4 at its best I’m not sure it wins on overall polish; it’s close enough to feel like a toss-up, and GPT’s own card habit is partly what keeps the race tight. Again: comparative picks in this bench, not a universal law.`,
   },
   {
-    rank: 6,
+    rank: 7,
     model: "composer-1.5",
     modelLabel: "Composer 1.5",
     previewGroup: "with-design-skill",
     bestIteration: "4",
     notes: `Taste isn’t the main problem; delivery is. You ask for a landing page and get something more like a square with three sentences (minimal to the point of not doing the job), so it loses points on ambition and creative range for the brief.`,
+  },
+  {
+    rank: 8,
+    model: "kimi-k-2.6",
+    modelLabel: "Kimi K 2.6",
+    previewGroup: "with-design-skill",
+    bestIteration: "1",
+    notes: `Bench slot for Kimi K 2.6; update notes after the gallery run is reviewed.`,
   },
 ];
 

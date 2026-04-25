@@ -5,9 +5,12 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "predev": "node scripts/scope-variant-css.mjs",
+    "prebuild": "node scripts/scope-variant-css.mjs",
     "start": "next start",
     "lint": "eslint",
     "capture-previews": "node scripts/capture-previews.mjs",
+    "scope:variant-css": "node scripts/scope-variant-css.mjs",
     "test:routes": "playwright test tests/gallery-routes.spec.ts",
     "test:visual": "playwright test tests/gallery-visual-smoke.spec.ts"
   },
@@ -30,6 +33,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.2.0",
+    "postcss-selector-parser": "^7.1.1",
     "sharp": "^0.34.5",
     "tailwindcss": "^4",
     "typescript": "^5"

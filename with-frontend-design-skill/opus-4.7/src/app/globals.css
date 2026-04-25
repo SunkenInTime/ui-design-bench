@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-fraunces: var(--font-fraunces);
+  --font-eb-garamond: var(--font-eb-garamond);
+  --font-vt323: var(--font-vt323);
+  --font-ibm-plex-mono: var(--font-ibm-plex-mono);
+  --font-instrument-serif: var(--font-instrument-serif);
+  --font-caveat: var(--font-caveat);
+  --font-cormorant: var(--font-cormorant);
+  --font-archivo-black: var(--font-archivo-black);
+  --font-jetbrains-mono: var(--font-jetbrains-mono);
+  --font-shippori: var(--font-shippori);
+  --font-inter-tight: var(--font-inter-tight);
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Defaults — individual pages override. */
+body {
+  font-family: var(--font-inter-tight), ui-sans-serif, system-ui, sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Each iteration declares its own switcher theming via these vars. */
+:root {
+  --switcher-bg: rgba(0, 0, 0, 0.78);
+  --switcher-border: rgba(255, 255, 255, 0.12);
+  --switcher-fg: #f4f3ee;
+  --switcher-accent: #ffffff;
+  --switcher-muted: rgba(244, 243, 238, 0.45);
+}

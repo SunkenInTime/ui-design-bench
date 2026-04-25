@@ -14,8 +14,12 @@ const MODEL_TO_LAB: Record<ModelSlug, ModelLab> = {
   "glm-5-turbo": { slug: "z-ai", label: "Z.ai" },
   "glm-5.1": { slug: "z-ai", label: "Z.ai" },
   "gpt-5.4": { slug: "gpt", label: "GPT" },
+  "gpt-5.5-low": { slug: "gpt", label: "GPT" },
+  "gpt-5.5-high": { slug: "gpt", label: "GPT" },
   "kimi-k-2.5": { slug: "moonshot", label: "Moonshot" },
+  "kimi-k-2.6": { slug: "moonshot", label: "Moonshot" },
   "opus-4.6": { slug: "anthropic", label: "Anthropic" },
+  "opus-4.7": { slug: "anthropic", label: "Anthropic" },
 };
 
 export const LAB_OPTIONS: ModelLab[] = [
