@@ -27,9 +27,11 @@ type GuessOption = {
   logoPath: string;
 };
 
-const TOTAL_ROUNDS = 6;
+const TOTAL_ROUNDS = 5;
 const MAX_GUESSES = 3;
 const ROUND_ADVANCE_DELAY_MS = 950;
+const WRONG_GUESS_SHAKE_MS = 420;
+const CORRECT_GUESS_POP_MS = 620;
 
 const pickerTriggerClass =
   "flex w-full min-w-0 cursor-pointer items-center gap-2 rounded-lg border border-[var(--gallery-border)] bg-white/85 px-3 py-2.5 text-left text-sm font-medium text-neutral-900 shadow-[0_1px_2px_rgba(0,0,0,0.04)] backdrop-blur-[12px] transition outline-none hover:border-neutral-300 hover:bg-white focus-visible:border-[var(--gallery-accent)] focus-visible:ring-1 focus-visible:ring-[var(--gallery-accent)]";
@@ -37,9 +39,10 @@ const pickerTriggerClass =
 const pickerListClass =
   "absolute inset-x-0 bottom-[calc(100%+0.25rem)] z-20 flex max-h-60 flex-col gap-1.5 overflow-auto rounded-lg border border-[var(--gallery-border)] bg-[var(--gallery-body-bg)] p-2";
 
-const pickerOptionClass = (selected: boolean) =>
+const pickerOptionClass = (selected: boolean, disabled = false) =>
   clsx(
-    "flex w-full cursor-pointer items-center gap-2.5 rounded-md px-3 py-2.5 text-left text-sm transition-colors duration-150",
+    "flex w-full items-center gap-2.5 rounded-md px-3 py-2.5 text-left text-sm transition-colors duration-150",
+    disabled ? "cursor-not-allowed" : "cursor-pointer",
     selected
       ? "bg-[var(--gallery-accent)]/12 text-neutral-900 hover:bg-[var(--gallery-accent)]/20"
       : "bg-white text-neutral-800 hover:bg-[var(--gallery-accent)]/10 hover:text-neutral-950",
@@ -198,8 +201,12 @@ export function ModelLabWordle() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [selectedGuess, setSelectedGuess] = useState<LabSlug | null>(null);
   const [isAdvancing, setIsAdvancing] = useState(false);
+  const [shakeWrongGuess, setShakeWrongGuess] = useState(false);
+  const [popCorrectGuess, setPopCorrectGuess] = useState(false);
   const [shareCopied, setShareCopied] = useState(false);
   const advanceTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const shakeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const correctTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const shareTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const dropdownRef = useRef<HTMLDivElement | null>(null);
 
@@ -279,6 +286,12 @@ export function ModelLabWordle() {
       if (advanceTimerRef.current !== null) {
         clearTimeout(advanceTimerRef.current);
       }
+      if (shakeTimerRef.current !== null) {
+        clearTimeout(shakeTimerRef.current);
+      }
+      if (correctTimerRef.current !== null) {
+        clearTimeout(correctTimerRef.current);
+      }
       if (shareTimerRef.current !== null) {
         clearTimeout(shareTimerRef.current);
       }
@@ -332,19 +345,43 @@ export function ModelLabWordle() {
     if (activeRound.attempts.length >= MAX_GUESSES || activeRound.solved) return;
 
     const guess = selectedGuess;
+    const isCorrectGuess = guess === activeRound.answer;
     const updatedRounds = rounds.map((round, index) => {
       if (index !== currentRound) return round;
       const attempts = [...round.attempts, guess];
       return {
         ...round,
         attempts,
-        solved: guess === round.answer,
+        solved: isCorrectGuess,
       };
     });
 
     setRounds(updatedRounds);
     setSelectedGuess(null);
     setDropdownOpen(false);
+
+    if (isCorrectGuess) {
+      if (correctTimerRef.current !== null) {
+        clearTimeout(correctTimerRef.current);
+      }
+      setPopCorrectGuess(false);
+      requestAnimationFrame(() => {
+        setPopCorrectGuess(true);
+        correctTimerRef.current = setTimeout(() => {
+          setPopCorrectGuess(false);
+          correctTimerRef.current = null;
+        }, CORRECT_GUESS_POP_MS);
+      });
+    } else {
+      if (shakeTimerRef.current !== null) {
+        clearTimeout(shakeTimerRef.current);
+      }
+      setShakeWrongGuess(true);
+      shakeTimerRef.current = setTimeout(() => {
+        setShakeWrongGuess(false);
+        shakeTimerRef.current = null;
+      }, WRONG_GUESS_SHAKE_MS);
+    }
 
     const updatedRound = updatedRounds[currentRound];
     if (updatedRound.solved || updatedRound.attempts.length >= MAX_GUESSES) {
@@ -357,6 +394,14 @@ export function ModelLabWordle() {
       clearTimeout(advanceTimerRef.current);
       advanceTimerRef.current = null;
     }
+    if (shakeTimerRef.current !== null) {
+      clearTimeout(shakeTimerRef.current);
+      shakeTimerRef.current = null;
+    }
+    if (correctTimerRef.current !== null) {
+      clearTimeout(correctTimerRef.current);
+      correctTimerRef.current = null;
+    }
     if (shareTimerRef.current !== null) {
       clearTimeout(shareTimerRef.current);
       shareTimerRef.current = null;
@@ -367,6 +412,8 @@ export function ModelLabWordle() {
     setDropdownOpen(false);
     setSelectedGuess(null);
     setIsAdvancing(false);
+    setShakeWrongGuess(false);
+    setPopCorrectGuess(false);
     setShareCopied(false);
   }
 
@@ -460,6 +507,8 @@ export function ModelLabWordle() {
                         pickerTriggerClass,
                         "relative w-full overflow-hidden",
                         wrongGuessCount > 0 && "border-rose-300",
+                        shakeWrongGuess && "lab-wrong-shake",
+                        popCorrectGuess && "lab-correct-pop",
                         isAdvancing && "cursor-default opacity-80",
                       )}
                     >
@@ -501,6 +550,7 @@ export function ModelLabWordle() {
                         {GUESS_OPTIONS.map((option) => {
                           const alreadyGuessed = activeRound.attempts.includes(option.slug);
                           const tone = getGuessTone(activeRound, option.slug, selectedGuess);
+                          const disabled = alreadyGuessed || isAdvancing;
 
                           return (
                             <button
@@ -512,14 +562,14 @@ export function ModelLabWordle() {
                                   setDropdownOpen(false);
                                 }
                               }}
-                              disabled={alreadyGuessed || isAdvancing}
+                              disabled={disabled}
                               className={clsx(
-                                pickerOptionClass(tone === "maybe"),
-                                alreadyGuessed || isAdvancing
-                                  ? "cursor-not-allowed opacity-60"
-                                  : "",
-                                tone === "yes" && "bg-emerald-100 text-neutral-900 hover:bg-emerald-200",
-                                tone === "no" && "bg-rose-50 text-neutral-700 hover:bg-rose-100",
+                                pickerOptionClass(tone === "maybe", disabled),
+                                disabled && "opacity-60",
+                                tone === "yes" &&
+                                  "bg-emerald-100 text-neutral-900 hover:bg-emerald-200",
+                                tone === "no" &&
+                                  "bg-rose-100 text-rose-800 hover:bg-rose-100",
                               )}
                             >
                               <span className="flex min-w-0 flex-1 items-center gap-3">
@@ -555,6 +605,8 @@ export function ModelLabWordle() {
                       "border-[var(--gallery-accent)] bg-[var(--gallery-accent)] text-[var(--gallery-accent-foreground)] hover:bg-[color-mix(in_srgb,var(--gallery-accent)_88%,black)]",
                     guessButtonTone === "idle" &&
                       "border-[color-mix(in_srgb,var(--gallery-accent)_20%,white)] bg-[color-mix(in_srgb,var(--gallery-accent)_10%,white)] text-[var(--gallery-accent)]",
+                    shakeWrongGuess && "lab-wrong-shake",
+                    popCorrectGuess && "lab-correct-pop overflow-hidden",
                   )}
                 >
                   {guessButtonLabel}
