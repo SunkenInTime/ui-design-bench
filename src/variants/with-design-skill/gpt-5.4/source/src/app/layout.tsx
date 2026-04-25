@@ -6,7 +6,7 @@ import {
   IBM_Plex_Sans,
 } from "next/font/google";
 
-import "./globals.css";
+import "@/generated/scoped-variant-css/with-design-skill/gpt-5.4/source/src/app/globals.css";
 
 const bodyFont = IBM_Plex_Sans({
   variable: "--font-body",

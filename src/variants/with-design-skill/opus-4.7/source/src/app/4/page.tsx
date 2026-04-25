@@ -1,5 +1,5 @@
 import Link from "next/link";
-import "./index04.css";
+import "@/generated/scoped-variant-css/with-design-skill/opus-4.7/source/src/app/4/index04.css";
 
 export default function BrutalistPage() {
   return (

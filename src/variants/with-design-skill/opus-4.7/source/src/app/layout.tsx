@@ -12,7 +12,7 @@ import {
   Shippori_Mincho,
   Inter_Tight,
 } from "next/font/google";
-import "./globals.css";
+import "@/generated/scoped-variant-css/with-design-skill/opus-4.7/source/src/app/globals.css";
 
 const fraunces = Fraunces({
   variable: "--font-fraunces",

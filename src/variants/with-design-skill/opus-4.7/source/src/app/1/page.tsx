@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import "./codex.css";
+import "@/generated/scoped-variant-css/with-design-skill/opus-4.7/source/src/app/1/codex.css";
 
 export default function CodexPage() {
   return (

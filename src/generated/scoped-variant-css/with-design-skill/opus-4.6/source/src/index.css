@@ -1,0 +1,33 @@
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-4.6"]) *,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-4.6"])  *::before,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-4.6"])  *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-4.6"]) {
+  scroll-behavior: smooth;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-4.6"]) {
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-4.6"]) img,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-4.6"])  picture,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-4.6"])  video,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-4.6"])  canvas,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-4.6"])  svg {
+  display: block;
+  max-width: 100%;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-4.6"]) input,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-4.6"])  button,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-4.6"])  textarea,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-4.6"])  select {
+  font: inherit;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-4.6"]) a {
+  text-decoration: none;
+  color: inherit;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-4.6"]) ul,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-4.6"])  ol {
+  list-style: none;
+}

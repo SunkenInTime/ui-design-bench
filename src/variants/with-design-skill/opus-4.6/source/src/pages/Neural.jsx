@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { motion } from 'motion/react'
-import './Neural.css'
+import '@/generated/scoped-variant-css/with-design-skill/opus-4.6/source/src/pages/Neural.css';
 
 function TerminalLine({ text, delay = 0 }) {
   const [displayed, setDisplayed] = useState('')

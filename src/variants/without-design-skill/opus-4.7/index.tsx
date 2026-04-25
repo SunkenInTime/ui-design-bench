@@ -1,6 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import type { VariantModule } from "@/lib/gallery-types";
-import "@/variants/without-design-skill/opus-4.7/source/src/app/globals.css";
+import "@/generated/scoped-variant-css/without-design-skill/opus-4.7/source/src/app/globals.css";
 import Page1 from "@/variants/without-design-skill/opus-4.7/source/src/app/(landing-iterations)/one/page";
 import Page2 from "@/variants/without-design-skill/opus-4.7/source/src/app/(landing-iterations)/two/page";
 import Page3 from "@/variants/without-design-skill/opus-4.7/source/src/app/(landing-iterations)/three/page";

@@ -1,0 +1,16 @@
+:where(.gallery-generation[data-gallery-group="without-design-skill"][data-gallery-model="kimi-k-2.6"]) {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :where(.gallery-generation[data-gallery-group="without-design-skill"][data-gallery-model="kimi-k-2.6"]) {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+:where(.gallery-generation[data-gallery-group="without-design-skill"][data-gallery-model="kimi-k-2.6"]) {
+  background: var(--background);
+  color: var(--foreground);
+}

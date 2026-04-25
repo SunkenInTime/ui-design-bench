@@ -1,0 +1,117 @@
+/* Iteration 4: Luxury / refined - deep navy, gold accents */
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="composer-1.5"]) .iteration-4 {
+  --iter4-bg: #0f1419;
+  --iter4-fg: #f5f0e6;
+  --iter4-gold: #c9a227;
+  --iter4-gold-dim: rgba(201, 162, 39, 0.8);
+  --iter4-muted: #8a8a8a;
+  min-height: 100vh;
+  background: var(--iter4-bg);
+  color: var(--iter4-fg);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="composer-1.5"]) .iteration-4 .design-switcher {
+  --switcher-bg: rgba(245, 240, 230, 0.06);
+  --switcher-fg: var(--iter4-fg);
+  --switcher-active: var(--iter4-gold);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="composer-1.5"]) .iteration-4 .design-switcher__btn--active {
+  background: var(--iter4-gold);
+  color: var(--iter4-bg);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="composer-1.5"]) .iteration-4__main {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 60px);
+  padding: 3rem 2rem;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="composer-1.5"]) .iteration-4__noise {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  opacity: 0.03;
+  pointer-events: none;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="composer-1.5"]) .iteration-4__content {
+  position: relative;
+  max-width: 42rem;
+  text-align: center;
+  animation: gallery-with-design-skill-composer-1-5-source-src-app-4-iteration-4-iter4-reveal 1.2s ease-out both;
+}
+
+@keyframes gallery-with-design-skill-composer-1-5-source-src-app-4-iteration-4-iter4-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="composer-1.5"]) .iteration-4__ornament {
+  width: 40px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--iter4-gold),
+    transparent
+  );
+  margin: 0 auto 2rem;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="composer-1.5"]) .iteration-4__eyebrow {
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--iter4-gold);
+  margin-bottom: 1.5rem;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="composer-1.5"]) .iteration-4__headline {
+  font-size: clamp(3rem, 8vw, 5rem);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: 0.02em;
+  margin-bottom: 1.5rem;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="composer-1.5"]) .iteration-4__headline-accent {
+  color: var(--iter4-gold);
+  font-style: italic;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="composer-1.5"]) .iteration-4__body {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: var(--iter4-muted);
+  margin-bottom: 2.5rem;
+  max-width: 38ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="composer-1.5"]) .iteration-4__cta {
+  display: inline-block;
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--iter4-gold);
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  border: 1px solid var(--iter4-gold-dim);
+  transition: background 0.2s, color 0.2s;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="composer-1.5"]) .iteration-4__cta:hover {
+  background: var(--iter4-gold);
+  color: var(--iter4-bg);
+}

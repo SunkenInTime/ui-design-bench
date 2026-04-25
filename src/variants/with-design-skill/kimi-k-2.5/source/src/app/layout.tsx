@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import "./globals.css";
+import "@/generated/scoped-variant-css/with-design-skill/kimi-k-2.5/source/src/app/globals.css";
 import { DesignSwitcher } from "@/variants/with-design-skill/kimi-k-2.5/source/src/components/DesignSwitcher";
 
 export const metadata: Metadata = {

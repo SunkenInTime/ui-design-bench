@@ -96,8 +96,31 @@ test("gallery switcher text colors stay isolated from generated variant CSS", as
 
   expect(switcherColors).toEqual({
     active: "rgb(250, 250, 250)",
-    inactive: "rgb(63, 63, 70)",
-    home: "rgb(63, 63, 70)",
+    inactive: "rgb(82, 82, 82)",
+    home: "lab(34.924 0 0)",
+  });
+
+  const cssVariables = await page.evaluate(() => {
+    const generation = document.querySelector<HTMLElement>("[data-gallery-generation]");
+    if (!generation) {
+      throw new Error("Missing generation scope");
+    }
+
+    return {
+      rootBackground: window
+        .getComputedStyle(document.documentElement)
+        .getPropertyValue("--background")
+        .trim(),
+      generationBackground: window
+        .getComputedStyle(generation)
+        .getPropertyValue("--background")
+        .trim(),
+    };
+  });
+
+  expect(cssVariables).toEqual({
+    rootBackground: "",
+    generationBackground: "#fbfaf6",
   });
 });
 

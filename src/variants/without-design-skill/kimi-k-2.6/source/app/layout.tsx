@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import "@/generated/scoped-variant-css/without-design-skill/kimi-k-2.6/source/app/globals.css";
 import { DesignSwitcher } from "./DesignSwitcher";
 
 const geistSans = Geist({

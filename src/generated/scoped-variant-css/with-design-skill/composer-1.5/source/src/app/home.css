@@ -1,0 +1,70 @@
+/* Home / design picker */
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="composer-1.5"]) .home {
+  min-height: 100vh;
+  background: #0a0a0a;
+  color: #fafafa;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="composer-1.5"]) .home .design-switcher {
+  --switcher-bg: rgba(255, 255, 255, 0.08);
+  --switcher-fg: #fafafa;
+  --switcher-active: #6366f1;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="composer-1.5"]) .home__main {
+  padding: 6rem 2rem 4rem;
+  max-width: 56rem;
+  margin: 0 auto;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="composer-1.5"]) .home__title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="composer-1.5"]) .home__subtitle {
+  color: #a1a1aa;
+  margin-bottom: 3rem;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="composer-1.5"]) .home__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 1rem;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="composer-1.5"]) .home__card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 1.25rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.5rem;
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.2s, border-color 0.2s, transform 0.2s;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="composer-1.5"]) .home__card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="composer-1.5"]) .home__card-num {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #6366f1;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="composer-1.5"]) .home__card-name {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="composer-1.5"]) .home__card-desc {
+  font-size: 0.8rem;
+  color: #71717a;
+}

@@ -1,0 +1,21 @@
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-4.7"]),:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-4.7"]) {
+  margin: 0;
+  padding: 0;
+}
+
+/* Defaults — individual pages override. */
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-4.7"]) {
+  font-family: var(--font-inter-tight), ui-sans-serif, system-ui, sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Each iteration declares its own switcher theming via these vars. */
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-4.7"]) {
+  --switcher-bg: rgba(0, 0, 0, 0.78);
+  --switcher-border: rgba(255, 255, 255, 0.12);
+  --switcher-fg: #f4f3ee;
+  --switcher-accent: #ffffff;
+  --switcher-muted: rgba(244, 243, 238, 0.45);
+}

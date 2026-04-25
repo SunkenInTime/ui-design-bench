@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import IterationSwitcher from "./_components/IterationSwitcher";
-import "./globals.css";
+import "@/generated/scoped-variant-css/without-design-skill/glm-5.1/source/app/globals.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

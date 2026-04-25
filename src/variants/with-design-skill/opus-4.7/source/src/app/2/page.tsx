@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import "./memex.css";
+import "@/generated/scoped-variant-css/with-design-skill/opus-4.7/source/src/app/2/memex.css";
 
 export default function MemexPage() {
   const [tick, setTick] = useState(0);

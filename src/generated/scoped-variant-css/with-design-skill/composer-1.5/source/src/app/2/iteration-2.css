@@ -1,0 +1,111 @@
+/* Iteration 2: Retro-futuristic / CRT terminal */
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="composer-1.5"]) .iteration-2 {
+  --iter2-bg: #0d1117;
+  --iter2-fg: #39ff14;
+  --iter2-glow: rgba(57, 255, 20, 0.6);
+  min-height: 100vh;
+  background: var(--iter2-bg);
+  color: var(--iter2-fg);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="composer-1.5"]) .iteration-2 .design-switcher {
+  --switcher-bg: rgba(57, 255, 20, 0.08);
+  --switcher-fg: var(--iter2-fg);
+  --switcher-active: var(--iter2-fg);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="composer-1.5"]) .iteration-2 .design-switcher__btn--active {
+  background: var(--iter2-fg);
+  color: var(--iter2-bg);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="composer-1.5"]) .iteration-2__main {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 60px);
+  padding: 3rem 2rem;
+  overflow: hidden;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="composer-1.5"]) .iteration-2__scanlines {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.15) 2px,
+    rgba(0, 0, 0, 0.15) 4px
+  );
+  pointer-events: none;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="composer-1.5"]) .iteration-2__content {
+  position: relative;
+  max-width: 40rem;
+  animation: gallery-with-design-skill-composer-1-5-source-src-app-2-iteration-2-iter2-boot 1.2s ease-out both;
+}
+
+@keyframes gallery-with-design-skill-composer-1-5-source-src-app-2-iteration-2-iter2-boot {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="composer-1.5"]) .iteration-2__prompt {
+  font-size: 0.875rem;
+  margin-bottom: 1.5rem;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="composer-1.5"]) .iteration-2__cursor {
+  animation: gallery-with-design-skill-composer-1-5-source-src-app-2-iteration-2-iter2-blink 1s step-end infinite;
+}
+
+@keyframes gallery-with-design-skill-composer-1-5-source-src-app-2-iteration-2-iter2-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="composer-1.5"]) .iteration-2__headline {
+  font-size: clamp(1.5rem, 4vw, 2.25rem);
+  font-weight: 500;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 0 20px var(--iter2-glow);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="composer-1.5"]) .iteration-2__glow {
+  text-shadow: 0 0 30px var(--iter2-glow), 0 0 60px var(--iter2-glow);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="composer-1.5"]) .iteration-2__body {
+  font-size: 1rem;
+  line-height: 1.8;
+  opacity: 0.9;
+  margin-bottom: 2.5rem;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="composer-1.5"]) .iteration-2__cta {
+  display: inline-block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--iter2-fg);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--iter2-fg);
+  transition: box-shadow 0.2s, background 0.2s;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="composer-1.5"]) .iteration-2__cta:hover {
+  background: rgba(57, 255, 20, 0.1);
+  box-shadow: 0 0 20px var(--iter2-glow);
+}

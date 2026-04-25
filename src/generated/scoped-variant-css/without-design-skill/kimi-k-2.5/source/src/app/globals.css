@@ -1,0 +1,45 @@
+:where(.gallery-generation[data-gallery-group="without-design-skill"][data-gallery-model="kimi-k-2.5"]) {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :where(.gallery-generation[data-gallery-group="without-design-skill"][data-gallery-model="kimi-k-2.5"]) {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+:where(.gallery-generation[data-gallery-group="without-design-skill"][data-gallery-model="kimi-k-2.5"]) {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Animation for Design Three - Colorful Creative */
+@keyframes gallery-without-design-skill-kimi-k-2-5-source-src-app-globals-blob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+:where(.gallery-generation[data-gallery-group="without-design-skill"][data-gallery-model="kimi-k-2.5"]) .animate-blob {
+  animation: gallery-without-design-skill-kimi-k-2-5-source-src-app-globals-blob 7s infinite;
+}
+
+:where(.gallery-generation[data-gallery-group="without-design-skill"][data-gallery-model="kimi-k-2.5"]) .animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+:where(.gallery-generation[data-gallery-group="without-design-skill"][data-gallery-model="kimi-k-2.5"]) .animation-delay-4000 {
+  animation-delay: 4s;
+}

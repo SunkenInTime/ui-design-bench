@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import "./mycelia.css";
+import "@/generated/scoped-variant-css/with-design-skill/opus-4.7/source/src/app/3/mycelia.css";
 
 export default function MyceliaPage() {
   return (

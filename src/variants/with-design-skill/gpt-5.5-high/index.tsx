@@ -4,7 +4,7 @@ import Page2 from "@/variants/with-design-skill/gpt-5.5-high/source/src/app/two/
 import Page3 from "@/variants/with-design-skill/gpt-5.5-high/source/src/app/three/page";
 import Page4 from "@/variants/with-design-skill/gpt-5.5-high/source/src/app/four/page";
 import Page5 from "@/variants/with-design-skill/gpt-5.5-high/source/src/app/five/page";
-import "@/variants/with-design-skill/gpt-5.5-high/source/src/app/globals.css";
+import "@/generated/scoped-variant-css/with-design-skill/gpt-5.5-high/source/src/app/globals.css";
 
 const pages = {
   "1": Page1,
