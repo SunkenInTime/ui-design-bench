@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { LandingVariant, variants } from "./landing-data";
+import { LandingVariant } from "./landing-data";
 
 type LandingPageProps = {
   variant: LandingVariant;
@@ -13,30 +13,6 @@ export function LandingPage({ variant }: LandingPageProps) {
           <Link href={`/${variant.slug}`} className="text-xl font-semibold">
             {variant.name}
           </Link>
-          <nav
-            aria-label="Landing page iterations"
-            className="flex items-center gap-1 rounded-full border border-current/15 bg-white/35 p-1 shadow-sm backdrop-blur"
-          >
-            {variants.map((item) => {
-              const isActive = item.slug === variant.slug;
-
-              return (
-                <Link
-                  key={item.slug}
-                  href={`/${item.slug}`}
-                  aria-current={isActive ? "page" : undefined}
-                  className={`flex h-9 min-w-9 items-center justify-center rounded-full px-3 text-sm font-semibold transition ${
-                    isActive
-                      ? variant.accent
-                      : "text-current/70 hover:bg-current/10 hover:text-current"
-                  }`}
-                  title={`View iteration ${item.label}`}
-                >
-                  {item.label}
-                </Link>
-              );
-            })}
-          </nav>
         </header>
 
         <section className="grid flex-1 items-center gap-10 py-10 lg:grid-cols-[1.02fr_0.98fr] lg:py-12">
