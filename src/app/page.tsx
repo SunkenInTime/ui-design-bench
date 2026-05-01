@@ -11,6 +11,7 @@ import { galleryManifest } from "@/lib/gallery-manifest";
 export default function HomePage() {
   const groups = [
     "with-design-skill",
+    "with-ui-sh-skill",
     "without-design-skill",
     "miscellaneous",
   ] as const;
@@ -103,6 +104,8 @@ export default function HomePage() {
                         Design Skill
                       </Link>
                     </>
+                  ) : group === "with-ui-sh-skill" ? (
+                    "With UI SH Skill"
                   ) : group === "miscellaneous" ? (
                     <>
                       With{" "}

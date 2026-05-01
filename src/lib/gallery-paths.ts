@@ -25,6 +25,7 @@ export function buildModelHref(group: GalleryGroupSlug, model: ModelSlug): strin
 export function isGalleryGroup(value: string): value is GalleryGroupSlug {
   return (
     value === "with-design-skill" ||
+    value === "with-ui-sh-skill" ||
     value === "without-design-skill" ||
     value === "miscellaneous"
   );

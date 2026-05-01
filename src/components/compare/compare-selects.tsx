@@ -9,6 +9,7 @@ import { getModelBrandLogoPath } from "@/lib/model-brand-logo";
 
 const GROUP_ICONS: Record<GalleryGroupSlug, typeof Sparkles> = {
   "with-design-skill": Sparkles,
+  "with-ui-sh-skill": Sparkles,
   "without-design-skill": Code2,
   miscellaneous: Layers,
 };

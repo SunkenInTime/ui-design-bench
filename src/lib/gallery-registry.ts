@@ -11,6 +11,10 @@ import withOpus from "@/variants/with-design-skill/opus-4.6";
 import withOpus47 from "@/variants/with-design-skill/opus-4.7";
 import withGlm5Turbo from "@/variants/with-design-skill/glm-5-turbo";
 import withGlm51 from "@/variants/with-design-skill/glm-5.1";
+import withUiShComposer20 from "@/variants/with-ui-sh-skill/composer-2.0";
+import withUiShGpt55Low from "@/variants/with-ui-sh-skill/gpt-5.5-low";
+import withUiShGpt55High from "@/variants/with-ui-sh-skill/gpt-5.5-high";
+import withUiShOpus47 from "@/variants/with-ui-sh-skill/opus-4.7";
 import miscGpt54 from "@/variants/miscellaneous/gpt-5.4";
 import withoutComposer15 from "@/variants/without-design-skill/composer-1.5";
 import withoutComposer20 from "@/variants/without-design-skill/composer-2.0";
@@ -40,6 +44,10 @@ const registry: Partial<Record<RegistryKey, VariantModule>> = {
   "with-design-skill:opus-4.7": withOpus47,
   "with-design-skill:glm-5-turbo": withGlm5Turbo,
   "with-design-skill:glm-5.1": withGlm51,
+  "with-ui-sh-skill:composer-2.0": withUiShComposer20,
+  "with-ui-sh-skill:gpt-5.5-low": withUiShGpt55Low,
+  "with-ui-sh-skill:gpt-5.5-high": withUiShGpt55High,
+  "with-ui-sh-skill:opus-4.7": withUiShOpus47,
   "miscellaneous:gpt-5.4": miscGpt54,
   "without-design-skill:composer-1.5": withoutComposer15,
   "without-design-skill:composer-2.0": withoutComposer20,

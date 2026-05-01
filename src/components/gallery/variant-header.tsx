@@ -17,14 +17,17 @@ export function VariantSwitcher({
   const groupLabel =
     entry.group === "with-design-skill"
       ? "With Design Skill"
-      : entry.group === "without-design-skill"
-        ? "Without skill"
-        : entry.groupLabel;
+      : entry.group === "with-ui-sh-skill"
+        ? "With UI SH Skill"
+        : entry.group === "without-design-skill"
+          ? "Without skill"
+          : entry.groupLabel;
   const isWithDesignSkill = entry.group === "with-design-skill";
+  const isWithUiShSkill = entry.group === "with-ui-sh-skill";
   const isWithoutSkill = entry.group === "without-design-skill";
   const isMiscSkillGroup = entry.group === "miscellaneous";
   const paletteTone =
-    isWithDesignSkill || isMiscSkillGroup
+    isWithDesignSkill || isWithUiShSkill || isMiscSkillGroup
       ? "text-[var(--gallery-accent)]"
       : "text-neutral-400 opacity-55";
 

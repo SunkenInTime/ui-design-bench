@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 
 export type GalleryGroupSlug =
   | "with-design-skill"
+  | "with-ui-sh-skill"
   | "without-design-skill"
   | "miscellaneous";
 export type ModelSlug =
