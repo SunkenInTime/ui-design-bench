@@ -1,0 +1,503 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-05-16T06:50:00Z",
+  "title": "Design System: Which AI Made This?",
+  "extensions": {
+    "colorMeta": {
+      "canvas": {
+        "role": "neutral",
+        "displayName": "Canvas",
+        "canonical": "oklch(98.5% 0 0)",
+        "tonalRamp": [
+          "oklch(20% 0.003 320)",
+          "oklch(32% 0.003 320)",
+          "oklch(45% 0.003 320)",
+          "oklch(58% 0.003 320)",
+          "oklch(70% 0.003 320)",
+          "oklch(82% 0.003 320)",
+          "oklch(92% 0.003 320)",
+          "oklch(98.5% 0 0)"
+        ]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Surface",
+        "canonical": "oklch(100% 0 0)",
+        "tonalRamp": [
+          "oklch(22% 0.003 320)",
+          "oklch(35% 0.003 320)",
+          "oklch(48% 0.003 320)",
+          "oklch(60% 0.003 320)",
+          "oklch(72% 0.003 320)",
+          "oklch(84% 0.003 320)",
+          "oklch(94% 0.003 320)",
+          "oklch(100% 0 0)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "oklch(22.5% 0.003 320)",
+        "tonalRamp": [
+          "oklch(15% 0.003 320)",
+          "oklch(22.5% 0.003 320)",
+          "oklch(32% 0.003 320)",
+          "oklch(45% 0.003 320)",
+          "oklch(58% 0.003 320)",
+          "oklch(72% 0.003 320)",
+          "oklch(85% 0.003 320)",
+          "oklch(95% 0.003 320)"
+        ]
+      },
+      "body": {
+        "role": "neutral",
+        "displayName": "Body",
+        "canonical": "oklch(38% 0.003 320)",
+        "tonalRamp": [
+          "oklch(18% 0.003 320)",
+          "oklch(28% 0.003 320)",
+          "oklch(38% 0.003 320)",
+          "oklch(48% 0.003 320)",
+          "oklch(60% 0.003 320)",
+          "oklch(72% 0.003 320)",
+          "oklch(84% 0.003 320)",
+          "oklch(94% 0.003 320)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted",
+        "canonical": "oklch(45% 0.003 320)",
+        "tonalRamp": [
+          "oklch(20% 0.003 320)",
+          "oklch(32% 0.003 320)",
+          "oklch(45% 0.003 320)",
+          "oklch(56% 0.003 320)",
+          "oklch(67% 0.003 320)",
+          "oklch(78% 0.003 320)",
+          "oklch(88% 0.003 320)",
+          "oklch(96% 0.003 320)"
+        ]
+      },
+      "soft-muted": {
+        "role": "neutral",
+        "displayName": "Soft Muted",
+        "canonical": "oklch(56% 0.003 320)",
+        "tonalRamp": [
+          "oklch(24% 0.003 320)",
+          "oklch(36% 0.003 320)",
+          "oklch(48% 0.003 320)",
+          "oklch(56% 0.003 320)",
+          "oklch(68% 0.003 320)",
+          "oklch(80% 0.003 320)",
+          "oklch(90% 0.003 320)",
+          "oklch(97% 0.003 320)"
+        ]
+      },
+      "whisper": {
+        "role": "neutral",
+        "displayName": "Whisper",
+        "canonical": "oklch(70% 0.003 320)",
+        "tonalRamp": [
+          "oklch(30% 0.003 320)",
+          "oklch(42% 0.003 320)",
+          "oklch(54% 0.003 320)",
+          "oklch(64% 0.003 320)",
+          "oklch(70% 0.003 320)",
+          "oklch(82% 0.003 320)",
+          "oklch(92% 0.003 320)",
+          "oklch(98% 0.003 320)"
+        ]
+      },
+      "divider": {
+        "role": "neutral",
+        "displayName": "Divider",
+        "canonical": "oklch(85% 0.003 320)",
+        "tonalRamp": [
+          "oklch(35% 0.003 320)",
+          "oklch(48% 0.003 320)",
+          "oklch(60% 0.003 320)",
+          "oklch(70% 0.003 320)",
+          "oklch(80% 0.003 320)",
+          "oklch(85% 0.003 320)",
+          "oklch(92% 0.003 320)",
+          "oklch(98% 0.003 320)"
+        ]
+      },
+      "hairline": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "oklch(91% 0.003 320)",
+        "tonalRamp": [
+          "oklch(40% 0.003 320)",
+          "oklch(52% 0.003 320)",
+          "oklch(64% 0.003 320)",
+          "oklch(74% 0.003 320)",
+          "oklch(83% 0.003 320)",
+          "oklch(91% 0.003 320)",
+          "oklch(96% 0.003 320)",
+          "oklch(99% 0.003 320)"
+        ]
+      },
+      "surface-tint": {
+        "role": "neutral",
+        "displayName": "Surface Tint",
+        "canonical": "oklch(96% 0.003 320)",
+        "tonalRamp": [
+          "oklch(35% 0.003 320)",
+          "oklch(48% 0.003 320)",
+          "oklch(60% 0.003 320)",
+          "oklch(70% 0.003 320)",
+          "oklch(82% 0.003 320)",
+          "oklch(90% 0.003 320)",
+          "oklch(96% 0.003 320)",
+          "oklch(99% 0.003 320)"
+        ]
+      },
+      "signal-pink": {
+        "role": "primary",
+        "displayName": "Signal Pink",
+        "canonical": "oklch(60.5% 0.155 350)",
+        "tonalRamp": [
+          "oklch(28% 0.10 350)",
+          "oklch(38% 0.13 350)",
+          "oklch(48% 0.15 350)",
+          "oklch(60.5% 0.155 350)",
+          "oklch(70% 0.13 350)",
+          "oklch(80% 0.09 350)",
+          "oklch(90% 0.05 350)",
+          "oklch(96% 0.02 350)"
+        ]
+      },
+      "signal-pink-foreground": {
+        "role": "primary",
+        "displayName": "Signal Pink Foreground",
+        "canonical": "oklch(98.5% 0 0)",
+        "tonalRamp": [
+          "oklch(22% 0.003 320)",
+          "oklch(34% 0.003 320)",
+          "oklch(48% 0.003 320)",
+          "oklch(62% 0.003 320)",
+          "oklch(76% 0.003 320)",
+          "oklch(88% 0.003 320)",
+          "oklch(95% 0.003 320)",
+          "oklch(98.5% 0 0)"
+        ]
+      },
+      "positive": {
+        "role": "tertiary",
+        "displayName": "Positive (game-only)",
+        "canonical": "oklch(70% 0.14 162)",
+        "tonalRamp": [
+          "oklch(30% 0.10 162)",
+          "oklch(42% 0.13 162)",
+          "oklch(54% 0.15 162)",
+          "oklch(64% 0.15 162)",
+          "oklch(70% 0.14 162)",
+          "oklch(80% 0.10 162)",
+          "oklch(90% 0.06 162)",
+          "oklch(96% 0.03 162)"
+        ]
+      },
+      "positive-soft": {
+        "role": "tertiary",
+        "displayName": "Positive Soft (game-only)",
+        "canonical": "oklch(78% 0.13 162)"
+      },
+      "warning": {
+        "role": "tertiary",
+        "displayName": "Warning (game-only)",
+        "canonical": "oklch(82% 0.15 78)"
+      },
+      "error": {
+        "role": "tertiary",
+        "displayName": "Error (game-only)",
+        "canonical": "oklch(65% 0.22 18)",
+        "tonalRamp": [
+          "oklch(30% 0.15 18)",
+          "oklch(42% 0.18 18)",
+          "oklch(54% 0.20 18)",
+          "oklch(65% 0.22 18)",
+          "oklch(74% 0.17 18)",
+          "oklch(84% 0.11 18)",
+          "oklch(92% 0.06 18)",
+          "oklch(97% 0.02 18)"
+        ]
+      },
+      "error-soft": {
+        "role": "tertiary",
+        "displayName": "Error Soft (game-only)",
+        "canonical": "oklch(80% 0.10 18)"
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "H1 on the home, compare, lab-guess, and rankings pages at the sm+ breakpoint."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "H1 at the mobile breakpoint (one step down from Display)."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Section headings: the 'With Design Skill' group labels and the rankings model name."
+      },
+      "subtitle": {
+        "displayName": "Subtitle",
+        "purpose": "Card titles. The model name on each gallery card."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Long-form prose: home intro, rankings notes, compare subtitle. Cap at 65–75ch."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Field labels in compare selects, micro-meta, nav text."
+      },
+      "eyebrow": {
+        "displayName": "Eyebrow",
+        "purpose": "Wide-tracked uppercase. Lab-Guess results card only."
+      }
+    },
+    "shadows": [
+      {
+        "name": "hairline-lift",
+        "value": "0 1px 2px rgba(0,0,0,0.04)",
+        "purpose": "Always-on micro-elevation for the floating glass nav, glass dropdowns, and compare action buttons. Reads as a hint of float, not as lift."
+      },
+      {
+        "name": "card-hover",
+        "value": "0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1)",
+        "purpose": "Gallery cards on hover, paired with translateY(-6px). The one moment of visible elevation in the gallery."
+      },
+      {
+        "name": "tooltip",
+        "value": "0 4px 20px rgba(0,0,0,0.1)",
+        "purpose": "Variant-switcher tooltip surfaces. Softer and wider than card-hover."
+      },
+      {
+        "name": "toast",
+        "value": "0 8px 30px rgba(0,0,0,0.12)",
+        "purpose": "'Link copied' spring-in confirmation. Earns its taller lift by disappearing in 2.2s."
+      },
+      {
+        "name": "correct-ring",
+        "value": "0 0 0 5px rgba(16,185,129,0.16), 0 12px 28px rgba(16,185,129,0.18)",
+        "purpose": "Mid-animation peak of the Lab-Guess correct-pop. Lives inside the lab-correct-pop keyframe; never use as static shadow."
+      },
+      {
+        "name": "perfect-ring",
+        "value": "0 0 0 6px rgba(16,185,129,0.06)",
+        "purpose": "Outer ring on the Lab-Guess results card, only when the player achieves a perfect 5/5 run."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out-quart",
+        "value": "cubic-bezier(0.22, 1, 0.36, 1)",
+        "purpose": "Default ease for state morphs (nav label crossfade, AnimatePresence transitions). Exponential ease-out; no overshoot."
+      },
+      {
+        "name": "ease-correct-pop",
+        "value": "cubic-bezier(0.2, 0.8, 0.2, 1)",
+        "purpose": "Lab-Guess correct-pop scale curve. Snappy in, settled out, no bounce."
+      },
+      {
+        "name": "spring-tap",
+        "value": "spring(stiffness: 520, damping: 28)",
+        "purpose": "framer-motion whileTap on icon buttons (compare swap, copy link). Tactile micro-press feedback."
+      },
+      {
+        "name": "spring-toast",
+        "value": "spring(stiffness: 420, damping: 28)",
+        "purpose": "'Link copied' toast enter/exit. Slightly softer than tap; the toast is a notification, not a press."
+      },
+      {
+        "name": "duration-color",
+        "value": "150ms",
+        "purpose": "Default duration for transition-colors on links, chips, buttons."
+      },
+      {
+        "name": "duration-state",
+        "value": "200ms",
+        "purpose": "Default duration for transition on backgrounds, borders, opacity."
+      },
+      {
+        "name": "duration-morph",
+        "value": "220ms",
+        "purpose": "Nav label / icon AnimatePresence crossfade with filter:blur(4px) → blur(0)."
+      },
+      {
+        "name": "duration-card-lift",
+        "value": "300ms",
+        "purpose": "Gallery card hover -translate-y-1.5 with ease-out."
+      },
+      {
+        "name": "duration-shake",
+        "value": "420ms",
+        "purpose": "lab-wrong-shake keyframe duration. ±7px / ±5px lateral, ease."
+      },
+      {
+        "name": "duration-correct-pop",
+        "value": "620ms",
+        "purpose": "lab-correct-pop scale 1 → 1.045 → 1 + correct-ring + sheen overlay."
+      }
+    ],
+    "breakpoints": [
+      {"name": "sm", "value": "640px"},
+      {"name": "md", "value": "768px"},
+      {"name": "lg", "value": "1024px"},
+      {"name": "xl", "value": "1280px"}
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button (Signal Pink)",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Single primary action per surface. Lab-Guess submit, share-your-score.",
+      "html": "<button class=\"ds-btn-primary\">Share your score</button>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 42px; padding: 0 16px; background: #b84a8c; color: #fafafa; border: 1px solid transparent; border-radius: 8px; font-family: 'Geist Sans', ui-sans-serif, system-ui, sans-serif; font-size: 14px; font-weight: 500; letter-spacing: normal; cursor: pointer; transition: background-color 150ms; outline: none; } .ds-btn-primary:hover { background: #a1407a; } .ds-btn-primary:focus-visible { box-shadow: 0 0 0 1px #b84a8c; }"
+    },
+    {
+      "name": "Idle Primary Button (pre-action)",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Lab-Guess submit before a guess is selected. Signals 'primary but not ready'.",
+      "html": "<button class=\"ds-btn-primary-idle\">Make a Guess</button>",
+      "css": ".ds-btn-primary-idle { display: inline-flex; align-items: center; justify-content: center; height: 42px; min-width: 144px; padding: 0 16px; background: color-mix(in srgb, #b84a8c 10%, white); color: #b84a8c; border: 1px solid color-mix(in srgb, #b84a8c 20%, white); border-radius: 8px; font-family: 'Geist Sans', ui-sans-serif, system-ui, sans-serif; font-size: 14px; font-weight: 500; box-shadow: 0 1px 2px rgba(0,0,0,0.04); backdrop-filter: blur(12px); cursor: not-allowed; opacity: 0.85; transition: background-color 200ms, border-color 200ms, color 200ms; }"
+    },
+    {
+      "name": "Secondary Icon Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "36×36 square icon button. Compare swap, copy-link, group section toggles.",
+      "html": "<button class=\"ds-btn-secondary\" aria-label=\"Swap sides\"><svg viewBox=\"0 0 24 24\" width=\"16\" height=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"m16 3 4 4-4 4\"/><path d=\"M20 7H4\"/><path d=\"m8 21-4-4 4-4\"/><path d=\"M4 17h16\"/></svg></button>",
+      "css": ".ds-btn-secondary { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; background: #ffffff; color: #525252; border: 1px solid #e5e5e5; border-radius: 6px; box-shadow: 0 1px 2px rgba(0,0,0,0.04); cursor: pointer; transition: background-color 150ms, border-color 150ms, color 150ms, transform 120ms; } .ds-btn-secondary > svg { opacity: 0.8; } .ds-btn-secondary:hover { background: #f5f5f5; color: #171717; border-color: #d4d4d4; } .ds-btn-secondary:hover > svg { opacity: 1; } .ds-btn-secondary:active { transform: scale(0.9); } .ds-btn-secondary:focus-visible { outline: none; border-color: #b84a8c; box-shadow: 0 1px 2px rgba(0,0,0,0.04), 0 0 0 1px #b84a8c; }"
+    },
+    {
+      "name": "Iteration Chip",
+      "kind": "chip",
+      "refersTo": "chip-iteration",
+      "description": "Numbered iteration selector (1-5). The most-frequent action in the gallery; must feel pre-worn.",
+      "html": "<div style=\"display:flex;gap:6px\"><a class=\"ds-chip-iteration\" href=\"#\">1</a><a class=\"ds-chip-iteration\" href=\"#\">2</a><a class=\"ds-chip-iteration ds-chip-iteration--active\" href=\"#\" aria-current=\"page\">3</a><a class=\"ds-chip-iteration\" href=\"#\">4</a><a class=\"ds-chip-iteration\" href=\"#\">5</a></div>",
+      "css": ".ds-chip-iteration { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; background: #fafafa; color: #525252; border: 1px solid #e5e5e5; border-radius: 6px; font-family: 'Geist Sans', ui-sans-serif, system-ui, sans-serif; font-size: 12px; font-weight: 500; font-variant-numeric: tabular-nums; text-decoration: none; line-height: 1; transition: background-color 150ms, border-color 150ms, color 150ms; } .ds-chip-iteration:hover { background: #ffffff; color: #171717; border-color: #d4d4d4; } .ds-chip-iteration--active, .ds-chip-iteration--active:hover { background: #b84a8c; color: #fafafa; border-color: #b84a8c; }"
+    },
+    {
+      "name": "Gallery Card",
+      "kind": "card",
+      "refersTo": "card-gallery",
+      "description": "Single AI-variant preview card. Lifts on hover; the one moment of visible elevation in the gallery.",
+      "html": "<article class=\"ds-card-gallery\"><a class=\"ds-card-gallery__thumb\" href=\"#\"><div class=\"ds-card-gallery__overlay\"></div></a><div class=\"ds-card-gallery__body\"><p class=\"ds-card-gallery__eyebrow\">With Design Skill</p><h3 class=\"ds-card-gallery__title\">Claude Opus 4.7</h3></div></article>",
+      "css": ".ds-card-gallery { display: flex; flex-direction: column; overflow: hidden; background: #ffffff; border: 1px solid #d4d4d4; border-radius: 8px; transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 300ms cubic-bezier(0.22, 1, 0.36, 1); } .ds-card-gallery:hover { transform: translateY(-6px); box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1); } .ds-card-gallery__thumb { display: block; position: relative; aspect-ratio: 16/10; background: linear-gradient(135deg, #f5f5f5, #e5e5e5); } .ds-card-gallery__overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.05) 0%, transparent 38%); pointer-events: none; } .ds-card-gallery__body { padding: 20px; display: flex; flex-direction: column; gap: 4px; } .ds-card-gallery__eyebrow { margin: 0; color: #737373; font-family: 'Geist Sans', ui-sans-serif, system-ui, sans-serif; font-size: 12px; font-weight: 500; } .ds-card-gallery__title { margin: 4px 0 0; color: #171717; font-family: 'Geist Sans', ui-sans-serif, system-ui, sans-serif; font-size: 18px; font-weight: 500; letter-spacing: -0.015em; line-height: 1.3; }"
+    },
+    {
+      "name": "Floating Glass Nav",
+      "kind": "nav",
+      "refersTo": "nav-glass",
+      "description": "The signature element. Fixed top-right, identical chrome on every page.",
+      "html": "<nav class=\"ds-nav-glass\"><a class=\"ds-nav-glass__item ds-nav-glass__item--icon\" href=\"#\" aria-current=\"page\"><svg viewBox=\"0 0 24 24\" width=\"16\" height=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z\"/><polyline points=\"9 22 9 12 15 12 15 22\"/></svg></a><span class=\"ds-nav-glass__divider\" aria-hidden=\"true\"></span><a class=\"ds-nav-glass__item\" href=\"#\">Compare</a><span class=\"ds-nav-glass__divider\" aria-hidden=\"true\"></span><a class=\"ds-nav-glass__item\" href=\"#\">Guess which</a><span class=\"ds-nav-glass__divider\" aria-hidden=\"true\"></span><a class=\"ds-nav-glass__item\" href=\"#\">Rankings</a></nav>",
+      "css": ".ds-nav-glass { display: inline-flex; align-items: center; gap: 2px; padding: 4px; background: rgba(255,255,255,0.85); border: 1px solid #e5e5e5; border-radius: 8px; box-shadow: 0 1px 2px rgba(0,0,0,0.04); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); color: #525252; } .ds-nav-glass__item { display: inline-flex; align-items: center; justify-content: center; height: 36px; padding: 0 12px; color: inherit; font-family: 'Geist Sans', ui-sans-serif, system-ui, sans-serif; font-size: 14px; font-weight: 500; letter-spacing: -0.015em; text-decoration: none; border-radius: 6px; transition: background-color 150ms, color 150ms; } .ds-nav-glass__item--icon { width: 36px; padding: 0; color: #b84a8c; } .ds-nav-glass__item:hover { background: color-mix(in srgb, #b84a8c 12%, white); color: #b84a8c; } .ds-nav-glass__item:focus-visible { outline: 2px solid color-mix(in srgb, #b84a8c 45%, transparent); outline-offset: 2px; } .ds-nav-glass__divider { display: inline-block; width: 1px; height: 24px; background: rgba(229,229,229,0.9); }"
+    },
+    {
+      "name": "Compare Select",
+      "kind": "input",
+      "refersTo": "select-trigger",
+      "description": "Glass select trigger for Group/Model on the Compare page. Focus shows Signal Pink ring.",
+      "html": "<div style=\"position:relative;min-width:240px\"><span class=\"ds-select__label\">Model</span><button class=\"ds-select__trigger\" type=\"button\"><svg viewBox=\"0 0 24 24\" width=\"16\" height=\"16\" fill=\"none\" stroke=\"#b84a8c\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" style=\"flex-shrink:0\"><path d=\"M12 2l1.5 4.5L18 8l-4.5 1.5L12 14l-1.5-4.5L6 8l4.5-1.5z\"/></svg><span style=\"flex:1;text-align:left;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap\">Claude Opus 4.7</span><svg class=\"ds-select__chevron\" viewBox=\"0 0 24 24\" width=\"16\" height=\"16\" fill=\"none\" stroke=\"#a3a3a3\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polyline points=\"6 9 12 15 18 9\"/></svg></button></div>",
+      "css": ".ds-select__label { display: block; margin-bottom: 4px; color: #737373; font-family: 'Geist Sans', ui-sans-serif, system-ui, sans-serif; font-size: 12px; font-weight: 500; } .ds-select__trigger { display: flex; align-items: center; gap: 8px; width: 100%; min-width: 0; padding: 10px 12px; background: rgba(255,255,255,0.85); color: #171717; border: 1px solid #e5e5e5; border-radius: 8px; box-shadow: 0 1px 2px rgba(0,0,0,0.04); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); font-family: 'Geist Sans', ui-sans-serif, system-ui, sans-serif; font-size: 14px; font-weight: 500; text-align: left; cursor: pointer; outline: none; transition: background-color 150ms, border-color 150ms; } .ds-select__trigger:hover { background: #ffffff; border-color: #d4d4d4; } .ds-select__trigger:focus-visible { border-color: #b84a8c; box-shadow: 0 1px 2px rgba(0,0,0,0.04), 0 0 0 1px #b84a8c; } .ds-select__chevron { flex-shrink: 0; margin-left: auto; transition: transform 200ms; }"
+    },
+    {
+      "name": "Round-Status Dot",
+      "kind": "custom",
+      "description": "Lab-Guess vertical dot stack. Replaces a progress bar; per-round state is readable at a glance.",
+      "html": "<div style=\"display:inline-flex;flex-direction:column;gap:6px;padding:4px;background:rgba(255,255,255,0.85);border:1px solid #e5e5e5;border-radius:8px;box-shadow:0 1px 2px rgba(0,0,0,0.04);backdrop-filter:blur(12px)\"><span class=\"ds-round-dot ds-round-dot--correct\"></span><span class=\"ds-round-dot ds-round-dot--correct\"></span><span class=\"ds-round-dot ds-round-dot--wrong\"></span><span class=\"ds-round-dot ds-round-dot--active\"></span><span class=\"ds-round-dot\"></span></div>",
+      "css": ".ds-round-dot { display: inline-block; width: 10px; height: 10px; background: #ffffff; border: 1px solid #d4d4d4; border-radius: 9999px; } .ds-round-dot--correct { background: #10b981; border-color: #10b981; } .ds-round-dot--wrong { background: #f43f5e; border-color: #f43f5e; } .ds-round-dot--active { background: #ffffff; border-color: #a3a3a3; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Quiet Curator",
+    "overview": "This is a curated gallery, not an evaluation dashboard. The chrome stays out of the way so the work being shown (AI-generated UI variants from a single prompt) can speak. Every choice here is in service of letting the visitor look before they read, compare before they parse, and form a verdict before they're asked to think about one.\n\nThe aesthetic is tasteful minimalism, not empty minimalism. A near-white canvas (#fafafa, never pure #fff), one slim accent (Signal Pink) used so rarely that its appearance reads as meaning. Geist Sans alone carries the type. Elevation is flat at rest, and depth is a response to interaction, never a decorative effect. Motion is restrained but precise: nav labels morph through a 220ms blur-crossfade; cards lift 6px on hover; the lab-guess game's correct-guess pop fires a single 620ms ease-out scale with a one-shot sheen. Nothing wobbles, bounces, or asks for attention it didn't earn.\n\nThis system explicitly rejects the AI-eval-leaderboard look (dense tables, model-logo walls, dashboard-coded), the generic SaaS landing (gradient hero, identical feature-card grid, glass everywhere), and the command-terminal aesthetic (monospace everything, dark-by-default, dense controls). It's a gallery for people who heard about vibe coding yesterday and a gallery for AI researchers, and it has to read as legible to both on the same page.",
+    "keyCharacteristics": [
+      "One accent, used as signal. Signal Pink (#b84a8c) is reserved for active state, focus, and the single primary action per surface. Its rarity is the point.",
+      "Light-only canvas. #fafafa, locked. Dark mode is on the roadmap but not a current design constraint.",
+      "Flat at rest. Surfaces sit flush. Shadows and translations appear only in response to user state (hover, focus, the copied-link flash, the correct-guess pop).",
+      "Geist Sans, alone. No serif, no mono, no display face. Hierarchy comes from scale and weight.",
+      "Glass nav as signature. A single floating-glass element, top-right, always, anchors navigation across every page."
+    ],
+    "rules": [
+      {
+        "name": "The Signal Rule",
+        "body": "Signal Pink appears only where it carries meaning: active iteration, focused control, the single primary action on a surface, and the linked-from-prompt 'Composer 2.0' credit. If you find yourself reaching for it to decorate a divider, a heading, or a card border, you are mis-using it. Use a neutral instead.",
+        "section": "colors"
+      },
+      {
+        "name": "The No-Pure-Color Rule",
+        "body": "Never #000 and never #fff. Ink is #171717, canvas is #fafafa. Pure black on light hurts the eye; pure white near #fafafa makes the canvas look dirty. Tint every neutral.",
+        "section": "colors"
+      },
+      {
+        "name": "The Game-Color Quarantine",
+        "body": "Emerald, rose, and amber exist only inside the Lab-Guess game. They never appear in the gallery, compare, rankings, or navigation chrome. The shell is monochrome plus Signal Pink; the game is the one place feedback colors are allowed in.",
+        "section": "colors"
+      },
+      {
+        "name": "The One-Face Rule",
+        "body": "Geist Sans is the only typeface. No serif for 'editorial' warmth, no mono for 'developer' credibility. Hierarchy must be built from scale, weight, and tracking, not from a second family.",
+        "section": "typography"
+      },
+      {
+        "name": "The Eyebrow Quarantine",
+        "body": "The wide-tracked uppercase eyebrow appears on the Lab-Guess results card and nowhere else. It is a one-time flourish; if you find yourself reaching for it on the home page or a section heading, use Title weight 500 instead.",
+        "section": "typography"
+      },
+      {
+        "name": "The Tight-Tracking Rule",
+        "body": "All headings (Display, Headline, Title, Subtitle) carry tracking-tight (-0.015em to -0.02em). Body is letter-spacing normal. The contrast between tightened heads and natural body is part of the system's feel.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat-Default Rule",
+        "body": "Surfaces are flat at rest. Borders alone (Hairline, 1px) separate planes. If you find yourself reaching for a shadow on a card, an input, a section, ask whether a border would do the same job. It almost always will.",
+        "section": "elevation"
+      },
+      {
+        "name": "The State-Earned-Shadow Rule",
+        "body": "Every shadow in the system is triggered by user state. Hover earns Card Hover. Focus earns the accent ring. A correct guess earns the Correct-Guess Ring. There is no 'ambient' elevation for visual interest.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Glass Restraint",
+        "body": "Backdrop-filter blur (12px) with rgba(255,255,255,0.85) background is used only on the floating nav, the variant switcher, the compare select triggers, and the lab-guess picker. Four components, total. Glass is not a decorative effect; it's a structural choice that signals 'I float above the content underneath.' Don't use it on cards, headings, or anything that isn't a floating overlay.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do use #fafafa for canvas and #171717 for ink. Never #fff, never #000. Tint every neutral toward warm gray.",
+      "Do reserve Signal Pink (#b84a8c) for active state, focus rings, and the single primary action per surface. If it covers more than ~10% of a screen, you have over-used it.",
+      "Do use Geist Sans alone for everything. Build hierarchy from scale (text-3xl to text-4xl for hero, text-xl for sections, 15px for body, text-xs for meta) and weight (500 for headings, 400 for body, 600 only for the wide-tracked eyebrow).",
+      "Do keep surfaces flat at rest. A 1px Hairline (#e5e5e5) border is the system's default plane separator.",
+      "Do earn every shadow with a state change. Card lift is for hover, accent ring is for focus, the toast shadow is for the spring-in moment.",
+      "Do use tabular-nums on every numeral the user might compare (iteration chips, ranks, scores, stat values, percentages).",
+      "Do keep the floating glass nav consistent on every page: same position (top-5 right-5 sm:top-6 sm:right-6), same chrome (rounded-lg + rgba(255,255,255,0.85) + backdrop-blur-[12px] + Hairline border + Hairline Lift shadow). It is the one element that proves the surfaces are part of one site.",
+      "Do ease motion with cubic-bezier(0.22, 1, 0.36, 1) (ease-out-quart) for state morphs. Ease out with exponential curves only; never bounce, never elastic.",
+      "Do cap body text at 65-75 characters per line (the home intro uses max-w-2xl for this).",
+      "Do let transition-colors duration-150 be the default for any color flip. Anything longer reads as sluggish; anything shorter reads as jittery."
+    ],
+    "donts": [
+      "Don't turn this into an AI eval leaderboard. No dense tables of model-vs-model scores, no model-logo walls, no accuracy bars in the shell. The Rankings page is the limit; it is one ranked list with prose notes, not a dashboard.",
+      "Don't turn this into a generic SaaS landing. No gradient hero, no identical feature-card grid (the gallery groups look identical only because the models are identical; the cards themselves are not 'features'), no logo-wall social proof, no hero-metric template, no background-clip:text gradient text.",
+      "Don't introduce a command-terminal aesthetic. No monospace as the body face, no dark-by-default, no 'you need a degree to use this' density. The non-technical visitor must feel at home.",
+      "Don't create a wall of data. Every screen should let the user see the comparison before they parse it. If you find yourself adding a table, ask whether a side-by-side preview would work instead (the Compare page is the canonical example).",
+      "Don't use glassmorphism outside the four allowed components (floating nav, variant switcher, compare select trigger, lab-guess picker). Glass on a card, a heading, or a button is a 2020 trope.",
+      "Don't use side-stripe borders (border-left >1px as a colored accent) on cards, callouts, or list items. The Hairline border + Whisper-colored eyebrow does the same job without the cliche.",
+      "Don't use emerald, rose, or amber outside the Lab-Guess game. The shell is monochrome plus Signal Pink, by quarantine.",
+      "Don't spread Signal Pink across borders, dividers, hover backgrounds, or decorative accents. One color, one role: signal. The moment it decorates, it stops meaning.",
+      "Don't add a second typeface to introduce contrast. Hierarchy from scale and weight; that is the One-Face Rule.",
+      "Don't introduce dark mode partially. Light mode is locked until a full dark-mode pass is designed; do not branch components defensively for a theme that doesn't exist yet.",
+      "Don't animate layout properties (width, height, top, left, margin, padding). Use transform and opacity. Animate filter:blur() only sparingly, for the nav label morph.",
+      "Don't use em dashes in UI copy. Commas, colons, semicolons, periods, parentheses. Also not --."
+    ]
+  }
+}
