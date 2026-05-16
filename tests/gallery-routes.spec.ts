@@ -1,5 +1,20 @@
 import { test, expect } from "@playwright/test";
+import { filterGalleryEntriesForArchiveVisibility } from "@/lib/gallery-archived";
 import { galleryManifest } from "@/lib/gallery-manifest";
+
+const HOME_GALLERY_GROUPS = [
+  "with-design-skill",
+  "with-ui-sh-skill",
+  "without-design-skill",
+  "miscellaneous",
+] as const;
+
+function galleryHomeTotalCards(showArchived: boolean) {
+  return HOME_GALLERY_GROUPS.reduce((sum, group) => {
+    const groupEntries = galleryManifest.filter((e) => e.group === group);
+    return sum + filterGalleryEntriesForArchiveVisibility(groupEntries, showArchived).length;
+  }, 0);
+}
 
 const entries = [
   ["with-design-skill", "composer-1.5"],
@@ -33,9 +48,16 @@ const entries = [
   ["miscellaneous", "gpt-5.4"],
 ] as const;
 
-test("home page renders every model card", async ({ page }) => {
+test("home page hides superseded-generation cards until Show Archived", async ({ page }) => {
   await page.goto("/");
   await expect(page.getByRole("heading", { name: "Which AI Made This?" })).toBeVisible();
+  await expect(page.getByTestId("gallery-card")).toHaveCount(galleryHomeTotalCards(false));
+
+  for (const button of await page.getByRole("button", { name: "Show Archived" }).all()) {
+    await button.click();
+  }
+
+  await expect(page.getByTestId("gallery-card")).toHaveCount(galleryHomeTotalCards(true));
   await expect(page.locator('a[title="Compare"]')).toHaveCount(entries.length);
 });
 

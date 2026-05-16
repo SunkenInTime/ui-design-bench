@@ -1,10 +1,9 @@
 import Link from "next/link";
 import { Github } from "lucide-react";
 import { GalleryRankingsNav } from "@/components/gallery/gallery-rankings-nav";
-import { GalleryCard } from "@/components/gallery/gallery-card";
+import { GalleryGroupSection } from "@/components/gallery/gallery-group-section";
 import {
   ANTHROPIC_FRONTEND_DESIGN_SKILL_URL,
-  UNCODEXIFY_SKILL_URL,
 } from "@/lib/gallery-anthropic-skill";
 import { galleryManifest } from "@/lib/gallery-manifest";
 
@@ -76,58 +75,8 @@ export default function HomePage() {
         <div className="mt-10 space-y-12">
           {groups.map((group) => {
             const entries = galleryManifest.filter((entry) => entry.group === group);
-            const label = entries[0]?.groupLabel ?? group;
             return (
-              <section key={group} className="space-y-8">
-                <h2 className="text-xl font-medium tracking-tight text-neutral-900">
-                  {group === "with-design-skill" ? (
-                    <>
-                      With{" "}
-                      <Link
-                        href={ANTHROPIC_FRONTEND_DESIGN_SKILL_URL}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="underline decoration-2 decoration-neutral-500 underline-offset-[6px] transition-colors hover:text-[var(--gallery-accent)] hover:decoration-[var(--gallery-accent)]"
-                      >
-                        Design Skill
-                      </Link>
-                    </>
-                  ) : group === "without-design-skill" ? (
-                    <>
-                      Without{" "}
-                      <Link
-                        href={ANTHROPIC_FRONTEND_DESIGN_SKILL_URL}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="underline decoration-2 decoration-neutral-500 underline-offset-[6px] transition-colors hover:text-[var(--gallery-accent)] hover:decoration-[var(--gallery-accent)]"
-                      >
-                        Design Skill
-                      </Link>
-                    </>
-                  ) : group === "with-ui-sh-skill" ? (
-                    "With UI SH Skill"
-                  ) : group === "miscellaneous" ? (
-                    <>
-                      With{" "}
-                      <Link
-                        href={UNCODEXIFY_SKILL_URL}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="underline decoration-2 decoration-neutral-500 underline-offset-[6px] transition-colors hover:text-[var(--gallery-accent)] hover:decoration-[var(--gallery-accent)]"
-                      >
-                        Uncodexify skill
-                      </Link>
-                    </>
-                  ) : (
-                    label
-                  )}
-                </h2>
-                <div className="grid gap-8 sm:grid-cols-2 xl:grid-cols-3">
-                  {entries.map((entry) => (
-                    <GalleryCard key={`${entry.group}-${entry.model}`} entry={entry} />
-                  ))}
-                </div>
-              </section>
+              <GalleryGroupSection key={group} group={group} entries={entries} />
             );
           })}
         </div>
