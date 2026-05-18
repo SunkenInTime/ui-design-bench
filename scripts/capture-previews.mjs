@@ -9,6 +9,7 @@ import { chromium } from "@playwright/test";
 const entries = [
   { group: "with-design-skill", model: "composer-1.5", iterations: ["1", "2", "3", "4", "5"] },
   { group: "with-design-skill", model: "composer-2.0", iterations: ["1", "2", "3", "4", "5"] },
+  { group: "with-design-skill", model: "composer-2.5", iterations: ["1", "2", "3", "4", "5"] },
   { group: "with-design-skill", model: "gemini", iterations: ["1", "2", "3", "4", "5"] },
   { group: "with-design-skill", model: "gpt-5.4", iterations: ["1", "2", "3", "4", "5"] },
   { group: "with-design-skill", model: "gpt-5.5-low", iterations: ["1", "2", "3", "4", "5"] },
@@ -25,6 +26,7 @@ const entries = [
   { group: "with-ui-sh-skill", model: "opus-4.7", iterations: ["1", "2", "3", "4", "5"] },
   { group: "without-design-skill", model: "composer-1.5", iterations: ["1", "2", "3", "4", "5"] },
   { group: "without-design-skill", model: "composer-2.0", iterations: ["1", "2", "3", "4", "5"] },
+  { group: "without-design-skill", model: "composer-2.5", iterations: ["1", "2", "3", "4", "5"] },
   { group: "without-design-skill", model: "gemini", iterations: ["1", "2", "3", "4", "5"] },
   { group: "without-design-skill", model: "gpt-5.4", iterations: ["1", "2", "3", "4", "5"] },
   { group: "without-design-skill", model: "gpt-5.5-low", iterations: ["1", "2", "3", "4", "5"] },

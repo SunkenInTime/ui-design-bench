@@ -10,6 +10,7 @@ export interface ModelLab {
 const MODEL_TO_LAB: Record<ModelSlug, ModelLab> = {
   "composer-1.5": { slug: "cursor", label: "Cursor" },
   "composer-2.0": { slug: "cursor", label: "Cursor" },
+  "composer-2.5": { slug: "cursor", label: "Cursor" },
   gemini: { slug: "google", label: "Google" },
   "glm-5-turbo": { slug: "z-ai", label: "Z.ai" },
   "glm-5.1": { slug: "z-ai", label: "Z.ai" },

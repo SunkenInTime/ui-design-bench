@@ -19,6 +19,7 @@ function galleryHomeTotalCards(showArchived: boolean) {
 const entries = [
   ["with-design-skill", "composer-1.5"],
   ["with-design-skill", "composer-2.0"],
+  ["with-design-skill", "composer-2.5"],
   ["with-design-skill", "gemini"],
   ["with-design-skill", "gpt-5.4"],
   ["with-design-skill", "gpt-5.5-low"],
@@ -35,6 +36,7 @@ const entries = [
   ["with-ui-sh-skill", "opus-4.7"],
   ["without-design-skill", "composer-1.5"],
   ["without-design-skill", "composer-2.0"],
+  ["without-design-skill", "composer-2.5"],
   ["without-design-skill", "gemini"],
   ["without-design-skill", "gpt-5.4"],
   ["without-design-skill", "gpt-5.5-low"],
@@ -53,8 +55,8 @@ test("home page hides superseded-generation cards until Show Archived", async ({
   await expect(page.getByRole("heading", { name: "Which AI Made This?" })).toBeVisible();
   await expect(page.getByTestId("gallery-card")).toHaveCount(galleryHomeTotalCards(false));
 
-  for (const button of await page.getByRole("button", { name: "Show Archived" }).all()) {
-    await button.click();
+  while ((await page.getByRole("button", { name: "Show Archived" }).count()) > 0) {
+    await page.getByRole("button", { name: "Show Archived" }).first().click();
   }
 
   await expect(page.getByTestId("gallery-card")).toHaveCount(galleryHomeTotalCards(true));

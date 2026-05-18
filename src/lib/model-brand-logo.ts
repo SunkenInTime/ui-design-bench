@@ -3,6 +3,7 @@ import type { ModelSlug } from "@/lib/gallery-types";
 const MODEL_BRAND_LOGO: Record<ModelSlug, string> = {
   "composer-1.5": "/cursor-composer.webp",
   "composer-2.0": "/cursor-composer.webp",
+  "composer-2.5": "/cursor-composer.webp",
   gemini: "/google-gemini.webp",
   "glm-5-turbo": "/glm.webp",
   "glm-5.1": "/glm.webp",

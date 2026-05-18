@@ -7,6 +7,7 @@ import type { GalleryEntry, ModelSlug } from "@/lib/gallery-types";
 const MODEL_GALLERY_GENERATION = {
   "composer-1.5": { family: "composer", tier: 1 },
   "composer-2.0": { family: "composer", tier: 2 },
+  "composer-2.5": { family: "composer", tier: 2 },
   "gpt-5.4": { family: "gpt", tier: 1 },
   "gpt-5.5-low": { family: "gpt", tier: 2 },
   "gpt-5.5-high": { family: "gpt", tier: 2 },

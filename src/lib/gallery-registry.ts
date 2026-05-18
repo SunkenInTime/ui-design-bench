@@ -1,6 +1,7 @@
 import type { GalleryGroupSlug, ModelSlug, VariantModule } from "@/lib/gallery-types";
 import withComposer15 from "@/variants/with-design-skill/composer-1.5";
 import withComposer20 from "@/variants/with-design-skill/composer-2.0";
+import withComposer25 from "@/variants/with-design-skill/composer-2.5";
 import withGemini from "@/variants/with-design-skill/gemini";
 import withGpt54 from "@/variants/with-design-skill/gpt-5.4";
 import withGpt55Low from "@/variants/with-design-skill/gpt-5.5-low";
@@ -18,6 +19,7 @@ import withUiShOpus47 from "@/variants/with-ui-sh-skill/opus-4.7";
 import miscGpt54 from "@/variants/miscellaneous/gpt-5.4";
 import withoutComposer15 from "@/variants/without-design-skill/composer-1.5";
 import withoutComposer20 from "@/variants/without-design-skill/composer-2.0";
+import withoutComposer25 from "@/variants/without-design-skill/composer-2.5";
 import withoutGemini from "@/variants/without-design-skill/gemini";
 import withoutGpt54 from "@/variants/without-design-skill/gpt-5.4";
 import withoutGpt55Low from "@/variants/without-design-skill/gpt-5.5-low";
@@ -34,6 +36,7 @@ type RegistryKey = `${GalleryGroupSlug}:${ModelSlug}`;
 const registry: Partial<Record<RegistryKey, VariantModule>> = {
   "with-design-skill:composer-1.5": withComposer15,
   "with-design-skill:composer-2.0": withComposer20,
+  "with-design-skill:composer-2.5": withComposer25,
   "with-design-skill:gemini": withGemini,
   "with-design-skill:gpt-5.4": withGpt54,
   "with-design-skill:gpt-5.5-low": withGpt55Low,
@@ -51,6 +54,7 @@ const registry: Partial<Record<RegistryKey, VariantModule>> = {
   "miscellaneous:gpt-5.4": miscGpt54,
   "without-design-skill:composer-1.5": withoutComposer15,
   "without-design-skill:composer-2.0": withoutComposer20,
+  "without-design-skill:composer-2.5": withoutComposer25,
   "without-design-skill:gemini": withoutGemini,
   "without-design-skill:gpt-5.4": withoutGpt54,
   "without-design-skill:gpt-5.5-low": withoutGpt55Low,
