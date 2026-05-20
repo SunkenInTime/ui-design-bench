@@ -29,7 +29,7 @@ export default async function ModelPage({
   }
 
   return (
-    <main className="mx-auto max-w-6xl px-5 py-12 sm:px-8 sm:py-16">
+    <main className="mx-auto max-w-[98rem] px-4 py-12 sm:px-6 sm:py-16 lg:px-4">
       <div className="space-y-6">
         <GalleryBreadcrumb entry={entry} />
         <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
@@ -57,7 +57,7 @@ export default async function ModelPage({
         </div>
       </div>
 
-      <section className="mt-14 grid gap-8 sm:grid-cols-2 xl:grid-cols-3">
+      <section className="mt-14 grid gap-8 sm:grid-cols-2 xl:grid-cols-4 xl:gap-6">
         {entry.iterations.map((iteration) => (
           <article
             key={iteration.id}

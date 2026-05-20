@@ -89,7 +89,7 @@ export function GalleryGroupSection({
           </button>
         ) : null}
       </div>
-      <div className="grid gap-8 sm:grid-cols-2 xl:grid-cols-3">
+      <div className="grid gap-8 sm:grid-cols-2 xl:grid-cols-4 xl:gap-6">
         {visibleEntries.map((entry) => (
           <GalleryCard key={`${entry.group}-${entry.model}`} entry={entry} />
         ))}

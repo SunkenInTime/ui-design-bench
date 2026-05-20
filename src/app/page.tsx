@@ -20,7 +20,7 @@ export default function HomePage() {
   return (
     <>
       <GalleryRankingsNav />
-      <main className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
+      <main className="mx-auto max-w-[98rem] px-4 py-16 sm:px-6 sm:py-20 lg:px-4">
         <header className="max-w-2xl">
           <h1 className="text-3xl font-medium tracking-tight text-neutral-900 sm:text-4xl">
             Which AI Made This?
