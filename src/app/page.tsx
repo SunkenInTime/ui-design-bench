@@ -2,7 +2,6 @@ import Link from "next/link";
 import { Github } from "lucide-react";
 import { GalleryRankingsNav } from "@/components/gallery/gallery-rankings-nav";
 import { GalleryGroupSection } from "@/components/gallery/gallery-group-section";
-import { HomeHeroTitle } from "@/components/gallery/home-hero-title";
 import {
   ANTHROPIC_FRONTEND_DESIGN_SKILL_URL,
 } from "@/lib/gallery-anthropic-skill";
@@ -23,7 +22,9 @@ export default function HomePage() {
       <GalleryRankingsNav />
       <main className="mx-auto max-w-[98rem] px-4 py-16 sm:px-6 sm:py-20 lg:px-4">
         <header className="max-w-2xl">
-          <HomeHeroTitle />
+          <h1 className="text-3xl font-medium tracking-tight text-neutral-900 sm:text-4xl">
+            Which AI Made This?
+          </h1>
           <p className="mt-5 text-[15px] leading-relaxed text-neutral-600">
             A comparison of how different AI models approach UI design, with and without{" "}
             <Link
