@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Github } from "lucide-react";
 import { GalleryRankingsNav } from "@/components/gallery/gallery-rankings-nav";
 import { GalleryGroupSection } from "@/components/gallery/gallery-group-section";
+import { GenerationPrompt } from "@/components/gallery/generation-prompt";
 import {
   ANTHROPIC_FRONTEND_DESIGN_SKILL_URL,
 } from "@/lib/gallery-anthropic-skill";
@@ -37,10 +38,7 @@ export default function HomePage() {
             </Link>{" "}
             enabled.
           </p>
-          <blockquote className="mt-8 border-l border-[var(--gallery-divider-strong)] pl-5 text-[15px] leading-relaxed text-[var(--gallery-text-secondary)]">
-            <span className="text-[var(--gallery-text-quaternary)]">Prompt · </span>
-            {generationPrompt}
-          </blockquote>
+          <GenerationPrompt prompt={generationPrompt} />
           <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm text-[var(--gallery-text-tertiary)]">
             <Link
               href="https://github.com/sunkenintime"
