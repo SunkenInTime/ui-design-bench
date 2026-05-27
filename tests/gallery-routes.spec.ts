@@ -1,5 +1,8 @@
 import { test, expect } from "@playwright/test";
-import { filterGalleryEntriesForArchiveVisibility } from "@/lib/gallery-archived";
+import {
+  filterGalleryEntriesForArchiveVisibility,
+  isGalleryModelLeavingSoon,
+} from "@/lib/gallery-archived";
 import { galleryManifest } from "@/lib/gallery-manifest";
 
 const HOME_GALLERY_GROUPS = [
@@ -51,6 +54,16 @@ const entries = [
   ["without-design-skill", "glm-5.1"],
   ["miscellaneous", "gpt-5.4"],
 ] as const;
+
+test("home page shows leaving-soon bookmark on Gemini 3.1 Pro cards", async ({ page }) => {
+  await page.goto("/");
+  const geminiCards = page.getByTestId("gallery-card").filter({ hasText: "Gemini 3.1 Pro" });
+  const geminiManifestCount = galleryManifest.filter((e) => isGalleryModelLeavingSoon(e.model)).length;
+  await expect(geminiCards).toHaveCount(geminiManifestCount);
+  for (let i = 0; i < geminiManifestCount; i++) {
+    await expect(geminiCards.nth(i).getByLabel("Archiving soon")).toBeVisible();
+  }
+});
 
 test("home page hides superseded-generation cards until Show Archived", async ({ page }) => {
   await page.goto("/");

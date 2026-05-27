@@ -1,12 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeftRight } from "lucide-react";
+import { GalleryCardLeavingSoonBookmark } from "@/components/gallery/gallery-card-leaving-soon";
 import { buildCompareHrefForSelection } from "@/lib/compare";
+import { isGalleryModelLeavingSoon } from "@/lib/gallery-archived";
 import type { GalleryEntry } from "@/lib/gallery-types";
 import { buildVariantHref } from "@/lib/gallery-paths";
 import { getModelBrandLogoPath } from "@/lib/model-brand-logo";
 
 export function GalleryCard({ entry }: { entry: GalleryEntry }) {
+  const leavingSoon = isGalleryModelLeavingSoon(entry.model);
   return (
     <article
       data-testid="gallery-card"
@@ -28,6 +31,7 @@ export function GalleryCard({ entry }: { entry: GalleryEntry }) {
             aria-hidden
             className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_top,rgb(0_0_0_/_0.05)_0%,transparent_38%)]"
           />
+          {leavingSoon ? <GalleryCardLeavingSoonBookmark /> : null}
         </div>
       </Link>
       <div className="flex flex-1 flex-col gap-2 p-5">

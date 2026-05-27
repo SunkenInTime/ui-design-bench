@@ -1,5 +1,15 @@
 import type { GalleryEntry, ModelSlug } from "@/lib/gallery-types";
 
+/** Always hidden on the home page until "Show Archived" (all groups). */
+const FORCE_ARCHIVED_MODELS = new Set<ModelSlug>(["composer-2.0"]);
+
+/** Visible on the home page with a sunset bookmark on gallery cards. */
+const LEAVING_SOON_MODELS = new Set<ModelSlug>(["gemini"]);
+
+export function isGalleryModelLeavingSoon(model: ModelSlug): boolean {
+  return LEAVING_SOON_MODELS.has(model);
+}
+
 /**
  * Defines model lineages for the gallery home page only. Within a gallery group section,
  * a model is "archived" when another model shares the same `family` with a strictly higher tier.
@@ -7,7 +17,7 @@ import type { GalleryEntry, ModelSlug } from "@/lib/gallery-types";
 const MODEL_GALLERY_GENERATION = {
   "composer-1.5": { family: "composer", tier: 1 },
   "composer-2.0": { family: "composer", tier: 2 },
-  "composer-2.5": { family: "composer", tier: 2 },
+  "composer-2.5": { family: "composer", tier: 3 },
   gemini: { family: "gemini", tier: 1 },
   "gemini-3.5-flash": { family: "gemini", tier: 2 },
   "gpt-5.4": { family: "gpt", tier: 1 },
@@ -34,6 +44,8 @@ function maxTierInFamily(entries: GalleryEntry[], family: string): number {
 }
 
 export function isGalleryModelArchivedWithinGroup(entries: GalleryEntry[], entry: GalleryEntry): boolean {
+  if (FORCE_ARCHIVED_MODELS.has(entry.model)) return true;
+  if (isGalleryModelLeavingSoon(entry.model)) return false;
   const gen = MODEL_GALLERY_GENERATION[entry.model as keyof typeof MODEL_GALLERY_GENERATION];
   if (!gen) return false;
   const cap = maxTierInFamily(entries, gen.family);
