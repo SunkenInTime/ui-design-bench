@@ -8,6 +8,8 @@ const MODEL_GALLERY_GENERATION = {
   "composer-1.5": { family: "composer", tier: 1 },
   "composer-2.0": { family: "composer", tier: 2 },
   "composer-2.5": { family: "composer", tier: 2 },
+  gemini: { family: "gemini", tier: 1 },
+  "gemini-3.5-flash": { family: "gemini", tier: 2 },
   "gpt-5.4": { family: "gpt", tier: 1 },
   "gpt-5.5-low": { family: "gpt", tier: 2 },
   "gpt-5.5-high": { family: "gpt", tier: 2 },

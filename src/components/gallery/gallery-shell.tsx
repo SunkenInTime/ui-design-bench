@@ -9,17 +9,17 @@ export function GalleryBreadcrumb({
   entry: GalleryEntry;
 }) {
   return (
-    <nav className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-neutral-500">
-      <Link href="/" className="inline-flex items-center gap-1.5 transition-colors hover:text-neutral-900">
+    <nav className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-[var(--gallery-text-tertiary)]">
+      <Link href="/" className="inline-flex items-center gap-1.5 transition-colors hover:text-[var(--gallery-text-primary)]">
         <ArrowLeft className="size-3.5 opacity-60" aria-hidden="true" />
         Gallery
       </Link>
-      <span className="text-neutral-300" aria-hidden="true">
+      <span className="text-[var(--gallery-divider-strong)]" aria-hidden="true">
         /
       </span>
       <Link
         href={buildModelHref(entry.group, entry.model)}
-        className="transition-colors hover:text-neutral-900"
+        className="transition-colors hover:text-[var(--gallery-text-primary)]"
       >
         {entry.modelLabel}
       </Link>
@@ -45,7 +45,7 @@ export function IterationLinks({
             className={`rounded-md px-2.5 py-1 text-sm transition-colors ${
               active
                 ? "bg-[var(--gallery-accent)] text-[var(--gallery-accent-foreground)]"
-                : "text-neutral-600 hover:bg-neutral-100 hover:text-neutral-900"
+                : "text-[var(--gallery-text-secondary)] hover:bg-[var(--gallery-hover-bg)] hover:text-[var(--gallery-text-primary)]"
             }`}
           >
             {iteration.id}

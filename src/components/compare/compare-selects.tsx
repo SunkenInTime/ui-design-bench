@@ -15,7 +15,7 @@ const GROUP_ICONS: Record<GalleryGroupSlug, typeof Sparkles> = {
 };
 
 const triggerClass =
-  "flex w-full min-w-0 cursor-pointer items-center gap-2 rounded-lg border border-[var(--gallery-border)] bg-white/85 px-3 py-2.5 text-left text-sm font-medium text-neutral-900 shadow-[0_1px_2px_rgba(0,0,0,0.04)] backdrop-blur-[12px] transition outline-none hover:border-neutral-300 hover:bg-white focus-visible:border-[var(--gallery-accent)] focus-visible:ring-1 focus-visible:ring-[var(--gallery-accent)]";
+  "flex w-full min-w-0 cursor-pointer items-center gap-2 rounded-lg border border-[var(--gallery-border)] bg-[var(--gallery-nav-bg)] px-3 py-2.5 text-left text-sm font-medium text-[var(--gallery-text-primary)] shadow-[var(--gallery-shadow-sm)] backdrop-blur-[12px] transition outline-none hover:border-[var(--gallery-divider-strong)] hover:bg-[var(--gallery-surface)] focus-visible:border-[var(--gallery-accent)] focus-visible:ring-1 focus-visible:ring-[var(--gallery-accent)]";
 
 const listClass =
   "absolute left-0 right-0 top-full z-50 mt-1 flex max-h-60 flex-col gap-1.5 overflow-auto rounded-lg border border-[var(--gallery-border)] bg-[var(--gallery-body-bg)] p-2";
@@ -27,11 +27,11 @@ const optionClass = (selected: boolean) =>
   clsx(
     optionBaseClass,
     selected
-      ? "bg-[var(--gallery-accent)]/12 text-neutral-900 hover:bg-[var(--gallery-accent)]/20"
-      : "bg-white text-neutral-800 hover:bg-[var(--gallery-accent)]/10 hover:text-neutral-950",
+      ? "bg-[var(--gallery-accent)]/12 text-[var(--gallery-text-primary)] hover:bg-[var(--gallery-accent)]/20"
+      : "bg-[var(--gallery-surface)] text-[var(--gallery-text-primary)] hover:bg-[var(--gallery-accent)]/10 hover:text-[var(--gallery-text-primary)]",
   );
 
-const labelClass = "mb-1 block text-xs font-medium text-neutral-500";
+const labelClass = "mb-1 block text-xs font-medium text-[var(--gallery-text-tertiary)]";
 
 export function CompareGroupSelect({
   value,
@@ -69,7 +69,7 @@ export function CompareGroupSelect({
         <SelectedIcon className="size-4 shrink-0 text-[var(--gallery-accent)]" strokeWidth={2} aria-hidden />
         <span className="min-w-0 flex-1 truncate">{getLabel(value)}</span>
         <ChevronDown
-          className={clsx("ml-auto size-4 shrink-0 text-neutral-400 transition-transform", open && "rotate-180")}
+          className={clsx("ml-auto size-4 shrink-0 text-[var(--gallery-text-quaternary)] transition-transform", open && "rotate-180")}
           aria-hidden
         />
       </button>
@@ -93,7 +93,7 @@ export function CompareGroupSelect({
                 <Icon
                   className={clsx(
                     "size-4 shrink-0",
-                    selected ? "text-[var(--gallery-accent)]" : "text-neutral-500",
+                    selected ? "text-[var(--gallery-accent)]" : "text-[var(--gallery-text-tertiary)]",
                   )}
                   strokeWidth={2}
                   aria-hidden
@@ -151,7 +151,7 @@ export function CompareModelSelect({
         ) : null}
         <span className="min-w-0 flex-1 truncate">{selected?.modelLabel ?? "—"}</span>
         <ChevronDown
-          className={clsx("ml-auto size-4 shrink-0 text-neutral-400 transition-transform", open && "rotate-180")}
+          className={clsx("ml-auto size-4 shrink-0 text-[var(--gallery-text-quaternary)] transition-transform", open && "rotate-180")}
           aria-hidden
         />
       </button>

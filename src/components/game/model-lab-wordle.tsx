@@ -31,13 +31,14 @@ type GuessOption = {
 const TOTAL_ROUNDS = 5;
 const MAX_GUESSES = 3;
 const ROUND_ADVANCE_DELAY_MS = 950;
+const ROUND_MISS_ADVANCE_DELAY_MS = 2200;
 const WRONG_GUESS_SHAKE_MS = 420;
 const CORRECT_GUESS_POP_MS = 620;
 const SHARE_URL = "whichai.dev";
 const SCORE_IMAGE_MARGIN_PX = 32;
 
 const pickerTriggerClass =
-  "flex w-full min-w-0 cursor-pointer items-center gap-2 rounded-lg border border-[var(--gallery-border)] bg-white/85 px-3 py-2.5 text-left text-sm font-medium text-neutral-900 shadow-[0_1px_2px_rgba(0,0,0,0.04)] backdrop-blur-[12px] transition outline-none hover:border-neutral-300 hover:bg-white focus-visible:border-[var(--gallery-accent)] focus-visible:ring-1 focus-visible:ring-[var(--gallery-accent)]";
+  "flex w-full min-w-0 cursor-pointer items-center gap-2 rounded-lg border border-[var(--gallery-border)] bg-[var(--gallery-nav-bg)] px-3 py-2.5 text-left text-sm font-medium text-[var(--gallery-text-primary)] shadow-[var(--gallery-shadow-sm)] backdrop-blur-[12px] transition outline-none hover:border-[var(--gallery-divider-strong)] hover:bg-[var(--gallery-surface)] focus-visible:border-[var(--gallery-accent)] focus-visible:ring-1 focus-visible:ring-[var(--gallery-accent)]";
 
 const pickerListClass =
   "absolute inset-x-0 bottom-[calc(100%+0.25rem)] z-20 flex max-h-60 flex-col gap-1.5 overflow-auto rounded-lg border border-[var(--gallery-border)] bg-[var(--gallery-body-bg)] p-2";
@@ -47,8 +48,8 @@ const pickerOptionClass = (selected: boolean, disabled = false) =>
     "flex w-full items-center gap-2.5 rounded-md px-3 py-2.5 text-left text-sm transition-colors duration-150",
     disabled ? "cursor-not-allowed" : "cursor-pointer",
     selected
-      ? "bg-[var(--gallery-accent)]/12 text-neutral-900 hover:bg-[var(--gallery-accent)]/20"
-      : "bg-white text-neutral-800 hover:bg-[var(--gallery-accent)]/10 hover:text-neutral-950",
+      ? "bg-[var(--gallery-accent)]/12 text-[var(--gallery-text-primary)] hover:bg-[var(--gallery-accent)]/20"
+      : "bg-[var(--gallery-surface)] text-[var(--gallery-text-primary)] hover:bg-[var(--gallery-accent)]/10 hover:text-[var(--gallery-text-primary)]",
   );
 
 const pickerWidthClass = "w-[min(18rem,calc(100vw-3rem))]";
@@ -205,6 +206,7 @@ export function ModelLabWordle() {
   const [selectedGuess, setSelectedGuess] = useState<LabSlug | null>(null);
   const [isAdvancing, setIsAdvancing] = useState(false);
   const [shakeWrongGuess, setShakeWrongGuess] = useState(false);
+  const [revealMissedAnswer, setRevealMissedAnswer] = useState(false);
   const [popCorrectGuess, setPopCorrectGuess] = useState(false);
   const [shareCopied, setShareCopied] = useState(false);
   const [imageShareState, setImageShareState] = useState<"idle" | "copied" | "downloaded" | "failed">(
@@ -212,6 +214,7 @@ export function ModelLabWordle() {
   );
   const advanceTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const shakeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const revealTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const correctTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const shareTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const imageShareTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -297,6 +300,9 @@ export function ModelLabWordle() {
       if (shakeTimerRef.current !== null) {
         clearTimeout(shakeTimerRef.current);
       }
+      if (revealTimerRef.current !== null) {
+        clearTimeout(revealTimerRef.current);
+      }
       if (correctTimerRef.current !== null) {
         clearTimeout(correctTimerRef.current);
       }
@@ -336,7 +342,7 @@ export function ModelLabWordle() {
     };
   }, [dropdownOpen]);
 
-  function queueNextRound() {
+  function queueNextRound(delayMs = ROUND_ADVANCE_DELAY_MS) {
     if (advanceTimerRef.current !== null) {
       clearTimeout(advanceTimerRef.current);
     }
@@ -347,8 +353,9 @@ export function ModelLabWordle() {
       setDropdownOpen(false);
       setSelectedGuess(null);
       setIsAdvancing(false);
+      setRevealMissedAnswer(false);
       advanceTimerRef.current = null;
-    }, ROUND_ADVANCE_DELAY_MS);
+    }, delayMs);
   }
 
   function submitGuess() {
@@ -387,16 +394,30 @@ export function ModelLabWordle() {
       if (shakeTimerRef.current !== null) {
         clearTimeout(shakeTimerRef.current);
       }
+      if (revealTimerRef.current !== null) {
+        clearTimeout(revealTimerRef.current);
+      }
+      setRevealMissedAnswer(false);
       setShakeWrongGuess(true);
       shakeTimerRef.current = setTimeout(() => {
         setShakeWrongGuess(false);
         shakeTimerRef.current = null;
       }, WRONG_GUESS_SHAKE_MS);
+
+      const updatedRound = updatedRounds[currentRound];
+      if (updatedRound.attempts.length >= MAX_GUESSES && !updatedRound.solved) {
+        revealTimerRef.current = setTimeout(() => {
+          setRevealMissedAnswer(true);
+          revealTimerRef.current = null;
+        }, WRONG_GUESS_SHAKE_MS);
+      }
     }
 
     const updatedRound = updatedRounds[currentRound];
     if (updatedRound.solved || updatedRound.attempts.length >= MAX_GUESSES) {
-      queueNextRound();
+      queueNextRound(
+        updatedRound.solved ? ROUND_ADVANCE_DELAY_MS : ROUND_MISS_ADVANCE_DELAY_MS,
+      );
     }
   }
 
@@ -408,6 +429,10 @@ export function ModelLabWordle() {
     if (shakeTimerRef.current !== null) {
       clearTimeout(shakeTimerRef.current);
       shakeTimerRef.current = null;
+    }
+    if (revealTimerRef.current !== null) {
+      clearTimeout(revealTimerRef.current);
+      revealTimerRef.current = null;
     }
     if (correctTimerRef.current !== null) {
       clearTimeout(correctTimerRef.current);
@@ -428,6 +453,7 @@ export function ModelLabWordle() {
     setSelectedGuess(null);
     setIsAdvancing(false);
     setShakeWrongGuess(false);
+    setRevealMissedAnswer(false);
     setPopCorrectGuess(false);
     setShareCopied(false);
     setImageShareState("idle");
@@ -552,20 +578,20 @@ export function ModelLabWordle() {
   return (
     <main className="mx-auto w-full max-w-[1400px] px-5 pb-8 pt-16 sm:px-8 sm:pb-10 sm:pt-20">
       <header className="max-w-2xl">
-        <h1 className="text-3xl font-medium tracking-tight text-neutral-900 sm:text-4xl">
+        <h1 className="text-3xl font-medium tracking-tight text-[var(--gallery-text-primary)] sm:text-4xl">
           Guess the AI Lab
         </h1>
       </header>
 
       {rounds.length === 0 ? (
-        <section className="mt-10 overflow-hidden rounded-2xl border border-neutral-200 bg-white">
-          <div className="h-[calc(100dvh-11rem)] min-h-[640px] animate-pulse bg-neutral-100 sm:h-[calc(100dvh-13rem)]" />
+        <section className="mt-10 overflow-hidden rounded-2xl border border-[var(--gallery-border)] bg-[var(--gallery-surface)]">
+          <div className="h-[calc(100dvh-11rem)] min-h-[640px] animate-pulse bg-[var(--gallery-surface-muted)] sm:h-[calc(100dvh-13rem)]" />
         </section>
       ) : null}
 
       {!gameOver && activeRound ? (
         <section className="mt-10">
-          <div className="overflow-hidden rounded-2xl border border-neutral-200 bg-neutral-100">
+          <div className="overflow-hidden rounded-2xl border border-[var(--gallery-border)] bg-[var(--gallery-surface-muted)]">
             <div className="relative">
               <iframe
                 key={activeRound.id}
@@ -574,7 +600,7 @@ export function ModelLabWordle() {
                 className="block h-[calc(100dvh-11rem)] min-h-[640px] w-full bg-white sm:h-[calc(100dvh-13rem)]"
               />
 
-              <div className="pointer-events-auto absolute top-4 right-4 z-20 rounded-lg border border-[var(--gallery-border)] bg-white/85 px-1 py-1 text-neutral-500 shadow-[0_1px_2px_rgba(0,0,0,0.04)] backdrop-blur-[12px] sm:top-6 sm:right-6">
+              <div className="pointer-events-auto absolute top-4 right-4 z-20 rounded-lg border border-[var(--gallery-border)] bg-[var(--gallery-nav-bg)] px-1 py-1 text-[var(--gallery-text-tertiary)] shadow-[var(--gallery-shadow-sm)] backdrop-blur-[12px] sm:top-6 sm:right-6">
                 <div className="flex flex-col items-center gap-1">
                   <div className="flex flex-col gap-1.5" aria-label={`Round ${currentRound + 1} of ${TOTAL_ROUNDS}`}>
                     {rounds.map((round) => (
@@ -584,13 +610,41 @@ export function ModelLabWordle() {
                           "size-2.5 rounded-full border",
                           getRoundStatus(round) === "correct" && "border-emerald-500 bg-emerald-500",
                           getRoundStatus(round) === "wrong" && "border-rose-500 bg-rose-500",
-                          getRoundStatus(round) === "active" && "border-neutral-300 bg-white",
+                          getRoundStatus(round) === "active" && "border-[var(--gallery-divider-strong)] bg-[var(--gallery-surface)]",
                         )}
                       />
                     ))}
                   </div>
                 </div>
               </div>
+
+              {revealMissedAnswer && activeRound ? (
+                (() => {
+                  const answerOption = getGuessOption(activeRound.answer);
+                  return (
+                    <div
+                      className="lab-missed-reveal-backdrop pointer-events-none absolute inset-0 z-30 flex items-center justify-center bg-neutral-900/18 px-6 backdrop-blur-[3px]"
+                      role="status"
+                      aria-live="polite"
+                    >
+                      <div className="lab-missed-reveal-popup relative flex max-w-[min(100%,26rem)] items-center gap-3.5 overflow-hidden rounded-2xl border border-[var(--gallery-border)] bg-[var(--gallery-nav-bg)] px-5 py-4 shadow-[0_18px_48px_rgba(0,0,0,0.14)] backdrop-blur-[12px] sm:gap-4 sm:px-6 sm:py-4">
+                        {answerOption ? (
+                          <Image
+                            src={answerOption.logoPath}
+                            alt=""
+                            width={36}
+                            height={36}
+                            className="size-9 shrink-0 rounded-md object-contain sm:size-10"
+                          />
+                        ) : null}
+                        <p className="min-w-0 truncate text-xl font-medium tracking-tight text-[var(--gallery-text-primary)] sm:text-2xl">
+                          {activeRound.modelLabel}
+                        </p>
+                      </div>
+                    </div>
+                  );
+                })()
+              ) : null}
 
               <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 px-4 pb-4 pt-24 sm:px-6 sm:pb-6">
                 <div className="relative flex w-full items-end justify-center">
@@ -626,7 +680,7 @@ export function ModelLabWordle() {
                             className="size-[18px] rounded-sm object-contain"
                           />
                         ) : (
-                          <span className="size-[18px] rounded-sm border border-dashed border-neutral-300 bg-neutral-50" />
+                          <span className="size-[18px] rounded-sm border border-dashed border-[var(--gallery-divider-strong)] bg-[var(--gallery-surface-subtle)]" />
                         )}
                         <span>{selectedOption?.label ?? "Choose a model family"}</span>
                       </span>
@@ -637,7 +691,7 @@ export function ModelLabWordle() {
                       ) : null}
                       <ChevronDown
                         className={clsx(
-                          "relative z-10 size-4 shrink-0 text-neutral-400 transition-transform",
+                          "relative z-10 size-4 shrink-0 text-[var(--gallery-text-quaternary)] transition-transform",
                           dropdownOpen && "rotate-180",
                         )}
                         aria-hidden
@@ -721,10 +775,10 @@ export function ModelLabWordle() {
           ref={resultCardRef}
           aria-label="Game results"
           className={clsx(
-            "relative mt-10 overflow-hidden rounded-2xl border bg-white p-6 sm:p-8",
+            "relative mt-10 overflow-hidden rounded-2xl border bg-[var(--gallery-surface)] p-6 sm:p-8",
             isPerfectRun
               ? "border-emerald-200 shadow-[0_0_0_6px_rgba(16,185,129,0.06)]"
-              : "border-neutral-200",
+              : "border-[var(--gallery-border)]",
           )}
         >
           {isPerfectRun ? (
@@ -736,10 +790,10 @@ export function ModelLabWordle() {
 
           <div className="relative flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
             <div className="max-w-md">
-              <p className="text-[11px] font-semibold tracking-[0.22em] text-neutral-400 uppercase">
+              <p className="text-[11px] font-semibold tracking-[0.22em] text-[var(--gallery-text-quaternary)] uppercase">
                 Your rank
               </p>
-              <h2 className="mt-2 text-3xl font-medium tracking-tight text-neutral-900 sm:text-4xl">
+              <h2 className="mt-2 text-3xl font-medium tracking-tight text-[var(--gallery-text-primary)] sm:text-4xl">
                 {rank.title}
                 {isPerfectRun ? (
                   <span className="ml-3 inline-flex -translate-y-1 items-center rounded-full bg-emerald-500/10 px-2.5 py-1 align-middle text-xs font-semibold tracking-wide text-emerald-700 uppercase">
@@ -747,18 +801,18 @@ export function ModelLabWordle() {
                   </span>
                 ) : null}
               </h2>
-              <p className="mt-3 text-[15px] leading-relaxed text-neutral-600">{rank.subtitle}</p>
+              <p className="mt-3 text-[15px] leading-relaxed text-[var(--gallery-text-secondary)]">{rank.subtitle}</p>
             </div>
 
             <div className="flex items-baseline gap-3 self-start sm:self-end">
-              <span className="text-6xl font-medium tracking-tight text-neutral-900 tabular-nums sm:text-7xl">
+              <span className="text-6xl font-medium tracking-tight text-[var(--gallery-text-primary)] tabular-nums sm:text-7xl">
                 {correctCount}
               </span>
               <div className="flex flex-col items-start leading-none">
-                <span className="text-2xl font-medium tracking-tight text-neutral-300 tabular-nums">
+                <span className="text-2xl font-medium tracking-tight text-[var(--gallery-divider-strong)] tabular-nums">
                   / {TOTAL_ROUNDS}
                 </span>
-                <span className="mt-2 text-xs font-medium tracking-wide text-neutral-500 uppercase">
+                <span className="mt-2 text-xs font-medium tracking-wide text-[var(--gallery-text-tertiary)] uppercase">
                   {attemptsUsed} guesses
                 </span>
               </div>
@@ -794,34 +848,34 @@ export function ModelLabWordle() {
             ].map((stat) => (
               <div
                 key={stat.label}
-                className="rounded-xl border border-neutral-200 bg-neutral-50/70 px-4 py-4"
+                className="rounded-xl border border-[var(--gallery-border)] bg-[var(--gallery-surface-subtle)]/70 px-4 py-4"
               >
-                <p className="text-[11px] font-medium tracking-[0.14em] text-neutral-500 uppercase">
+                <p className="text-[11px] font-medium tracking-[0.14em] text-[var(--gallery-text-tertiary)] uppercase">
                   {stat.label}
                 </p>
-                <p className="mt-1 text-2xl font-medium tracking-tight text-neutral-900 tabular-nums">
+                <p className="mt-1 text-2xl font-medium tracking-tight text-[var(--gallery-text-primary)] tabular-nums">
                   {stat.value}
                 </p>
                 {stat.hint ? (
-                  <p className="mt-1 text-xs text-neutral-500">{stat.hint}</p>
+                  <p className="mt-1 text-xs text-[var(--gallery-text-tertiary)]">{stat.hint}</p>
                 ) : null}
               </div>
             ))}
           </div>
 
           <div className="relative mt-7">
-            <p className="mb-3 text-[11px] font-semibold tracking-[0.22em] text-neutral-400 uppercase">
+            <p className="mb-3 text-[11px] font-semibold tracking-[0.22em] text-[var(--gallery-text-quaternary)] uppercase">
               Round breakdown
             </p>
-            <ul className="divide-y divide-neutral-200 overflow-hidden rounded-xl border border-neutral-200">
+            <ul className="divide-y divide-[var(--gallery-border)] overflow-hidden rounded-xl border border-[var(--gallery-border)]">
               {rounds.map((round, idx) => {
                 const answerOption = getGuessOption(round.answer);
                 return (
                   <li
                     key={round.id}
-                    className="flex items-center gap-3 bg-white px-4 py-3 sm:gap-4"
+                    className="flex items-center gap-3 bg-[var(--gallery-surface)] px-4 py-3 sm:gap-4"
                   >
-                    <span className="w-5 shrink-0 text-xs font-medium tabular-nums text-neutral-400">
+                    <span className="w-5 shrink-0 text-xs font-medium tabular-nums text-[var(--gallery-text-quaternary)]">
                       {idx + 1}
                     </span>
                     {answerOption ? (
@@ -833,13 +887,13 @@ export function ModelLabWordle() {
                         className="size-[22px] shrink-0 rounded-sm object-contain"
                       />
                     ) : (
-                      <span className="size-[22px] shrink-0 rounded-sm bg-neutral-100" />
+                      <span className="size-[22px] shrink-0 rounded-sm bg-[var(--gallery-surface-muted)]" />
                     )}
                     <div className="flex min-w-0 flex-1 items-baseline gap-2">
-                      <span className="truncate text-sm font-medium text-neutral-900">
+                      <span className="truncate text-sm font-medium text-[var(--gallery-text-primary)]">
                         {round.answerLabel}
                       </span>
-                      <span className="truncate text-xs text-neutral-400">
+                      <span className="truncate text-xs text-[var(--gallery-text-quaternary)]">
                         {round.modelLabel}
                       </span>
                     </div>
@@ -852,7 +906,7 @@ export function ModelLabWordle() {
                             key={i}
                             className={clsx(
                               "size-2 rounded-full",
-                              !attempt && "bg-neutral-200",
+                              !attempt && "bg-[var(--gallery-divider-strong)]",
                               attempt && isCorrect && "bg-emerald-500",
                               attempt && !isCorrect && "bg-rose-300",
                             )}
@@ -863,7 +917,7 @@ export function ModelLabWordle() {
                     <span
                       className={clsx(
                         "w-12 shrink-0 text-right text-xs font-medium tabular-nums",
-                        round.solved ? "text-emerald-600" : "text-neutral-400",
+                        round.solved ? "text-emerald-600" : "text-[var(--gallery-text-quaternary)]",
                       )}
                     >
                       {round.solved
@@ -909,10 +963,10 @@ export function ModelLabWordle() {
                 imageShareState === "copied" &&
                   "border-emerald-300 bg-emerald-50 text-emerald-700",
                 imageShareState === "downloaded" &&
-                  "border-neutral-300 bg-neutral-50 text-neutral-800",
+                  "border-[var(--gallery-divider-strong)] bg-[var(--gallery-surface-subtle)] text-[var(--gallery-text-primary)]",
                 imageShareState === "failed" && "border-rose-300 bg-rose-50 text-rose-700",
                 imageShareState === "idle" &&
-                  "border-neutral-300 bg-white text-neutral-800 hover:border-neutral-400 hover:bg-neutral-50",
+                  "border-[var(--gallery-divider-strong)] bg-[var(--gallery-surface)] text-[var(--gallery-text-primary)] hover:border-[var(--gallery-text-quaternary)] hover:bg-[var(--gallery-surface-subtle)]",
               )}
             >
               {imageShareState === "copied" ? (
@@ -931,11 +985,11 @@ export function ModelLabWordle() {
             <button
               type="button"
               onClick={resetGame}
-              className="inline-flex items-center justify-center rounded-lg border border-neutral-300 bg-white px-4 py-2.5 text-sm font-medium text-neutral-800 transition hover:border-neutral-400 hover:bg-neutral-50"
+              className="inline-flex items-center justify-center rounded-lg border border-[var(--gallery-divider-strong)] bg-[var(--gallery-surface)] px-4 py-2.5 text-sm font-medium text-[var(--gallery-text-primary)] transition hover:border-[var(--gallery-text-quaternary)] hover:bg-[var(--gallery-surface-subtle)]"
             >
               Play again
             </button>
-            <span className="ml-auto shrink-0 rounded-lg bg-white/90 px-[0.55rem] py-[0.35rem] text-sm font-bold tracking-wide text-[#b84a8c]">
+            <span className="ml-auto shrink-0 rounded-lg bg-[var(--gallery-nav-bg)] px-[0.55rem] py-[0.35rem] text-sm font-bold tracking-wide text-[var(--gallery-accent)]">
               {SHARE_URL}
             </span>
           </div>

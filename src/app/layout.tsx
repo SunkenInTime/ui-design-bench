@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { GeistSans } from "geist/font/sans";
+import { GalleryThemeProvider } from "@/components/gallery/gallery-theme-provider";
+import { galleryThemeInitScript } from "@/lib/gallery-theme";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -14,8 +16,13 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className={GeistSans.variable}>
-      <body>{children}</body>
+    <html lang="en" className={GeistSans.variable} suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: galleryThemeInitScript }} />
+      </head>
+      <body>
+        <GalleryThemeProvider>{children}</GalleryThemeProvider>
+      </body>
     </html>
   );
 }

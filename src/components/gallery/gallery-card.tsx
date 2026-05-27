@@ -10,11 +10,11 @@ export function GalleryCard({ entry }: { entry: GalleryEntry }) {
   return (
     <article
       data-testid="gallery-card"
-      className="group flex flex-col overflow-hidden rounded-lg border border-neutral-300 bg-white transition-transform duration-300 ease-out hover:-translate-y-1.5 hover:shadow-lg"
+      className="group gallery-elevated-surface flex flex-col overflow-hidden rounded-lg border border-[var(--gallery-border)] bg-[var(--gallery-surface)] transition-transform duration-300 ease-out hover:-translate-y-1.5 hover:shadow-[var(--gallery-shadow-md)]"
     >
       <Link
         href={buildVariantHref(entry.group, entry.model, entry.defaultIteration)}
-        className="block bg-neutral-100"
+        className="block bg-[var(--gallery-surface-muted)]"
       >
         <div className="relative aspect-[16/10]">
           <Image
@@ -32,8 +32,8 @@ export function GalleryCard({ entry }: { entry: GalleryEntry }) {
       </Link>
       <div className="flex flex-1 flex-col gap-2 p-5">
         <div className="space-y-1">
-          <p className="text-xs text-neutral-500">{entry.groupLabel}</p>
-          <h3 className="flex flex-wrap items-center gap-2 text-lg font-medium tracking-tight text-neutral-900">
+          <p className="text-xs text-[var(--gallery-text-tertiary)]">{entry.groupLabel}</p>
+          <h3 className="flex flex-wrap items-center gap-2 text-lg font-medium tracking-tight text-[var(--gallery-text-primary)]">
             <span>{entry.modelLabel}</span>
             <Image
               src={getModelBrandLogoPath(entry.model)}
@@ -51,7 +51,7 @@ export function GalleryCard({ entry }: { entry: GalleryEntry }) {
               <Link
                 key={iteration.id}
                 href={buildVariantHref(entry.group, entry.model, iteration.id)}
-                className="inline-flex size-8 items-center justify-center rounded-md border border-neutral-200 bg-neutral-50 text-xs font-medium tabular-nums leading-none text-neutral-600 transition-colors hover:border-neutral-300 hover:bg-white hover:text-neutral-900"
+                className="inline-flex size-8 items-center justify-center rounded-md border border-[var(--gallery-border)] bg-[var(--gallery-surface-subtle)] text-xs font-medium tabular-nums leading-none text-[var(--gallery-text-secondary)] transition-colors hover:border-[var(--gallery-divider-strong)] hover:bg-[var(--gallery-surface)] hover:text-[var(--gallery-text-primary)]"
               >
                 {iteration.id}
               </Link>
@@ -63,7 +63,7 @@ export function GalleryCard({ entry }: { entry: GalleryEntry }) {
               model: entry.model,
               iteration: "1",
             })}
-            className="inline-flex size-8 shrink-0 items-center justify-center rounded-md border border-neutral-200 bg-neutral-50 text-neutral-600 transition-colors hover:border-neutral-300 hover:bg-white hover:text-neutral-900"
+            className="inline-flex size-8 shrink-0 items-center justify-center rounded-md border border-[var(--gallery-border)] bg-[var(--gallery-surface-subtle)] text-[var(--gallery-text-secondary)] transition-colors hover:border-[var(--gallery-divider-strong)] hover:bg-[var(--gallery-surface)] hover:text-[var(--gallery-text-primary)]"
             aria-label={`Compare ${entry.groupLabel} ${entry.modelLabel}`}
             title="Compare"
           >

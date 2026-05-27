@@ -29,17 +29,17 @@ export function VariantSwitcher({
   const paletteTone =
     isWithDesignSkill || isWithUiShSkill || isMiscSkillGroup
       ? "text-[var(--gallery-accent)]"
-      : "text-neutral-400 opacity-55";
+      : "text-[var(--gallery-text-quaternary)] opacity-55";
 
   return (
     <nav
       aria-label={`${entry.modelLabel} gallery navigation`}
-      className="gallery-variant-switcher fixed top-5 right-5 z-[100] flex w-auto flex-col items-center gap-1 rounded-lg border border-[var(--gallery-border)] bg-white/85 px-1 py-1 text-neutral-500 shadow-[0_1px_2px_rgba(0,0,0,0.04)] backdrop-blur-[12px] sm:top-6 sm:right-6"
+      className="gallery-variant-switcher fixed top-5 right-5 z-[100] flex w-auto flex-col items-center gap-1 rounded-lg border border-[var(--gallery-border)] bg-[var(--gallery-nav-bg)] px-1 py-1 text-[var(--gallery-text-tertiary)] shadow-[var(--gallery-shadow-sm)] backdrop-blur-[12px] sm:top-6 sm:right-6 gallery-elevated-surface"
     >
       <Link
         href="/"
         aria-label="Back to Which AI Made This?"
-        className="inline-flex size-7 items-center justify-center rounded-md text-neutral-600 transition-colors hover:bg-black/[0.04] hover:text-neutral-900"
+        className="inline-flex size-7 items-center justify-center rounded-md text-[var(--gallery-text-secondary)] transition-colors hover:bg-[var(--gallery-hover-bg)] hover:text-[var(--gallery-text-primary)]"
       >
         <Home className="size-4 shrink-0 opacity-80" aria-hidden="true" />
       </Link>
@@ -54,7 +54,7 @@ export function VariantSwitcher({
           iteration,
         })}
         aria-label={`Compare ${entry.modelLabel} iteration ${iteration}`}
-        className="inline-flex size-7 items-center justify-center rounded-md text-[10px] font-semibold tracking-[0.12em] text-neutral-600 transition-colors hover:bg-black/[0.04] hover:text-neutral-900"
+        className="inline-flex size-7 items-center justify-center rounded-md text-[10px] font-semibold tracking-[0.12em] text-[var(--gallery-text-secondary)] transition-colors hover:bg-[var(--gallery-hover-bg)] hover:text-[var(--gallery-text-primary)]"
       >
         VS
       </Link>
@@ -81,7 +81,7 @@ export function VariantSwitcher({
           >
             <span
               role="tooltip"
-              className="max-w-[min(16rem,calc(100vw-4rem))] truncate rounded-md border border-[var(--gallery-border)] bg-white/95 px-2.5 py-1.5 text-left text-xs font-medium tracking-tight text-neutral-800 shadow-[0_4px_20px_rgba(0,0,0,0.1)] backdrop-blur-[12px] opacity-0 transition-opacity duration-200 ease-out group-hover/logo:opacity-100"
+              className="max-w-[min(16rem,calc(100vw-4rem))] truncate rounded-md border border-[var(--gallery-border)] bg-[var(--gallery-tooltip-bg)] px-2.5 py-1.5 text-left text-xs font-medium tracking-tight text-[var(--gallery-text-primary)] shadow-[var(--gallery-shadow-md)] backdrop-blur-[12px] opacity-0 transition-opacity duration-200 ease-out group-hover/logo:opacity-100"
             >
               {entry.modelLabel}
             </span>
@@ -101,7 +101,7 @@ export function VariantSwitcher({
               className="pointer-events-none absolute inset-0 flex items-center justify-center"
               aria-hidden
             >
-              <span className="h-px w-[130%] max-w-[1.125rem] rotate-[-38deg] rounded-full bg-neutral-400/85" />
+              <span className="h-px w-[130%] max-w-[1.125rem] rotate-[-38deg] rounded-full bg-[var(--gallery-text-quaternary)]/85" />
             </span>
           ) : null}
           <span
@@ -110,7 +110,7 @@ export function VariantSwitcher({
           >
             <span
               role="tooltip"
-              className="whitespace-nowrap rounded-md border border-[var(--gallery-border)] bg-white/95 px-2.5 py-1.5 text-left text-xs font-medium tracking-tight text-neutral-800 shadow-[0_4px_20px_rgba(0,0,0,0.1)] backdrop-blur-[12px] opacity-0 transition-opacity duration-200 ease-out group-hover/skill:opacity-100"
+              className="whitespace-nowrap rounded-md border border-[var(--gallery-border)] bg-[var(--gallery-tooltip-bg)] px-2.5 py-1.5 text-left text-xs font-medium tracking-tight text-[var(--gallery-text-primary)] shadow-[var(--gallery-shadow-md)] backdrop-blur-[12px] opacity-0 transition-opacity duration-200 ease-out group-hover/skill:opacity-100"
             >
               {groupLabel}
             </span>
@@ -137,7 +137,7 @@ export function VariantSwitcher({
               className={`gallery-variant-switcher__iteration inline-flex size-7 shrink-0 items-center justify-center rounded-md text-[11px] font-medium tabular-nums leading-none transition-colors ${
                 active
                   ? "bg-[var(--gallery-accent)] text-[var(--gallery-accent-foreground)]"
-                  : "text-neutral-600 hover:bg-black/[0.04] hover:text-neutral-900"
+                  : "text-[var(--gallery-text-secondary)] hover:bg-[var(--gallery-hover-bg)] hover:text-[var(--gallery-text-primary)]"
               }`}
             >
               {item.id}

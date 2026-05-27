@@ -34,11 +34,11 @@ export default async function ModelPage({
         <GalleryBreadcrumb entry={entry} />
         <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
           <div className="max-w-2xl space-y-3">
-            <p className="text-xs text-neutral-500">{entry.groupLabel}</p>
-            <h1 className="text-3xl font-medium tracking-tight text-neutral-900 sm:text-4xl">
+            <p className="text-xs text-[var(--gallery-text-tertiary)]">{entry.groupLabel}</p>
+            <h1 className="text-3xl font-medium tracking-tight text-[var(--gallery-text-primary)] sm:text-4xl">
               {entry.modelLabel}
             </h1>
-            <p className="text-[15px] leading-relaxed text-neutral-600">{entry.summary}</p>
+            <p className="text-[15px] leading-relaxed text-[var(--gallery-text-secondary)]">{entry.summary}</p>
           </div>
           <div className="flex flex-col items-start gap-4">
             <IterationLinks entry={entry} />
@@ -48,7 +48,7 @@ export default async function ModelPage({
                 model: entry.model,
                 iteration: "1",
               })}
-              className="inline-flex items-center rounded-full border border-neutral-300 bg-white px-4 py-2 text-sm font-medium text-neutral-700 transition-colors hover:border-neutral-400 hover:text-neutral-900"
+              className="inline-flex items-center rounded-full border border-[var(--gallery-divider-strong)] bg-[var(--gallery-surface)] px-4 py-2 text-sm font-medium text-[var(--gallery-text-secondary)] transition-colors hover:border-[var(--gallery-text-quaternary)] hover:text-[var(--gallery-text-primary)]"
               aria-label="Compare this model"
             >
               Compare model
@@ -61,9 +61,9 @@ export default async function ModelPage({
         {entry.iterations.map((iteration) => (
           <article
             key={iteration.id}
-            className="flex flex-col overflow-hidden rounded-lg border border-neutral-200 bg-white"
+            className="flex flex-col overflow-hidden rounded-lg border border-[var(--gallery-border)] bg-[var(--gallery-surface)] gallery-elevated-surface"
           >
-            <a href={buildVariantHref(entry.group, entry.model, iteration.id)} className="block bg-neutral-100">
+            <a href={buildVariantHref(entry.group, entry.model, iteration.id)} className="block bg-[var(--gallery-surface-muted)]">
               <div className="relative aspect-[16/10]">
                 <Image
                   src={iteration.thumbnailPath}
@@ -74,17 +74,17 @@ export default async function ModelPage({
               </div>
             </a>
             <div className="flex flex-1 flex-col gap-3 p-5">
-              <p className="text-xs text-neutral-500">Iteration {iteration.id}</p>
-              <h2 className="text-lg font-medium tracking-tight text-neutral-900">{iteration.title}</h2>
-              <p className="text-sm text-neutral-500">
-                <code className="rounded bg-neutral-100 px-1.5 py-0.5 text-xs text-neutral-700">
+              <p className="text-xs text-[var(--gallery-text-tertiary)]">Iteration {iteration.id}</p>
+              <h2 className="text-lg font-medium tracking-tight text-[var(--gallery-text-primary)]">{iteration.title}</h2>
+              <p className="text-sm text-[var(--gallery-text-tertiary)]">
+                <code className="rounded bg-[var(--gallery-surface-muted)] px-1.5 py-0.5 text-xs text-[var(--gallery-text-secondary)]">
                   {iteration.sourceSlug}
                 </code>
               </p>
               <div className="mt-auto flex items-center gap-4">
                 <a
                   href={buildVariantHref(entry.group, entry.model, iteration.id)}
-                  className="inline-flex text-sm font-medium text-neutral-900 underline decoration-neutral-300 underline-offset-4 transition-colors hover:decoration-neutral-900"
+                  className="inline-flex text-sm font-medium text-[var(--gallery-text-primary)] underline decoration-[var(--gallery-divider-strong)] underline-offset-4 transition-colors hover:decoration-[var(--gallery-text-primary)]"
                 >
                   Open iteration
                 </a>
@@ -94,7 +94,7 @@ export default async function ModelPage({
                     model: entry.model,
                     iteration: iteration.id,
                   })}
-                  className="inline-flex text-sm font-medium text-neutral-600 underline decoration-neutral-300 underline-offset-4 transition-colors hover:text-neutral-900 hover:decoration-neutral-900"
+                  className="inline-flex text-sm font-medium text-[var(--gallery-text-secondary)] underline decoration-[var(--gallery-divider-strong)] underline-offset-4 transition-colors hover:text-[var(--gallery-text-primary)] hover:decoration-[var(--gallery-text-primary)]"
                   aria-label={`Compare ${entry.modelLabel} iteration ${iteration.id}`}
                 >
                   Compare

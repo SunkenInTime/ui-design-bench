@@ -26,7 +26,7 @@ export function GalleryIterationView({
   }
 
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-[var(--gallery-body-bg)]">
       {!preview ? <VariantSwitcher entry={entry} iteration={iteration} /> : null}
       <div
         className="gallery-generation"

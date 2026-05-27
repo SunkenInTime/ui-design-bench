@@ -10,6 +10,7 @@ export type ModelSlug =
   | "composer-2.0"
   | "composer-2.5"
   | "gemini"
+  | "gemini-3.5-flash"
   | "glm-5-turbo"
   | "glm-5.1"
   | "gpt-5.4"
