@@ -21,6 +21,7 @@ const entries = [
   ["with-design-skill", "composer-2.0"],
   ["with-design-skill", "composer-2.5"],
   ["with-design-skill", "gemini"],
+  ["with-design-skill", "gemini-3.5-flash"],
   ["with-design-skill", "gpt-5.4"],
   ["with-design-skill", "gpt-5.5-low"],
   ["with-design-skill", "gpt-5.5-high"],
@@ -38,6 +39,7 @@ const entries = [
   ["without-design-skill", "composer-2.0"],
   ["without-design-skill", "composer-2.5"],
   ["without-design-skill", "gemini"],
+  ["without-design-skill", "gemini-3.5-flash"],
   ["without-design-skill", "gpt-5.4"],
   ["without-design-skill", "gpt-5.5-low"],
   ["without-design-skill", "gpt-5.5-high"],
@@ -69,14 +71,17 @@ test("rankings page lists eight models with previews", async ({ page }) => {
   await expect(page.getByRole("listitem")).toHaveCount(8);
 });
 
-test("gallery shell background stays light after client navigation into a variant", async ({ page }) => {
+test("gallery shell background stays consistent after client navigation into a variant", async ({ page }) => {
   await page.emulateMedia({ colorScheme: "dark" });
   await page.goto("/");
 
   const initialShellStyles = await page.evaluate(() => ({
     htmlBackgroundColor: window.getComputedStyle(document.documentElement).backgroundColor,
-    bodyBackgroundImage: window.getComputedStyle(document.body).backgroundImage,
+    bodyBackgroundColor: window.getComputedStyle(document.body).backgroundColor,
+    isDark: document.documentElement.classList.contains("dark"),
   }));
+
+  expect(initialShellStyles.isDark).toBe(true);
 
   await page.locator("a[href='/without-design-skill/composer-2.0/1']").first().click();
   await expect(page).toHaveURL("/without-design-skill/composer-2.0/1");
@@ -85,7 +90,8 @@ test("gallery shell background stays light after client navigation into a varian
 
   const shellStylesAfterReturn = await page.evaluate(() => ({
     htmlBackgroundColor: window.getComputedStyle(document.documentElement).backgroundColor,
-    bodyBackgroundImage: window.getComputedStyle(document.body).backgroundImage,
+    bodyBackgroundColor: window.getComputedStyle(document.body).backgroundColor,
+    isDark: document.documentElement.classList.contains("dark"),
   }));
 
   expect(shellStylesAfterReturn).toEqual(initialShellStyles);
@@ -125,7 +131,7 @@ test("gallery switcher text colors stay isolated from generated variant CSS", as
   expect(switcherColors).toEqual({
     active: "rgb(250, 250, 250)",
     inactive: "rgb(82, 82, 82)",
-    home: "lab(34.924 0 0)",
+    home: "rgb(82, 82, 82)",
   });
 
   const cssVariables = await page.evaluate(() => {

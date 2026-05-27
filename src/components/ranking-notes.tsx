@@ -45,7 +45,7 @@ export function RankingNotes(props: {
         <Link
           key={key++}
           href={href}
-          className="mx-0.5 inline-flex items-center rounded-md border border-neutral-200 bg-neutral-50 px-1.5 py-0.5 align-baseline text-[13px] font-medium leading-snug text-neutral-800 underline-offset-2 transition-colors hover:border-neutral-300 hover:bg-neutral-100"
+          className="mx-0.5 inline-flex items-center rounded-md border border-[var(--gallery-border)] bg-[var(--gallery-surface-subtle)] px-1.5 py-0.5 align-baseline text-[13px] font-medium leading-snug text-[var(--gallery-text-primary)] underline-offset-2 transition-colors hover:border-[var(--gallery-divider-strong)] hover:bg-[var(--gallery-surface-muted)]"
           title={`Open ${label} in the gallery`}
         >
           {label}

@@ -28,9 +28,9 @@ export function GenerationPrompt({ prompt }: { prompt: string }) {
 
   return (
     <div className="group mt-8 flex items-end gap-3">
-      <figure className="min-w-0 flex-1 border-l border-neutral-300 pl-5">
-        <blockquote className="text-[15px] leading-relaxed text-neutral-600">
-          <span className="text-neutral-400">Prompt · </span>
+      <figure className="min-w-0 flex-1 border-l border-[var(--gallery-divider-strong)] pl-5">
+        <blockquote className="text-[15px] leading-relaxed text-[var(--gallery-text-secondary)]">
+          <span className="text-[var(--gallery-text-quaternary)]">Prompt · </span>
           {prompt}
         </blockquote>
       </figure>
@@ -52,7 +52,7 @@ export function GenerationPrompt({ prompt }: { prompt: string }) {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 2, scale: 0.99 }}
               transition={{ ...FAST_SPRING, duration: 0.12 }}
-              className="pointer-events-none absolute bottom-full left-1/2 z-10 mb-2 -translate-x-1/2 whitespace-nowrap rounded-lg border border-[var(--gallery-border)] bg-white/95 px-3 py-1.5 text-xs font-medium text-neutral-800 shadow-[0_8px_30px_rgba(0,0,0,0.12)] backdrop-blur-md"
+              className="pointer-events-none absolute bottom-full left-1/2 z-10 mb-2 -translate-x-1/2 whitespace-nowrap rounded-lg border border-[var(--gallery-border)] bg-[var(--gallery-tooltip-bg)] px-3 py-1.5 text-xs font-medium text-[var(--gallery-text-primary)] shadow-[var(--gallery-shadow-lg)] backdrop-blur-md"
             >
               Prompt copied
             </motion.div>
@@ -67,12 +67,12 @@ export function GenerationPrompt({ prompt }: { prompt: string }) {
           whileTap={{ scale: 0.9 }}
           transition={FAST_SPRING}
           className={clsx(
-            "inline-flex size-8 cursor-pointer items-center justify-center rounded-md border shadow-[0_1px_2px_rgba(0,0,0,0.04)] transition-[border-color,background-color,color,box-shadow,opacity] duration-150",
+            "inline-flex size-8 cursor-pointer items-center justify-center rounded-md border shadow-[var(--gallery-shadow-sm)] transition-[border-color,background-color,color,box-shadow,opacity] duration-150",
             !active &&
               "[@media(hover:hover)]:pointer-events-none [@media(hover:hover)]:group-hover:pointer-events-auto [@media(hover:hover)]:group-focus-within:pointer-events-auto",
             active
-              ? "border-[var(--gallery-accent)] bg-[color-mix(in_srgb,var(--gallery-accent)_18%,white)] text-[var(--gallery-accent)] shadow-[0_0_0_3px_color-mix(in_srgb,var(--gallery-accent)_16%,transparent)]"
-              : "border-[var(--gallery-border)] bg-white text-neutral-500 hover:border-neutral-300 hover:bg-neutral-50 hover:text-neutral-800",
+              ? "border-[var(--gallery-accent)] bg-[color-mix(in_srgb,var(--gallery-accent)_18%,var(--gallery-surface))] text-[var(--gallery-accent)] shadow-[0_0_0_3px_color-mix(in_srgb,var(--gallery-accent)_16%,transparent)]"
+              : "border-[var(--gallery-border)] bg-[var(--gallery-surface)] text-[var(--gallery-text-tertiary)] hover:border-[var(--gallery-divider-strong)] hover:bg-[var(--gallery-surface-subtle)] hover:text-[var(--gallery-text-primary)]",
           )}
         >
           <span className="relative inline-flex size-3.5 items-center justify-center">

@@ -1,7 +1,9 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
-  color-scheme: light !important;
+  color-scheme: light;
   --gallery-html-bg: #fafafa;
   --gallery-body-text: #404040;
   --gallery-body-bg: #fafafa;
@@ -10,6 +12,56 @@
   /* Pink–purple with a warm, slightly reddish cast (design skill accent) */
   --gallery-accent: #b84a8c;
   --gallery-accent-foreground: #fafafa;
+  --gallery-accent-hover-mix: #ffffff;
+  --gallery-accent-active-mix: #171717;
+  --gallery-surface: #ffffff;
+  --gallery-surface-muted: #f5f5f5;
+  --gallery-surface-subtle: #fafafa;
+  --gallery-text-primary: #171717;
+  --gallery-text-secondary: #525252;
+  --gallery-text-tertiary: #737373;
+  --gallery-text-quaternary: #a3a3a3;
+  --gallery-divider: #e5e5e5;
+  --gallery-divider-strong: #d4d4d4;
+  --gallery-nav-bg: #ffffff;
+  --gallery-tooltip-bg: rgba(255, 255, 255, 0.95);
+  --gallery-hover-bg: rgba(0, 0, 0, 0.04);
+  --gallery-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --gallery-shadow-md: 0 4px 20px rgba(0, 0, 0, 0.1);
+  --gallery-shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.12);
+  --gallery-selection-bg: rgba(23, 23, 23, 0.08);
+  --gallery-surface-highlight: transparent;
+}
+
+.dark {
+  color-scheme: dark;
+  /* Warm charcoal: off-black base like light mode’s off-white (#fafafa), not pure black or mid-gray. */
+  --gallery-html-bg: #1a1917;
+  --gallery-body-text: #b0aea9;
+  --gallery-body-bg: #1a1917;
+  --gallery-border: #343230;
+  --gallery-muted: #8f8d88;
+  --gallery-accent: #c4578f;
+  --gallery-accent-foreground: #faf9f7;
+  --gallery-accent-hover-mix: #292724;
+  --gallery-accent-active-mix: #eceae6;
+  --gallery-surface: #292724;
+  --gallery-surface-muted: #242220;
+  --gallery-surface-subtle: #211f1d;
+  --gallery-text-primary: #eeece8;
+  --gallery-text-secondary: #c2c0bb;
+  --gallery-text-tertiary: #918f8a;
+  --gallery-text-quaternary: #716f6a;
+  --gallery-divider: #2d2b28;
+  --gallery-divider-strong: #3a3835;
+  --gallery-nav-bg: #292724;
+  --gallery-tooltip-bg: #302e2b;
+  --gallery-hover-bg: rgba(238, 236, 232, 0.06);
+  --gallery-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.24);
+  --gallery-shadow-md: 0 10px 28px rgba(0, 0, 0, 0.26);
+  --gallery-shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.3);
+  --gallery-selection-bg: rgba(238, 236, 232, 0.13);
+  --gallery-surface-highlight: rgba(255, 250, 245, 0.045);
 }
 
 html {
@@ -49,16 +101,26 @@ body {
 }
 
 ::selection {
-  background: rgba(23, 23, 23, 0.08);
+  background: var(--gallery-selection-bg);
   color: inherit;
 }
 
+.gallery-elevated-surface {
+  box-shadow: inset 0 1px 0 var(--gallery-surface-highlight);
+}
+
+.dark .gallery-elevated-surface:hover {
+  box-shadow:
+    inset 0 1px 0 var(--gallery-surface-highlight),
+    var(--gallery-shadow-md);
+}
+
 .gallery-variant-switcher .gallery-variant-switcher__iteration {
-  color: #525252;
+  color: var(--gallery-text-secondary);
 }
 
 .gallery-variant-switcher .gallery-variant-switcher__iteration:hover {
-  color: #171717 !important;
+  color: var(--gallery-text-primary) !important;
 }
 
 .gallery-variant-switcher .gallery-variant-switcher__iteration[aria-current="page"],
@@ -67,9 +129,9 @@ body {
 }
 
 .design-switcher {
-  --switcher-bg: rgba(255, 255, 255, 0.85);
-  --switcher-fg: #525252;
-  --switcher-active: #171717;
+  --switcher-bg: var(--gallery-nav-bg);
+  --switcher-fg: var(--gallery-text-secondary);
+  --switcher-active: var(--gallery-accent-active-mix);
   position: fixed;
   top: 1.25rem;
   right: 1.25rem;
@@ -83,7 +145,7 @@ body {
   background: var(--switcher-bg);
   color: var(--switcher-fg);
   backdrop-filter: blur(12px);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  box-shadow: var(--gallery-shadow-sm);
 }
 
 .design-switcher__label {
@@ -113,12 +175,12 @@ body {
 }
 
 .design-switcher__btn:hover {
-  background: rgba(0, 0, 0, 0.04);
+  background: var(--gallery-hover-bg);
 }
 
 .design-switcher__btn--active {
   background: var(--switcher-active);
-  color: #fafafa;
+  color: var(--gallery-accent-foreground);
 }
 
 html {
@@ -183,7 +245,7 @@ html {
 @keyframes lab-correct-pop {
   0% {
     transform: scale(1);
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+    box-shadow: var(--gallery-shadow-sm);
   }
   38% {
     transform: scale(1.045);
@@ -191,7 +253,7 @@ html {
   }
   100% {
     transform: scale(1);
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+    box-shadow: var(--gallery-shadow-sm);
   }
 }
 
@@ -225,6 +287,69 @@ html {
     transparent
   );
   animation: lab-correct-sheen 0.62s ease;
+}
+
+@keyframes lab-missed-reveal-backdrop {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes lab-missed-reveal-popup {
+  0% {
+    opacity: 0;
+    transform: scale(0.86);
+  }
+  62% {
+    opacity: 1;
+    transform: scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes lab-missed-reveal-sheen {
+  0% {
+    transform: translateX(-140%) skewX(-18deg);
+    opacity: 0;
+  }
+  28% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(180%) skewX(-18deg);
+    opacity: 0;
+  }
+}
+
+.lab-missed-reveal-backdrop {
+  animation: lab-missed-reveal-backdrop 0.42s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.lab-missed-reveal-popup {
+  opacity: 1;
+  transform: scale(1);
+  animation: lab-missed-reveal-popup 0.58s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.lab-missed-reveal-popup::after {
+  content: "";
+  position: absolute;
+  inset: -35%;
+  pointer-events: none;
+  opacity: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.72),
+    transparent
+  );
+  animation: lab-missed-reveal-sheen 0.58s ease forwards;
 }
 
 @keyframes spin-slow {

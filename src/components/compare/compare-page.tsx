@@ -92,7 +92,7 @@ function ComparePanel({
   const panelFrame =
     side === "left"
       ? "lg:pr-2"
-      : "border-t border-neutral-200 pt-12 lg:border-t-0 lg:border-l lg:border-neutral-200 lg:pl-2 lg:pt-0";
+      : "border-t border-[var(--gallery-border)] pt-12 lg:border-t-0 lg:border-l lg:border-[var(--gallery-border)] lg:pl-2 lg:pt-0";
 
   return (
     <section
@@ -137,11 +137,11 @@ function ComparePanel({
         </div>
       </div>
 
-      <div className="relative min-h-0 flex-1 bg-white">
+      <div className="relative min-h-0 flex-1 bg-[var(--gallery-surface)]">
         <div
           role="group"
           aria-label={`${sideLabel} iterations`}
-          className="gallery-variant-switcher absolute top-4 right-1 z-10 flex flex-col items-center gap-1 rounded-lg border border-[var(--gallery-border)] bg-white/85 px-1 py-1 text-neutral-500 shadow-[0_1px_2px_rgba(0,0,0,0.04)] backdrop-blur-[12px] sm:top-5 sm:right-1"
+          className="gallery-variant-switcher absolute top-4 right-1 z-10 flex flex-col items-center gap-1 rounded-lg border border-[var(--gallery-border)] bg-[var(--gallery-nav-bg)] px-1 py-1 text-[var(--gallery-text-tertiary)] shadow-[var(--gallery-shadow-sm)] backdrop-blur-[12px] sm:top-5 sm:right-1"
         >
           {ITERATION_OPTIONS.map((iteration) => {
             const active = iteration === selection.iteration;
@@ -155,7 +155,7 @@ function ComparePanel({
                 className={`gallery-variant-switcher__iteration inline-flex size-7 shrink-0 cursor-pointer items-center justify-center rounded-md text-[11px] font-medium tabular-nums leading-none transition-colors ${
                   active
                     ? "bg-[var(--gallery-accent)] text-[var(--gallery-accent-foreground)]"
-                    : "text-neutral-600 hover:bg-black/[0.04] hover:text-neutral-900"
+                    : "text-[var(--gallery-text-secondary)] hover:bg-[var(--gallery-hover-bg)] hover:text-[var(--gallery-text-primary)]"
                 }`}
                 aria-pressed={active}
               >
@@ -212,17 +212,17 @@ export function ComparePage({ initialState }: { initialState: CompareState }) {
   };
 
   return (
-    <div className="min-h-screen text-neutral-950">
+    <div className="min-h-screen text-[var(--gallery-text-primary)]">
       <GalleryRankingsNav />
 
       <main className="mx-auto max-w-[1600px] px-5 pb-16 pt-[4.5rem] sm:px-8 sm:pt-20">
         <header className="mb-6 w-full">
           <div className="flex w-full flex-col gap-4 sm:flex-row sm:items-center sm:justify-between sm:gap-8">
             <div className="min-w-0 max-w-2xl space-y-2">
-              <h1 className="text-3xl font-medium tracking-tight text-neutral-900 sm:text-4xl">
+              <h1 className="text-3xl font-medium tracking-tight text-[var(--gallery-text-primary)] sm:text-4xl">
                 Compare
               </h1>
-              <p className="text-[15px] leading-relaxed text-neutral-600">
+              <p className="text-[15px] leading-relaxed text-[var(--gallery-text-secondary)]">
                 Two previews in one URL. Change either side independently.
               </p>
             </div>
@@ -236,7 +236,7 @@ export function ComparePage({ initialState }: { initialState: CompareState }) {
                 title="Swap sides"
                 whileTap={{ scale: 0.9 }}
                 transition={{ type: "spring", stiffness: 520, damping: 28 }}
-                className="inline-flex size-9 cursor-pointer items-center justify-center rounded-md border border-[var(--gallery-border)] bg-white text-neutral-600 shadow-[0_1px_2px_rgba(0,0,0,0.04)] transition-colors hover:border-neutral-300 hover:bg-neutral-50 hover:text-neutral-900 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50"
+                className="inline-flex size-9 cursor-pointer items-center justify-center rounded-md border border-[var(--gallery-border)] bg-[var(--gallery-surface)] text-[var(--gallery-text-secondary)] shadow-[var(--gallery-shadow-sm)] transition-colors hover:border-[var(--gallery-divider-strong)] hover:bg-[var(--gallery-surface-subtle)] hover:text-[var(--gallery-text-primary)] disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50"
               >
                 <ArrowLeftRight className="size-4 opacity-80" aria-hidden="true" />
               </motion.button>
@@ -250,7 +250,7 @@ export function ComparePage({ initialState }: { initialState: CompareState }) {
                       animate={{ opacity: 1, y: 0, scale: 1 }}
                       exit={{ opacity: 0, y: 4, scale: 0.98 }}
                       transition={{ type: "spring", stiffness: 420, damping: 28 }}
-                      className="pointer-events-none absolute bottom-full left-1/2 z-[200] mb-2 -translate-x-1/2 whitespace-nowrap rounded-lg border border-[var(--gallery-border)] bg-white/95 px-4 py-2.5 text-sm font-medium text-neutral-800 shadow-[0_8px_30px_rgba(0,0,0,0.12)] backdrop-blur-md"
+                      className="pointer-events-none absolute bottom-full left-1/2 z-[200] mb-2 -translate-x-1/2 whitespace-nowrap rounded-lg border border-[var(--gallery-border)] bg-[var(--gallery-tooltip-bg)] px-4 py-2.5 text-sm font-medium text-[var(--gallery-text-primary)] shadow-[var(--gallery-shadow-lg)] backdrop-blur-md"
                     >
                       Link copied
                     </motion.div>
@@ -264,10 +264,10 @@ export function ComparePage({ initialState }: { initialState: CompareState }) {
                   whileTap={{ scale: 0.9 }}
                   transition={{ type: "spring", stiffness: 520, damping: 28 }}
                   className={clsx(
-                    "inline-flex size-9 cursor-pointer items-center justify-center rounded-md border shadow-[0_1px_2px_rgba(0,0,0,0.04)] transition-colors duration-200",
+                    "inline-flex size-9 cursor-pointer items-center justify-center rounded-md border shadow-[var(--gallery-shadow-sm)] transition-colors duration-200",
                     copyFlash
-                      ? "border-[var(--gallery-accent)] bg-[color-mix(in_srgb,var(--gallery-accent)_22%,white)] text-[var(--gallery-accent)]"
-                      : "border-[var(--gallery-border)] bg-white text-neutral-600 hover:border-neutral-300 hover:bg-neutral-50 hover:text-neutral-900",
+                      ? "border-[var(--gallery-accent)] bg-[color-mix(in_srgb,var(--gallery-accent)_22%,var(--gallery-accent-hover-mix))] text-[var(--gallery-accent)]"
+                      : "border-[var(--gallery-border)] bg-[var(--gallery-surface)] text-[var(--gallery-text-secondary)] hover:border-[var(--gallery-divider-strong)] hover:bg-[var(--gallery-surface-subtle)] hover:text-[var(--gallery-text-primary)]",
                   )}
                 >
                   <Link2

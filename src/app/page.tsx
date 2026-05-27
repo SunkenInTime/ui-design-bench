@@ -23,28 +23,28 @@ export default function HomePage() {
       <GalleryRankingsNav />
       <main className="mx-auto max-w-[98rem] px-4 py-16 sm:px-6 sm:py-20 lg:px-4">
         <header className="max-w-2xl">
-          <h1 className="text-3xl font-medium tracking-tight text-neutral-900 sm:text-4xl">
+          <h1 className="text-3xl font-medium tracking-tight text-[var(--gallery-text-primary)] sm:text-4xl">
             Which AI Made This?
           </h1>
-          <p className="mt-5 text-[15px] leading-relaxed text-neutral-600">
+          <p className="mt-5 text-[15px] leading-relaxed text-[var(--gallery-text-secondary)]">
             A comparison of how different AI models approach UI design, with and without{" "}
             <Link
               href={ANTHROPIC_FRONTEND_DESIGN_SKILL_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="font-medium text-neutral-800 underline decoration-neutral-300 underline-offset-2 transition-colors hover:text-[var(--gallery-accent)] hover:decoration-[var(--gallery-accent)]"
+              className="font-medium text-[var(--gallery-text-primary)] underline decoration-[var(--gallery-divider-strong)] underline-offset-2 transition-colors hover:text-[var(--gallery-accent)] hover:decoration-[var(--gallery-accent)]"
             >
               Anthropic&apos;s frontend design skill
             </Link>{" "}
             enabled.
           </p>
           <GenerationPrompt prompt={generationPrompt} />
-          <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm text-neutral-500">
+          <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm text-[var(--gallery-text-tertiary)]">
             <Link
               href="https://github.com/sunkenintime"
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2 transition-colors hover:text-neutral-900"
+              className="inline-flex items-center gap-2 transition-colors hover:text-[var(--gallery-text-primary)]"
             >
               <Github className="h-4 w-4 shrink-0 opacity-70" aria-hidden="true" />
               <span>Dara A.</span>
@@ -53,7 +53,7 @@ export default function HomePage() {
               href="https://x.com/daradoescode"
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2 transition-colors hover:text-neutral-900"
+              className="inline-flex items-center gap-2 transition-colors hover:text-[var(--gallery-text-primary)]"
             >
               <svg
                 viewBox="0 0 24 24"
@@ -65,7 +65,7 @@ export default function HomePage() {
               <span>@daradoescode</span>
             </Link>
           </div>
-          <p className="mt-6 text-sm italic text-neutral-400">
+          <p className="mt-6 text-sm italic text-[var(--gallery-text-quaternary)]">
             This site was designed by Composer 2.0 LOL
           </p>
         </header>

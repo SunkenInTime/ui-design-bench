@@ -1,13 +1,11 @@
 "use client";
 
 import clsx from "clsx";
-import { AnimatePresence, motion } from "framer-motion";
 import { ArrowLeftRight, BarChart3, Gamepad2, Home } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { GalleryThemeToggle } from "@/components/gallery/gallery-theme-toggle";
 import { buildCompareHref, DEFAULT_COMPARE_STATE } from "@/lib/compare";
-
-const ease = [0.22, 1, 0.36, 1] as const;
 
 const navLinkBase =
   "relative inline-flex h-9 shrink-0 items-center justify-center overflow-hidden rounded-md transition-colors duration-150";
@@ -18,8 +16,8 @@ function navLinkClass(active: boolean) {
   return clsx(
     navLinkBase,
     active
-      ? "text-[var(--gallery-accent)] hover:bg-[color-mix(in_srgb,var(--gallery-accent)_10%,white)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color-mix(in_srgb,var(--gallery-accent)_45%,transparent)]"
-      : "text-neutral-600 hover:bg-[color-mix(in_srgb,var(--gallery-accent)_12%,white)] hover:text-[var(--gallery-accent)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color-mix(in_srgb,var(--gallery-accent)_45%,transparent)]",
+      ? "text-[var(--gallery-accent)] hover:bg-[color-mix(in_srgb,var(--gallery-accent)_10%,var(--gallery-accent-hover-mix))] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color-mix(in_srgb,var(--gallery-accent)_45%,transparent)]"
+      : "text-[var(--gallery-text-secondary)] hover:bg-[color-mix(in_srgb,var(--gallery-accent)_12%,var(--gallery-accent-hover-mix))] hover:text-[var(--gallery-accent)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color-mix(in_srgb,var(--gallery-accent)_45%,transparent)]",
   );
 }
 
@@ -34,7 +32,7 @@ export function GalleryRankingsNav() {
   return (
     <nav
       aria-label="Site navigation"
-      className="fixed top-5 right-5 z-[110] flex items-center gap-0.5 rounded-lg border border-neutral-200 bg-white/85 px-1 py-1 text-neutral-700 shadow-[0_1px_2px_rgba(0,0,0,0.04)] backdrop-blur-[12px] sm:top-6 sm:right-6"
+      className="fixed top-5 right-5 z-[110] flex items-center gap-0.5 rounded-lg border border-[var(--gallery-border)] bg-[var(--gallery-nav-bg)] px-1 py-1 text-[var(--gallery-text-secondary)] shadow-[var(--gallery-shadow-sm)] backdrop-blur-[12px] sm:top-6 sm:right-6 gallery-elevated-surface"
     >
       <Link
         href="/"
@@ -45,35 +43,17 @@ export function GalleryRankingsNav() {
           homeShowsGalleryLabel ? navLinkTextPad : "min-w-9",
         )}
       >
-        <AnimatePresence mode="wait" initial={false}>
-          {homeShowsGalleryLabel ? (
-            <motion.span
-              key="gallery-text"
-              initial={{ opacity: 0, filter: "blur(4px)" }}
-              animate={{ opacity: 1, filter: "blur(0px)" }}
-              exit={{ opacity: 0, filter: "blur(4px)" }}
-              transition={{ duration: 0.22, ease }}
-              className="text-sm font-medium tracking-tight"
-            >
-              Gallery
-            </motion.span>
-          ) : (
-            <motion.span
-              key="gallery-icon"
-              initial={{ opacity: 0, scale: 0.85 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.85 }}
-              transition={{ duration: 0.22, ease }}
-              className="inline-flex size-9 items-center justify-center text-current"
-            >
-              <Home className="size-4 shrink-0" aria-hidden />
-            </motion.span>
-          )}
-        </AnimatePresence>
+        {homeShowsGalleryLabel ? (
+          <span className="text-sm font-medium tracking-tight">Gallery</span>
+        ) : (
+          <span className="inline-flex size-9 items-center justify-center text-current">
+            <Home className="size-4 shrink-0" aria-hidden />
+          </span>
+        )}
       </Link>
 
       <div
-        className="h-6 w-px shrink-0 bg-neutral-200/90"
+        className="h-6 w-px shrink-0 bg-[var(--gallery-divider)]/90"
         aria-hidden="true"
       />
 
@@ -86,35 +66,19 @@ export function GalleryRankingsNav() {
           onCompare ? "min-w-9" : navLinkTextPad,
         )}
       >
-        <AnimatePresence mode="wait" initial={false}>
-          {onCompare ? (
-            <motion.span
-              key="compare-icon"
-              initial={{ opacity: 0, scale: 0.85 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.85 }}
-              transition={{ duration: 0.22, ease }}
-              className="inline-flex size-9 items-center justify-center text-current"
-            >
-              <ArrowLeftRight className="size-4 shrink-0 opacity-90" aria-hidden />
-            </motion.span>
-          ) : (
-            <motion.span
-              key="compare-text"
-              initial={{ opacity: 0, filter: "blur(4px)" }}
-              animate={{ opacity: 1, filter: "blur(0px)" }}
-              exit={{ opacity: 0, filter: "blur(4px)" }}
-              transition={{ duration: 0.22, ease }}
-              className="whitespace-nowrap text-sm font-medium tracking-tight"
-            >
-              Compare
-            </motion.span>
-          )}
-        </AnimatePresence>
+        {onCompare ? (
+          <span className="inline-flex size-9 items-center justify-center text-current">
+            <ArrowLeftRight className="size-4 shrink-0 opacity-90" aria-hidden />
+          </span>
+        ) : (
+          <span className="whitespace-nowrap text-sm font-medium tracking-tight">
+            Compare
+          </span>
+        )}
       </Link>
 
       <div
-        className="h-6 w-px shrink-0 bg-neutral-200/90"
+        className="h-6 w-px shrink-0 bg-[var(--gallery-divider)]/90"
         aria-hidden="true"
       />
 
@@ -127,35 +91,19 @@ export function GalleryRankingsNav() {
           onLabGuess ? "min-w-9" : navLinkTextPad,
         )}
       >
-        <AnimatePresence mode="wait" initial={false}>
-          {onLabGuess ? (
-            <motion.span
-              key="game-icon"
-              initial={{ opacity: 0, scale: 0.85 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.85 }}
-              transition={{ duration: 0.22, ease }}
-              className="inline-flex size-9 items-center justify-center text-current"
-            >
-              <Gamepad2 className="size-4 shrink-0 opacity-90" aria-hidden />
-            </motion.span>
-          ) : (
-            <motion.span
-              key="game-text"
-              initial={{ opacity: 0, filter: "blur(4px)" }}
-              animate={{ opacity: 1, filter: "blur(0px)" }}
-              exit={{ opacity: 0, filter: "blur(4px)" }}
-              transition={{ duration: 0.22, ease }}
-              className="whitespace-nowrap text-sm font-medium tracking-tight"
-            >
-              Guess which
-            </motion.span>
-          )}
-        </AnimatePresence>
+        {onLabGuess ? (
+          <span className="inline-flex size-9 items-center justify-center text-current">
+            <Gamepad2 className="size-4 shrink-0 opacity-90" aria-hidden />
+          </span>
+        ) : (
+          <span className="whitespace-nowrap text-sm font-medium tracking-tight">
+            Guess which
+          </span>
+        )}
       </Link>
 
       <div
-        className="h-6 w-px shrink-0 bg-neutral-200/90"
+        className="h-6 w-px shrink-0 bg-[var(--gallery-divider)]/90"
         aria-hidden="true"
       />
 
@@ -168,32 +116,23 @@ export function GalleryRankingsNav() {
           onRankings ? "min-w-9" : navLinkTextPad,
         )}
       >
-        <AnimatePresence mode="wait" initial={false}>
-          {onRankings ? (
-            <motion.span
-              key="rankings-icon"
-              initial={{ opacity: 0, scale: 0.85 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.85 }}
-              transition={{ duration: 0.22, ease }}
-              className="inline-flex size-9 items-center justify-center text-current"
-            >
-              <BarChart3 className="size-4 shrink-0 opacity-90" aria-hidden />
-            </motion.span>
-          ) : (
-            <motion.span
-              key="rankings-text"
-              initial={{ opacity: 0, filter: "blur(4px)" }}
-              animate={{ opacity: 1, filter: "blur(0px)" }}
-              exit={{ opacity: 0, filter: "blur(4px)" }}
-              transition={{ duration: 0.22, ease }}
-              className="whitespace-nowrap text-sm font-medium tracking-tight"
-            >
-              Rankings
-            </motion.span>
-          )}
-        </AnimatePresence>
+        {onRankings ? (
+          <span className="inline-flex size-9 items-center justify-center text-current">
+            <BarChart3 className="size-4 shrink-0 opacity-90" aria-hidden />
+          </span>
+        ) : (
+          <span className="whitespace-nowrap text-sm font-medium tracking-tight">
+            Rankings
+          </span>
+        )}
       </Link>
+
+      <div
+        className="h-6 w-px shrink-0 bg-[var(--gallery-divider)]/90"
+        aria-hidden="true"
+      />
+
+      <GalleryThemeToggle />
     </nav>
   );
 }

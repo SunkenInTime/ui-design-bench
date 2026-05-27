@@ -36,7 +36,7 @@ export function GalleryGroupSection({
           href={ANTHROPIC_FRONTEND_DESIGN_SKILL_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="underline decoration-2 decoration-neutral-500 underline-offset-[6px] transition-colors hover:text-[var(--gallery-accent)] hover:decoration-[var(--gallery-accent)]"
+          className="underline decoration-2 decoration-[var(--gallery-text-tertiary)] underline-offset-[6px] transition-colors hover:text-[var(--gallery-accent)] hover:decoration-[var(--gallery-accent)]"
         >
           Design Skill
         </Link>
@@ -48,7 +48,7 @@ export function GalleryGroupSection({
           href={ANTHROPIC_FRONTEND_DESIGN_SKILL_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="underline decoration-2 decoration-neutral-500 underline-offset-[6px] transition-colors hover:text-[var(--gallery-accent)] hover:decoration-[var(--gallery-accent)]"
+          className="underline decoration-2 decoration-[var(--gallery-text-tertiary)] underline-offset-[6px] transition-colors hover:text-[var(--gallery-accent)] hover:decoration-[var(--gallery-accent)]"
         >
           Design Skill
         </Link>
@@ -62,7 +62,7 @@ export function GalleryGroupSection({
           href={UNCODEXIFY_SKILL_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="underline decoration-2 decoration-neutral-500 underline-offset-[6px] transition-colors hover:text-[var(--gallery-accent)] hover:decoration-[var(--gallery-accent)]"
+          className="underline decoration-2 decoration-[var(--gallery-text-tertiary)] underline-offset-[6px] transition-colors hover:text-[var(--gallery-accent)] hover:decoration-[var(--gallery-accent)]"
         >
           Uncodexify skill
         </Link>
@@ -74,7 +74,7 @@ export function GalleryGroupSection({
   return (
     <section aria-labelledby={labelId} className="space-y-8">
       <div className="flex flex-wrap items-end justify-between gap-x-6 gap-y-3">
-        <h2 id={labelId} className="text-xl font-medium tracking-tight text-neutral-900">
+        <h2 id={labelId} className="text-xl font-medium tracking-tight text-[var(--gallery-text-primary)]">
           {label}
         </h2>
         {hasArchived ? (
@@ -82,7 +82,7 @@ export function GalleryGroupSection({
             type="button"
             onClick={() => setShowArchived((v) => !v)}
             aria-pressed={showArchived}
-            className="inline-flex shrink-0 items-center gap-1.5 rounded-md border border-neutral-300 bg-white px-3 py-1.5 text-sm font-medium tracking-tight text-neutral-800 shadow-[0_1px_2px_rgba(0,0,0,0.04)] transition-colors hover:border-neutral-400 hover:bg-neutral-50"
+            className="inline-flex shrink-0 items-center gap-1.5 rounded-md border border-[var(--gallery-divider-strong)] bg-[var(--gallery-surface)] px-3 py-1.5 text-sm font-medium tracking-tight text-[var(--gallery-text-primary)] shadow-[var(--gallery-shadow-sm)] transition-colors hover:border-[var(--gallery-text-quaternary)] hover:bg-[var(--gallery-surface-subtle)]"
           >
             <Archive className="size-4 shrink-0 opacity-80" aria-hidden />
             <span>{showArchived ? "Hide Archived" : "Show Archived"}</span>
