@@ -4,7 +4,7 @@ import type { GalleryEntry, ModelSlug } from "@/lib/gallery-types";
 const FORCE_ARCHIVED_MODELS = new Set<ModelSlug>(["composer-2.0"]);
 
 /** Visible on the home page with a sunset bookmark on gallery cards. */
-const LEAVING_SOON_MODELS = new Set<ModelSlug>(["gemini"]);
+const LEAVING_SOON_MODELS = new Set<ModelSlug>(["opus-4.7"]);
 
 export function isGalleryModelLeavingSoon(model: ModelSlug): boolean {
   return LEAVING_SOON_MODELS.has(model);
@@ -27,6 +27,7 @@ const MODEL_GALLERY_GENERATION = {
   "kimi-k-2.6": { family: "kimi", tier: 2 },
   "opus-4.6": { family: "opus", tier: 1 },
   "opus-4.7": { family: "opus", tier: 2 },
+  "opus-4.8": { family: "opus", tier: 3 },
   "glm-5-turbo": { family: "glm", tier: 1 },
   "glm-5.1": { family: "glm", tier: 2 },
 } as const satisfies Partial<

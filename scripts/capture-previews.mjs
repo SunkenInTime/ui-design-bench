@@ -19,6 +19,7 @@ const entries = [
   { group: "with-design-skill", model: "kimi-k-2.6", iterations: ["1", "2", "3", "4", "5"] },
   { group: "with-design-skill", model: "opus-4.6", iterations: ["1", "2", "3", "4", "5"] },
   { group: "with-design-skill", model: "opus-4.7", iterations: ["1", "2", "3", "4", "5"] },
+  { group: "with-design-skill", model: "opus-4.8", iterations: ["1", "2", "3", "4", "5"] },
   { group: "with-design-skill", model: "glm-5-turbo", iterations: ["1", "2", "3", "4", "5"] },
   { group: "with-design-skill", model: "glm-5.1", iterations: ["1", "2", "3", "4", "5"] },
   { group: "with-ui-sh-skill", model: "composer-2.0", iterations: ["1", "2", "3", "4", "5"] },
@@ -37,6 +38,7 @@ const entries = [
   { group: "without-design-skill", model: "kimi-k-2.6", iterations: ["1", "2", "3", "4", "5"] },
   { group: "without-design-skill", model: "opus-4.6", iterations: ["1", "2", "3", "4", "5"] },
   { group: "without-design-skill", model: "opus-4.7", iterations: ["1", "2", "3", "4", "5"] },
+  { group: "without-design-skill", model: "opus-4.8", iterations: ["1", "2", "3", "4", "5"] },
   { group: "without-design-skill", model: "glm-5-turbo", iterations: ["1", "2", "3", "4", "5"] },
   { group: "without-design-skill", model: "glm-5.1", iterations: ["1", "2", "3", "4", "5"] },
 ];
@@ -44,7 +46,9 @@ const entries = [
 const targetModel = process.env.TARGET_MODEL ?? null;
 const targetGroup = process.env.TARGET_GROUP ?? null;
 
-const baseUrl = "http://127.0.0.1:3000";
+const capturePort = process.env.CAPTURE_PORT ?? "3000";
+const baseUrl = process.env.CAPTURE_BASE_URL ?? `http://127.0.0.1:${capturePort}`;
+const shouldStartDevServer = !process.env.CAPTURE_BASE_URL;
 const npmCommand = process.platform === "win32" ? "npm.cmd" : "npm";
 
 /** Let CSS/JS animations settle before every screenshot. */
@@ -84,11 +88,13 @@ async function waitForServer(url, timeoutMs = 120_000) {
 }
 
 async function main() {
-  const devServer = spawn(npmCommand, ["run", "dev"], {
-    cwd: process.cwd(),
-    stdio: "inherit",
-    shell: true,
-  });
+  const devServer = shouldStartDevServer
+    ? spawn(npmCommand, ["run", "dev", "--", "-p", capturePort], {
+        cwd: process.cwd(),
+        stdio: "inherit",
+        shell: true,
+      })
+    : null;
 
   try {
     await waitForServer(baseUrl);
@@ -113,7 +119,7 @@ async function main() {
       for (const iteration of iterations) {
         const url = `${baseUrl}/${group}/${model}/${iteration}?preview=1`;
         const outputPath = path.join(outputDir, `${iteration}.webp`);
-        const response = await page.goto(url, { waitUntil: "networkidle" });
+        const response = await page.goto(url, { waitUntil: "domcontentloaded" });
         if (!response || !response.ok()) {
           throw new Error(`Preview capture failed for ${url} with status ${response?.status() ?? "unknown"}`);
         }
@@ -133,7 +139,7 @@ async function main() {
 
     await browser.close();
   } finally {
-    devServer.kill("SIGINT");
+    devServer?.kill("SIGINT");
   }
 }
 

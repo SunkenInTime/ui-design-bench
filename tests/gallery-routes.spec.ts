@@ -32,6 +32,7 @@ const entries = [
   ["with-design-skill", "kimi-k-2.6"],
   ["with-design-skill", "opus-4.6"],
   ["with-design-skill", "opus-4.7"],
+  ["with-design-skill", "opus-4.8"],
   ["with-design-skill", "glm-5-turbo"],
   ["with-design-skill", "glm-5.1"],
   ["with-ui-sh-skill", "composer-2.0"],
@@ -50,18 +51,19 @@ const entries = [
   ["without-design-skill", "kimi-k-2.6"],
   ["without-design-skill", "opus-4.6"],
   ["without-design-skill", "opus-4.7"],
+  ["without-design-skill", "opus-4.8"],
   ["without-design-skill", "glm-5-turbo"],
   ["without-design-skill", "glm-5.1"],
   ["miscellaneous", "gpt-5.4"],
 ] as const;
 
-test("home page shows leaving-soon bookmark on Gemini 3.1 Pro cards", async ({ page }) => {
+test("home page shows leaving-soon bookmark on Opus 4.7 cards", async ({ page }) => {
   await page.goto("/");
-  const geminiCards = page.getByTestId("gallery-card").filter({ hasText: "Gemini 3.1 Pro" });
-  const geminiManifestCount = galleryManifest.filter((e) => isGalleryModelLeavingSoon(e.model)).length;
-  await expect(geminiCards).toHaveCount(geminiManifestCount);
-  for (let i = 0; i < geminiManifestCount; i++) {
-    await expect(geminiCards.nth(i).getByLabel("Archiving soon")).toBeVisible();
+  const opus47Cards = page.getByTestId("gallery-card").filter({ hasText: "Opus 4.7" });
+  const leavingSoonManifestCount = galleryManifest.filter((e) => isGalleryModelLeavingSoon(e.model)).length;
+  await expect(opus47Cards).toHaveCount(leavingSoonManifestCount);
+  for (let i = 0; i < leavingSoonManifestCount; i++) {
+    await expect(opus47Cards.nth(i).getByLabel("Archiving soon")).toBeVisible();
   }
 });
 
@@ -76,6 +78,14 @@ test("home page hides superseded-generation cards until Show Archived", async ({
 
   await expect(page.getByTestId("gallery-card")).toHaveCount(galleryHomeTotalCards(true));
   await expect(page.locator('a[title="Compare"]')).toHaveCount(entries.length);
+});
+
+test("home page sorts newer same-family models first", async ({ page }) => {
+  await page.goto("/");
+  const withDesignSection = page.locator("section").filter({ has: page.getByRole("heading", { name: "With Design Skill" }) });
+  const cardLabels = await withDesignSection.getByTestId("gallery-card").locator("h3 span").allInnerTexts();
+
+  expect(cardLabels.indexOf("Opus 4.8")).toBeLessThan(cardLabels.indexOf("Opus 4.7"));
 });
 
 test("rankings page lists eight models with previews", async ({ page }) => {
@@ -96,8 +106,8 @@ test("gallery shell background stays consistent after client navigation into a v
 
   expect(initialShellStyles.isDark).toBe(true);
 
-  await page.locator("a[href='/without-design-skill/composer-2.0/1']").first().click();
-  await expect(page).toHaveURL("/without-design-skill/composer-2.0/1");
+  await page.locator("a[href='/without-design-skill/opus-4.8/1']").first().click();
+  await expect(page).toHaveURL("/without-design-skill/opus-4.8/1");
   await page.getByRole("link", { name: /Back to Which AI Made This/ }).click();
   await expect(page).toHaveURL("/");
 

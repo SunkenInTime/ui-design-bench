@@ -7,6 +7,7 @@ import {
   ANTHROPIC_FRONTEND_DESIGN_SKILL_URL,
 } from "@/lib/gallery-anthropic-skill";
 import { galleryManifest } from "@/lib/gallery-manifest";
+import { sortGalleryEntriesForHome } from "@/lib/gallery-model-order";
 
 export default function HomePage() {
   const groups = [
@@ -72,7 +73,9 @@ export default function HomePage() {
 
         <div className="mt-10 space-y-12">
           {groups.map((group) => {
-            const entries = galleryManifest.filter((entry) => entry.group === group);
+            const entries = sortGalleryEntriesForHome(
+              galleryManifest.filter((entry) => entry.group === group),
+            );
             return (
               <GalleryGroupSection key={group} group={group} entries={entries} />
             );

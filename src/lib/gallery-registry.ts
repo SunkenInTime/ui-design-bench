@@ -11,6 +11,7 @@ import withKimi from "@/variants/with-design-skill/kimi-k-2.5";
 import withKimi26 from "@/variants/with-design-skill/kimi-k-2.6";
 import withOpus from "@/variants/with-design-skill/opus-4.6";
 import withOpus47 from "@/variants/with-design-skill/opus-4.7";
+import withOpus48 from "@/variants/with-design-skill/opus-4.8";
 import withGlm5Turbo from "@/variants/with-design-skill/glm-5-turbo";
 import withGlm51 from "@/variants/with-design-skill/glm-5.1";
 import withUiShComposer20 from "@/variants/with-ui-sh-skill/composer-2.0";
@@ -30,6 +31,7 @@ import withoutKimi from "@/variants/without-design-skill/kimi-k-2.5";
 import withoutKimi26 from "@/variants/without-design-skill/kimi-k-2.6";
 import withoutOpus from "@/variants/without-design-skill/opus-4.6";
 import withoutOpus47 from "@/variants/without-design-skill/opus-4.7";
+import withoutOpus48 from "@/variants/without-design-skill/opus-4.8";
 import withoutGlm5Turbo from "@/variants/without-design-skill/glm-5-turbo";
 import withoutGlm51 from "@/variants/without-design-skill/glm-5.1";
 
@@ -48,6 +50,7 @@ const registry: Partial<Record<RegistryKey, VariantModule>> = {
   "with-design-skill:kimi-k-2.6": withKimi26,
   "with-design-skill:opus-4.6": withOpus,
   "with-design-skill:opus-4.7": withOpus47,
+  "with-design-skill:opus-4.8": withOpus48,
   "with-design-skill:glm-5-turbo": withGlm5Turbo,
   "with-design-skill:glm-5.1": withGlm51,
   "with-ui-sh-skill:composer-2.0": withUiShComposer20,
@@ -67,6 +70,7 @@ const registry: Partial<Record<RegistryKey, VariantModule>> = {
   "without-design-skill:kimi-k-2.6": withoutKimi26,
   "without-design-skill:opus-4.6": withoutOpus,
   "without-design-skill:opus-4.7": withoutOpus47,
+  "without-design-skill:opus-4.8": withoutOpus48,
   "without-design-skill:glm-5-turbo": withoutGlm5Turbo,
   "without-design-skill:glm-5.1": withoutGlm51,
 };

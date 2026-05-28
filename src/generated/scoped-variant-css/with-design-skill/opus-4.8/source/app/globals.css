@@ -1,0 +1,24 @@
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-4.8"]),:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-4.8"]) {
+  padding: 0;
+  margin: 0;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-4.8"]) {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-4.8"]) * {
+  box-sizing: border-box;
+}
+
+/* Each iteration page owns its own background + typography.
+   The switcher chrome (below) is intentionally neutral so it reads
+   over any of the five aesthetics. */
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-4.8"]) .no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-4.8"]) .no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

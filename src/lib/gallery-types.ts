@@ -19,7 +19,8 @@ export type ModelSlug =
   | "kimi-k-2.5"
   | "kimi-k-2.6"
   | "opus-4.6"
-  | "opus-4.7";
+  | "opus-4.7"
+  | "opus-4.8";
 export type IterationId = "1" | "2" | "3" | "4" | "5";
 export type SourceAppType = "next" | "vite";
 
