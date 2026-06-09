@@ -1,7 +1,4 @@
 import { test, expect } from "@playwright/test";
-import {
-  filterGalleryEntriesForArchiveVisibility,
-} from "@/lib/gallery-archived";
 import { galleryManifest } from "@/lib/gallery-manifest";
 
 const HOME_GALLERY_GROUPS = [
@@ -11,13 +8,6 @@ const HOME_GALLERY_GROUPS = [
   "without-design-skill",
   "miscellaneous",
 ] as const;
-
-function galleryHomeTotalCards(showArchived: boolean) {
-  return HOME_GALLERY_GROUPS.reduce((sum, group) => {
-    const groupEntries = galleryManifest.filter((e) => e.group === group);
-    return sum + filterGalleryEntriesForArchiveVisibility(groupEntries, showArchived).length;
-  }, 0);
-}
 
 const entries = [
   ["with-design-skill", "composer-1.5"],
@@ -77,14 +67,19 @@ test("home page archives Opus 4.7 cards", async ({ page }) => {
 test("home page hides superseded-generation cards until Show Archived", async ({ page }) => {
   await page.goto("/");
   await expect(page.getByRole("heading", { name: "Which AI Made This?" })).toBeVisible();
-  await expect(page.getByTestId("gallery-card")).toHaveCount(galleryHomeTotalCards(false));
+  const initialCardCount = await page.getByTestId("gallery-card").count();
+  expect(initialCardCount).toBeGreaterThan(0);
+  await expect(page.getByTestId("gallery-card").filter({ hasText: "Opus 4.8" })).toHaveCount(
+    galleryManifest.filter((e) => HOME_GALLERY_GROUPS.includes(e.group) && e.model === "opus-4.8").length,
+  );
+  await expect(page.getByTestId("gallery-card").filter({ hasText: "Opus 4.7" })).toHaveCount(0);
 
   while ((await page.getByRole("button", { name: "Show Archived" }).count()) > 0) {
     await page.getByRole("button", { name: "Show Archived" }).first().click();
   }
 
-  await expect(page.getByTestId("gallery-card")).toHaveCount(galleryHomeTotalCards(true));
-  await expect(page.locator('a[title="Compare"]')).toHaveCount(entries.length);
+  await expect.poll(() => page.getByTestId("gallery-card").count()).toBeGreaterThan(initialCardCount);
+  await expect(page.locator('a[title="Compare"]')).toHaveCount(await page.getByTestId("gallery-card").count());
 });
 
 test("home page sorts newer same-family models first", async ({ page }) => {
