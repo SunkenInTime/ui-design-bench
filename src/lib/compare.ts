@@ -39,6 +39,7 @@ const COMPARE_PARAM_KEYS = [
 
 export const compareGroupOrder = [
   "with-design-skill",
+  "with-taste-skill",
   "with-ui-sh-skill",
   "without-design-skill",
   "miscellaneous",

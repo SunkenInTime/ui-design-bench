@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-serif: var(--font-garamond);
+  --font-grotesk: var(--font-space-grotesk);
+  --font-outfit: var(--font-outfit);
+  --font-archivo: var(--font-archivo);
+  --font-jet: var(--font-jetbrains);
+}
+
+/*
+  z-index scale (do not invent new layers):
+  40 = sticky / fixed page navigation
+  50 = iteration switcher overlay
+*/
+
+body {
+  background: #fafafa;
+  color: #18181b;
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+}
+
+.font-serif {
+  font-family: var(--font-garamond), Georgia, serif;
+}
+
+.font-grotesk {
+  font-family: var(--font-space-grotesk), system-ui, sans-serif;
+}
+
+.font-outfit {
+  font-family: var(--font-outfit), system-ui, sans-serif;
+}
+
+.font-archivo {
+  font-family: var(--font-archivo), system-ui, sans-serif;
+}
+
+.font-jet {
+  font-family: var(--font-jetbrains), "Courier New", monospace;
+}
+
+::selection {
+  background: rgb(24 24 27 / 0.9);
+  color: #fafafa;
+}
+
+/* Kinetic marquee (iteration 3). Gated behind reduced-motion preference. */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .animate-marquee {
+    animation: marquee 32s linear infinite;
+  }
+}
+
+/*
+  Frosted-glass approximation (iteration 4). This is web glassmorphism,
+  not Apple's Liquid Glass. Solid fallback under reduced transparency.
+*/
+.glass {
+  background: linear-gradient(
+      135deg,
+      rgb(255 255 255 / 0.66),
+      rgb(255 255 255 / 0.38)
+    ),
+    rgb(255 255 255 / 0.08);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  backdrop-filter: blur(20px) saturate(160%);
+  border: 1px solid rgb(255 255 255 / 0.65);
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.8),
+    0 8px 32px rgb(37 99 235 / 0.08);
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  .glass {
+    background: rgb(255 255 255 / 0.94);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+}

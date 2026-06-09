@@ -1,12 +1,12 @@
 import { test, expect } from "@playwright/test";
 import {
   filterGalleryEntriesForArchiveVisibility,
-  isGalleryModelLeavingSoon,
 } from "@/lib/gallery-archived";
 import { galleryManifest } from "@/lib/gallery-manifest";
 
 const HOME_GALLERY_GROUPS = [
   "with-design-skill",
+  "with-taste-skill",
   "with-ui-sh-skill",
   "without-design-skill",
   "miscellaneous",
@@ -23,6 +23,7 @@ const entries = [
   ["with-design-skill", "composer-1.5"],
   ["with-design-skill", "composer-2.0"],
   ["with-design-skill", "composer-2.5"],
+  ["with-design-skill", "fable"],
   ["with-design-skill", "gemini"],
   ["with-design-skill", "gemini-3.5-flash"],
   ["with-design-skill", "gpt-5.4"],
@@ -35,6 +36,7 @@ const entries = [
   ["with-design-skill", "opus-4.8"],
   ["with-design-skill", "glm-5-turbo"],
   ["with-design-skill", "glm-5.1"],
+  ["with-taste-skill", "fable"],
   ["with-ui-sh-skill", "composer-2.0"],
   ["with-ui-sh-skill", "gpt-5.5-low"],
   ["with-ui-sh-skill", "gpt-5.5-high"],
@@ -42,6 +44,7 @@ const entries = [
   ["without-design-skill", "composer-1.5"],
   ["without-design-skill", "composer-2.0"],
   ["without-design-skill", "composer-2.5"],
+  ["without-design-skill", "fable"],
   ["without-design-skill", "gemini"],
   ["without-design-skill", "gemini-3.5-flash"],
   ["without-design-skill", "gpt-5.4"],
@@ -57,14 +60,18 @@ const entries = [
   ["miscellaneous", "gpt-5.4"],
 ] as const;
 
-test("home page shows leaving-soon bookmark on Opus 4.7 cards", async ({ page }) => {
+test("home page archives Opus 4.7 cards", async ({ page }) => {
   await page.goto("/");
   const opus47Cards = page.getByTestId("gallery-card").filter({ hasText: "Opus 4.7" });
-  const leavingSoonManifestCount = galleryManifest.filter((e) => isGalleryModelLeavingSoon(e.model)).length;
-  await expect(opus47Cards).toHaveCount(leavingSoonManifestCount);
-  for (let i = 0; i < leavingSoonManifestCount; i++) {
-    await expect(opus47Cards.nth(i).getByLabel("Archiving soon")).toBeVisible();
+  await expect(opus47Cards).toHaveCount(0);
+
+  while ((await page.getByRole("button", { name: "Show Archived" }).count()) > 0) {
+    await page.getByRole("button", { name: "Show Archived" }).first().click();
   }
+
+  const archivedOpus47Count = galleryManifest.filter((e) => e.model === "opus-4.7").length;
+  await expect(opus47Cards).toHaveCount(archivedOpus47Count);
+  await expect(opus47Cards.first().getByLabel("Archiving soon")).toHaveCount(0);
 });
 
 test("home page hides superseded-generation cards until Show Archived", async ({ page }) => {
@@ -82,10 +89,14 @@ test("home page hides superseded-generation cards until Show Archived", async ({
 
 test("home page sorts newer same-family models first", async ({ page }) => {
   await page.goto("/");
+  while ((await page.getByRole("button", { name: "Show Archived" }).count()) > 0) {
+    await page.getByRole("button", { name: "Show Archived" }).first().click();
+  }
+
   const withDesignSection = page.locator("section").filter({ has: page.getByRole("heading", { name: "With Design Skill" }) });
   const cardLabels = await withDesignSection.getByTestId("gallery-card").locator("h3 span").allInnerTexts();
 
-  expect(cardLabels.indexOf("Opus 4.8")).toBeLessThan(cardLabels.indexOf("Opus 4.7"));
+  expect(cardLabels.indexOf("Fable 5")).toBeLessThan(cardLabels.indexOf("Opus 4.8"));
 });
 
 test("rankings page lists eight models with previews", async ({ page }) => {
@@ -97,6 +108,9 @@ test("rankings page lists eight models with previews", async ({ page }) => {
 test("gallery shell background stays consistent after client navigation into a variant", async ({ page }) => {
   await page.emulateMedia({ colorScheme: "dark" });
   await page.goto("/");
+  await expect
+    .poll(() => page.evaluate(() => document.documentElement.classList.contains("dark")))
+    .toBe(true);
 
   const initialShellStyles = await page.evaluate(() => ({
     htmlBackgroundColor: window.getComputedStyle(document.documentElement).backgroundColor,
@@ -106,8 +120,8 @@ test("gallery shell background stays consistent after client navigation into a v
 
   expect(initialShellStyles.isDark).toBe(true);
 
-  await page.locator("a[href='/without-design-skill/opus-4.8/1']").first().click();
-  await expect(page).toHaveURL("/without-design-skill/opus-4.8/1");
+  await page.locator("a[href='/without-design-skill/fable/1']").first().click();
+  await expect(page).toHaveURL("/without-design-skill/fable/1");
   await page.getByRole("link", { name: /Back to Which AI Made This/ }).click();
   await expect(page).toHaveURL("/");
 

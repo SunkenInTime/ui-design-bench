@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 
 export type GalleryGroupSlug =
   | "with-design-skill"
+  | "with-taste-skill"
   | "with-ui-sh-skill"
   | "without-design-skill"
   | "miscellaneous";
@@ -9,6 +10,7 @@ export type ModelSlug =
   | "composer-1.5"
   | "composer-2.0"
   | "composer-2.5"
+  | "fable"
   | "gemini"
   | "gemini-3.5-flash"
   | "glm-5-turbo"

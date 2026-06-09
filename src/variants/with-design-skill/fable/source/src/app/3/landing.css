@@ -1,0 +1,553 @@
+/* Iteration 3 — Garden. All classes prefixed .gd- */
+
+.gd-page {
+  --gd-display: Georgia, serif;
+  --gd-body: Arial, sans-serif;
+  --gd-paper: #edf1e4;
+  --gd-sheet: #faf8ee;
+  --gd-ink: #21402f;
+  --gd-ink-soft: #41584a;
+  --gd-green: #3f7d4e;
+  --gd-green-deep: #2c5239;
+  --gd-pink: #c76b8e;
+  --gd-edge: #cfd8bd;
+
+  flex: 1;
+  background: var(--gd-paper);
+  color: var(--gd-ink);
+  font-family: var(--gd-body), sans-serif;
+}
+
+.gd-page a:focus-visible {
+  outline: 2.5px solid var(--gd-green-deep);
+  outline-offset: 3px;
+}
+
+/* ---------- nav ---------- */
+.gd-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 24px 32px;
+}
+
+.gd-logo {
+  font-family: var(--gd-display), serif;
+  font-style: italic;
+  font-weight: 600;
+  font-size: 1.65rem;
+  letter-spacing: 0.01em;
+}
+
+.gd-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.gd-nav-links a {
+  color: var(--gd-ink-soft);
+  text-decoration: none;
+  font-size: 0.88rem;
+  letter-spacing: 0.02em;
+}
+
+.gd-nav-links a:hover {
+  color: var(--gd-ink);
+}
+
+/* ---------- buttons ---------- */
+.gd-btn {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  border-radius: 3px;
+  padding: 13px 24px;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.gd-btn-solid {
+  background: var(--gd-green-deep);
+  color: var(--gd-sheet) !important;
+}
+
+.gd-btn-solid:hover {
+  background: #234229;
+  transform: translateY(-1px);
+}
+
+.gd-btn-quiet {
+  color: var(--gd-green-deep);
+  padding-left: 6px;
+  padding-right: 6px;
+  border-bottom: 1.5px solid rgba(44, 82, 57, 0.4);
+  border-radius: 0;
+}
+
+.gd-btn-quiet:hover {
+  border-bottom-color: var(--gd-green-deep);
+}
+
+.gd-btn-small {
+  padding: 9px 18px;
+  font-size: 0.82rem;
+}
+
+.gd-btn-wide {
+  padding: 14px 34px;
+}
+
+/* ---------- hero ---------- */
+.gd-hero {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 64px 32px 96px;
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 72px;
+  align-items: center;
+}
+
+.gd-eyebrow {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  color: var(--gd-green);
+  margin: 0 0 20px;
+}
+
+.gd-headline {
+  font-family: var(--gd-display), serif;
+  font-weight: 600;
+  font-size: clamp(3rem, 6.8vw, 5rem);
+  line-height: 1.02;
+  margin: 0 0 24px;
+  letter-spacing: -0.01em;
+}
+
+.gd-headline em {
+  font-style: italic;
+  color: var(--gd-green-deep);
+}
+
+.gd-sub {
+  font-size: 1.04rem;
+  line-height: 1.75;
+  color: var(--gd-ink-soft);
+  max-width: 32rem;
+  margin: 0;
+}
+
+.gd-cta-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 22px;
+  margin-top: 32px;
+}
+
+/* ---------- herbarium sheet ---------- */
+.gd-sheet {
+  position: relative;
+  margin: 0;
+  background: var(--gd-sheet);
+  border: 1px solid var(--gd-edge);
+  border-radius: 2px;
+  padding: 26px 22px 30px;
+  transform: rotate(0.8deg);
+  box-shadow: 0 30px 50px -30px rgba(33, 64, 47, 0.45),
+    0 2px 6px rgba(33, 64, 47, 0.08);
+}
+
+.gd-specimen-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.gd-sway {
+  transform-origin: 50% 95%;
+  animation: gd-sway 7s ease-in-out infinite alternate;
+}
+
+@keyframes gd-sway {
+  from {
+    transform: rotate(-0.8deg);
+  }
+  to {
+    transform: rotate(0.9deg);
+  }
+}
+
+.gd-tape {
+  position: absolute;
+  top: -10px;
+  width: 76px;
+  height: 24px;
+  background: rgba(214, 211, 180, 0.65);
+  box-shadow: 0 1px 2px rgba(33, 64, 47, 0.15);
+}
+
+.gd-tape-l {
+  left: 36px;
+  transform: rotate(-5deg);
+}
+
+.gd-tape-r {
+  right: 36px;
+  transform: rotate(4deg);
+}
+
+.gd-note {
+  position: absolute;
+  background: var(--gd-paper);
+  border: 1px solid var(--gd-edge);
+  border-radius: 2px;
+  padding: 6px 10px;
+  font-size: 0.7rem;
+  font-style: italic;
+  color: var(--gd-ink-soft);
+  max-width: 150px;
+  line-height: 1.4;
+  box-shadow: 0 3px 8px -4px rgba(33, 64, 47, 0.3);
+}
+
+.gd-note-1 {
+  top: 16%;
+  left: -7%;
+  transform: rotate(-2.5deg);
+}
+
+.gd-note-2 {
+  top: 26%;
+  right: -8%;
+  transform: rotate(2deg);
+}
+
+.gd-note-3 {
+  bottom: 28%;
+  left: -9%;
+  transform: rotate(1.5deg);
+}
+
+.gd-label {
+  position: absolute;
+  right: 18px;
+  bottom: 16px;
+  background: var(--gd-sheet);
+  border: 1.5px solid var(--gd-ink);
+  padding: 10px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  font-size: 0.62rem;
+  letter-spacing: 0.04em;
+  color: var(--gd-ink-soft);
+  max-width: 200px;
+}
+
+.gd-label-head {
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--gd-ink);
+  border-bottom: 1px solid var(--gd-edge);
+  padding-bottom: 4px;
+  margin-bottom: 3px;
+}
+
+.gd-label-latin {
+  font-family: var(--gd-display), serif;
+  font-style: italic;
+  font-size: 0.82rem;
+  color: var(--gd-ink);
+}
+
+/* ---------- growth stages ---------- */
+.gd-stages {
+  border-top: 1px solid var(--gd-edge);
+  background: linear-gradient(180deg, rgba(63, 125, 78, 0.05), transparent 40%);
+  padding: 88px 32px 96px;
+  text-align: center;
+}
+
+.gd-h2 {
+  font-family: var(--gd-display), serif;
+  font-weight: 600;
+  font-size: clamp(1.9rem, 3.6vw, 2.6rem);
+  line-height: 1.15;
+  margin: 0 0 18px;
+}
+
+.gd-h2 em {
+  color: var(--gd-green-deep);
+}
+
+.gd-stages-intro {
+  max-width: 30rem;
+  margin: 0 auto 56px;
+  color: var(--gd-ink-soft);
+  font-size: 0.98rem;
+  line-height: 1.7;
+}
+
+.gd-stage-grid {
+  max-width: 1020px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.gd-stage {
+  background: var(--gd-sheet);
+  border: 1px solid var(--gd-edge);
+  border-radius: 4px;
+  padding: 34px 28px 32px;
+  text-align: center;
+}
+
+.gd-stage-glyph {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+
+.gd-stage-glyph svg {
+  width: 52px;
+  height: 52px;
+}
+
+.gd-stage h3 {
+  font-family: var(--gd-display), serif;
+  font-weight: 700;
+  font-size: 1.35rem;
+  margin: 0 0 4px;
+}
+
+.gd-stage-latin {
+  display: block;
+  font-family: var(--gd-display), serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 0.92rem;
+  color: var(--gd-green);
+  margin-top: 2px;
+}
+
+.gd-stage p {
+  margin: 14px 0 0;
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--gd-ink-soft);
+}
+
+/* ---------- tending ---------- */
+.gd-tending {
+  max-width: 1020px;
+  margin: 0 auto;
+  padding: 40px 32px 100px;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.gd-tending-copy h2 {
+  text-align: left;
+}
+
+.gd-tending-copy p {
+  margin: 18px 0 0;
+  font-size: 0.98rem;
+  line-height: 1.75;
+  color: var(--gd-ink-soft);
+  max-width: 30rem;
+}
+
+.gd-bed {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+  background: #e2e8d2;
+  border: 1px solid var(--gd-edge);
+  border-radius: 6px;
+  padding: 22px 22px 44px;
+}
+
+.gd-bed-cell {
+  aspect-ratio: 1;
+  background: var(--gd-sheet);
+  border: 1px solid var(--gd-edge);
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gd-bed-cell svg {
+  width: 70%;
+  height: 70%;
+}
+
+.gd-bed-grown {
+  background: #f2f6e6;
+}
+
+.gd-bed-today {
+  border-style: dashed;
+  border-color: var(--gd-green);
+}
+
+.gd-bed-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--gd-pink);
+}
+
+.gd-bed-caption {
+  position: absolute;
+  bottom: 14px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 0.68rem;
+  font-style: italic;
+  color: var(--gd-ink-soft);
+}
+
+/* ---------- seed packet CTA ---------- */
+.gd-packet-wrap {
+  display: flex;
+  justify-content: center;
+  padding: 0 32px 110px;
+}
+
+.gd-packet {
+  width: min(100%, 480px);
+  background: var(--gd-sheet);
+  border: 1.5px solid var(--gd-ink);
+  border-radius: 6px;
+  padding: 0 36px 36px;
+  text-align: center;
+  box-shadow: 8px 8px 0 rgba(44, 82, 57, 0.12);
+}
+
+.gd-packet-head {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  border-bottom: 1.5px dashed rgba(33, 64, 47, 0.35);
+  padding: 26px 0 20px;
+  margin-bottom: 24px;
+}
+
+.gd-packet-brand {
+  font-weight: 800;
+  letter-spacing: 0.3em;
+  font-size: 1.02rem;
+}
+
+.gd-packet-variety {
+  font-family: var(--gd-display), serif;
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--gd-green);
+}
+
+.gd-packet-rules {
+  list-style: none;
+  margin: 0 0 28px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 0.92rem;
+  color: var(--gd-ink-soft);
+}
+
+.gd-packet-rules li::before {
+  content: "✿ ";
+  color: var(--gd-pink);
+}
+
+.gd-packet-fine {
+  margin: 16px 0 0;
+  font-size: 0.74rem;
+  color: var(--gd-ink-soft);
+  opacity: 0.85;
+}
+
+/* ---------- footer ---------- */
+.gd-footer {
+  border-top: 1px solid var(--gd-edge);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 42px 32px 100px;
+  font-size: 0.78rem;
+  color: var(--gd-ink-soft);
+}
+
+.gd-footer-motto {
+  font-family: var(--gd-display), serif;
+  font-size: 1.25rem;
+  color: var(--gd-ink);
+}
+
+/* ---------- responsive ---------- */
+@media (max-width: 960px) {
+  .gd-hero {
+    grid-template-columns: 1fr;
+    gap: 64px;
+    padding-top: 48px;
+  }
+
+  .gd-sheet {
+    max-width: 480px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .gd-note-1 {
+    left: 2%;
+  }
+
+  .gd-note-2 {
+    right: 2%;
+  }
+
+  .gd-note-3 {
+    left: 2%;
+  }
+
+  .gd-stage-grid {
+    grid-template-columns: 1fr;
+    max-width: 460px;
+  }
+
+  .gd-tending {
+    grid-template-columns: 1fr;
+    gap: 44px;
+  }
+
+  .gd-nav-links a:not(.gd-btn) {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gd-sway {
+    animation: none;
+  }
+
+  .gd-btn {
+    transition: none;
+  }
+}

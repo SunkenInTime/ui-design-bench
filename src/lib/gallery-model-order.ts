@@ -1,9 +1,10 @@
 import type { GalleryEntry, ModelSlug } from "@/lib/gallery-types";
 
 const MODEL_HOME_ORDER: Record<ModelSlug, { familyOrder: number; tier: number }> = {
-  "opus-4.6": { familyOrder: 0, tier: 46 },
-  "opus-4.7": { familyOrder: 0, tier: 47 },
-  "opus-4.8": { familyOrder: 0, tier: 48 },
+  fable: { familyOrder: 0, tier: 50 },
+  "opus-4.6": { familyOrder: 1, tier: 46 },
+  "opus-4.7": { familyOrder: 1, tier: 47 },
+  "opus-4.8": { familyOrder: 1, tier: 48 },
   "gpt-5.4": { familyOrder: 2, tier: 54 },
   "gpt-5.5-low": { familyOrder: 2, tier: 55 },
   "gpt-5.5-high": { familyOrder: 2, tier: 55 },
