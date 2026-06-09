@@ -1,0 +1,435 @@
+/* Iteration 5 — Desk. All classes prefixed .dk- */
+
+.dk-page {
+  --dk-display: Arial, sans-serif;
+  --dk-body: Arial, sans-serif;
+  --dk-hand: "Comic Sans MS", cursive;
+  --dk-desk: #edeff2;
+  --dk-ink: #1f2329;
+  --dk-ink-soft: #565d68;
+  --dk-yellow: #ffd84d;
+  --dk-pink: #ffb3c7;
+  --dk-blue: #9fd4ff;
+  --dk-green: #b8e6a3;
+  --dk-white: #ffffff;
+
+  flex: 1;
+  background: var(--dk-desk);
+  color: var(--dk-ink);
+  font-family: var(--dk-body), sans-serif;
+}
+
+.dk-page a:focus-visible,
+.dk-page button:focus-visible {
+  outline: 3px solid var(--dk-ink);
+  outline-offset: 3px;
+}
+
+/* ---------- nav ---------- */
+.dk-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 24px 32px;
+}
+
+.dk-logo {
+  font-family: var(--dk-display), sans-serif;
+  font-weight: 800;
+  font-size: 1.5rem;
+  letter-spacing: -0.03em;
+}
+
+/* ---------- buttons ---------- */
+.dk-btn {
+  display: inline-block;
+  background: var(--dk-ink);
+  color: var(--dk-desk) !important;
+  border: none;
+  text-decoration: none;
+  font-family: var(--dk-body), sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  border-radius: 12px;
+  padding: 14px 26px;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  box-shadow: 0 2px 0 rgba(31, 35, 41, 0.25);
+}
+
+.dk-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px -4px rgba(31, 35, 41, 0.45);
+}
+
+.dk-btn:active {
+  transform: translateY(0);
+}
+
+.dk-btn-small {
+  padding: 10px 18px;
+  font-size: 0.85rem;
+}
+
+.dk-btn-big {
+  padding: 17px 34px;
+  font-size: 1.05rem;
+  border-radius: 14px;
+}
+
+/* ---------- hero ---------- */
+.dk-hero {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 56px 32px 40px;
+  text-align: center;
+}
+
+.dk-headline {
+  font-family: var(--dk-display), sans-serif;
+  font-weight: 800;
+  font-size: clamp(2.3rem, 5.6vw, 4rem);
+  line-height: 1.06;
+  letter-spacing: -0.025em;
+  margin: 0 0 20px;
+}
+
+.dk-headline-mark {
+  position: relative;
+  z-index: 0;
+  white-space: nowrap;
+}
+
+.dk-headline-mark::after {
+  content: "";
+  position: absolute;
+  left: -2%;
+  right: -2%;
+  bottom: 8%;
+  height: 0.38em;
+  background: var(--dk-yellow);
+  z-index: -1;
+  transform: rotate(-1.2deg);
+}
+
+.dk-sub {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--dk-ink-soft);
+  max-width: 34rem;
+  margin: 0 auto;
+}
+
+/* ---------- the board ---------- */
+.dk-board {
+  position: relative;
+  margin: 44px auto 0;
+  max-width: 880px;
+  height: 500px;
+  background: var(--dk-white);
+  border: 1px solid #dcdfe5;
+  border-radius: 18px;
+  box-shadow: inset 0 2px 10px rgba(31, 35, 41, 0.05);
+  overflow: hidden;
+}
+
+.dk-sticky {
+  position: absolute;
+  left: var(--sx);
+  top: var(--sy);
+  width: 30%;
+  min-height: 27%;
+  max-width: 230px;
+  padding: 14px 16px 30px;
+  text-align: left;
+  transform: rotate(var(--srot));
+  transition: left 0.7s cubic-bezier(0.3, 1.2, 0.35, 1),
+    top 0.7s cubic-bezier(0.3, 1.2, 0.35, 1),
+    transform 0.7s cubic-bezier(0.3, 1.2, 0.35, 1);
+  box-shadow: 0 8px 16px -8px rgba(31, 35, 41, 0.4);
+}
+
+/* folded corner */
+.dk-sticky::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  border-style: solid;
+  border-width: 0 0 16px 16px;
+  border-color: transparent transparent rgba(31, 35, 41, 0.12) transparent;
+}
+
+.dk-board-tidy .dk-sticky {
+  left: var(--gx);
+  top: var(--gy);
+  transform: rotate(0deg);
+  box-shadow: 0 3px 8px -4px rgba(31, 35, 41, 0.25);
+}
+
+.dk-sticky-yellow {
+  background: var(--dk-yellow);
+}
+
+.dk-sticky-pink {
+  background: var(--dk-pink);
+}
+
+.dk-sticky-blue {
+  background: var(--dk-blue);
+}
+
+.dk-sticky-green {
+  background: var(--dk-green);
+}
+
+.dk-sticky-scrap {
+  background: var(--dk-white);
+  border: 1px solid #dcdfe5;
+}
+
+.dk-sticky-text {
+  display: block;
+  font-family: var(--dk-hand), cursive;
+  font-size: 1.22rem;
+  line-height: 1.25;
+  color: var(--dk-ink);
+}
+
+.dk-sticky-scrap .dk-sticky-text {
+  font-family: var(--dk-body), sans-serif;
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: var(--dk-ink-soft);
+}
+
+/* tag chips appear when tidy */
+.dk-tag {
+  position: absolute;
+  left: 12px;
+  bottom: 9px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 999px;
+  padding: 3px 9px;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--dk-ink-soft);
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.3s ease 0.45s, transform 0.3s ease 0.45s;
+}
+
+.dk-tag::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.dk-tag-todo::before {
+  background: #e2554f;
+}
+
+.dk-tag-idea::before {
+  background: #8a63e8;
+}
+
+.dk-tag-quote::before {
+  background: #2f9e77;
+}
+
+.dk-tag-fact::before {
+  background: #3a78d8;
+}
+
+.dk-board-tidy .dk-tag {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.dk-board-controls {
+  margin-top: 26px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.dk-toast {
+  margin: 0;
+  font-size: 0.86rem;
+  color: var(--dk-ink-soft);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- features ---------- */
+.dk-features {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 80px 32px 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.dk-feature {
+  background: var(--dk-white);
+  border: 1px solid #dcdfe5;
+  border-radius: 16px;
+  padding: 28px 26px 30px;
+}
+
+.dk-feature h3 {
+  font-family: var(--dk-display), sans-serif;
+  font-weight: 800;
+  font-size: 1.18rem;
+  letter-spacing: -0.02em;
+  margin: 0 0 12px;
+  display: inline-block;
+  position: relative;
+}
+
+.dk-feature h3::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -2px;
+  height: 6px;
+  border-radius: 3px;
+  opacity: 0.85;
+}
+
+.dk-underline-yellow h3::after {
+  background: var(--dk-yellow);
+}
+
+.dk-underline-pink h3::after {
+  background: var(--dk-pink);
+}
+
+.dk-underline-blue h3::after {
+  background: var(--dk-blue);
+}
+
+.dk-feature p {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: var(--dk-ink-soft);
+}
+
+/* ---------- quote sticky ---------- */
+.dk-quote-wrap {
+  display: flex;
+  justify-content: center;
+  padding: 60px 32px 20px;
+}
+
+.dk-quote-sticky {
+  margin: 0;
+  background: var(--dk-yellow);
+  padding: 38px 42px 32px;
+  transform: rotate(-2deg);
+  max-width: 440px;
+  box-shadow: 0 14px 26px -12px rgba(31, 35, 41, 0.4);
+}
+
+.dk-quote-sticky blockquote {
+  margin: 0 0 12px;
+  font-family: var(--dk-hand), cursive;
+  font-size: 2rem;
+  line-height: 1.2;
+}
+
+.dk-quote-sticky figcaption {
+  font-size: 0.85rem;
+  color: rgba(31, 35, 41, 0.65);
+}
+
+/* ---------- final CTA ---------- */
+.dk-final {
+  text-align: center;
+  padding: 80px 32px 90px;
+}
+
+.dk-final-line {
+  font-family: var(--dk-display), sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.9rem, 4.4vw, 3rem);
+  letter-spacing: -0.025em;
+  margin: 0 0 28px;
+}
+
+.dk-fine {
+  margin: 18px 0 0;
+  font-size: 0.82rem;
+  color: var(--dk-ink-soft);
+}
+
+/* ---------- footer ---------- */
+.dk-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 24px 32px 96px;
+  border-top: 1px solid #dcdfe5;
+  font-size: 0.78rem;
+  color: var(--dk-ink-soft);
+}
+
+/* ---------- responsive ---------- */
+@media (max-width: 880px) {
+  .dk-board {
+    height: 560px;
+  }
+
+  .dk-sticky {
+    width: 31%;
+    padding: 10px 12px 26px;
+  }
+
+  .dk-sticky-text {
+    font-size: 1rem;
+  }
+
+  .dk-sticky-scrap .dk-sticky-text {
+    font-size: 0.7rem;
+  }
+
+  .dk-features {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+  }
+}
+
+@media (max-width: 560px) {
+  .dk-board {
+    height: 620px;
+  }
+
+  .dk-tag {
+    display: none;
+  }
+
+  .dk-sticky-text {
+    font-size: 0.92rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dk-sticky,
+  .dk-tag,
+  .dk-btn {
+    transition: none;
+  }
+}

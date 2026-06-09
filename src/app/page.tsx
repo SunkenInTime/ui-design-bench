@@ -12,6 +12,7 @@ import { sortGalleryEntriesForHome } from "@/lib/gallery-model-order";
 export default function HomePage() {
   const groups = [
     "with-design-skill",
+    "with-taste-skill",
     "with-ui-sh-skill",
     "without-design-skill",
     "miscellaneous",

@@ -15,9 +15,11 @@
     "test:visual": "playwright test tests/gallery-visual-smoke.spec.ts"
   },
   "dependencies": {
+    "@phosphor-icons/react": "^2.1.10",
     "clsx": "^2.1.1",
     "framer-motion": "^12.23.24",
     "geist": "^1.7.0",
+    "gsap": "^3.15.0",
     "html-to-image": "^1.11.13",
     "lucide-react": "^0.542.0",
     "motion": "^12.38.0",

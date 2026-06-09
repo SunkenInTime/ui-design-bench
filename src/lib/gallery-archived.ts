@@ -1,10 +1,10 @@
 import type { GalleryEntry, ModelSlug } from "@/lib/gallery-types";
 
 /** Always hidden on the home page until "Show Archived" (all groups). */
-const FORCE_ARCHIVED_MODELS = new Set<ModelSlug>(["composer-2.0"]);
+const FORCE_ARCHIVED_MODELS = new Set<ModelSlug>(["composer-2.0", "opus-4.7"]);
 
 /** Visible on the home page with a sunset bookmark on gallery cards. */
-const LEAVING_SOON_MODELS = new Set<ModelSlug>(["opus-4.7"]);
+const LEAVING_SOON_MODELS = new Set<ModelSlug>();
 
 export function isGalleryModelLeavingSoon(model: ModelSlug): boolean {
   return LEAVING_SOON_MODELS.has(model);
@@ -25,9 +25,10 @@ const MODEL_GALLERY_GENERATION = {
   "gpt-5.5-high": { family: "gpt", tier: 2 },
   "kimi-k-2.5": { family: "kimi", tier: 1 },
   "kimi-k-2.6": { family: "kimi", tier: 2 },
-  "opus-4.6": { family: "opus", tier: 1 },
-  "opus-4.7": { family: "opus", tier: 2 },
-  "opus-4.8": { family: "opus", tier: 3 },
+  "opus-4.6": { family: "anthropic", tier: 46 },
+  "opus-4.7": { family: "anthropic", tier: 47 },
+  "opus-4.8": { family: "anthropic", tier: 48 },
+  fable: { family: "anthropic-fable", tier: 50 },
   "glm-5-turbo": { family: "glm", tier: 1 },
   "glm-5.1": { family: "glm", tier: 2 },
 } as const satisfies Partial<
