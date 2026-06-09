@@ -13,7 +13,7 @@ export function GalleryCard({ entry }: { entry: GalleryEntry }) {
   return (
     <article
       data-testid="gallery-card"
-      className="group gallery-elevated-surface flex flex-col overflow-hidden rounded-lg border border-[var(--gallery-card-border)] bg-[var(--gallery-surface)] transition-transform duration-300 ease-out hover:-translate-y-1.5 hover:shadow-[var(--gallery-card-hover-shadow)]"
+      className="group gallery-card-shell gallery-elevated-surface flex flex-col overflow-hidden rounded-lg border bg-[var(--gallery-surface)] transition-transform duration-300 ease-out hover:-translate-y-1.5"
     >
       <Link
         href={buildVariantHref(entry.group, entry.model, entry.defaultIteration)}

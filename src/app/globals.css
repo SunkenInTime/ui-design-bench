@@ -8,7 +8,6 @@
   --gallery-body-text: #404040;
   --gallery-body-bg: #fafafa;
   --gallery-border: #e5e5e5;
-  --gallery-card-border: #d4d4d4;
   --gallery-muted: #737373;
   /* Pink–purple with a warm, slightly reddish cast (design skill accent) */
   --gallery-accent: #b84a8c;
@@ -29,7 +28,6 @@
   --gallery-hover-bg: rgba(0, 0, 0, 0.04);
   --gallery-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
   --gallery-shadow-md: 0 4px 20px rgba(0, 0, 0, 0.1);
-  --gallery-card-hover-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
   --gallery-shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.12);
   --gallery-selection-bg: rgba(23, 23, 23, 0.08);
   --gallery-surface-highlight: transparent;
@@ -42,7 +40,6 @@
   --gallery-body-text: #b0aea9;
   --gallery-body-bg: #1a1917;
   --gallery-border: #343230;
-  --gallery-card-border: #343230;
   --gallery-muted: #8f8d88;
   --gallery-accent: #c4578f;
   --gallery-accent-foreground: #faf9f7;
@@ -62,7 +59,6 @@
   --gallery-hover-bg: rgba(238, 236, 232, 0.06);
   --gallery-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.24);
   --gallery-shadow-md: 0 10px 28px rgba(0, 0, 0, 0.26);
-  --gallery-card-hover-shadow: 0 10px 28px rgba(0, 0, 0, 0.26);
   --gallery-shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.3);
   --gallery-selection-bg: rgba(238, 236, 232, 0.13);
   --gallery-surface-highlight: rgba(255, 250, 245, 0.045);
@@ -111,6 +107,26 @@ body {
 
 .gallery-elevated-surface {
   box-shadow: inset 0 1px 0 var(--gallery-surface-highlight);
+}
+
+.gallery-card-shell {
+  border-color: #d4d4d4;
+}
+
+.gallery-card-shell:hover {
+  box-shadow:
+    0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -4px rgba(0, 0, 0, 0.1);
+}
+
+.dark .gallery-card-shell {
+  border-color: var(--gallery-border);
+}
+
+.dark .gallery-card-shell:hover {
+  box-shadow:
+    inset 0 1px 0 var(--gallery-surface-highlight),
+    var(--gallery-shadow-md);
 }
 
 .dark .gallery-elevated-surface:hover {
