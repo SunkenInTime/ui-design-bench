@@ -13,7 +13,7 @@ function getCurrent(pathname: string): (typeof ITERATIONS)[number] | null {
 
 export function IterationSwitcher() {
   const pathname = usePathname();
-  const current = getCurrent(pathname);
+  const current = getCurrent(pathname ?? "");
 
   if (current === null) return null;
 

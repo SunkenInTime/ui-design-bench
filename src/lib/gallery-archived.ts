@@ -31,6 +31,7 @@ const MODEL_GALLERY_GENERATION = {
   fable: { family: "anthropic-fable", tier: 50 },
   "glm-5-turbo": { family: "glm", tier: 1 },
   "glm-5.1": { family: "glm", tier: 2 },
+  "glm-5.2": { family: "glm", tier: 3 },
 } as const satisfies Partial<
   Record<ModelSlug, { family: string; tier: number }>
 >;

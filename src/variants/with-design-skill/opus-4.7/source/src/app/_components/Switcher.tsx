@@ -15,7 +15,7 @@ const ITERATIONS = [
 export default function Switcher() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
-  const current = Number.parseInt(pathname.replace("/", ""), 10);
+  const current = Number.parseInt(pathname?.replace("/", "") ?? "", 10);
   const active = Number.isFinite(current) && current >= 1 && current <= 5 ? current : null;
 
   // Keyboard shortcuts: 1–5 jumps iterations; Escape closes panel.

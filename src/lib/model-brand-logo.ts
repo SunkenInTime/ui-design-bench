@@ -9,6 +9,7 @@ const MODEL_BRAND_LOGO: Record<ModelSlug, string> = {
   "gemini-3.5-flash": "/google-gemini.webp",
   "glm-5-turbo": "/glm.webp",
   "glm-5.1": "/glm.webp",
+  "glm-5.2": "/glm.webp",
   "gpt-5.4": "/openai-gpt.svg",
   "gpt-5.5-low": "/openai-gpt.svg",
   "gpt-5.5-high": "/openai-gpt.svg",

@@ -15,7 +15,9 @@ import withOpus47 from "@/variants/with-design-skill/opus-4.7";
 import withOpus48 from "@/variants/with-design-skill/opus-4.8";
 import withGlm5Turbo from "@/variants/with-design-skill/glm-5-turbo";
 import withGlm51 from "@/variants/with-design-skill/glm-5.1";
+import withGlm52 from "@/variants/with-design-skill/glm-5.2";
 import withTasteFable from "@/variants/with-taste-skill/fable";
+import withTasteGlm52 from "@/variants/with-taste-skill/glm-5.2";
 import withUiShComposer20 from "@/variants/with-ui-sh-skill/composer-2.0";
 import withUiShGpt55Low from "@/variants/with-ui-sh-skill/gpt-5.5-low";
 import withUiShGpt55High from "@/variants/with-ui-sh-skill/gpt-5.5-high";
@@ -37,6 +39,7 @@ import withoutOpus47 from "@/variants/without-design-skill/opus-4.7";
 import withoutOpus48 from "@/variants/without-design-skill/opus-4.8";
 import withoutGlm5Turbo from "@/variants/without-design-skill/glm-5-turbo";
 import withoutGlm51 from "@/variants/without-design-skill/glm-5.1";
+import withoutGlm52 from "@/variants/without-design-skill/glm-5.2";
 
 type RegistryKey = `${GalleryGroupSlug}:${ModelSlug}`;
 
@@ -57,7 +60,9 @@ const registry: Partial<Record<RegistryKey, VariantModule>> = {
   "with-design-skill:opus-4.8": withOpus48,
   "with-design-skill:glm-5-turbo": withGlm5Turbo,
   "with-design-skill:glm-5.1": withGlm51,
+  "with-design-skill:glm-5.2": withGlm52,
   "with-taste-skill:fable": withTasteFable,
+  "with-taste-skill:glm-5.2": withTasteGlm52,
   "with-ui-sh-skill:composer-2.0": withUiShComposer20,
   "with-ui-sh-skill:gpt-5.5-low": withUiShGpt55Low,
   "with-ui-sh-skill:gpt-5.5-high": withUiShGpt55High,
@@ -79,6 +84,7 @@ const registry: Partial<Record<RegistryKey, VariantModule>> = {
   "without-design-skill:opus-4.8": withoutOpus48,
   "without-design-skill:glm-5-turbo": withoutGlm5Turbo,
   "without-design-skill:glm-5.1": withoutGlm51,
+  "without-design-skill:glm-5.2": withoutGlm52,
 };
 
 export function getVariantModule(group: GalleryGroupSlug, model: ModelSlug) {

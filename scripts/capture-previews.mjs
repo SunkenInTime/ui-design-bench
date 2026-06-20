@@ -23,7 +23,9 @@ const entries = [
   { group: "with-design-skill", model: "opus-4.8", iterations: ["1", "2", "3", "4", "5"] },
   { group: "with-design-skill", model: "glm-5-turbo", iterations: ["1", "2", "3", "4", "5"] },
   { group: "with-design-skill", model: "glm-5.1", iterations: ["1", "2", "3", "4", "5"] },
+  { group: "with-design-skill", model: "glm-5.2", iterations: ["1", "2", "3", "4", "5"] },
   { group: "with-taste-skill", model: "fable", iterations: ["1", "2", "3", "4", "5"] },
+  { group: "with-taste-skill", model: "glm-5.2", iterations: ["1", "2", "3", "4", "5"] },
   { group: "with-ui-sh-skill", model: "composer-2.0", iterations: ["1", "2", "3", "4", "5"] },
   { group: "with-ui-sh-skill", model: "gpt-5.5-low", iterations: ["1", "2", "3", "4", "5"] },
   { group: "with-ui-sh-skill", model: "gpt-5.5-high", iterations: ["1", "2", "3", "4", "5"] },
@@ -44,6 +46,7 @@ const entries = [
   { group: "without-design-skill", model: "opus-4.8", iterations: ["1", "2", "3", "4", "5"] },
   { group: "without-design-skill", model: "glm-5-turbo", iterations: ["1", "2", "3", "4", "5"] },
   { group: "without-design-skill", model: "glm-5.1", iterations: ["1", "2", "3", "4", "5"] },
+  { group: "without-design-skill", model: "glm-5.2", iterations: ["1", "2", "3", "4", "5"] },
 ];
 
 const targetModel = process.env.TARGET_MODEL ?? null;

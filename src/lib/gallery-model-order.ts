@@ -15,6 +15,7 @@ const MODEL_HOME_ORDER: Record<ModelSlug, { familyOrder: number; tier: number }>
   "composer-2.5": { familyOrder: 4, tier: 25 },
   "glm-5-turbo": { familyOrder: 5, tier: 50 },
   "glm-5.1": { familyOrder: 5, tier: 51 },
+  "glm-5.2": { familyOrder: 5, tier: 52 },
   "kimi-k-2.5": { familyOrder: 6, tier: 25 },
   "kimi-k-2.6": { familyOrder: 6, tier: 26 },
 };

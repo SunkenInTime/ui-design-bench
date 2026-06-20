@@ -26,7 +26,9 @@ const entries = [
   ["with-design-skill", "opus-4.8"],
   ["with-design-skill", "glm-5-turbo"],
   ["with-design-skill", "glm-5.1"],
+  ["with-design-skill", "glm-5.2"],
   ["with-taste-skill", "fable"],
+  ["with-taste-skill", "glm-5.2"],
   ["with-ui-sh-skill", "composer-2.0"],
   ["with-ui-sh-skill", "gpt-5.5-low"],
   ["with-ui-sh-skill", "gpt-5.5-high"],
@@ -47,6 +49,7 @@ const entries = [
   ["without-design-skill", "opus-4.8"],
   ["without-design-skill", "glm-5-turbo"],
   ["without-design-skill", "glm-5.1"],
+  ["without-design-skill", "glm-5.2"],
   ["miscellaneous", "gpt-5.4"],
 ] as const;
 
