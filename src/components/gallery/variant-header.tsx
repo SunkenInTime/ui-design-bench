@@ -1,6 +1,10 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { Home, Palette } from "lucide-react";
+import { useEffect } from "react";
 import { buildCompareHrefForSelection } from "@/lib/compare";
 import type { GalleryEntry, IterationId } from "@/lib/gallery-types";
 import { buildVariantHref } from "@/lib/gallery-paths";
@@ -30,6 +34,50 @@ export function VariantSwitcher({
     isWithDesignSkill || isWithUiShSkill || isMiscSkillGroup
       ? "text-[var(--gallery-accent)]"
       : "text-[var(--gallery-text-quaternary)] opacity-55";
+
+  const router = useRouter();
+
+  useEffect(() => {
+    const onKeyDown = (e: KeyboardEvent) => {
+      const target = e.target as HTMLElement | null;
+      if (
+        e.ctrlKey ||
+        e.metaKey ||
+        e.altKey ||
+        target?.tagName === "INPUT" ||
+        target?.tagName === "TEXTAREA" ||
+        target?.isContentEditable
+      ) {
+        return;
+      }
+
+      if (e.key === "h") {
+        e.preventDefault();
+        router.push("/");
+        return;
+      }
+
+      if (e.key === "c") {
+        e.preventDefault();
+        router.push(
+          buildCompareHrefForSelection({
+            group: entry.group,
+            model: entry.model,
+            iteration,
+          }),
+        );
+        return;
+      }
+
+      if (/^[1-5]$/.test(e.key)) {
+        e.preventDefault();
+        router.push(buildVariantHref(entry.group, entry.model, e.key as IterationId));
+      }
+    };
+
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [entry.group, entry.model, iteration, router]);
 
   return (
     <nav
