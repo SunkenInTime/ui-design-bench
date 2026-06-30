@@ -17,13 +17,13 @@ export type ModelSlug =
   | "glm-5.1"
   | "glm-5.2"
   | "gpt-5.4"
-  | "gpt-5.5-low"
   | "gpt-5.5-high"
   | "kimi-k-2.5"
   | "kimi-k-2.6"
   | "opus-4.6"
   | "opus-4.7"
-  | "opus-4.8";
+  | "opus-4.8"
+  | "sonnet-5";
 export type IterationId = "1" | "2" | "3" | "4" | "5";
 export type SourceAppType = "next" | "vite";
 

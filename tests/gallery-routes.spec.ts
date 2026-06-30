@@ -17,7 +17,6 @@ const entries = [
   ["with-design-skill", "gemini"],
   ["with-design-skill", "gemini-3.5-flash"],
   ["with-design-skill", "gpt-5.4"],
-  ["with-design-skill", "gpt-5.5-low"],
   ["with-design-skill", "gpt-5.5-high"],
   ["with-design-skill", "kimi-k-2.5"],
   ["with-design-skill", "kimi-k-2.6"],
@@ -27,10 +26,11 @@ const entries = [
   ["with-design-skill", "glm-5-turbo"],
   ["with-design-skill", "glm-5.1"],
   ["with-design-skill", "glm-5.2"],
+  ["with-design-skill", "sonnet-5"],
   ["with-taste-skill", "fable"],
   ["with-taste-skill", "glm-5.2"],
+  ["with-taste-skill", "sonnet-5"],
   ["with-ui-sh-skill", "composer-2.0"],
-  ["with-ui-sh-skill", "gpt-5.5-low"],
   ["with-ui-sh-skill", "gpt-5.5-high"],
   ["with-ui-sh-skill", "opus-4.7"],
   ["without-design-skill", "composer-1.5"],
@@ -40,7 +40,6 @@ const entries = [
   ["without-design-skill", "gemini"],
   ["without-design-skill", "gemini-3.5-flash"],
   ["without-design-skill", "gpt-5.4"],
-  ["without-design-skill", "gpt-5.5-low"],
   ["without-design-skill", "gpt-5.5-high"],
   ["without-design-skill", "kimi-k-2.5"],
   ["without-design-skill", "kimi-k-2.6"],
@@ -50,6 +49,7 @@ const entries = [
   ["without-design-skill", "glm-5-turbo"],
   ["without-design-skill", "glm-5.1"],
   ["without-design-skill", "glm-5.2"],
+  ["without-design-skill", "sonnet-5"],
   ["miscellaneous", "gpt-5.4"],
 ] as const;
 
@@ -72,9 +72,10 @@ test("home page hides superseded-generation cards until Show Archived", async ({
   await expect(page.getByRole("heading", { name: "Which AI Made This?" })).toBeVisible();
   const initialCardCount = await page.getByTestId("gallery-card").count();
   expect(initialCardCount).toBeGreaterThan(0);
-  await expect(page.getByTestId("gallery-card").filter({ hasText: "Opus 4.8" })).toHaveCount(
-    galleryManifest.filter((e) => HOME_GALLERY_GROUPS.includes(e.group) && e.model === "opus-4.8").length,
+  await expect(page.getByTestId("gallery-card").filter({ hasText: "Sonnet 5" })).toHaveCount(
+    galleryManifest.filter((e) => HOME_GALLERY_GROUPS.includes(e.group) && e.model === "sonnet-5").length,
   );
+  await expect(page.getByTestId("gallery-card").filter({ hasText: "Opus 4.8" })).toHaveCount(0);
   await expect(page.getByTestId("gallery-card").filter({ hasText: "Opus 4.7" })).toHaveCount(0);
 
   while ((await page.getByRole("button", { name: "Show Archived" }).count()) > 0) {
@@ -104,6 +105,9 @@ test("rankings page lists eight models with previews", async ({ page }) => {
 });
 
 test("gallery shell background stays consistent after client navigation into a variant", async ({ page }) => {
+  await page.addInitScript(() => {
+    window.localStorage.setItem("gallery-color-scheme", "dark");
+  });
   await page.emulateMedia({ colorScheme: "dark" });
   await page.goto("/");
   await expect
@@ -133,7 +137,7 @@ test("gallery shell background stays consistent after client navigation into a v
 });
 
 test("gallery switcher text colors stay isolated from generated variant CSS", async ({ page }) => {
-  await page.goto("/with-design-skill/gpt-5.5-low/1");
+  await page.goto("/with-design-skill/gpt-5.5-high/1");
 
   const homeLink = page.getByRole("link", { name: /Back to Which AI Made This/ });
   const activeIteration = page.getByRole("link", { name: "Open iteration 1" });
@@ -189,7 +193,7 @@ test("gallery switcher text colors stay isolated from generated variant CSS", as
 
   expect(cssVariables).toEqual({
     rootBackground: "",
-    generationBackground: "#fbfaf6",
+    generationBackground: "#fff",
   });
 });
 
