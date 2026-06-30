@@ -17,6 +17,7 @@ const entries = [
   ["with-design-skill", "gemini"],
   ["with-design-skill", "gemini-3.5-flash"],
   ["with-design-skill", "gpt-5.4"],
+  ["with-design-skill", "gpt-5.5-low"],
   ["with-design-skill", "gpt-5.5-high"],
   ["with-design-skill", "kimi-k-2.5"],
   ["with-design-skill", "kimi-k-2.6"],
@@ -31,6 +32,7 @@ const entries = [
   ["with-taste-skill", "glm-5.2"],
   ["with-taste-skill", "sonnet-5"],
   ["with-ui-sh-skill", "composer-2.0"],
+  ["with-ui-sh-skill", "gpt-5.5-low"],
   ["with-ui-sh-skill", "gpt-5.5-high"],
   ["with-ui-sh-skill", "opus-4.7"],
   ["without-design-skill", "composer-1.5"],
@@ -40,6 +42,7 @@ const entries = [
   ["without-design-skill", "gemini"],
   ["without-design-skill", "gemini-3.5-flash"],
   ["without-design-skill", "gpt-5.4"],
+  ["without-design-skill", "gpt-5.5-low"],
   ["without-design-skill", "gpt-5.5-high"],
   ["without-design-skill", "kimi-k-2.5"],
   ["without-design-skill", "kimi-k-2.6"],
@@ -75,7 +78,10 @@ test("home page hides superseded-generation cards until Show Archived", async ({
   await expect(page.getByTestId("gallery-card").filter({ hasText: "Sonnet 5" })).toHaveCount(
     galleryManifest.filter((e) => HOME_GALLERY_GROUPS.includes(e.group) && e.model === "sonnet-5").length,
   );
-  await expect(page.getByTestId("gallery-card").filter({ hasText: "Opus 4.8" })).toHaveCount(0);
+  await expect(page.getByTestId("gallery-card").filter({ hasText: "GPT 5.5 low" })).toHaveCount(0);
+  await expect(page.getByTestId("gallery-card").filter({ hasText: "Opus 4.8" })).toHaveCount(
+    galleryManifest.filter((e) => HOME_GALLERY_GROUPS.includes(e.group) && e.model === "opus-4.8").length,
+  );
   await expect(page.getByTestId("gallery-card").filter({ hasText: "Opus 4.7" })).toHaveCount(0);
 
   while ((await page.getByRole("button", { name: "Show Archived" }).count()) > 0) {
@@ -83,6 +89,9 @@ test("home page hides superseded-generation cards until Show Archived", async ({
   }
 
   await expect.poll(() => page.getByTestId("gallery-card").count()).toBeGreaterThan(initialCardCount);
+  await expect(page.getByTestId("gallery-card").filter({ hasText: "GPT 5.5 low" })).toHaveCount(
+    galleryManifest.filter((e) => HOME_GALLERY_GROUPS.includes(e.group) && e.model === "gpt-5.5-low").length,
+  );
   await expect(page.locator('a[title="Compare"]')).toHaveCount(await page.getByTestId("gallery-card").count());
 });
 

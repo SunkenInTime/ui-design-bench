@@ -21,14 +21,17 @@ const GalleryThemeContext = createContext<GalleryThemeContextValue | null>(null)
 export function GalleryThemeProvider({ children }: { children: ReactNode }) {
   // Keep SSR and the first client render in sync; resolve stored/system theme after mount.
   const [theme, setThemeState] = useState<GalleryTheme>("light");
+  const [hasResolvedTheme, setHasResolvedTheme] = useState(false);
 
   useEffect(() => {
     setThemeState(resolveGalleryTheme());
+    setHasResolvedTheme(true);
   }, []);
 
   useEffect(() => {
+    if (!hasResolvedTheme) return;
     applyGalleryTheme(theme);
-  }, [theme]);
+  }, [hasResolvedTheme, theme]);
 
   useEffect(() => {
     const stored = getStoredGalleryTheme();

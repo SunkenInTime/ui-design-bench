@@ -1,0 +1,25 @@
+:where(.gallery-generation[data-gallery-group="without-design-skill"][data-gallery-model="gpt-5.5-low"]) {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :where(.gallery-generation[data-gallery-group="without-design-skill"][data-gallery-model="gpt-5.5-low"]) {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+:where(.gallery-generation[data-gallery-group="without-design-skill"][data-gallery-model="gpt-5.5-low"]) {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+:where(.gallery-generation[data-gallery-group="without-design-skill"][data-gallery-model="gpt-5.5-low"]) * {
+  box-sizing: border-box;
+}
+
+:where(.gallery-generation[data-gallery-group="without-design-skill"][data-gallery-model="gpt-5.5-low"]) {
+  scroll-behavior: smooth;
+}

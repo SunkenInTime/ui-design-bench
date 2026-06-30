@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "uidotsh": {
+      "url": "https://ui.sh/mcp?agent=cursor",
+      "headers": {
+        "Authorization": "Bearer TC70HSNddWYGBTjaW4QyIosDmR34ijaN"
+      }
+    }
+  }
+}
