@@ -11,14 +11,15 @@ const MODEL_HOME_ORDER: Record<ModelSlug, { familyOrder: number; tier: number }>
   "gpt-5.5-high": { familyOrder: 2, tier: 56 },
   gemini: { familyOrder: 3, tier: 31 },
   "gemini-3.5-flash": { familyOrder: 3, tier: 35 },
-  "composer-1.5": { familyOrder: 4, tier: 15 },
-  "composer-2.0": { familyOrder: 4, tier: 20 },
-  "composer-2.5": { familyOrder: 4, tier: 25 },
-  "glm-5-turbo": { familyOrder: 5, tier: 50 },
-  "glm-5.1": { familyOrder: 5, tier: 51 },
-  "glm-5.2": { familyOrder: 5, tier: 52 },
-  "kimi-k-2.5": { familyOrder: 6, tier: 25 },
-  "kimi-k-2.6": { familyOrder: 6, tier: 26 },
+  "grok-4.5": { familyOrder: 4, tier: 45 },
+  "composer-1.5": { familyOrder: 5, tier: 15 },
+  "composer-2.0": { familyOrder: 5, tier: 20 },
+  "composer-2.5": { familyOrder: 5, tier: 25 },
+  "glm-5-turbo": { familyOrder: 6, tier: 50 },
+  "glm-5.1": { familyOrder: 6, tier: 51 },
+  "glm-5.2": { familyOrder: 6, tier: 52 },
+  "kimi-k-2.5": { familyOrder: 7, tier: 25 },
+  "kimi-k-2.6": { familyOrder: 7, tier: 26 },
 };
 
 export function sortGalleryEntriesForHome(entries: GalleryEntry[]) {

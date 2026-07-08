@@ -1,6 +1,6 @@
 import type { ModelSlug } from "@/lib/gallery-types";
 
-export type LabSlug = "gpt" | "anthropic" | "google" | "moonshot" | "z-ai" | "cursor";
+export type LabSlug = "gpt" | "anthropic" | "google" | "x-ai" | "moonshot" | "z-ai" | "cursor";
 
 export interface ModelLab {
   slug: LabSlug;
@@ -17,6 +17,7 @@ const MODEL_TO_LAB: Record<ModelSlug, ModelLab> = {
   "glm-5-turbo": { slug: "z-ai", label: "Z.ai" },
   "glm-5.1": { slug: "z-ai", label: "Z.ai" },
   "glm-5.2": { slug: "z-ai", label: "Z.ai" },
+  "grok-4.5": { slug: "x-ai", label: "X AI" },
   "gpt-5.4": { slug: "gpt", label: "GPT" },
   "gpt-5.5-low": { slug: "gpt", label: "GPT" },
   "gpt-5.5-high": { slug: "gpt", label: "GPT" },
@@ -32,6 +33,7 @@ export const LAB_OPTIONS: ModelLab[] = [
   { slug: "gpt", label: "GPT" },
   { slug: "anthropic", label: "Anthropic" },
   { slug: "google", label: "Google" },
+  { slug: "x-ai", label: "X AI" },
   { slug: "moonshot", label: "Moonshot" },
   { slug: "z-ai", label: "Z.ai" },
   { slug: "cursor", label: "Cursor" },

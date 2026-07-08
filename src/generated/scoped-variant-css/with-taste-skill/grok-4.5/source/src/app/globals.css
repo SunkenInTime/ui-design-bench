@@ -1,0 +1,27 @@
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="grok-4.5"]) {
+  --background: #fafafa;
+  --foreground: #18181b;
+}
+
+@media (prefers-color-scheme: dark) {
+  :where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="grok-4.5"]) {
+    --background: #09090b;
+    --foreground: #f4f4f5;
+  }
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="grok-4.5"]) {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="grok-4.5"]) *,:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="grok-4.5"]) 
+  *::before,:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="grok-4.5"]) 
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

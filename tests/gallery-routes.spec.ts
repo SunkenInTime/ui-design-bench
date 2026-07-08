@@ -22,6 +22,7 @@ const latestRouteSmokeCases = galleryManifest
 
 const sampleRouteSmokeCases = [
   { group: "with-design-skill", model: "composer-2.5", iteration: "5" },
+  { group: "with-design-skill", model: "grok-4.5", iteration: "3" },
   { group: "with-design-skill", model: "gpt-5.5-high", iteration: "3" },
   { group: "with-taste-skill", model: "fable", iteration: "4" },
   { group: "with-ui-sh-skill", model: "composer-2.0", iteration: "2" },

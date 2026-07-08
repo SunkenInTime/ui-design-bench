@@ -58,6 +58,7 @@ const GUESS_OPTIONS: GuessOption[] = [
   { slug: "gpt", label: "GPT", logoPath: "/openai-gpt.svg" },
   { slug: "anthropic", label: "Claude", logoPath: "/anthropic-claude.webp" },
   { slug: "google", label: "Gemini", logoPath: "/google-gemini.webp" },
+  { slug: "x-ai", label: "X AI", logoPath: "/xai-light.svg" },
   { slug: "moonshot", label: "Kimi", logoPath: "/kimi-k2.webp" },
   { slug: "z-ai", label: "GLM", logoPath: "/glm.webp" },
   { slug: "cursor", label: "Composer", logoPath: "/cursor-composer.webp" },
