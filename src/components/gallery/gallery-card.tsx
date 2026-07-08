@@ -2,11 +2,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeftRight } from "lucide-react";
 import { GalleryCardLeavingSoonBookmark } from "@/components/gallery/gallery-card-leaving-soon";
+import { ModelBrandLogo } from "@/components/gallery/model-brand-logo";
 import { buildCompareHrefForSelection } from "@/lib/compare";
 import { isGalleryModelLeavingSoon } from "@/lib/gallery-archived";
 import type { GalleryEntry } from "@/lib/gallery-types";
 import { buildVariantHref } from "@/lib/gallery-paths";
-import { getModelBrandLogoPath } from "@/lib/model-brand-logo";
 
 export function GalleryCard({ entry }: { entry: GalleryEntry }) {
   const leavingSoon = isGalleryModelLeavingSoon(entry.model);
@@ -39,8 +39,8 @@ export function GalleryCard({ entry }: { entry: GalleryEntry }) {
           <p className="text-xs text-[var(--gallery-text-tertiary)]">{entry.groupLabel}</p>
           <h3 className="flex flex-wrap items-center gap-2 text-lg font-medium tracking-tight text-[var(--gallery-text-primary)]">
             <span>{entry.modelLabel}</span>
-            <Image
-              src={getModelBrandLogoPath(entry.model)}
+            <ModelBrandLogo
+              model={entry.model}
               alt=""
               width={28}
               height={28}

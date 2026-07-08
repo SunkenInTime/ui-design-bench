@@ -2,10 +2,9 @@
 
 import clsx from "clsx";
 import { ChevronDown, Code2, Layers, Sparkles } from "lucide-react";
-import Image from "next/image";
 import { useId } from "react";
+import { ModelBrandLogo } from "@/components/gallery/model-brand-logo";
 import type { GalleryEntry, GalleryGroupSlug, ModelSlug } from "@/lib/gallery-types";
-import { getModelBrandLogoPath } from "@/lib/model-brand-logo";
 
 const GROUP_ICONS: Record<GalleryGroupSlug, typeof Sparkles> = {
   "with-design-skill": Sparkles,
@@ -145,8 +144,8 @@ export function CompareModelSelect({
         onClick={() => setOpen(!open)}
       >
         {selected ? (
-          <Image
-            src={getModelBrandLogoPath(selected.model)}
+          <ModelBrandLogo
+            model={selected.model}
             alt=""
             width={20}
             height={20}
@@ -176,8 +175,8 @@ export function CompareModelSelect({
                   setOpen(false);
                 }}
               >
-                <Image
-                  src={getModelBrandLogoPath(m.model)}
+                <ModelBrandLogo
+                  model={m.model}
                   alt=""
                   width={20}
                   height={20}

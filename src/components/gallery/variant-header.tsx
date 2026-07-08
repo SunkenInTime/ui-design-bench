@@ -1,17 +1,16 @@
 "use client";
 
 import clsx from "clsx";
-import Image from "next/image";
 import Link from "next/link";
 import { Check, Home, Palette, Search } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useEffect, useMemo, useRef, useState } from "react";
+import { ModelBrandLogo } from "@/components/gallery/model-brand-logo";
 import { buildCompareHref } from "@/lib/compare";
 import { galleryManifest } from "@/lib/gallery-manifest";
 import { sortGalleryEntriesForHome } from "@/lib/gallery-model-order";
 import type { GalleryEntry, GalleryGroupSlug, IterationId, ModelSlug } from "@/lib/gallery-types";
 import { buildVariantHref } from "@/lib/gallery-paths";
-import { getModelBrandLogoPath } from "@/lib/model-brand-logo";
 
 type PickerMode = "compare" | "model" | "skill" | null;
 
@@ -52,7 +51,6 @@ function getModelOptions(currentEntry: GalleryEntry, iteration: IterationId) {
       return {
         model,
         label,
-        logoSrc: getModelBrandLogoPath(model),
         availableInCurrentGroup: Boolean(currentGroupEntry),
         targetEntry: currentGroupEntry,
         href: currentGroupEntry
@@ -106,7 +104,6 @@ export function VariantSwitcher({
   const pickerRef = useRef<HTMLElement | null>(null);
   const compareSearchRef = useRef<HTMLInputElement | null>(null);
   const modelSearchRef = useRef<HTMLInputElement | null>(null);
-  const logoSrc = getModelBrandLogoPath(entry.model);
   const groupLabel = getGroupLabel(entry.group);
   const isWithoutSkill = entry.group === "without-design-skill";
   const paletteTone = getPaletteTone(entry.group);
@@ -271,8 +268,8 @@ export function VariantSwitcher({
             const content = (
               <>
                 <span className="flex min-w-0 flex-1 items-center gap-3">
-                  <Image
-                    src={option.logoSrc}
+                  <ModelBrandLogo
+                    model={option.model}
                     alt=""
                     width={18}
                     height={18}
@@ -337,8 +334,8 @@ export function VariantSwitcher({
           aria-expanded={openPicker === "model"}
           onClick={() => setOpenPicker((open) => (open === "model" ? null : "model"))}
         >
-          <Image
-            src={logoSrc}
+          <ModelBrandLogo
+            model={entry.model}
             alt=""
             width={22}
             height={22}
@@ -398,8 +395,8 @@ export function VariantSwitcher({
               const content = (
                 <>
                   <span className="flex min-w-0 flex-1 items-center gap-3">
-                    <Image
-                      src={option.logoSrc}
+                    <ModelBrandLogo
+                      model={option.model}
                       alt=""
                       width={18}
                       height={18}

@@ -1,9 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ModelBrandLogo } from "@/components/gallery/model-brand-logo";
 import { GalleryRankingsNav } from "@/components/gallery/gallery-rankings-nav";
 import { RankingNotes } from "@/components/ranking-notes";
 import { buildVariantHref } from "@/lib/gallery-paths";
-import { getModelBrandLogoPath } from "@/lib/model-brand-logo";
 import { getRankingPreviewPath, modelRankings } from "@/lib/model-rankings";
 
 export default function RankingsPage() {
@@ -41,8 +41,8 @@ export default function RankingsPage() {
                       className="inline-flex items-center gap-2 transition-colors hover:text-[var(--gallery-text-secondary)]"
                     >
                       <span>{ranking.modelLabel}</span>
-                      <Image
-                        src={getModelBrandLogoPath(ranking.model)}
+                      <ModelBrandLogo
+                        model={ranking.model}
                         alt=""
                         width={28}
                         height={28}
