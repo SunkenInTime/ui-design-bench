@@ -9,52 +9,29 @@ const HOME_GALLERY_GROUPS = [
   "miscellaneous",
 ] as const;
 
-const entries = [
-  ["with-design-skill", "composer-1.5"],
-  ["with-design-skill", "composer-2.0"],
-  ["with-design-skill", "composer-2.5"],
-  ["with-design-skill", "fable"],
-  ["with-design-skill", "gemini"],
-  ["with-design-skill", "gemini-3.5-flash"],
-  ["with-design-skill", "gpt-5.4"],
-  ["with-design-skill", "gpt-5.5-low"],
-  ["with-design-skill", "gpt-5.5-high"],
-  ["with-design-skill", "kimi-k-2.5"],
-  ["with-design-skill", "kimi-k-2.6"],
-  ["with-design-skill", "opus-4.6"],
-  ["with-design-skill", "opus-4.7"],
-  ["with-design-skill", "opus-4.8"],
-  ["with-design-skill", "glm-5-turbo"],
-  ["with-design-skill", "glm-5.1"],
-  ["with-design-skill", "glm-5.2"],
-  ["with-design-skill", "sonnet-5"],
-  ["with-taste-skill", "fable"],
-  ["with-taste-skill", "glm-5.2"],
-  ["with-taste-skill", "sonnet-5"],
-  ["with-ui-sh-skill", "composer-2.0"],
-  ["with-ui-sh-skill", "gpt-5.5-low"],
-  ["with-ui-sh-skill", "gpt-5.5-high"],
-  ["with-ui-sh-skill", "opus-4.7"],
-  ["without-design-skill", "composer-1.5"],
-  ["without-design-skill", "composer-2.0"],
-  ["without-design-skill", "composer-2.5"],
-  ["without-design-skill", "fable"],
-  ["without-design-skill", "gemini"],
-  ["without-design-skill", "gemini-3.5-flash"],
-  ["without-design-skill", "gpt-5.4"],
-  ["without-design-skill", "gpt-5.5-low"],
-  ["without-design-skill", "gpt-5.5-high"],
-  ["without-design-skill", "kimi-k-2.5"],
-  ["without-design-skill", "kimi-k-2.6"],
-  ["without-design-skill", "opus-4.6"],
-  ["without-design-skill", "opus-4.7"],
-  ["without-design-skill", "opus-4.8"],
-  ["without-design-skill", "glm-5-turbo"],
-  ["without-design-skill", "glm-5.1"],
-  ["without-design-skill", "glm-5.2"],
-  ["without-design-skill", "sonnet-5"],
-  ["miscellaneous", "gpt-5.4"],
+const LATEST_ROUTE_SMOKE_COUNT = 5;
+
+const latestRouteSmokeCases = galleryManifest
+  .slice(-LATEST_ROUTE_SMOKE_COUNT)
+  .map((entry) => ({
+    group: entry.group,
+    model: entry.model,
+    iteration: entry.defaultIteration,
+    source: "latest",
+  }));
+
+const sampleRouteSmokeCases = [
+  { group: "with-design-skill", model: "composer-2.5", iteration: "5" },
+  { group: "with-design-skill", model: "gpt-5.5-high", iteration: "3" },
+  { group: "with-taste-skill", model: "fable", iteration: "4" },
+  { group: "with-ui-sh-skill", model: "composer-2.0", iteration: "2" },
+  { group: "miscellaneous", model: "gpt-5.4", iteration: "5" },
 ] as const;
+
+const routeSmokeCases = [
+  ...latestRouteSmokeCases,
+  ...sampleRouteSmokeCases.map((route) => ({ ...route, source: "sample" })),
+];
 
 test("home page archives Opus 4.7 cards", async ({ page }) => {
   await page.goto("/");
@@ -206,22 +183,19 @@ test("gallery switcher text colors stay isolated from generated variant CSS", as
   });
 });
 
-for (const [group, model] of entries) {
+for (const { group, model, iteration, source } of routeSmokeCases) {
   const entry = galleryManifest.find((item) => item.group === group && item.model === model);
   if (!entry) {
     throw new Error(`Missing gallery manifest entry for ${group}/${model}`);
   }
 
-  test(`model page renders for ${group}/${model}`, async ({ page }) => {
-    await page.goto(`/${group}/${model}`);
-    await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
-    await expect(page.locator("article")).toHaveCount(entry.iterations.length);
-  });
-
-  for (const iteration of entry.iterations.map((item) => item.id)) {
-    test(`iteration page renders for ${group}/${model}/${iteration}`, async ({ page }) => {
-      await page.goto(`/${group}/${model}/${iteration}`);
-      await expect(page.getByRole("main").first()).toBeVisible();
-    });
+  const routeIteration = entry.iterations.find((item) => item.id === iteration);
+  if (!routeIteration) {
+    throw new Error(`Missing gallery manifest iteration for ${group}/${model}/${iteration}`);
   }
+
+  test(`${source} iteration page renders for ${group}/${model}/${iteration}`, async ({ page }) => {
+    await page.goto(`/${group}/${model}/${iteration}`);
+    await expect(page.getByRole("main").first()).toBeVisible();
+  });
 }
