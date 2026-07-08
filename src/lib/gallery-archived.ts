@@ -1,7 +1,7 @@
 import type { GalleryEntry, ModelSlug } from "@/lib/gallery-types";
 
 /** Always hidden on the home page until "Show Archived" (all groups). */
-const FORCE_ARCHIVED_MODELS = new Set<ModelSlug>(["composer-2.0", "opus-4.7"]);
+const FORCE_ARCHIVED_MODELS = new Set<ModelSlug>(["composer-2.0", "kimi-k-2.6", "opus-4.7"]);
 
 /** Visible on the home page with a sunset bookmark on gallery cards. */
 const LEAVING_SOON_MODELS = new Set<ModelSlug>();
