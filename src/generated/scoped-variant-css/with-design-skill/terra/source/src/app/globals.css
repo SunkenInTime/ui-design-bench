@@ -1,0 +1,44 @@
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) {
+  --font-display: Georgia, "Iowan Old Style", "Baskerville", serif;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) * {
+  box-sizing: border-box;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) {
+  min-width: 320px;
+  background: #111a2d;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) {
+  min-width: 320px;
+  margin: 0;
+  font-family: var(--font-geist-sans), Arial, sans-serif;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) a {
+  color: inherit;
+  text-decoration: none;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) button,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) 
+summary {
+  font: inherit;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) ::selection {
+  background: #f9c0f0;
+  color: #201835;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) *,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) 
+  *::before,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) 
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

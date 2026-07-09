@@ -1,0 +1,30 @@
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="sol"]) {
+  color-scheme: light dark;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="sol"]) {
+  min-width: 320px;
+  scroll-behavior: smooth;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="sol"]) {
+  min-width: 320px;
+  min-height: 100dvh;
+  margin: 0;
+  font-family: var(--font-geist-sans), sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="sol"]) button,:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="sol"]) 
+input,:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="sol"]) 
+textarea,:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="sol"]) 
+select {
+  font: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="sol"]) {
+    scroll-behavior: auto;
+  }
+}

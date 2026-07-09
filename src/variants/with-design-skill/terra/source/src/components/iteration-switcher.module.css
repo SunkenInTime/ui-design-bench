@@ -1,0 +1,133 @@
+.switcher {
+  position: fixed;
+  z-index: 50;
+  right: 20px;
+  bottom: 20px;
+  width: 178px;
+  color: #1c1d29;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 10px;
+  letter-spacing: 0.05em;
+}
+
+.trigger {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  min-height: 38px;
+  padding: 0 11px;
+  cursor: pointer;
+  list-style: none;
+  border: 1px solid rgba(25, 28, 45, 0.16);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 7px 22px rgba(20, 27, 44, 0.18);
+  backdrop-filter: blur(14px);
+}
+
+.trigger::-webkit-details-marker {
+  display: none;
+}
+
+.trigger:focus-visible,
+.option:focus-visible {
+  outline: 2px solid #f0558f;
+  outline-offset: 3px;
+}
+
+.dots {
+  display: flex;
+  gap: 3px;
+}
+
+.dots i {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #ee6e54;
+}
+
+.dots i:nth-child(2) {
+  background: #e7bd40;
+}
+
+.dots i:nth-child(3) {
+  background: #57b99f;
+}
+
+.triggerLabel {
+  flex: 1;
+  font-weight: 650;
+}
+
+.current {
+  color: #7b8092;
+}
+
+.panel {
+  display: grid;
+  gap: 2px;
+  margin-bottom: 8px;
+  padding: 8px;
+  border: 1px solid rgba(25, 28, 45, 0.16);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 14px 35px rgba(20, 27, 44, 0.22);
+  backdrop-filter: blur(18px);
+}
+
+.panelTitle {
+  display: flex;
+  justify-content: space-between;
+  padding: 3px 4px 8px;
+  color: #70758a;
+  font-size: 9px;
+  text-transform: uppercase;
+}
+
+.option {
+  display: grid;
+  grid-template-columns: 25px 1fr 15px;
+  align-items: center;
+  min-height: 31px;
+  padding: 0 5px;
+  border-radius: 8px;
+  transition: background 150ms ease, color 150ms ease;
+}
+
+.option:hover {
+  background: #f0eff8;
+}
+
+.option span:first-child,
+.option span:last-child {
+  color: #8f94a8;
+  font-size: 9px;
+}
+
+.option span:last-child {
+  text-align: right;
+}
+
+.active {
+  background: #23273d;
+  color: white;
+}
+
+.active:hover {
+  background: #23273d;
+}
+
+.active span:first-child,
+.active span:last-child {
+  color: #d1d4e0;
+}
+
+@media (max-width: 600px) {
+  .switcher {
+    right: 12px;
+    bottom: 12px;
+    width: 165px;
+  }
+}

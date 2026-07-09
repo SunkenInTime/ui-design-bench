@@ -25,7 +25,10 @@ export type ModelSlug =
   | "opus-4.6"
   | "opus-4.7"
   | "opus-4.8"
-  | "sonnet-5";
+  | "sonnet-5"
+  | "sol"
+  | "luna"
+  | "terra";
 export type IterationId = "1" | "2" | "3" | "4" | "5";
 export type SourceAppType = "next" | "vite";
 
