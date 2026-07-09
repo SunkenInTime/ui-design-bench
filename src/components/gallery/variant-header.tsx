@@ -345,7 +345,7 @@ export function VariantSwitcher({
         </button>
         <button
           type="button"
-          className={clsx(switcherButtonClass, "group/skill size-7")}
+          className={clsx(switcherButtonClass, "group/skill relative size-7")}
           aria-label={`Switch skill set from ${groupLabel}`}
           aria-expanded={openPicker === "skill"}
           onClick={() => setOpenPicker((open) => (open === "skill" ? null : "skill"))}
