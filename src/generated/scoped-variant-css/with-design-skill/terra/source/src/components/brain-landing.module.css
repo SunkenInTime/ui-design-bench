@@ -1,0 +1,1186 @@
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .page {
+  min-height: 100svh;
+  overflow: hidden;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .glyph {
+  position: relative;
+  display: inline-flex;
+  width: 18px;
+  height: 18px;
+  align-items: center;
+  justify-content: center;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .glyph i {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .glyph i:nth-child(1) {
+  transform: translate(-4px, -3px);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .glyph i:nth-child(2) {
+  transform: translate(4px, -3px);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .glyph i:nth-child(3) {
+  transform: translate(0, 5px);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .glyph::before,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) 
+.glyph::after {
+  position: absolute;
+  width: 10px;
+  height: 1px;
+  content: "";
+  background: currentColor;
+  opacity: 0.7;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .glyph::before {
+  transform: rotate(30deg) translateY(-1px);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .glyph::after {
+  transform: rotate(-30deg) translateY(-1px);
+}
+
+/* 01 — atlas */
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .atlasSection {
+  position: relative;
+  min-height: 100svh;
+  padding: 22px 3.5vw 26px;
+  overflow: hidden;
+  color: #f3f2e7;
+  background:
+    radial-gradient(circle at 83% 23%, rgba(132, 219, 196, 0.18), transparent 25%),
+    radial-gradient(circle at 36% 67%, rgba(103, 137, 255, 0.16), transparent 34%),
+    #111b30;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .atlasSection::before {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  content: "";
+  opacity: 0.5;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.5) 0.55px, transparent 0.7px);
+  background-size: 27px 27px;
+  mask-image: linear-gradient(to bottom, black, transparent 74%);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .atlasHeader,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) 
+.atlasHero,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) 
+.atlasFooter {
+  position: relative;
+  z-index: 1;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .atlasHeader {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  min-height: 48px;
+  border-bottom: 1px solid rgba(232, 239, 255, 0.2);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .atlasBrand,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) 
+.gardenBrand,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) 
+.indexBrand,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) 
+.signalBrand,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) 
+.studioBrand {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  width: max-content;
+  font-weight: 700;
+  letter-spacing: -0.06em;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .atlasBrand {
+  color: #fff9df;
+  font-size: 22px;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .atlasHeader p {
+  margin: 0;
+  color: #b6c1dc;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 10px;
+  letter-spacing: 0.04em;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .atlasSignIn {
+  justify-self: end;
+  color: #d9e0f4;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 11px;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .atlasSignIn span,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) 
+.atlasPrimary span {
+  margin-left: 5px;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .atlasHero {
+  display: grid;
+  grid-template-columns: minmax(290px, 0.87fr) minmax(500px, 1.13fr);
+  min-height: calc(100svh - 150px);
+  align-items: center;
+  gap: 24px;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .atlasCopy {
+  max-width: 585px;
+  padding: 60px 0 85px;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .atlasKicker,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) 
+.gardenKicker,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) 
+.signalKicker,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) 
+.studioKicker {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin: 0 0 21px;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .atlasKicker {
+  color: #9adbd0;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .atlasKicker span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #79d2c3;
+  box-shadow: 0 0 0 5px rgba(121, 210, 195, 0.12);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .atlasCopy h1 {
+  max-width: 610px;
+  margin: 0;
+  font-size: clamp(48px, 5.5vw, 88px);
+  font-weight: 560;
+  letter-spacing: -0.075em;
+  line-height: 0.95;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .atlasCopy h1 em {
+  display: block;
+  color: #93dcd0;
+  font-family: var(--font-display);
+  font-size: 1.04em;
+  font-weight: 400;
+  letter-spacing: -0.085em;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .atlasIntro {
+  max-width: 425px;
+  margin: 29px 0 29px;
+  color: #c5cce0;
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .atlasActions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .atlasPrimary {
+  display: inline-flex;
+  align-items: center;
+  padding: 13px 16px;
+  color: #162036;
+  border-radius: 4px;
+  background: #f8eec9;
+  box-shadow: 4px 4px 0 #4d7595;
+  font-size: 12px;
+  font-weight: 700;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .atlasPrimary:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 #4d7595;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .atlasActions > span {
+  color: #8f9ab7;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 9px;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .atlasSystem {
+  position: relative;
+  min-height: 580px;
+  margin-right: -22px;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .atlasLines {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .atlasLines path {
+  stroke: rgba(153, 215, 204, 0.65);
+  stroke-dasharray: 3 9;
+  stroke-linecap: round;
+  stroke-width: 1.4;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .atlasLines circle {
+  stroke: rgba(255, 246, 207, 0.42);
+  stroke-dasharray: 2 10;
+  stroke-width: 1;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .atlasCore {
+  position: absolute;
+  top: 50%;
+  left: 51%;
+  z-index: 2;
+  display: flex;
+  width: 180px;
+  height: 180px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transform: translate(-50%, -50%) rotate(-6deg);
+  color: #1a2842;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 47% 53% 51% 49% / 51% 45% 55% 49%;
+  background: #a5dfd1;
+  box-shadow: 0 0 0 11px rgba(165, 223, 209, 0.08), 0 24px 40px rgba(1, 11, 32, 0.34);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .atlasCore span {
+  margin-bottom: 7px;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .atlasCore strong {
+  font-size: 29px;
+  letter-spacing: -0.08em;
+  line-height: 0.9;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .atlasCore em {
+  font-family: var(--font-display);
+  font-size: 27px;
+  letter-spacing: -0.08em;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .atlasCore i {
+  position: absolute;
+  right: 21px;
+  bottom: 24px;
+  font-size: 18px;
+  font-style: normal;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .atlasCard {
+  position: absolute;
+  z-index: 3;
+  width: 154px;
+  padding: 12px 13px;
+  color: #15243b;
+  border-radius: 3px;
+  box-shadow: 0 14px 26px rgba(1, 11, 32, 0.18);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .atlasCard b,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) 
+.atlasCard span {
+  display: block;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .atlasCard b {
+  margin-bottom: 7px;
+  font-size: 12px;
+  letter-spacing: -0.04em;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .atlasCard span {
+  color: rgba(21, 36, 59, 0.72);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 8px;
+  line-height: 1.4;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .atlasCardOne {
+  top: 13%;
+  left: 7%;
+  transform: rotate(-5deg);
+  background: #f9e9b6;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .atlasCardTwo {
+  top: 12%;
+  right: 3%;
+  transform: rotate(5deg);
+  background: #b1c5fb;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .atlasCardThree {
+  bottom: 12%;
+  left: 5%;
+  transform: rotate(4deg);
+  background: #e7b5df;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .atlasCardFour {
+  right: 10%;
+  bottom: 11%;
+  transform: rotate(-3deg);
+  background: #d0ecd7;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .atlasPulse {
+  position: absolute;
+  top: 50%;
+  left: 51%;
+  width: 290px;
+  height: 290px;
+  transform: translate(-50%, -50%);
+  border: 1px solid rgba(132, 219, 196, 0.28);
+  border-radius: 50%;
+  animation: gallery-with-design-skill-terra-source-src-components-brain-landing-module-atlasBreath 5s ease-in-out infinite;
+}
+
+@keyframes gallery-with-design-skill-terra-source-src-components-brain-landing-module-atlasBreath {
+  50% { transform: translate(-50%, -50%) scale(1.06); opacity: 0.4; }
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .atlasStar {
+  position: absolute;
+  color: #ffe7a0;
+  font-size: 17px;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .starA { top: 21%; left: 37%; }
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .starB { right: 24%; bottom: 32%; font-size: 12px; }
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .starC { bottom: 19%; left: 42%; font-size: 10px; color: #a9bafd; }
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .atlasFooter {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 20px;
+  padding-top: 17px;
+  border-top: 1px solid rgba(232, 239, 255, 0.2);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .atlasFooter p {
+  max-width: 390px;
+  margin: 0;
+  color: #d7dced;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .atlasFooter p span {
+  margin-right: 12px;
+  color: #91ded3;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 9px;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .atlasFooter div {
+  display: flex;
+  gap: clamp(12px, 2vw, 35px);
+  color: #8795b5;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 9px;
+  letter-spacing: 0.08em;
+}
+
+/* 02 — garden */
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .gardenSection {
+  min-height: 100svh;
+  padding: 25px 5vw 0;
+  overflow: hidden;
+  color: #173c34;
+  background:
+    radial-gradient(circle at 5% 84%, rgba(255, 243, 174, 0.76) 0 13%, transparent 13.2%),
+    linear-gradient(135deg, #d5eab9 0%, #bcdfb3 48%, #caeab8 100%);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .gardenHeader,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) 
+.gardenHero,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) 
+.gardenStrip {
+  max-width: 1380px;
+  margin: 0 auto;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .gardenHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .gardenBrand {
+  font-size: 22px;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .gardenHeader nav,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) 
+.studioHeader nav {
+  display: flex;
+  align-items: center;
+  gap: 27px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .gardenHeader nav a:last-child {
+  padding: 10px 13px;
+  color: #fff8e7;
+  border-radius: 999px;
+  background: #174f3d;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .gardenHero {
+  display: grid;
+  grid-template-columns: minmax(310px, 0.9fr) minmax(500px, 1.1fr);
+  min-height: 680px;
+  align-items: center;
+  gap: 35px;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .gardenCopy {
+  max-width: 515px;
+  padding-bottom: 32px;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .gardenKicker {
+  color: #47755d;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .gardenCopy h1 {
+  max-width: 500px;
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(54px, 6.2vw, 90px);
+  font-weight: 400;
+  letter-spacing: -0.083em;
+  line-height: 0.88;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .gardenCopy h1 em {
+  color: #e87057;
+  font-style: italic;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .gardenCopy > p:not(.gardenKicker) {
+  max-width: 380px;
+  margin: 28px 0;
+  color: #446758;
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .gardenCta {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding-bottom: 5px;
+  color: #173c34;
+  border-bottom: 2px solid #e87057;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .gardenFootnote {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 46px;
+  color: #507467;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 9px;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .gardenFootnote i {
+  width: 8px;
+  height: 8px;
+  border-radius: 50% 50% 50% 0;
+  background: #e87057;
+  transform: rotate(-42deg);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .gardenScene {
+  position: relative;
+  min-height: 590px;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .gardenSun {
+  position: absolute;
+  top: 3%;
+  right: 9%;
+  display: flex;
+  width: 89px;
+  height: 89px;
+  align-items: center;
+  justify-content: center;
+  color: #8f4d2d;
+  border-radius: 50%;
+  background: #f6d566;
+  box-shadow: 0 0 0 13px rgba(246, 213, 102, 0.17);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 8px;
+  line-height: 1.4;
+  text-align: center;
+  transform: rotate(8deg);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .gardenPaper {
+  position: absolute;
+  top: 16%;
+  left: 9%;
+  z-index: 3;
+  width: min(77%, 425px);
+  min-height: 292px;
+  padding: 25px 30px;
+  transform: rotate(-3deg);
+  color: #22453a;
+  border-radius: 1px;
+  background:
+    repeating-linear-gradient(to bottom, transparent 0 31px, rgba(28, 90, 67, 0.14) 32px),
+    #fff8e7;
+  box-shadow: 14px 15px 0 rgba(42, 105, 72, 0.12);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .paperMeta {
+  margin: 0 0 20px;
+  color: #69917d;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 8px;
+  text-transform: uppercase;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .gardenPaper h2 {
+  max-width: 290px;
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 33px;
+  font-weight: 400;
+  letter-spacing: -0.065em;
+  line-height: 0.95;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .gardenPaper h2 span {
+  color: #dc6e52;
+  font-style: italic;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .paperRule {
+  width: 76px;
+  height: 2px;
+  margin: 17px 0 9px;
+  background: #e87d5e;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .paperText {
+  max-width: 300px;
+  margin: 0;
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .paperLink {
+  display: block;
+  margin-top: 16px;
+  color: #4a7761;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 7px;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .gardenStem {
+  position: absolute;
+  right: 21%;
+  bottom: 20%;
+  z-index: 2;
+  width: 7px;
+  height: 206px;
+  border-radius: 99px;
+  background: #1d694d;
+  transform: rotate(-12deg);
+  transform-origin: bottom;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .gardenStem i,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) 
+.gardenStem b,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) 
+.gardenStem em {
+  position: absolute;
+  display: block;
+  width: 70px;
+  height: 38px;
+  border-radius: 100% 0 100% 0;
+  background: #5bad71;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .gardenStem i { top: 65px; right: -60px; transform: rotate(21deg); }
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .gardenStem b { top: 118px; left: -58px; transform: rotate(-30deg) scaleX(-1); background: #7fc883; }
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .gardenStem em { top: 18px; left: -22px; width: 48px; height: 49px; border-radius: 50% 50% 50% 0; transform: rotate(-17deg); background: #e87057; }
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .gardenLeafOne,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) 
+.gardenLeafTwo {
+  position: absolute;
+  z-index: 1;
+  background: #4caa6c;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .gardenLeafOne {
+  right: 4%;
+  bottom: 20%;
+  width: 111px;
+  height: 61px;
+  border-radius: 100% 0 100% 0;
+  transform: rotate(-12deg);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .gardenLeafTwo {
+  right: 5%;
+  bottom: 14%;
+  width: 143px;
+  height: 62px;
+  border-radius: 0 100% 0 100%;
+  background: #75bd79;
+  transform: rotate(14deg);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .gardenBud {
+  position: absolute;
+  right: 21%;
+  bottom: 53%;
+  z-index: 3;
+  width: 35px;
+  height: 35px;
+  border-radius: 50% 50% 50% 0;
+  background: #f6d566;
+  transform: rotate(-33deg);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .gardenLabel {
+  position: absolute;
+  right: 2%;
+  bottom: 56%;
+  z-index: 5;
+  padding: 9px 11px;
+  color: #2d5948;
+  border: 1px solid rgba(46, 96, 73, 0.25);
+  border-radius: 999px;
+  background: rgba(255, 248, 231, 0.8);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 8px;
+  transform: rotate(4deg);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .gardenLabel span {
+  margin-right: 4px;
+  color: #e87057;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .gardenSoil {
+  position: absolute;
+  right: -7%;
+  bottom: -22px;
+  width: 76%;
+  height: 144px;
+  padding: 23px 50px;
+  color: #f6e9c5;
+  border-radius: 54% 46% 0 0 / 70% 70% 0 0;
+  background: #225849;
+  transform: rotate(-2deg);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .gardenSoil span {
+  display: block;
+  color: #a4cfab;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 8px;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .gardenSoil b {
+  display: block;
+  margin-top: -4px;
+  font-family: var(--font-display);
+  font-size: 55px;
+  font-weight: 400;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .gardenSoil i {
+  position: absolute;
+  right: 27px;
+  bottom: 24px;
+  width: 42px;
+  height: 18px;
+  border-radius: 99px 99px 0 0;
+  border-top: 1px solid #8bbd91;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .gardenStrip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  margin: 5px auto 0;
+  border-top: 1px solid rgba(30, 78, 58, 0.25);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .gardenStrip > div {
+  display: grid;
+  grid-template-columns: 28px auto;
+  padding: 19px 18px 23px 0;
+  border-right: 1px solid rgba(30, 78, 58, 0.22);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .gardenStrip > div:last-child { border-right: 0; }
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .gardenStrip span { grid-row: span 2; color: #e87057; font-family: var(--font-geist-mono), monospace; font-size: 9px; }
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .gardenStrip b { font-size: 13px; }
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .gardenStrip p { margin: 4px 0 0; color: #527665; font-size: 10px; line-height: 1.4; }
+
+/* 03 — index */
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .indexSection {
+  min-height: 100svh;
+  padding: 19px 4vw 22px;
+  color: #292039;
+  background:
+    linear-gradient(90deg, rgba(54, 56, 83, 0.07) 1px, transparent 1px),
+    linear-gradient(rgba(54, 56, 83, 0.07) 1px, transparent 1px),
+    #d4d9d1;
+  background-size: 24px 24px;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .indexHeader,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) 
+.indexHero,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) 
+.indexFooter {
+  position: relative;
+  z-index: 1;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .indexHeader {
+  display: flex;
+  min-height: 45px;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid #282037;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .indexBrand {
+  font-size: 16px;
+  letter-spacing: -0.08em;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .indexHeader p,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) 
+.indexHeader > a {
+  margin: 0;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 9px;
+  letter-spacing: 0.05em;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .indexHeader > a {
+  padding: 7px 9px;
+  color: #fffaf0;
+  background: #282037;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .indexHero {
+  display: grid;
+  grid-template-columns: minmax(330px, 0.85fr) minmax(545px, 1.15fr);
+  min-height: calc(100svh - 127px);
+  align-items: center;
+  gap: 3vw;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .indexTitle {
+  max-width: 500px;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .indexTitle > p:first-child {
+  margin: 0 0 18px;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .indexTitle h1 {
+  margin: 0;
+  font-size: clamp(50px, 5.7vw, 82px);
+  font-weight: 720;
+  letter-spacing: -0.095em;
+  line-height: 0.87;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .indexTitle h1 span {
+  display: block;
+  color: #2e45db;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .indexTitle > p:not(:first-child) {
+  max-width: 390px;
+  margin: 26px 0;
+  color: #514b62;
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .indexCta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 14px;
+  color: #fffaf0;
+  background: #ff6846;
+  box-shadow: 4px 4px 0 #292039;
+  font-size: 12px;
+  font-weight: 750;
+  transition: transform 170ms ease, box-shadow 170ms ease;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .indexCta:hover { transform: translate(2px, 2px); box-shadow: 2px 2px 0 #292039; }
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .indexDesk {
+  position: relative;
+  min-height: 500px;
+  padding: 0 36px 0 68px;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .indexSpine {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 2;
+  display: grid;
+  width: 92px;
+  height: 285px;
+  align-content: center;
+  padding: 13px 14px;
+  transform: translateY(-50%);
+  color: #fff9ed;
+  background: #292039;
+  box-shadow: 8px 8px 0 rgba(41, 32, 57, 0.14);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .indexSpine span { color: #aab6ff; font-family: var(--font-geist-mono), monospace; font-size: 7px; letter-spacing: 0.08em; }
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .indexSpine b { margin: 2px 0 12px; font-size: 26px; letter-spacing: -0.09em; }
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .indexSpine i { width: 100%; height: 1px; margin-bottom: 12px; background: rgba(255,255,255,0.25); }
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .indexPaper {
+  position: relative;
+  z-index: 3;
+  width: min(100%, 475px);
+  min-height: 380px;
+  padding: 22px 27px;
+  color: #292039;
+  border: 1px solid #292039;
+  background: #fff9ed;
+  box-shadow: 11px 12px 0 #aeb5ad;
+  transform: rotate(-1.4deg);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .indexPaperTop,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) 
+.indexPaperBottom {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 8px;
+  letter-spacing: 0.07em;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .indexPaperTop { padding-bottom: 12px; border-bottom: 1px solid #292039; }
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .indexPaperTop span:last-child { color: #2e45db; }
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .indexTag { margin: 18px 0 9px; color: #ff6846; font-family: var(--font-geist-mono), monospace; font-size: 8px; letter-spacing: 0.06em; }
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .indexPaper h2 {
+  max-width: 380px;
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 35px;
+  font-weight: 400;
+  letter-spacing: -0.07em;
+  line-height: 0.94;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .indexPaper > p:not(.indexTag) { max-width: 365px; margin: 15px 0; font-size: 10px; line-height: 1.5; }
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .indexQuote {
+  margin: 11px 0 16px;
+  padding: 9px 10px;
+  color: #273cca;
+  border-left: 3px solid #ff6846;
+  background: #dbe1ff;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 9px;
+  line-height: 1.45;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .indexPaperBottom { padding-top: 12px; border-top: 1px solid #292039; }
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .indexPaperBottom b { color: #ff6846; }
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .indexThread {
+  position: absolute;
+  top: 22%;
+  right: 1%;
+  z-index: 1;
+  width: 175px;
+  height: 240px;
+  border: 2px solid #ff6846;
+  border-left: 0;
+  border-radius: 0 120px 120px 0;
+  transform: rotate(12deg);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .indexThread i,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) 
+.indexThread b,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) 
+.indexThread em {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ff6846;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .indexThread i { top: -5px; left: -5px; }
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .indexThread b { right: -5px; bottom: 58px; background: #2e45db; }
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .indexThread em { right: 17px; bottom: -5px; }
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .indexRelated {
+  position: absolute;
+  right: 0;
+  bottom: 4%;
+  z-index: 4;
+  display: grid;
+  width: 195px;
+  gap: 6px;
+  padding: 12px;
+  border: 1px solid #292039;
+  background: #abf0cb;
+  transform: rotate(3deg);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .indexRelated span { margin-bottom: 3px; font-family: var(--font-geist-mono), monospace; font-size: 7px; letter-spacing: 0.08em; }
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .indexRelated b { padding-top: 6px; border-top: 1px solid rgba(41,32,57,0.3); font-size: 10px; }
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .indexStamp {
+  position: absolute;
+  top: 3%;
+  right: 8%;
+  z-index: 6;
+  display: flex;
+  width: 68px;
+  height: 68px;
+  align-items: center;
+  justify-content: center;
+  color: #fff9ed;
+  border-radius: 50%;
+  background: #2e45db;
+  box-shadow: 0 0 0 4px #d4d9d1, 0 0 0 5px #2e45db;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 9px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+  transform: rotate(13deg);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .indexFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding-top: 14px;
+  border-top: 2px solid #292039;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 9px;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .indexFooter b { padding: 8px; color: #fff9ed; background: #292039; font-weight: 500; }
+
+/* 04 — signal */
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .signalSection {
+  min-height: 100svh;
+  padding: 21px 4.5vw 23px;
+  overflow: hidden;
+  color: #f6f1dd;
+  background:
+    linear-gradient(rgba(136, 207, 238, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(136, 207, 238, 0.07) 1px, transparent 1px),
+    radial-gradient(circle at 78% 34%, rgba(67, 109, 218, 0.34), transparent 33%),
+    #101d4b;
+  background-size: 24px 24px, 24px 24px, auto;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .signalHeader,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) 
+.signalHero,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) 
+.signalFooter {
+  position: relative;
+  z-index: 1;
+  max-width: 1410px;
+  margin: 0 auto;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .signalHeader {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  min-height: 47px;
+  align-items: center;
+  border-bottom: 1px solid rgba(203, 235, 255, 0.24);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .signalBrand {
+  color: #f3f1df;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 15px;
+  letter-spacing: -0.07em;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .signalStatus { color: #a9c0e0; font-family: var(--font-geist-mono), monospace; font-size: 9px; letter-spacing: 0.09em; }
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .signalStatus i { display: inline-block; width: 7px; height: 7px; margin-right: 7px; border-radius: 50%; background: #67e2c2; box-shadow: 0 0 0 4px rgba(103,226,194,0.14); }
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .signalHeader > a { justify-self: end; padding: 7px 10px; color: #101d4b; background: #f6f1dd; font-size: 10px; font-weight: 700; }
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .signalHero {
+  display: grid;
+  grid-template-columns: minmax(305px, 0.87fr) minmax(500px, 1.13fr);
+  min-height: calc(100svh - 125px);
+  align-items: center;
+  gap: 4vw;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .signalCopy { max-width: 548px; }
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .signalKicker { color: #67e2c2; }
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .signalCopy h1 {
+  margin: 0;
+  font-size: clamp(54px, 6.3vw, 94px);
+  font-weight: 600;
+  letter-spacing: -0.09em;
+  line-height: 0.84;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .signalCopy h1 em {
+  display: block;
+  color: #ffc46b;
+  font-family: var(--font-display);
+  font-size: 1.14em;
+  font-weight: 400;
+  letter-spacing: -0.09em;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .signalCopy > p:not(.signalKicker) { max-width: 375px; margin: 28px 0; color: #bdcce3; font-size: 15px; line-height: 1.55; }
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .signalActions { display: flex; align-items: center; gap: 17px; }
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .signalActions a { padding: 12px 14px; color: #10204d; background: #67e2c2; font-size: 12px; font-weight: 750; box-shadow: 4px 4px 0 #e87861; }
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .signalActions a:hover { transform: translate(2px,2px); box-shadow: 2px 2px 0 #e87861; }
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .signalActions span { color: #8294b8; font-family: var(--font-geist-mono), monospace; font-size: 8px; line-height: 1.4; }
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .signalBoard {
+  position: relative;
+  min-height: 475px;
+  overflow: hidden;
+  border: 1px solid rgba(187, 232, 244, 0.55);
+  background: rgba(11, 31, 78, 0.65);
+  box-shadow: 16px 16px 0 rgba(4, 16, 53, 0.36), inset 0 0 45px rgba(112, 196, 255, 0.08);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .signalBoard::before { position: absolute; inset: 0; content: ""; opacity: 0.35; background: repeating-linear-gradient(to bottom, transparent 0 4px, rgba(255,255,255,0.06) 5px); pointer-events: none; }
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .signalBoardTop { position: relative; z-index: 2; display: grid; grid-template-columns: 1fr auto auto; gap: 14px; padding: 14px 16px; border-bottom: 1px solid rgba(187,232,244,0.35); color: #a9c0e0; font-family: var(--font-geist-mono), monospace; font-size: 8px; letter-spacing: 0.08em; }
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .signalBoardTop b { color: #67e2c2; font-weight: 500; }
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .signalBoardTop i { color: #ffc46b; font-style: normal; }
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .signalScore { position: absolute; top: 58px; left: 34px; z-index: 2; display: grid; grid-template-columns: auto auto; column-gap: 5px; align-items: end; }
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .signalScore span { grid-column: span 2; margin-bottom: 3px; color: #a9c0e0; font-family: var(--font-geist-mono), monospace; font-size: 8px; letter-spacing: 0.1em; }
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .signalScore strong { color: #f6f1dd; font-size: 80px; font-weight: 500; letter-spacing: -0.11em; line-height: 0.8; }
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .signalScore b { padding-bottom: 9px; color: #a9c0e0; font-family: var(--font-geist-mono), monospace; font-size: 12px; font-weight: 400; }
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .signalScore i { grid-column: span 2; margin-top: 13px; padding: 5px 7px; width: max-content; color: #101d4b; background: #ffc46b; font-family: var(--font-geist-mono), monospace; font-size: 8px; font-style: normal; }
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .signalWave { position: absolute; top: 51px; right: 31px; z-index: 1; display: flex; height: 143px; align-items: center; gap: 7px; }
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .signalWave i { display: block; width: 3px; height: 23%; background: #67e2c2; box-shadow: 0 0 12px rgba(103,226,194,0.65); }
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .signalWave i:nth-child(2) { height: 48%; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .signalWave i:nth-child(3) { height: 72%; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .signalWave i:nth-child(4) { height: 37%; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .signalWave i:nth-child(5) { height: 91%; background:#ffc46b; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .signalWave i:nth-child(6) { height: 57%; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .signalWave i:nth-child(7) { height: 39%; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .signalWave i:nth-child(8) { height: 74%; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .signalWave i:nth-child(9) { height: 34%; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .signalWave i:nth-child(10) { height: 63%; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .signalWave i:nth-child(11) { height: 42%; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .signalWave i:nth-child(12) { height: 20%; }
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .signalSource { position: absolute; right: 32px; bottom: 34px; left: 34px; z-index: 3; display: grid; grid-template-columns: 1fr auto; gap: 10px; padding: 13px; border: 1px solid rgba(187,232,244,0.38); background: rgba(11,31,78,0.88); font-family: var(--font-geist-mono), monospace; }
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .signalSource span { color: #a9c0e0; font-size: 8px; letter-spacing: 0.08em; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .signalSource b { font-size: 10px; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .signalSource i { grid-column: 2; grid-row: 1; color: #67e2c2; font-size: 8px; font-style: normal; }
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .signalOrbit { position: absolute; top: 47%; right: 10%; width: 245px; height: 245px; border: 1px solid rgba(103,226,194,0.58); border-radius: 50%; transform: rotate(-20deg); }
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .signalOrbit::before,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .signalOrbit::after { position:absolute; inset:30px; content:""; border:1px dashed rgba(255,196,107,0.4); border-radius:50%; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .signalOrbit::after { inset:70px; border-style:solid; border-color:rgba(103,226,194,0.4); }
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .signalOrbit i { position:absolute; top:24px; left:22px; width:11px; height:11px; border-radius:50%; background:#e87861; box-shadow:0 0 0 5px rgba(232,120,97,0.15); }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .signalOrbit i:nth-child(2) { top:auto; right:9px; bottom:65px; left:auto; background:#ffc46b; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .signalOrbit i:nth-child(3) { top:44%; left:53%; background:#67e2c2; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .signalOrbit b { position:absolute; top:45%; left:47%; color:#f6f1dd; font-size:18px; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .signalOrbit em { position:absolute; bottom:25px; left:22px; display:flex; width:25px; height:25px; align-items:center; justify-content:center; color:#101d4b; border-radius:50%; background:#67e2c2; font-style:normal; }
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .signalPillOne,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .signalPillTwo { position:absolute; z-index:3; padding:8px 10px; border-radius:999px; font-family:var(--font-geist-mono),monospace; font-size:8px; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .signalPillOne { top:55%; left:29%; color:#10204d; background:#ffc46b; transform:rotate(-7deg); }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .signalPillTwo { top:36%; right:3%; color:#f6f1dd; border:1px solid #e87861; background:#163075; transform:rotate(5deg); }
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .signalFooter { display:flex; align-items:center; justify-content:space-between; gap:20px; padding-top:13px; border-top:1px solid rgba(203,235,255,0.24); color:#a9c0e0; font-family:var(--font-geist-mono),monospace; font-size:9px; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .signalFooter > span { color:#67e2c2; letter-spacing:0.08em; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .signalFooter p { margin:0; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .signalFooter div { display:flex; align-items:center; gap:6px; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .signalFooter i { width:8px; height:8px; border:1px solid #67e2c2; border-radius:2px; }
+
+/* 05 — studio */
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .studioSection {
+  min-height: 100svh;
+  padding: 26px 5vw 21px;
+  overflow: hidden;
+  color: #1e3c38;
+  background:
+    radial-gradient(circle at 15% 74%, rgba(250, 190, 112, 0.38), transparent 25%),
+    linear-gradient(130deg, #d7efea 0%, #cce7df 54%, #d9f0e8 100%);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .studioHeader,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .studioHero,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .studioFooter { max-width:1370px; margin:0 auto; }
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .studioHeader { display:flex; align-items:center; justify-content:space-between; }
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .studioBrand { color:#1e3c38; font-size:22px; }
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .studioHeader nav a:last-child { padding:10px 13px; color:#f8f1e9; border-radius:999px; background:#1e3c38; }
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .studioHero { display:grid; grid-template-columns:minmax(310px, 0.92fr) minmax(500px, 1.08fr); min-height:700px; align-items:center; gap:4vw; }
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .studioCopy { max-width:550px; padding-bottom:23px; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .studioKicker { color:#7c6554; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .studioCopy h1 { margin:0; font-family:var(--font-display); font-size:clamp(53px, 6vw, 89px); font-weight:400; letter-spacing:-0.088em; line-height:0.89; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .studioCopy h1 em { display:block; color:#7b314e; font-style:italic; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .studioCopy > p:not(.studioKicker) { max-width:395px; margin:28px 0; color:#52726d; font-size:15px; line-height:1.6; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .studioCta { display:inline-flex; align-items:center; gap:7px; padding:12px 15px; color:#f8f1e9; background:#7b314e; box-shadow:4px 4px 0 #f2bd6d; font-size:12px; font-weight:750; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .studioCta:hover { transform:translate(2px,2px); box-shadow:2px 2px 0 #f2bd6d; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .studioTrust { display:flex; align-items:center; gap:8px; margin-top:45px; color:#5f7f78; font-family:var(--font-geist-mono),monospace; font-size:9px; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .studioTrust i { color:#7b314e; font-style:normal; }
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .studioDesk { position:relative; min-height:560px; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .studioHalo { position:absolute; top:9%; left:16%; width:70%; aspect-ratio:1; border-radius:50%; background:rgba(248,241,233,0.72); box-shadow:0 0 0 21px rgba(248,241,233,0.13); }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .studioPaper { position:absolute; top:14%; left:17%; z-index:4; width:min(69%,425px); min-height:368px; padding:28px 31px; color:#243f3b; background:#faf4eb; box-shadow:17px 20px 0 rgba(73,110,100,0.14), 0 20px 40px rgba(35,70,62,0.15); transform:rotate(4deg); }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .studioPaper::before { position:absolute; top:0; bottom:0; left:48px; width:1px; content:""; background:rgba(182,94,98,0.22); }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .studioPaperHead,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .studioPaperFoot { position:relative; z-index:1; display:flex; align-items:center; justify-content:space-between; font-family:var(--font-geist-mono),monospace; font-size:8px; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .studioPaperHead { padding-bottom:17px; color:#7f8f8b; border-bottom:1px solid rgba(30,60,56,0.2); }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .studioPaperHead i { color:#7b314e; font-style:normal; letter-spacing:3px; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .studioPaper h2 { position:relative; z-index:1; max-width:300px; margin:28px 0 22px; font-family:var(--font-display); font-size:36px; font-weight:400; letter-spacing:-0.072em; line-height:0.95; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .studioPaper p { position:relative; z-index:1; font-size:11px; line-height:2.05; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .studioPaper mark { padding:2px 3px; color:inherit; background:#f4d57f; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .studioPaperFoot { position:absolute; right:31px; bottom:24px; left:31px; padding-top:14px; color:#7b314e; border-top:1px solid rgba(30,60,56,0.2); }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .studioPaperFoot b { font-size:15px; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .studioClipOne,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .studioClipTwo { position:absolute; z-index:5; padding:10px 11px; font-family:var(--font-geist-mono),monospace; font-size:8px; box-shadow:5px 6px 0 rgba(73,110,100,0.13); }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .studioClipOne { top:19%; right:0; color:#4d3626; background:#f3c06e; transform:rotate(-7deg); }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .studioClipTwo { right:9%; bottom:14%; color:#fff6eb; background:#7b314e; transform:rotate(8deg); }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .studioThread { position:absolute; top:26%; right:8%; z-index:2; width:230px; height:231px; border:1.5px solid #7b314e; border-bottom:0; border-left:0; border-radius:0 100% 0 0; transform:rotate(35deg); }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .studioThread i,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .studioThread b,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .studioThread em { position:absolute; width:9px; height:9px; border-radius:50%; background:#7b314e; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .studioThread i { bottom:-4px; left:-4px; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .studioThread b { top:-4px; right:37px; background:#f3c06e; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .studioThread em { top:49%; right:-5px; background:#5aa28d; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .studioPebbleOne,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .studioPebbleTwo { position:absolute; z-index:3; border-radius:50% 50% 46% 54%; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .studioPebbleOne { bottom:12%; left:7%; width:62px; height:39px; background:#5aa28d; transform:rotate(-16deg); }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .studioPebbleTwo { right:13%; bottom:4%; width:26px; height:21px; background:#f3c06e; transform:rotate(20deg); }
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .studioFooter { display:flex; align-items:center; justify-content:space-between; padding-top:16px; border-top:1px solid rgba(30,60,56,0.26); color:#56726e; font-family:var(--font-geist-mono),monospace; font-size:9px; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .studioFooter > span { color:#7b314e; letter-spacing:0.08em; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .studioFooter div { display:flex; align-items:center; gap:9px; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .studioFooter i { width:3px; height:3px; border-radius:50%; background:#7b314e; }
+
+@media (max-width: 1080px) {
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .atlasHero,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .gardenHero,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .indexHero,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .signalHero,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .studioHero { grid-template-columns: minmax(285px, .9fr) minmax(420px, 1.1fr); }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .atlasSystem { min-height:510px; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .atlasCore { width:155px; height:155px; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .atlasCard { width:133px; }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .indexDesk { padding-right:10px; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .indexRelated { right:-15px; }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .signalBoard { min-height:440px; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .signalOrbit { width:220px; height:220px; }
+}
+
+@media (max-width: 820px) {
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .atlasHeader,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .signalHeader { grid-template-columns: 1fr auto; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .atlasHeader p,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .signalStatus { display:none; }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .atlasHero,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .gardenHero,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .indexHero,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .signalHero,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .studioHero { display:block; min-height:unset; padding-top:72px; }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .atlasCopy,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .gardenCopy,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .indexTitle,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .signalCopy,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .studioCopy { max-width:620px; padding-bottom:20px; }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .atlasSystem { min-height:500px; margin:0; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .gardenScene { max-width:640px; min-height:550px; margin:5px auto 0; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .indexDesk { max-width:650px; min-height:505px; margin:25px auto 0; padding-left:68px; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .signalBoard { max-width:630px; margin:30px auto 20px; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .studioDesk { max-width:640px; min-height:540px; margin:8px auto 0; }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .gardenStrip { margin-top:24px; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .indexFooter,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .signalFooter,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .studioFooter,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .atlasFooter { margin-top:28px; }
+}
+
+@media (max-width: 600px) {
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .atlasSection,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .gardenSection,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .indexSection,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .signalSection,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .studioSection { padding-right:20px; padding-left:20px; }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .atlasHeader,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .indexHeader,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .signalHeader { min-height:42px; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .atlasBrand,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .gardenBrand,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .studioBrand { font-size:20px; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .atlasHeader p { display:none; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .atlasSignIn,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .indexHeader p { display:none; }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .atlasHero,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .gardenHero,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .indexHero,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .signalHero,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .studioHero { padding-top:52px; }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .atlasCopy h1,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .gardenCopy h1,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .indexTitle h1,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .signalCopy h1,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .studioCopy h1 { font-size:clamp(47px, 14vw, 66px); }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .atlasIntro,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .gardenCopy > p:not(.gardenKicker),:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .indexTitle > p:not(:first-child),:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .signalCopy > p:not(.signalKicker),:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .studioCopy > p:not(.studioKicker) { font-size:14px; }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .atlasActions,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .signalActions { align-items:flex-start; flex-direction:column; }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .atlasSystem { min-height:390px; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .atlasCore { width:126px; height:126px; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .atlasCore strong { font-size:22px; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .atlasCore em { font-size:20px; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .atlasCard { width:108px; padding:9px; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .atlasCard b { margin-bottom:5px; font-size:9px; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .atlasCard span { font-size:6px; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .atlasCardOne { top:8%; left:0; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .atlasCardTwo { top:10%; right:0; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .atlasCardThree { bottom:9%; left:0; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .atlasCardFour { right:2%; bottom:8%; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .atlasPulse { width:210px; height:210px; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .atlasFooter { align-items:flex-start; flex-direction:column; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .atlasFooter div { flex-wrap:wrap; }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .gardenHeader nav a:first-child,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .studioHeader nav a:first-child { display:none; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .gardenHeader nav,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .studioHeader nav { gap:0; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .gardenScene { min-height:460px; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .gardenPaper { top:14%; left:1%; width:83%; min-height:270px; padding:22px; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .gardenPaper h2 { font-size:29px; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .gardenStem { right:18%; bottom:13%; transform:scale(.77) rotate(-12deg); transform-origin:bottom; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .gardenSun { right:2%; width:70px; height:70px; font-size:7px; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .gardenSoil { width:89%; padding-left:34px; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .gardenSoil b { font-size:45px; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .gardenStrip { grid-template-columns:1fr; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .gardenStrip > div { border-right:0; border-bottom:1px solid rgba(30,78,58,.22); }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .gardenStrip > div:last-child { border-bottom:0; }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .indexHeader > a { font-size:8px; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .indexDesk { min-height:435px; margin-top:22px; padding-left:32px; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .indexSpine { left:0; width:59px; height:235px; padding:10px; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .indexSpine b { font-size:21px; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .indexPaper { min-height:335px; padding:17px 18px; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .indexPaper h2 { font-size:28px; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .indexPaper > p:not(.indexTag) { font-size:9px; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .indexQuote { font-size:8px; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .indexThread { right:-16px; width:130px; height:190px; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .indexRelated { right:-14px; bottom:-8px; width:150px; padding:9px; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .indexStamp { top:-13px; right:2%; width:54px; height:54px; font-size:7px; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .indexFooter { align-items:flex-start; flex-direction:column; }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .signalBoard { min-height:410px; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .signalScore { top:55px; left:22px; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .signalScore strong { font-size:66px; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .signalWave { top:51px; right:18px; transform:scale(.78); transform-origin:right top; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .signalOrbit { top:49%; right:-12%; width:190px; height:190px; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .signalSource { right:18px; bottom:20px; left:18px; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .signalPillOne { top:54%; left:17%; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .signalPillTwo { top:38%; right:-7px; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .signalFooter { align-items:flex-start; flex-direction:column; }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .studioDesk { min-height:450px; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .studioHalo { top:6%; left:5%; width:87%; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .studioPaper { top:10%; left:5%; width:78%; min-height:320px; padding:22px; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .studioPaper::before { left:37px; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .studioPaper h2 { margin:22px 0 16px; font-size:30px; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .studioPaper p { font-size:10px; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .studioPaperFoot { right:22px; bottom:18px; left:22px; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .studioClipOne { top:12%; right:-3%; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .studioClipTwo { right:0; bottom:5%; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .studioThread { top:23%; right:-9%; width:175px; height:190px; }:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="terra"]) .studioFooter { align-items:flex-start; flex-direction:column; gap:10px; }
+}

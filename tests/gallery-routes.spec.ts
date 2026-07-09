@@ -27,6 +27,15 @@ const sampleRouteSmokeCases = [
   { group: "with-taste-skill", model: "fable", iteration: "4" },
   { group: "with-ui-sh-skill", model: "composer-2.0", iteration: "2" },
   { group: "miscellaneous", model: "gpt-5.4", iteration: "5" },
+  { group: "with-design-skill", model: "sol", iteration: "1" },
+  { group: "with-taste-skill", model: "sol", iteration: "3" },
+  { group: "without-design-skill", model: "sol", iteration: "5" },
+  { group: "with-design-skill", model: "luna", iteration: "1" },
+  { group: "with-taste-skill", model: "luna", iteration: "3" },
+  { group: "without-design-skill", model: "luna", iteration: "5" },
+  { group: "with-design-skill", model: "terra", iteration: "1" },
+  { group: "with-taste-skill", model: "terra", iteration: "3" },
+  { group: "without-design-skill", model: "terra", iteration: "5" },
 ] as const;
 
 const routeSmokeCases = [

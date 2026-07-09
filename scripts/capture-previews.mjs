@@ -53,6 +53,15 @@ const entries = [
   { group: "without-design-skill", model: "glm-5.1", iterations: ["1", "2", "3", "4", "5"] },
   { group: "without-design-skill", model: "glm-5.2", iterations: ["1", "2", "3", "4", "5"] },
   { group: "without-design-skill", model: "sonnet-5", iterations: ["1", "2", "3", "4", "5"] },
+  { group: "with-design-skill", model: "sol", iterations: ["1", "2", "3", "4", "5"] },
+  { group: "with-taste-skill", model: "sol", iterations: ["1", "2", "3", "4", "5"] },
+  { group: "without-design-skill", model: "sol", iterations: ["1", "2", "3", "4", "5"] },
+  { group: "with-design-skill", model: "luna", iterations: ["1", "2", "3", "4", "5"] },
+  { group: "with-taste-skill", model: "luna", iterations: ["1", "2", "3", "4", "5"] },
+  { group: "without-design-skill", model: "luna", iterations: ["1", "2", "3", "4", "5"] },
+  { group: "with-design-skill", model: "terra", iterations: ["1", "2", "3", "4", "5"] },
+  { group: "with-taste-skill", model: "terra", iterations: ["1", "2", "3", "4", "5"] },
+  { group: "without-design-skill", model: "terra", iterations: ["1", "2", "3", "4", "5"] },
 ];
 
 const targetModel = process.env.TARGET_MODEL ?? null;
