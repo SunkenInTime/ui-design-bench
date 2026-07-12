@@ -38,6 +38,7 @@ export default function RankingsPage() {
                   <h2 className="text-xl font-medium tracking-tight text-[var(--gallery-text-primary)]">
                     <Link
                       href={href}
+                      prefetch={false}
                       className="inline-flex items-center gap-2 transition-colors hover:text-[var(--gallery-text-secondary)]"
                     >
                       <span>{ranking.modelLabel}</span>
@@ -54,6 +55,7 @@ export default function RankingsPage() {
                 </div>
                 <Link
                   href={href}
+                  prefetch={false}
                   className="relative block aspect-[16/10] overflow-hidden rounded-lg border border-[var(--gallery-border)] bg-[var(--gallery-surface-muted)]"
                 >
                   {previewPath ? (

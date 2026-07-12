@@ -333,7 +333,7 @@ export function VariantSwitcher({
             );
 
             return option.href ? (
-              <Link key={option.model} href={option.href} className={className} role="menuitem">
+              <Link key={option.model} href={option.href} prefetch={false} className={className} role="menuitem">
                 {content}
               </Link>
             ) : (
@@ -460,7 +460,7 @@ export function VariantSwitcher({
               );
 
               return option.href ? (
-                <Link key={option.model} href={option.href} className={className} role="menuitem">
+                <Link key={option.model} href={option.href} prefetch={false} className={className} role="menuitem">
                   {content}
                 </Link>
               ) : (
@@ -515,7 +515,7 @@ export function VariantSwitcher({
               );
 
               return option.href ? (
-                <Link key={option.group} href={option.href} className={className} role="menuitem">
+                <Link key={option.group} href={option.href} prefetch={false} className={className} role="menuitem">
                   {content}
                 </Link>
               ) : (
@@ -542,6 +542,7 @@ export function VariantSwitcher({
             <Link
               key={item.id}
               href={buildVariantHref(entry.group, entry.model, item.id)}
+              prefetch={false}
               aria-current={active ? "page" : undefined}
               aria-label={`Open iteration ${item.id}`}
               className={`gallery-variant-switcher__iteration inline-flex size-7 shrink-0 cursor-pointer items-center justify-center rounded-md text-[11px] font-medium tabular-nums leading-none transition-colors ${

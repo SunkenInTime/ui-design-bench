@@ -113,6 +113,10 @@ body {
 
 .gallery-card-shell {
   border-color: #d4d4d4;
+  /* Render long gallery grids incrementally instead of activating a whole
+     section in one main-thread task as it enters the viewport. */
+  content-visibility: auto;
+  contain-intrinsic-size: auto 28rem;
 }
 
 .gallery-card-shell:hover {
@@ -420,12 +424,6 @@ html {
 
 .gallery-toast-enter {
   animation: gallery-toast-enter 160ms cubic-bezier(0.22, 1, 0.36, 1) both;
-}
-
-/* Skip paint/layout work for gallery groups well below the viewport. */
-.gallery-group-section {
-  content-visibility: auto;
-  contain-intrinsic-size: auto 72rem;
 }
 
 @media (prefers-reduced-motion: reduce) {

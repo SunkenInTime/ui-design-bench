@@ -89,9 +89,50 @@ test("home page sorts newer same-family models first", async ({ page }) => {
   }
 
   const withDesignSection = page.locator("section").filter({ has: page.getByRole("heading", { name: "With Design Skill" }) });
-  const cardLabels = await withDesignSection.getByTestId("gallery-card").locator("h3 span").allInnerTexts();
+  const cardLabels = await withDesignSection.getByTestId("gallery-card").locator("h3 span").allTextContents();
 
   expect(cardLabels.indexOf("Fable 5")).toBeLessThan(cardLabels.indexOf("Opus 4.8"));
+});
+
+test("large gallery link lists do not eagerly prefetch variant routes", async ({ page }) => {
+  const prefetchedVariantPaths = new Set<string>();
+  page.on("request", (request) => {
+    const url = new URL(request.url());
+    if (
+      url.searchParams.has("_rsc") &&
+      HOME_GALLERY_GROUPS.some((group) => url.pathname.startsWith(`/${group}/`))
+    ) {
+      prefetchedVariantPaths.add(url.pathname);
+    }
+  });
+
+  await page.goto("/");
+  await expect(page.getByRole("heading", { name: "Which AI Made This?" })).toBeVisible();
+  await page.waitForTimeout(1_000);
+
+  expect([...prefetchedVariantPaths]).toEqual([]);
+});
+
+test("opening the variant model picker does not prefetch every model", async ({ page }) => {
+  await page.goto("/with-design-skill/gpt-5.5-high/1");
+  await expect(page.getByRole("button", { name: /Switch model from/ })).toBeVisible();
+
+  const prefetchedVariantPaths = new Set<string>();
+  page.on("request", (request) => {
+    const url = new URL(request.url());
+    if (
+      url.searchParams.has("_rsc") &&
+      HOME_GALLERY_GROUPS.some((group) => url.pathname.startsWith(`/${group}/`))
+    ) {
+      prefetchedVariantPaths.add(url.pathname);
+    }
+  });
+
+  await page.getByRole("button", { name: /Switch model from/ }).click();
+  await expect(page.getByRole("menu", { name: "Switch model" })).toBeVisible();
+  await page.waitForTimeout(1_000);
+
+  expect([...prefetchedVariantPaths]).toEqual([]);
 });
 
 test("rankings page lists eight models with previews", async ({ page }) => {

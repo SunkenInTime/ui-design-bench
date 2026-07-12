@@ -42,6 +42,7 @@ export function IterationLinks({
           <Link
             key={iteration.id}
             href={buildVariantHref(entry.group, entry.model, iteration.id)}
+            prefetch={false}
             className={`rounded-md px-2.5 py-1 text-sm transition-colors ${
               active
                 ? "bg-[var(--gallery-accent)] text-[var(--gallery-accent-foreground)]"

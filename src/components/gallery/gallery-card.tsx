@@ -23,6 +23,7 @@ export function GalleryCard({
     >
       <Link
         href={buildVariantHref(entry.group, entry.model, entry.defaultIteration)}
+        prefetch={false}
         className="block bg-[var(--gallery-surface-muted)]"
       >
         <div className="relative aspect-[16/10]">
@@ -64,6 +65,7 @@ export function GalleryCard({
               <Link
                 key={iteration.id}
                 href={buildVariantHref(entry.group, entry.model, iteration.id)}
+                prefetch={false}
                 className="inline-flex size-8 items-center justify-center rounded-md border border-[var(--gallery-border)] bg-[var(--gallery-surface-subtle)] text-xs font-medium tabular-nums leading-none text-[var(--gallery-text-secondary)] transition-colors hover:border-[var(--gallery-divider-strong)] hover:bg-[var(--gallery-surface)] hover:text-[var(--gallery-text-primary)]"
               >
                 {iteration.id}
@@ -76,6 +78,7 @@ export function GalleryCard({
               model: entry.model,
               iteration: "1",
             })}
+            prefetch={false}
             className="inline-flex size-8 shrink-0 items-center justify-center rounded-md border border-[var(--gallery-border)] bg-[var(--gallery-surface-subtle)] text-[var(--gallery-text-secondary)] transition-colors hover:border-[var(--gallery-divider-strong)] hover:bg-[var(--gallery-surface)] hover:text-[var(--gallery-text-primary)]"
             aria-label={`Compare ${entry.groupLabel} ${entry.modelLabel}`}
             title="Compare"
