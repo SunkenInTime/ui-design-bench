@@ -9,7 +9,7 @@ import { getRankingPreviewPath, modelRankings } from "@/lib/model-rankings";
 export default function RankingsPage() {
   return (
     <>
-      <GalleryRankingsNav />
+      <GalleryRankingsNav current="rankings" />
       <main className="mx-auto max-w-3xl px-5 pb-20 pt-16 sm:px-8 sm:pb-24 sm:pt-20">
       <header className="max-w-2xl">
         <h1 className="text-3xl font-medium tracking-tight text-[var(--gallery-text-primary)] sm:text-4xl">
@@ -63,6 +63,8 @@ export default function RankingsPage() {
                       fill
                       className="object-cover"
                       sizes="(max-width: 48rem) 100vw, 48rem"
+                      quality={70}
+                      preload={ranking.rank === 1}
                     />
                   ) : null}
                 </Link>

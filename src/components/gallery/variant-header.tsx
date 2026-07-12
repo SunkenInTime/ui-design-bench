@@ -7,9 +7,14 @@ import { useRouter } from "next/navigation";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { ModelBrandLogo } from "@/components/gallery/model-brand-logo";
 import { buildCompareHref } from "@/lib/compare";
-import { galleryManifest } from "@/lib/gallery-manifest";
 import { sortGalleryEntriesForHome } from "@/lib/gallery-model-order";
-import type { GalleryEntry, GalleryGroupSlug, IterationId, ModelSlug } from "@/lib/gallery-types";
+import type {
+  GalleryCatalogEntry,
+  GalleryEntry,
+  GalleryGroupSlug,
+  IterationId,
+  ModelSlug,
+} from "@/lib/gallery-types";
 import { buildVariantHref } from "@/lib/gallery-paths";
 
 type PickerMode = "compare" | "model" | "skill" | null;
@@ -20,11 +25,14 @@ const switcherButtonClass =
 const popoverClass =
   "absolute top-0 right-[calc(100%+0.5rem)] z-[120] flex max-h-[min(26rem,calc(100vh-3rem))] w-[min(19rem,calc(100vw-5.5rem))] flex-col gap-1.5 overflow-auto rounded-lg border border-[var(--gallery-border)] bg-[var(--gallery-body-bg)] p-2 text-[var(--gallery-text-primary)] shadow-[var(--gallery-shadow-md)] backdrop-blur-[12px]";
 
-function getGroupLabel(group: GalleryGroupSlug): string {
+function getGroupLabel(
+  catalog: readonly GalleryCatalogEntry[],
+  group: GalleryGroupSlug,
+): string {
   if (group === "with-design-skill") return "With Design Skill";
   if (group === "with-ui-sh-skill") return "With UI SH Skill";
   if (group === "without-design-skill") return "Without skill";
-  return galleryManifest.find((entry) => entry.group === group)?.groupLabel ?? group;
+  return catalog.find((entry) => entry.group === group)?.groupLabel ?? group;
 }
 
 function getPaletteTone(group: GalleryGroupSlug, available = true) {
@@ -33,9 +41,13 @@ function getPaletteTone(group: GalleryGroupSlug, available = true) {
   return "text-[var(--gallery-accent)]";
 }
 
-function getModelOptions(currentEntry: GalleryEntry, iteration: IterationId) {
-  const byModel = new Map<ModelSlug, GalleryEntry[]>();
-  for (const entry of galleryManifest) {
+function getModelOptions(
+  catalog: readonly GalleryCatalogEntry[],
+  currentEntry: GalleryEntry,
+  iteration: IterationId,
+) {
+  const byModel = new Map<ModelSlug, GalleryCatalogEntry[]>();
+  for (const entry of catalog) {
     byModel.set(entry.model, [...(byModel.get(entry.model) ?? []), entry]);
   }
 
@@ -66,15 +78,19 @@ function getModelOptions(currentEntry: GalleryEntry, iteration: IterationId) {
     });
 }
 
-function getSkillOptions(currentEntry: GalleryEntry, iteration: IterationId) {
+function getSkillOptions(
+  catalog: readonly GalleryCatalogEntry[],
+  currentEntry: GalleryEntry,
+  iteration: IterationId,
+) {
   const groups = Array.from(
-    new Map(galleryManifest.map((entry) => [entry.group, entry.groupLabel])).entries(),
-    ([group, label]) => ({ group, label: getGroupLabel(group) || label }),
+    new Map(catalog.map((entry) => [entry.group, entry.groupLabel])).entries(),
+    ([group, label]) => ({ group, label: getGroupLabel(catalog, group) || label }),
   );
 
   return groups
     .map(({ group, label }) => {
-      const targetEntry = galleryManifest.find(
+      const targetEntry = catalog.find(
         (entry) => entry.group === group && entry.model === currentEntry.model,
       );
       return {
@@ -93,9 +109,11 @@ function getSkillOptions(currentEntry: GalleryEntry, iteration: IterationId) {
 export function VariantSwitcher({
   entry,
   iteration,
+  catalog,
 }: {
   entry: GalleryEntry;
   iteration: IterationId;
+  catalog: readonly GalleryCatalogEntry[];
 }) {
   const router = useRouter();
   const [openPicker, setOpenPicker] = useState<PickerMode>(null);
@@ -104,10 +122,13 @@ export function VariantSwitcher({
   const pickerRef = useRef<HTMLElement | null>(null);
   const compareSearchRef = useRef<HTMLInputElement | null>(null);
   const modelSearchRef = useRef<HTMLInputElement | null>(null);
-  const groupLabel = getGroupLabel(entry.group);
+  const groupLabel = getGroupLabel(catalog, entry.group);
   const isWithoutSkill = entry.group === "without-design-skill";
   const paletteTone = getPaletteTone(entry.group);
-  const modelOptions = useMemo(() => getModelOptions(entry, iteration), [entry, iteration]);
+  const modelOptions = useMemo(
+    () => getModelOptions(catalog, entry, iteration),
+    [catalog, entry, iteration],
+  );
   const compareOptions = useMemo(
     () =>
       modelOptions.map((option) => ({
@@ -129,7 +150,10 @@ export function VariantSwitcher({
       })),
     [entry.group, entry.model, iteration, modelOptions],
   );
-  const skillOptions = useMemo(() => getSkillOptions(entry, iteration), [entry, iteration]);
+  const skillOptions = useMemo(
+    () => getSkillOptions(catalog, entry, iteration),
+    [catalog, entry, iteration],
+  );
   const filteredCompareOptions = useMemo(() => {
     const query = compareSearch.trim().toLowerCase();
     if (!query) return compareOptions;
@@ -148,6 +172,13 @@ export function VariantSwitcher({
   }, [modelOptions, modelSearch]);
   const firstAvailableCompareMatch = filteredCompareOptions.find((option) => option.href);
   const firstAvailableModelMatch = filteredModelOptions.find((option) => option.href);
+
+  const togglePicker = (picker: Exclude<PickerMode, null>) => {
+    const nextPicker = openPicker === picker ? null : picker;
+    if (nextPicker === "compare") setCompareSearch("");
+    if (nextPicker === "model") setModelSearch("");
+    setOpenPicker(nextPicker);
+  };
 
   useEffect(() => {
     if (!openPicker) return;
@@ -176,20 +207,19 @@ export function VariantSwitcher({
       }
 
       event.preventDefault();
-      setOpenPicker((open) => (open === "model" ? null : "model"));
+      const nextPicker = openPicker === "model" ? null : "model";
+      if (nextPicker === "model") setModelSearch("");
+      setOpenPicker(nextPicker);
     }
 
     document.addEventListener("keydown", handleCommandPaletteShortcut);
     return () => {
       document.removeEventListener("keydown", handleCommandPaletteShortcut);
     };
-  }, []);
+  }, [openPicker]);
 
   useEffect(() => {
-    if (openPicker !== "compare") {
-      setCompareSearch("");
-      return;
-    }
+    if (openPicker !== "compare") return;
 
     const focusTimer = window.setTimeout(() => {
       compareSearchRef.current?.focus();
@@ -200,10 +230,7 @@ export function VariantSwitcher({
   }, [openPicker]);
 
   useEffect(() => {
-    if (openPicker !== "model") {
-      setModelSearch("");
-      return;
-    }
+    if (openPicker !== "model") return;
 
     const focusTimer = window.setTimeout(() => {
       modelSearchRef.current?.focus();
@@ -236,7 +263,7 @@ export function VariantSwitcher({
         aria-label={`Compare ${entry.modelLabel} iteration ${iteration}`}
         aria-expanded={openPicker === "compare"}
         className={clsx(switcherButtonClass, "text-[10px] font-semibold tracking-[0.12em]")}
-        onClick={() => setOpenPicker((open) => (open === "compare" ? null : "compare"))}
+        onClick={() => togglePicker("compare")}
       >
         VS
       </button>
@@ -332,7 +359,7 @@ export function VariantSwitcher({
           className={clsx(switcherButtonClass, "group/logo")}
           aria-label={`Switch model from ${entry.modelLabel}`}
           aria-expanded={openPicker === "model"}
-          onClick={() => setOpenPicker((open) => (open === "model" ? null : "model"))}
+          onClick={() => togglePicker("model")}
         >
           <ModelBrandLogo
             model={entry.model}
@@ -348,7 +375,7 @@ export function VariantSwitcher({
           className={clsx(switcherButtonClass, "group/skill relative size-7")}
           aria-label={`Switch skill set from ${groupLabel}`}
           aria-expanded={openPicker === "skill"}
-          onClick={() => setOpenPicker((open) => (open === "skill" ? null : "skill"))}
+          onClick={() => togglePicker("skill")}
         >
           <Palette
             className={`size-3.5 shrink-0 ${paletteTone}`}

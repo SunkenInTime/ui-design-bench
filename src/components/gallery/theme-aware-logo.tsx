@@ -6,15 +6,42 @@ type ThemeAwareLogoProps = Omit<ImageProps, "src"> & {
   darkSrc?: string;
 };
 
-export function ThemeAwareLogo({ lightSrc, darkSrc, className, alt, ...props }: ThemeAwareLogoProps) {
+export function ThemeAwareLogo({
+  lightSrc,
+  darkSrc,
+  className,
+  alt,
+  unoptimized = true,
+  ...props
+}: ThemeAwareLogoProps) {
   if (!darkSrc || darkSrc === lightSrc) {
-    return <Image src={lightSrc} alt={alt} className={className} {...props} />;
+    return (
+      <Image
+        src={lightSrc}
+        alt={alt}
+        className={className}
+        unoptimized={unoptimized}
+        {...props}
+      />
+    );
   }
 
   return (
     <>
-      <Image src={lightSrc} alt={alt} className={clsx(className, "dark:hidden")} {...props} />
-      <Image src={darkSrc} alt={alt} className={clsx(className, "hidden dark:block")} {...props} />
+      <Image
+        src={lightSrc}
+        alt={alt}
+        className={clsx(className, "dark:hidden")}
+        unoptimized={unoptimized}
+        {...props}
+      />
+      <Image
+        src={darkSrc}
+        alt={alt}
+        className={clsx(className, "hidden dark:block")}
+        unoptimized={unoptimized}
+        {...props}
+      />
     </>
   );
 }

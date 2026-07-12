@@ -1,9 +1,6 @@
-"use client";
-
 import clsx from "clsx";
 import { ArrowLeftRight, BarChart3, Gamepad2, Home } from "lucide-react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { GalleryThemeToggle } from "@/components/gallery/gallery-theme-toggle";
 import { buildCompareHref, DEFAULT_COMPARE_STATE } from "@/lib/compare";
 
@@ -21,12 +18,13 @@ function navLinkClass(active: boolean) {
   );
 }
 
-export function GalleryRankingsNav() {
-  const pathname = usePathname();
-  const onRankings = pathname === "/rankings";
-  const onCompare = pathname === "/compare";
-  const onLabGuess = pathname === "/lab-guess";
-  const onGalleryHome = pathname === "/";
+type GalleryNavPage = "gallery" | "compare" | "lab-guess" | "rankings" | "experiments";
+
+export function GalleryRankingsNav({ current }: { current: GalleryNavPage }) {
+  const onRankings = current === "rankings";
+  const onCompare = current === "compare";
+  const onLabGuess = current === "lab-guess";
+  const onGalleryHome = current === "gallery";
   const homeShowsGalleryLabel = onRankings || onCompare || onLabGuess;
 
   return (

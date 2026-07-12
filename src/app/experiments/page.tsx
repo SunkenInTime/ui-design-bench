@@ -195,7 +195,7 @@ const iterations = [
 export default function ExperimentsPage() {
   return (
     <>
-      <GalleryRankingsNav />
+      <GalleryRankingsNav current="experiments" />
       <main className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
         <header className="max-w-3xl">
           <p className="text-sm font-medium text-[var(--gallery-accent)]">Exploration · not implemented yet</p>

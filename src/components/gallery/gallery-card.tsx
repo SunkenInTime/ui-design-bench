@@ -3,12 +3,18 @@ import Link from "next/link";
 import { ArrowLeftRight } from "lucide-react";
 import { GalleryCardLeavingSoonBookmark } from "@/components/gallery/gallery-card-leaving-soon";
 import { ModelBrandLogo } from "@/components/gallery/model-brand-logo";
-import { buildCompareHrefForSelection } from "@/lib/compare";
+import { buildCompareHrefForSelection } from "@/lib/compare-server";
 import { isGalleryModelLeavingSoon } from "@/lib/gallery-archived";
 import type { GalleryEntry } from "@/lib/gallery-types";
 import { buildVariantHref } from "@/lib/gallery-paths";
 
-export function GalleryCard({ entry }: { entry: GalleryEntry }) {
+export function GalleryCard({
+  entry,
+  preload = false,
+}: {
+  entry: GalleryEntry;
+  preload?: boolean;
+}) {
   const leavingSoon = isGalleryModelLeavingSoon(entry.model);
   return (
     <article
@@ -24,6 +30,9 @@ export function GalleryCard({ entry }: { entry: GalleryEntry }) {
             src={entry.iterations[0].thumbnailPath}
             alt={`${entry.modelLabel} preview`}
             fill
+            sizes="(max-width: 639px) calc(100vw - 2rem), (max-width: 1279px) calc(50vw - 2.5rem), 24rem"
+            quality={70}
+            preload={preload}
             className="object-cover transition-opacity duration-300 group-hover:opacity-95"
           />
           {/* Box-shadow paints beneath the filled Image; overlay gradient is visible on top. */}

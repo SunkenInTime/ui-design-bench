@@ -4,7 +4,7 @@ import clsx from "clsx";
 import { ChevronDown, Code2, Layers, Sparkles } from "lucide-react";
 import { useId } from "react";
 import { ModelBrandLogo } from "@/components/gallery/model-brand-logo";
-import type { GalleryEntry, GalleryGroupSlug, ModelSlug } from "@/lib/gallery-types";
+import type { GalleryCatalogEntry, GalleryGroupSlug, ModelSlug } from "@/lib/gallery-types";
 
 const GROUP_ICONS: Record<GalleryGroupSlug, typeof Sparkles> = {
   "with-design-skill": Sparkles,
@@ -118,7 +118,7 @@ export function CompareModelSelect({
   setOpen,
   showLabel = true,
 }: {
-  models: GalleryEntry[];
+  models: readonly GalleryCatalogEntry[];
   value: ModelSlug;
   onChange: (value: ModelSlug) => void;
   open: boolean;

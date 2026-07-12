@@ -22,7 +22,7 @@ export default function HomePage() {
 
   return (
     <>
-      <GalleryRankingsNav />
+      <GalleryRankingsNav current="gallery" />
       <main className="mx-auto max-w-[98rem] px-4 py-16 sm:px-6 sm:py-20 lg:px-4">
         <header className="max-w-2xl">
           <h1 className="text-3xl font-medium tracking-tight text-[var(--gallery-text-primary)] sm:text-4xl">
@@ -73,12 +73,17 @@ export default function HomePage() {
         </header>
 
         <div className="mt-10 space-y-12">
-          {groups.map((group) => {
+          {groups.map((group, groupIndex) => {
             const entries = sortGalleryEntriesForHome(
               galleryManifest.filter((entry) => entry.group === group),
             );
             return (
-              <GalleryGroupSection key={group} group={group} entries={entries} />
+              <GalleryGroupSection
+                key={group}
+                group={group}
+                entries={entries}
+                preloadFirstImage={groupIndex === 0}
+              />
             );
           })}
         </div>

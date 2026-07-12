@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { GalleryBreadcrumb, IterationLinks } from "@/components/gallery/gallery-shell";
-import { buildCompareHrefForSelection } from "@/lib/compare";
+import { buildCompareHrefForSelection } from "@/lib/compare-server";
 import { getGalleryEntry } from "@/lib/gallery-manifest";
 import { getStaticGalleryModelParams } from "@/lib/gallery-static-params";
 import { buildVariantHref, isGalleryGroup } from "@/lib/gallery-paths";
@@ -69,6 +69,9 @@ export default async function ModelPage({
                   src={iteration.thumbnailPath}
                   alt={`${entry.modelLabel} iteration ${iteration.id}`}
                   fill
+                  sizes="(max-width: 639px) calc(100vw - 2rem), (max-width: 1279px) calc(50vw - 2.5rem), 24rem"
+                  quality={70}
+                  preload={iteration.id === entry.defaultIteration}
                   className="object-cover"
                 />
               </div>

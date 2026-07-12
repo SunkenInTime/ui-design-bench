@@ -25,7 +25,9 @@ const MODEL_HOME_ORDER: Record<ModelSlug, { familyOrder: number; tier: number }>
   "kimi-k-2.6": { familyOrder: 7, tier: 26 },
 };
 
-export function sortGalleryEntriesForHome(entries: GalleryEntry[]) {
+export function sortGalleryEntriesForHome<
+  T extends Pick<GalleryEntry, "model" | "modelLabel">,
+>(entries: readonly T[]): T[] {
   return entries.toSorted((a, b) => {
     const aOrder = MODEL_HOME_ORDER[a.model];
     const bOrder = MODEL_HOME_ORDER[b.model];
