@@ -43,6 +43,12 @@ const routeSmokeCases = [
   ...sampleRouteSmokeCases.map((route) => ({ ...route, source: "sample" })),
 ];
 
+test("home keeps its initial document below the gallery payload budget", async ({ request }) => {
+  const response = await request.get("/");
+  expect(response.ok()).toBe(true);
+  expect((await response.body()).byteLength).toBeLessThan(450_000);
+});
+
 test("home page archives Opus 4.7 cards", async ({ page }) => {
   await page.goto("/");
   const opus47Cards = page.getByTestId("gallery-card").filter({ hasText: "Opus 4.7" });
@@ -89,9 +95,63 @@ test("home page sorts newer same-family models first", async ({ page }) => {
   }
 
   const withDesignSection = page.locator("section").filter({ has: page.getByRole("heading", { name: "With Design Skill" }) });
-  const cardLabels = await withDesignSection.getByTestId("gallery-card").locator("h3 span").allInnerTexts();
+  const cardLabels = await withDesignSection.getByTestId("gallery-card").locator("h3 span").allTextContents();
 
   expect(cardLabels.indexOf("Fable 5")).toBeLessThan(cardLabels.indexOf("Opus 4.8"));
+});
+
+test("the gallery does not eagerly prefetch off-page routes", async ({ page }) => {
+  const prefetchedPaths = new Set<string>();
+  page.on("request", (request) => {
+    const url = new URL(request.url());
+    if (url.searchParams.has("_rsc") && url.pathname !== "/") {
+      prefetchedPaths.add(url.pathname);
+    }
+  });
+
+  await page.goto("/");
+  await expect(page.getByRole("heading", { name: "Which AI Made This?" })).toBeVisible();
+  await page.waitForTimeout(1_000);
+
+  expect([...prefetchedPaths]).toEqual([]);
+});
+
+test("a variant does not eagerly prefetch the full gallery", async ({ page }) => {
+  const galleryPrefetches: string[] = [];
+  page.on("request", (request) => {
+    const url = new URL(request.url());
+    if (url.searchParams.has("_rsc") && url.pathname === "/") {
+      galleryPrefetches.push(url.href);
+    }
+  });
+
+  await page.goto("/with-design-skill/gpt-5.5-high/1");
+  await expect(page.getByRole("link", { name: /Back to Which AI Made This/ })).toBeVisible();
+  await page.waitForTimeout(1_000);
+
+  expect(galleryPrefetches).toEqual([]);
+});
+
+test("opening the variant model picker does not prefetch every model", async ({ page }) => {
+  await page.goto("/with-design-skill/gpt-5.5-high/1");
+  await expect(page.getByRole("button", { name: /Switch model from/ })).toBeVisible();
+
+  const prefetchedVariantPaths = new Set<string>();
+  page.on("request", (request) => {
+    const url = new URL(request.url());
+    if (
+      url.searchParams.has("_rsc") &&
+      HOME_GALLERY_GROUPS.some((group) => url.pathname.startsWith(`/${group}/`))
+    ) {
+      prefetchedVariantPaths.add(url.pathname);
+    }
+  });
+
+  await page.getByRole("button", { name: /Switch model from/ }).click();
+  await expect(page.getByRole("menu", { name: "Switch model" })).toBeVisible();
+  await page.waitForTimeout(1_000);
+
+  expect([...prefetchedVariantPaths]).toEqual([]);
 });
 
 test("rankings page lists eight models with previews", async ({ page }) => {

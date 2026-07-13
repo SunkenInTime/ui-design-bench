@@ -1,11 +1,8 @@
 "use client";
 
 import clsx from "clsx";
-import { AnimatePresence, motion } from "framer-motion";
 import { Check, Copy } from "lucide-react";
 import { useState } from "react";
-
-const FAST_SPRING = { type: "spring" as const, stiffness: 680, damping: 32 };
 
 export function GenerationPrompt({ prompt }: { prompt: string }) {
   const [copied, setCopied] = useState(false);
@@ -43,31 +40,23 @@ export function GenerationPrompt({ prompt }: { prompt: string }) {
             : "opacity-100 [@media(hover:hover)]:opacity-0 [@media(hover:hover)]:group-hover:opacity-100 [@media(hover:hover)]:group-focus-within:opacity-100",
         )}
       >
-        <AnimatePresence>
-          {copied ? (
-            <motion.div
-              role="status"
-              aria-live="polite"
-              initial={{ opacity: 0, y: 4, scale: 0.98 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: 2, scale: 0.99 }}
-              transition={{ ...FAST_SPRING, duration: 0.12 }}
-              className="pointer-events-none absolute bottom-full left-1/2 z-10 mb-2 -translate-x-1/2 whitespace-nowrap rounded-lg border border-[var(--gallery-border)] bg-[var(--gallery-tooltip-bg)] px-3 py-1.5 text-xs font-medium text-[var(--gallery-text-primary)] shadow-[var(--gallery-shadow-lg)] backdrop-blur-md"
-            >
-              Prompt copied
-            </motion.div>
-          ) : null}
-        </AnimatePresence>
+        {copied ? (
+          <div
+            role="status"
+            aria-live="polite"
+            className="gallery-toast-enter pointer-events-none absolute bottom-full left-1/2 z-10 mb-2 -translate-x-1/2 whitespace-nowrap rounded-lg border border-[var(--gallery-border)] bg-[var(--gallery-tooltip-bg)] px-3 py-1.5 text-xs font-medium text-[var(--gallery-text-primary)] shadow-[var(--gallery-shadow-lg)] backdrop-blur-md"
+          >
+            Prompt copied
+          </div>
+        ) : null}
 
-        <motion.button
+        <button
           type="button"
           onClick={copyPrompt}
           aria-label={copied ? "Copied prompt" : "Copy prompt"}
           title={copied ? "Copied" : "Copy prompt"}
-          whileTap={{ scale: 0.9 }}
-          transition={FAST_SPRING}
           className={clsx(
-            "inline-flex size-8 cursor-pointer items-center justify-center rounded-md border shadow-[var(--gallery-shadow-sm)] transition-[border-color,background-color,color,box-shadow,opacity] duration-150",
+            "inline-flex size-8 cursor-pointer items-center justify-center rounded-md border shadow-[var(--gallery-shadow-sm)] transition-[border-color,background-color,color,box-shadow,opacity,transform] duration-150 active:scale-90",
             !active &&
               "[@media(hover:hover)]:pointer-events-none [@media(hover:hover)]:group-hover:pointer-events-auto [@media(hover:hover)]:group-focus-within:pointer-events-auto",
             active
@@ -92,7 +81,7 @@ export function GenerationPrompt({ prompt }: { prompt: string }) {
               )}
             />
           </span>
-        </motion.button>
+        </button>
       </div>
     </div>
   );

@@ -7,3 +7,6 @@ playwright-report/
 .agents/
 .claude/
 .windsurf/
+
+# Deterministic model-specific Next.js route entries generated before dev/build.
+/src/app/(generated-variant-routes)/

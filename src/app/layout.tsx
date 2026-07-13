@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { GeistSans } from "geist/font/sans";
-import { GalleryThemeProvider } from "@/components/gallery/gallery-theme-provider";
 import { galleryThemeInitScript } from "@/lib/gallery-theme";
 import "./globals.css";
 
@@ -20,9 +19,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <head>
         <script dangerouslySetInnerHTML={{ __html: galleryThemeInitScript }} />
       </head>
-      <body>
-        <GalleryThemeProvider>{children}</GalleryThemeProvider>
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

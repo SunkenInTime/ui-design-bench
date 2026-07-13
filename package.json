@@ -5,12 +5,13 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "predev": "node scripts/scope-variant-css.mjs",
-    "prebuild": "node scripts/scope-variant-css.mjs",
+    "predev": "node scripts/generate-variant-routes.mjs && node scripts/scope-variant-css.mjs",
+    "prebuild": "node scripts/generate-variant-routes.mjs && node scripts/scope-variant-css.mjs",
     "start": "next start",
     "lint": "eslint",
     "capture-previews": "node scripts/capture-previews.mjs",
     "scope:variant-css": "node scripts/scope-variant-css.mjs",
+    "generate:variant-routes": "node scripts/generate-variant-routes.mjs",
     "test:routes": "playwright test tests/gallery-routes.spec.ts",
     "test:visual": "playwright test tests/gallery-visual-smoke.spec.ts"
   },

@@ -195,7 +195,7 @@ const iterations = [
 export default function ExperimentsPage() {
   return (
     <>
-      <GalleryRankingsNav />
+      <GalleryRankingsNav current="experiments" />
       <main className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
         <header className="max-w-3xl">
           <p className="text-sm font-medium text-[var(--gallery-accent)]">Exploration · not implemented yet</p>
@@ -208,7 +208,7 @@ export default function ExperimentsPage() {
           </p>
           <p className="mt-4 text-sm text-neutral-500">
             Back to the{" "}
-            <Link href="/" className="font-medium text-neutral-800 underline decoration-neutral-300 underline-offset-2 hover:text-[var(--gallery-accent)]">
+            <Link href="/" prefetch={false} className="font-medium text-neutral-800 underline decoration-neutral-300 underline-offset-2 hover:text-[var(--gallery-accent)]">
               main gallery
             </Link>
             .

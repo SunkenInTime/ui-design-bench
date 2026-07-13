@@ -1,11 +1,12 @@
 import { GalleryRankingsNav } from "@/components/gallery/gallery-rankings-nav";
 import { ModelLabWordle } from "@/components/game/model-lab-wordle";
+import { galleryCatalog } from "@/lib/gallery-catalog";
 
 export default function LabGuessPage() {
   return (
     <>
-      <GalleryRankingsNav />
-      <ModelLabWordle />
+      <GalleryRankingsNav current="lab-guess" />
+      <ModelLabWordle catalog={galleryCatalog} />
     </>
   );
 }

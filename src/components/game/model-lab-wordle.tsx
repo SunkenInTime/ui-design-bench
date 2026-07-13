@@ -1,12 +1,11 @@
 "use client";
 
 import clsx from "clsx";
-import { toBlob } from "html-to-image";
 import { Check, ChevronDown, Share2 } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { ThemeAwareLogo } from "@/components/gallery/theme-aware-logo";
-import { galleryManifest } from "@/lib/gallery-manifest";
 import { buildPreviewHref, buildVariantHref } from "@/lib/gallery-paths";
+import type { GalleryCatalogEntry } from "@/lib/gallery-types";
 import { type LabSlug, getModelLab } from "@/lib/model-labs";
 
 type Round = {
@@ -82,14 +81,14 @@ function getGuessLabel(lab: LabSlug | null | undefined): string {
   return getGuessOption(lab)?.label ?? "";
 }
 
-function createRounds(): Round[] {
-  const pool = galleryManifest.flatMap((entry) =>
+function createRounds(catalog: readonly GalleryCatalogEntry[]): Round[] {
+  const pool = catalog.flatMap((entry) =>
     entry.iterations.map((iteration) => {
       const lab = getModelLab(entry.model);
       return {
-        id: `${entry.group}-${entry.model}-${iteration.id}`,
-        previewHref: buildPreviewHref(entry.group, entry.model, iteration.id),
-        liveHref: buildVariantHref(entry.group, entry.model, iteration.id),
+        id: `${entry.group}-${entry.model}-${iteration}`,
+        previewHref: buildPreviewHref(entry.group, entry.model, iteration),
+        liveHref: buildVariantHref(entry.group, entry.model, iteration),
         answer: lab.slug,
         answerLabel: getGuessLabel(lab.slug),
         modelLabel: entry.modelLabel,
@@ -201,7 +200,11 @@ function getGuessTone(round: Round, lab: LabSlug, selectedGuess: LabSlug | null)
   return "idle";
 }
 
-export function ModelLabWordle() {
+export function ModelLabWordle({
+  catalog,
+}: {
+  catalog: readonly GalleryCatalogEntry[];
+}) {
   const [rounds, setRounds] = useState<Round[]>([]);
   const [currentRound, setCurrentRound] = useState(0);
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -286,13 +289,13 @@ export function ModelLabWordle() {
 
   useEffect(() => {
     const initTimer = setTimeout(() => {
-      setRounds(createRounds());
+      setRounds(createRounds(catalog));
     }, 0);
 
     return () => {
       clearTimeout(initTimer);
     };
-  }, []);
+  }, [catalog]);
 
   useEffect(() => {
     return () => {
@@ -449,7 +452,7 @@ export function ModelLabWordle() {
       imageShareTimerRef.current = null;
     }
 
-    setRounds(createRounds());
+    setRounds(createRounds(catalog));
     setCurrentRound(0);
     setDropdownOpen(false);
     setSelectedGuess(null);
@@ -483,6 +486,7 @@ export function ModelLabWordle() {
   }
 
   async function buildScoreImageBlob(): Promise<Blob> {
+    const { toBlob } = await import("html-to-image");
     const card = resultCardRef.current;
     if (!card) {
       throw new Error("Score card is unavailable.");

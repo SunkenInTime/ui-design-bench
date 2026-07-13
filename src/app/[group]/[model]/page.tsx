@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { GalleryBreadcrumb, IterationLinks } from "@/components/gallery/gallery-shell";
-import { buildCompareHrefForSelection } from "@/lib/compare";
+import { buildCompareHrefForSelection } from "@/lib/compare-server";
 import { getGalleryEntry } from "@/lib/gallery-manifest";
 import { getStaticGalleryModelParams } from "@/lib/gallery-static-params";
 import { buildVariantHref, isGalleryGroup } from "@/lib/gallery-paths";
@@ -48,6 +48,7 @@ export default async function ModelPage({
                 model: entry.model,
                 iteration: "1",
               })}
+              prefetch={false}
               className="inline-flex items-center rounded-full border border-[var(--gallery-divider-strong)] bg-[var(--gallery-surface)] px-4 py-2 text-sm font-medium text-[var(--gallery-text-secondary)] transition-colors hover:border-[var(--gallery-text-quaternary)] hover:text-[var(--gallery-text-primary)]"
               aria-label="Compare this model"
             >
@@ -69,6 +70,9 @@ export default async function ModelPage({
                   src={iteration.thumbnailPath}
                   alt={`${entry.modelLabel} iteration ${iteration.id}`}
                   fill
+                  sizes="(max-width: 639px) calc(100vw - 2rem), (max-width: 1279px) calc(50vw - 2.5rem), 24rem"
+                  quality={70}
+                  preload={iteration.id === entry.defaultIteration}
                   className="object-cover"
                 />
               </div>
@@ -94,6 +98,7 @@ export default async function ModelPage({
                     model: entry.model,
                     iteration: iteration.id,
                   })}
+                  prefetch={false}
                   className="inline-flex text-sm font-medium text-[var(--gallery-text-secondary)] underline decoration-[var(--gallery-divider-strong)] underline-offset-4 transition-colors hover:text-[var(--gallery-text-primary)] hover:decoration-[var(--gallery-text-primary)]"
                   aria-label={`Compare ${entry.modelLabel} iteration ${iteration.id}`}
                 >

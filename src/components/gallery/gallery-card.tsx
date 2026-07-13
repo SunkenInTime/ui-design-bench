@@ -3,12 +3,26 @@ import Link from "next/link";
 import { ArrowLeftRight } from "lucide-react";
 import { GalleryCardLeavingSoonBookmark } from "@/components/gallery/gallery-card-leaving-soon";
 import { ModelBrandLogo } from "@/components/gallery/model-brand-logo";
-import { buildCompareHrefForSelection } from "@/lib/compare";
 import { isGalleryModelLeavingSoon } from "@/lib/gallery-archived";
-import type { GalleryEntry } from "@/lib/gallery-types";
+import type { GalleryEntry, GalleryIteration } from "@/lib/gallery-types";
 import { buildVariantHref } from "@/lib/gallery-paths";
 
-export function GalleryCard({ entry }: { entry: GalleryEntry }) {
+export type GalleryCardEntry = Pick<
+  GalleryEntry,
+  "group" | "groupLabel" | "model" | "modelLabel" | "defaultIteration"
+> & {
+  iterations: Pick<GalleryIteration, "id" | "thumbnailPath">[];
+};
+
+export function GalleryCard({
+  entry,
+  compareHref,
+  preload = false,
+}: {
+  entry: GalleryCardEntry;
+  compareHref: string;
+  preload?: boolean;
+}) {
   const leavingSoon = isGalleryModelLeavingSoon(entry.model);
   return (
     <article
@@ -17,6 +31,7 @@ export function GalleryCard({ entry }: { entry: GalleryEntry }) {
     >
       <Link
         href={buildVariantHref(entry.group, entry.model, entry.defaultIteration)}
+        prefetch={false}
         className="block bg-[var(--gallery-surface-muted)]"
       >
         <div className="relative aspect-[16/10]">
@@ -24,6 +39,9 @@ export function GalleryCard({ entry }: { entry: GalleryEntry }) {
             src={entry.iterations[0].thumbnailPath}
             alt={`${entry.modelLabel} preview`}
             fill
+            sizes="(max-width: 639px) calc(100vw - 2rem), (max-width: 1279px) calc(50vw - 2.5rem), 24rem"
+            quality={70}
+            preload={preload}
             className="object-cover transition-opacity duration-300 group-hover:opacity-95"
           />
           {/* Box-shadow paints beneath the filled Image; overlay gradient is visible on top. */}
@@ -55,6 +73,7 @@ export function GalleryCard({ entry }: { entry: GalleryEntry }) {
               <Link
                 key={iteration.id}
                 href={buildVariantHref(entry.group, entry.model, iteration.id)}
+                prefetch={false}
                 className="inline-flex size-8 items-center justify-center rounded-md border border-[var(--gallery-border)] bg-[var(--gallery-surface-subtle)] text-xs font-medium tabular-nums leading-none text-[var(--gallery-text-secondary)] transition-colors hover:border-[var(--gallery-divider-strong)] hover:bg-[var(--gallery-surface)] hover:text-[var(--gallery-text-primary)]"
               >
                 {iteration.id}
@@ -62,11 +81,8 @@ export function GalleryCard({ entry }: { entry: GalleryEntry }) {
             ))}
           </div>
           <Link
-            href={buildCompareHrefForSelection({
-              group: entry.group,
-              model: entry.model,
-              iteration: "1",
-            })}
+            href={compareHref}
+            prefetch={false}
             className="inline-flex size-8 shrink-0 items-center justify-center rounded-md border border-[var(--gallery-border)] bg-[var(--gallery-surface-subtle)] text-[var(--gallery-text-secondary)] transition-colors hover:border-[var(--gallery-divider-strong)] hover:bg-[var(--gallery-surface)] hover:text-[var(--gallery-text-primary)]"
             aria-label={`Compare ${entry.groupLabel} ${entry.modelLabel}`}
             title="Compare"

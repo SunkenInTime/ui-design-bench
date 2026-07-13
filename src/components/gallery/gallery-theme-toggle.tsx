@@ -2,11 +2,43 @@
 
 import clsx from "clsx";
 import { Moon, Sun } from "lucide-react";
-import { useGalleryTheme } from "@/components/gallery/gallery-theme-provider";
+import { useEffect, useState } from "react";
+import {
+  applyGalleryTheme,
+  getStoredGalleryTheme,
+  getSystemGalleryTheme,
+  setGalleryTheme,
+  type GalleryTheme,
+} from "@/lib/gallery-theme";
 
 export function GalleryThemeToggle({ className }: { className?: string }) {
-  const { theme, toggleTheme } = useGalleryTheme();
+  const [theme, setThemeState] = useState<GalleryTheme>("light");
   const isDark = theme === "dark";
+
+  useEffect(() => {
+    const syncFromDocument = () => {
+      setThemeState(document.documentElement.classList.contains("dark") ? "dark" : "light");
+    };
+    const media = window.matchMedia("(prefers-color-scheme: dark)");
+    const syncWithSystem = () => {
+      if (getStoredGalleryTheme()) return;
+      const nextTheme = getSystemGalleryTheme();
+      applyGalleryTheme(nextTheme);
+      setThemeState(nextTheme);
+    };
+
+    syncFromDocument();
+    media.addEventListener("change", syncWithSystem);
+    return () => media.removeEventListener("change", syncWithSystem);
+  }, []);
+
+  const toggleTheme = () => {
+    const nextTheme = document.documentElement.classList.contains("dark")
+      ? "light"
+      : "dark";
+    setGalleryTheme(nextTheme);
+    setThemeState(nextTheme);
+  };
 
   return (
     <button

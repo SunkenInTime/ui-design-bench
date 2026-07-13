@@ -1,32 +1,26 @@
-"use client";
-
-import { useId, useState } from "react";
 import Link from "next/link";
-import { Archive } from "lucide-react";
 import type { GalleryEntry, GalleryGroupSlug } from "@/lib/gallery-types";
 import {
   ANTHROPIC_FRONTEND_DESIGN_SKILL_URL,
+  TASTE_SKILL_URL,
   UNCODEXIFY_SKILL_URL,
 } from "@/lib/gallery-anthropic-skill";
 import { GalleryCard } from "@/components/gallery/gallery-card";
-import { filterGalleryEntriesForArchiveVisibility } from "@/lib/gallery-archived";
-
-function groupHasArchivedRow(entries: GalleryEntry[]): boolean {
-  const visibleWhenHidden = filterGalleryEntriesForArchiveVisibility(entries, false);
-  return visibleWhenHidden.length < entries.length;
-}
+import { GalleryArchiveGrid } from "@/components/gallery/gallery-archive-grid";
+import type { GalleryCardEntry } from "@/components/gallery/gallery-card";
+import { isGalleryModelArchivedWithinGroup } from "@/lib/gallery-archived";
+import { buildCompareHrefForSelection } from "@/lib/compare-server";
 
 export function GalleryGroupSection({
   group,
   entries,
+  preloadFirstImage = false,
 }: {
   group: GalleryGroupSlug;
   entries: GalleryEntry[];
+  preloadFirstImage?: boolean;
 }) {
-  const [showArchived, setShowArchived] = useState(false);
-  const visibleEntries = filterGalleryEntriesForArchiveVisibility(entries, showArchived);
-  const labelId = useId();
-  const hasArchived = groupHasArchivedRow(entries);
+  const labelId = `gallery-group-${group}`;
 
   const label =
     group === "with-design-skill" ? (
@@ -53,6 +47,18 @@ export function GalleryGroupSection({
           Design Skill
         </Link>
       </>
+    ) : group === "with-taste-skill" ? (
+      <>
+        With{" "}
+        <Link
+          href={TASTE_SKILL_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline decoration-2 decoration-[var(--gallery-text-tertiary)] underline-offset-[6px] transition-colors hover:text-[var(--gallery-accent)] hover:decoration-[var(--gallery-accent)]"
+        >
+          Taste Skill
+        </Link>
+      </>
     ) : group === "with-ui-sh-skill" ? (
       "With UI SH Skill"
     ) : group === "miscellaneous" ? (
@@ -71,29 +77,51 @@ export function GalleryGroupSection({
       entries[0]?.groupLabel ?? group
     );
 
+  const firstVisibleEntry = preloadFirstImage
+    ? entries.find((entry) => !isGalleryModelArchivedWithinGroup(entries, entry))
+    : undefined;
+  const items = entries.map((entry) => {
+    const archived = isGalleryModelArchivedWithinGroup(entries, entry);
+    const cardEntry = {
+      group: entry.group,
+      groupLabel: entry.groupLabel,
+      model: entry.model,
+      modelLabel: entry.modelLabel,
+      defaultIteration: entry.defaultIteration,
+      iterations: entry.iterations.map(({ id, thumbnailPath }) => ({ id, thumbnailPath })),
+    } satisfies GalleryCardEntry;
+    const compareHref = buildCompareHrefForSelection({
+      group: entry.group,
+      model: entry.model,
+      iteration: "1",
+    });
+
+    return archived
+      ? {
+          key: `${entry.group}-${entry.model}`,
+          archived: true as const,
+          entry: cardEntry,
+          compareHref,
+        }
+      : {
+          key: `${entry.group}-${entry.model}`,
+          archived: false as const,
+          card: (
+            <GalleryCard
+              entry={cardEntry}
+              compareHref={compareHref}
+              preload={firstVisibleEntry === entry}
+            />
+          ),
+        };
+  });
+
   return (
-    <section aria-labelledby={labelId} className="space-y-8">
-      <div className="flex flex-wrap items-end justify-between gap-x-6 gap-y-3">
-        <h2 id={labelId} className="text-xl font-medium tracking-tight text-[var(--gallery-text-primary)]">
-          {label}
-        </h2>
-        {hasArchived ? (
-          <button
-            type="button"
-            onClick={() => setShowArchived((v) => !v)}
-            aria-pressed={showArchived}
-            className="inline-flex shrink-0 items-center gap-1.5 rounded-md border border-[var(--gallery-divider-strong)] bg-[var(--gallery-surface)] px-3 py-1.5 text-sm font-medium tracking-tight text-[var(--gallery-text-primary)] shadow-[var(--gallery-shadow-sm)] transition-colors hover:border-[var(--gallery-text-quaternary)] hover:bg-[var(--gallery-surface-subtle)]"
-          >
-            <Archive className="size-4 shrink-0 opacity-80" aria-hidden />
-            <span>{showArchived ? "Hide Archived" : "Show Archived"}</span>
-          </button>
-        ) : null}
-      </div>
-      <div className="grid gap-8 sm:grid-cols-2 xl:grid-cols-4 xl:gap-6">
-        {visibleEntries.map((entry) => (
-          <GalleryCard key={`${entry.group}-${entry.model}`} entry={entry} />
-        ))}
-      </div>
-    </section>
+    <GalleryArchiveGrid
+      labelId={labelId}
+      label={label}
+      items={items}
+      hasArchived={items.some((item) => item.archived)}
+    />
   );
 }

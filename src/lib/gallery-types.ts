@@ -51,6 +51,14 @@ export interface GalleryEntry {
   iterations: GalleryIteration[];
 }
 
+/** The small, serializable subset used by interactive model/group pickers. */
+export type GalleryCatalogEntry = Pick<
+  GalleryEntry,
+  "group" | "groupLabel" | "model" | "modelLabel"
+> & {
+  iterations: IterationId[];
+};
+
 export interface VariantRenderProps {
   entry: GalleryEntry;
   iteration: IterationId;

@@ -1,12 +1,9 @@
 "use client";
 
 import clsx from "clsx";
-import { useRouter } from "next/navigation";
-import { AnimatePresence, motion } from "framer-motion";
 import { ArrowLeftRight, Link2 } from "lucide-react";
-import { useEffect, useRef, useState, useTransition } from "react";
+import { useEffect, useRef, useState } from "react";
 import { CompareGroupSelect, CompareModelSelect } from "@/components/compare/compare-selects";
-import { GalleryRankingsNav } from "@/components/gallery/gallery-rankings-nav";
 import {
   buildCompareHref,
   compareGroupOrder,
@@ -15,45 +12,57 @@ import {
   type CompareSelection,
   type CompareState,
 } from "@/lib/compare";
-import { getGalleryEntry } from "@/lib/gallery-manifest";
 import { buildPreviewHref } from "@/lib/gallery-paths";
-import type { GalleryGroupSlug, IterationId, ModelSlug } from "@/lib/gallery-types";
+import type {
+  GalleryCatalogEntry,
+  GalleryGroupSlug,
+  IterationId,
+  ModelSlug,
+} from "@/lib/gallery-types";
 
 const ITERATION_OPTIONS = ["1", "2", "3", "4", "5"] as const satisfies readonly IterationId[];
 
-function getGroupLabel(group: GalleryGroupSlug): string {
-  return getModelsForGroup(group)[0]?.groupLabel ?? group;
+function getGroupLabel(
+  catalog: readonly GalleryCatalogEntry[],
+  group: GalleryGroupSlug,
+): string {
+  return getModelsForGroup(catalog, group)[0]?.groupLabel ?? group;
 }
 
 function resolveSelection(
+  catalog: readonly GalleryCatalogEntry[],
   group: GalleryGroupSlug,
   model: ModelSlug,
   iteration: IterationId,
 ): CompareSelection {
-  const entry = getGalleryEntry(group, model);
+  const entry = catalog.find((item) => item.group === group && item.model === model);
   if (!entry) {
-    return getDefaultSelectionForGroup(group) ?? { group, model, iteration: "1" };
+    return getDefaultSelectionForGroup(catalog, group) ?? { group, model, iteration: "1" };
   }
 
   return {
     group: entry.group,
     model: entry.model,
-    iteration: entry.iterations.some((item) => item.id === iteration) ? iteration : "1",
+    iteration: entry.iterations.includes(iteration) ? iteration : "1",
   };
 }
 
 function ComparePanel({
   side,
+  catalog,
   selection,
   onSelectionChange,
 }: {
   side: "left" | "right";
+  catalog: readonly GalleryCatalogEntry[];
   selection: CompareSelection;
   onSelectionChange: (selection: CompareSelection) => void;
 }) {
   const sideLabel = side === "left" ? "Left" : "Right";
 
-  const entry = getGalleryEntry(selection.group, selection.model);
+  const entry = catalog.find(
+    (item) => item.group === selection.group && item.model === selection.model,
+  );
   if (!entry) {
     return null;
   }
@@ -84,7 +93,9 @@ function ComparePanel({
                 key={iteration}
                 type="button"
                 onClick={() =>
-                  onSelectionChange(resolveSelection(selection.group, selection.model, iteration))
+                  onSelectionChange(
+                    resolveSelection(catalog, selection.group, selection.model, iteration),
+                  )
                 }
                 className={`gallery-variant-switcher__iteration inline-flex size-7 shrink-0 cursor-pointer items-center justify-center rounded-md text-[11px] font-medium tabular-nums leading-none transition-colors ${
                   active
@@ -101,6 +112,7 @@ function ComparePanel({
         <iframe
           title={iframeTitle}
           src={buildPreviewHref(selection.group, selection.model, selection.iteration)}
+          loading={side === "right" ? "lazy" : "eager"}
           className="block h-[min(72dvh,760px)] w-full bg-white lg:h-[calc(100dvh-10.25rem)]"
         />
       </div>
@@ -110,16 +122,18 @@ function ComparePanel({
 
 function CompareSideControls({
   side,
+  catalog,
   selection,
   onSelectionChange,
 }: {
   side: "left" | "right";
+  catalog: readonly GalleryCatalogEntry[];
   selection: CompareSelection;
   onSelectionChange: (selection: CompareSelection) => void;
 }) {
   const [openMenu, setOpenMenu] = useState<"group" | "model" | null>(null);
   const controlsRef = useRef<HTMLDivElement>(null);
-  const models = getModelsForGroup(selection.group);
+  const models = getModelsForGroup(catalog, selection.group);
   const sideLabel = side === "left" ? "Left" : "Right";
 
   useEffect(() => {
@@ -157,19 +171,21 @@ function CompareSideControls({
         <CompareGroupSelect
           value={selection.group}
           onChange={(nextGroup) => {
-            const nextModels = getModelsForGroup(nextGroup);
+            const nextModels = getModelsForGroup(catalog, nextGroup);
             const nextModel =
               nextModels.find((item) => item.model === selection.model)?.model ??
-              getDefaultSelectionForGroup(nextGroup)?.model;
+              getDefaultSelectionForGroup(catalog, nextGroup)?.model;
 
             if (!nextModel) {
               return;
             }
 
-            onSelectionChange(resolveSelection(nextGroup, nextModel, selection.iteration));
+            onSelectionChange(
+              resolveSelection(catalog, nextGroup, nextModel, selection.iteration),
+            );
           }}
           groups={compareGroupOrder}
-          getLabel={getGroupLabel}
+          getLabel={(group) => getGroupLabel(catalog, group)}
           open={openMenu === "group"}
           setOpen={(next) => setOpenMenu(next ? "group" : null)}
           showLabel={false}
@@ -179,7 +195,9 @@ function CompareSideControls({
           models={models}
           value={selection.model}
           onChange={(nextModel) => {
-            onSelectionChange(resolveSelection(selection.group, nextModel, selection.iteration));
+            onSelectionChange(
+              resolveSelection(catalog, selection.group, nextModel, selection.iteration),
+            );
           }}
           open={openMenu === "model"}
           setOpen={(next) => setOpenMenu(next ? "model" : null)}
@@ -190,12 +208,17 @@ function CompareSideControls({
   );
 }
 
-export function ComparePage({ initialState }: { initialState: CompareState }) {
-  const router = useRouter();
-  const [isPending, startTransition] = useTransition();
+export function ComparePage({
+  initialState,
+  catalog,
+}: {
+  initialState: CompareState;
+  catalog: readonly GalleryCatalogEntry[];
+}) {
+  const [compareState, setCompareState] = useState(initialState);
   const [copied, setCopied] = useState(false);
   const [copyFlash, setCopyFlash] = useState(false);
-  const currentHref = buildCompareHref(initialState);
+  const currentHref = buildCompareHref(compareState);
 
   const updateState = (nextState: CompareState) => {
     const nextHref = buildCompareHref(nextState);
@@ -203,15 +226,16 @@ export function ComparePage({ initialState }: { initialState: CompareState }) {
       return;
     }
 
-    startTransition(() => {
-      router.replace(nextHref, { scroll: false });
-    });
+    setCompareState(nextState);
+    // Next.js integrates the native History API with its router. This keeps the
+    // URL shareable without waiting for a new server-rendered compare payload.
+    window.history.replaceState(null, "", nextHref);
   };
 
   const swapSelections = () => {
     updateState({
-      left: initialState.right,
-      right: initialState.left,
+      left: compareState.right,
+      right: compareState.left,
     });
   };
 
@@ -232,8 +256,6 @@ export function ComparePage({ initialState }: { initialState: CompareState }) {
       <h1 className="fixed top-5 left-5 z-[110] hidden h-11 items-center text-2xl font-medium tracking-tight text-[var(--gallery-text-primary)] sm:top-6 sm:left-6 sm:text-3xl lg:flex">
         Compare
       </h1>
-      <GalleryRankingsNav />
-
       <main className="flex min-h-screen flex-col px-3 pb-4 pt-[5.25rem] sm:px-5 lg:px-6">
         <header className="relative z-50 mb-3 w-full">
           <div className="grid min-w-0 gap-3 border-b border-[var(--gallery-border)] pb-3 lg:grid-cols-2 lg:items-end lg:gap-0">
@@ -246,10 +268,11 @@ export function ComparePage({ initialState }: { initialState: CompareState }) {
             <div className="min-w-0 lg:pr-2">
               <CompareSideControls
                 side="left"
-                selection={initialState.left}
+                catalog={catalog}
+                selection={compareState.left}
                 onSelectionChange={(selection) =>
                   updateState({
-                    ...initialState,
+                    ...compareState,
                     left: selection,
                   })
                 }
@@ -260,10 +283,11 @@ export function ComparePage({ initialState }: { initialState: CompareState }) {
               <div className="min-w-0 flex-1">
                 <CompareSideControls
                   side="right"
-                  selection={initialState.right}
+                  catalog={catalog}
+                  selection={compareState.right}
                   onSelectionChange={(selection) =>
                     updateState({
-                      ...initialState,
+                      ...compareState,
                       right: selection,
                     })
                   }
@@ -271,43 +295,32 @@ export function ComparePage({ initialState }: { initialState: CompareState }) {
               </div>
 
               <div className="flex shrink-0 items-center gap-2">
-                <motion.button
+                <button
                   type="button"
                   onClick={swapSelections}
-                  disabled={isPending}
                   aria-label="Swap sides"
                   title="Swap sides"
-                  whileTap={{ scale: 0.9 }}
-                  transition={{ type: "spring", stiffness: 520, damping: 28 }}
-                  className="inline-flex size-9 cursor-pointer items-center justify-center rounded-md border border-[var(--gallery-border)] bg-[var(--gallery-surface)] text-[var(--gallery-text-secondary)] shadow-[var(--gallery-shadow-sm)] transition-colors hover:border-[var(--gallery-divider-strong)] hover:bg-[var(--gallery-surface-subtle)] hover:text-[var(--gallery-text-primary)] disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50"
+                  className="inline-flex size-9 cursor-pointer items-center justify-center rounded-md border border-[var(--gallery-border)] bg-[var(--gallery-surface)] text-[var(--gallery-text-secondary)] shadow-[var(--gallery-shadow-sm)] transition-[color,background-color,border-color,transform] hover:border-[var(--gallery-divider-strong)] hover:bg-[var(--gallery-surface-subtle)] hover:text-[var(--gallery-text-primary)] active:scale-90"
                 >
                   <ArrowLeftRight className="size-4 opacity-80" aria-hidden="true" />
-                </motion.button>
+                </button>
                 <div className="relative z-[200]">
-                  <AnimatePresence>
-                    {copied ? (
-                      <motion.div
-                        role="status"
-                        aria-live="polite"
-                        initial={{ opacity: 0, y: 8, scale: 0.96 }}
-                        animate={{ opacity: 1, y: 0, scale: 1 }}
-                        exit={{ opacity: 0, y: 4, scale: 0.98 }}
-                        transition={{ type: "spring", stiffness: 420, damping: 28 }}
-                        className="pointer-events-none absolute bottom-full left-1/2 z-[200] mb-2 -translate-x-1/2 whitespace-nowrap rounded-lg border border-[var(--gallery-border)] bg-[var(--gallery-tooltip-bg)] px-4 py-2.5 text-sm font-medium text-[var(--gallery-text-primary)] shadow-[var(--gallery-shadow-lg)] backdrop-blur-md"
-                      >
-                        Link copied
-                      </motion.div>
-                    ) : null}
-                  </AnimatePresence>
-                  <motion.button
+                  {copied ? (
+                    <div
+                      role="status"
+                      aria-live="polite"
+                      className="gallery-toast-enter pointer-events-none absolute bottom-full left-1/2 z-[200] mb-2 -translate-x-1/2 whitespace-nowrap rounded-lg border border-[var(--gallery-border)] bg-[var(--gallery-tooltip-bg)] px-4 py-2.5 text-sm font-medium text-[var(--gallery-text-primary)] shadow-[var(--gallery-shadow-lg)] backdrop-blur-md"
+                    >
+                      Link copied
+                    </div>
+                  ) : null}
+                  <button
                     type="button"
                     onClick={copyLink}
                     aria-label={copied ? "Copied" : "Copy link"}
                     title={copied ? "Copied" : "Copy link"}
-                    whileTap={{ scale: 0.9 }}
-                    transition={{ type: "spring", stiffness: 520, damping: 28 }}
                     className={clsx(
-                      "inline-flex size-9 cursor-pointer items-center justify-center rounded-md border shadow-[var(--gallery-shadow-sm)] transition-colors duration-200",
+                      "inline-flex size-9 cursor-pointer items-center justify-center rounded-md border shadow-[var(--gallery-shadow-sm)] transition-[color,background-color,border-color,transform] duration-200 active:scale-90",
                       copyFlash
                         ? "border-[var(--gallery-accent)] bg-[color-mix(in_srgb,var(--gallery-accent)_22%,var(--gallery-accent-hover-mix))] text-[var(--gallery-accent)]"
                         : "border-[var(--gallery-border)] bg-[var(--gallery-surface)] text-[var(--gallery-text-secondary)] hover:border-[var(--gallery-divider-strong)] hover:bg-[var(--gallery-surface-subtle)] hover:text-[var(--gallery-text-primary)]",
@@ -317,7 +330,7 @@ export function ComparePage({ initialState }: { initialState: CompareState }) {
                       className={clsx("size-4", copyFlash ? "opacity-100" : "opacity-80")}
                       aria-hidden="true"
                     />
-                  </motion.button>
+                  </button>
                 </div>
               </div>
             </div>
@@ -327,20 +340,22 @@ export function ComparePage({ initialState }: { initialState: CompareState }) {
         <div className="grid min-h-0 flex-1 gap-12 lg:grid-cols-2 lg:gap-0">
           <ComparePanel
             side="left"
-            selection={initialState.left}
+            catalog={catalog}
+            selection={compareState.left}
             onSelectionChange={(selection) =>
               updateState({
-                ...initialState,
+                ...compareState,
                 left: selection,
               })
             }
           />
           <ComparePanel
             side="right"
-            selection={initialState.right}
+            catalog={catalog}
+            selection={compareState.right}
             onSelectionChange={(selection) =>
               updateState({
-                ...initialState,
+                ...compareState,
                 right: selection,
               })
             }
