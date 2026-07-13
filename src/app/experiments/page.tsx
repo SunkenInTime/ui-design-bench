@@ -208,7 +208,7 @@ export default function ExperimentsPage() {
           </p>
           <p className="mt-4 text-sm text-neutral-500">
             Back to the{" "}
-            <Link href="/" className="font-medium text-neutral-800 underline decoration-neutral-300 underline-offset-2 hover:text-[var(--gallery-accent)]">
+            <Link href="/" prefetch={false} className="font-medium text-neutral-800 underline decoration-neutral-300 underline-offset-2 hover:text-[var(--gallery-accent)]">
               main gallery
             </Link>
             .

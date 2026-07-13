@@ -248,6 +248,7 @@ export function VariantSwitcher({
     >
       <Link
         href="/"
+        prefetch={false}
         aria-label="Back to Which AI Made This?"
         className={switcherButtonClass}
       >

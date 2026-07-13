@@ -34,6 +34,7 @@ export function GalleryRankingsNav({ current }: { current: GalleryNavPage }) {
     >
       <Link
         href="/"
+        prefetch={false}
         aria-label={homeShowsGalleryLabel ? undefined : "Gallery"}
         aria-current={onGalleryHome ? "page" : undefined}
         className={clsx(
@@ -57,6 +58,7 @@ export function GalleryRankingsNav({ current }: { current: GalleryNavPage }) {
 
       <Link
         href={buildCompareHref(DEFAULT_COMPARE_STATE)}
+        prefetch={false}
         aria-label={onCompare ? "Compare" : undefined}
         aria-current={onCompare ? "page" : undefined}
         className={clsx(
@@ -82,6 +84,7 @@ export function GalleryRankingsNav({ current }: { current: GalleryNavPage }) {
 
       <Link
         href="/lab-guess"
+        prefetch={false}
         aria-label={onLabGuess ? "Guess which" : undefined}
         aria-current={onLabGuess ? "page" : undefined}
         className={clsx(
@@ -107,6 +110,7 @@ export function GalleryRankingsNav({ current }: { current: GalleryNavPage }) {
 
       <Link
         href="/rankings"
+        prefetch={false}
         aria-label={onRankings ? "Rankings" : undefined}
         aria-current={onRankings ? "page" : undefined}
         className={clsx(

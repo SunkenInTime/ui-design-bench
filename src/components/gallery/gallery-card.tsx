@@ -3,16 +3,24 @@ import Link from "next/link";
 import { ArrowLeftRight } from "lucide-react";
 import { GalleryCardLeavingSoonBookmark } from "@/components/gallery/gallery-card-leaving-soon";
 import { ModelBrandLogo } from "@/components/gallery/model-brand-logo";
-import { buildCompareHrefForSelection } from "@/lib/compare-server";
 import { isGalleryModelLeavingSoon } from "@/lib/gallery-archived";
-import type { GalleryEntry } from "@/lib/gallery-types";
+import type { GalleryEntry, GalleryIteration } from "@/lib/gallery-types";
 import { buildVariantHref } from "@/lib/gallery-paths";
+
+export type GalleryCardEntry = Pick<
+  GalleryEntry,
+  "group" | "groupLabel" | "model" | "modelLabel" | "defaultIteration"
+> & {
+  iterations: Pick<GalleryIteration, "id" | "thumbnailPath">[];
+};
 
 export function GalleryCard({
   entry,
+  compareHref,
   preload = false,
 }: {
-  entry: GalleryEntry;
+  entry: GalleryCardEntry;
+  compareHref: string;
   preload?: boolean;
 }) {
   const leavingSoon = isGalleryModelLeavingSoon(entry.model);
@@ -73,11 +81,7 @@ export function GalleryCard({
             ))}
           </div>
           <Link
-            href={buildCompareHrefForSelection({
-              group: entry.group,
-              model: entry.model,
-              iteration: "1",
-            })}
+            href={compareHref}
             prefetch={false}
             className="inline-flex size-8 shrink-0 items-center justify-center rounded-md border border-[var(--gallery-border)] bg-[var(--gallery-surface-subtle)] text-[var(--gallery-text-secondary)] transition-colors hover:border-[var(--gallery-divider-strong)] hover:bg-[var(--gallery-surface)] hover:text-[var(--gallery-text-primary)]"
             aria-label={`Compare ${entry.groupLabel} ${entry.modelLabel}`}
