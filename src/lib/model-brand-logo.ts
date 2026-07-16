@@ -24,6 +24,7 @@ const MODEL_BRAND_LOGO: Record<ModelSlug, ModelBrandLogoPaths> = {
   terra: { light: "/openai-gpt.svg", dark: "/openai-gpt-dark.svg" },
   "kimi-k-2.5": { light: "/kimi-k2.webp" },
   "kimi-k-2.6": { light: "/kimi-k2.webp" },
+  "kimi-k3": { light: "/kimi-k2.webp" },
   "opus-4.6": { light: "/anthropic-claude.webp" },
   "opus-4.7": { light: "/anthropic-claude.webp" },
   "opus-4.8": { light: "/anthropic-claude.webp" },

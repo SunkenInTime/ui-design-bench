@@ -1,0 +1,32 @@
+/* Per-iteration display fonts. The CSS variables are injected by the
+   route-level layouts that load each font via next/font/google. */
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="kimi-k3"]) .f-ebg {
+  font-family: var(--font-ebg), "Georgia", serif;
+}
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="kimi-k3"]) .f-grotesk {
+  font-family: var(--font-grotesk), "Arial", sans-serif;
+}
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="kimi-k3"]) .f-tight {
+  font-family: var(--font-tight), "Helvetica Neue", sans-serif;
+}
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="kimi-k3"]) .f-archivo {
+  font-family: var(--font-archivo), "Arial Black", sans-serif;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="kimi-k3"]) {
+  background: #ffffff;
+  color: #171717;
+}
+
+/* Single marquee, used once per page where the design calls for it. */
+@keyframes gallery-with-taste-skill-kimi-k3-source-app-globals-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="kimi-k3"]) .animate-marquee {
+  animation: gallery-with-taste-skill-kimi-k3-source-app-globals-marquee 32s linear infinite;
+}

@@ -26,6 +26,7 @@ const MODEL_TO_LAB: Record<ModelSlug, ModelLab> = {
   terra: { slug: "gpt", label: "GPT" },
   "kimi-k-2.5": { slug: "moonshot", label: "Moonshot" },
   "kimi-k-2.6": { slug: "moonshot", label: "Moonshot" },
+  "kimi-k3": { slug: "moonshot", label: "Moonshot" },
   "opus-4.6": { slug: "anthropic", label: "Anthropic" },
   "opus-4.7": { slug: "anthropic", label: "Anthropic" },
   "opus-4.8": { slug: "anthropic", label: "Anthropic" },

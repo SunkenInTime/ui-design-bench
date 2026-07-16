@@ -23,6 +23,7 @@ const MODEL_HOME_ORDER: Record<ModelSlug, { familyOrder: number; tier: number }>
   "glm-5.2": { familyOrder: 6, tier: 52 },
   "kimi-k-2.5": { familyOrder: 7, tier: 25 },
   "kimi-k-2.6": { familyOrder: 7, tier: 26 },
+  "kimi-k3": { familyOrder: 7, tier: 30 },
 };
 
 export function sortGalleryEntriesForHome(entries: GalleryEntry[]) {
