@@ -28,6 +28,7 @@ const MODEL_GALLERY_GENERATION = {
   terra: { family: "gpt", tier: 4 },
   "kimi-k-2.5": { family: "kimi", tier: 1 },
   "kimi-k-2.6": { family: "kimi", tier: 2 },
+  "kimi-k3": { family: "kimi", tier: 3 },
   "opus-4.6": { family: "anthropic-opus", tier: 46 },
   "opus-4.7": { family: "anthropic-opus", tier: 47 },
   "opus-4.8": { family: "anthropic-opus", tier: 48 },

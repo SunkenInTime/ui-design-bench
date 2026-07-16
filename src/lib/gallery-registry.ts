@@ -11,6 +11,7 @@ import withGpt55Low from "@/variants/with-design-skill/gpt-5.5-low";
 import withGpt55High from "@/variants/with-design-skill/gpt-5.5-high";
 import withKimi from "@/variants/with-design-skill/kimi-k-2.5";
 import withKimi26 from "@/variants/with-design-skill/kimi-k-2.6";
+import withKimiK3 from "@/variants/with-design-skill/kimi-k3";
 import withOpus from "@/variants/with-design-skill/opus-4.6";
 import withOpus47 from "@/variants/with-design-skill/opus-4.7";
 import withOpus48 from "@/variants/with-design-skill/opus-4.8";
@@ -23,6 +24,7 @@ import withLuna from "@/variants/with-design-skill/luna";
 import withTerra from "@/variants/with-design-skill/terra";
 import withTasteFable from "@/variants/with-taste-skill/fable";
 import withTasteGrok45 from "@/variants/with-taste-skill/grok-4.5";
+import withTasteKimiK3 from "@/variants/with-taste-skill/kimi-k3";
 import withTasteGlm52 from "@/variants/with-taste-skill/glm-5.2";
 import withTasteSonnet5 from "@/variants/with-taste-skill/sonnet-5";
 import withTasteSol from "@/variants/with-taste-skill/sol";
@@ -45,6 +47,7 @@ import withoutGpt55Low from "@/variants/without-design-skill/gpt-5.5-low";
 import withoutGpt55High from "@/variants/without-design-skill/gpt-5.5-high";
 import withoutKimi from "@/variants/without-design-skill/kimi-k-2.5";
 import withoutKimi26 from "@/variants/without-design-skill/kimi-k-2.6";
+import withoutKimiK3 from "@/variants/without-design-skill/kimi-k3";
 import withoutOpus from "@/variants/without-design-skill/opus-4.6";
 import withoutOpus47 from "@/variants/without-design-skill/opus-4.7";
 import withoutOpus48 from "@/variants/without-design-skill/opus-4.8";
@@ -71,6 +74,7 @@ const registry: Partial<Record<RegistryKey, VariantModule>> = {
   "with-design-skill:gpt-5.5-high": withGpt55High,
   "with-design-skill:kimi-k-2.5": withKimi,
   "with-design-skill:kimi-k-2.6": withKimi26,
+  "with-design-skill:kimi-k3": withKimiK3,
   "with-design-skill:opus-4.6": withOpus,
   "with-design-skill:opus-4.7": withOpus47,
   "with-design-skill:opus-4.8": withOpus48,
@@ -83,6 +87,7 @@ const registry: Partial<Record<RegistryKey, VariantModule>> = {
   "with-design-skill:terra": withTerra,
   "with-taste-skill:fable": withTasteFable,
   "with-taste-skill:grok-4.5": withTasteGrok45,
+  "with-taste-skill:kimi-k3": withTasteKimiK3,
   "with-taste-skill:glm-5.2": withTasteGlm52,
   "with-taste-skill:sonnet-5": withTasteSonnet5,
   "with-taste-skill:sol": withTasteSol,
@@ -105,6 +110,7 @@ const registry: Partial<Record<RegistryKey, VariantModule>> = {
   "without-design-skill:gpt-5.5-high": withoutGpt55High,
   "without-design-skill:kimi-k-2.5": withoutKimi,
   "without-design-skill:kimi-k-2.6": withoutKimi26,
+  "without-design-skill:kimi-k3": withoutKimiK3,
   "without-design-skill:opus-4.6": withoutOpus,
   "without-design-skill:opus-4.7": withoutOpus47,
   "without-design-skill:opus-4.8": withoutOpus48,

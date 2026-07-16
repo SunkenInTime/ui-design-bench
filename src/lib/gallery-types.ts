@@ -22,6 +22,7 @@ export type ModelSlug =
   | "gpt-5.5-high"
   | "kimi-k-2.5"
   | "kimi-k-2.6"
+  | "kimi-k3"
   | "opus-4.6"
   | "opus-4.7"
   | "opus-4.8"
