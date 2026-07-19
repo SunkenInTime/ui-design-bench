@@ -2,16 +2,24 @@
 
 import clsx from "clsx";
 import { Moon, Sun } from "lucide-react";
+import posthog from "posthog-js";
 import { useGalleryTheme } from "@/components/gallery/gallery-theme-provider";
 
 export function GalleryThemeToggle({ className }: { className?: string }) {
   const { theme, toggleTheme } = useGalleryTheme();
   const isDark = theme === "dark";
 
+  const handleToggle = () => {
+    posthog.capture("theme_toggled", {
+      new_theme: isDark ? "light" : "dark",
+    });
+    toggleTheme();
+  };
+
   return (
     <button
       type="button"
-      onClick={toggleTheme}
+      onClick={handleToggle}
       aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
       title={isDark ? "Light mode" : "Dark mode"}
       className={clsx(
