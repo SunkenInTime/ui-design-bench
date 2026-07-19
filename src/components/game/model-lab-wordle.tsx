@@ -4,6 +4,7 @@ import clsx from "clsx";
 import { toBlob } from "html-to-image";
 import { Check, ChevronDown, Share2 } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
+import posthog from "posthog-js";
 import { ThemeAwareLogo } from "@/components/gallery/theme-aware-logo";
 import { galleryManifest } from "@/lib/gallery-manifest";
 import { buildPreviewHref, buildVariantHref } from "@/lib/gallery-paths";
@@ -286,7 +287,11 @@ export function ModelLabWordle() {
 
   useEffect(() => {
     const initTimer = setTimeout(() => {
-      setRounds(createRounds());
+      const newRounds = createRounds();
+      setRounds(newRounds);
+      posthog.capture("game_started", {
+        total_rounds: TOTAL_ROUNDS,
+      });
     }, 0);
 
     return () => {
@@ -351,7 +356,19 @@ export function ModelLabWordle() {
 
     setIsAdvancing(true);
     advanceTimerRef.current = setTimeout(() => {
-      setCurrentRound((prev) => prev + 1);
+      setCurrentRound((prev) => {
+        const next = prev + 1;
+        if (next >= rounds.length) {
+          const solvedCount = rounds.filter((r) => r.solved).length;
+          posthog.capture("game_completed", {
+            score: solvedCount,
+            total_rounds: rounds.length,
+            accuracy_pct: Math.round((solvedCount / rounds.length) * 100),
+            rank_title: getRankTitle(solvedCount, rounds.length).title,
+          });
+        }
+        return next;
+      });
       setDropdownOpen(false);
       setSelectedGuess(null);
       setIsAdvancing(false);
@@ -379,6 +396,14 @@ export function ModelLabWordle() {
     setRounds(updatedRounds);
     setSelectedGuess(null);
     setDropdownOpen(false);
+
+    posthog.capture("guess_submitted", {
+      round: currentRound + 1,
+      attempt_number: updatedRounds[currentRound].attempts.length,
+      is_correct: isCorrectGuess,
+      guessed_lab: guess,
+      correct_lab: activeRound.answer,
+    });
 
     if (isCorrectGuess) {
       if (correctTimerRef.current !== null) {
@@ -424,6 +449,8 @@ export function ModelLabWordle() {
   }
 
   function resetGame() {
+    posthog.capture("game_replayed");
+
     if (advanceTimerRef.current !== null) {
       clearTimeout(advanceTimerRef.current);
       advanceTimerRef.current = null;
@@ -526,6 +553,12 @@ export function ModelLabWordle() {
       // Clipboard access may be blocked; fall through to the visual confirmation anyway.
     }
 
+    posthog.capture("score_shared", {
+      score: correctCount,
+      total_rounds: TOTAL_ROUNDS,
+      accuracy_pct: accuracyPct,
+    });
+
     setShareCopied(true);
     if (shareTimerRef.current !== null) {
       clearTimeout(shareTimerRef.current);
@@ -550,6 +583,11 @@ export function ModelLabWordle() {
           "image/png": buildScoreImageBlob(),
         });
         await navigator.clipboard.write([item]);
+        posthog.capture("score_image_shared", {
+          method: "clipboard",
+          score: correctCount,
+          total_rounds: TOTAL_ROUNDS,
+        });
         setImageShareState("copied");
         scheduleImageShareStateReset();
         return;
@@ -568,6 +606,11 @@ export function ModelLabWordle() {
       link.click();
       link.remove();
       setTimeout(() => URL.revokeObjectURL(objectUrl), 0);
+      posthog.capture("score_image_shared", {
+        method: "download",
+        score: correctCount,
+        total_rounds: TOTAL_ROUNDS,
+      });
       setImageShareState("downloaded");
     } catch (error) {
       console.error("Score image generation failed", error);

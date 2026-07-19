@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import { VariantSwitcher } from "@/components/gallery/variant-header";
+import { GalleryIterationViewTracker } from "@/components/gallery/gallery-iteration-view-tracker";
 import { getGalleryEntry } from "@/lib/gallery-manifest";
 import { getVariantModule } from "@/lib/gallery-registry";
 import { isGalleryGroup, isIterationId } from "@/lib/gallery-paths";
@@ -27,6 +28,7 @@ export function GalleryIterationView({
 
   return (
     <main className="min-h-screen bg-[var(--gallery-body-bg)]">
+      {!preview ? <GalleryIterationViewTracker group={entry.group} model={entry.model} iteration={iteration} /> : null}
       {!preview ? <VariantSwitcher entry={entry} iteration={iteration} /> : null}
       <div
         className="gallery-generation"
