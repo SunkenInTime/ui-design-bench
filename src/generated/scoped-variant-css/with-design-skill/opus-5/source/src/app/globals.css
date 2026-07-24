@@ -1,0 +1,25 @@
+/*
+  Each direction owns its own palette, type and background in a CSS module.
+  Everything global here stays deliberately neutral so the five directions
+  never inherit a house style from this file.
+*/
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) {
+  background: #17171a;
+  -webkit-text-size-adjust: 100%;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) {
+  margin: 0;
+  min-height: 100dvh;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) :focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) ::selection {
+  background: #17171a;
+  color: #fff;
+}

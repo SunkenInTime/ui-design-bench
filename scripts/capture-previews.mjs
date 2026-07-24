@@ -65,6 +65,9 @@ const entries = [
   { group: "with-design-skill", model: "terra", iterations: ["1", "2", "3", "4", "5"] },
   { group: "with-taste-skill", model: "terra", iterations: ["1", "2", "3", "4", "5"] },
   { group: "without-design-skill", model: "terra", iterations: ["1", "2", "3", "4", "5"] },
+  { group: "with-design-skill", model: "opus-5", iterations: ["1", "2", "3", "4", "5"] },
+  { group: "with-taste-skill", model: "opus-5", iterations: ["1", "2", "3", "4", "5"] },
+  { group: "without-design-skill", model: "opus-5", iterations: ["1", "2", "3", "4", "5"] },
 ];
 
 const targetModel = process.env.TARGET_MODEL ?? null;

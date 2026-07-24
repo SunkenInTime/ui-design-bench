@@ -1,0 +1,4 @@
+@layer theme, utilities;
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities) source(none);
+@source "../../../../../variants/with-design-skill/gemini-3.5-flash";

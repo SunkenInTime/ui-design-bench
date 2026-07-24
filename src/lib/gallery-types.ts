@@ -26,6 +26,7 @@ export type ModelSlug =
   | "opus-4.6"
   | "opus-4.7"
   | "opus-4.8"
+  | "opus-5"
   | "sonnet-5"
   | "sol"
   | "luna"

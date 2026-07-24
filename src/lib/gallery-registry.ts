@@ -15,6 +15,7 @@ import withKimiK3 from "@/variants/with-design-skill/kimi-k3";
 import withOpus from "@/variants/with-design-skill/opus-4.6";
 import withOpus47 from "@/variants/with-design-skill/opus-4.7";
 import withOpus48 from "@/variants/with-design-skill/opus-4.8";
+import withOpus5 from "@/variants/with-design-skill/opus-5";
 import withGlm5Turbo from "@/variants/with-design-skill/glm-5-turbo";
 import withGlm51 from "@/variants/with-design-skill/glm-5.1";
 import withGlm52 from "@/variants/with-design-skill/glm-5.2";
@@ -30,6 +31,7 @@ import withTasteSonnet5 from "@/variants/with-taste-skill/sonnet-5";
 import withTasteSol from "@/variants/with-taste-skill/sol";
 import withTasteLuna from "@/variants/with-taste-skill/luna";
 import withTasteTerra from "@/variants/with-taste-skill/terra";
+import withTasteOpus5 from "@/variants/with-taste-skill/opus-5";
 import withUiShComposer20 from "@/variants/with-ui-sh-skill/composer-2.0";
 import withUiShGpt55Low from "@/variants/with-ui-sh-skill/gpt-5.5-low";
 import withUiShGpt55High from "@/variants/with-ui-sh-skill/gpt-5.5-high";
@@ -51,6 +53,7 @@ import withoutKimiK3 from "@/variants/without-design-skill/kimi-k3";
 import withoutOpus from "@/variants/without-design-skill/opus-4.6";
 import withoutOpus47 from "@/variants/without-design-skill/opus-4.7";
 import withoutOpus48 from "@/variants/without-design-skill/opus-4.8";
+import withoutOpus5 from "@/variants/without-design-skill/opus-5";
 import withoutGlm5Turbo from "@/variants/without-design-skill/glm-5-turbo";
 import withoutGlm51 from "@/variants/without-design-skill/glm-5.1";
 import withoutGlm52 from "@/variants/without-design-skill/glm-5.2";
@@ -78,6 +81,7 @@ const registry: Partial<Record<RegistryKey, VariantModule>> = {
   "with-design-skill:opus-4.6": withOpus,
   "with-design-skill:opus-4.7": withOpus47,
   "with-design-skill:opus-4.8": withOpus48,
+  "with-design-skill:opus-5": withOpus5,
   "with-design-skill:glm-5-turbo": withGlm5Turbo,
   "with-design-skill:glm-5.1": withGlm51,
   "with-design-skill:glm-5.2": withGlm52,
@@ -93,6 +97,7 @@ const registry: Partial<Record<RegistryKey, VariantModule>> = {
   "with-taste-skill:sol": withTasteSol,
   "with-taste-skill:luna": withTasteLuna,
   "with-taste-skill:terra": withTasteTerra,
+  "with-taste-skill:opus-5": withTasteOpus5,
   "with-ui-sh-skill:composer-2.0": withUiShComposer20,
   "with-ui-sh-skill:gpt-5.5-low": withUiShGpt55Low,
   "with-ui-sh-skill:gpt-5.5-high": withUiShGpt55High,
@@ -114,6 +119,7 @@ const registry: Partial<Record<RegistryKey, VariantModule>> = {
   "without-design-skill:opus-4.6": withoutOpus,
   "without-design-skill:opus-4.7": withoutOpus47,
   "without-design-skill:opus-4.8": withoutOpus48,
+  "without-design-skill:opus-5": withoutOpus5,
   "without-design-skill:glm-5-turbo": withoutGlm5Turbo,
   "without-design-skill:glm-5.1": withoutGlm51,
   "without-design-skill:glm-5.2": withoutGlm52,

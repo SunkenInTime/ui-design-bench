@@ -30,6 +30,7 @@ const MODEL_TO_LAB: Record<ModelSlug, ModelLab> = {
   "opus-4.6": { slug: "anthropic", label: "Anthropic" },
   "opus-4.7": { slug: "anthropic", label: "Anthropic" },
   "opus-4.8": { slug: "anthropic", label: "Anthropic" },
+  "opus-5": { slug: "anthropic", label: "Anthropic" },
   "sonnet-5": { slug: "anthropic", label: "Anthropic" },
 };
 

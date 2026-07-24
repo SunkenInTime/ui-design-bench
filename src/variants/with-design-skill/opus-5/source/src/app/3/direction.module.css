@@ -1,0 +1,666 @@
+/* Direction 03 — Memory Palace
+   A cyanotype drawing sheet: white line work on saturated blue, ochre for
+   anything a drafter would have annotated by hand. */
+
+.page {
+  --field: #08243f;
+  --field-2: #0c2f50;
+  --line: #a9c8de;
+  --line-soft: rgba(169, 200, 222, 0.34);
+  --paper: #eaf2f8;
+  --ochre: #e0a73c;
+  --pad: clamp(1rem, 3.5vw, 3rem);
+  --display: var(--d3-display), "Arial Narrow", sans-serif;
+  --body: var(--d3-body), system-ui, sans-serif;
+  --dim: var(--d3-dim), ui-monospace, monospace;
+
+  min-height: 100dvh;
+  padding: clamp(0.5rem, 1.5vw, 1.25rem);
+  background: var(--field);
+  color: var(--paper);
+  font-family: var(--body);
+  overflow-x: clip;
+}
+
+/* the drawing sheet itself, with its border and corner ticks */
+.sheet {
+  position: relative;
+  border: 1px solid var(--line-soft);
+  padding-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+.sheet::before,
+.sheet::after {
+  content: "";
+  position: absolute;
+  width: 0.75rem;
+  height: 0.75rem;
+  border: 1px solid var(--line);
+  pointer-events: none;
+}
+
+.sheet::before {
+  top: -1px;
+  left: -1px;
+  border-width: 1px 0 0 1px;
+}
+
+.sheet::after {
+  right: -1px;
+  bottom: -1px;
+  border-width: 0 1px 1px 0;
+}
+
+.page a:focus-visible,
+.page button:focus-visible,
+.page input:focus-visible,
+.page g:focus-visible {
+  outline: 2px solid var(--ochre);
+  outline-offset: 2px;
+}
+
+/* ---------- head ---------- */
+
+.head {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 0.875rem var(--pad);
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.wordmark {
+  font-family: var(--display);
+  font-variation-settings: "wdth" 118, "wght" 600;
+  font-size: 0.9375rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--paper);
+}
+
+.index {
+  display: flex;
+  gap: 1.5rem;
+  margin-left: auto;
+}
+
+.index a {
+  font-family: var(--dim);
+  font-size: 0.6875rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(234, 242, 248, 0.6);
+  text-decoration: none;
+  transition: color 140ms ease;
+}
+
+.index a:hover {
+  color: var(--ochre);
+}
+
+.headCta {
+  font-family: var(--dim);
+  font-size: 0.6875rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--field);
+  background: var(--paper);
+  text-decoration: none;
+  padding: 0.5rem 0.8125rem;
+  transition: background 140ms ease;
+}
+
+.headCta:hover {
+  background: var(--ochre);
+}
+
+/* ---------- hero ---------- */
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+  align-items: center;
+  padding: clamp(2rem, 5vw, 4rem) var(--pad);
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.heroText {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.25rem;
+}
+
+.sheetRef {
+  margin: 0;
+  font-family: var(--dim);
+  font-size: 0.6875rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ochre);
+}
+
+.h1 {
+  margin: 0;
+  font-family: var(--display);
+  font-variation-settings: "wdth" 112, "wght" 600;
+  font-size: clamp(2.25rem, 4.6vw, 4rem);
+  line-height: 0.96;
+  letter-spacing: 0.005em;
+  text-transform: uppercase;
+  color: var(--paper);
+}
+
+.lede {
+  margin: 0;
+  max-width: 44ch;
+  font-size: 1.0625rem;
+  font-weight: 300;
+  line-height: 1.7;
+  color: rgba(234, 242, 248, 0.82);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+.primary,
+.ghost {
+  font-family: var(--dim);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.875rem 1.25rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 150ms ease, color 150ms ease, border-color 150ms ease;
+}
+
+.primary {
+  background: var(--ochre);
+  color: #2a1c05;
+  border: 1px solid var(--ochre);
+}
+
+.primary:hover {
+  background: #eeba58;
+}
+
+.ghost {
+  background: transparent;
+  color: var(--paper);
+  border: 1px solid var(--line-soft);
+}
+
+.ghost:hover {
+  border-color: var(--line);
+  background: rgba(169, 200, 222, 0.1);
+}
+
+.notes {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4375rem;
+  margin: 0.5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.notes li {
+  font-family: var(--dim);
+  font-size: 0.6875rem;
+  letter-spacing: 0.04em;
+  color: rgba(234, 242, 248, 0.6);
+}
+
+.notes li::before {
+  content: "— ";
+  color: var(--ochre);
+}
+
+/* ---------- signature: the plan ---------- */
+
+.plan {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.planHead {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--line-soft);
+  font-family: var(--dim);
+  font-size: 0.625rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(234, 242, 248, 0.55);
+}
+
+.planScale {
+  color: var(--ochre);
+  white-space: nowrap;
+}
+
+.planScroll {
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+}
+
+.planSvg {
+  display: block;
+  width: 100%;
+  min-width: 30rem;
+  height: auto;
+}
+
+.hatch {
+  stroke: var(--ochre);
+  stroke-width: 1;
+  opacity: 0.55;
+}
+
+.circulation {
+  fill: none;
+  stroke: var(--ochre);
+  stroke-width: 1.25;
+  stroke-dasharray: 5 4;
+}
+
+.room {
+  cursor: pointer;
+}
+
+.roomFill {
+  stroke: var(--line);
+  stroke-width: 1.5;
+  transition: stroke 160ms ease;
+}
+
+.roomOn .roomFill {
+  stroke: var(--ochre);
+  stroke-width: 2;
+}
+
+.roomName {
+  font-family: var(--display);
+  font-variation-settings: "wdth" 108, "wght" 600;
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  fill: var(--paper);
+}
+
+.roomOn .roomName {
+  fill: var(--ochre);
+}
+
+.roomCount {
+  font-family: var(--dim);
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  fill: rgba(234, 242, 248, 0.6);
+}
+
+.dim path {
+  fill: none;
+  stroke: var(--line);
+  stroke-width: 1;
+}
+
+.dim text {
+  font-family: var(--dim);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  fill: rgba(234, 242, 248, 0.72);
+}
+
+.callout {
+  display: grid;
+  grid-template-columns: 10rem minmax(0, 1fr) 10rem;
+  gap: 0.75rem 1.5rem;
+  margin: 0;
+  padding-top: 0.875rem;
+  border-top: 1px solid var(--line-soft);
+}
+
+.callout dt {
+  font-family: var(--dim);
+  font-size: 0.5625rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(234, 242, 248, 0.5);
+  margin-bottom: 0.3125rem;
+}
+
+.callout dd {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: rgba(234, 242, 248, 0.85);
+}
+
+.calloutName {
+  font-family: var(--display);
+  font-variation-settings: "wdth" 110, "wght" 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ochre);
+}
+
+/* ---------- sheets ---------- */
+
+.sheetSection {
+  display: grid;
+  grid-template-columns: 7rem minmax(0, 1.15fr) minmax(0, 1fr);
+  gap: clamp(1.25rem, 3vw, 2.5rem);
+  align-items: start;
+  padding: clamp(2rem, 4.5vw, 3.5rem) var(--pad);
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.sheetLabel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  padding-top: 0.25rem;
+}
+
+.sheetLabel .sheetRef {
+  font-size: 1.25rem;
+  letter-spacing: 0.08em;
+}
+
+.sheetName {
+  font-family: var(--dim);
+  font-size: 0.625rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(234, 242, 248, 0.55);
+}
+
+.sheetBody {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 58ch;
+}
+
+.h2 {
+  margin: 0;
+  font-family: var(--display);
+  font-variation-settings: "wdth" 112, "wght" 600;
+  font-size: clamp(1.5rem, 2.6vw, 2.25rem);
+  line-height: 1.02;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  color: var(--paper);
+}
+
+.h2Big {
+  margin: 0;
+  font-family: var(--display);
+  font-variation-settings: "wdth" 118, "wght" 600;
+  font-size: clamp(2.25rem, 5vw, 4rem);
+  line-height: 0.94;
+  text-transform: uppercase;
+  color: var(--paper);
+}
+
+.copy {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.72;
+  color: rgba(234, 242, 248, 0.78);
+}
+
+.code {
+  font-family: var(--dim);
+  font-size: 0.875rem;
+  color: var(--ochre);
+}
+
+.mini {
+  width: 100%;
+  max-width: 34rem;
+  height: auto;
+}
+
+.miniRoom {
+  fill: none;
+  stroke: var(--line);
+  stroke-width: 1.5;
+}
+
+.miniName {
+  font-family: var(--display);
+  font-variation-settings: "wdth" 108, "wght" 600;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  fill: var(--paper);
+}
+
+.miniLabel {
+  font-family: var(--dim);
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  fill: var(--ochre);
+}
+
+.dimLine {
+  fill: none;
+  stroke: var(--ochre);
+  stroke-width: 1;
+}
+
+.strataSolid {
+  fill: rgba(169, 200, 222, 0.12);
+  stroke: var(--line);
+  stroke-width: 1.25;
+}
+
+.strataHatched {
+  fill: url(#strata-hatch);
+  stroke: var(--line);
+  stroke-width: 1.25;
+}
+
+/* ---------- schedule table ---------- */
+
+.tableWrap {
+  grid-column: 2 / -1;
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.table th {
+  text-align: left;
+  padding: 0.625rem 0.75rem;
+  border-bottom: 1px solid var(--line);
+  font-family: var(--dim);
+  font-size: 0.5625rem;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(234, 242, 248, 0.55);
+  white-space: nowrap;
+}
+
+.table td {
+  padding: 0.75rem;
+  border-bottom: 1px solid var(--line-soft);
+  font-weight: 300;
+  line-height: 1.5;
+  color: rgba(234, 242, 248, 0.8);
+  vertical-align: top;
+}
+
+.cellRef {
+  font-family: var(--dim);
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  color: var(--ochre);
+  white-space: nowrap;
+}
+
+.cellItem {
+  font-family: var(--display);
+  font-variation-settings: "wdth" 108, "wght" 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.cellQty {
+  font-family: var(--dim);
+  font-size: 0.8125rem;
+  white-space: nowrap;
+}
+
+/* ---------- move in ---------- */
+
+.move {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.125rem;
+  padding: clamp(2.5rem, 5vw, 4rem) var(--pad);
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.375rem;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+
+.input {
+  min-width: 16rem;
+  padding: 0.875rem 1rem;
+  font-family: var(--dim);
+  font-size: 0.8125rem;
+  color: var(--paper);
+  background: rgba(169, 200, 222, 0.08);
+  border: 1px solid var(--line-soft);
+}
+
+.input::placeholder {
+  color: rgba(234, 242, 248, 0.4);
+}
+
+/* ---------- title block ---------- */
+
+.titleBlock {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  margin: clamp(1.5rem, 3vw, 2.5rem) var(--pad) 0;
+  border: 1px solid var(--line);
+}
+
+.tbCell {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3125rem;
+  padding: 0.75rem 0.875rem;
+  border-right: 1px solid var(--line-soft);
+}
+
+.tbCell:last-child {
+  border-right: 0;
+}
+
+.tbCell span {
+  font-family: var(--dim);
+  font-size: 0.5rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(234, 242, 248, 0.45);
+}
+
+.tbCell strong {
+  font-family: var(--display);
+  font-variation-settings: "wdth" 108, "wght" 500;
+  font-size: 0.8125rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--paper);
+}
+
+.tbSheet {
+  background: rgba(224, 167, 60, 0.14);
+}
+
+.tbSheet strong {
+  color: var(--ochre);
+}
+
+/* ---------- responsive ---------- */
+
+@media (max-width: 70rem) {
+  .hero {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .sheetSection {
+    grid-template-columns: 5rem minmax(0, 1fr);
+  }
+
+  .mini,
+  .tableWrap {
+    grid-column: 2;
+  }
+
+  .mini {
+    max-width: 26rem;
+  }
+}
+
+@media (max-width: 52rem) {
+  .index {
+    display: none;
+  }
+
+  .callout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .titleBlock {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .tbCell {
+    border-bottom: 1px solid var(--line-soft);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .roomFill,
+  .primary,
+  .ghost,
+  .index a,
+  .headCta {
+    transition: none;
+  }
+}

@@ -11,6 +11,13 @@ const HOME_GALLERY_GROUPS = [
 
 const LATEST_ROUTE_SMOKE_COUNT = 5;
 
+const forceArchivedModels = [
+  { model: "composer-2.5", label: "Composer 2.5" },
+  { model: "luna", label: "GPT-5.6 Luna" },
+  { model: "terra", label: "GPT-5.6 Terra" },
+  { model: "opus-4.8", label: "Opus 4.8" },
+] as const;
+
 const latestRouteSmokeCases = galleryManifest
   .slice(-LATEST_ROUTE_SMOKE_COUNT)
   .map((entry) => ({
@@ -39,6 +46,9 @@ const sampleRouteSmokeCases = [
   { group: "with-design-skill", model: "terra", iteration: "1" },
   { group: "with-taste-skill", model: "terra", iteration: "3" },
   { group: "without-design-skill", model: "terra", iteration: "5" },
+  { group: "with-design-skill", model: "opus-5", iteration: "1" },
+  { group: "with-taste-skill", model: "opus-5", iteration: "3" },
+  { group: "without-design-skill", model: "opus-5", iteration: "5" },
 ] as const;
 
 const routeSmokeCases = [
@@ -69,9 +79,12 @@ test("home page hides superseded-generation cards until Show Archived", async ({
     galleryManifest.filter((e) => HOME_GALLERY_GROUPS.includes(e.group) && e.model === "sonnet-5").length,
   );
   await expect(page.getByTestId("gallery-card").filter({ hasText: "GPT 5.5 low" })).toHaveCount(0);
-  await expect(page.getByTestId("gallery-card").filter({ hasText: "Opus 4.8" })).toHaveCount(
-    galleryManifest.filter((e) => HOME_GALLERY_GROUPS.includes(e.group) && e.model === "opus-4.8").length,
+  await expect(page.getByTestId("gallery-card").filter({ hasText: "Opus 5" })).toHaveCount(
+    galleryManifest.filter((e) => HOME_GALLERY_GROUPS.includes(e.group) && e.model === "opus-5").length,
   );
+  for (const { label } of forceArchivedModels) {
+    await expect(page.getByTestId("gallery-card").filter({ hasText: label })).toHaveCount(0);
+  }
   await expect(page.getByTestId("gallery-card").filter({ hasText: "Opus 4.7" })).toHaveCount(0);
 
   while ((await page.getByRole("button", { name: "Show Archived" }).count()) > 0) {
@@ -82,6 +95,11 @@ test("home page hides superseded-generation cards until Show Archived", async ({
   await expect(page.getByTestId("gallery-card").filter({ hasText: "GPT 5.5 low" })).toHaveCount(
     galleryManifest.filter((e) => HOME_GALLERY_GROUPS.includes(e.group) && e.model === "gpt-5.5-low").length,
   );
+  for (const { model, label } of forceArchivedModels) {
+    await expect(page.getByTestId("gallery-card").filter({ hasText: label })).toHaveCount(
+      galleryManifest.filter((entry) => HOME_GALLERY_GROUPS.includes(entry.group) && entry.model === model).length,
+    );
+  }
   await expect(page.locator('a[title="Compare"]')).toHaveCount(await page.getByTestId("gallery-card").count());
 });
 
