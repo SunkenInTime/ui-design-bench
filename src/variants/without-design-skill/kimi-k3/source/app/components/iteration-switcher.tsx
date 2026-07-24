@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 const ITERATIONS = ["1", "2", "3", "4", "5"] as const;
 
 export default function IterationSwitcher() {
-  const pathname = usePathname();
+  const pathname = usePathname() ?? "";
   const currentIndex = ITERATIONS.findIndex(
     (it) => pathname === `/${it}` || pathname.startsWith(`/${it}/`)
   );
