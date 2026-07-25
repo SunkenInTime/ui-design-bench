@@ -1,0 +1,415 @@
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .wrap {
+  --concourse: #d5dad6;
+  --enamel: #10312b;
+  --ticket: #f0f1ec;
+  --line-backlink: #e8452c;
+  --line-tag: #f2a900;
+  --line-daily: #0f7bc4;
+
+  display: grid;
+  gap: 1rem;
+}
+
+/* ---------------------------------------------------------------- */
+/* scroll container: the diagram never squeezes below a legible size */
+/* ---------------------------------------------------------------- */
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .scrollHint {
+  display: none;
+  margin: 0;
+  font-family: var(--font-martian), ui-monospace, monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgb(16 49 43 / 0.62);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .scroller {
+  overflow-x: auto;
+  overflow-y: hidden;
+  border-radius: 20px;
+  background: var(--ticket);
+  box-shadow:
+    inset 0 0 0 1px rgb(16 49 43 / 0.14),
+    0 18px 34px -26px rgb(16 49 43 / 0.7);
+  scrollbar-color: rgb(16 49 43 / 0.4) transparent;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .inner {
+  min-width: 880px;
+  padding: 0.5rem 0.5rem 0.25rem;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+/* ---------------------------------------------------------------- */
+/* routes                                                            */
+/* ---------------------------------------------------------------- */
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .route {
+  stroke-width: 9;
+  transition: stroke-width 160ms ease-out;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .routeOn {
+  stroke-width: 13;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .routeA {
+  stroke: var(--line-backlink);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .routeB {
+  stroke: var(--line-tag);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .routeC {
+  stroke: var(--line-daily);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .routeResurface {
+  stroke: var(--enamel);
+  stroke-width: 5;
+  stroke-dasharray: 3 15;
+  opacity: 0.85;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .routeResurface.routeOn {
+  stroke-width: 7;
+  opacity: 1;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .resurfaceCaption {
+  text-anchor: middle;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .resurfaceCaptionKey {
+  font-family: var(--font-martian), ui-monospace, monospace;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  fill: var(--enamel);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .resurfaceCaptionBody {
+  font-family: var(--font-instrument), system-ui, sans-serif;
+  font-size: 12.5px;
+  fill: rgb(16 49 43 / 0.8);
+}
+
+/* ---------------------------------------------------------------- */
+/* line roundels                                                     */
+/* ---------------------------------------------------------------- */
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .roundelA {
+  fill: var(--line-backlink);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .roundelB {
+  fill: var(--line-tag);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .roundelC {
+  fill: var(--line-daily);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .roundels text {
+  font-family: var(--font-familjen), system-ui, sans-serif;
+  font-size: 19px;
+  font-weight: 700;
+  text-anchor: middle;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .roundelTextLight {
+  fill: var(--ticket);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .roundelTextWhite {
+  fill: #ffffff;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .roundelTextDark {
+  fill: var(--enamel);
+}
+
+/* ---------------------------------------------------------------- */
+/* the travelling service on Line C                                  */
+/* ---------------------------------------------------------------- */
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .serviceDot {
+  transform-box: view-box;
+  transform-origin: 0 0;
+  animation: gallery-with-design-skill-opus-5-source-src-app-5-route-map-module-runLineC 15s linear infinite alternate;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .serviceDotHalo {
+  fill: var(--ticket);
+  stroke: var(--line-daily);
+  stroke-width: 2.5;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .serviceDotCore {
+  fill: var(--line-daily);
+}
+
+@keyframes gallery-with-design-skill-opus-5-source-src-app-5-route-map-module-runLineC {
+  0%,
+  4% {
+    transform: translateX(0px);
+  }
+  21%,
+  26% {
+    transform: translateX(180px);
+  }
+  47%,
+  52% {
+    transform: translateX(400px);
+  }
+  67%,
+  72% {
+    transform: translateX(560px);
+  }
+  95%,
+  100% {
+    transform: translateX(760px);
+  }
+}
+
+/* ---------------------------------------------------------------- */
+/* stations                                                          */
+/* ---------------------------------------------------------------- */
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .station {
+  cursor: pointer;
+}
+
+/* Keyboard focus gets both a browser outline around the station and its
+   label, and the drawn halo below. Motion is never the only signal. */
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .station:focus-visible {
+  outline: 3px solid var(--enamel);
+  outline-offset: 2px;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .hit {
+  fill: transparent;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .tick {
+  stroke: var(--enamel);
+  stroke-width: 5.5;
+  stroke-linecap: round;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .interchange {
+  fill: var(--ticket);
+  stroke: var(--enamel);
+  stroke-width: 5.5;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .terminusRing {
+  fill: var(--ticket);
+  stroke: var(--enamel);
+  stroke-width: 4;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .terminusCore {
+  fill: var(--enamel);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .haloOuter {
+  fill: none;
+  stroke: var(--ticket);
+  stroke-width: 8;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .haloInner {
+  fill: none;
+  stroke: var(--enamel);
+  stroke-width: 2.5;
+  stroke-dasharray: 5 5;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .stationLabel {
+  font-family: var(--font-familjen), system-ui, sans-serif;
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  fill: var(--enamel);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .stationLabelOn {
+  font-weight: 700;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .overline {
+  font-family: var(--font-martian), ui-monospace, monospace;
+  font-size: 8.5px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  fill: rgb(16 49 43 / 0.62);
+}
+
+/* ---------------------------------------------------------------- */
+/* callout sign panel                                                */
+/* ---------------------------------------------------------------- */
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .calloutPanel {
+  fill: var(--enamel);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .calloutKeyline {
+  fill: none;
+  stroke: rgb(240 241 236 / 0.34);
+  stroke-width: 1.25;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .calloutLines {
+  font-family: var(--font-martian), ui-monospace, monospace;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  fill: var(--line-tag);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .calloutTitle {
+  font-family: var(--font-familjen), system-ui, sans-serif;
+  font-size: 15.5px;
+  font-weight: 700;
+  fill: var(--ticket);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .calloutNote {
+  font-family: var(--font-instrument), system-ui, sans-serif;
+  font-size: 11.5px;
+  fill: rgb(240 241 236 / 0.86);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .calloutService {
+  font-family: var(--font-martian), ui-monospace, monospace;
+  font-size: 8.5px;
+  letter-spacing: 0.12em;
+  fill: rgb(240 241 236 / 0.66);
+}
+
+/* ---------------------------------------------------------------- */
+/* platform indicator (also the live region)                         */
+/* ---------------------------------------------------------------- */
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .indicator {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem 0.9rem;
+  padding: 0.9rem 1.15rem;
+  border-radius: 16px;
+  background: var(--enamel);
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.12);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .indicatorKey {
+  flex: none;
+  font-family: var(--font-martian), ui-monospace, monospace;
+  font-size: 0.56rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--line-tag);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .indicatorText {
+  flex: 1 1 16rem;
+  margin: 0;
+  font-family: var(--font-instrument), system-ui, sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.45;
+  color: rgb(240 241 236 / 0.88);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .indicatorTitle {
+  font-family: var(--font-familjen), system-ui, sans-serif;
+  font-weight: 700;
+  color: var(--ticket);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .indicatorSep {
+  padding: 0 0.45rem;
+  color: rgb(240 241 236 / 0.45);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .indicatorService {
+  font-family: var(--font-martian), ui-monospace, monospace;
+  font-size: 0.66rem;
+  letter-spacing: 0.06em;
+  color: rgb(240 241 236 / 0.7);
+}
+
+/* ---------------------------------------------------------------- */
+/* compact key beneath the map                                       */
+/* ---------------------------------------------------------------- */
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .meanings {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.4rem;
+  margin: 0;
+  font-family: var(--font-instrument), system-ui, sans-serif;
+  font-size: 0.82rem;
+  color: rgb(16 49 43 / 0.86);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .meaning {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .meaningSwatch {
+  width: 1.6rem;
+  height: 0.4rem;
+  border-radius: 999px;
+  flex: none;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .swatchA {
+  background: var(--line-backlink);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .swatchB {
+  background: var(--line-tag);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .swatchC {
+  background: var(--line-daily);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .swatchR {
+  background: repeating-linear-gradient(
+    90deg,
+    var(--enamel) 0 3px,
+    transparent 3px 8px
+  );
+  border-radius: 0;
+}
+
+/* ---------------------------------------------------------------- */
+
+@media (max-width: 940px) {
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .scrollHint {
+    display: block;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .serviceDot {
+    animation: none;
+  }
+
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .route {
+    transition: none;
+  }
+}

@@ -1,299 +1,441 @@
-import type { Metadata } from "next";
-import { fraunces, karla, splineMono } from "../fonts";
-import { RootSegment } from "./RootSegment";
-import styles from "./direction.module.css";
+import { FloorPlan } from "./plan";
+import styles from "./page.module.css";
 
-export const metadata: Metadata = {
-  title: "Tessera — notes don't file, they root",
-  description:
-    "A second brain that grows underground: capture anything, let the links spread, and dig up what you wrote two years ago at the moment it matters.",
-};
-
-const captureCard = (
-  <div className={styles.card}>
-    <p className={styles.cardLabel}>Quick capture · ⌥Space</p>
-    <p className={styles.captureBar}>
-      <span className={styles.caret} aria-hidden />
-      sourdough is a network, not a recipe — cf. Ostrom on commons
-    </p>
-    <p className={styles.cardMeta}>Saved 07:12 · untitled · no folder chosen</p>
-  </div>
-);
-
-const linkCard = (
-  <div className={styles.card}>
-    <p className={styles.cardLabel}>Note · 2 links out</p>
-    <p className={styles.noteText}>
-      Fermentation is a <span className={styles.link}>[[shared metabolism]]</span>
-      : the starter and the baker keep each other alive, which is roughly how a{" "}
-      <span className={styles.link}>[[commons]]</span> stays intact.
-    </p>
-    <ul className={styles.backlinks}>
-      <li>← Ostrom, governing the commons</li>
-      <li>← Starter log, 14 Mar</li>
-      <li className={styles.suggested}>← Suggested: mutualism, definitions</li>
-    </ul>
-  </div>
-);
-
-const resurfaceCard = (
-  <div className={styles.card}>
-    <p className={styles.cardLabel}>This morning · 3 notes</p>
-    <ul className={styles.chips}>
-      <li>
-        <span>Mutualism, definitions</span>
-        <span className={styles.age}>14 months</span>
-      </li>
-      <li>
-        <span>Ostrom on monitoring costs</span>
-        <span className={styles.age}>2 years</span>
-      </li>
-      <li>
-        <span>Why my first starter died</span>
-        <span className={styles.age}>8 months</span>
-      </li>
-    </ul>
-    <p className={styles.cardMeta}>Chosen by overlap with today&rsquo;s draft</p>
-  </div>
-);
-
-const outlineCard = (
-  <div className={styles.card}>
-    <p className={styles.cardLabel}>Cluster · 21 notes · dense</p>
-    <ol className={styles.outline}>
-      <li>The starter is not an ingredient</li>
-      <li>Shared metabolism, two directions</li>
-      <li>What the commons literature gets right</li>
-      <li>Failure modes: neglect, then hoarding</li>
-    </ol>
-    <p className={styles.cardMeta}>Order taken from the links between them</p>
-  </div>
-);
-
-const horizons = [
+const RESURFACED = [
   {
-    letter: "O",
-    depth: "litter layer · 0–2 cm",
-    title: "everything lands here first",
-    body: "Press ⌥Space and dump it in: a link, a quotation, half a sentence you don't want to lose. No title, no folder, no decision about where it belongs. Tessera stamps the time and gets out of the way.",
-    detail: "Works offline · no title required · 1.9s from thought to saved",
-    hairs: "right" as const,
-    card: captureCard,
+    title: "Bridge deck expansion joints",
+    age: "not opened in 16 months",
+    why: "thermal expansion — the same arithmetic",
   },
   {
-    letter: "A",
-    depth: "hyphae · 2–30 cm",
-    title: "the links are the organism",
-    body: "Type two brackets to point one note at another. When two notes start using the same phrases, Tessera offers the link and you accept or ignore it. Every note carries a list of what has grown into it.",
-    detail: "Suggested links · backlinks on every note · no tag taxonomy to maintain",
-    hairs: "left" as const,
-    card: linkCard,
+    title: "Sourdough: hydration log",
+    age: "not opened in 2 years",
+    why: "you already designed this logging table",
   },
   {
-    letter: "B",
-    depth: "decomposition · 30 cm and down",
-    title: "old notes break down into new ones",
-    body: "Each morning Tessera puts three notes you haven't opened in months next to whatever you're writing today. Most of them you close. One of them changes the paragraph you were stuck on.",
-    detail: "Three notes a day · surfaced by overlap, not recency",
-    hairs: "right" as const,
-    card: resurfaceCard,
-  },
-  {
-    letter: "S",
-    depth: "fruiting body · above ground",
-    title: "when a cluster is ready, it shows",
-    body: "Dense knots of linked notes are the part of your thinking that finished without telling you. Tessera spots them and hands you the cluster as an outline, in the order the links already imply.",
-    detail: "Cluster → outline → draft, with every note still linked back",
-    hairs: "left" as const,
-    card: outlineCard,
+    title: "Estuary sediment cores",
+    age: "not opened in 14 months",
+    why: "names two of your clay sources",
   },
 ];
 
-const specimens = [
+const RESULTS = [
   {
-    label: "Specimen 01 · dissertation",
-    title: "Soil carbon, 240 pages",
-    data: "1,842 notes · 3 years · 6,300 links",
+    title: "Why the 1854 cholera map worked",
+    kind: "MARKDOWN",
+    detail: "6 matches",
+    scanned: false,
   },
   {
-    label: "Specimen 02 · newsletter",
-    title: "Ninety-six Sundays running",
-    data: "640 notes · 2 years · 1,100 links",
+    title: "Reading — Seeing Like a State",
+    kind: "MARKDOWN",
+    detail: "2 matches",
+    scanned: false,
   },
   {
-    label: "Specimen 03 · one long argument",
-    title: "Why sourdough is a network",
-    data: "210 notes · 8 months · 480 links",
+    title: "Interview — R. Okonjo, 12 Mar",
+    kind: "SCANNED PDF",
+    detail: "1 match, page 4",
+    scanned: true,
   },
 ];
 
-export default function MyceliumDirection() {
+const NOTES = [
+  "Dimensions in metres. Do not scale from this drawing.",
+  "Notes are markdown files in a folder you pick. Cairn does not hold them, and it does not need a network to open them.",
+  "Sync is optional. Without it the vault stays on one machine and costs nothing.",
+  "Version history is kept per note, not per vault.",
+];
+
+const REVISIONS = [
+  { rev: "3", desc: "Resurface added", date: "2026-07" },
+  { rev: "2", desc: "Reading room extended to scanned PDFs", date: "2026-03" },
+  { rev: "1", desc: "Annex — vault opened on phone", date: "2025-11" },
+];
+
+const TITLE_BLOCK = [
+  { k: "Project", v: "Cairn — personal vault" },
+  { k: "Drawing", v: "Memory palace / Level 01" },
+  { k: "Drawing no.", v: "CRN-002" },
+  { k: "Scale", v: "1:50" },
+  { k: "Revision", v: "3" },
+  { k: "Date", v: "2026-07-25" },
+  { k: "Sheet", v: "2 of 5" },
+  { k: "Units", v: "Metres" },
+];
+
+export default function MemoryPalacePage() {
   return (
-    <div
-      className={`${styles.page} ${fraunces.variable} ${karla.variable} ${splineMono.variable}`}
-    >
-      <header className={styles.nav}>
-        <span className={styles.wordmark}>tessera</span>
-        <nav className={styles.navLinks} aria-label="Sections">
-          <a href="#horizons">How it grows</a>
-          <a href="#roots">Your files</a>
-          <a href="#specimens">Specimens</a>
-        </nav>
-        <a className={styles.navCta} href="#start">
-          Start free
-        </a>
-      </header>
+    <div className={styles.page}>
+      <div className={styles.sheet}>
+        {/* ------------------------------ header ------------------------------ */}
+        <header className={styles.masthead}>
+          <span className={styles.wordmark}>Cairn</span>
+          <span className={styles.mastRule} aria-hidden="true" />
+          <span className={styles.mastMeta}>CRN-002 · SHEET 2 OF 5 · REV 3</span>
+        </header>
 
-      <main>
-        <section className={`${styles.grid} ${styles.hero}`}>
-          <div className={styles.gutter}>
-            <svg
-              className={styles.heroStub}
-              viewBox="0 0 40 200"
-              preserveAspectRatio="none"
-              aria-hidden
-            >
+        {/* ------------------------------- hero ------------------------------- */}
+        <section className={styles.hero}>
+          <div className={styles.heroBody}>
+            <p className={styles.eyebrow}>Notes app · plain files · offline</p>
+            <h1 className={styles.h1}>Notes you can walk back into.</h1>
+            <p className={styles.deck}>
+              Cairn keeps your notes as markdown files in a folder on your own
+              disk. Type <code className={styles.code}>[[</code> to cut a door
+              between two of them and the way back is drawn on the other note
+              for you. Ten years in, you can still find the room you left
+              something in — and if you stop using Cairn, you keep every file.
+            </p>
+            <div className={styles.ctaRow}>
+              <a className={styles.ctaPrimary} href="#pricing">
+                Download Cairn — free for one vault
+              </a>
+              <a className={styles.ctaGhost} href="#plan">
+                Walk the plan
+              </a>
+            </div>
+            <dl className={styles.keyFacts}>
+              <div>
+                <dt>Format</dt>
+                <dd>Markdown, on your disk</dd>
+              </div>
+              <div>
+                <dt>Network</dt>
+                <dd>Not required</dd>
+              </div>
+              <div>
+                <dt>Vault</dt>
+                <dd>Free · sync $8/mo</dd>
+              </div>
+            </dl>
+          </div>
+
+          <aside className={styles.legend} aria-label="Drawing legend">
+            <h2 className={styles.legendTitle}>Legend</h2>
+            <ul className={styles.legendList}>
+              <li>
+                <span className={styles.swatchWall} aria-hidden="true" />
+                <span>Wall — a note</span>
+              </li>
+              <li>
+                <span className={styles.swatchDoor} aria-hidden="true" />
+                <span>Opening — a link</span>
+              </li>
+              <li>
+                <span className={styles.swatchDim} aria-hidden="true" />
+                <span>Dimension</span>
+              </li>
+              <li>
+                <span className={styles.swatchRed} aria-hidden="true" />
+                <span>Redline — revision note</span>
+              </li>
+            </ul>
+            <p className={styles.legendNote}>
+              Drawn from a vault of 4,120 notes kept since 2016.
+            </p>
+          </aside>
+        </section>
+
+        {/* ---------------------------- floor plan ---------------------------- */}
+        <section className={styles.planSection} id="plan">
+          <FloorPlan />
+        </section>
+
+        {/* --------------------------- section A–A ---------------------------- */}
+        <section className={styles.detail}>
+          <div className={styles.detailHead}>
+            <span className={styles.detailRef}>Section A–A</span>
+            <h2 className={styles.detailTitle}>The opening between two notes</h2>
+            <p className={styles.detailLede}>
+              Type <code className={styles.code}>[[</code> and start naming a
+              note. Cairn cuts the opening. It also cuts it from the other side,
+              which is the half people forget to do by hand.
+            </p>
+          </div>
+
+          <div className={styles.detailDrawing}>
+            <svg viewBox="0 0 760 384" className={styles.sectionSvg} role="img"
+              aria-label="Section through two notes. A doorway cut in the wall between them carries a link one way and a backlink the other.">
+              <defs>
+                <pattern
+                  id="crn2-cut"
+                  width="8"
+                  height="8"
+                  patternUnits="userSpaceOnUse"
+                  patternTransform="rotate(45)"
+                >
+                  <line x1="0" y1="0" x2="0" y2="8" className={styles.cutHatch} />
+                </pattern>
+                <marker
+                  id="crn2-arrow"
+                  viewBox="0 0 10 10"
+                  refX="9"
+                  refY="5"
+                  markerWidth="6"
+                  markerHeight="6"
+                  orient="auto-start-reverse"
+                >
+                  <path d="M 0 0 L 10 5 L 0 10 z" className={styles.markerRed} />
+                </marker>
+              </defs>
+
+              {/* cut structure — slabs, outer walls, and the party wall
+                  between the two notes, which stops short to leave a doorway */}
+              <g className={styles.cut}>
+                <rect x="24" y="40" width="712" height="12" />
+                <rect x="24" y="318" width="712" height="12" />
+                <rect x="24" y="52" width="12" height="266" />
+                <rect x="724" y="52" width="12" height="266" />
+                <rect x="370" y="52" width="12" height="62" />
+              </g>
+
+              {/* chamber 1 */}
+              <text x="56" y="86" className={styles.chamberTitle}>
+                Estuary sediment cores
+              </text>
+              <g className={styles.textRule}>
+                <line x1="56" y1="106" x2="330" y2="106" />
+                <line x1="56" y1="120" x2="298" y2="120" />
+                <line x1="56" y1="134" x2="342" y2="134" />
+              </g>
+
+              {/* chamber 2 */}
+              <text x="402" y="86" className={styles.chamberTitle}>
+                Why the 1854 cholera map worked
+              </text>
+              <g className={styles.textRule}>
+                <line x1="402" y1="106" x2="700" y2="106" />
+                <line x1="402" y1="120" x2="668" y2="120" />
+                <line x1="402" y1="134" x2="706" y2="134" />
+              </g>
+
+              {/* the link being typed */}
+              <g>
+                <rect
+                  x="54"
+                  y="156"
+                  width="236"
+                  height="32"
+                  className={styles.typeBox}
+                />
+                <text x="66" y="178" className={styles.typed}>
+                  [[Why the 1854 cholera
+                </text>
+                <line x1="280" y1="163" x2="280" y2="182" className={styles.caret} />
+              </g>
+
+              {/* both arcs pass through the opening, inside the building */}
+              <text x="376" y="182" textAnchor="middle" className={styles.arcLabel}>
+                link you typed
+              </text>
               <path
-                className={styles.trunk}
-                pathLength={1}
-                d="M20 0 C 26 50, 14 110, 20 200"
+                d="M 318 216 C 344 188 408 188 434 216"
+                className={styles.linkArc}
+                markerEnd="url(#crn2-arrow)"
               />
               <path
-                className={styles.hair}
-                pathLength={1}
-                d="M20 90 C 27 100, 30 116, 31 136"
+                d="M 434 262 C 408 290 344 290 318 262"
+                className={styles.linkArc}
+                markerEnd="url(#crn2-arrow)"
               />
+              <text x="376" y="310" textAnchor="middle" className={styles.arcLabel}>
+                backlink, written for you
+              </text>
+
+              {/* opening dimension, set below the slab where it belongs */}
+              <g className={styles.openingDimLine}>
+                <line x1="370" y1="330" x2="370" y2="356" />
+                <line x1="382" y1="330" x2="382" y2="356" />
+                <line x1="330" y1="350" x2="422" y2="350" />
+              </g>
+              <text x="376" y="372" textAnchor="middle" className={styles.openingDim}>
+                OPENING 0.90 × 2.10
+              </text>
             </svg>
           </div>
+        </section>
 
-          <div className={styles.heroBody}>
-            <p className={styles.eyebrow}>Tessera — a second brain</p>
-            <h1 className={styles.h1}>
-              notes don&rsquo;t file.
-              <br />
-              <em>they root.</em>
-            </h1>
-            <div className={styles.heroRow}>
-              <p className={styles.lede}>
-                Keep every scrap you capture and let the connections spread on
-                their own. Tessera searches the network instead of a folder
-                tree, so last year&rsquo;s reading turns up in this
-                morning&rsquo;s paragraph.
-              </p>
-              <div className={styles.heroSide}>
-                <div className={styles.heroActions}>
-                  <a className={styles.primary} href="#start">
-                    Start free
-                  </a>
-                  <a className={styles.quiet} href="#horizons">
-                    See how linking works
-                  </a>
-                </div>
-                <ul className={styles.facts}>
-                  <li>No folders to invent</li>
-                  <li>Markdown on your disk</li>
-                  <li>Search works offline</li>
-                </ul>
-              </div>
+        {/* --------------------- detail 2 — resurface (vellum) ----------------- */}
+        <section className={styles.detail}>
+          <div className={styles.vellum}>
+            <div className={styles.vellumHead}>
+              <span className={styles.vellumRef}>Detail 2 · Rev 3</span>
+              <h2 className={styles.vellumTitle}>The door you had forgotten</h2>
             </div>
+            <p className={styles.vellumLede}>
+              Every note-taking app can show you what you linked. Resurface
+              opens the rooms you never linked and stopped visiting. While you
+              write, it looks for notes you have not touched in a year that bear
+              on the page in front of you, and puts them at the edge of it.
+            </p>
+
+            <p className={styles.vellumCue}>
+              Today you are writing <strong>Kiln temperature curves</strong>.
+              Cairn opens three doors:
+            </p>
+
+            <ul className={styles.resurfaceList}>
+              {RESURFACED.map((item) => (
+                <li key={item.title}>
+                  <span className={styles.resurfaceTitle}>{item.title}</span>
+                  <span className={styles.resurfaceAge}>{item.age}</span>
+                  <span className={styles.resurfaceWhy}>{item.why}</span>
+                </li>
+              ))}
+            </ul>
+
+            <p className={styles.vellumFoot}>
+              Nothing is filed, moved or rewritten. The doors simply open.
+            </p>
           </div>
         </section>
 
-        <section id="horizons">
-          {horizons.map((h) => (
-            <article className={`${styles.grid} ${styles.horizon}`} key={h.letter}>
-              <div className={styles.gutter}>
-                <RootSegment hairs={h.hairs} />
-              </div>
-              <div className={styles.horizonBody}>
-                <p className={styles.horizonLabel}>
-                  <span className={styles.horizonLetter}>{h.letter}</span>
-                  {h.depth}
-                </p>
-                <h2 className={styles.h2}>{h.title}</h2>
-                <p className={styles.copy}>{h.body}</p>
-                <p className={styles.detail}>{h.detail}</p>
-              </div>
-              <div className={styles.horizonCard}>{h.card}</div>
-            </article>
-          ))}
+        {/* --------------------- detail 3 — the reading room ------------------- */}
+        <section className={styles.detail}>
+          <div className={styles.detailHead}>
+            <span className={styles.detailRef}>Detail 3 · Room 006</span>
+            <h2 className={styles.detailTitle}>Search gets into the boxes</h2>
+            <p className={styles.detailLede}>
+              Search reads every note in the vault, and it reads the text inside
+              scanned PDFs and images too — the interview you photographed, the
+              paper you never retyped.
+            </p>
+          </div>
+
+          <div className={styles.searchPanel}>
+            <div className={styles.searchField}>
+              <svg
+                viewBox="0 0 20 20"
+                width="15"
+                height="15"
+                aria-hidden="true"
+                className={styles.searchGlyph}
+              >
+                <circle cx="8.5" cy="8.5" r="5.5" />
+                <line x1="12.6" y1="12.6" x2="17.5" y2="17.5" />
+              </svg>
+              <span className={styles.searchQuery}>cholera</span>
+              <span className={styles.searchCount}>3 notes · 9 matches</span>
+            </div>
+            <ul className={styles.results}>
+              {RESULTS.map((res) => (
+                <li key={res.title} className={styles.result}>
+                  <span className={styles.resultTitle}>{res.title}</span>
+                  <span
+                    className={
+                      res.scanned ? styles.kindScanned : styles.kindPlain
+                    }
+                  >
+                    {res.kind}
+                  </span>
+                  <span className={styles.resultDetail}>{res.detail}</span>
+                </li>
+              ))}
+            </ul>
+            <p className={styles.searchNote}>
+              The third one is a photograph of a page. It has no text layer.
+              Cairn read it anyway.
+            </p>
+          </div>
         </section>
 
-        <section className={styles.roots} id="roots">
-          <div className={styles.rootsInner}>
-            <h2 className={styles.h2Light}>
-              roots you can dig up and replant somewhere else
-            </h2>
-            <div className={styles.rootsCols}>
-              <p>
-                Every note is a markdown file in a folder you picked, readable
-                by any editor you like and by you, alone, in fifteen years.
-                Tessera syncs the ciphertext and never holds the key.
+        {/* ------------------------- general notes ---------------------------- */}
+        <section className={styles.detail}>
+          <div className={styles.detailHead}>
+            <span className={styles.detailRef}>General notes</span>
+            <h2 className={styles.detailTitle}>Read before building</h2>
+          </div>
+          <ol className={styles.generalNotes}>
+            {NOTES.map((note, i) => (
+              <li key={note}>
+                <span className={styles.noteRef}>N{i + 1}</span>
+                <span>{note}</span>
+              </li>
+            ))}
+          </ol>
+        </section>
+
+        {/* ----------------------------- pricing ------------------------------ */}
+        <section className={styles.detail} id="pricing">
+          <div className={styles.detailHead}>
+            <span className={styles.detailRef}>Schedule of rates</span>
+            <h2 className={styles.detailTitle}>What the building costs</h2>
+          </div>
+
+          <div className={styles.rates}>
+            <article className={styles.rate}>
+              <div className={styles.rateHead}>
+                <span className={styles.rateMark}>V-01</span>
+                <h3 className={styles.rateName}>Vault</h3>
+              </div>
+              <p className={styles.ratePrice}>
+                Free<span className={styles.rateUnit}>one vault</span>
               </p>
-              <p>
-                Leaving takes one click: a zip of the same files with the links
-                rewritten as plain references. Nothing in here trains a model,
-                and nothing here needs us to keep existing.
+              <ul className={styles.rateList}>
+                <li>Every room drawn on this sheet</li>
+                <li>Markdown files in a folder you choose</li>
+                <li>Version history on every note</li>
+                <li>Works with the network off</li>
+              </ul>
+              <a className={styles.ctaPrimary} href="#pricing">
+                Download Cairn
+              </a>
+            </article>
+
+            <article className={`${styles.rate} ${styles.rateSync}`}>
+              <div className={styles.rateHead}>
+                <span className={styles.rateMark}>S-01</span>
+                <h3 className={styles.rateName}>Sync</h3>
+              </div>
+              <p className={styles.ratePrice}>
+                $8<span className={styles.rateUnit}>per month</span>
               </p>
-            </div>
-            <ul className={styles.rootsList}>
-              <li>End-to-end encrypted sync</li>
-              <li>Local folder, your choice</li>
-              <li>Zip export with links intact</li>
-              <li>Never used for training</li>
+              <ul className={styles.rateList}>
+                <li>Everything in V-01</li>
+                <li>The same vault on desktop and phone</li>
+                <li>Add or remove devices whenever</li>
+                <li>Cancel and the files stay where they are</li>
+              </ul>
+              <a className={styles.ctaGhost} href="#pricing">
+                Start syncing — $8/month
+              </a>
+            </article>
+          </div>
+        </section>
+
+        {/* --------------------------- title block ---------------------------- */}
+        <footer className={styles.titleBlock}>
+          <div className={styles.tbBrand}>
+            <span className={styles.tbWordmark}>Cairn</span>
+            <p className={styles.tbTag}>
+              A second brain that outlasts the projects it was built for.
+            </p>
+          </div>
+
+          <dl className={styles.tbFields}>
+            {TITLE_BLOCK.map((field) => (
+              <div key={field.k} className={styles.tbField}>
+                <dt>{field.k}</dt>
+                <dd>{field.v}</dd>
+              </div>
+            ))}
+          </dl>
+
+          <div className={styles.tbRevisions}>
+            <h2 className={styles.tbRevTitle}>Revisions</h2>
+            <ul>
+              {REVISIONS.map((rev) => (
+                <li key={rev.rev}>
+                  <span className={styles.tbRevNo}>{rev.rev}</span>
+                  <span className={styles.tbRevDesc}>{rev.desc}</span>
+                  <span className={styles.tbRevDate}>{rev.date}</span>
+                </li>
+              ))}
             </ul>
           </div>
-        </section>
-
-        <section className={styles.specimens} id="specimens">
-          <h2 className={styles.h2}>grown in tessera</h2>
-          <div className={styles.specimenRow}>
-            {specimens.map((s) => (
-              <article className={styles.specimen} key={s.label}>
-                <p className={styles.specimenLabel}>{s.label}</p>
-                <h3 className={styles.specimenTitle}>{s.title}</h3>
-                <p className={styles.specimenData}>{s.data}</p>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section className={styles.start} id="start">
-          <h2 className={styles.h1Small}>start with one note</h2>
-          <p className={styles.copy}>
-            Free while your garden is small — up to 500 notes. £6 a month after
-            that, however dense it gets.
-          </p>
-          <form className={styles.form} action="#" aria-label="Create an account">
-            <label className={styles.srOnly} htmlFor="d2-email">
-              Email
-            </label>
-            <input
-              className={styles.input}
-              id="d2-email"
-              type="email"
-              placeholder="you@somewhere.org"
-              autoComplete="email"
-            />
-            <button className={styles.primary} type="submit">
-              Create an account
-            </button>
-          </form>
-        </section>
-      </main>
-
-      <footer className={styles.footer}>
-        <span className={styles.wordmark}>tessera</span>
-        <nav className={styles.footerNav} aria-label="Footer">
-          <a href="#horizons">How it grows</a>
-          <a href="#roots">File format</a>
-          <a href="#specimens">Specimens</a>
-          <a href="#start">Pricing</a>
-        </nav>
-        <p className={styles.fine}>
-          Grown in Lisbon. Nothing leaves your machine unless you ask it to.
-        </p>
-      </footer>
+        </footer>
+      </div>
     </div>
   );
 }

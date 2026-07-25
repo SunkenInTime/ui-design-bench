@@ -1,233 +1,615 @@
-import type { Metadata } from "next";
-import { bigShoulders, courierPrime, plexSans } from "../fonts";
-import { CardDrawer } from "./CardDrawer";
-import styles from "./direction.module.css";
+import { CardRail, type CatalogCard } from "./card-rail";
+import styles from "./page.module.css";
 
-export const metadata: Metadata = {
-  title: "Tessera — file it once, find it for the rest of your life",
-  description:
-    "A second brain built like a card catalog: every note gets an address, and every address remembers what points at it.",
-};
-
-const drawers = [
+const DRAWER: CatalogCard[] = [
   {
-    label: "Capture",
-    range: "Aa — Ez",
-    title: "The drawer is already open",
-    body: "Press ⌥Space anywhere on your machine and start typing. Clip a paragraph from the browser, forward an email, talk into your phone on a walk. It all lands in the same place, unsorted, which is fine.",
-    detail: "Median time from thought to filed card: 1.9 seconds",
+    id: "kiln",
+    callNumber: "TP 823 .K55",
+    accession: "acc. 002841",
+    title: "Kiln temperature curves",
+    lines: [
+      "Cone 6 stalled at 1180°C. Held it twenty minutes and the colour came back.",
+      "Log the ramp, not the peak.",
+    ],
+    seeAlso: ["Sourdough: hydration log", "Estuary sediment cores"],
   },
   {
-    label: "Cross-reference",
-    range: "Fa — Nz",
-    title: "Two brackets, one connection",
-    body: "Type [[ and point at another card. Tessera writes the reverse reference for you, so every card carries a list of the cards that lean on it. Connections are the work; folders were just filing.",
-    detail: "Cards with at least one link get opened 4× more often",
+    id: "cholera",
+    callNumber: "RA 650 .S66",
+    accession: "acc. 000317",
+    title: "Why the 1854 cholera map worked",
+    lines: [
+      "Snow did not draw the deaths. He drew the pumps, then the deaths beside them.",
+      "The argument is in the adjacency.",
+    ],
+    seeAlso: ["Reading — Seeing Like a State", "Estuary sediment cores"],
+    resurfaced: { pulled: "24 Jul 2026", lastOpened: "9 Nov 2014" },
   },
   {
-    label: "Recall",
-    range: "Oa — Zz",
-    title: "Ask, and get cited",
-    body: "Ask a question in ordinary words. Tessera answers out of your own cards and prints the call numbers it read, so you can go check its work. Nothing arrives from outside the drawer.",
-    detail: "Answers cite call numbers — never a source you didn't file",
+    id: "okonjo",
+    callNumber: "HD 9502 .O46",
+    accession: "acc. 004120",
+    title: "Interview — R. Okonjo, 12 Mar",
+    lines: [
+      "Twenty-two years on the same stretch of river.",
+      "Says the gauge board was moved in '09 and nobody wrote it down.",
+    ],
+    seeAlso: ["Estuary sediment cores", "Field recording — dawn chorus"],
+  },
+  {
+    id: "sourdough",
+    callNumber: "TX 769 .S68",
+    accession: "acc. 003966",
+    title: "Sourdough: hydration log",
+    lines: [
+      "78% at 24°C went slack by the second fold. 72% held its shape.",
+      "Same flour, new sack — check the protein number.",
+    ],
+    seeAlso: ["Kiln temperature curves"],
+  },
+  {
+    id: "seeing",
+    callNumber: "JC 328 .S36",
+    accession: "acc. 001204",
+    title: "Reading — Seeing Like a State",
+    lines: [
+      "Legibility costs something.",
+      "The forest that can be counted is the forest that dies.",
+    ],
+    seeAlso: ["Why the 1854 cholera map worked", "Bridge deck expansion joints"],
+  },
+  {
+    id: "bridge",
+    callNumber: "TG 325 .B75",
+    accession: "acc. 005017",
+    title: "Bridge deck expansion joints",
+    lines: [
+      "Modular joints at 40mm a bay.",
+      "The noise complaint is a maintenance problem, not a design one.",
+    ],
+    seeAlso: ["Estuary sediment cores"],
+  },
+  {
+    id: "herennium",
+    callNumber: "PN 4009 .A34",
+    accession: "acc. 000842",
+    title: "Mnemonics from the Ad Herennium",
+    lines: [
+      "Place the images in a house you have actually walked through.",
+      "Unfamiliar rooms hold nothing.",
+    ],
+    seeAlso: ["Reading — Seeing Like a State"],
+  },
+  {
+    id: "estuary",
+    callNumber: "GC 380 .E88",
+    accession: "acc. 002355",
+    title: "Estuary sediment cores",
+    lines: [
+      "Core 4 shows the 1953 surge as a 6cm band of clean sand.",
+      "Everything above it is farm runoff.",
+    ],
+    seeAlso: ["Interview — R. Okonjo, 12 Mar", "Why the 1854 cholera map worked"],
+  },
+  {
+    id: "dawn",
+    callNumber: "QL 698 .F54",
+    accession: "acc. 004401",
+    title: "Field recording — dawn chorus",
+    lines: [
+      "04:41, blackcap first. Traffic floor is up to 38dB by 05:20.",
+      "Record before the bypass wakes.",
+    ],
+    seeAlso: ["Interview — R. Okonjo, 12 Mar"],
+  },
+  {
+    id: "letterpress",
+    callNumber: "Z 250 .L48",
+    accession: "acc. 003128",
+    title: "Letterpress lockup diagram",
+    lines: [
+      "Furniture reads clockwise.",
+      "Quoins on the far side of the chase or the whole forme lifts crooked.",
+    ],
+    seeAlso: ["Mnemonics from the Ad Herennium"],
   },
 ];
 
-const shipped = [
-  { date: "22 JUL", note: "Backlink sidebar, sortable by weight" },
-  { date: "09 JUL", note: "Voice capture with on-device transcription" },
-  { date: "27 JUN", note: "Import from Obsidian, Notion, Apple Notes" },
-  { date: "14 JUN", note: "Offline search across 100k cards" },
-  { date: "31 MAY", note: "End-to-end encrypted sync" },
-  { date: "18 MAY", note: "Call numbers you can rename in bulk" },
+const SHELF_LIST = [
+  {
+    callNumber: "QA 76.76 .M35",
+    title: "Plain files, your disk",
+    body: "Every note is a .md file in a folder you picked. Open them in any editor, copy them to a drive, keep them all if you ever stop paying us. Cairn writes with the network off.",
+  },
+  {
+    callNumber: "Z 699 .S43",
+    title: "Search reads the scans",
+    body: "One search box over the whole vault, including the words inside scanned PDFs and photographs of pages you never typed up.",
+  },
+  {
+    callNumber: "CT 25 .D35",
+    title: "Today's card is waiting",
+    body: "Open Cairn and a note for today is already made and dated. Start typing. File it later, or leave it where it fell.",
+  },
+  {
+    callNumber: "TK 5105 .S96",
+    title: "The same vault on the phone",
+    body: "Desktop and phone open the one folder, with the same cross-references and the same history behind every note.",
+  },
 ];
 
-export default function CardCatalogDirection() {
+const DATE_DUE = [
+  { date: "14 Jan 2019", rot: "-1.4deg" },
+  { date: "02 Sep 2020", rot: "0.8deg" },
+  { date: "23 Mar 2022", rot: "-0.6deg" },
+  { date: "11 Jun 2024", rot: "1.5deg" },
+  { date: "07 Feb 2026", rot: "-1.1deg" },
+  { date: "24 Jul 2026", rot: "0.5deg" },
+];
+
+/** Card top-edges seen from inside the drawer, one of them lifted. */
+const CROSS_SECTION = Array.from({ length: 26 }, (_, i) => i);
+
+export default function CardCatalogPage() {
   return (
-    <div
-      className={`${styles.page} ${bigShoulders.variable} ${courierPrime.variable} ${plexSans.variable}`}
-    >
-      <header className={styles.rail}>
-        <span className={styles.plate}>Tessera</span>
-        <nav className={styles.railNav} aria-label="Sections">
-          <a href="#drawers">The drawers</a>
-          <a href="#collection">Your files</a>
-          <a href="#shipped">Changelog</a>
-        </nav>
-        <a className={styles.railCta} href="#start">
-          Start a catalog
-        </a>
-      </header>
+    <main className={styles.page}>
+      {/* ── Hero: the drawer, head-on, then its contents ─────────────── */}
+      <section className={`${styles.hero} ${styles.fieldOak}`}>
+        <div className={styles.cabinet}>
+          <div className={styles.cabinetLip} aria-hidden="true" />
 
-      <main>
-        <section className={styles.hero}>
-          <div className={styles.heroText}>
-            <p className={styles.eyebrow}>
-              Tessera — a second brain, filed properly
-            </p>
-            <h1 className={styles.h1}>
-              File it once.
-              <br />
-              Find it for the
-              <br />
-              rest of your life.
-            </h1>
-            <p className={styles.lede}>
-              Tessera gives every note an address and a list of the notes that
-              point at it. You capture in a keystroke, link with two brackets,
-              and stop trying to remember which folder past-you would have
-              picked.
-            </p>
-            <div className={styles.actions}>
-              <a className={styles.primary} href="#start">
-                Start a catalog
-              </a>
-              <a className={styles.secondary} href="#drawers">
-                Read a sample drawer
-              </a>
+          <div className={styles.drawerFront}>
+            <span className={styles.drawerNumber} aria-hidden="true">
+              Drawer 07
+            </span>
+
+            <div className={styles.plate}>
+              <span className={styles.plateScrew} aria-hidden="true" />
+              <span className={styles.plateScrewRight} aria-hidden="true" />
+              <p className={styles.wordmark}>Cairn</p>
+              <span className={styles.plateRule} aria-hidden="true" />
+              <p className={styles.plateSub}>a–z · 10,412 cards · your disk</p>
             </div>
-            <dl className={styles.specs}>
-              <div>
-                <dt>Extent</dt>
-                <dd>Unlimited cards, 40k searched instantly</dd>
-              </div>
-              <div>
-                <dt>Medium</dt>
-                <dd>Plain markdown files, on your disk</dd>
-              </div>
-              <div>
-                <dt>Access</dt>
-                <dd>Offline first, encrypted sync, export anytime</dd>
-              </div>
-            </dl>
+
+            <svg
+              className={styles.pull}
+              viewBox="0 0 172 52"
+              role="presentation"
+              aria-hidden="true"
+            >
+              <defs>
+                <linearGradient id="cairnBrass" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stopColor="#EBD5A4" />
+                  <stop offset="0.36" stopColor="#B8945A" />
+                  <stop offset="0.74" stopColor="#7C6034" />
+                  <stop offset="1" stopColor="#D9BE87" />
+                </linearGradient>
+                <linearGradient id="cairnBrassPlate" x1="0" y1="0" x2="0.3" y2="1">
+                  <stop offset="0" stopColor="#EFDCB2" />
+                  <stop offset="0.5" stopColor="#B8945A" />
+                  <stop offset="1" stopColor="#6E5530" />
+                </linearGradient>
+              </defs>
+              <path
+                d="M20 16 C 20 46, 152 46, 152 16"
+                fill="none"
+                stroke="rgba(0,0,0,0.42)"
+                strokeWidth="11"
+                strokeLinecap="round"
+                transform="translate(0,4)"
+              />
+              <path
+                d="M20 16 C 20 46, 152 46, 152 16"
+                fill="none"
+                stroke="url(#cairnBrass)"
+                strokeWidth="10"
+                strokeLinecap="round"
+              />
+              <path
+                d="M26 20 C 27 38, 145 38, 146 20"
+                fill="none"
+                stroke="rgba(255,255,255,0.42)"
+                strokeWidth="2"
+                strokeLinecap="round"
+              />
+              <ellipse cx="20" cy="15" rx="13" ry="11" fill="url(#cairnBrassPlate)" />
+              <ellipse cx="152" cy="15" rx="13" ry="11" fill="url(#cairnBrassPlate)" />
+              <circle cx="20" cy="15" r="3" fill="rgba(60,44,18,0.75)" />
+              <circle cx="152" cy="15" r="3" fill="rgba(60,44,18,0.75)" />
+            </svg>
           </div>
+        </div>
 
-          <CardDrawer />
-        </section>
-
-        <section className={styles.drawers} id="drawers">
-          <div className={styles.sectionHead}>
-            <h2 className={styles.h2}>Three drawers, one desk</h2>
-            <p className={styles.sectionNote}>
-              Capture, cross-reference, recall. A card moves left to right
-              exactly once, then stays findable forever.
+        <div className={styles.drawerOpen} id="drawer">
+          <div className={styles.drawerHead}>
+            <p className={styles.drawerHeadTitle}>The drawer, open</p>
+            <p className={styles.drawerHeadNote}>
+              ten of 10,412 · filed 2014–2026
             </p>
           </div>
 
-          <div className={styles.drawerRow}>
-            {drawers.map((d) => (
-              <article className={styles.drawerFront} key={d.label}>
-                <div className={styles.brassPlate}>
-                  <span className={styles.brassLabel}>{d.label}</span>
-                  <span className={styles.brassRange}>{d.range}</span>
-                </div>
-                <div className={styles.drawerBody}>
-                  <h3 className={styles.drawerTitle}>{d.title}</h3>
-                  <p className={styles.drawerCopy}>{d.body}</p>
-                  <p className={styles.drawerDetail}>{d.detail}</p>
-                </div>
-                <div className={styles.cardEdges} aria-hidden>
-                  <span />
-                  <span />
-                  <span />
-                  <span />
-                </div>
-                <span className={styles.pull} aria-hidden />
+          <CardRail cards={DRAWER} />
+        </div>
+
+        <div className={styles.heroCopy}>
+          <h1 className={styles.heroTitle}>
+            Notes you wrote in 2014, filed where you can still find them.
+          </h1>
+          <p className={styles.heroSub}>
+            Cairn keeps everything you write as plain markdown in a folder you
+            chose. It cross-references cards as you type, reads the text inside
+            your scans, and hands back the note you forgot you had.
+          </p>
+          <div className={styles.heroActions}>
+            <a className={`${styles.btn} ${styles.btnStock}`} href="#pricing">
+              Download for macOS
+            </a>
+            <a className={`${styles.btn} ${styles.btnGhost}`} href="#shelf-list">
+              See what a vault holds
+            </a>
+          </div>
+          <p className={styles.heroFine}>
+            Free for one vault. Also on Windows, Linux, iOS and Android.
+          </p>
+        </div>
+      </section>
+
+      {/* ── See also: linking ────────────────────────────────────────── */}
+      <section
+        className={`${styles.section} ${styles.fieldStock}`}
+        id="see-also"
+        aria-labelledby="see-also-title"
+      >
+        <div className={styles.sectionInner}>
+          <div className={styles.crossrefGrid}>
+            <div className={styles.sectionCopy}>
+              <p className={styles.sectionTag}>Z 695 .L56</p>
+              <h2 className={styles.sectionTitle} id="see-also-title">
+                See also
+              </h2>
+              <p className={styles.sectionLede}>
+                Type <kbd className={styles.key}>[[</kbd> and start naming a
+                note. Cairn writes the cross-reference on both cards — the one
+                under your hands and the one you pointed at — so you never go
+                back to add the other half.
+              </p>
+              <p className={styles.sectionBody}>
+                Rename a note and every reference to it follows. Delete the
+                reference and both sides forget. The drawer never holds a card
+                that points at nothing.
+              </p>
+            </div>
+
+            <div className={styles.crossref}>
+              <article className={`${styles.miniCard}`}>
+                <p className={styles.miniCall}>GC 380 .E88</p>
+                <h3 className={styles.miniTitle}>Estuary sediment cores</h3>
+                <p className={styles.miniBody}>
+                  Core 4 shows the 1953 surge. Gauge board moved, per{" "}
+                  <span className={styles.linkToken}>
+                    [[Interview — R. Okonjo, 12 Mar]]
+                  </span>
+                </p>
+                <span className={styles.hole} aria-hidden="true" />
               </article>
-            ))}
-          </div>
-        </section>
 
-        <section className={styles.collection} id="collection">
-          <div className={styles.collectionInner}>
-            <p className={styles.stamp} aria-hidden>
-              Permanent
-              <br />
-              collection
-            </p>
-            <h2 className={styles.h2Dark}>
-              The cards are yours, including the ones you take somewhere else.
-            </h2>
-            <div className={styles.collectionCols}>
-              <p>
-                Every card is a markdown file in a folder you can open in any
-                editor, back up with any tool, and read in thirty years when
-                Tessera is a fond memory. Sync is end-to-end encrypted; we hold
-                the ciphertext and nothing else.
+              <div className={styles.connectorWrap}>
+                <svg
+                  className={styles.connector}
+                  viewBox="0 0 132 34"
+                  role="presentation"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M18 17 H114"
+                    stroke="#7A2E2E"
+                    strokeWidth="1.6"
+                    strokeDasharray="7 4"
+                  />
+                  <path d="M6 17 L20 10.5 V23.5 Z" fill="#7A2E2E" />
+                  <path d="M126 17 L112 10.5 V23.5 Z" fill="#7A2E2E" />
+                </svg>
+                <span className={styles.connectorLabel}>see also</span>
+              </div>
+
+              <article className={`${styles.miniCard}`}>
+                <p className={styles.miniCall}>HD 9502 .O46</p>
+                <h3 className={styles.miniTitle}>
+                  Interview — R. Okonjo, 12 Mar
+                </h3>
+                <p className={styles.miniBody}>
+                  Twenty-two years on the river.
+                </p>
+                <p className={styles.miniBacklink}>
+                  <span>see also</span> Estuary sediment cores
+                </p>
+                <span className={styles.hole} aria-hidden="true" />
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Resurface ────────────────────────────────────────────────── */}
+      <section
+        className={`${styles.section} ${styles.fieldOak} ${styles.resurfaceSection}`}
+        id="resurface"
+        aria-labelledby="resurface-title"
+      >
+        <div className={styles.sectionInner}>
+          <div className={styles.resurfaceGrid}>
+            <div className={styles.sectionCopy}>
+              <p className={`${styles.sectionTag} ${styles.sectionTagOnOak}`}>
+                Z 711 .R47
               </p>
-              <p>
-                Leaving is one click and a zip file, with call numbers preserved
-                as filenames and cross-references rewritten as ordinary links.
-                A catalog you can&rsquo;t walk out of isn&rsquo;t a catalog.
-                It&rsquo;s a cage.
+              <h2 className={styles.sectionTitle} id="resurface-title">
+                Resurface
+              </h2>
+              <p className={styles.sectionLede}>
+                While you write, Cairn goes to the back of the drawer. Notes you
+                have not opened in over a year, that share a name or a link or a
+                turn of phrase with the page in front of you, come up in a small
+                tray at the side.
+              </p>
+              <p className={styles.sectionBody}>
+                You file the connection or you put the card back. Either way the
+                thing you wrote in a different job, for a different reason, is
+                in your hands again — which is the whole reason you kept it.
+              </p>
+              <p className={styles.resurfaceStat}>
+                <span>4,276 days in the drawer</span>
+                <span aria-hidden="true">·</span>
+                <span>pulled this morning</span>
               </p>
             </div>
-            <ul className={styles.collectionList}>
-              <li>Local folder you choose</li>
-              <li>Markdown with front matter</li>
-              <li>Zip export, links intact</li>
-              <li>No training on your notes, ever</li>
-            </ul>
-          </div>
-        </section>
 
-        <section className={styles.slip} id="shipped">
-          <div className={styles.slipHead}>
-            <h2 className={styles.slipTitle}>Date due</h2>
-            <p className={styles.slipNote}>
-              What shipped, stamped on the way out
+            <div className={styles.drawerSection}>
+              <div className={styles.edges} aria-hidden="true">
+                {CROSS_SECTION.map((i) => (
+                  <span
+                    key={i}
+                    className={
+                      i === 17 ? `${styles.edge} ${styles.edgeLifted}` : styles.edge
+                    }
+                  />
+                ))}
+              </div>
+              <div className={styles.sectionRod} aria-hidden="true" />
+
+              <article className={`${styles.pulledCard}`}>
+                <div className={styles.cardHead}>
+                  <span className={styles.callNumber}>RA 650 .S66</span>
+                  <span className={styles.accession}>acc. 000317</span>
+                </div>
+                <h3 className={styles.miniTitle}>
+                  Why the 1854 cholera map worked
+                </h3>
+                <p className={styles.miniBody}>
+                  He drew the pumps, then the deaths beside them. The argument
+                  is in the adjacency.
+                </p>
+                <div className={styles.stamp}>
+                  <span className={styles.stampWord}>Resurfaced</span>
+                  <span className={styles.stampDate}>24 Jul 2026</span>
+                </div>
+                <span className={styles.hole} aria-hidden="true" />
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Shelf list ───────────────────────────────────────────────── */}
+      <section
+        className={`${styles.section} ${styles.fieldStock}`}
+        id="shelf-list"
+        aria-labelledby="shelf-list-title"
+      >
+        <div className={styles.sectionInner}>
+          <div className={styles.sectionHeader}>
+            <p className={styles.sectionTag}>Z 693 .S54</p>
+            <h2 className={styles.sectionTitle} id="shelf-list-title">
+              Shelf list
+            </h2>
+            <p className={styles.sectionLede}>
+              What is in the drawer, and where it actually lives.
             </p>
           </div>
-          <ul className={styles.slipList}>
-            {shipped.map((s) => (
-              <li key={s.date}>
-                <span className={styles.slipDate}>{s.date}</span>
-                <span className={styles.slipText}>{s.note}</span>
+
+          <ul className={styles.shelfGrid}>
+            {SHELF_LIST.map((item) => (
+              <li
+                key={item.callNumber}
+                className={`${styles.shelfCard}`}
+              >
+                <p className={styles.miniCall}>{item.callNumber}</p>
+                <h3 className={styles.shelfTitle}>{item.title}</h3>
+                <p className={styles.shelfBody}>{item.body}</p>
+                <span className={styles.hole} aria-hidden="true" />
               </li>
             ))}
           </ul>
-        </section>
+        </div>
+      </section>
 
-        <section className={styles.start} id="start">
-          <h2 className={styles.startTitle}>Open a drawer</h2>
-          <p className={styles.startCopy}>
-            Free for your first 500 cards. $8 a month after that, for as many
-            cards as you can write.
+      {/* ── Date due: version history ────────────────────────────────── */}
+      <section
+        className={`${styles.section} ${styles.fieldStock} ${styles.dateDueSection}`}
+        id="date-due"
+        aria-labelledby="date-due-title"
+      >
+        <div className={styles.sectionInner}>
+          <div className={styles.dateDueGrid}>
+            <div className={styles.slip}>
+              <p className={styles.slipHead}>Date due</p>
+              <ul className={styles.slipRows}>
+                {DATE_DUE.map((entry) => (
+                  <li key={entry.date}>
+                    <span
+                      className={styles.slipStamp}
+                      style={{ "--rot": entry.rot } as React.CSSProperties}
+                    >
+                      {entry.date}
+                    </span>
+                  </li>
+                ))}
+                <li />
+                <li />
+              </ul>
+              <p className={styles.slipFoot}>Estuary sediment cores · 41 saves</p>
+            </div>
+
+            <div className={styles.sectionCopy}>
+              <p className={styles.sectionTag}>Z 703 .V47</p>
+              <h2 className={styles.sectionTitle} id="date-due-title">
+                Every save is stamped
+              </h2>
+              <p className={styles.sectionLede}>
+                Each note keeps its own history. Open any date and read the note
+                as it stood that morning, then take back the paragraph you cut
+                and regretted.
+              </p>
+              <p className={styles.sectionBody}>
+                The history sits beside the file on your own disk, so it survives
+                a lost laptop the same way the notes do — by having been copied
+                somewhere with everything else.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Pricing ──────────────────────────────────────────────────── */}
+      <section
+        className={`${styles.section} ${styles.fieldStock}`}
+        id="pricing"
+        aria-labelledby="pricing-title"
+      >
+        <div className={styles.sectionInner}>
+          <div className={styles.sectionHeader}>
+            <p className={styles.sectionTag}>Z 713 .B67</p>
+            <h2 className={styles.sectionTitle} id="pricing-title">
+              Borrower&rsquo;s card
+            </h2>
+            <p className={styles.sectionLede}>
+              One price, and it only buys you the sync. Everything that makes a
+              note findable is in the free vault.
+            </p>
+          </div>
+
+          <div className={styles.priceGrid}>
+            <article className={`${styles.priceCard}`}>
+              <p className={styles.miniCall}>Issued — no charge</p>
+              <p className={styles.priceFigure}>Free</p>
+              <p className={styles.priceFor}>One vault, one machine</p>
+              <ul className={styles.priceList}>
+                <li>Unlimited notes, kept as markdown on your disk</li>
+                <li>Cross-references, backlinks and Resurface</li>
+                <li>Search across scanned PDFs and images</li>
+                <li>Full version history on every note</li>
+              </ul>
+              <a className={`${styles.btn} ${styles.btnOak}`} href="#pricing">
+                Download for macOS
+              </a>
+              <span className={styles.hole} aria-hidden="true" />
+            </article>
+
+            <article
+              className={`${styles.priceCard} ${styles.priceCardOak}`}
+            >
+              <p className={styles.miniCall}>Issued — monthly</p>
+              <p className={styles.priceFigure}>
+                $8<span>/month</span>
+              </p>
+              <p className={styles.priceFor}>The same vault everywhere</p>
+              <ul className={styles.priceList}>
+                <li>Desktop and phone kept in step</li>
+                <li>As many machines as you actually use</li>
+                <li>Sync stops, notes stay — they were always your files</li>
+                <li>Cancel from inside the app, in one place</li>
+              </ul>
+              <a className={`${styles.btn} ${styles.btnBrass}`} href="#pricing">
+                Start syncing — $8/month
+              </a>
+              <span className={styles.hole} aria-hidden="true" />
+            </article>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Footer ───────────────────────────────────────────────────── */}
+      <footer className={`${styles.footer} ${styles.fieldOak}`}>
+        <div className={styles.sectionInner}>
+          <div className={styles.footerGrid}>
+            <div>
+              <p className={styles.footerMark}>Cairn</p>
+              <p className={styles.footerNote}>
+                A card catalog for notes that outlast the work they were written
+                for.
+              </p>
+            </div>
+
+            <nav className={styles.footerNav} aria-label="The app">
+              <h2 className={styles.footerHeading}>The app</h2>
+              <ul>
+                <li>
+                  <a href="#pricing">Download</a>
+                </li>
+                <li>
+                  <a href="#shelf-list">What a vault holds</a>
+                </li>
+                <li>
+                  <a href="#resurface">How Resurface picks</a>
+                </li>
+                <li>
+                  <a href="#date-due">Version history</a>
+                </li>
+              </ul>
+            </nav>
+
+            <nav className={styles.footerNav} aria-label="Reference">
+              <h2 className={styles.footerHeading}>Reference</h2>
+              <ul>
+                <li>
+                  <a href="#see-also">Link syntax</a>
+                </li>
+                <li>
+                  <a href="#drawer">Keyboard shortcuts</a>
+                </li>
+                <li>
+                  <a href="#shelf-list">File layout on disk</a>
+                </li>
+                <li>
+                  <a href="#pricing">Importing an old vault</a>
+                </li>
+              </ul>
+            </nav>
+
+            <nav className={styles.footerNav} aria-label="Desk">
+              <h2 className={styles.footerHeading}>Desk</h2>
+              <ul>
+                <li>
+                  <a href="#pricing">Contact</a>
+                </li>
+                <li>
+                  <a href="#pricing">Status</a>
+                </li>
+                <li>
+                  <a href="#pricing">Privacy</a>
+                </li>
+                <li>
+                  <a href="#pricing">Changelog</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+
+          <p className={styles.colophon}>
+            Set in Archivo, Source Sans 3 and Courier Prime. Cards ruled at 22
+            point, punched 16mm from the foot.
           </p>
-          <form
-            className={styles.startForm}
-            action="#"
-            aria-label="Create an account"
-          >
-            <label className={styles.startLabel} htmlFor="d1-email">
-              Email
-            </label>
-            <input
-              className={styles.startInput}
-              id="d1-email"
-              type="email"
-              placeholder="you@somewhere.org"
-              autoComplete="email"
-            />
-            <button className={styles.primary} type="submit">
-              Create an account
-            </button>
-          </form>
-        </section>
-      </main>
-
-      <footer className={styles.footer}>
-        <span className={styles.footerPlate}>Tessera</span>
-        <nav className={styles.footerNav} aria-label="Footer">
-          <a href="#drawers">Features</a>
-          <a href="#start">Pricing</a>
-          <a href="#collection">File format</a>
-          <a href="#shipped">Changelog</a>
-        </nav>
-        <p className={styles.footerFine}>
-          Cataloged in Copenhagen. Cards outlive software.
-        </p>
+        </div>
       </footer>
-    </div>
+    </main>
   );
 }

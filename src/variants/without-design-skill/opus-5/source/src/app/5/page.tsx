@@ -1,269 +1,291 @@
-import type { Metadata } from "next";
-import { archivoBlack, spaceGrotesk } from "../fonts";
+import Link from "next/link";
 
-export const metadata: Metadata = {
-  title: "Cortex",
-  description:
-    "Stop losing your best ideas. Recall is a loud, fast, unapologetic second brain.",
-};
-
-const tickerItems = [
-  "1.4M links a day",
-  "38ms search",
-  "50k notes indexed",
-  "zero folders",
-  "plain markdown",
-  "offline first",
-];
-
-const bigClaims = [
-  {
-    n: "01",
-    head: "Capture",
-    sub: "One key. Any app. No folder.",
-    body: "Hit ⌘K anywhere in the OS and type. It lands in your vault, tagged and linked, before you've finished the thought.",
-  },
-  {
-    n: "02",
-    head: "Connect",
-    sub: "It links what you forgot.",
-    body: "Every save is read against your whole archive. Recall proposes the connections; you accept them with one tap.",
-  },
-  {
-    n: "03",
-    head: "Recall",
-    sub: "Ask. Don't dig.",
-    body: "Question ten years of notes in plain language. Answers arrive with the exact paragraph they came from, cited.",
-  },
-];
-
-export default function CortexPage() {
+function Kbd({ children }: { children: React.ReactNode }) {
   return (
-    <div
-      className={`${spaceGrotesk.className} relative flex flex-1 flex-col bg-neutral-950 text-neutral-50`}
-    >
-      <header className="relative z-10 flex items-center justify-between border-b-2 border-neutral-50 px-5 py-3.5 sm:px-8">
-        <span
-          className={`${archivoBlack.className} text-[19px] tracking-[-0.02em] uppercase`}
-        >
-          Recall
-        </span>
-        <nav className="hidden items-center gap-7 text-[12.5px] font-bold tracking-[0.1em] uppercase md:flex">
-          <a className="hover:text-lime-300" href="#how">
-            How
-          </a>
-          <a className="hover:text-lime-300" href="#proof">
-            Proof
-          </a>
-          <a className="hover:text-lime-300" href="#price">
-            Price
-          </a>
+    <kbd className="inline-grid min-w-[1.6rem] place-items-center rounded border border-neutral-700 bg-neutral-900 px-1.5 py-0.5 font-mono text-[11px] text-neutral-300 shadow-[0_1px_0_0_#404040]">
+      {children}
+    </kbd>
+  );
+}
+
+const results = [
+  {
+    icon: "▸",
+    title: "attention is a budget, not a skill",
+    meta: "note · 4 links · Mar 2024",
+    active: true,
+  },
+  { icon: "▸", title: "Deep Work — ch. 3 highlights", meta: "clipping · Jan 2023" },
+  { icon: "▸", title: "why my mornings collapsed", meta: "daily · 6 backlinks" },
+  { icon: "◆", title: "Ask recall: “what breaks my focus?”", meta: "3 sources" },
+];
+
+const commands = [
+  ["capture", "open the capture bar from anywhere", "⌘⇧Space"],
+  ["link", "connect this note to another", "⌘L"],
+  ["graph", "open the local graph for this note", "⌘G"],
+  ["recall", "ask a question across everything", "⌘K then ?"],
+  ["daily", "jump to today's note", "⌘D"],
+  ["export", "write the whole vault to markdown", "⌘⇧E"],
+];
+
+export default function TerminalLanding() {
+  return (
+    <div className="relative min-h-screen flex-1 overflow-hidden bg-[#0a0a0a] font-mono text-neutral-300 selection:bg-green-400/25">
+      {/* Scanlines + glow */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 z-10 bg-[repeating-linear-gradient(to_bottom,rgba(255,255,255,0.025)_0px,rgba(255,255,255,0.025)_1px,transparent_1px,transparent_3px)] opacity-60"
+      />
+      <div
+        aria-hidden
+        className="animate-drift-slow pointer-events-none absolute -top-40 left-1/2 size-[50rem] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(74,222,128,0.10),transparent_65%)] blur-3xl"
+      />
+
+      {/* Status bar nav */}
+      <header className="sticky top-0 z-20 border-b border-neutral-800 bg-[#0a0a0a]/90 backdrop-blur">
+        <nav className="mx-auto flex max-w-5xl items-center gap-4 px-5 py-2.5 text-[11px]">
+          <span className="font-bold text-green-400">loam</span>
+          <span className="text-neutral-600">v4.2.0</span>
+          <div className="ml-auto flex items-center gap-4 text-neutral-500">
+            <a className="transition hover:text-green-400" href="#commands">
+              :commands
+            </a>
+            <a className="hidden transition hover:text-green-400 sm:block" href="#why">
+              :why
+            </a>
+            <a className="transition hover:text-green-400" href="#install">
+              :install
+            </a>
+          </div>
         </nav>
-        <a
-          href="#price"
-          className={`${archivoBlack.className} border-2 border-lime-300 bg-lime-300 px-4 py-1.5 text-[12.5px] tracking-[0.06em] text-neutral-950 uppercase transition-colors hover:bg-neutral-950 hover:text-lime-300`}
-        >
-          Get it
-        </a>
       </header>
 
-      <main className="relative">
+      <main className="relative z-[1] mx-auto max-w-5xl px-5">
         {/* Hero */}
-        <section className="border-b-2 border-neutral-50 px-5 pt-12 pb-10 sm:px-8">
-          <p className="mb-7 flex flex-wrap items-center gap-3 text-[12px] font-bold tracking-[0.16em] uppercase">
-            <span className="border border-lime-300 px-2 py-0.5 text-lime-300">
-              A second brain
-            </span>
-            <span className="text-neutral-500">
-              for people with too many ideas
-            </span>
+        <section className="py-20 sm:py-28">
+          <p className="text-[11px] text-neutral-500">
+            <span className="text-green-400">$</span> loam --help
           </p>
 
-          <h1
-            className={`${archivoBlack.className} animate-rise text-[clamp(3.2rem,13vw,10rem)] leading-[0.82] tracking-[-0.045em] uppercase`}
-          >
-            You already
+          <h1 className="mt-7 text-4xl leading-[1.05] font-bold tracking-tight text-neutral-100 text-balance sm:text-6xl">
+            A second brain
             <br />
-            had the
-            <br />
-            <span className="text-lime-300">idea.</span>
-            <span className="ml-3 inline-block align-top text-[0.28em] leading-[1.2] tracking-normal text-neutral-400 normal-case">
-              Twice,
-              <br />
-              probably.
-            </span>
+            <span className="text-green-400">without the mouse</span>
+            <span className="animate-blink ml-1 inline-block h-[0.85em] w-[0.5em] translate-y-[0.06em] bg-green-400" />
           </h1>
 
-          <div className="mt-10 grid gap-8 border-t-2 border-neutral-800 pt-8 lg:grid-cols-[1fr_auto]">
-            <p className="max-w-xl text-[17.5px] leading-relaxed text-neutral-300">
-              Notes apps are where good thinking goes to die quietly in a
-              folder. Recall is loud about it: everything you write gets linked
-              to everything else, and it hands the right note back to you
-              unprompted.
-            </p>
+          <p className="mt-7 max-w-xl text-sm leading-relaxed text-neutral-400">
+            Loam is a note system for people who think faster than they can
+            click. Everything — capture, linking, recall — is one keystroke deep.
+            Plain markdown on your disk, always.
+          </p>
 
-            <div className="flex flex-wrap items-start gap-3">
-              <a
-                href="#price"
-                className={`${archivoBlack.className} border-2 border-lime-300 bg-lime-300 px-7 py-4 text-[14px] tracking-[0.04em] text-neutral-950 uppercase shadow-[6px_6px_0_0_#fafafa] transition-all hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-[3px_3px_0_0_#fafafa]`}
-              >
-                Start free
-              </a>
-              <a
-                href="#how"
-                className={`${archivoBlack.className} border-2 border-neutral-50 px-7 py-4 text-[14px] tracking-[0.04em] uppercase transition-colors hover:bg-neutral-50 hover:text-neutral-950`}
-              >
-                See how
-              </a>
+          <div className="mt-9 flex flex-wrap items-center gap-3">
+            <a
+              href="#install"
+              className="rounded border border-green-400/40 bg-green-400/10 px-5 py-2.5 text-xs font-bold tracking-wider text-green-400 uppercase transition hover:bg-green-400 hover:text-black"
+            >
+              brew install loam
+            </a>
+            <a
+              href="#commands"
+              className="rounded border border-neutral-700 px-5 py-2.5 text-xs tracking-wider text-neutral-400 uppercase transition hover:border-neutral-500 hover:text-neutral-200"
+            >
+              read the man page
+            </a>
+          </div>
+
+          {/* Command palette mock */}
+          <div className="mt-16 overflow-hidden rounded-lg border border-neutral-800 bg-neutral-950/80 shadow-[0_0_60px_-15px_rgba(74,222,128,0.25)] backdrop-blur">
+            <div className="flex items-center gap-2 border-b border-neutral-800 px-4 py-2 text-[10px] text-neutral-600">
+              <span className="size-2 rounded-full bg-neutral-700" />
+              <span className="size-2 rounded-full bg-neutral-700" />
+              <span className="size-2 rounded-full bg-neutral-700" />
+              <span className="ml-2">loam — recall</span>
+            </div>
+
+            <div className="flex items-center gap-3 border-b border-neutral-800 px-4 py-3.5">
+              <span className="text-green-400">❯</span>
+              <span className="text-sm text-neutral-200">
+                what did I decide about focus
+              </span>
+              <span className="animate-blink h-4 w-2 bg-green-400" />
+              <span className="ml-auto hidden text-[10px] text-neutral-600 sm:block">
+                4 results · 12ms
+              </span>
+            </div>
+
+            <ul className="divide-y divide-neutral-900">
+              {results.map((r) => (
+                <li
+                  key={r.title}
+                  className={`flex items-center gap-3 px-4 py-2.5 text-xs ${
+                    r.active ? "bg-green-400/10" : ""
+                  }`}
+                >
+                  <span
+                    className={r.active ? "text-green-400" : "text-neutral-700"}
+                  >
+                    {r.icon}
+                  </span>
+                  <span
+                    className={
+                      r.active ? "text-neutral-100" : "text-neutral-400"
+                    }
+                  >
+                    {r.title}
+                  </span>
+                  <span className="ml-auto hidden text-[10px] text-neutral-600 sm:block">
+                    {r.meta}
+                  </span>
+                </li>
+              ))}
+            </ul>
+
+            <div className="flex items-center gap-4 border-t border-neutral-800 px-4 py-2 text-[10px] text-neutral-600">
+              <span className="flex items-center gap-1.5">
+                <Kbd>↑</Kbd>
+                <Kbd>↓</Kbd> navigate
+              </span>
+              <span className="flex items-center gap-1.5">
+                <Kbd>↵</Kbd> open
+              </span>
+              <span className="hidden items-center gap-1.5 sm:flex">
+                <Kbd>⌘</Kbd>
+                <Kbd>↵</Kbd> ask recall
+              </span>
             </div>
           </div>
         </section>
 
-        {/* Ticker */}
-        <section
-          aria-hidden
-          className="overflow-hidden border-b-2 border-neutral-50 bg-lime-300 py-2.5 text-neutral-950"
-        >
-          <div className="flex w-max animate-marquee">
-            {[0, 1].map((copy) => (
-              <div key={copy} className="flex shrink-0">
-                {tickerItems.map((item) => (
-                  <span
-                    key={`${copy}-${item}`}
-                    className={`${archivoBlack.className} flex items-center gap-6 px-6 text-[13.5px] tracking-[0.08em] uppercase`}
-                  >
-                    {item}
-                    <span className="text-neutral-950/40">✱</span>
-                  </span>
-                ))}
+        {/* Why — terminal output */}
+        <section id="why" className="scroll-mt-16 border-t border-neutral-900 py-20">
+          <p className="text-[11px] text-neutral-500">
+            <span className="text-green-400">$</span> loam why
+          </p>
+          <div className="mt-8 space-y-6">
+            {[
+              [
+                "no folders",
+                "Filing is a tax you pay forever. Loam links instead: mention a note and the connection is made, both ways, immediately.",
+              ],
+              [
+                "no lock-in",
+                "~/notes/*.md — your files, your disk, your git repo if you like. Sync is end-to-end encrypted and entirely optional.",
+              ],
+              [
+                "no waiting",
+                "Local index. Median recall in 12ms across 40,000 notes. Works on a plane, works in a tunnel, works when we go under.",
+              ],
+            ].map(([title, body]) => (
+              <div
+                key={title}
+                className="grid gap-2 border-l-2 border-neutral-800 pl-5 transition-colors hover:border-green-400/60 sm:grid-cols-[10rem_1fr] sm:gap-8"
+              >
+                <p className="text-sm font-bold text-green-400">{title}</p>
+                <p className="max-w-xl text-sm leading-relaxed text-neutral-400">
+                  {body}
+                </p>
               </div>
             ))}
           </div>
         </section>
 
-        {/* Big claims */}
-        <section id="how" className="border-b-2 border-neutral-50">
-          {bigClaims.map((claim, i) => (
-            <article
-              key={claim.n}
-              className={`group grid gap-6 px-5 py-12 transition-colors sm:px-8 lg:grid-cols-[110px_1fr_1.1fr] lg:items-baseline lg:gap-10 hover:bg-lime-300 hover:text-neutral-950 ${
-                i < bigClaims.length - 1 ? "border-b-2 border-neutral-800" : ""
-              }`}
-            >
-              <span
-                className={`${archivoBlack.className} text-[15px] tracking-[0.1em] text-neutral-500 group-hover:text-neutral-950/50`}
-              >
-                {claim.n}
-              </span>
-
-              <h2
-                className={`${archivoBlack.className} text-[clamp(2.4rem,6vw,4.4rem)] leading-[0.86] tracking-[-0.04em] uppercase`}
-              >
-                {claim.head}
-              </h2>
-
-              <div>
-                <p className="text-[19px] font-bold tracking-[-0.01em] text-lime-300 group-hover:text-neutral-950">
-                  {claim.sub}
-                </p>
-                <p className="mt-3 max-w-lg text-[15.5px] leading-relaxed text-neutral-400 group-hover:text-neutral-800">
-                  {claim.body}
-                </p>
-              </div>
-            </article>
-          ))}
-        </section>
-
-        {/* Proof / receipts */}
+        {/* Commands table */}
         <section
-          id="proof"
-          className="grid border-b-2 border-neutral-50 lg:grid-cols-3"
+          id="commands"
+          className="scroll-mt-16 border-t border-neutral-900 py-20"
         >
-          <div className="border-b-2 border-neutral-800 bg-neutral-50 px-6 py-10 text-neutral-950 lg:border-r-2 lg:border-b-0">
-            <p
-              className={`${archivoBlack.className} text-[clamp(3.4rem,7vw,5rem)] leading-[0.85] tracking-[-0.04em]`}
-            >
-              11,400
-            </p>
-            <p className="mt-3 text-[14px] font-bold tracking-[0.08em] uppercase">
-              notes in Naomi’s vault
-            </p>
-            <p className="mt-4 text-[15px] leading-relaxed text-neutral-700">
-              “Six months in, Recall knows more about my research than I do. I
-              stopped organising and started writing.”
-            </p>
-            <p className="mt-4 text-[12px] font-bold tracking-[0.1em] text-neutral-500 uppercase">
-              Dr. N. Ferrand · biologist
-            </p>
-          </div>
-
-          <div className="border-b-2 border-neutral-800 px-6 py-10 lg:border-r-2 lg:border-b-0">
-            <p
-              className={`${archivoBlack.className} text-[clamp(3.4rem,7vw,5rem)] leading-[0.85] tracking-[-0.04em] text-lime-300`}
-            >
-              38ms
-            </p>
-            <p className="mt-3 text-[14px] font-bold tracking-[0.08em] uppercase">
-              to search all of it
-            </p>
-            <p className="mt-4 text-[15px] leading-relaxed text-neutral-400">
-              Local index, no round trip. Type a question, get a cited answer
-              faster than a web app can show you a spinner.
-            </p>
-          </div>
-
-          <div className="px-6 py-10">
-            <p
-              className={`${archivoBlack.className} text-[clamp(3.4rem,7vw,5rem)] leading-[0.85] tracking-[-0.04em]`}
-            >
-              .md
-            </p>
-            <p className="mt-3 text-[14px] font-bold tracking-[0.08em] uppercase">
-              the only format we use
-            </p>
-            <p className="mt-4 text-[15px] leading-relaxed text-neutral-400">
-              Plain files in a folder on your machine. No database, no lock-in,
-              no migration project when you leave.
-            </p>
-          </div>
-        </section>
-
-        {/* CTA */}
-        <section id="price" className="px-5 py-16 text-center sm:px-8">
-          <h2
-            className={`${archivoBlack.className} mx-auto max-w-4xl text-[clamp(2.4rem,7.5vw,5.5rem)] leading-[0.86] tracking-[-0.045em] uppercase`}
-          >
-            Write it down.
-            <br />
-            <span className="text-lime-300">Find it later.</span>
-          </h2>
-
-          <p className="mx-auto mt-7 max-w-md text-[16px] leading-relaxed text-neutral-400">
-            Free forever for 500 notes. $8 a month for unlimited and encrypted
-            sync. Leave whenever — the files were always yours.
+          <p className="text-[11px] text-neutral-500">
+            <span className="text-green-400">$</span> loam --list-bindings
           </p>
 
-          <a
-            href="#"
-            className={`${archivoBlack.className} mt-10 inline-flex border-2 border-lime-300 bg-lime-300 px-9 py-5 text-[16px] tracking-[0.04em] text-neutral-950 uppercase shadow-[8px_8px_0_0_#fafafa] transition-all hover:translate-x-1 hover:translate-y-1 hover:shadow-[4px_4px_0_0_#fafafa]`}
-          >
-            Download Recall
-          </a>
+          <div className="mt-8 overflow-hidden rounded-lg border border-neutral-800">
+            <table className="w-full text-left text-xs">
+              <thead className="bg-neutral-950 text-[10px] tracking-wider text-neutral-500 uppercase">
+                <tr>
+                  <th className="px-4 py-2.5 font-medium">command</th>
+                  <th className="hidden px-4 py-2.5 font-medium sm:table-cell">
+                    description
+                  </th>
+                  <th className="px-4 py-2.5 text-right font-medium">binding</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-neutral-900">
+                {commands.map(([cmd, desc, key]) => (
+                  <tr key={cmd} className="transition-colors hover:bg-neutral-900/60">
+                    <td className="px-4 py-3 font-bold text-green-400">{cmd}</td>
+                    <td className="hidden px-4 py-3 text-neutral-400 sm:table-cell">
+                      {desc}
+                    </td>
+                    <td className="px-4 py-3 text-right">
+                      <Kbd>{key}</Kbd>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        {/* Install */}
+        <section
+          id="install"
+          className="scroll-mt-16 border-t border-neutral-900 py-20"
+        >
+          <p className="text-[11px] text-neutral-500">
+            <span className="text-green-400">$</span> loam install
+          </p>
+          <h2 className="mt-7 text-2xl font-bold tracking-tight text-neutral-100 text-balance sm:text-4xl">
+            Free for 500 notes.
+            <br />
+            <span className="text-neutral-500">$8/mo after that.</span>
+          </h2>
+
+          <div className="mt-9 grid gap-4 sm:grid-cols-2">
+            <div className="rounded-lg border border-neutral-800 bg-neutral-950/60 p-5">
+              <p className="text-[10px] tracking-wider text-neutral-500 uppercase">
+                macOS / Linux
+              </p>
+              <code className="mt-3 block rounded bg-black/60 px-3 py-2.5 text-xs text-green-400">
+                brew install loam
+              </code>
+            </div>
+            <div className="rounded-lg border border-neutral-800 bg-neutral-950/60 p-5">
+              <p className="text-[10px] tracking-wider text-neutral-500 uppercase">
+                Windows
+              </p>
+              <code className="mt-3 block rounded bg-black/60 px-3 py-2.5 text-xs text-green-400">
+                winget install loam
+              </code>
+            </div>
+          </div>
+
+          <form className="mt-6 flex max-w-lg flex-col gap-2.5 sm:flex-row">
+            <input
+              type="email"
+              required
+              placeholder="you@host.tld"
+              aria-label="Email address"
+              className="min-w-0 flex-1 rounded border border-neutral-800 bg-neutral-950 px-4 py-3 text-xs text-neutral-200 placeholder:text-neutral-600 focus:border-green-400/60 focus:outline-none"
+            />
+            <button
+              type="submit"
+              className="rounded bg-green-400 px-6 py-3 text-xs font-bold tracking-wider text-black uppercase transition hover:bg-green-300"
+            >
+              send me the build
+            </button>
+          </form>
         </section>
       </main>
 
-      <footer className="flex flex-wrap items-center justify-between gap-4 border-t-2 border-neutral-50 px-5 py-7 pb-24 text-[12px] font-bold tracking-[0.1em] uppercase sm:px-8">
-        <p className="text-neutral-500">© 2026 Recall Labs</p>
-        <div className="flex gap-6">
-          <a className="hover:text-lime-300" href="#">
-            Privacy
-          </a>
-          <a className="hover:text-lime-300" href="#">
-            Docs
-          </a>
-          <a className="hover:text-lime-300" href="#">
-            Changelog
-          </a>
+      <footer className="relative z-[1] border-t border-neutral-900 px-5 pt-6 pb-28 sm:pb-6">
+        <div className="mx-auto flex max-w-5xl flex-col justify-between gap-2 text-[11px] text-neutral-600 sm:flex-row">
+          <span>loam 2026 — MIT licensed core</span>
+          <Link className="transition hover:text-green-400" href="/">
+            ../all-designs
+          </Link>
         </div>
       </footer>
     </div>

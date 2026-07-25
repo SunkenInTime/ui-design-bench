@@ -1,0 +1,475 @@
+/*
+ * The drawing. Line weights are the discipline here: hairline for hatching,
+ * thin for dimensions and furniture, medium for walls. Nothing gets a weight
+ * it has not earned.
+ */
+
+.figure {
+  margin: 0;
+}
+
+/* ------------------------------ sheet header ------------------------------ */
+
+.figureHead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem 2rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--pencil) 45%, transparent);
+}
+
+.figureTitle {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.drawingNo {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  color: var(--pencil);
+}
+
+.figureName {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(1.35rem, 3.4vw, 2rem);
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+  text-transform: uppercase;
+  color: var(--chalk);
+}
+
+.figureMeta {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  color: var(--pencil);
+}
+
+.scale,
+.projection {
+  padding: 0.3rem 0.55rem;
+  border: 1px solid color-mix(in srgb, var(--pencil) 45%, transparent);
+}
+
+.north {
+  display: block;
+  color: var(--chalk);
+}
+
+.northHead {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.4;
+  stroke-linejoin: round;
+}
+
+.northFill {
+  fill: currentColor;
+}
+
+.northN {
+  fill: currentColor;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+}
+
+/* -------------------------------- canvas ---------------------------------- */
+
+.canvas {
+  margin-top: 1rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  /* The drawing is wide by nature. On a narrow screen it pans rather than
+     shrinking into illegibility; the room schedule below carries the words. */
+  scrollbar-color: var(--pencil) transparent;
+}
+
+.svg {
+  display: block;
+  width: 100%;
+  min-width: 660px;
+  height: auto;
+}
+
+/* --------------------------------- rooms ---------------------------------- */
+
+.room {
+  cursor: pointer;
+  color: var(--chalk);
+  outline-offset: 6px;
+}
+
+.floor {
+  fill: color-mix(in srgb, var(--chalk) 5%, transparent);
+  transition: fill 160ms ease-out;
+}
+
+.floorEdge {
+  fill: none;
+  stroke: color-mix(in srgb, var(--chalk) 55%, transparent);
+  stroke-width: 1;
+  stroke-linejoin: round;
+  transition: stroke 160ms ease-out, stroke-width 160ms ease-out;
+}
+
+.room:hover .floor,
+.roomOn .floor {
+  fill: color-mix(in srgb, var(--chalk) 14%, transparent);
+}
+
+.room:hover .floorEdge,
+.roomOn .floorEdge {
+  stroke: var(--chalk);
+  stroke-width: 2;
+}
+
+.room:focus-visible .floorEdge {
+  stroke: var(--redline);
+  stroke-width: 2.4;
+}
+
+.hatch {
+  stroke: color-mix(in srgb, var(--pencil) 55%, transparent);
+  stroke-width: 0.5;
+}
+
+.furniture {
+  fill: color-mix(in srgb, var(--chalk) 6%, transparent);
+  stroke: color-mix(in srgb, var(--pencil) 85%, transparent);
+  stroke-width: 0.75;
+  stroke-linejoin: round;
+}
+
+.roomLabel {
+  fill: var(--chalk);
+  pointer-events: none;
+}
+
+.roomNo {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  fill: var(--pencil);
+}
+
+.roomName {
+  font-family: var(--font-display);
+  font-size: 12.5px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.roomDim {
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  fill: var(--pencil);
+}
+
+/* --------------------------------- walls ---------------------------------- */
+
+.walls {
+  pointer-events: none;
+}
+
+.wall {
+  fill: var(--plate);
+  fill-opacity: 0.94;
+  stroke: var(--chalk);
+  stroke-width: 1.4;
+  stroke-linejoin: round;
+}
+
+/* ------------------------------ annotations ------------------------------- */
+
+.annotation {
+  pointer-events: none;
+}
+
+.dimExt {
+  stroke: var(--pencil);
+  stroke-width: 0.5;
+}
+
+.dimLine {
+  stroke: var(--pencil);
+  stroke-width: 0.75;
+}
+
+.dimArrow {
+  fill: var(--pencil);
+}
+
+.dimText {
+  fill: var(--pencil);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+}
+
+.swingArc {
+  fill: none;
+  stroke: var(--redline);
+  stroke-width: 1;
+  stroke-dasharray: 4 3;
+}
+
+.swingLeaf {
+  stroke: var(--redline);
+  stroke-width: 1.8;
+}
+
+.cloud {
+  fill: none;
+  stroke: var(--redline);
+  stroke-width: 1.2;
+  opacity: 0.9;
+}
+
+.revTag {
+  fill: none;
+  stroke: var(--redline);
+  stroke-width: 1.4;
+  stroke-linejoin: round;
+}
+
+.revTagText {
+  fill: var(--redline);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.sectionLine {
+  stroke: var(--pencil);
+  stroke-width: 0.75;
+  stroke-dasharray: 14 4 3 4;
+  opacity: 0.75;
+}
+
+.sectionBubble {
+  fill: var(--blueprint);
+  stroke: var(--pencil);
+  stroke-width: 1;
+}
+
+.sectionText {
+  fill: var(--pencil);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+/* -------------------------------- callout --------------------------------- */
+
+.callout {
+  pointer-events: none;
+  animation: inkIn 200ms ease-out both;
+}
+
+@keyframes inkIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.calloutDot {
+  fill: var(--redline);
+}
+
+.calloutLeader {
+  fill: none;
+  stroke: var(--redline);
+  stroke-width: 1.1;
+}
+
+.calloutLanding {
+  stroke: var(--redline);
+  stroke-width: 1.6;
+}
+
+.calloutText {
+  fill: var(--redline);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+.calloutRef {
+  fill: var(--redline);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  opacity: 0.8;
+}
+
+/* -------------------------------- caption --------------------------------- */
+
+/* Only meaningful once the drawing is wider than the screen. */
+.panHint {
+  display: none;
+  color: var(--chalk);
+}
+
+.caption {
+  margin-top: 0.9rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  line-height: 1.6;
+  letter-spacing: 0.04em;
+  color: var(--pencil);
+  max-width: 62ch;
+}
+
+/* ----------------------------- room schedule ------------------------------ */
+
+.schedule {
+  width: 100%;
+  margin-top: 2.5rem;
+  border-collapse: collapse;
+  text-align: left;
+  font-family: var(--font-body);
+}
+
+.scheduleCaption {
+  text-align: left;
+  padding-bottom: 0.6rem;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--pencil);
+}
+
+.schedule thead th {
+  padding: 0.5rem 0.9rem 0.5rem 0;
+  border-top: 1.5px solid var(--chalk);
+  border-bottom: 1px solid color-mix(in srgb, var(--pencil) 55%, transparent);
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--pencil);
+}
+
+.schedule tbody tr {
+  border-bottom: 1px solid color-mix(in srgb, var(--pencil) 28%, transparent);
+  transition: background-color 160ms ease-out;
+}
+
+.rowOn {
+  background-color: color-mix(in srgb, var(--chalk) 9%, transparent);
+}
+
+.schedule td,
+.schedule tbody th {
+  padding: 0.7rem 0.9rem 0.7rem 0;
+  vertical-align: baseline;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  font-weight: 400;
+  color: var(--chalk);
+}
+
+.cellNo {
+  font-family: var(--font-mono);
+  font-size: 0.8rem !important;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--pencil) !important;
+  white-space: nowrap;
+  width: 1%;
+}
+
+.cellName {
+  font-family: var(--font-display);
+  font-weight: 700 !important;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.cellArea {
+  font-family: var(--font-mono);
+  font-size: 0.78rem !important;
+  color: var(--pencil) !important;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.cellArea sup {
+  font-size: 0.7em;
+}
+
+.cellFn {
+  color: color-mix(in srgb, var(--chalk) 88%, transparent) !important;
+  min-width: 22ch;
+}
+
+.rowOn .cellFn,
+.rowOn .cellName {
+  color: var(--chalk) !important;
+}
+
+@media (max-width: 720px) {
+  .panHint {
+    display: block;
+  }
+
+  .schedule,
+  .schedule thead,
+  .schedule tbody,
+  .schedule tr,
+  .schedule td,
+  .schedule tbody th {
+    display: block;
+    width: auto;
+  }
+
+  /* A table-caption inside a blockified table shrink-wraps and shatters the
+     text, so it has to become a block too. */
+  .scheduleCaption {
+    display: block;
+    letter-spacing: 0.12em;
+  }
+
+  .schedule thead {
+    display: none;
+  }
+
+  .schedule tbody tr {
+    padding: 1rem 0;
+  }
+
+  .schedule td,
+  .schedule tbody th {
+    padding: 0.1rem 0;
+  }
+
+  .cellNo,
+  .cellArea {
+    display: inline-block !important;
+    margin-right: 1rem;
+  }
+}

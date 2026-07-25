@@ -2,190 +2,121 @@
 
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
-import { designs, findDesign } from "@/variants/without-design-skill/opus-5/source/src/lib/designs";
+import { useEffect, useState } from "react";
+import { designs } from "@/variants/without-design-skill/opus-5/source/src/lib/designs";
 
-export function DesignSwitcher() {
-  const pathname = usePathname() ?? "";
+export default function DesignSwitcher() {
+  const pathname = usePathname();
   const router = useRouter();
-  const [open, setOpen] = useState(false);
-  const rootRef = useRef<HTMLDivElement>(null);
+  const [expanded, setExpanded] = useState(false);
 
-  const current = findDesign(pathname);
-  const index = current ? designs.indexOf(current) : -1;
+  const activeIndex = designs.findIndex((d) => d.slug === pathname);
+  const active = activeIndex === -1 ? null : designs[activeIndex];
 
-  const go = (href: string) => {
-    setOpen(false);
-    router.push(href);
-  };
-
-  const step = (delta: number) => {
-    go(designs[(index + delta + designs.length) % designs.length].href);
-  };
-
+  // Press 1-5 to jump between designs, [ / ] to step through them.
   useEffect(() => {
-    const onKeyDown = (event: KeyboardEvent) => {
-      const target = event.target as HTMLElement | null;
-      const typing =
-        target?.isContentEditable ||
-        ["INPUT", "TEXTAREA", "SELECT"].includes(target?.tagName ?? "");
-      if (typing || event.metaKey || event.ctrlKey || event.altKey) return;
+    function onKeyDown(event: KeyboardEvent) {
+      if (event.metaKey || event.ctrlKey || event.altKey) return;
 
-      if (event.key === "Escape") {
-        setOpen(false);
+      const target = event.target as HTMLElement | null;
+      if (
+        target?.isContentEditable ||
+        ["INPUT", "TEXTAREA", "SELECT"].includes(target?.tagName ?? "")
+      ) {
         return;
       }
-      if (event.key === "[") {
-        event.preventDefault();
-        step(-1);
+
+      const digit = Number(event.key);
+      if (digit >= 1 && digit <= designs.length) {
+        router.push(designs[digit - 1].slug);
         return;
       }
-      if (event.key === "]") {
-        event.preventDefault();
-        step(1);
-        return;
+
+      if (event.key === "[" || event.key === "]") {
+        const step = event.key === "]" ? 1 : -1;
+        const from = activeIndex === -1 ? 0 : activeIndex;
+        const next = (from + step + designs.length) % designs.length;
+        router.push(designs[next].slug);
       }
-      const match = designs.find((design) => String(design.id) === event.key);
-      if (match) {
-        event.preventDefault();
-        go(match.href);
-      }
-    };
+    }
 
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [index, router]);
-
-  useEffect(() => {
-    if (!open) return;
-    const onPointerDown = (event: PointerEvent) => {
-      if (!rootRef.current?.contains(event.target as Node)) setOpen(false);
-    };
-    window.addEventListener("pointerdown", onPointerDown);
-    return () => window.removeEventListener("pointerdown", onPointerDown);
-  }, [open]);
+  }, [activeIndex, router]);
 
   return (
-    <div
-      ref={rootRef}
-      className="fixed bottom-5 left-1/2 z-[9999] -translate-x-1/2 font-sans"
-    >
-      {open && (
-        <div className="absolute bottom-full left-1/2 mb-3 w-80 -translate-x-1/2 animate-rise overflow-hidden rounded-2xl border border-white/12 bg-neutral-950/95 shadow-2xl shadow-black/60 backdrop-blur-xl">
-          <div className="flex items-baseline justify-between px-4 pt-3.5 pb-2">
-            <p className="text-[11px] font-semibold tracking-[0.16em] text-white/45 uppercase">
-              Design iterations
-            </p>
-            <p className="font-mono text-[10px] text-white/30">esc</p>
-          </div>
+    <div className="pointer-events-none fixed inset-x-0 bottom-5 z-50 flex justify-center px-4 print:hidden">
+      <div
+        onMouseEnter={() => setExpanded(true)}
+        onMouseLeave={() => setExpanded(false)}
+        className="pointer-events-auto flex items-center gap-1 rounded-full border border-white/15 bg-neutral-900/80 p-1.5 text-white shadow-2xl shadow-black/40 backdrop-blur-xl"
+      >
+        <Link
+          href="/"
+          aria-label="All designs"
+          title="All designs"
+          className={`grid size-8 shrink-0 place-items-center rounded-full text-[11px] font-semibold transition-colors ${
+            pathname === "/"
+              ? "bg-white text-neutral-900"
+              : "text-white/60 hover:bg-white/10 hover:text-white"
+          }`}
+        >
+          <svg viewBox="0 0 16 16" className="size-3.5" aria-hidden>
+            <g fill="currentColor">
+              <rect x="1" y="1" width="6" height="6" rx="1.5" />
+              <rect x="9" y="1" width="6" height="6" rx="1.5" />
+              <rect x="1" y="9" width="6" height="6" rx="1.5" />
+              <rect x="9" y="9" width="6" height="6" rx="1.5" />
+            </g>
+          </svg>
+        </Link>
 
-          <ul className="px-2 pb-2">
-            {designs.map((design) => {
-              const active = design.id === current?.id;
-              return (
-                <li key={design.id}>
-                  <Link
-                    href={design.href}
-                    onClick={() => setOpen(false)}
-                    className={`group flex gap-3 rounded-xl px-2.5 py-2.5 transition-colors ${
-                      active ? "bg-white/10" : "hover:bg-white/6"
-                    }`}
-                  >
-                    <span
-                      aria-hidden
-                      className="mt-1 size-2.5 shrink-0 rounded-full ring-3 ring-white/8"
-                      style={{ background: design.accent }}
-                    />
-                    <span className="min-w-0 flex-1">
-                      <span className="flex items-center gap-2">
-                        <span className="text-[13px] font-semibold text-white">
-                          {design.name}
-                        </span>
-                        <span className="text-[11px] text-white/40">
-                          {design.direction}
-                        </span>
-                      </span>
-                      <span className="mt-0.5 block text-[11px] leading-relaxed text-white/45">
-                        {design.note}
-                      </span>
-                    </span>
-                    <kbd className="mt-0.5 h-5 shrink-0 rounded border border-white/12 bg-white/6 px-1.5 font-mono text-[10px] leading-5 text-white/50">
-                      {design.id}
-                    </kbd>
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
+        <span aria-hidden className="mx-0.5 h-5 w-px bg-white/15" />
 
-          <div className="border-t border-white/8 px-4 py-2.5">
+        {designs.map((design, i) => {
+          const isActive = pathname === design.slug;
+          return (
             <Link
-              href="/"
-              onClick={() => setOpen(false)}
-              className="text-[11px] text-white/45 transition-colors hover:text-white"
+              key={design.slug}
+              href={design.slug}
+              title={`${design.name} — ${design.vibe}`}
+              aria-current={isActive ? "page" : undefined}
+              className={`relative grid size-8 place-items-center rounded-full text-[12px] font-semibold tabular-nums transition-colors ${
+                isActive
+                  ? "bg-white text-neutral-900"
+                  : "text-white/60 hover:bg-white/10 hover:text-white"
+              }`}
             >
-              View all side by side →
+              {i + 1}
+              <span
+                aria-hidden
+                className="absolute -bottom-0.5 size-1 rounded-full"
+                style={{
+                  background: isActive ? "transparent" : design.swatch[2],
+                }}
+              />
             </Link>
+          );
+        })}
+
+        <div
+          className={`grid transition-all duration-300 ease-out ${
+            expanded || active
+              ? "grid-cols-[1fr] opacity-100"
+              : "grid-cols-[0fr] opacity-0"
+          }`}
+        >
+          <div className="overflow-hidden">
+            <div className="flex items-baseline gap-2 whitespace-nowrap pr-3 pl-2.5">
+              <span className="text-[12px] font-semibold">
+                {active ? active.name : "Gallery"}
+              </span>
+              <span className="hidden text-[10px] tracking-wide text-white/45 uppercase sm:inline">
+                {expanded ? "keys 1–5" : active?.vibe}
+              </span>
+            </div>
           </div>
         </div>
-      )}
-
-      <div className="flex items-center gap-1 rounded-full border border-white/12 bg-neutral-950/90 p-1 shadow-xl shadow-black/50 backdrop-blur-xl">
-        <button
-          type="button"
-          onClick={() => step(-1)}
-          aria-label="Previous design"
-          className="grid size-7 place-items-center rounded-full text-white/50 transition-colors hover:bg-white/10 hover:text-white"
-        >
-          <svg viewBox="0 0 16 16" className="size-3.5" aria-hidden>
-            <path
-              d="M10 3 5 8l5 5"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.6"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </button>
-
-        <button
-          type="button"
-          onClick={() => setOpen((value) => !value)}
-          aria-expanded={open}
-          className="flex items-center gap-2 rounded-full px-2.5 py-1 transition-colors hover:bg-white/10"
-        >
-          <span
-            aria-hidden
-            className="size-2 rounded-full"
-            style={{ background: current?.accent ?? "#a1a1aa" }}
-          />
-          <span className="text-[13px] font-medium text-white">
-            {current?.name ?? "Pick a design"}
-          </span>
-          <span className="font-mono text-[11px] text-white/35">
-            {current ? `${current.id}/${designs.length}` : designs.length}
-          </span>
-        </button>
-
-        <button
-          type="button"
-          onClick={() => step(1)}
-          aria-label="Next design"
-          className="grid size-7 place-items-center rounded-full text-white/50 transition-colors hover:bg-white/10 hover:text-white"
-        >
-          <svg viewBox="0 0 16 16" className="size-3.5" aria-hidden>
-            <path
-              d="M6 3l5 5-5 5"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.6"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </button>
       </div>
     </div>
   );

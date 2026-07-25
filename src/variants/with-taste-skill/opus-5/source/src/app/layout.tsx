@@ -1,22 +1,26 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist } from "next/font/google";
 import "./globals.css";
-import { IterationSwitcher } from "@/variants/with-taste-skill/opus-5/source/src/app/_components/iteration-switcher";
+import { IterationSwitcher } from "@/variants/with-taste-skill/opus-5/source/src/components/iteration-switcher";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+/*
+  Only the font the shared chrome needs (the switcher and the index page) is
+  loaded here. Each iteration at /1 .. /5 declares its own families in its own
+  page file, so a route preloads only the fonts it actually renders.
+*/
+const geist = Geist({
+  variable: "--f-geist",
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Tessera: five landing page directions",
+  title: {
+    default: "Verso design iterations",
+    template: "%s | Verso",
+  },
   description:
-    "Five art directions for Tessera, a note-taking app that turns scattered notes into a connected body of knowledge.",
+    "Five landing page directions for Verso, a notebook that links what you write to what you already wrote.",
 };
 
 export default function RootLayout({
@@ -25,11 +29,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-    >
-      <body>
+    // No page-level colour is set here on purpose: each route owns and locks its
+    // own theme, so the shell stays neutral instead of fighting it.
+    <html lang="en" className={geist.variable}>
+      <body className="antialiased">
         {children}
         <IterationSwitcher />
       </body>

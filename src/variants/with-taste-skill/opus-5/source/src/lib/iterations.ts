@@ -1,61 +1,56 @@
+/**
+ * The five design directions, in switcher order.
+ *
+ * Shared by the switcher chrome and the index page so route numbering, names and
+ * descriptions can never drift apart.
+ */
 export type Iteration = {
-  /** URL segment, e.g. "1" -> /1 */
-  slug: string;
-  /** Zero padded label used in the switcher */
-  label: string;
+  /** Route path. Also the key the keyboard shortcut listens for. */
+  slug: "1" | "2" | "3" | "4" | "5";
+  /** Short name for the direction. */
   name: string;
-  direction: string;
-  /** Skill dials: DESIGN_VARIANCE / MOTION_INTENSITY / VISUAL_DENSITY */
-  dials: [number, number, number];
+  /** What makes this direction different from the other four. */
+  note: string;
+  /** Locked page theme, so the index can preview it honestly. */
   theme: "light" | "dark";
+  /** Dial settings, as read from the brief. Format: variance / motion / density. */
+  dials: string;
 };
-
-export const BRAND = "Tessera";
 
 export const iterations: Iteration[] = [
   {
     slug: "1",
-    label: "01",
-    name: "Signal",
-    direction: "Restrained dark minimalism for technical buyers",
-    dials: [6, 4, 3],
-    theme: "dark",
+    name: "Commonplace",
+    note: "Print editorial. Neutral grey paper, Garamond display, one ink blue accent, hairlines instead of boxes, and almost no motion.",
+    theme: "light",
+    dials: "6 / 3 / 3",
   },
   {
     slug: "2",
-    label: "02",
-    name: "Commonplace",
-    direction: "Print editorial for writers and researchers",
-    dials: [6, 4, 3],
-    theme: "light",
+    name: "Terminal",
+    note: "Dark developer tool. Monospace, hairline rules, keyboard first, tight information density.",
+    theme: "dark",
+    dials: "6 / 5 / 6",
   },
   {
     slug: "3",
-    label: "03",
-    name: "Cardwall",
-    direction: "Brutalist structural grid for power users",
-    dials: [9, 5, 6],
+    name: "Quiet",
+    note: "Premium consumer calm. Deep forest and bone, large photography, generous space, soft glass.",
     theme: "light",
+    dials: "7 / 6 / 3",
   },
   {
     slug: "4",
-    label: "04",
-    name: "Atlas",
-    direction: "Premium consumer calm, glass and cobalt",
-    dials: [7, 7, 3],
+    name: "Utility",
+    note: "Brutalist. Zero radius, 3px rules, safety orange, everything stated flatly.",
     theme: "light",
+    dials: "9 / 4 / 7",
   },
   {
     slug: "5",
-    label: "05",
-    name: "Constellation",
-    direction: "Kinetic experimental launch page",
-    dials: [9, 9, 3],
+    name: "Kinetic",
+    note: "Motion led. A pinned horizontal pan and a sticky card stack carry the argument, under oversized type and a rose accent.",
     theme: "dark",
+    dials: "9 / 9 / 4",
   },
 ];
-
-export function findIteration(pathname: string): Iteration | undefined {
-  const segment = pathname.split("/").filter(Boolean)[0];
-  return iterations.find((it) => it.slug === segment);
-}

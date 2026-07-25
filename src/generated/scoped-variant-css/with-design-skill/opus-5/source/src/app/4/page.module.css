@@ -1,0 +1,1497 @@
+/* ==========================================================================
+   Cairn — "Core sample"
+   A drilled core read from the surface downward. Depth is the timeline:
+   0 cm is today, 940 cm is March 2016.
+
+   The three mineral accents are a polychrome system — they band together
+   through the strata rather than acting as a single highlight colour. The raw
+   mineral values are used for fills, bands and chips; the lightened variants
+   exist only so mineral-coloured *text* clears 4.5:1 on the basalt field.
+   ========================================================================== */
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .page {
+  /* field */
+  --basalt: #1b2430;
+  --shale: #2c3948;
+  --quartz: #ddd9d0;
+
+  /* minerals */
+  --malachite: #2e8b62;
+  --ochre: #c9903a;
+  --hematite: #9e4b3f;
+
+  /* text-safe mineral variants (contrast on basalt) */
+  --malachite-lit: #5cc294;
+  --ochre-lit: #dea54c;
+  --hematite-lit: #d8776a;
+
+  /* derived */
+  --ink: var(--quartz);
+  --ink-muted: #9aa4ae;
+  --ink-faint: #74808d;
+  --hairline: rgba(221, 217, 208, 0.14);
+  --hairline-strong: rgba(221, 217, 208, 0.28);
+  --contact: rgba(12, 17, 23, 0.72);
+
+  --font-display: var(--font-fraunces), ui-serif, Georgia, serif;
+  --font-body: var(--font-spline-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-spline-mono), ui-monospace, "SFMono-Regular", monospace;
+
+  min-height: 100vh;
+  padding-bottom: 8rem;
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  background-color: var(--basalt);
+  /* grain + faint bedding, and the field darkens with depth */
+  background-image:
+    repeating-linear-gradient(
+      180deg,
+      rgba(221, 217, 208, 0.022) 0 1px,
+      transparent 1px 3px
+    ),
+    linear-gradient(180deg, #23303f 0%, #1b2430 26%, #161d27 100%);
+  background-attachment: scroll, fixed;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .grid {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* ==========================================================================
+   Core column — the signature
+   Mobile: a horizontal bar pinned to the top.
+   Desktop: a vertical drilled cylinder pinned to the left edge.
+   It renders complete without JavaScript: every band is a link, carries a
+   full label for assistive tech, and the specimen plate is always present.
+   ========================================================================== */
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .rail {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  padding: 0.6rem 0 0.7rem;
+  background-color: rgba(27, 36, 48, 0.97);
+  border-bottom: 1px solid var(--hairline);
+  margin-bottom: 2rem;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .column {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .columnHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .columnCore {
+  color: var(--ink-muted);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .columnRecovery {
+  color: var(--ochre-lit);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .tracks {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+/* Scale and per-band labels are the desktop rail's job; on the mobile bar the
+   specimen plate carries the same information. */
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .scaleTrack,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) 
+.labelTrack,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) 
+.columnFoot {
+  display: none;
+}
+
+/* The wrap is unclipped so the depth marker can overhang the core; the tube
+   itself clips its bands to the barrel. */
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .tubeWrap {
+  position: relative;
+  width: 100%;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .tube {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  height: 42px;
+  width: 100%;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow:
+    inset 0 0 0 1px rgba(12, 17, 23, 0.6),
+    0 2px 10px rgba(9, 13, 18, 0.45);
+}
+
+/* barrel shading, so it reads as a cylinder rather than a stripe */
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .tube::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    rgba(10, 14, 19, 0.5) 0%,
+    rgba(255, 255, 255, 0.16) 26%,
+    rgba(255, 255, 255, 0.04) 54%,
+    rgba(10, 14, 19, 0.34) 84%,
+    rgba(10, 14, 19, 0.55) 100%
+  );
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .band {
+  position: relative;
+  flex-basis: 0;
+  flex-shrink: 1;
+  min-width: 15px;
+  display: block;
+  border-right: 1px solid var(--contact);
+  color: var(--quartz);
+  transition:
+    filter 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .band:last-child {
+  border-right: 0;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .band:hover {
+  filter: saturate(1.2) brightness(1.14);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .band:focus-visible {
+  outline: 3px solid var(--quartz);
+  outline-offset: -3px;
+  z-index: 4;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .bandActive {
+  filter: saturate(1.25) brightness(1.2);
+  box-shadow:
+    inset 0 0 0 1.5px rgba(221, 217, 208, 0.9),
+    0 0 0 1px rgba(12, 17, 23, 0.5);
+  z-index: 3;
+}
+
+/* --- band lithologies ---------------------------------------------------- */
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .toneSurface {
+  background-color: #55606e;
+  background-image:
+    radial-gradient(circle at 22% 30%, rgba(221, 217, 208, 0.4) 0 1px, transparent 1.6px),
+    radial-gradient(circle at 68% 70%, rgba(12, 17, 23, 0.5) 0 1.4px, transparent 2px),
+    linear-gradient(180deg, #6a7482, #48525f);
+  background-size: 9px 9px, 13px 13px, auto;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .toneLoose {
+  background-color: var(--ochre);
+  background-image: repeating-linear-gradient(
+    180deg,
+    rgba(12, 17, 23, 0.3) 0 2px,
+    rgba(12, 17, 23, 0) 2px 7px
+  );
+}
+
+/* literally interbedded: malachite and ochre alternating */
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .toneInterbed {
+  background-color: var(--malachite);
+  background-image: repeating-linear-gradient(
+    180deg,
+    var(--malachite) 0 7px,
+    var(--ochre) 7px 11px
+  );
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .toneLaminated {
+  background-color: var(--quartz);
+  background-image: repeating-linear-gradient(
+    180deg,
+    rgba(44, 57, 72, 0.62) 0 1px,
+    rgba(44, 57, 72, 0) 1px 4px
+  );
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .toneGraded {
+  background-image:
+    repeating-linear-gradient(
+      180deg,
+      rgba(12, 17, 23, 0.26) 0 1px,
+      rgba(12, 17, 23, 0) 1px 5px
+    ),
+    linear-gradient(180deg, var(--ochre) 0%, #b06b3d 55%, var(--hematite) 100%);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .toneUnconformity {
+  background-color: var(--hematite);
+  background-image:
+    repeating-linear-gradient(
+      180deg,
+      rgba(221, 217, 208, 0.1) 0 1px,
+      rgba(221, 217, 208, 0) 1px 9px
+    );
+}
+
+/* the sharp contact at the top of the unconformity */
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .toneUnconformity::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 4px;
+  background: repeating-linear-gradient(
+    135deg,
+    var(--quartz) 0 2px,
+    rgba(12, 17, 23, 0.85) 2px 5px
+  );
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .toneBedrock {
+  background-color: #1f5d47;
+  background-image:
+    repeating-linear-gradient(
+      45deg,
+      rgba(221, 217, 208, 0.13) 0 1px,
+      transparent 1px 7px
+    ),
+    repeating-linear-gradient(
+      135deg,
+      rgba(12, 17, 23, 0.3) 0 1px,
+      transparent 1px 7px
+    );
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .toneCatcher {
+  background-color: var(--shale);
+  background-image:
+    radial-gradient(circle at 25% 30%, var(--ochre) 0 1.4px, transparent 2px),
+    radial-gradient(circle at 70% 62%, var(--malachite) 0 1.4px, transparent 2px),
+    radial-gradient(circle at 45% 85%, var(--hematite) 0 1.4px, transparent 2px);
+  background-size: 14px 14px;
+}
+
+/* --- depth marker -------------------------------------------------------- */
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .marker {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--marker-x, 0);
+  width: 0;
+  border-left: 2px solid var(--quartz);
+  pointer-events: none;
+  z-index: 5;
+  transform: translateX(-1px);
+  transition: left 0.5s cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .marker::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: -4px;
+  border-top: 6px solid var(--quartz);
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+}
+
+/* --- specimen plate (always visible; the column's readout) --------------- */
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .plate {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  padding: 0.45rem 0.6rem;
+  border: 1px solid var(--hairline);
+  border-left: 3px solid var(--ochre);
+  background: rgba(44, 57, 72, 0.55);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .plateTop {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.06em;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .plateSample {
+  color: var(--quartz);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .plateDepth {
+  color: var(--ochre-lit);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .plateYear {
+  color: var(--ink-faint);
+  margin-left: auto;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .plateLitho {
+  font-size: 0.75rem;
+  line-height: 1.35;
+  color: var(--ink-muted);
+}
+
+/* ==========================================================================
+   The log — everything to the right of the column stays calm
+   ========================================================================== */
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .log {
+  max-width: 62ch;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .bed {
+  padding: 3.5rem 0;
+  border-top: 1px solid var(--hairline);
+  scroll-margin-top: 130px;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .bed:first-child {
+  border-top: 0;
+  padding-top: 1rem;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .bedFeature {
+  position: relative;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .bedHead {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .chip {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  flex: 0 0 auto;
+  border: 1px solid rgba(12, 17, 23, 0.55);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .chipSurface {
+  background: #6a7482;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .chipOchre {
+  background: var(--ochre);
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .chipInterbed {
+  background: repeating-linear-gradient(
+    180deg,
+    var(--malachite) 0 3px,
+    var(--ochre) 3px 5px
+  );
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .chipQuartz {
+  background: var(--quartz);
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .chipGraded {
+  background: linear-gradient(180deg, var(--ochre), var(--hematite));
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .chipHematite {
+  background: var(--hematite);
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .chipMalachite {
+  background: var(--malachite);
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .chipCatcher {
+  background:
+    linear-gradient(90deg, var(--ochre) 33%, var(--malachite) 33% 66%, var(--hematite) 66%);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .bedDepth {
+  color: var(--ochre-lit);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .bedRule {
+  flex: 1;
+  height: 1px;
+  background: var(--hairline);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .bedYear {
+  color: var(--ink-muted);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .bedSample {
+  color: var(--ink-faint);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .litho {
+  margin-top: 0.85rem;
+  font-size: 0.8125rem;
+  letter-spacing: 0.01em;
+  color: var(--ink-muted);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .h1 {
+  margin-top: 1.1rem;
+  font-family: var(--font-display);
+  font-variation-settings: "SOFT" 30, "WONK" 1, "opsz" 120;
+  font-weight: 600;
+  font-size: clamp(2.35rem, 6.4vw, 3.9rem);
+  line-height: 1.02;
+  letter-spacing: -0.022em;
+  color: var(--quartz);
+  text-wrap: balance;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .h2 {
+  margin-top: 0.9rem;
+  font-family: var(--font-display);
+  font-variation-settings: "SOFT" 40, "WONK" 1, "opsz" 72;
+  font-weight: 600;
+  font-size: clamp(1.6rem, 3.6vw, 2.15rem);
+  line-height: 1.12;
+  letter-spacing: -0.014em;
+  color: var(--quartz);
+  text-wrap: balance;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .lede {
+  margin-top: 1.4rem;
+  font-size: 1.125rem;
+  line-height: 1.62;
+  color: #c4c6c4;
+  max-width: 46ch;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .body {
+  margin-top: 1.1rem;
+  font-size: 1rem;
+  color: #b9bec3;
+  max-width: 52ch;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .code {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  padding: 0.05em 0.3em;
+  border: 1px solid var(--hairline);
+  background: rgba(44, 57, 72, 0.7);
+  color: var(--ochre-lit);
+}
+
+/* --- hero ---------------------------------------------------------------- */
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .hero {
+  padding-bottom: 3rem;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .ctaPrimary,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) 
+.ctaSecondary {
+  display: inline-block;
+  padding: 0.72rem 1.15rem;
+  font-size: 0.9375rem;
+  letter-spacing: 0.005em;
+  border: 1px solid transparent;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .ctaPrimary {
+  background: var(--ochre);
+  color: #1b2430;
+  font-weight: 600;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .ctaPrimary:hover {
+  background: #e0a94f;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .ctaSecondary {
+  border-color: var(--hairline-strong);
+  color: var(--quartz);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .ctaSecondary:hover {
+  border-color: var(--quartz);
+  background: rgba(221, 217, 208, 0.06);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .ctaPrimary:focus-visible,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) 
+.ctaSecondary:focus-visible {
+  outline: 3px solid var(--quartz);
+  outline-offset: 3px;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .readings {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem 2.25rem;
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--hairline);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .reading {
+  min-width: 8rem;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .readingKey {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .readingValue {
+  margin-top: 0.3rem;
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  color: var(--quartz);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .scaleBar {
+  margin-top: 2rem;
+  color: var(--ink-muted);
+  max-width: 22rem;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .scaleBarSvg {
+  width: 100%;
+  height: 22px;
+  display: block;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .scaleBarLabel {
+  display: block;
+  margin-top: 0.35rem;
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  letter-spacing: 0.08em;
+  color: var(--ink-faint);
+}
+
+/* --- specimen cards ------------------------------------------------------ */
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .specimen {
+  margin-top: 1.75rem;
+  padding: 1rem 1.1rem 1.15rem;
+  background: var(--shale);
+  border: 1px solid rgba(12, 17, 23, 0.5);
+  border-top: 2px solid var(--hairline-strong);
+  box-shadow: 0 1px 0 rgba(221, 217, 208, 0.05) inset;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .specimenSurface {
+  border-top-color: var(--quartz);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .specimenHead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem 0.75rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--hairline);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .specimenTitle {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-display);
+  font-variation-settings: "SOFT" 40, "WONK" 1, "opsz" 20;
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--quartz);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .specimenMeta {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  color: var(--ink-faint);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .tag {
+  display: inline-block;
+  padding: 0.1rem 0.4rem;
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: 1px solid currentColor;
+  white-space: nowrap;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .tagOchre {
+  color: var(--ochre-lit);
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .tagMalachite {
+  color: var(--malachite-lit);
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .tagQuartz {
+  color: var(--quartz);
+}
+
+/* daily note */
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .jotList {
+  margin-top: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .jot {
+  position: relative;
+  padding-left: 1.1rem;
+  font-size: 0.9375rem;
+  color: #bcc1c6;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .jot::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--ink-faint);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .jotCursor::before {
+  content: "—";
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .caret {
+  display: inline-block;
+  width: 8px;
+  height: 1.05em;
+  vertical-align: text-bottom;
+  background: var(--ochre);
+  animation: gallery-with-design-skill-opus-5-source-src-app-4-page-module-blink 1.3s steps(2, start) infinite;
+}
+
+@keyframes gallery-with-design-skill-opus-5-source-src-app-4-page-module-blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  50.01%,
+  100% {
+    opacity: 0.15;
+  }
+}
+
+/* links / backlinks */
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .linkPair {
+  margin-top: 1.75rem;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .linkPair .specimen {
+  margin-top: 0;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .noteLine {
+  margin-top: 0.7rem;
+  font-size: 0.9375rem;
+  color: #bcc1c6;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .linkToken {
+  font-family: var(--font-mono);
+  font-size: 0.875em;
+  padding: 0.05em 0.25em;
+  color: var(--malachite-lit);
+  border-bottom: 1px solid var(--malachite);
+  background: rgba(46, 139, 98, 0.14);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .linkShaft {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.5rem 0;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .linkShaftLine {
+  width: 0;
+  height: 14px;
+  border-left: 1px dashed var(--malachite-lit);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .linkShaftBadge {
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  letter-spacing: 0.1em;
+  color: var(--malachite-lit);
+  border: 1px solid var(--malachite);
+  padding: 0.05rem 0.35rem;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .backlinks {
+  margin-top: 0.7rem;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .backlinkHead {
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .backlink {
+  margin-top: 0.4rem;
+  padding-left: 0.85rem;
+  position: relative;
+  font-size: 0.9375rem;
+  color: #bcc1c6;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .backlink::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 6px;
+  height: 1px;
+  background: var(--malachite-lit);
+}
+
+/* search */
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .searchBar {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.5rem 0.65rem;
+  border: 1px solid var(--hairline-strong);
+  background: rgba(27, 36, 48, 0.7);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .searchIcon {
+  width: 15px;
+  height: 15px;
+  flex: 0 0 auto;
+  color: var(--ink-faint);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .searchQuery {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  color: var(--quartz);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .searchCount {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  color: var(--ink-faint);
+  white-space: nowrap;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .results {
+  display: flex;
+  flex-direction: column;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .result {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid var(--hairline);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .result:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .resultTitle {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9375rem;
+  color: var(--quartz);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .resultSnippet {
+  font-size: 0.875rem;
+  color: var(--ink-muted);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .mark {
+  background: rgba(201, 144, 58, 0.28);
+  color: var(--quartz);
+  padding: 0 0.15em;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .resultMeta {
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  letter-spacing: 0.08em;
+  color: var(--ink-faint);
+}
+
+/* versions + devices */
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .twoUp {
+  display: grid;
+  gap: 1.25rem;
+  margin-top: 1.75rem;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .twoUp .specimen {
+  margin-top: 0;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .versions {
+  margin-top: 0.75rem;
+  display: flex;
+  flex-direction: column;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .version {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2rem 0.75rem;
+  padding: 0.45rem 0 0.45rem 0.85rem;
+  border-left: 2px solid var(--hairline);
+  font-size: 0.875rem;
+  color: var(--ink-muted);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .versionCurrent {
+  border-left-color: var(--ochre);
+  color: var(--quartz);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .versionStamp {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: inherit;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .versionNote {
+  color: inherit;
+  opacity: 0.85;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .devices {
+  width: 100%;
+  max-width: 240px;
+  height: auto;
+  margin-top: 1rem;
+  color: var(--ink-muted);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .deviceNote {
+  margin-top: 0.9rem;
+  font-size: 0.875rem;
+  color: var(--ink-muted);
+}
+
+/* --- resurface ----------------------------------------------------------- */
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .resurface {
+  margin-top: 1.75rem;
+  padding: 1.25rem;
+  border: 1px solid var(--hairline);
+  background:
+    repeating-linear-gradient(
+      180deg,
+      rgba(158, 75, 63, 0.05) 0 2px,
+      transparent 2px 8px
+    ),
+    rgba(27, 36, 48, 0.55);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .resurface .specimen {
+  margin-top: 0;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .shaft {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.75rem 0;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .shaftLine {
+  width: 0;
+  height: 18px;
+  border-left: 1px dashed var(--hematite-lit);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .shaftLabel {
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--hematite-lit);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .raised {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .raisedItem {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.2rem 0.85rem;
+  padding: 0.7rem 0.85rem;
+  background: var(--shale);
+  border-left: 3px solid var(--hematite);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .raisedDepth {
+  grid-row: span 2;
+  align-self: start;
+  padding-top: 0.15rem;
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--hematite-lit);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .raisedBody {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .raisedTitle {
+  font-size: 0.9375rem;
+  color: var(--quartz);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .raisedReason {
+  font-size: 0.8125rem;
+  color: var(--ink-muted);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .raisedAge {
+  grid-column: 2;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.05em;
+  color: var(--ink-faint);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .resurfaceFoot {
+  margin-top: 1rem;
+  font-size: 0.8125rem;
+  color: var(--ink-muted);
+}
+
+/* --- bedrock file listing ------------------------------------------------ */
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .tree {
+  margin-top: 0.75rem;
+  display: flex;
+  flex-direction: column;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .treeRow {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  padding: 0.35rem 0;
+  border-bottom: 1px dotted rgba(221, 217, 208, 0.12);
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .treeRow:last-child {
+  border-bottom: 0;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .treePath {
+  color: var(--malachite-lit);
+  overflow-wrap: anywhere;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .treeSize {
+  margin-left: auto;
+  color: var(--ink-faint);
+  white-space: nowrap;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .treeRowQuiet .treePath {
+  color: var(--ink-muted);
+}
+
+/* --- pricing ------------------------------------------------------------- */
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .plans {
+  display: grid;
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .plan {
+  display: flex;
+  flex-direction: column;
+  padding: 1.25rem;
+  background: var(--shale);
+  border: 1px solid rgba(12, 17, 23, 0.5);
+  border-top: 3px solid var(--malachite);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .planLead {
+  border-top-color: var(--ochre);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .planName {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .planPrice {
+  margin-top: 0.5rem;
+  font-family: var(--font-display);
+  font-variation-settings: "SOFT" 30, "WONK" 1, "opsz" 60;
+  font-weight: 600;
+  font-size: 2.1rem;
+  line-height: 1.1;
+  color: var(--quartz);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .planPer {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: var(--ink-muted);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .planList {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .planItem {
+  position: relative;
+  padding-left: 1.1rem;
+  font-size: 0.9375rem;
+  color: #bcc1c6;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .planItem::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 8px;
+  height: 1px;
+  background: var(--ink-faint);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .planCta {
+  display: inline-block;
+  margin-top: 1.35rem;
+  padding: 0.65rem 1rem;
+  text-align: center;
+  font-size: 0.9375rem;
+  border: 1px solid var(--hairline-strong);
+  color: var(--quartz);
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .planCta:hover {
+  border-color: var(--quartz);
+  background: rgba(221, 217, 208, 0.06);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .planCtaLead {
+  background: var(--ochre);
+  border-color: var(--ochre);
+  color: #1b2430;
+  font-weight: 600;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .planCtaLead:hover {
+  background: #e0a94f;
+  border-color: #e0a94f;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .planCta:focus-visible {
+  outline: 3px solid var(--quartz);
+  outline-offset: 3px;
+}
+
+/* --- archive record ------------------------------------------------------ */
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .archive {
+  margin-top: 3.5rem;
+  padding: 1.5rem 1.35rem;
+  border: 1px solid var(--hairline-strong);
+  background: rgba(44, 57, 72, 0.45);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .archiveTitle {
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  padding-bottom: 0.85rem;
+  border-bottom: 1px solid var(--hairline);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .archiveGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem 1.5rem;
+  margin-top: 1.1rem;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .archiveKey {
+  font-family: var(--font-mono);
+  font-size: 0.5625rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .archiveValue {
+  margin-top: 0.2rem;
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--quartz);
+  overflow-wrap: anywhere;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .archiveNav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.35rem;
+  margin-top: 1.6rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--hairline);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .archiveLink {
+  font-size: 0.875rem;
+  color: var(--ink-muted);
+  border-bottom: 1px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .archiveLink:hover {
+  color: var(--quartz);
+  border-bottom-color: var(--ochre);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .archiveLink:focus-visible {
+  outline: 3px solid var(--quartz);
+  outline-offset: 3px;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .archiveNote {
+  margin-top: 1.2rem;
+  font-size: 0.8125rem;
+  color: var(--ink-muted);
+  max-width: 48ch;
+}
+
+/* ==========================================================================
+   Utility
+   ========================================================================== */
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ==========================================================================
+   Wider viewports
+   ========================================================================== */
+
+@media (min-width: 620px) {
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .twoUp {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .plans {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .archiveGrid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .raisedItem {
+    grid-template-columns: auto 1fr auto;
+    align-items: baseline;
+  }
+
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .raisedDepth {
+    grid-row: auto;
+  }
+
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .raisedAge {
+    grid-column: auto;
+    text-align: right;
+  }
+}
+
+/* The rail turns vertical: a drilled cylinder pinned to the left edge. */
+@media (min-width: 1040px) {
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .grid {
+    display: grid;
+    grid-template-columns: 288px minmax(0, 1fr);
+    gap: 4rem;
+    align-items: start;
+    padding: 0 2rem;
+  }
+
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .rail {
+    position: sticky;
+    top: 2.5rem;
+    height: calc(100vh - 6.5rem);
+    min-height: 420px;
+    padding: 0;
+    margin-bottom: 0;
+    background: none;
+    border-bottom: 0;
+  }
+
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .column {
+    height: 100%;
+    gap: 0.6rem;
+  }
+
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .tracks {
+    flex: 1;
+    flex-direction: row;
+    gap: 0.55rem;
+    min-height: 0;
+  }
+
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .scaleTrack {
+    display: flex;
+    flex-direction: column;
+    width: 46px;
+    flex: 0 0 46px;
+  }
+
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .scaleRow {
+    flex-basis: 0;
+    min-height: 26px;
+    overflow: hidden;
+    text-align: right;
+    padding-right: 0.3rem;
+    border-top: 1px solid var(--hairline);
+    font-family: var(--font-mono);
+    line-height: 1.15;
+  }
+
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .scaleDepth {
+    display: block;
+    font-size: 0.6875rem;
+    color: var(--ink-muted);
+  }
+
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .scaleYear {
+    display: block;
+    font-size: 0.5625rem;
+    letter-spacing: 0.05em;
+    color: var(--ink-faint);
+  }
+
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .tubeWrap {
+    flex: 0 0 48px;
+    width: 48px;
+    height: 100%;
+  }
+
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .tube {
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    border-radius: 3px;
+  }
+
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .tube::after {
+    background: linear-gradient(
+      90deg,
+      rgba(10, 14, 19, 0.55) 0%,
+      rgba(255, 255, 255, 0.17) 24%,
+      rgba(255, 255, 255, 0.05) 52%,
+      rgba(10, 14, 19, 0.36) 86%,
+      rgba(10, 14, 19, 0.58) 100%
+    );
+  }
+
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .band {
+    min-width: 0;
+    min-height: 26px;
+    border-right: 0;
+    border-bottom: 1px solid var(--contact);
+  }
+
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .band:last-child {
+    border-bottom: 0;
+  }
+
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .marker {
+    top: var(--marker-y, 0);
+    bottom: auto;
+    left: -7px;
+    right: -7px;
+    width: auto;
+    height: 0;
+    border-left: 0;
+    border-top: 2px solid var(--quartz);
+    transform: translateY(-1px);
+    transition: top 0.5s cubic-bezier(0.32, 0.72, 0, 1);
+  }
+
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .marker::before {
+    top: -4px;
+    left: -1px;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 6px solid var(--quartz);
+    border-right: 0;
+  }
+
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .labelTrack {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 0;
+  }
+
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .labelRow {
+    flex-basis: 0;
+    min-height: 26px;
+    overflow: hidden;
+    padding: 0.1rem 0 0 0.55rem;
+    border-top: 1px solid var(--hairline);
+    border-left: 2px solid transparent;
+    line-height: 1.2;
+    transition: border-color 0.3s ease, color 0.3s ease;
+  }
+
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .labelName {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--ink-muted);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .labelSample {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.5625rem;
+    letter-spacing: 0.08em;
+    color: var(--ink-faint);
+  }
+
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .labelRowActive {
+    border-left-color: var(--quartz);
+  }
+
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .labelRowActive .labelName {
+    color: var(--quartz);
+  }
+
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .labelRowActive .labelSample {
+    color: var(--ochre-lit);
+  }
+
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .columnFoot {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.5625rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    text-align: right;
+  }
+
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .bed {
+    scroll-margin-top: 2.5rem;
+    padding: 4.5rem 0;
+  }
+
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .bed:first-child {
+    padding-top: 2.5rem;
+  }
+
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .log {
+    padding-bottom: 2rem;
+  }
+}
+
+/* ==========================================================================
+   Motion is never the message: with reduced motion every band, label, depth
+   and specimen plate still reads exactly the same, just without the travel.
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .marker {
+    transition: none;
+  }
+
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .caret {
+    animation: none;
+    opacity: 1;
+  }
+}

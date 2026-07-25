@@ -1,25 +1,91 @@
 /*
-  Each direction owns its own palette, type and background in a CSS module.
-  Everything global here stays deliberately neutral so the five directions
-  never inherit a house style from this file.
-*/
+ * Global reset only. Every iteration owns its own visual language through a
+ * CSS module, so nothing here may set a color, font, or spacing opinion.
+ */
 
-:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) {
-  background: #17171a;
-  -webkit-text-size-adjust: 100%;
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) *,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) 
+*::before,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) 
+*::after {
+  box-sizing: border-box;
 }
 
-:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) {
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) * {
   margin: 0;
-  min-height: 100dvh;
 }
 
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) {
+  min-height: 100%;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) img,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) 
+picture,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) 
+video,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) 
+canvas,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) 
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) input,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) 
+button,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) 
+textarea,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) 
+select {
+  font: inherit;
+  color: inherit;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) p,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) 
+h1,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) 
+h2,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) 
+h3,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) 
+h4,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) 
+h5,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) 
+h6 {
+  overflow-wrap: break-word;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) h1,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) 
+h2,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) 
+h3,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) 
+h4,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) 
+h5,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) 
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) ul,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) 
+ol {
+  list-style: none;
+  padding: 0;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Every iteration is judged on keyboard access, so the fallback ring is loud. */
 :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) :focus-visible {
-  outline: 2px solid currentColor;
+  outline: 3px solid currentColor;
   outline-offset: 2px;
 }
 
-:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) ::selection {
-  background: #17171a;
-  color: #fff;
+@media (prefers-reduced-motion: reduce) {
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) *,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) 
+  *::before,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) 
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

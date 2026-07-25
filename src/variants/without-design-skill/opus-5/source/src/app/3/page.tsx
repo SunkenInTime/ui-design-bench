@@ -1,298 +1,276 @@
-import type { Metadata } from "next";
-import { plexMono } from "../fonts";
+import Link from "next/link";
 
-export const metadata: Metadata = {
-  title: "Command",
-  description:
-    "Recall is a keyboard-first second brain. Capture, link and retrieve without ever reaching for the mouse.",
-};
-
-const paletteRows = [
-  { key: "⌘K", label: "capture thought", hint: "anywhere in the OS" },
-  { key: "⌘[", label: "jump to backlinks", hint: "12 linked notes" },
-  { key: "⌘/", label: "ask the archive", hint: "answers cite sources" },
-  { key: "⌘⇧E", label: "export vault", hint: "markdown + assets" },
+const marquee = [
+  "BIDIRECTIONAL LINKS",
+  "PLAIN MARKDOWN",
+  "OFFLINE FIRST",
+  "GRAPH VIEW",
+  "E2E ENCRYPTED",
+  "NO FOLDERS",
+  "INSTANT CAPTURE",
 ];
 
-const results = [
+const features = [
   {
-    title: "pricing-experiments.md",
-    line: "…moving to usage-based broke the sales narrative, but retention…",
-    tag: "linked ×7",
+    n: "01",
+    title: "LINKS BOTH WAYS",
+    body: "Reference a note, and it references you back. The graph is a side effect of writing, not a chore.",
+    fill: "bg-[#ccff00]",
   },
   {
-    title: "1:1 / dana / 2026-03-14",
-    line: "…she flagged the same objection we hit in the Q3 review…",
-    tag: "linked ×3",
+    n: "02",
+    title: "ASK YOUR ARCHIVE",
+    body: "Plain-language recall over everything you have written. Every answer cites the note it came from.",
+    fill: "bg-white",
   },
   {
-    title: "clipped: The Cost of Context",
-    line: "…attention residue lasts ~23 minutes per interruption…",
-    tag: "highlight",
-  },
-];
-
-const specs = [
-  {
-    cmd: "recall capture",
-    body: "Global hotkey opens a one-line input over whatever you're doing. Type, hit enter, it's filed and linked. Never breaks flow.",
+    n: "03",
+    title: "FILES. NOT LOCK-IN.",
+    body: "A folder of .md files on your disk. Delete us and keep everything.",
+    fill: "bg-white",
   },
   {
-    cmd: "recall link --auto",
-    body: "Every save runs entity extraction over your vault and proposes links. Accept with tab, reject with x. Nothing happens without you.",
-  },
-  {
-    cmd: "recall ask",
-    body: "Natural language query against 50k notes in 38ms locally. Every answer footnotes the exact note and line it came from.",
-  },
-  {
-    cmd: "recall sync --e2ee",
-    body: "Encrypted before it leaves the machine. Conflict resolution is a three-way merge, not a 'copy (2)' file.",
+    n: "04",
+    title: "0MS CAPTURE",
+    body: "Global hotkey. Window opens, thought lands, window dies.",
+    fill: "bg-[#2563eb] text-white",
   },
 ];
 
-export default function CommandPage() {
+export default function AcidLanding() {
   return (
-    <div
-      className={`${plexMono.className} relative flex flex-1 flex-col bg-[#05070a] text-neutral-300 selection:bg-green-400/25`}
-    >
-      {/* Scanline + phosphor wash */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 opacity-55"
-        style={{
-          backgroundImage:
-            "repeating-linear-gradient(to bottom, rgba(74,222,128,0.05) 0 1px, transparent 1px 4px)",
-        }}
-      />
-      <div
-        aria-hidden
-        className="pointer-events-none absolute top-0 left-1/2 h-80 w-[820px] -translate-x-1/2 rounded-full bg-green-500/10 blur-[110px]"
-      />
-
-      <header className="relative mx-auto flex w-full max-w-5xl items-center justify-between border-b border-green-400/15 px-6 py-4 text-[13px]">
-        <div className="flex items-center gap-2">
-          <span className="text-green-400">▮</span>
-          <span className="font-semibold tracking-tight text-neutral-100">
-            recall
+    <div className="min-h-screen flex-1 bg-[#eeeeea] font-sans text-[#111] selection:bg-[#ccff00]">
+      {/* Nav */}
+      <header className="sticky top-0 z-30 border-b-2 border-[#111] bg-[#eeeeea]">
+        <nav className="mx-auto flex max-w-7xl items-stretch">
+          <span className="flex items-center gap-2 border-r-2 border-[#111] px-5 py-4 text-lg font-black tracking-tighter">
+            LOAM<span className="text-[#ccff00] [-webkit-text-stroke:1px_#111]">®</span>
           </span>
-          <span className="text-neutral-600">v4.2.0</span>
-        </div>
-        <nav className="hidden items-center gap-7 text-neutral-500 md:flex">
-          <a className="transition-colors hover:text-green-300" href="#spec">
-            ./spec
-          </a>
-          <a className="transition-colors hover:text-green-300" href="#keys">
-            ./keybinds
-          </a>
-          <a className="transition-colors hover:text-green-300" href="#install">
-            ./install
+          <div className="hidden flex-1 items-center gap-8 px-6 font-mono text-[11px] tracking-wider md:flex">
+            <a className="hover:bg-[#ccff00]" href="#what">
+              [WHAT]
+            </a>
+            <a className="hover:bg-[#ccff00]" href="#how">
+              [HOW]
+            </a>
+            <a className="hover:bg-[#ccff00]" href="#price">
+              [PRICE]
+            </a>
+          </div>
+          <a
+            href="#price"
+            className="ml-auto flex items-center border-l-2 border-[#111] bg-[#111] px-6 font-mono text-[11px] font-bold tracking-wider text-[#ccff00] transition hover:bg-[#ccff00] hover:text-[#111] md:ml-0"
+          >
+            GET IT →
           </a>
         </nav>
-        <a
-          href="#install"
-          className="border border-green-400/40 px-3 py-1.5 text-green-300 transition-colors hover:bg-green-400 hover:text-black"
-        >
-          brew install recall
-        </a>
       </header>
 
-      <main className="relative mx-auto w-full max-w-5xl px-6">
-        {/* Hero */}
-        <section className="py-16 lg:py-20">
-          <p className="text-[12.5px] tracking-[0.2em] text-green-400/80 uppercase">
-            keyboard-first second brain
-          </p>
-
-          <h1 className="mt-6 max-w-3xl text-[clamp(2.3rem,5vw,3.9rem)] leading-[1.06] font-semibold tracking-[-0.03em] text-neutral-50">
-            Your mouse has no
-            <br />
-            business in your
-            <br />
-            <span className="text-green-400">train of thought.</span>
-          </h1>
-
-          <p className="mt-7 max-w-xl text-[16px] leading-relaxed text-neutral-400">
-            Recall is a note system for people who type faster than they think.
-            Capture in one keystroke, link with two, and search ten years of
-            notes before your hand leaves home row.
-          </p>
-
-          <div className="mt-9 flex flex-wrap items-center gap-3 text-[13.5px]">
-            <a
-              href="#install"
-              className="bg-green-400 px-5 py-2.5 font-semibold text-black transition-colors hover:bg-green-300"
-            >
-              Install (14 MB)
-            </a>
-            <a
-              href="#keys"
-              className="border border-neutral-700 px-5 py-2.5 text-neutral-300 transition-colors hover:border-green-400/60 hover:text-green-300"
-            >
-              See all 41 keybinds
-            </a>
-          </div>
-
-          {/* Terminal / command palette mock */}
-          <div className="mt-14 overflow-hidden rounded-lg border border-green-400/25 bg-[#080b0f] shadow-[0_0_60px_-20px_rgba(74,222,128,0.35)]">
-            <div className="flex items-center gap-2 border-b border-green-400/15 px-4 py-2.5 text-[11.5px] text-neutral-500">
-              <span className="size-2 rounded-full bg-neutral-700" />
-              <span className="size-2 rounded-full bg-neutral-700" />
-              <span className="size-2 rounded-full bg-green-400/70" />
-              <span className="ml-2">~/vault — recall</span>
-              <span className="ml-auto">50,412 notes indexed</span>
-            </div>
-
-            <div className="px-5 py-5">
-              <p className="flex items-center gap-2 text-[15px]">
-                <span className="text-green-400">❯</span>
-                <span className="text-neutral-100">
-                  recall ask &quot;why did we drop usage-based pricing?&quot;
+      {/* Hero */}
+      <section className="border-b-2 border-[#111]">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid lg:grid-cols-[1.35fr_1fr]">
+            <div className="border-[#111] px-5 py-14 sm:px-8 sm:py-20 lg:border-r-2">
+              <p className="mb-8 inline-block border-2 border-[#111] bg-[#ccff00] px-2.5 py-1 font-mono text-[11px] font-bold tracking-wider">
+                A SECOND BRAIN THAT ACTUALLY REMEMBERS
+              </p>
+              <h1 className="text-[3.25rem] leading-[0.86] font-black tracking-[-0.045em] uppercase sm:text-[5.5rem] lg:text-[6.5rem]">
+                Your notes
+                <br />
+                are a{" "}
+                <span className="bg-[#ccff00] px-1.5 [-webkit-box-decoration-break:clone] [box-decoration-break:clone]">
+                  mess
                 </span>
-                <span className="inline-block h-4 w-2 animate-caret bg-green-400 align-middle" />
+                .
+              </h1>
+              <p className="mt-9 max-w-md font-mono text-sm leading-relaxed">
+                Good. Mess is where the ideas are. Loam indexes the chaos so you
+                never have to tidy it — no folders, no taxonomy, no Sunday
+                afternoon reorganising tags.
               </p>
-
-              <p className="mt-4 text-[12.5px] text-neutral-600">
-                → resolved 3 sources in 38ms · confidence high
-              </p>
-
-              <ul className="mt-4 space-y-2.5">
-                {results.map((result) => (
-                  <li
-                    key={result.title}
-                    className="group flex items-start gap-4 border border-neutral-800/80 bg-black/40 px-4 py-3 transition-colors hover:border-green-400/40"
-                  >
-                    <span className="mt-0.5 text-green-400/70">◆</span>
-                    <span className="min-w-0 flex-1">
-                      <span className="block text-[13.5px] text-neutral-100">
-                        {result.title}
-                      </span>
-                      <span className="mt-1 block truncate text-[12.5px] text-neutral-500">
-                        {result.line}
-                      </span>
-                    </span>
-                    <span className="shrink-0 text-[11px] text-green-400/60">
-                      {result.tag}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-
-              <div className="mt-5 flex flex-wrap gap-x-6 gap-y-2 border-t border-neutral-800/80 pt-4 text-[11.5px] text-neutral-600">
-                {paletteRows.map((row) => (
-                  <span key={row.key} className="flex items-center gap-2">
-                    <kbd className="border border-neutral-700 px-1.5 py-0.5 text-neutral-300">
-                      {row.key}
-                    </kbd>
-                    {row.label}
-                  </span>
-                ))}
+              <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+                <a
+                  href="#price"
+                  className="border-2 border-[#111] bg-[#111] px-8 py-4 text-center font-mono text-sm font-bold tracking-wider text-[#eeeeea] shadow-[6px_6px_0_0_#ccff00] transition-all hover:translate-x-1 hover:translate-y-1 hover:shadow-[2px_2px_0_0_#ccff00]"
+                >
+                  DOWNLOAD — FREE
+                </a>
+                <a
+                  href="#what"
+                  className="border-2 border-[#111] bg-[#eeeeea] px-8 py-4 text-center font-mono text-sm font-bold tracking-wider transition-all hover:bg-[#ccff00]"
+                >
+                  WHAT IS THIS
+                </a>
               </div>
             </div>
+
+            {/* Stat stack */}
+            <div className="grid grid-rows-3 divide-y-2 divide-[#111] border-t-2 border-[#111] lg:border-t-0">
+              {[
+                ["500", "NOTES FREE. THEN $8/MO."],
+                ["1.2M", "LINKS DRAWN LAST WEEK"],
+                ["0", "PROPRIETARY FILE FORMATS"],
+              ].map(([stat, label]) => (
+                <div
+                  key={label}
+                  className="flex flex-col justify-center px-5 py-10 sm:px-8"
+                >
+                  <p className="text-6xl font-black tracking-tighter tabular-nums sm:text-7xl">
+                    {stat}
+                  </p>
+                  <p className="mt-2 font-mono text-[11px] tracking-wider">
+                    {label}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Spec list */}
-        <section id="spec" className="border-t border-neutral-800/80 py-20">
-          <h2 className="text-[12.5px] tracking-[0.2em] text-green-400/80 uppercase">
-            # what it actually does
-          </h2>
+      {/* Marquee */}
+      <div className="overflow-hidden border-b-2 border-[#111] bg-[#111] py-3">
+        <div className="animate-marquee flex w-max">
+          {[0, 1].map((dup) => (
+            <div key={dup} className="flex shrink-0" aria-hidden={dup === 1}>
+              {marquee.map((item) => (
+                <span
+                  key={item}
+                  className="flex items-center gap-6 px-6 font-mono text-[11px] font-bold tracking-[0.2em] whitespace-nowrap text-[#eeeeea]"
+                >
+                  {item}
+                  <span className="text-[#ccff00]">✦</span>
+                </span>
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
 
-          <div className="mt-10 divide-y divide-neutral-800/80">
-            {specs.map((spec) => (
-              <article
-                key={spec.cmd}
-                className="grid gap-3 py-7 transition-colors hover:bg-green-400/3 sm:grid-cols-[280px_1fr] sm:gap-10"
-              >
-                <h3 className="text-[15px] font-semibold text-green-300">
-                  <span className="text-neutral-600">$ </span>
-                  {spec.cmd}
-                </h3>
-                <p className="max-w-2xl text-[14.5px] leading-relaxed text-neutral-400">
-                  {spec.body}
-                </p>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        {/* Keybind grid */}
-        <section id="keys" className="border-t border-neutral-800/80 py-20">
-          <div className="flex flex-wrap items-end justify-between gap-4">
-            <h2 className="text-[clamp(1.6rem,3vw,2.3rem)] font-semibold tracking-[-0.02em] text-neutral-50">
-              41 keybinds. Zero menus.
-            </h2>
-            <p className="text-[13px] text-neutral-600">
-              all remappable · vim + emacs presets included
-            </p>
-          </div>
-
-          <div className="mt-10 grid gap-px bg-neutral-800/80 sm:grid-cols-2 lg:grid-cols-3">
-            {[
-              ["⌘K", "Capture from anywhere"],
-              ["⌘O", "Open note by title"],
-              ["⌘/", "Ask your archive"],
-              ["[[", "Insert link inline"],
-              ["⌘⇧G", "Open graph view"],
-              ["⌘J", "Jump to daily note"],
-              ["⌘E", "Toggle raw markdown"],
-              ["⌘⌥←", "Back through history"],
-              ["⌘.", "Accept suggested link"],
-            ].map(([key, label]) => (
+      {/* Features grid */}
+      <section id="what" className="border-b-2 border-[#111]">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid divide-[#111] sm:grid-cols-2 sm:divide-x-2">
+            {features.map((f, i) => (
               <div
-                key={key}
-                className="flex items-center gap-3 bg-[#05070a] px-5 py-4 transition-colors hover:bg-[#0a1017]"
+                key={f.n}
+                className={`group border-b-2 border-[#111] px-5 py-12 sm:px-8 ${
+                  i >= features.length - 2 ? "sm:border-b-0" : ""
+                }`}
               >
-                <kbd className="min-w-14 border border-green-400/30 bg-green-400/6 px-2 py-1 text-center text-[12px] text-green-300">
-                  {key}
-                </kbd>
-                <span className="text-[13.5px] text-neutral-400">{label}</span>
+                <div className="flex items-start justify-between gap-4">
+                  <span className="font-mono text-[11px] font-bold tracking-wider">
+                    [{f.n}]
+                  </span>
+                  <span
+                    className={`grid size-10 shrink-0 place-items-center border-2 border-[#111] text-lg font-black transition-transform group-hover:rotate-12 ${f.fill}`}
+                  >
+                    ↗
+                  </span>
+                </div>
+                <h3 className="mt-6 text-3xl leading-[0.95] font-black tracking-tight sm:text-4xl">
+                  {f.title}
+                </h3>
+                <p className="mt-4 max-w-sm font-mono text-sm leading-relaxed text-[#111]/75">
+                  {f.body}
+                </p>
               </div>
             ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Install */}
-        <section
-          id="install"
-          className="mb-20 border border-green-400/25 bg-gradient-to-b from-green-400/6 to-transparent px-8 py-14"
-        >
-          <h2 className="text-[clamp(1.7rem,3.4vw,2.6rem)] font-semibold tracking-[-0.025em] text-neutral-50">
-            One line. Then never leave the keyboard again.
+      {/* How — offset boxes */}
+      <section id="how" className="border-b-2 border-[#111] px-5 py-20 sm:px-8">
+        <div className="mx-auto max-w-7xl">
+          <h2 className="mb-14 max-w-3xl text-4xl leading-[0.92] font-black tracking-[-0.03em] uppercase sm:text-6xl">
+            Three steps.
+            <br />
+            Then never think
+            <br />
+            about it again.
           </h2>
-          <p className="mt-4 max-w-xl text-[15px] leading-relaxed text-neutral-400">
-            Free for personal vaults. $8/month adds encrypted sync across
-            machines. Uninstall takes your notes with you — they were always
-            just files.
-          </p>
 
-          <div className="mt-8 flex max-w-md items-center gap-3 border border-neutral-700 bg-black/60 px-4 py-3">
-            <span className="text-green-400">$</span>
-            <code className="flex-1 text-[14px] text-neutral-200">
-              brew install recall
-            </code>
-            <button
-              type="button"
-              className="text-[11.5px] tracking-wider text-neutral-500 uppercase transition-colors hover:text-green-300"
-            >
-              copy
-            </button>
+          <div className="grid gap-8 md:grid-cols-3">
+            {[
+              [
+                "WRITE",
+                "Dump it in. Meeting notes, half-sentences, links, voice memos at a red light.",
+              ],
+              [
+                "LOAM LINKS",
+                "Mentions become connections. Related notes float up while you type.",
+              ],
+              [
+                "ASK LATER",
+                "Six months on, ask a question. Get an answer built from your own words.",
+              ],
+            ].map(([title, body], i) => (
+              <div
+                key={title}
+                className="border-2 border-[#111] bg-white p-7 shadow-[8px_8px_0_0_#111]"
+                style={{ marginTop: `${i * 1.75}rem` }}
+              >
+                <span className="font-mono text-[11px] font-bold tracking-wider">
+                  STEP {i + 1}
+                </span>
+                <h3 className="mt-3 text-2xl font-black tracking-tight">
+                  {title}
+                </h3>
+                <p className="mt-3 font-mono text-sm leading-relaxed text-[#111]/75">
+                  {body}
+                </p>
+              </div>
+            ))}
           </div>
-        </section>
-      </main>
+        </div>
+      </section>
 
-      <footer className="relative mx-auto flex w-full max-w-5xl flex-wrap items-center justify-between gap-4 border-t border-neutral-800/80 px-6 py-8 pb-24 text-[12px] text-neutral-600">
-        <p>recall-labs/recall · MIT core</p>
-        <div className="flex gap-6">
-          <a className="hover:text-green-300" href="#">
-            man page
-          </a>
-          <a className="hover:text-green-300" href="#">
-            changelog
-          </a>
-          <a className="hover:text-green-300" href="#">
-            issues
-          </a>
+      {/* CTA */}
+      <section id="price" className="bg-[#ccff00]">
+        <div className="mx-auto max-w-7xl px-5 py-24 sm:px-8">
+          <div className="grid items-end gap-10 lg:grid-cols-[1.4fr_1fr]">
+            <h2 className="text-[3rem] leading-[0.86] font-black tracking-[-0.045em] uppercase sm:text-[5rem]">
+              Take the
+              <br />
+              mess
+              <br />
+              seriously.
+            </h2>
+            <form className="w-full">
+              <label
+                htmlFor="acid-email"
+                className="mb-3 block font-mono text-[11px] font-bold tracking-wider"
+              >
+                EMAIL →
+              </label>
+              <input
+                id="acid-email"
+                type="email"
+                required
+                placeholder="YOU@WORK.COM"
+                className="w-full border-2 border-[#111] bg-[#eeeeea] px-4 py-4 font-mono text-sm tracking-wider uppercase placeholder:text-[#111]/35 focus:bg-white focus:outline-none"
+              />
+              <button
+                type="submit"
+                className="mt-3 w-full border-2 border-[#111] bg-[#111] px-6 py-4 font-mono text-sm font-bold tracking-wider text-[#ccff00] transition hover:bg-[#2563eb] hover:text-white"
+              >
+                START FREE →
+              </button>
+              <p className="mt-3 font-mono text-[11px] tracking-wider text-[#111]/60">
+                NO CARD. NO ONBOARDING CALL. NO NEWSLETTER.
+              </p>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <footer className="border-t-2 border-[#111] bg-[#111] px-5 pt-8 pb-28 sm:px-8 sm:pb-8">
+        <div className="mx-auto flex max-w-7xl flex-col justify-between gap-3 font-mono text-[11px] tracking-wider text-[#eeeeea] sm:flex-row">
+          <span>LOAM® 2026 — BUILT IN A SHED</span>
+          <Link className="hover:text-[#ccff00]" href="/">
+            [ALL DESIGNS]
+          </Link>
         </div>
       </footer>
     </div>

@@ -1,301 +1,282 @@
-import type { Metadata } from "next";
-import { archivo, barlow, chivoMono } from "../fonts";
-import { PlanDrawing } from "./PlanDrawing";
-import styles from "./direction.module.css";
+import { BacklinkPlates } from "./backlink-plates";
+import { OverprintHero } from "./overprint-hero";
+import { ResurfaceRack } from "./resurface-rack";
+import styles from "./page.module.css";
 
-export const metadata: Metadata = {
-  title: "Tessera — a floor plan for everything you know",
-  description:
-    "A second brain laid out as rooms you can walk: the reading room, the workshop, the stacks. Navigate by place instead of searching folders.",
-};
+/* Paper grain: one turbulence pass over the whole sheet, very low opacity. */
+function PaperGrain() {
+  return (
+    <svg className={styles.grain} aria-hidden="true" focusable="false">
+      <filter id="cairn-riso-grain">
+        <feTurbulence
+          type="fractalNoise"
+          baseFrequency="0.85"
+          numOctaves="4"
+          stitchTiles="stitch"
+        />
+        <feColorMatrix type="saturate" values="0" />
+      </filter>
+      <rect width="100%" height="100%" filter="url(#cairn-riso-grain)" />
+    </svg>
+  );
+}
 
-const schedule = [
+/* The bullseye a printer lines up each pass against. */
+function RegistrationMark({ className }: { className: string }) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 32 32"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <circle cx="16" cy="16" r="8.5" fill="none" stroke="currentColor" strokeWidth="1" />
+      <circle cx="16" cy="16" r="3" fill="none" stroke="currentColor" strokeWidth="1" />
+      <path d="M16 0v10M16 22v10M0 16h10M22 16h10" stroke="currentColor" strokeWidth="1" />
+    </svg>
+  );
+}
+
+function CairnMark() {
+  return (
+    <svg
+      className={styles.cairnMark}
+      viewBox="0 0 26 30"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <ellipse cx="13" cy="25.5" rx="11.5" ry="3.6" fill="currentColor" />
+      <ellipse cx="12" cy="18" rx="8.6" ry="3.2" fill="currentColor" />
+      <ellipse cx="14" cy="11.4" rx="6" ry="2.8" fill="currentColor" />
+      <ellipse cx="12.4" cy="5.6" rx="3.4" ry="2.4" fill="currentColor" />
+    </svg>
+  );
+}
+
+const COLOUR_BAR = [
+  { name: "Fluorescent pink", ink: "pink" },
+  { name: "Medium blue", ink: "blue" },
+  { name: "Pink over blue", ink: "violet" },
+  { name: "Yellow", ink: "yellow" },
+  { name: "Ink black", ink: "black" },
+  { name: "Pale sage stock", ink: "paper" },
+];
+
+const SPECS = [
   {
-    ref: "C-1",
-    item: "Capture points",
-    qty: "4",
-    notes: "Menu bar, phone share sheet, email-in, voice memo",
+    ink: "black",
+    title: "Plain markdown, on your disk",
+    body: "Every note is a .md file in a folder you picked. Cairn runs with the network off. If you ever leave, the folder stays where it is and still opens in anything.",
   },
   {
-    ref: "L-1",
-    item: "Link types",
-    qty: "2",
-    notes: "Written with [[brackets]], or suggested from overlapping phrasing",
+    ink: "blue",
+    title: "Search reads the scans too",
+    body: "Search covers every note, and the text inside scanned PDFs and photographed pages you dropped in years ago and forgot to name.",
   },
   {
-    ref: "S-1",
-    item: "Search",
-    qty: "1",
-    notes: "Offline, exact and by meaning, across 40,000 notes",
+    ink: "pink",
+    title: "Today's note is already open",
+    body: "Cairn opens a dated note the moment it launches. Start typing. Decide where it belongs later, or never.",
   },
   {
-    ref: "R-1",
-    item: "Resurfacing",
-    qty: "3 / day",
-    notes: "Older notes chosen by overlap with the draft you have open",
+    ink: "yellow",
+    title: "Every note keeps its own proofs",
+    body: "Cairn saves a version each time you stop typing. Open an earlier draft, read what changed, put it back.",
   },
   {
-    ref: "E-1",
-    item: "Exits",
-    qty: "2",
-    notes: "Markdown folder on disk, or a zip with every link intact",
-  },
-  {
-    ref: "P-1",
-    item: "Plans",
-    qty: "2",
-    notes: "Free to 500 notes, then $8 a month with no ceiling",
+    ink: "violet",
+    title: "One vault, desktop and phone",
+    body: "The phone app opens the same vault. Edit either one and you are editing the same file. Moving it between machines is the part you pay for.",
   },
 ];
 
-export default function MemoryPalaceDirection() {
+export default function OverprintPage() {
   return (
-    <div
-      className={`${styles.page} ${archivo.variable} ${barlow.variable} ${chivoMono.variable}`}
-    >
+    <main className={styles.page}>
+      <PaperGrain />
+
+      <div className={styles.trim} aria-hidden="true">
+        <span className={`${styles.crop} ${styles.cropTL}`} />
+        <span className={`${styles.crop} ${styles.cropTR}`} />
+        <span className={`${styles.crop} ${styles.cropBL}`} />
+        <span className={`${styles.crop} ${styles.cropBR}`} />
+        <RegistrationMark className={`${styles.regMark} ${styles.regMarkTop}`} />
+        <RegistrationMark className={`${styles.regMark} ${styles.regMarkBottom}`} />
+      </div>
+
       <div className={styles.sheet}>
-        <header className={styles.head}>
-          <span className={styles.wordmark}>Tessera</span>
-          <nav className={styles.index} aria-label="Sheet index">
-            <a href="#a2">A-2 Circulation</a>
-            <a href="#a3">A-3 Section</a>
-            <a href="#a4">A-4 Schedule</a>
+        <header className={styles.masthead}>
+          <a className={styles.wordmark} href="#top">
+            <CairnMark />
+            <span>Cairn</span>
+          </a>
+          <nav className={styles.nav} aria-label="Sections">
+            <a href="#links">Links</a>
+            <a href="#resurface">Resurface</a>
+            <a href="#specs">What it does</a>
+            <a href="#price">Price</a>
           </nav>
-          <a className={styles.headCta} href="#move">
-            Create an account
+          <a className={styles.mastheadCta} href="#price">
+            Download Cairn
           </a>
         </header>
 
-        <main>
-          <section className={styles.hero}>
-            <div className={styles.heroText}>
-              <p className={styles.sheetRef}>Sheet A-1 · plan</p>
-              <h1 className={styles.h1}>
-                A floor plan for
-                <br />
-                everything
-                <br />
-                you know
-              </h1>
-              <p className={styles.lede}>
-                Human memory is spatial. Tessera lays your notes out in rooms
-                you can walk — the reading room, the workshop, the stacks — so
-                you find things the way you find a mug in your own kitchen:
-                without searching.
-              </p>
-              <div className={styles.actions}>
-                <a className={styles.primary} href="#move">
-                  Create an account
-                </a>
-                <a className={styles.ghost} href="#a2">
-                  Walk the plan
-                </a>
-              </div>
-              <ul className={styles.notes}>
-                <li>Rooms are yours to name and re-plan</li>
-                <li>Markdown files, on your own disk</li>
-                <li>Works with no connection at all</li>
-              </ul>
-            </div>
+        <section className={styles.hero} id="top">
+          <p className={styles.jobDocket}>
+            <span>Job 0001</span>
+            <span aria-hidden="true" className={styles.docketRule} />
+            <span>2 colours, 1 pass</span>
+            <span aria-hidden="true" className={styles.docketRule} />
+            <span>stock: your own disk</span>
+          </p>
 
-            <PlanDrawing />
-          </section>
+          <OverprintHero />
 
-          <section className={styles.sheetSection} id="a2">
-            <div className={styles.sheetLabel}>
-              <span className={styles.sheetRef}>A-2</span>
-              <span className={styles.sheetName}>Circulation</span>
-            </div>
-            <div className={styles.sheetBody}>
-              <h2 className={styles.h2}>How you get from one room to another</h2>
-              <p className={styles.copy}>
-                A link is a door, and Tessera cuts it in both walls. Write{" "}
-                <span className={styles.code}>[[the stacks]]</span> in a note
-                and the note on the other side lists the way back. When two
-                notes keep using the same words, Tessera proposes a door and you
-                decide whether to open it.
-              </p>
-              <p className={styles.copy}>
-                The corridor on the plan is the traffic between rooms over the
-                last month. Rooms with no doors are the ones you always lose
-                things in, so Tessera flags them.
-              </p>
-            </div>
-            <svg
-              className={styles.mini}
-              viewBox="0 0 300 150"
-              role="img"
-              aria-label="Two rooms connected by a door, with traffic shown between them"
-            >
-              <rect x="10" y="26" width="120" height="86" className={styles.miniRoom} />
-              <rect x="180" y="26" width="110" height="86" className={styles.miniRoom} />
-              <path className={styles.circulation} d="M130 70 L180 70" />
-              <path className={styles.dimLine} d="M130 56 L130 84" />
-              <path className={styles.dimLine} d="M180 56 L180 84" />
-              <text x="155" y="48" textAnchor="middle" className={styles.miniLabel}>
-                door
-              </text>
-              <text x="20" y="46" className={styles.miniName}>
-                READING
-              </text>
-              <text x="190" y="46" className={styles.miniName}>
-                WORKSHOP
-              </text>
-              <text x="10" y="136" className={styles.miniLabel}>
-                312 notes passed through last month, both ways
-              </text>
-            </svg>
-          </section>
-
-          <section className={styles.sheetSection} id="a3">
-            <div className={styles.sheetLabel}>
-              <span className={styles.sheetRef}>A-3</span>
-              <span className={styles.sheetName}>Section</span>
-            </div>
-            <div className={styles.sheetBody}>
-              <h2 className={styles.h2}>What the building is made of</h2>
-              <p className={styles.copy}>
-                Cut the whole thing open and there is no cloud in the middle of
-                it. Your notes are plain markdown files in a folder you chose,
-                on a disk you own. Sync carries encrypted blocks between your
-                own devices; the key never leaves them.
-              </p>
-              <p className={styles.copy}>
-                If we disappear tomorrow, the folder still opens. That is the
-                only foundation worth building a memory on.
-              </p>
-            </div>
-            <svg
-              className={styles.mini}
-              viewBox="0 0 300 150"
-              role="img"
-              aria-label="Section through the storage layers: your disk, encrypted sync, your other devices"
-            >
-              <defs>
-                <pattern
-                  id="strata-hatch"
-                  width="6"
-                  height="6"
-                  patternTransform="rotate(45)"
-                  patternUnits="userSpaceOnUse"
-                >
-                  <line x1="0" y1="0" x2="0" y2="6" className={styles.hatch} />
-                </pattern>
-              </defs>
-              <rect x="10" y="96" width="272" height="38" className={styles.strataSolid} />
-              <rect x="10" y="54" width="272" height="38" className={styles.strataHatched} />
-              <rect x="10" y="12" width="272" height="38" className={styles.strataSolid} />
-              <text x="22" y="120" className={styles.miniName}>
-                YOUR DISK — PLAIN MARKDOWN
-              </text>
-              <text x="22" y="78" className={styles.miniName}>
-                ENCRYPTED BLOCKS — SYNC
-              </text>
-              <text x="22" y="36" className={styles.miniName}>
-                YOUR OTHER DEVICES
-              </text>
-              <path className={styles.dimLine} d="M290 12 L290 134" />
-              <path className={styles.dimLine} d="M286 12 L294 12" />
-              <path className={styles.dimLine} d="M286 134 L294 134" />
-              <text x="10" y="148" className={styles.miniLabel}>
-                one key, held only by your own devices
-              </text>
-            </svg>
-          </section>
-
-          <section className={styles.sheetSection} id="a4">
-            <div className={styles.sheetLabel}>
-              <span className={styles.sheetRef}>A-4</span>
-              <span className={styles.sheetName}>Schedule</span>
-            </div>
-            <div className={styles.sheetBody}>
-              <h2 className={styles.h2}>Everything specified, in one table</h2>
-              <p className={styles.copy}>
-                No feature grid with ticks in it. This is the schedule: what is
-                in the building, how many of them there are, and what each one
-                actually does.
-              </p>
-            </div>
-            <div className={styles.tableWrap}>
-              <table className={styles.table}>
-                <thead>
-                  <tr>
-                    <th scope="col">Ref</th>
-                    <th scope="col">Item</th>
-                    <th scope="col">Qty</th>
-                    <th scope="col">Notes</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {schedule.map((row) => (
-                    <tr key={row.ref}>
-                      <td className={styles.cellRef}>{row.ref}</td>
-                      <td className={styles.cellItem}>{row.item}</td>
-                      <td className={styles.cellQty}>{row.qty}</td>
-                      <td>{row.notes}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </section>
-
-          <section className={styles.move} id="move">
-            <h2 className={styles.h2Big}>Move in</h2>
-            <p className={styles.copy}>
-              Start with one room. Tessera will suggest the second one once it
-              can see what you keep bringing home.
+          <div className={styles.heroFoot}>
+            <p className={styles.deck}>
+              Cairn keeps your notes as plain markdown in a folder you choose.
+              Type <code className={styles.code}>[[</code> to link one note to
+              another and the link prints on both of them. Ten years later,
+              both still open.
             </p>
-            <form className={styles.form} action="#" aria-label="Create an account">
-              <label className={styles.srOnly} htmlFor="d3-email">
-                Email
-              </label>
-              <input
-                className={styles.input}
-                id="d3-email"
-                type="email"
-                placeholder="you@somewhere.org"
-                autoComplete="email"
-              />
-              <button className={styles.primary} type="submit">
-                Create an account
-              </button>
-            </form>
-          </section>
-        </main>
+            <div className={styles.heroActions}>
+              <a className={styles.primaryCta} href="#price">
+                Download Cairn — free for one vault
+              </a>
+              <a className={styles.secondaryCta} href="#resurface">
+                See what Resurface does
+              </a>
+            </div>
+          </div>
+        </section>
 
-        {/* title block, the way a drawing signs itself */}
-        <footer className={styles.titleBlock}>
-          <div className={styles.tbCell}>
-            <span>Project</span>
-            <strong>A second brain</strong>
+        <div className={styles.colourBar} aria-hidden="true">
+          {COLOUR_BAR.map((swatch) => (
+            <div key={swatch.name} className={styles.swatch} data-ink={swatch.ink}>
+              <span className={styles.swatchChip} />
+              <span className={styles.swatchName}>{swatch.name}</span>
+            </div>
+          ))}
+        </div>
+
+        <section className={styles.section} id="links">
+          <div className={styles.sectionHead}>
+            <p className={styles.sectionTag}>Two plates</p>
+            <h2 className={styles.sectionTitle}>
+              Link two notes and both of them remember
+            </h2>
+            <p className={styles.sectionBody}>
+              Type <code className={styles.code}>[[</code> anywhere and pick a
+              note. Cairn writes the link into your markdown and puts the
+              backlink on the other note without being asked. No folders to
+              keep tidy, no tags to invent at two in the morning.
+            </p>
           </div>
-          <div className={styles.tbCell}>
-            <span>Client</span>
-            <strong>You</strong>
+          <BacklinkPlates />
+        </section>
+
+        <section className={`${styles.section} ${styles.sectionResurface}`} id="resurface">
+          <div className={styles.sectionHead}>
+            <p className={styles.sectionTag}>The rack</p>
+            <h2 className={styles.sectionTitle}>
+              Resurface pulls back the note you stopped opening
+            </h2>
+            <p className={styles.sectionBody}>
+              While you write, Cairn reads what you are working on and looks
+              through everything you have not opened in a year. When an old
+              note shares links and language with today&rsquo;s, it comes back
+              up. This is the reason people keep a vault for a decade instead
+              of starting a new one every job.
+            </p>
           </div>
-          <div className={styles.tbCell}>
-            <span>Scale</span>
-            <strong>1 note : 1 idea</strong>
+          <ResurfaceRack />
+        </section>
+
+        <section className={styles.section} id="specs">
+          <div className={styles.sectionHead}>
+            <p className={styles.sectionTag}>Press specification</p>
+            <h2 className={styles.sectionTitle}>The rest of the run sheet</h2>
           </div>
-          <div className={styles.tbCell}>
-            <span>Drawn by</span>
-            <strong>Tessera, Rotterdam</strong>
+          <ul className={styles.specList}>
+            {SPECS.map((spec) => (
+              <li key={spec.title} className={styles.specItem}>
+                <span
+                  className={styles.specChip}
+                  data-ink={spec.ink}
+                  aria-hidden="true"
+                />
+                <h3 className={styles.specTitle}>{spec.title}</h3>
+                <p className={styles.specBody}>{spec.body}</p>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        <section className={styles.section} id="price">
+          <div className={styles.sectionHead}>
+            <p className={styles.sectionTag}>Press run</p>
+            <h2 className={styles.sectionTitle}>Two ways to run it</h2>
           </div>
-          <div className={styles.tbCell}>
-            <span>Date</span>
-            <strong>2026</strong>
+
+          <div className={styles.priceRow}>
+            <article className={`${styles.priceCard} ${styles.priceFree}`}>
+              <p className={styles.priceTag}>One vault</p>
+              <p className={styles.priceFigure}>
+                Free<span className={styles.priceUnit}> — no account</span>
+              </p>
+              <ul className={styles.priceList}>
+                <li>Unlimited notes in one vault on one machine</li>
+                <li>Links, backlinks, Resurface, version history, search</li>
+                <li>Your markdown files stay yours whatever happens next</li>
+              </ul>
+              <a className={styles.priceCta} href="#top">
+                Download Cairn
+              </a>
+            </article>
+
+            <article className={`${styles.priceCard} ${styles.pricePaid}`}>
+              <p className={styles.priceTag}>Sync</p>
+              <p className={styles.priceFigure}>
+                $8<span className={styles.priceUnit}> a month</span>
+              </p>
+              <ul className={styles.priceList}>
+                <li>Everything in one vault</li>
+                <li>The same vault on your phone and your other machines</li>
+                <li>Stop paying and every note stays on your disk, unlocked</li>
+              </ul>
+              <a className={styles.priceCta} href="#top">
+                Start syncing
+              </a>
+            </article>
           </div>
-          <div className={`${styles.tbCell} ${styles.tbSheet}`}>
-            <span>Sheet</span>
-            <strong>A-1</strong>
+        </section>
+
+        <footer className={styles.colophon}>
+          <div className={styles.colophonMark}>
+            <CairnMark />
+            <span>Cairn</span>
           </div>
-          <div className={styles.tbCell}>
-            <span>Rev</span>
-            <strong>04</strong>
+          <div className={styles.colophonBody}>
+            <h2 className={styles.colophonTitle}>Colophon</h2>
+            <p>
+              Set in Bricolage Grotesque and Karla. Printed in fluorescent pink,
+              medium blue and yellow on pale sage, 120 gsm. Two inks, one pass;
+              the violet is only where they cross. Registration deliberately out
+              by a millimetre or so, as it always is.
+            </p>
+            <p>
+              Press run: one sheet, pulled again on every visit. Notes shown are
+              made up. Your notes are files on your disk and never touch ours.
+            </p>
           </div>
+          <nav className={styles.colophonNav} aria-label="More">
+            <a href="#specs">What it does</a>
+            <a href="#price">Price</a>
+            <a href="#links">Links and backlinks</a>
+            <a href="#resurface">Resurface</a>
+          </nav>
         </footer>
       </div>
-    </div>
+    </main>
   );
 }

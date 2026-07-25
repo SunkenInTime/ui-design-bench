@@ -1,42 +1,35 @@
 import Link from "next/link";
-import { directions } from "@/variants/with-design-skill/opus-5/source/src/directions";
+import { ITERATIONS } from "@/variants/with-design-skill/opus-5/source/src/lib/iterations";
 import styles from "./page.module.css";
 
 export default function Index() {
   return (
-    <main className={styles.sheet}>
-      <header className={styles.head}>
-        <p className={styles.eyebrow}>Contact sheet</p>
-        <h1 className={styles.title}>
-          Tessera — a second brain. Five landing page directions, one product.
-        </h1>
-        <p className={styles.lede}>
-          Same brief, same feature set, five different worlds to borrow from.
-          Open one, then use the switcher in the corner (or the number keys) to
-          compare them side by side.
+    <main className={styles.page}>
+      <div className={styles.inner}>
+        <p className={styles.eyebrow}>Cairn · landing page</p>
+        <h1 className={styles.title}>Five directions</h1>
+        <p className={styles.intro}>
+          The same product and the same claims, designed five ways. Pick a
+          number below, or press 1–5 anywhere to jump between them.
         </p>
-      </header>
 
-      <ol className={styles.list}>
-        {directions.map((d) => (
-          <li key={d.slug}>
-            <Link href={d.slug} className={styles.row}>
-              <span className={styles.num}>{d.index}</span>
-              <span className={styles.name}>{d.name}</span>
-              <span className={styles.note}>{d.note}</span>
-              <span className={styles.bars} aria-hidden>
-                {d.swatches.map((c) => (
-                  <span
-                    key={c}
-                    className={styles.bar}
-                    style={{ background: c }}
-                  />
-                ))}
-              </span>
-            </Link>
-          </li>
-        ))}
-      </ol>
+        <ul className={styles.list}>
+          {ITERATIONS.map((it) => (
+            <li key={it.slug}>
+              <Link href={`/${it.slug}`} className={styles.row}>
+                <span className={styles.num}>{it.slug.padStart(2, "0")}</span>
+                <span>
+                  <span className={styles.name}>{it.name}</span>
+                  <span className={styles.premise}>{it.premise}</span>
+                </span>
+                <span className={styles.arrow} aria-hidden="true">
+                  →
+                </span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
     </main>
   );
 }

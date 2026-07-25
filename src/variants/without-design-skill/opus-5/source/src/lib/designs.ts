@@ -1,64 +1,46 @@
 export type Design = {
-  /** Route number, doubles as the keyboard shortcut. */
-  id: number;
-  href: string;
+  slug: string;
+  n: string;
   name: string;
-  direction: string;
-  note: string;
-  /** Swatch shown in the switcher; roughly the page's dominant accent. */
-  accent: string;
-  /** Whether the page reads as light or dark, for the switcher preview. */
-  tone: "light" | "dark";
+  vibe: string;
+  /** Swatch colors for the gallery + switcher previews: [bg, ink, accent] */
+  swatch: [string, string, string];
 };
 
 export const designs: Design[] = [
   {
-    id: 1,
-    href: "/1",
-    name: "Synapse",
-    direction: "Dark / knowledge graph",
-    note: "Connections as the hero. Animated node graph, electric accents.",
-    accent: "#8b5cf6",
-    tone: "dark",
+    slug: "/1",
+    n: "01",
+    name: "Aurora",
+    vibe: "Dark, luminous, graph-native",
+    swatch: ["#05060a", "#e6e8f0", "#8b5cf6"],
   },
   {
-    id: 2,
-    href: "/2",
-    name: "Marginalia",
-    direction: "Warm / editorial paper",
-    note: "Reads like a well-loved notebook. Serif display, ruled paper, sticky notes.",
-    accent: "#c2410c",
-    tone: "light",
+    slug: "/2",
+    n: "02",
+    name: "Paper",
+    vibe: "Editorial, serif, quiet",
+    swatch: ["#faf7f2", "#1a1815", "#b4532a"],
   },
   {
-    id: 3,
-    href: "/3",
-    name: "Command",
-    direction: "Terminal / keyboard-first",
-    note: "For people who never touch the mouse. Phosphor green, monospaced.",
-    accent: "#4ade80",
-    tone: "dark",
+    slug: "/3",
+    n: "03",
+    name: "Acid",
+    vibe: "Brutalist grid, loud",
+    swatch: ["#eeeeea", "#111111", "#ccff00"],
   },
   {
-    id: 4,
-    href: "/4",
-    name: "Atlas",
-    direction: "Bright / product-forward",
-    note: "Classic SaaS confidence. Soft gradients and a glassy app mock.",
-    accent: "#4f46e5",
-    tone: "light",
+    slug: "/4",
+    n: "04",
+    name: "Studio",
+    vibe: "Polished SaaS, product-led",
+    swatch: ["#ffffff", "#0f172a", "#4f46e5"],
   },
   {
-    id: 5,
-    href: "/5",
-    name: "Cortex",
-    direction: "Brutalist / poster",
-    note: "Loud and physical. Oversized type, hard borders, lime on black.",
-    accent: "#bef264",
-    tone: "dark",
+    slug: "/5",
+    n: "05",
+    name: "Terminal",
+    vibe: "Keyboard-first, monospace",
+    swatch: ["#0a0a0a", "#d4d4d4", "#4ade80"],
   },
 ];
-
-export function findDesign(pathname: string): Design | undefined {
-  return designs.find((design) => design.href === pathname);
-}

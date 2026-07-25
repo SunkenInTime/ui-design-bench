@@ -1,115 +1,83 @@
-.sheet {
-  min-height: 100dvh;
-  background: #17171a;
-  color: #f2f2f4;
-  font-family: var(--chrome-mono), ui-monospace, monospace;
-  padding: clamp(2rem, 7vw, 6rem) clamp(1.25rem, 6vw, 5rem) 8rem;
-  display: flex;
-  flex-direction: column;
-  gap: clamp(2.5rem, 6vw, 4.5rem);
+.page {
+  min-height: 100vh;
+  padding: clamp(3rem, 9vw, 7rem) clamp(1.25rem, 5vw, 4rem) 8rem;
+  background: #0d0e11;
+  color: #e8e8e6;
+  font-family: ui-sans-serif, -apple-system, "Segoe UI", system-ui, sans-serif;
 }
 
-.head {
-  max-width: 44rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+.inner {
+  max-width: 60rem;
+  margin: 0 auto;
 }
 
 .eyebrow {
-  font-size: 0.6875rem;
-  letter-spacing: 0.18em;
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: rgba(242, 242, 244, 0.4);
+  color: #7c7f88;
 }
 
 .title {
-  margin: 0;
-  font-size: clamp(1.5rem, 3.4vw, 2.25rem);
-  font-weight: 500;
-  line-height: 1.2;
-  letter-spacing: -0.01em;
+  margin-top: 1.25rem;
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
 }
 
-.lede {
-  margin: 0;
-  font-size: 0.875rem;
-  line-height: 1.7;
-  color: rgba(242, 242, 244, 0.55);
+.intro {
+  max-width: 44ch;
+  margin-top: 1.25rem;
+  color: #9a9da5;
+  font-size: 1.0625rem;
 }
 
 .list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  margin-top: clamp(2.5rem, 6vw, 4rem);
+  border-top: 1px solid #24262c;
 }
 
 .row {
   display: grid;
-  grid-template-columns: 3rem minmax(0, 12rem) minmax(0, 1fr) 5.5rem;
-  gap: clamp(0.75rem, 3vw, 2rem);
-  align-items: center;
-  padding: 1.125rem 0.25rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-  text-decoration: none;
-  color: inherit;
-  transition: background 130ms ease, padding-left 130ms ease;
+  grid-template-columns: 3.5rem 1fr auto;
+  align-items: baseline;
+  gap: 1.5rem;
+  padding: 1.5rem 0.75rem 1.5rem 0;
+  border-bottom: 1px solid #24262c;
+  transition: background-color 140ms ease;
 }
 
 .row:hover {
-  background: rgba(255, 255, 255, 0.04);
-  padding-left: 0.75rem;
+  background: #14161a;
 }
 
 .num {
-  color: rgba(242, 242, 244, 0.35);
   font-variant-numeric: tabular-nums;
+  font-size: 0.875rem;
+  color: #5f626b;
 }
 
 .name {
-  font-size: 1rem;
+  display: block;
+  font-size: 1.375rem;
   font-weight: 500;
+  letter-spacing: -0.015em;
 }
 
-.note {
-  font-size: 0.8125rem;
-  color: rgba(242, 242, 244, 0.5);
+.premise {
+  display: block;
+  margin-top: 0.35rem;
+  color: #8b8e97;
+  font-size: 0.9375rem;
 }
 
-.bars {
-  display: flex;
-  height: 1.75rem;
-  border: 1px solid rgba(0, 0, 0, 0.4);
+.arrow {
+  color: #5f626b;
+  transition: transform 140ms ease, color 140ms ease;
 }
 
-.bar {
-  flex: 1;
-}
-
-@media (max-width: 40rem) {
-  .row {
-    grid-template-columns: 2rem 1fr 3.5rem;
-    grid-template-areas: "num name bars" "num note bars";
-    row-gap: 0.25rem;
-    padding: 1rem 0.25rem;
-  }
-
-  .num {
-    grid-area: num;
-    align-self: start;
-  }
-
-  .name {
-    grid-area: name;
-  }
-
-  .note {
-    grid-area: note;
-  }
-
-  .bars {
-    grid-area: bars;
-    align-self: center;
-  }
+.row:hover .arrow {
+  color: #e8e8e6;
+  transform: translateX(3px);
 }
