@@ -23,6 +23,7 @@ import withSonnet5 from "@/variants/with-design-skill/sonnet-5";
 import withSol from "@/variants/with-design-skill/sol";
 import withLuna from "@/variants/with-design-skill/luna";
 import withTerra from "@/variants/with-design-skill/terra";
+import withMuseSpark12 from "@/variants/with-design-skill/muse-spark-1.2";
 import withTasteFable from "@/variants/with-taste-skill/fable";
 import withTasteGrok45 from "@/variants/with-taste-skill/grok-4.5";
 import withTasteKimiK3 from "@/variants/with-taste-skill/kimi-k3";
@@ -61,6 +62,7 @@ import withoutSonnet5 from "@/variants/without-design-skill/sonnet-5";
 import withoutSol from "@/variants/without-design-skill/sol";
 import withoutLuna from "@/variants/without-design-skill/luna";
 import withoutTerra from "@/variants/without-design-skill/terra";
+import withoutMuseSpark12 from "@/variants/without-design-skill/muse-spark-1.2";
 
 type RegistryKey = `${GalleryGroupSlug}:${ModelSlug}`;
 
@@ -89,6 +91,7 @@ const registry: Partial<Record<RegistryKey, VariantModule>> = {
   "with-design-skill:sol": withSol,
   "with-design-skill:luna": withLuna,
   "with-design-skill:terra": withTerra,
+  "with-design-skill:muse-spark-1.2": withMuseSpark12,
   "with-taste-skill:fable": withTasteFable,
   "with-taste-skill:grok-4.5": withTasteGrok45,
   "with-taste-skill:kimi-k3": withTasteKimiK3,
@@ -127,6 +130,7 @@ const registry: Partial<Record<RegistryKey, VariantModule>> = {
   "without-design-skill:sol": withoutSol,
   "without-design-skill:luna": withoutLuna,
   "without-design-skill:terra": withoutTerra,
+  "without-design-skill:muse-spark-1.2": withoutMuseSpark12,
 };
 
 export function getVariantModule(group: GalleryGroupSlug, model: ModelSlug) {

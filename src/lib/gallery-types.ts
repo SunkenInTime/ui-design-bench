@@ -23,6 +23,7 @@ export type ModelSlug =
   | "kimi-k-2.5"
   | "kimi-k-2.6"
   | "kimi-k3"
+  | "muse-spark-1.2"
   | "opus-4.6"
   | "opus-4.7"
   | "opus-4.8"
