@@ -1,6 +1,6 @@
 import type { ModelSlug } from "@/lib/gallery-types";
 
-export type LabSlug = "gpt" | "anthropic" | "google" | "x-ai" | "moonshot" | "z-ai" | "cursor";
+export type LabSlug = "gpt" | "anthropic" | "google" | "meta" | "x-ai" | "moonshot" | "z-ai" | "cursor";
 
 export interface ModelLab {
   slug: LabSlug;
@@ -27,6 +27,7 @@ const MODEL_TO_LAB: Record<ModelSlug, ModelLab> = {
   "kimi-k-2.5": { slug: "moonshot", label: "Moonshot" },
   "kimi-k-2.6": { slug: "moonshot", label: "Moonshot" },
   "kimi-k3": { slug: "moonshot", label: "Moonshot" },
+  "muse-spark-1.2": { slug: "meta", label: "Meta" },
   "opus-4.6": { slug: "anthropic", label: "Anthropic" },
   "opus-4.7": { slug: "anthropic", label: "Anthropic" },
   "opus-4.8": { slug: "anthropic", label: "Anthropic" },
@@ -38,6 +39,7 @@ export const LAB_OPTIONS: ModelLab[] = [
   { slug: "gpt", label: "GPT" },
   { slug: "anthropic", label: "Anthropic" },
   { slug: "google", label: "Google" },
+  { slug: "meta", label: "Meta" },
   { slug: "x-ai", label: "X AI" },
   { slug: "moonshot", label: "Moonshot" },
   { slug: "z-ai", label: "Z.ai" },

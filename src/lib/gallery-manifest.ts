@@ -8,12 +8,17 @@ const DEFAULT_TITLES = [
   "Iteration V",
 ] as const;
 
-function iterations(sourceSlugs: readonly string[], group: GalleryEntry["group"], model: GalleryEntry["model"]) {
+function iterations(
+  sourceSlugs: readonly string[],
+  group: GalleryEntry["group"],
+  model: GalleryEntry["model"],
+  thumbnailOverride?: string,
+) {
   return sourceSlugs.map((sourceSlug, index) => ({
     id: String(index + 1) as GalleryEntry["iterations"][number]["id"],
     title: DEFAULT_TITLES[index],
     sourceSlug,
-    thumbnailPath: `/gallery-previews/${group}/${model}/${index + 1}.webp`,
+    thumbnailPath: thumbnailOverride ?? `/gallery-previews/${group}/${model}/${index + 1}.webp`,
   }));
 }
 
@@ -665,7 +670,12 @@ export const galleryManifest: GalleryEntry[] = [
     sourceAppType: "next",
     defaultIteration: "1",
     summary: "Five Muse Spark 1.2 landing generations produced with the frontend-design skill.",
-    iterations: iterations(["1", "2", "3", "4", "5"], "with-design-skill", "muse-spark-1.2"),
+    iterations: iterations(
+      ["1", "2", "3", "4", "5"],
+      "with-design-skill",
+      "muse-spark-1.2",
+      "/gallery-preview-wip.svg",
+    ),
   },
   {
     group: "without-design-skill",
@@ -676,7 +686,12 @@ export const galleryManifest: GalleryEntry[] = [
     sourceAppType: "next",
     defaultIteration: "1",
     summary: "Five Muse Spark 1.2 baseline landing generations produced without a design skill.",
-    iterations: iterations(["1", "2", "3", "4", "5"], "without-design-skill", "muse-spark-1.2"),
+    iterations: iterations(
+      ["1", "2", "3", "4", "5"],
+      "without-design-skill",
+      "muse-spark-1.2",
+      "/gallery-preview-wip.svg",
+    ),
   },
   {
     group: "with-design-skill",
