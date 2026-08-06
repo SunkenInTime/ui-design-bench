@@ -33,6 +33,7 @@ import withTasteSol from "@/variants/with-taste-skill/sol";
 import withTasteLuna from "@/variants/with-taste-skill/luna";
 import withTasteTerra from "@/variants/with-taste-skill/terra";
 import withTasteOpus5 from "@/variants/with-taste-skill/opus-5";
+import withTasteMuseSpark12 from "@/variants/with-taste-skill/muse-spark-1.2";
 import withUiShComposer20 from "@/variants/with-ui-sh-skill/composer-2.0";
 import withUiShGpt55Low from "@/variants/with-ui-sh-skill/gpt-5.5-low";
 import withUiShGpt55High from "@/variants/with-ui-sh-skill/gpt-5.5-high";
@@ -101,6 +102,7 @@ const registry: Partial<Record<RegistryKey, VariantModule>> = {
   "with-taste-skill:luna": withTasteLuna,
   "with-taste-skill:terra": withTasteTerra,
   "with-taste-skill:opus-5": withTasteOpus5,
+  "with-taste-skill:muse-spark-1.2": withTasteMuseSpark12,
   "with-ui-sh-skill:composer-2.0": withUiShComposer20,
   "with-ui-sh-skill:gpt-5.5-low": withUiShGpt55Low,
   "with-ui-sh-skill:gpt-5.5-high": withUiShGpt55High,

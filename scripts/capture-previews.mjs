@@ -149,7 +149,7 @@ async function main() {
       for (const iteration of iterations) {
         const url = `${baseUrl}/${group}/${model}/${iteration}?preview=1`;
         const outputPath = path.join(outputDir, `${iteration}.webp`);
-        const response = await page.goto(url, { waitUntil: "domcontentloaded" });
+        const response = await page.goto(url, { waitUntil: "domcontentloaded", timeout: 120_000 });
         if (!response || !response.ok()) {
           throw new Error(`Preview capture failed for ${url} with status ${response?.status() ?? "unknown"}`);
         }
