@@ -42,7 +42,9 @@ Running fresh model generations is the main cost behind WhichAI.dev. If the gall
 
 ## Sponsors
 
-[![Greptile: The War on Bugs](https://www.greptile.com/badge.svg)](https://www.greptile.com/?utm_source=oss_badge&utm_medium=readme&utm_campaign=greptile_for_open_source)
+<a href="https://www.greptile.com/?utm_source=oss_badge&utm_medium=readme&utm_campaign=greptile_for_open_source">
+  <img src="https://www.greptile.com/badge.svg" alt="Greptile: The War on Bugs" width="600">
+</a>
 
 [Greptile's Open Source Program](https://www.greptile.com/open-source) provides AI code review for the project.
 

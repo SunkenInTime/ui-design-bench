@@ -117,14 +117,14 @@ export default function HomePage() {
               href="https://www.greptile.com/?utm_source=oss_badge&utm_medium=website&utm_campaign=greptile_for_open_source"
               target="_blank"
               rel="noreferrer"
-              className="flex min-h-20 min-w-64 flex-1 items-center gap-4 rounded-lg border border-[var(--gallery-border)] bg-[var(--gallery-surface)] px-5 py-4 transition-colors hover:border-[var(--gallery-divider-strong)] sm:max-w-sm"
+              className="flex min-h-28 min-w-64 flex-1 flex-col items-start justify-center gap-3 rounded-lg border border-[var(--gallery-border)] bg-[var(--gallery-surface)] px-5 py-4 transition-colors hover:border-[var(--gallery-divider-strong)] sm:max-w-sm"
             >
               {/* Greptile publishes this animated OSS badge for project attribution. */}
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="https://www.greptile.com/badge.svg"
                 alt="Greptile: The War on Bugs"
-                className="h-5 w-[150px] shrink-0"
+                className="h-auto w-full max-w-[300px] shrink-0"
               />
               <span className="text-sm leading-snug text-[var(--gallery-text-tertiary)]">
                 Open Source Program
