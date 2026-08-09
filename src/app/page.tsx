@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Github } from "lucide-react";
+import { Coffee, Github } from "lucide-react";
 import { GalleryRankingsNav } from "@/components/gallery/gallery-rankings-nav";
 import { GalleryGroupSection } from "@/components/gallery/gallery-group-section";
 import { GenerationPrompt } from "@/components/gallery/generation-prompt";
@@ -66,6 +66,15 @@ export default function HomePage() {
               </svg>
               <span>@daradoescode</span>
             </Link>
+            <Link
+              href="https://www.buymeacoffee.com/daradoescode"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 transition-colors hover:text-[var(--gallery-text-primary)]"
+            >
+              <Coffee className="h-4 w-4 shrink-0 opacity-70" aria-hidden="true" />
+              <span>Fund more generations</span>
+            </Link>
           </div>
           <p className="mt-6 text-sm italic text-[var(--gallery-text-quaternary)]">
             This site was designed by Composer 2.0 LOL
@@ -82,6 +91,61 @@ export default function HomePage() {
             );
           })}
         </div>
+
+        <section
+          aria-labelledby="sponsors-heading"
+          className="mt-16 border-t border-[var(--gallery-divider)] pt-8 sm:mt-20 sm:pt-10"
+        >
+          <div className="max-w-2xl">
+            <p className="text-xs font-medium uppercase tracking-[0.16em] text-[var(--gallery-text-quaternary)]">
+              Project support
+            </p>
+            <h2
+              id="sponsors-heading"
+              className="mt-2 text-xl font-medium tracking-tight text-[var(--gallery-text-primary)]"
+            >
+              Sponsors
+            </h2>
+            <p className="mt-2 text-sm leading-relaxed text-[var(--gallery-text-tertiary)]">
+              These open-source programs help cover the code review and model usage behind
+              WhichAI.dev.
+            </p>
+          </div>
+
+          <div className="mt-5 flex flex-wrap items-stretch gap-3">
+            <a
+              href="https://www.greptile.com/?utm_source=oss_badge&utm_medium=website&utm_campaign=greptile_for_open_source"
+              target="_blank"
+              rel="noreferrer"
+              className="flex min-h-28 min-w-64 flex-1 flex-col items-start justify-center gap-3 rounded-lg border border-[var(--gallery-border)] bg-[var(--gallery-surface)] px-5 py-4 transition-colors hover:border-[var(--gallery-divider-strong)] sm:max-w-sm"
+            >
+              {/* Greptile publishes this animated OSS badge for project attribution. */}
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="https://www.greptile.com/badge.svg"
+                alt="Greptile: The War on Bugs"
+                className="h-auto w-full max-w-[300px] shrink-0"
+              />
+              <span className="text-sm leading-snug text-[var(--gallery-text-tertiary)]">
+                Open Source Program
+              </span>
+            </a>
+
+            <a
+              href="https://openai.com/form/codex-for-oss/"
+              target="_blank"
+              rel="noreferrer"
+              className="flex min-h-20 min-w-64 flex-1 items-center gap-4 rounded-lg border border-[var(--gallery-border)] bg-[var(--gallery-surface)] px-5 py-4 transition-colors hover:border-[var(--gallery-divider-strong)] sm:max-w-sm"
+            >
+              <span className="text-lg font-semibold tracking-[-0.03em] text-[var(--gallery-text-primary)]">
+                OpenAI
+              </span>
+              <span className="text-sm leading-snug text-[var(--gallery-text-tertiary)]">
+                Codex for Open Source
+              </span>
+            </a>
+          </div>
+        </section>
       </main>
     </>
   );
