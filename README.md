@@ -48,4 +48,4 @@ Running fresh model generations is the main cost behind WhichAI.dev. If the gall
 
 [Greptile's Open Source Program](https://www.greptile.com/open-source) provides AI code review for the project.
 
-**[OpenAI â€” Codex for Open Source](https://openai.com/form/codex-for-oss/)** provides tooling and credits that support open-source maintenance and benchmark development.
+**[OpenAI - Codex for Open Source](https://openai.com/form/codex-for-oss/)** provides tooling and credits that support open-source maintenance and benchmark development.
