@@ -12,13 +12,12 @@ function iterations(
   sourceSlugs: readonly string[],
   group: GalleryEntry["group"],
   model: GalleryEntry["model"],
-  thumbnailOverride?: string,
 ) {
   return sourceSlugs.map((sourceSlug, index) => ({
     id: String(index + 1) as GalleryEntry["iterations"][number]["id"],
     title: DEFAULT_TITLES[index],
     sourceSlug,
-    thumbnailPath: thumbnailOverride ?? `/gallery-previews/${group}/${model}/${index + 1}.webp`,
+    thumbnailPath: `/gallery-previews/${group}/${model}/${index + 1}.webp`,
   }));
 }
 
@@ -670,12 +669,18 @@ export const galleryManifest: GalleryEntry[] = [
     sourceAppType: "next",
     defaultIteration: "1",
     summary: "Five Muse Spark 1.2 landing generations produced with the frontend-design skill.",
-    iterations: iterations(
-      ["1", "2", "3", "4", "5"],
-      "with-design-skill",
-      "muse-spark-1.2",
-      "/gallery-preview-wip.svg",
-    ),
+    iterations: iterations(["1", "2", "3", "4", "5"], "with-design-skill", "muse-spark-1.2"),
+  },
+  {
+    group: "with-taste-skill",
+    groupLabel: "With Taste Skill",
+    model: "muse-spark-1.2",
+    modelLabel: "Muse Spark 1.2",
+    sourceDir: "muse-spark-test/next-design-taste",
+    sourceAppType: "next",
+    defaultIteration: "1",
+    summary: "Five Muse Spark 1.2 landing generations produced with the taste skill.",
+    iterations: iterations(["one", "two", "three", "four", "five"], "with-taste-skill", "muse-spark-1.2"),
   },
   {
     group: "without-design-skill",
@@ -686,12 +691,7 @@ export const galleryManifest: GalleryEntry[] = [
     sourceAppType: "next",
     defaultIteration: "1",
     summary: "Five Muse Spark 1.2 baseline landing generations produced without a design skill.",
-    iterations: iterations(
-      ["1", "2", "3", "4", "5"],
-      "without-design-skill",
-      "muse-spark-1.2",
-      "/gallery-preview-wip.svg",
-    ),
+    iterations: iterations(["1", "2", "3", "4", "5"], "without-design-skill", "muse-spark-1.2"),
   },
   {
     group: "with-design-skill",
