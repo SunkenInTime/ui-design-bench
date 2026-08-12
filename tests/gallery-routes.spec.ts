@@ -30,6 +30,9 @@ const latestRouteSmokeCases = galleryManifest
 const sampleRouteSmokeCases = [
   { group: "with-design-skill", model: "composer-2.5", iteration: "5" },
   { group: "with-design-skill", model: "grok-4.5", iteration: "3" },
+  { group: "with-design-skill", model: "grok-4.6", iteration: "3" },
+  { group: "with-taste-skill", model: "grok-4.6", iteration: "3" },
+  { group: "without-design-skill", model: "grok-4.6", iteration: "3" },
   { group: "with-design-skill", model: "kimi-k3", iteration: "3" },
   { group: "with-taste-skill", model: "kimi-k3", iteration: "3" },
   { group: "without-design-skill", model: "kimi-k3", iteration: "3" },

@@ -1,0 +1,88 @@
+:where(.gallery-generation[data-gallery-group="without-design-skill"][data-gallery-model="grok-4.6"]) {
+  --background: #f6f1e8;
+  --foreground: #171717;
+}
+
+:where(.gallery-generation[data-gallery-group="without-design-skill"][data-gallery-model="grok-4.6"]),:where(.gallery-generation[data-gallery-group="without-design-skill"][data-gallery-model="grok-4.6"]) {
+  min-height: 100%;
+}
+
+:where(.gallery-generation[data-gallery-group="without-design-skill"][data-gallery-model="grok-4.6"]) {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+:where(.gallery-generation[data-gallery-group="without-design-skill"][data-gallery-model="grok-4.6"]) .grain {
+  position: relative;
+}
+
+:where(.gallery-generation[data-gallery-group="without-design-skill"][data-gallery-model="grok-4.6"]) .grain::after {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  opacity: 0.18;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+:where(.gallery-generation[data-gallery-group="without-design-skill"][data-gallery-model="grok-4.6"]) .grain > * {
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes gallery-without-design-skill-grok-4-6-source-app-globals-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+:where(.gallery-generation[data-gallery-group="without-design-skill"][data-gallery-model="grok-4.6"]) .marquee-track {
+  animation: gallery-without-design-skill-grok-4-6-source-app-globals-marquee 28s linear infinite;
+  width: max-content;
+}
+
+@keyframes gallery-without-design-skill-grok-4-6-source-app-globals-pulse-node {
+  0%,
+  100% {
+    opacity: 0.45;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+:where(.gallery-generation[data-gallery-group="without-design-skill"][data-gallery-model="grok-4.6"]) .graph-node {
+  animation: gallery-without-design-skill-grok-4-6-source-app-globals-pulse-node 4.8s ease-in-out infinite;
+}
+
+:where(.gallery-generation[data-gallery-group="without-design-skill"][data-gallery-model="grok-4.6"]) .graph-node:nth-child(odd) {
+  animation-delay: -1.6s;
+}
+
+@keyframes gallery-without-design-skill-grok-4-6-source-app-globals-drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -10px, 0);
+  }
+}
+
+:where(.gallery-generation[data-gallery-group="without-design-skill"][data-gallery-model="grok-4.6"]) .drift {
+  animation: gallery-without-design-skill-grok-4-6-source-app-globals-drift 7s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :where(.gallery-generation[data-gallery-group="without-design-skill"][data-gallery-model="grok-4.6"]) .marquee-track,:where(.gallery-generation[data-gallery-group="without-design-skill"][data-gallery-model="grok-4.6"])
+  .graph-node,:where(.gallery-generation[data-gallery-group="without-design-skill"][data-gallery-model="grok-4.6"])
+  .drift {
+    animation: none;
+  }
+}

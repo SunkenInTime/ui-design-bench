@@ -6,6 +6,7 @@ import withFable from "@/variants/with-design-skill/fable";
 import withGemini from "@/variants/with-design-skill/gemini";
 import withGemini35Flash from "@/variants/with-design-skill/gemini-3.5-flash";
 import withGrok45 from "@/variants/with-design-skill/grok-4.5";
+import withGrok46 from "@/variants/with-design-skill/grok-4.6";
 import withGpt54 from "@/variants/with-design-skill/gpt-5.4";
 import withGpt55Low from "@/variants/with-design-skill/gpt-5.5-low";
 import withGpt55High from "@/variants/with-design-skill/gpt-5.5-high";
@@ -26,6 +27,7 @@ import withTerra from "@/variants/with-design-skill/terra";
 import withMuseSpark12 from "@/variants/with-design-skill/muse-spark-1.2";
 import withTasteFable from "@/variants/with-taste-skill/fable";
 import withTasteGrok45 from "@/variants/with-taste-skill/grok-4.5";
+import withTasteGrok46 from "@/variants/with-taste-skill/grok-4.6";
 import withTasteKimiK3 from "@/variants/with-taste-skill/kimi-k3";
 import withTasteGlm52 from "@/variants/with-taste-skill/glm-5.2";
 import withTasteSonnet5 from "@/variants/with-taste-skill/sonnet-5";
@@ -46,6 +48,7 @@ import withoutFable from "@/variants/without-design-skill/fable";
 import withoutGemini from "@/variants/without-design-skill/gemini";
 import withoutGemini35Flash from "@/variants/without-design-skill/gemini-3.5-flash";
 import withoutGrok45 from "@/variants/without-design-skill/grok-4.5";
+import withoutGrok46 from "@/variants/without-design-skill/grok-4.6";
 import withoutGpt54 from "@/variants/without-design-skill/gpt-5.4";
 import withoutGpt55Low from "@/variants/without-design-skill/gpt-5.5-low";
 import withoutGpt55High from "@/variants/without-design-skill/gpt-5.5-high";
@@ -75,6 +78,7 @@ const registry: Partial<Record<RegistryKey, VariantModule>> = {
   "with-design-skill:gemini": withGemini,
   "with-design-skill:gemini-3.5-flash": withGemini35Flash,
   "with-design-skill:grok-4.5": withGrok45,
+  "with-design-skill:grok-4.6": withGrok46,
   "with-design-skill:gpt-5.4": withGpt54,
   "with-design-skill:gpt-5.5-low": withGpt55Low,
   "with-design-skill:gpt-5.5-high": withGpt55High,
@@ -95,6 +99,7 @@ const registry: Partial<Record<RegistryKey, VariantModule>> = {
   "with-design-skill:muse-spark-1.2": withMuseSpark12,
   "with-taste-skill:fable": withTasteFable,
   "with-taste-skill:grok-4.5": withTasteGrok45,
+  "with-taste-skill:grok-4.6": withTasteGrok46,
   "with-taste-skill:kimi-k3": withTasteKimiK3,
   "with-taste-skill:glm-5.2": withTasteGlm52,
   "with-taste-skill:sonnet-5": withTasteSonnet5,
@@ -115,6 +120,7 @@ const registry: Partial<Record<RegistryKey, VariantModule>> = {
   "without-design-skill:gemini": withoutGemini,
   "without-design-skill:gemini-3.5-flash": withoutGemini35Flash,
   "without-design-skill:grok-4.5": withoutGrok45,
+  "without-design-skill:grok-4.6": withoutGrok46,
   "without-design-skill:gpt-5.4": withoutGpt54,
   "without-design-skill:gpt-5.5-low": withoutGpt55Low,
   "without-design-skill:gpt-5.5-high": withoutGpt55High,

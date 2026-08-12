@@ -1,0 +1,298 @@
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.6"]) .wrap {
+  --prussian: #07325f;
+  --wash: #0c4a86;
+  --chalk: #eef8ff;
+  --line: rgba(238, 248, 255, 0.55);
+  --orange: #ff5414;
+  --muted: #9ec2dc;
+  min-height: 100dvh;
+  background:
+    radial-gradient(ellipse 80% 50% at 18% 0%, #15639e 0%, transparent 52%),
+    radial-gradient(ellipse 40% 40% at 100% 100%, #05284c 0%, transparent 50%),
+    var(--prussian);
+  color: var(--chalk);
+  font-family: var(--font-one-body), Georgia, serif;
+  padding-bottom: 5.5rem;
+  -webkit-font-smoothing: antialiased;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.6"]) .wrap ::selection {
+  background: var(--orange);
+  color: var(--prussian);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.6"]) .sheet {
+  min-height: 100dvh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  padding: 1.25rem clamp(1rem, 3vw, 2rem) 1.5rem;
+  background-image:
+    linear-gradient(rgba(238, 248, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(238, 248, 255, 0.045) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.6"]) .top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  font-family: var(--font-one-mono), ui-monospace, monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.6"]) .mark {
+  color: var(--chalk);
+  font-weight: 500;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.6"]) .cta {
+  appearance: none;
+  flex-shrink: 0;
+  border: 1px solid var(--orange);
+  background: var(--orange);
+  color: var(--prussian);
+  font-family: var(--font-one-mono), ui-monospace, monospace;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.55rem 0.85rem;
+  cursor: pointer;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.6"]) .cta:hover {
+  background: var(--chalk);
+  border-color: var(--chalk);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.6"]) .cta:focus-visible {
+  outline: 2px solid var(--chalk);
+  outline-offset: 3px;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.6"]) .hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+  align-items: center;
+  padding: clamp(1.5rem, 4vh, 3rem) 0;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.6"]) .kicker {
+  font-family: var(--font-one-mono), ui-monospace, monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin: 0 0 1rem;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.6"]) .headline {
+  font-family: var(--font-one-display), sans-serif;
+  font-weight: 800;
+  font-size: clamp(2.6rem, 6.4vw, 5.6rem);
+  line-height: 0.92;
+  letter-spacing: -0.045em;
+  margin: 0 0 1.25rem;
+  max-width: 9ch;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.6"]) .lede {
+  font-size: 1.125rem;
+  line-height: 1.55;
+  max-width: 36ch;
+  color: var(--muted);
+  margin: 0;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.6"]) .planWrap {
+  position: relative;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.6"]) .north {
+  position: absolute;
+  top: -0.4rem;
+  right: 0.4rem;
+  font-family: var(--font-one-mono), ui-monospace, monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  color: var(--muted);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.6"]) .plan {
+  display: grid;
+  grid-template-columns: 1.15fr 0.9fr 0.95fr;
+  grid-template-rows: 0.95fr 0.7fr 1fr;
+  grid-template-areas:
+    "atrium atrium study"
+    "hall hall study"
+    "garden archive archive";
+  gap: 7px;
+  min-height: min(52vh, 420px);
+  padding: 7px;
+  background: rgba(238, 248, 255, 0.12);
+  border: 1px solid var(--line);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.6"]) .room {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0.85rem 0.9rem;
+  border: 1px solid var(--line);
+  background: rgba(7, 50, 95, 0.35);
+  cursor: pointer;
+  min-height: 0;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.6"]) .room:hover,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.6"])
+.room:focus-within {
+  background: rgba(238, 248, 255, 0.08);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.6"]) .room:has(input:checked) {
+  background: rgba(238, 248, 255, 0.14);
+  border-color: var(--chalk);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.6"]) .room:has(input:focus-visible) {
+  outline: 2px solid var(--orange);
+  outline-offset: 2px;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.6"]) .room input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.6"]) .atrium {
+  grid-area: atrium;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.6"]) .study {
+  grid-area: study;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.6"]) .hall {
+  grid-area: hall;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.6"]) .garden {
+  grid-area: garden;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.6"]) .archive {
+  grid-area: archive;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.6"]) .roomId {
+  font-family: var(--font-one-mono), ui-monospace, monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.6"]) .roomName {
+  font-family: var(--font-one-display), sans-serif;
+  font-weight: 700;
+  font-size: 1.15rem;
+  letter-spacing: -0.03em;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.6"]) .hint {
+  margin: 0.65rem 0 0;
+  font-family: var(--font-one-mono), ui-monospace, monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.6"]) .note {
+  margin-top: 0.65rem;
+  font-size: 0.88rem;
+  line-height: 1.4;
+  color: var(--chalk);
+  display: none;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.6"]) .room:has(input:checked) .note {
+  display: block;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.6"]) .titleblock {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1.1fr;
+  border: 1px solid var(--line);
+  font-family: var(--font-one-mono), ui-monospace, monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.6"]) .cell {
+  min-width: 0;
+  padding: 0.7rem 0.85rem;
+  border-right: 1px solid var(--line);
+  line-height: 1.45;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.6"]) .cell:last-child {
+  border-right: 0;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.6"]) .cell span {
+  display: block;
+  color: var(--muted);
+  margin-bottom: 0.25rem;
+}
+
+@media (max-width: 860px) {
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.6"]) .hero {
+    grid-template-columns: 1fr;
+  }
+
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.6"]) .headline {
+    max-width: none;
+  }
+
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.6"]) .titleblock {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.6"]) .cell:nth-child(2) {
+    border-right: 0;
+  }
+
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.6"]) .cell:nth-child(1),:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.6"])
+  .cell:nth-child(2) {
+    border-bottom: 1px solid var(--line);
+  }
+}
+
+@media (max-width: 560px) {
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.6"]) .plan {
+    min-height: 360px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "atrium study"
+      "hall hall"
+      "garden archive";
+  }
+
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.6"]) .note {
+    display: block;
+    opacity: 0.9;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.6"]) .cta:hover {
+    filter: none;
+  }
+}
