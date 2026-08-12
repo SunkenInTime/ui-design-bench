@@ -1,0 +1,22 @@
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.6"]) *,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.6"])
+*::before,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.6"])
+*::after {
+  box-sizing: border-box;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.6"]),:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.6"]) {
+  min-height: 100%;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.6"]) {
+  margin: 0;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.6"]) button,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.6"])
+input {
+  font: inherit;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.6"]) a {
+  color: inherit;
+}
