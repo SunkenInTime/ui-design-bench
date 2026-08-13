@@ -217,10 +217,8 @@ test("gallery switcher text colors stay isolated from generated variant CSS", as
     };
   });
 
-  expect(cssVariables).toEqual({
-    rootBackground: "",
-    generationBackground: "#fff",
-  });
+  expect(cssVariables.rootBackground).toBe("");
+  expect(["#fff", "#ffffff"]).toContain(cssVariables.generationBackground);
 });
 
 for (const { group, model, iteration, source } of routeSmokeCases) {

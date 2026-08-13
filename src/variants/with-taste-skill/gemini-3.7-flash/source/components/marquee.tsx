@@ -24,6 +24,7 @@ export function Marquee({ items }: { items: string[] }) {
         {row.map((item, i) => (
           <li
             key={`${item}-${i}`}
+            aria-hidden={i >= items.length}
             className="text-2xl font-medium whitespace-nowrap md:text-5xl"
           >
             {item}

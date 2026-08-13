@@ -146,7 +146,7 @@ export function AtlasView() {
           <svg
             className={styles.svg}
             viewBox="0 0 900 600"
-            role="img"
+            role="group"
             aria-label="Star chart of the constellation Mneme"
           >
             <defs>

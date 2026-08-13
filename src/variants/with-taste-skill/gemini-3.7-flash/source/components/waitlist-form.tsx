@@ -45,13 +45,13 @@ export function WaitlistForm({
   cta: string;
 }) {
   const [email, setEmail] = useState("");
-  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">(
+  const [status, setStatus] = useState<"idle" | "success" | "error">(
     "idle",
   );
   const [message, setMessage] = useState("");
   const ui = variants[variant];
 
-  async function onSubmit(e: React.FormEvent) {
+  function onSubmit(e: React.FormEvent) {
     e.preventDefault();
     const value = email.trim();
     if (!value) {
@@ -64,16 +64,13 @@ export function WaitlistForm({
       setMessage("Enter a valid email.");
       return;
     }
-    setStatus("loading");
-    setMessage("");
-    await new Promise((r) => setTimeout(r, 700));
     setStatus("success");
   }
 
   if (status === "success") {
     return (
       <p className={`max-w-[40ch] text-base leading-relaxed ${ui.success}`} role="status">
-        You are on the list. We will write when a seat opens.
+        This gallery preview does not submit email addresses.
       </p>
     );
   }
@@ -100,14 +97,13 @@ export function WaitlistForm({
         />
         <button
           type="submit"
-          disabled={status === "loading"}
-          className={`min-h-12 shrink-0 text-sm font-medium whitespace-nowrap transition ${ui.button} disabled:opacity-60`}
+          className={`min-h-12 shrink-0 text-sm font-medium whitespace-nowrap transition ${ui.button}`}
         >
-          {status === "loading" ? "Sending" : cta}
+          {cta}
         </button>
       </div>
       <p id={`${id ?? "waitlist"}-help`} className={`text-sm ${ui.helper}`}>
-        We send a Mac, iOS, and web download. No extra mail.
+        Gallery preview only. Email addresses are not submitted.
       </p>
       {status === "error" ? (
         <p id={`${id ?? "waitlist"}-error`} className={`text-sm ${ui.error}`} role="alert">

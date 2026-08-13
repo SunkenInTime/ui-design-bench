@@ -15,14 +15,14 @@ export function HorizontalPan({ children }: { children: React.ReactNode }) {
     if (reduce || !wrap.current || !track.current) return;
 
     const ctx = gsap.context(() => {
-      const distance = track.current!.scrollWidth - window.innerWidth;
+      const distance = () => track.current!.scrollWidth - window.innerWidth;
       gsap.to(track.current, {
-        x: -distance,
+        x: () => -distance(),
         ease: "none",
         scrollTrigger: {
           trigger: wrap.current,
           start: "top top",
-          end: () => `+=${distance}`,
+          end: () => `+=${distance()}`,
           pin: true,
           scrub: 1,
           invalidateOnRefresh: true,

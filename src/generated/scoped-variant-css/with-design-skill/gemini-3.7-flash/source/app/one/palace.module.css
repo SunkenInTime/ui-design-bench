@@ -182,7 +182,7 @@
   background: color-mix(in srgb, var(--sun) 80%, white 8%);
 }
 
-:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"]) .room[aria-selected="true"] {
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"]) .room[aria-pressed="true"] {
   border-style: solid;
   border-color: var(--pencil);
   box-shadow: inset 0 0 0 1px var(--pencil);

@@ -112,17 +112,15 @@ export function PalaceView() {
               </p>
               <div
                 className={styles.plan}
-                role="listbox"
+                role="group"
                 aria-label="Rooms in the palace"
-                aria-activedescendant={active}
               >
                 {rooms.map((item) => (
                   <button
                     key={item.id}
                     id={item.id}
                     type="button"
-                    role="option"
-                    aria-selected={active === item.id}
+                    aria-pressed={active === item.id}
                     className={`${styles.room} ${styles[item.id]}`}
                     onClick={() => setActive(item.id)}
                   >
