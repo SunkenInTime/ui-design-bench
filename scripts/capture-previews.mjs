@@ -74,6 +74,9 @@ const entries = [
   { group: "with-design-skill", model: "opus-5", iterations: ["1", "2", "3", "4", "5"] },
   { group: "with-taste-skill", model: "opus-5", iterations: ["1", "2", "3", "4", "5"] },
   { group: "without-design-skill", model: "opus-5", iterations: ["1", "2", "3", "4", "5"] },
+  { group: "with-design-skill", model: "gemini-3.7-flash", iterations: ["1", "2", "3", "4", "5"] },
+  { group: "with-taste-skill", model: "gemini-3.7-flash", iterations: ["1", "2", "3", "4", "5"] },
+  { group: "without-design-skill", model: "gemini-3.7-flash", iterations: ["1", "2", "3", "4", "5"] },
 ];
 
 const targetModel = process.env.TARGET_MODEL ?? null;
@@ -150,7 +153,7 @@ async function main() {
       }
 
       for (const iteration of iterations) {
-        const url = `${baseUrl}/${group}/${model}/${iteration}?preview=1`;
+        const url = `${baseUrl}/preview/${group}/${model}/${iteration}`;
         const outputPath = path.join(outputDir, `${iteration}.webp`);
         const response = await page.goto(url, { waitUntil: "domcontentloaded", timeout: 120_000 });
         if (!response || !response.ok()) {
@@ -163,6 +166,14 @@ async function main() {
         }
 
         await sleep(PREVIEW_SETTLE_MS);
+
+        // Next.js injects its development toolbar into otherwise valid previews.
+        // Keep capture output limited to the submitted design itself.
+        await page.locator("nextjs-portal").evaluateAll((portals) => {
+          for (const portal of portals) {
+            portal.style.display = "none";
+          }
+        });
 
         const pngBuffer = await page.screenshot();
         const webpBuffer = await sharp(pngBuffer).webp({ quality: 85 }).toBuffer();

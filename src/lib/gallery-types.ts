@@ -13,6 +13,7 @@ export type ModelSlug =
   | "fable"
   | "gemini"
   | "gemini-3.5-flash"
+  | "gemini-3.7-flash"
   | "glm-5-turbo"
   | "glm-5.1"
   | "glm-5.2"

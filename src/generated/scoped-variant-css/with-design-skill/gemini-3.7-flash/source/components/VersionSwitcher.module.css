@@ -1,0 +1,85 @@
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"]) .skip {
+  position: absolute;
+  left: 12px;
+  top: 12px;
+  z-index: 1001;
+  padding: 8px 12px;
+  background: #111;
+  color: #fff;
+  font: 600 13px/1.2 ui-sans-serif, system-ui, sans-serif;
+  text-decoration: none;
+  border-radius: 4px;
+  transform: translateY(-200%);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"]) .skip:focus {
+  transform: none;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"]) .nav {
+  position: fixed;
+  z-index: 1000;
+  left: 50%;
+  bottom: 16px;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 5px;
+  background: rgba(14, 14, 16, 0.88);
+  color: #f4f4f5;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(12px);
+  font-family: ui-sans-serif, system-ui, sans-serif;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"]) .link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 32px;
+  padding: 0 10px;
+  border-radius: 999px;
+  color: inherit;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 560;
+  letter-spacing: 0.01em;
+  opacity: 0.72;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"]) .link:hover,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"])
+.link:focus-visible {
+  opacity: 1;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"]) .link[aria-current="page"] {
+  opacity: 1;
+  background: #f4f4f5;
+  color: #111;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"]) .num {
+  font-variant-numeric: tabular-nums;
+  font-weight: 650;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"]) .name {
+  font-weight: 500;
+}
+
+@media (max-width: 640px) {
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"]) .name {
+    display: none;
+  }
+
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"]) .link {
+    min-width: 40px;
+    min-height: 40px;
+    justify-content: center;
+    padding: 0 8px;
+  }
+}
