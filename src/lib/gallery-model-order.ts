@@ -15,6 +15,7 @@ const MODEL_HOME_ORDER: Record<ModelSlug, { familyOrder: number; tier: number }>
   terra: { familyOrder: 2, tier: 57 },
   gemini: { familyOrder: 3, tier: 31 },
   "gemini-3.5-flash": { familyOrder: 3, tier: 35 },
+  "gemini-3.7-flash": { familyOrder: 3, tier: 37 },
   "grok-4.5": { familyOrder: 4, tier: 45 },
   "grok-4.6": { familyOrder: 4, tier: 46 },
   "muse-spark-1.2": { familyOrder: 4.5, tier: 12 },

@@ -1,0 +1,186 @@
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"]) .page {
+  --sand: #c8ccc6;
+  --stone: #3d4240;
+  --moss: #4f5e4c;
+  --ink: #1c1e1d;
+  --shadow: #8a9aa0;
+  --seal: #8e2a2a;
+  --display: var(--font-garden-display), "Shippori Mincho", "Times New Roman", serif;
+  --body: var(--font-garden-body), "Zen Kaku Gothic New", sans-serif;
+  min-height: 100vh;
+  color: var(--ink);
+  background: #b4b8b3;
+  font-family: var(--body);
+  padding: 28px 28px 96px;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"]) .top,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"])
+.foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"]) .mark {
+  margin: 0;
+  font-family: var(--display);
+  font-size: 15px;
+  letter-spacing: 0.28em;
+  text-transform: lowercase;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"]) .season,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"])
+.foot p {
+  margin: 0;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: color-mix(in srgb, var(--ink) 55%, var(--sand));
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"]) .main {
+  max-width: 1100px;
+  margin: 24px auto 0;
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  grid-template-rows: auto auto;
+  gap: 24px 40px;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"]) .poem {
+  grid-row: 1 / span 2;
+  padding-top: 12px;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"]) .poem h1 {
+  margin: 0;
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  line-height: 1.15;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"]) .poem p {
+  margin: 20px 0 0;
+  font-size: 14px;
+  line-height: 1.7;
+  max-width: 28ch;
+  color: color-mix(in srgb, var(--ink) 78%, var(--sand));
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"]) .bed {
+  position: relative;
+  min-height: min(62vh, 560px);
+  background: var(--sand);
+  overflow: hidden;
+  box-shadow: inset 0 0 0 1px rgba(31, 30, 28, 0.12);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"]) .sand {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"]) .sand path {
+  fill: none;
+  stroke: rgba(74, 74, 70, 0.22);
+  stroke-width: 0.18;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"]) .stone {
+  position: absolute;
+  appearance: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  background: radial-gradient(circle at 30% 30%, #6a6a64, var(--stone) 58%, #2e2e2b);
+  border-radius: 46% 54% 48% 52% / 42% 38% 62% 58%;
+  box-shadow:
+    6px 10px 18px rgba(31, 30, 28, 0.18),
+    inset -6px -8px 12px rgba(0, 0, 0, 0.25),
+    inset 5px 6px 8px rgba(255, 255, 255, 0.08);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"]) .stone:hover,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"])
+.stone:focus-visible {
+  filter: brightness(1.12);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"]) .stone[aria-pressed="true"] {
+  outline: 1px solid var(--moss);
+  outline-offset: 6px;
+  box-shadow:
+    6px 10px 18px rgba(31, 30, 28, 0.18),
+    0 0 0 10px color-mix(in srgb, var(--sand) 70%, white);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"]) .card {
+  justify-self: end;
+  width: min(320px, 100%);
+  padding: 8px 0 0;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"]) .inscribe {
+  margin: 0 0 8px;
+  font-family: var(--display);
+  font-size: 1.35rem;
+  line-height: 1.35;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"]) .card p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"]) .seal {
+  appearance: none;
+  margin-top: 18px;
+  width: 72px;
+  height: 72px;
+  border: 2px solid var(--seal);
+  color: var(--seal);
+  background: transparent;
+  font-family: var(--display);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"]) .seal:hover,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"])
+.seal:focus-visible {
+  background: color-mix(in srgb, var(--seal) 8%, transparent);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"]) .foot {
+  max-width: 1100px;
+  margin: 28px auto 0;
+}
+
+@media (max-width: 800px) {
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"]) .main {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"]) .poem {
+    grid-row: auto;
+  }
+
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"]) .card {
+    justify-self: start;
+  }
+
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"]) .page {
+    padding: 20px 16px 96px;
+  }
+
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"]) .bed {
+    min-height: 52vh;
+  }
+}

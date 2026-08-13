@@ -1,0 +1,370 @@
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"]) .page {
+  --prussian: #0e3a5f;
+  --deep: #0a2d4a;
+  --bleach: #eaf3f8;
+  --faded: #8ec4de;
+  --pencil: #c45c4a;
+  --sun: #1a5278;
+  --display: var(--font-palace-display), "Syne", sans-serif;
+  --body: var(--font-palace-body), "Source Serif 4", Georgia, serif;
+  position: relative;
+  min-height: 100vh;
+  color: var(--bleach);
+  background:
+    radial-gradient(ellipse at 38% 18%, var(--sun) 0%, var(--prussian) 52%, var(--deep) 100%);
+  font-family: var(--body);
+  padding: 28px 28px 96px;
+  overflow-x: hidden;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"]) .grain {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  opacity: 0.18;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"]) .top,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"])
+.foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  position: relative;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"]) .mark {
+  margin: 0;
+  font-family: var(--display);
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 13px;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"]) .cta {
+  appearance: none;
+  background: none;
+  border: none;
+  color: var(--pencil);
+  font-family: var(--display);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 0;
+  border-bottom: 1px solid var(--pencil);
+  border-radius: 0;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"]) .cta:hover {
+  color: var(--bleach);
+  border-bottom-color: var(--bleach);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"]) .main {
+  position: relative;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"]) .hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr);
+  gap: 40px;
+  align-items: end;
+  margin-top: 48px;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"]) .kicker {
+  margin: 0 0 16px;
+  font-family: var(--display);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--faded);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"]) .title {
+  margin: 0;
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(2.2rem, 4.2vw, 3.8rem);
+  line-height: 0.94;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"]) .lede {
+  margin: 22px 0 0;
+  max-width: 36ch;
+  font-size: 1.15rem;
+  line-height: 1.55;
+  color: color-mix(in srgb, var(--bleach) 82%, var(--faded));
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"]) .sheet {
+  display: grid;
+  gap: 16px;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"]) .planWrap {
+  position: relative;
+  border: 1px solid color-mix(in srgb, var(--bleach) 55%, transparent);
+  padding: 28px 18px 22px;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"]) .north {
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  font-family: var(--display);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"]) .north::before {
+  content: "▲";
+  display: block;
+  text-align: center;
+  font-size: 8px;
+  letter-spacing: 0;
+  margin-bottom: 2px;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"]) .scale {
+  margin: 10px 0 0;
+  text-align: right;
+  font-family: var(--display);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--faded);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"]) .plan {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr 1fr;
+  grid-template-rows: minmax(108px, 18vh) minmax(120px, 20vh) minmax(88px, 14vh);
+  grid-template-areas:
+    "library orangery archive"
+    "library atrium archive"
+    "kitchen vestibule observatory";
+  gap: 0;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"]) .room {
+  appearance: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+  margin: 0;
+  padding: 10px 12px;
+  color: var(--bleach);
+  background: color-mix(in srgb, var(--prussian) 70%, transparent);
+  border: 1px dashed color-mix(in srgb, var(--bleach) 42%, transparent);
+  text-align: left;
+  cursor: pointer;
+  min-width: 0;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"]) .room:hover,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"])
+.room:focus-visible {
+  background: color-mix(in srgb, var(--sun) 80%, white 8%);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"]) .room[aria-selected="true"] {
+  border-style: solid;
+  border-color: var(--pencil);
+  box-shadow: inset 0 0 0 1px var(--pencil);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"]) .library {
+  grid-area: library;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"]) .orangery {
+  grid-area: orangery;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"]) .archive {
+  grid-area: archive;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"]) .atrium {
+  grid-area: atrium;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"]) .kitchen {
+  grid-area: kitchen;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"]) .vestibule {
+  grid-area: vestibule;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"]) .observatory {
+  grid-area: observatory;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"]) .roomName {
+  font-family: var(--display);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"]) .roomDim {
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  color: var(--faded);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"]) .block {
+  border: 1px solid color-mix(in srgb, var(--bleach) 45%, transparent);
+  padding: 14px 16px 16px;
+  background: color-mix(in srgb, var(--deep) 55%, transparent);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"]) .blockLabel {
+  margin: 0 0 10px;
+  font-family: var(--display);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--faded);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"]) .meta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 16px;
+  margin: 0 0 12px;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"]) .meta div {
+  display: grid;
+  gap: 2px;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"]) .meta dt {
+  font-family: var(--display);
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--faded);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"]) .meta dd {
+  margin: 0;
+  font-size: 14px;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"]) .excerpt {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"]) .see {
+  margin: 10px 0 0;
+  font-family: var(--display);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--pencil);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"]) .specs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-top: 56px;
+  padding-top: 28px;
+  border-top: 1px solid color-mix(in srgb, var(--bleach) 28%, transparent);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"]) .specs h2 {
+  margin: 0 0 10px;
+  font-family: var(--display);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"]) .specs p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.55;
+  color: color-mix(in srgb, var(--bleach) 84%, var(--faded));
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"]) .foot {
+  max-width: 1180px;
+  margin: 48px auto 0;
+  padding-top: 18px;
+  border-top: 1px solid color-mix(in srgb, var(--bleach) 22%, transparent);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-family: var(--display);
+  color: var(--faded);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"]) .foot p {
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"]) .hero,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"])
+  .specs,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"])
+  .meta {
+    grid-template-columns: 1fr;
+  }
+
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"]) .page {
+    padding: 20px 16px 96px;
+  }
+
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"]) .plan {
+    grid-template-rows: 100px 110px 90px;
+  }
+}
+
+@media (max-width: 640px) {
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"]) .top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"]) .cta {
+    font-size: 11px;
+  }
+
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"]) .plan {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "library library"
+      "orangery archive"
+      "atrium atrium"
+      "kitchen vestibule"
+      "observatory observatory";
+  }
+
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"]) .room {
+    min-height: 88px;
+  }
+}
