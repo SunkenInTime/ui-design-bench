@@ -4,6 +4,7 @@ import type { GalleryEntry, ModelSlug } from "@/lib/gallery-types";
 const FORCE_ARCHIVED_MODELS = new Set<ModelSlug>([
   "composer-2.0",
   "composer-2.5",
+  "gemini-3.5-flash",
   "kimi-k-2.6",
   "luna",
   "opus-4.7",

@@ -13,6 +13,7 @@ const LATEST_ROUTE_SMOKE_COUNT = 5;
 
 const forceArchivedModels = [
   { model: "composer-2.5", label: "Composer 2.5" },
+  { model: "gemini-3.5-flash", label: "Gemini 3.5 Flash" },
   { model: "luna", label: "GPT-5.6 Luna" },
   { model: "terra", label: "GPT-5.6 Terra" },
   { model: "opus-4.8", label: "Opus 4.8" },
