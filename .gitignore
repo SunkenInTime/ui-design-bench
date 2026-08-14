@@ -4,6 +4,13 @@ test-results/
 playwright-report/
 
 .vercel
-.agents/
-.claude/
+.agents/*
+!.agents/skills/
+.agents/skills/*
+!.agents/skills/add-generation-to-gallery/
+
+.claude/*
+!.claude/skills/
+.claude/skills/*
+!.claude/skills/add-generation-to-gallery/
 .windsurf/
