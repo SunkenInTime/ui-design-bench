@@ -30,6 +30,7 @@ export type ModelSlug =
   | "opus-4.7"
   | "opus-4.8"
   | "opus-5"
+  | "ox-alpha"
   | "sonnet-5"
   | "sol"
   | "luna"

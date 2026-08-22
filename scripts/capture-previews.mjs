@@ -77,6 +77,9 @@ const entries = [
   { group: "with-design-skill", model: "gemini-3.7-flash", iterations: ["1", "2", "3", "4", "5"] },
   { group: "with-taste-skill", model: "gemini-3.7-flash", iterations: ["1", "2", "3", "4", "5"] },
   { group: "without-design-skill", model: "gemini-3.7-flash", iterations: ["1", "2", "3", "4", "5"] },
+  { group: "with-design-skill", model: "ox-alpha", iterations: ["1", "2", "3", "4", "5"] },
+  { group: "with-taste-skill", model: "ox-alpha", iterations: ["1", "2", "3", "4", "5"] },
+  { group: "without-design-skill", model: "ox-alpha", iterations: ["1", "2", "3", "4", "5"] },
 ];
 
 const targetModel = process.env.TARGET_MODEL ?? null;
