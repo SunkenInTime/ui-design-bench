@@ -59,6 +59,9 @@ const sampleRouteSmokeCases = [
   { group: "with-design-skill", model: "gemini-3.7-flash", iteration: "1" },
   { group: "with-taste-skill", model: "gemini-3.7-flash", iteration: "3" },
   { group: "without-design-skill", model: "gemini-3.7-flash", iteration: "5" },
+  { group: "with-design-skill", model: "ox-alpha", iteration: "1" },
+  { group: "with-taste-skill", model: "ox-alpha", iteration: "3" },
+  { group: "without-design-skill", model: "ox-alpha", iteration: "5" },
 ] as const;
 
 const routeSmokeCases = [

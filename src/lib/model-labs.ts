@@ -1,6 +1,15 @@
 import type { ModelSlug } from "@/lib/gallery-types";
 
-export type LabSlug = "gpt" | "anthropic" | "google" | "meta" | "x-ai" | "moonshot" | "z-ai" | "cursor";
+export type LabSlug =
+  | "gpt"
+  | "anthropic"
+  | "google"
+  | "meta"
+  | "x-ai"
+  | "moonshot"
+  | "z-ai"
+  | "cursor"
+  | "anonymous";
 
 export interface ModelLab {
   slug: LabSlug;
@@ -34,6 +43,7 @@ const MODEL_TO_LAB: Record<ModelSlug, ModelLab> = {
   "opus-4.7": { slug: "anthropic", label: "Anthropic" },
   "opus-4.8": { slug: "anthropic", label: "Anthropic" },
   "opus-5": { slug: "anthropic", label: "Anthropic" },
+  "ox-alpha": { slug: "anonymous", label: "Anonymous" },
   "sonnet-5": { slug: "anthropic", label: "Anthropic" },
 };
 
@@ -46,6 +56,7 @@ export const LAB_OPTIONS: ModelLab[] = [
   { slug: "moonshot", label: "Moonshot" },
   { slug: "z-ai", label: "Z.ai" },
   { slug: "cursor", label: "Cursor" },
+  { slug: "anonymous", label: "Anonymous" },
 ];
 
 export function getModelLab(model: ModelSlug): ModelLab {
