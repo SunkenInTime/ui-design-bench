@@ -71,7 +71,7 @@ export default function OnePage() {
     <div className="min-h-[100dvh] bg-zinc-950 text-zinc-100 selection:bg-emerald-400/25">
       <header className="sticky top-0 z-30 border-b border-white/5 bg-zinc-950/70 backdrop-blur-md">
         <nav className="mx-auto flex h-16 max-w-[1400px] items-center justify-between px-4 sm:px-6 lg:px-8">
-          <Link href="/one" className="flex items-center gap-2">
+          <Link href="/with-taste-skill/ox-alpha/1" className="flex items-center gap-2">
             <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-emerald-400 font-mono text-sm font-bold text-zinc-950">
               U
             </span>
@@ -341,7 +341,7 @@ export default function OnePage() {
 
       <footer className="border-t border-white/5">
         <div className="mx-auto flex max-w-[1400px] flex-col items-center justify-between gap-6 px-4 py-10 sm:px-6 md:flex-row lg:px-8">
-          <Link href="/one" className="flex items-center gap-2">
+          <Link href="/with-taste-skill/ox-alpha/1" className="flex items-center gap-2">
             <span className="flex h-6 w-6 items-center justify-center rounded-md bg-emerald-400 font-mono text-xs font-bold text-zinc-950">
               U
             </span>
