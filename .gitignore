@@ -14,3 +14,4 @@ playwright-report/
 .claude/skills/*
 !.claude/skills/add-generation-to-gallery/
 .windsurf/
+.env.local

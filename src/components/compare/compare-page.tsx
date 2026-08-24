@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowLeftRight, Link2 } from "lucide-react";
 import { useEffect, useRef, useState, useTransition } from "react";
+import posthog from "posthog-js";
 import { CompareGroupSelect, CompareModelSelect } from "@/components/compare/compare-selects";
 import { GalleryRankingsNav } from "@/components/gallery/gallery-rankings-nav";
 import {
@@ -83,9 +84,15 @@ function ComparePanel({
               <button
                 key={iteration}
                 type="button"
-                onClick={() =>
-                  onSelectionChange(resolveSelection(selection.group, selection.model, iteration))
-                }
+                onClick={() => {
+                  posthog.capture("compare_iteration_changed", {
+                    side,
+                    iteration,
+                    model: selection.model,
+                    group: selection.group,
+                  });
+                  onSelectionChange(resolveSelection(selection.group, selection.model, iteration));
+                }}
                 className={`gallery-variant-switcher__iteration inline-flex size-7 shrink-0 cursor-pointer items-center justify-center rounded-md text-[11px] font-medium tabular-nums leading-none transition-colors ${
                   active
                     ? "bg-[var(--gallery-accent)] text-[var(--gallery-accent-foreground)]"
@@ -166,6 +173,11 @@ function CompareSideControls({
               return;
             }
 
+            posthog.capture("compare_selection_changed", {
+              side,
+              changed_dimension: "group",
+              new_group: nextGroup,
+            });
             onSelectionChange(resolveSelection(nextGroup, nextModel, selection.iteration));
           }}
           groups={compareGroupOrder}
@@ -179,6 +191,11 @@ function CompareSideControls({
           models={models}
           value={selection.model}
           onChange={(nextModel) => {
+            posthog.capture("compare_selection_changed", {
+              side,
+              changed_dimension: "model",
+              new_model: nextModel,
+            });
             onSelectionChange(resolveSelection(selection.group, nextModel, selection.iteration));
           }}
           open={openMenu === "model"}
@@ -209,6 +226,10 @@ export function ComparePage({ initialState }: { initialState: CompareState }) {
   };
 
   const swapSelections = () => {
+    posthog.capture("compare_sides_swapped", {
+      left_model: initialState.left.model,
+      right_model: initialState.right.model,
+    });
     updateState({
       left: initialState.right,
       right: initialState.left,
@@ -220,6 +241,10 @@ export function ComparePage({ initialState }: { initialState: CompareState }) {
     window.setTimeout(() => setCopyFlash(false), 380);
     try {
       await navigator.clipboard.writeText(window.location.href);
+      posthog.capture("compare_link_copied", {
+        left_model: initialState.left.model,
+        right_model: initialState.right.model,
+      });
       setCopied(true);
       window.setTimeout(() => setCopied(false), 2200);
     } catch {
