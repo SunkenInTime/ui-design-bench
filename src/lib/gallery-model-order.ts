@@ -25,10 +25,10 @@ const MODEL_HOME_ORDER: Record<ModelSlug, { familyOrder: number; tier: number }>
   "glm-5-turbo": { familyOrder: 6, tier: 50 },
   "glm-5.1": { familyOrder: 6, tier: 51 },
   "glm-5.2": { familyOrder: 6, tier: 52 },
+  "glm-5.3-flash": { familyOrder: 6, tier: 53 },
   "kimi-k-2.5": { familyOrder: 7, tier: 25 },
   "kimi-k-2.6": { familyOrder: 7, tier: 26 },
   "kimi-k3": { familyOrder: 7, tier: 30 },
-  "ox-alpha": { familyOrder: 8, tier: 1 },
 };
 
 export function sortGalleryEntriesForHome(entries: GalleryEntry[]) {

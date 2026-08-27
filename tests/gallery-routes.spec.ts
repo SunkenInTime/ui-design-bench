@@ -1,5 +1,7 @@
 import { test, expect } from "@playwright/test";
 import { galleryManifest } from "@/lib/gallery-manifest";
+import { getModelBrandLogoPath } from "@/lib/model-brand-logo";
+import { getModelLab, LAB_OPTIONS } from "@/lib/model-labs";
 
 const HOME_GALLERY_GROUPS = [
   "with-design-skill",
@@ -59,15 +61,34 @@ const sampleRouteSmokeCases = [
   { group: "with-design-skill", model: "gemini-3.7-flash", iteration: "1" },
   { group: "with-taste-skill", model: "gemini-3.7-flash", iteration: "3" },
   { group: "without-design-skill", model: "gemini-3.7-flash", iteration: "5" },
-  { group: "with-design-skill", model: "ox-alpha", iteration: "1" },
-  { group: "with-taste-skill", model: "ox-alpha", iteration: "3" },
-  { group: "without-design-skill", model: "ox-alpha", iteration: "5" },
+  { group: "with-design-skill", model: "glm-5.3-flash", iteration: "1" },
+  { group: "with-taste-skill", model: "glm-5.3-flash", iteration: "3" },
+  { group: "without-design-skill", model: "glm-5.3-flash", iteration: "5" },
 ] as const;
 
 const routeSmokeCases = [
   ...latestRouteSmokeCases,
   ...sampleRouteSmokeCases.map((route) => ({ ...route, source: "sample" })),
 ];
+
+test("GLM 5.3 Flash uses the revealed Z.ai identity", () => {
+  const entries = galleryManifest.filter((entry) => entry.model === "glm-5.3-flash");
+
+  expect(entries).toHaveLength(3);
+  expect(entries.every((entry) => entry.modelLabel === "GLM 5.3 Flash")).toBe(true);
+  expect(getModelLab("glm-5.3-flash")).toEqual({ slug: "z-ai", label: "Z.ai" });
+  expect(getModelBrandLogoPath("glm-5.3-flash")).toBe("/glm.webp");
+  expect(LAB_OPTIONS.map((lab) => lab.label)).not.toContain("Anonymous");
+});
+
+test("legacy Ox Alpha routes redirect to GLM 5.3 Flash", async ({ page }) => {
+  await page.goto("/with-design-skill/ox-alpha/1");
+  await expect(page).toHaveURL("/with-design-skill/glm-5.3-flash/1");
+  await expect(page.getByRole("main").first()).toBeVisible();
+
+  await page.goto("/preview/with-taste-skill/ox-alpha/3");
+  await expect(page).toHaveURL("/preview/with-taste-skill/glm-5.3-flash/3");
+});
 
 test("home page archives Opus 4.7 cards", async ({ page }) => {
   await page.goto("/");
