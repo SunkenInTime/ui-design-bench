@@ -18,7 +18,7 @@ import withOpus from "@/variants/with-design-skill/opus-4.6";
 import withOpus47 from "@/variants/with-design-skill/opus-4.7";
 import withOpus48 from "@/variants/with-design-skill/opus-4.8";
 import withOpus5 from "@/variants/with-design-skill/opus-5";
-import withOxAlpha from "@/variants/with-design-skill/ox-alpha";
+import withGlm53Flash from "@/variants/with-design-skill/glm-5.3-flash";
 import withGlm5Turbo from "@/variants/with-design-skill/glm-5-turbo";
 import withGlm51 from "@/variants/with-design-skill/glm-5.1";
 import withGlm52 from "@/variants/with-design-skill/glm-5.2";
@@ -37,7 +37,7 @@ import withTasteSol from "@/variants/with-taste-skill/sol";
 import withTasteLuna from "@/variants/with-taste-skill/luna";
 import withTasteTerra from "@/variants/with-taste-skill/terra";
 import withTasteOpus5 from "@/variants/with-taste-skill/opus-5";
-import withTasteOxAlpha from "@/variants/with-taste-skill/ox-alpha";
+import withTasteGlm53Flash from "@/variants/with-taste-skill/glm-5.3-flash";
 import withTasteMuseSpark12 from "@/variants/with-taste-skill/muse-spark-1.2";
 import withTasteGemini37Flash from "@/variants/with-taste-skill/gemini-3.7-flash";
 import withUiShComposer20 from "@/variants/with-ui-sh-skill/composer-2.0";
@@ -64,7 +64,7 @@ import withoutOpus from "@/variants/without-design-skill/opus-4.6";
 import withoutOpus47 from "@/variants/without-design-skill/opus-4.7";
 import withoutOpus48 from "@/variants/without-design-skill/opus-4.8";
 import withoutOpus5 from "@/variants/without-design-skill/opus-5";
-import withoutOxAlpha from "@/variants/without-design-skill/ox-alpha";
+import withoutGlm53Flash from "@/variants/without-design-skill/glm-5.3-flash";
 import withoutGlm5Turbo from "@/variants/without-design-skill/glm-5-turbo";
 import withoutGlm51 from "@/variants/without-design-skill/glm-5.1";
 import withoutGlm52 from "@/variants/without-design-skill/glm-5.2";
@@ -96,7 +96,7 @@ const registry: Partial<Record<RegistryKey, VariantModule>> = {
   "with-design-skill:opus-4.7": withOpus47,
   "with-design-skill:opus-4.8": withOpus48,
   "with-design-skill:opus-5": withOpus5,
-  "with-design-skill:ox-alpha": withOxAlpha,
+  "with-design-skill:glm-5.3-flash": withGlm53Flash,
   "with-design-skill:glm-5-turbo": withGlm5Turbo,
   "with-design-skill:glm-5.1": withGlm51,
   "with-design-skill:glm-5.2": withGlm52,
@@ -115,7 +115,7 @@ const registry: Partial<Record<RegistryKey, VariantModule>> = {
   "with-taste-skill:luna": withTasteLuna,
   "with-taste-skill:terra": withTasteTerra,
   "with-taste-skill:opus-5": withTasteOpus5,
-  "with-taste-skill:ox-alpha": withTasteOxAlpha,
+  "with-taste-skill:glm-5.3-flash": withTasteGlm53Flash,
   "with-taste-skill:muse-spark-1.2": withTasteMuseSpark12,
   "with-taste-skill:gemini-3.7-flash": withTasteGemini37Flash,
   "with-ui-sh-skill:composer-2.0": withUiShComposer20,
@@ -142,7 +142,7 @@ const registry: Partial<Record<RegistryKey, VariantModule>> = {
   "without-design-skill:opus-4.7": withoutOpus47,
   "without-design-skill:opus-4.8": withoutOpus48,
   "without-design-skill:opus-5": withoutOpus5,
-  "without-design-skill:ox-alpha": withoutOxAlpha,
+  "without-design-skill:glm-5.3-flash": withoutGlm53Flash,
   "without-design-skill:glm-5-turbo": withoutGlm5Turbo,
   "without-design-skill:glm-5.1": withoutGlm51,
   "without-design-skill:glm-5.2": withoutGlm52,

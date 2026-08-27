@@ -8,8 +8,7 @@ export type LabSlug =
   | "x-ai"
   | "moonshot"
   | "z-ai"
-  | "cursor"
-  | "anonymous";
+  | "cursor";
 
 export interface ModelLab {
   slug: LabSlug;
@@ -27,6 +26,7 @@ const MODEL_TO_LAB: Record<ModelSlug, ModelLab> = {
   "glm-5-turbo": { slug: "z-ai", label: "Z.ai" },
   "glm-5.1": { slug: "z-ai", label: "Z.ai" },
   "glm-5.2": { slug: "z-ai", label: "Z.ai" },
+  "glm-5.3-flash": { slug: "z-ai", label: "Z.ai" },
   "grok-4.5": { slug: "x-ai", label: "X AI" },
   "grok-4.6": { slug: "x-ai", label: "X AI" },
   "gpt-5.4": { slug: "gpt", label: "GPT" },
@@ -43,7 +43,6 @@ const MODEL_TO_LAB: Record<ModelSlug, ModelLab> = {
   "opus-4.7": { slug: "anthropic", label: "Anthropic" },
   "opus-4.8": { slug: "anthropic", label: "Anthropic" },
   "opus-5": { slug: "anthropic", label: "Anthropic" },
-  "ox-alpha": { slug: "anonymous", label: "Anonymous" },
   "sonnet-5": { slug: "anthropic", label: "Anthropic" },
 };
 
@@ -56,7 +55,6 @@ export const LAB_OPTIONS: ModelLab[] = [
   { slug: "moonshot", label: "Moonshot" },
   { slug: "z-ai", label: "Z.ai" },
   { slug: "cursor", label: "Cursor" },
-  { slug: "anonymous", label: "Anonymous" },
 ];
 
 export function getModelLab(model: ModelSlug): ModelLab {
