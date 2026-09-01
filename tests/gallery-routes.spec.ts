@@ -41,6 +41,9 @@ const sampleRouteSmokeCases = [
   { group: "without-design-skill", model: "kimi-k3", iteration: "3" },
   { group: "with-design-skill", model: "gpt-5.5-high", iteration: "3" },
   { group: "with-taste-skill", model: "fable", iteration: "4" },
+  { group: "with-design-skill", model: "fable-5.1", iteration: "1" },
+  { group: "with-taste-skill", model: "fable-5.1", iteration: "3" },
+  { group: "without-design-skill", model: "fable-5.1", iteration: "5" },
   { group: "with-ui-sh-skill", model: "composer-2.0", iteration: "2" },
   { group: "miscellaneous", model: "gpt-5.4", iteration: "5" },
   { group: "with-design-skill", model: "sol", iteration: "1" },
@@ -173,8 +176,8 @@ test("gallery shell background stays consistent after client navigation into a v
 
   expect(initialShellStyles.isDark).toBe(true);
 
-  await page.locator("a[href='/without-design-skill/fable/1']").first().click();
-  await expect(page).toHaveURL("/without-design-skill/fable/1");
+  await page.locator("a[href='/without-design-skill/fable-5.1/1']").first().click();
+  await expect(page).toHaveURL("/without-design-skill/fable-5.1/1");
   await page.getByRole("link", { name: /Back to Which AI Made This/ }).click();
   await expect(page).toHaveURL("/");
 

@@ -1,0 +1,120 @@
+.figure {
+  margin: 0;
+  width: 100%;
+}
+
+.map {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.casing,
+.line {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: draw 1.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.casing {
+  stroke: var(--paper);
+  stroke-width: 16;
+}
+
+.line {
+  stroke-width: 10;
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.station {
+  opacity: 0;
+  animation: pop 0.35s ease-out forwards;
+}
+
+@keyframes pop {
+  from {
+    opacity: 0;
+    transform: translateY(3px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.stop {
+  fill: #fff;
+  stroke-width: 3.5;
+}
+
+.terminus {
+  fill: #fff;
+  stroke-width: 3.5;
+}
+
+.interchange {
+  fill: #fff;
+  stroke: var(--ink);
+  stroke-width: 3.5;
+}
+
+.label {
+  font-family: var(--font-grot), Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  fill: var(--ink);
+  letter-spacing: -0.005em;
+  paint-order: stroke fill;
+  stroke: var(--paper);
+  stroke-width: 4px;
+  stroke-linejoin: round;
+}
+
+.labelBold {
+  font-weight: 800;
+  font-size: 13.5px;
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.25rem;
+  margin-top: 1rem;
+  padding-top: 0.9rem;
+  border-top: 2px solid var(--ink);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.legendItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.badge {
+  display: inline-grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.legendNote {
+  margin-left: auto;
+  font-weight: 400;
+  color: var(--mute);
+}

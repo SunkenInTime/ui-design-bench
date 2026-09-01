@@ -1,0 +1,568 @@
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .page {
+  --desk: #c9c7be;
+  --paper: #fbfbf7;
+  --bar: #dfebdb;
+  --paper-edge: #efeee6;
+  --ink: #17201a;
+  --faded: #5f6b62;
+  --ribbon: #c8322b;
+  --perf: #b9bcb2;
+  --band: 48px;
+
+  min-height: 100vh;
+  background: var(--desk);
+  color: var(--ink);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  padding: clamp(1rem, 4vh, 3rem) 1rem 96px;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .page :focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .paper {
+  position: relative;
+  width: min(1120px, 100%);
+  margin: 0 auto;
+  background-color: var(--paper);
+  background-image: repeating-linear-gradient(
+    to bottom,
+    var(--paper) 0 var(--band),
+    var(--bar) var(--band) calc(var(--band) * 2)
+  );
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.6) inset,
+    0 30px 60px -30px rgba(0, 0, 0, 0.45),
+    0 2px 6px rgba(0, 0, 0, 0.12);
+}
+
+/* tractor-feed margins */
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .feed {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: var(--band);
+  background-image: radial-gradient(
+    circle at 50% 50%,
+    var(--desk) 0 5.5px,
+    rgba(0, 0, 0, 0.18) 5.5px 6.5px,
+    transparent 7px
+  );
+  background-size: var(--band) var(--band);
+  background-repeat: repeat-y;
+  pointer-events: none;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .feedLeft {
+  left: 0;
+  border-right: 1px dashed var(--perf);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .feedRight {
+  right: 0;
+  border-left: 1px dashed var(--perf);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .sheet {
+  padding: 0 calc(var(--band) + clamp(1.25rem, 4vw, 3.5rem));
+}
+
+/* ---- banner (job header + nav) ---- */
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .banner {
+  padding-top: 14px;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .jobLine {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.5rem 1.5rem;
+  height: 20px;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  color: var(--faded);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: calc(var(--band) * 1.5);
+  font-family: var(--font-mono), monospace;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .wordmark {
+  font-weight: 700;
+  font-size: 1.15rem;
+  letter-spacing: 0.18em;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .navLinks {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .navLinks a {
+  color: var(--faded);
+  transition: color 0.2s;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .navLinks a:hover {
+  color: var(--ink);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .navBtn {
+  color: var(--ink) !important;
+  font-weight: 700;
+}
+
+/* ---- hero ---- */
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .hero {
+  padding: calc(var(--band) * 1) 0 calc(var(--band) * 1.5);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .h1 {
+  margin: 0;
+  font-family: var(--font-mono), monospace;
+  font-weight: 700;
+  font-size: clamp(2.5rem, 7.2vw, 6.4rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .typed {
+  display: block;
+  width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: gallery-with-design-skill-fable-5-1-source-app-iterations-3-page-module-type 0.7s forwards;
+  /* dot-matrix ribbon */
+  color: transparent;
+  background-image: radial-gradient(
+    circle at 50% 50%,
+    var(--ink) 0 1.05px,
+    rgba(23, 32, 26, 0.55) 1.05px 1.25px,
+    transparent 1.4px
+  );
+  background-size: 3px 3px;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+@keyframes gallery-with-design-skill-fable-5-1-source-app-iterations-3-page-module-type {
+  to {
+    width: calc(var(--n) * 1ch + var(--extra, 4px));
+  }
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .cursor {
+  display: inline-block;
+  width: 0.55em;
+  height: 0.78em;
+  margin-left: 0.12em;
+  vertical-align: -0.04em;
+  background: var(--ink);
+  animation: gallery-with-design-skill-fable-5-1-source-app-iterations-3-page-module-blink 1s steps(2, start) infinite;
+  animation-delay: 3.2s;
+  opacity: 0;
+}
+
+@keyframes gallery-with-design-skill-fable-5-1-source-app-iterations-3-page-module-blink {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .heroSide {
+  display: grid;
+  grid-template-columns: minmax(0, 60ch) auto;
+  align-items: start;
+  justify-content: space-between;
+  gap: 1.5rem 3rem;
+  margin-top: calc(var(--band) * 0.75);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .lede {
+  margin: 0;
+  font-size: clamp(1rem, 1.25vw, 1.15rem);
+  line-height: 1.55;
+  color: var(--ink);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
+  font-family: var(--font-mono), monospace;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .fine {
+  grid-column: 2;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .primary {
+  display: inline-block;
+  padding: 0.8rem 1.1rem;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--font-mono), monospace;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  transition: background 0.2s;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .primary:hover {
+  background: #000;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .secondary {
+  display: inline-block;
+  padding: 0.8rem 1.1rem;
+  border: 1.5px solid var(--ink);
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .secondary:hover {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .fine {
+  margin: 0;
+  max-width: 32ch;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  color: var(--faded);
+}
+
+/* ---- listing ---- */
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .listing {
+  padding: 0 0 calc(var(--band) * 1.5);
+  font-family: var(--font-mono), monospace;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .prompt {
+  margin: 0 0 0.75rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .dollar {
+  color: var(--faded);
+  margin-right: 0.35rem;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .files {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  line-height: 24px;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .files td {
+  padding: 0 1.5rem 0 0;
+  white-space: nowrap;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .perm {
+  color: var(--faded);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .size {
+  text-align: right;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .fname {
+  font-weight: 700;
+  width: 100%;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .total td {
+  padding-top: 0.5rem;
+  color: var(--faded);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .listingNote {
+  max-width: 60ch;
+  margin: 1.75rem 0 0;
+  font-family: var(--font-sans), sans-serif;
+  font-size: 1.02rem;
+  line-height: 1.55;
+}
+
+/* ---- tear line between sheets ---- */
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .tear {
+  position: relative;
+  height: var(--band);
+  margin: 0 var(--band);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  color: var(--perf);
+  white-space: nowrap;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .tear::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  border-top: 1.5px dashed #9ea399;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .tear span {
+  position: relative;
+  margin-left: auto;
+  padding-left: 0.75rem;
+  background: var(--paper);
+  text-transform: uppercase;
+}
+
+/* ---- sheet headers ---- */
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .sheetHead {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  height: var(--band);
+  align-items: center;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  color: var(--faded);
+}
+
+/* ---- report ---- */
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .report {
+  padding: calc(var(--band) * 0.5) 0 calc(var(--band) * 1.5);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .reportTable {
+  width: 100%;
+  border-collapse: collapse;
+  line-height: 24px;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .reportTable th {
+  padding: 0 1.5rem 0.5rem 0;
+  text-align: left;
+  font-family: var(--font-mono), monospace;
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  border-bottom: 2px solid var(--ink);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .reportTable td {
+  padding: 0.6rem 1.5rem 0.6rem 0;
+  vertical-align: top;
+  border-bottom: 1px solid rgba(23, 32, 26, 0.18);
+  font-size: 0.98rem;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .feature {
+  font-family: var(--font-mono), monospace;
+  font-weight: 700;
+  white-space: nowrap;
+  width: 12rem;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .how {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.88rem !important;
+  color: var(--faded);
+  width: 34%;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .why {
+  color: var(--ink);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .ribbon td,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"])
+.ribbon .how {
+  color: var(--ribbon);
+  font-weight: 600;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .overstrike {
+  margin: calc(var(--band) * 1.25) 0 0;
+  font-family: var(--font-mono), monospace;
+  font-weight: 700;
+  font-size: clamp(1.4rem, 3.4vw, 2.6rem);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  color: var(--ribbon);
+  text-shadow: 0.6px 0 0 var(--ribbon);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .overstrikeNote {
+  max-width: 56ch;
+  margin: 1rem 0 0;
+  font-size: 1.02rem;
+  line-height: 1.55;
+}
+
+/* ---- changelog ---- */
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .changelog {
+  padding: calc(var(--band) * 0.5) 0 var(--band);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .h2 {
+  margin: 0 0 1rem;
+  font-family: var(--font-mono), monospace;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.14em;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .log {
+  margin: 0;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .logRow {
+  display: grid;
+  grid-template-columns: 7rem 1fr;
+  gap: 1rem;
+  padding: 0.35rem 0;
+  line-height: 24px;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .logRow dt {
+  font-family: var(--font-mono), monospace;
+  font-weight: 500;
+  color: var(--faded);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .logRow dd {
+  margin: 0;
+  font-size: 1rem;
+}
+
+/* ---- end of job ---- */
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .end {
+  padding: var(--band) 0 calc(var(--band) * 1.5);
+  border-top: 2px solid var(--ink);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .endLine {
+  margin: 0 0 1.5rem;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  color: var(--faded);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .endH {
+  margin: 0 0 1.5rem;
+  max-width: 24ch;
+  font-family: var(--font-mono), monospace;
+  font-weight: 700;
+  font-size: clamp(1.5rem, 3vw, 2.4rem);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  height: var(--band);
+  align-items: center;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  color: var(--faded);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* ---- responsive ---- */
+
+@media (max-width: 960px) {
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .heroSide {
+    grid-template-columns: 1fr;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .fine {
+    grid-column: 1;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .reportTable thead {
+    display: none;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .reportTable tr {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid rgba(23, 32, 26, 0.18);
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .reportTable td {
+    padding: 0.1rem 0;
+    border: 0;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .how {
+    width: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .page {
+    --band: 36px;
+    padding: 0.75rem 0.5rem 96px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .typed {
+    color: var(--ink);
+    background: none;
+    -webkit-background-clip: border-box;
+    background-clip: border-box;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .navLinks a:not(.navBtn) {
+    display: none;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .files {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .files td:nth-child(2),:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"])
+  .files td:nth-child(4) {
+    display: none;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .jobLine span:nth-child(3),:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"])
+  .jobLine span:nth-child(4) {
+    display: none;
+  }
+}

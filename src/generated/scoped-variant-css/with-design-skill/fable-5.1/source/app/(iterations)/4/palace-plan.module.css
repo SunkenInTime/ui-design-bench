@@ -1,0 +1,184 @@
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .wrap {
+  position: relative;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .plan {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .hatch {
+  stroke: var(--line-faded);
+  stroke-width: 0.8;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .hatchFill {
+  opacity: 0.55;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .roomFill {
+  fill: var(--line);
+  fill-opacity: 0;
+  transition: fill-opacity 0.3s ease;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .roomFillActive {
+  fill-opacity: 0.1;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .wallOuter,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"])
+.wallInner,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"])
+.door,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"])
+.furniture,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"])
+.corridorLine {
+  fill: none;
+  stroke-linecap: square;
+  stroke-linejoin: miter;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: gallery-with-design-skill-fable-5-1-source-app-iterations-4-palace-plan-module-plot 0.9s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .wallOuter {
+  stroke: var(--line);
+  stroke-width: 3.5;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .wallInner {
+  stroke: var(--line);
+  stroke-width: 2;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .door {
+  stroke: var(--line-faded);
+  stroke-width: 1.2;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .furniture {
+  stroke: var(--line-faded);
+  stroke-width: 1.1;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .corridorLine {
+  stroke: var(--pencil);
+  stroke-width: 1.2;
+  stroke-dasharray: 1;
+  animation-delay: 2s;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .arrowHead {
+  fill: var(--pencil);
+  opacity: 0;
+  animation: gallery-with-design-skill-fable-5-1-source-app-iterations-4-palace-plan-module-fade 0.4s ease forwards;
+  animation-delay: 2.6s;
+}
+
+@keyframes gallery-with-design-skill-fable-5-1-source-app-iterations-4-palace-plan-module-plot {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes gallery-with-design-skill-fable-5-1-source-app-iterations-4-palace-plan-module-fade {
+  to {
+    opacity: 1;
+  }
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .labelGroup,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"])
+.dims {
+  opacity: 0;
+  animation: gallery-with-design-skill-fable-5-1-source-app-iterations-4-palace-plan-module-fade 0.6s ease forwards;
+  animation-delay: 2.1s;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .dims {
+  animation-delay: 2.5s;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .roomName {
+  font-family: var(--font-draft), sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.16em;
+  fill: var(--line);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .roomSub {
+  font-family: var(--font-draft), sans-serif;
+  font-weight: 500;
+  font-size: 9.5px;
+  letter-spacing: 0.14em;
+  fill: var(--line-faded);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .dimLine {
+  fill: none;
+  stroke: var(--pencil);
+  stroke-width: 1;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .dimText {
+  font-family: var(--font-draft), sans-serif;
+  font-weight: 600;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  fill: var(--pencil);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .hit {
+  fill: transparent;
+  cursor: pointer;
+  outline: none;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .hit:focus-visible {
+  stroke: var(--pencil);
+  stroke-width: 2;
+  stroke-dasharray: 6 4;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .callout {
+  margin-top: 1rem;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--line-faded);
+  min-height: 9.5rem;
+  background: rgba(0, 0, 0, 0.12);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .calloutEyebrow {
+  margin: 0 0 0.25rem;
+  font-family: var(--font-draft), sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--pencil);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .calloutTitle {
+  margin: 0 0 0.4rem;
+  font-family: var(--font-serif), serif;
+  font-style: italic;
+  font-size: 1.5rem;
+  line-height: 1.1;
+  color: var(--line);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .calloutBody {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--chalk);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .calloutCount {
+  margin: 0.6rem 0 0;
+  font-family: var(--font-draft), sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--line-faded);
+}

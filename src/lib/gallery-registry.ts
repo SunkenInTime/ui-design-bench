@@ -3,6 +3,7 @@ import withComposer15 from "@/variants/with-design-skill/composer-1.5";
 import withComposer20 from "@/variants/with-design-skill/composer-2.0";
 import withComposer25 from "@/variants/with-design-skill/composer-2.5";
 import withFable from "@/variants/with-design-skill/fable";
+import withFable51 from "@/variants/with-design-skill/fable-5.1";
 import withGemini from "@/variants/with-design-skill/gemini";
 import withGemini35Flash from "@/variants/with-design-skill/gemini-3.5-flash";
 import withGemini37Flash from "@/variants/with-design-skill/gemini-3.7-flash";
@@ -28,6 +29,7 @@ import withLuna from "@/variants/with-design-skill/luna";
 import withTerra from "@/variants/with-design-skill/terra";
 import withMuseSpark12 from "@/variants/with-design-skill/muse-spark-1.2";
 import withTasteFable from "@/variants/with-taste-skill/fable";
+import withTasteFable51 from "@/variants/with-taste-skill/fable-5.1";
 import withTasteGrok45 from "@/variants/with-taste-skill/grok-4.5";
 import withTasteGrok46 from "@/variants/with-taste-skill/grok-4.6";
 import withTasteKimiK3 from "@/variants/with-taste-skill/kimi-k3";
@@ -49,6 +51,7 @@ import withoutComposer15 from "@/variants/without-design-skill/composer-1.5";
 import withoutComposer20 from "@/variants/without-design-skill/composer-2.0";
 import withoutComposer25 from "@/variants/without-design-skill/composer-2.5";
 import withoutFable from "@/variants/without-design-skill/fable";
+import withoutFable51 from "@/variants/without-design-skill/fable-5.1";
 import withoutGemini from "@/variants/without-design-skill/gemini";
 import withoutGemini35Flash from "@/variants/without-design-skill/gemini-3.5-flash";
 import withoutGemini37Flash from "@/variants/without-design-skill/gemini-3.7-flash";
@@ -81,6 +84,7 @@ const registry: Partial<Record<RegistryKey, VariantModule>> = {
   "with-design-skill:composer-2.0": withComposer20,
   "with-design-skill:composer-2.5": withComposer25,
   "with-design-skill:fable": withFable,
+  "with-design-skill:fable-5.1": withFable51,
   "with-design-skill:gemini": withGemini,
   "with-design-skill:gemini-3.5-flash": withGemini35Flash,
   "with-design-skill:gemini-3.7-flash": withGemini37Flash,
@@ -106,6 +110,7 @@ const registry: Partial<Record<RegistryKey, VariantModule>> = {
   "with-design-skill:terra": withTerra,
   "with-design-skill:muse-spark-1.2": withMuseSpark12,
   "with-taste-skill:fable": withTasteFable,
+  "with-taste-skill:fable-5.1": withTasteFable51,
   "with-taste-skill:grok-4.5": withTasteGrok45,
   "with-taste-skill:grok-4.6": withTasteGrok46,
   "with-taste-skill:kimi-k3": withTasteKimiK3,
@@ -127,6 +132,7 @@ const registry: Partial<Record<RegistryKey, VariantModule>> = {
   "without-design-skill:composer-2.0": withoutComposer20,
   "without-design-skill:composer-2.5": withoutComposer25,
   "without-design-skill:fable": withoutFable,
+  "without-design-skill:fable-5.1": withoutFable51,
   "without-design-skill:gemini": withoutGemini,
   "without-design-skill:gemini-3.5-flash": withoutGemini35Flash,
   "without-design-skill:gemini-3.7-flash": withoutGemini37Flash,
