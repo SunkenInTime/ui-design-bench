@@ -1,0 +1,471 @@
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .page {
+  --blotter: #2f4a3e;
+  --blotter-deep: #22382e;
+  --blotter-light: #39594b;
+  --manila: #eee4c6;
+  --manila-edge: #d9cba2;
+  --rule-blue: #a9bdd3;
+  --rule-red: #c1362b;
+  --ink: #1f1b17;
+  --pencil: #6e655a;
+  --cream: #f3ebd3;
+  --cream-dim: rgba(243, 235, 211, 0.74);
+  --line: rgba(243, 235, 211, 0.16);
+
+  min-height: 100vh;
+  background:
+    radial-gradient(
+      120% 70% at 50% -10%,
+      var(--blotter-light) 0%,
+      var(--blotter) 55%,
+      var(--blotter-deep) 100%
+    )
+    fixed;
+  color: var(--cream);
+  font-family: var(--font-book), Georgia, serif;
+  padding-bottom: 72px;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .page :focus-visible {
+  outline: 2px solid var(--cream);
+  outline-offset: 3px;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .nav,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"])
+.hero,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"])
+.method,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"])
+.talk,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"])
+.features,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"])
+.cta,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"])
+.footer {
+  width: min(1180px, 100% - 3rem);
+  margin-inline: auto;
+}
+
+/* ---- nav ---- */
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.4rem 0;
+  font-family: var(--font-type), monospace;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .wordmark {
+  font-weight: 700;
+  font-size: 1.35rem;
+  letter-spacing: 0.02em;
+  color: var(--cream);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .navLinks {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .navLinks a {
+  color: var(--cream-dim);
+  transition: color 0.2s;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .navLinks a:hover {
+  color: var(--cream);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .navButton {
+  padding: 0.55rem 0.95rem;
+  border: 1px solid rgba(243, 235, 211, 0.4);
+  border-radius: 3px;
+}
+
+/* ---- hero ---- */
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .hero {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: clamp(2rem, 6vw, 5rem);
+  align-items: center;
+  padding: clamp(2rem, 6vh, 5rem) 0 clamp(3rem, 8vh, 6rem);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .heroCopy {
+  max-width: 34rem;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .eyebrow {
+  margin: 0 0 1.25rem;
+  font-family: var(--font-type), monospace;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--cream-dim);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .h1 {
+  margin: 0;
+  font-family: var(--font-type), monospace;
+  font-weight: 700;
+  font-size: clamp(2.5rem, 5.3vw, 4.6rem);
+  line-height: 1.02;
+  letter-spacing: -0.015em;
+  color: var(--cream);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .lede {
+  margin: 1.6rem 0 0;
+  font-size: clamp(1.05rem, 1.3vw, 1.2rem);
+  line-height: 1.55;
+  color: var(--cream-dim);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .ctas {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .primary {
+  display: inline-block;
+  padding: 0.9rem 1.4rem;
+  border-radius: 3px;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-type), monospace;
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  box-shadow: 0 8px 20px -10px rgba(0, 0, 0, 0.6);
+  transition:
+    background 0.2s,
+    transform 0.2s;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .primary:hover {
+  background: #fff;
+  transform: translateY(-1px);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .secondary {
+  font-family: var(--font-type), monospace;
+  font-size: 0.9rem;
+  color: var(--cream);
+  text-decoration: underline;
+  text-decoration-color: rgba(243, 235, 211, 0.4);
+  text-underline-offset: 4px;
+  transition: text-decoration-color 0.2s;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .secondary:hover {
+  text-decoration-color: var(--cream);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .fine {
+  margin: 1.25rem 0 0;
+  font-family: var(--font-type), monospace;
+  font-size: 0.78rem;
+  color: var(--cream-dim);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .heroFan {
+  padding: 1rem 0.5rem;
+}
+
+/* ---- shared section bits ---- */
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .sectionHead {
+  max-width: 44rem;
+  margin-bottom: 2.5rem;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .h2 {
+  margin: 0;
+  font-family: var(--font-type), monospace;
+  font-weight: 700;
+  font-size: clamp(1.6rem, 2.8vw, 2.3rem);
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .sectionLede {
+  margin: 1rem 0 0;
+  font-size: 1.05rem;
+  line-height: 1.55;
+  color: var(--cream-dim);
+}
+
+/* ---- method ---- */
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .method {
+  padding: clamp(3rem, 7vh, 5rem) 0;
+  border-top: 1px solid var(--line);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .methodRow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .flat {
+  position: relative;
+  padding: 0.9rem 1.2rem 1.2rem;
+  border-radius: 3px;
+  background: var(--manila);
+  color: var(--ink);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.55) inset,
+    0 0 0 1px var(--manila-edge) inset,
+    0 14px 30px -14px rgba(0, 0, 0, 0.6);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .flatHead {
+  display: flex;
+  align-items: baseline;
+  gap: 0.9rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1.5px solid var(--rule-red);
+  font-family: var(--font-type), monospace;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .flatId {
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--rule-red);
+  white-space: nowrap;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .flatTitle {
+  margin: 0;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.2;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .flatBody {
+  margin: 0;
+  padding-top: 0.4rem;
+  font-size: 0.98rem;
+  line-height: 1.6rem;
+  color: var(--ink);
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0 calc(1.6rem - 1px),
+    var(--rule-blue) calc(1.6rem - 1px) 1.6rem
+  );
+  background-position: 0 0.3rem;
+}
+
+/* ---- talks back ---- */
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .talk {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 6vw, 6rem);
+  align-items: center;
+  padding: clamp(3rem, 7vh, 5rem) 0;
+  border-top: 1px solid var(--line);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .quote {
+  margin: 0;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .quote p {
+  margin: 0;
+  font-style: italic;
+  font-size: clamp(1.4rem, 2.2vw, 2rem);
+  line-height: 1.35;
+  color: var(--cream);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .quote footer {
+  margin-top: 1.25rem;
+  font-family: var(--font-type), monospace;
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  color: var(--cream-dim);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .quote cite {
+  font-style: normal;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .pulled {
+  position: relative;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .pulledLabel {
+  margin: 0 0 1.8rem;
+  font-family: var(--font-type), monospace;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--cream-dim);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .pulledCard {
+  transform: rotate(-1.5deg);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .stamp {
+  position: absolute;
+  top: -0.9rem;
+  right: 1rem;
+  padding: 0.3rem 0.55rem;
+  border: 2px solid var(--rule-red);
+  border-radius: 2px;
+  color: var(--rule-red);
+  font-family: var(--font-type), monospace;
+  font-weight: 700;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  background: var(--manila);
+  transform: rotate(-6deg);
+  mix-blend-mode: multiply;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .pulledNote {
+  margin: 1.5rem 0 0;
+  font-size: 1rem;
+  line-height: 1.55;
+  color: var(--cream-dim);
+}
+
+/* ---- features ---- */
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .features {
+  padding: clamp(3rem, 7vh, 5rem) 0;
+  border-top: 1px solid var(--line);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .tabs {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .tab {
+  position: relative;
+  margin-top: 1rem;
+  padding: 1.1rem 1rem 1.2rem;
+  border-radius: 0 3px 3px 3px;
+  background: var(--manila);
+  color: var(--ink);
+  box-shadow:
+    0 0 0 1px var(--manila-edge) inset,
+    0 10px 24px -14px rgba(0, 0, 0, 0.6);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .tab::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -0.85rem;
+  width: 42%;
+  height: 0.9rem;
+  border-radius: 3px 3px 0 0;
+  background: var(--manila);
+  box-shadow: 0 0 0 1px var(--manila-edge) inset;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .tab:nth-child(2n)::before {
+  left: 29%;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .tab:nth-child(3n)::before {
+  left: 58%;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .tabTitle {
+  margin: 0 0 0.5rem;
+  font-family: var(--font-type), monospace;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .tabBody {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: var(--pencil);
+}
+
+/* ---- cta + footer ---- */
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: clamp(3rem, 7vh, 5rem) 0;
+  border-top: 1px solid var(--line);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .ctaH {
+  margin: 0;
+  max-width: 26rem;
+  font-family: var(--font-type), monospace;
+  font-weight: 700;
+  font-size: clamp(1.5rem, 2.6vw, 2.2rem);
+  line-height: 1.15;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.5rem 0 0;
+  border-top: 1px solid var(--line);
+  font-family: var(--font-type), monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  color: var(--cream-dim);
+}
+
+/* ---- responsive ---- */
+
+@media (max-width: 960px) {
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .hero {
+    grid-template-columns: 1fr;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .heroFan {
+    width: 100%;
+    max-width: 560px;
+    justify-self: center;
+    padding: 0;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .methodRow {
+    grid-template-columns: 1fr;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .talk {
+    grid-template-columns: 1fr;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .tabs {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .navLinks a:not(.navButton) {
+    display: none;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .tabs {
+    grid-template-columns: 1fr;
+  }
+}

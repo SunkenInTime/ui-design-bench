@@ -11,6 +11,7 @@ export type ModelSlug =
   | "composer-2.0"
   | "composer-2.5"
   | "fable"
+  | "fable-5.1"
   | "gemini"
   | "gemini-3.5-flash"
   | "gemini-3.7-flash"

@@ -1,0 +1,64 @@
+:where(.gallery-generation[data-gallery-group="without-design-skill"][data-gallery-model="fable-5.1"]) {
+  scroll-behavior: smooth;
+}
+
+:where(.gallery-generation[data-gallery-group="without-design-skill"][data-gallery-model="fable-5.1"]) {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+:where(.gallery-generation[data-gallery-group="without-design-skill"][data-gallery-model="fable-5.1"]) ::selection {
+  background: rgb(0 0 0 / 0.12);
+}
+
+/* Paper grain overlay used by editorial iteration */
+:where(.gallery-generation[data-gallery-group="without-design-skill"][data-gallery-model="fable-5.1"]) .grain::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.35;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Ruled notebook lines */
+:where(.gallery-generation[data-gallery-group="without-design-skill"][data-gallery-model="fable-5.1"]) .ruled {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 31px,
+    rgb(0 0 0 / 0.07) 31px,
+    rgb(0 0 0 / 0.07) 32px
+  );
+  background-size: 100% 32px;
+}
+
+/* Dotted grid */
+:where(.gallery-generation[data-gallery-group="without-design-skill"][data-gallery-model="fable-5.1"]) .dotgrid {
+  background-image: radial-gradient(
+    circle at 1px 1px,
+    rgb(255 255 255 / 0.08) 1px,
+    transparent 0
+  );
+  background-size: 28px 28px;
+}
+
+:where(.gallery-generation[data-gallery-group="without-design-skill"][data-gallery-model="fable-5.1"]) .dotgrid-dark {
+  background-image: radial-gradient(
+    circle at 1px 1px,
+    rgb(0 0 0 / 0.12) 1px,
+    transparent 0
+  );
+  background-size: 24px 24px;
+}
+
+:where(.gallery-generation[data-gallery-group="without-design-skill"][data-gallery-model="fable-5.1"]) .text-balance {
+  text-wrap: balance;
+}
+
+:where(.gallery-generation[data-gallery-group="without-design-skill"][data-gallery-model="fable-5.1"]) .text-pretty {
+  text-wrap: pretty;
+}

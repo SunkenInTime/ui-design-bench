@@ -1,0 +1,471 @@
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .page {
+  --blue: #173b75;
+  --blue-deep: #10295a;
+  --line: #eef3fa;
+  --line-faded: #8fa7cc;
+  --chalk: #c9d6ea;
+  --pencil: #ff6b52;
+
+  min-height: 100vh;
+  padding: clamp(0.75rem, 2vw, 1.5rem) clamp(0.75rem, 2vw, 1.5rem) 96px;
+  background:
+    radial-gradient(120% 90% at 50% 0%, var(--blue) 0%, var(--blue-deep) 100%)
+    fixed;
+  color: var(--chalk);
+  font-family: var(--font-body), system-ui, sans-serif;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .page :focus-visible {
+  outline: 2px solid var(--pencil);
+  outline-offset: 3px;
+}
+
+/* drawing sheet border: a double rule */
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .frame {
+  position: relative;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: clamp(1rem, 3vw, 2.5rem);
+  border: 1px solid var(--line);
+  outline: 1px solid var(--line-faded);
+  outline-offset: -8px;
+}
+
+/* ---- nav ---- */
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.25rem 0 1rem;
+  border-bottom: 1px solid var(--line-faded);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .wordmark {
+  font-family: var(--font-serif), serif;
+  font-style: italic;
+  font-size: 1.6rem;
+  color: var(--line);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .navLinks {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+  font-family: var(--font-draft), sans-serif;
+  font-weight: 500;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .navLinks a {
+  color: var(--chalk);
+  transition: color 0.2s;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .navLinks a:hover {
+  color: var(--line);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .navBtn {
+  padding: 0.5rem 0.9rem;
+  border: 1px solid var(--line-faded);
+}
+
+/* ---- hero ---- */
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .hero {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: start;
+  padding: clamp(2rem, 5vh, 3.5rem) 0 clamp(2rem, 5vh, 3.5rem);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .eyebrow {
+  margin: 0 0 1rem;
+  font-family: var(--font-draft), sans-serif;
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--pencil);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .h1 {
+  margin: 0;
+  font-family: var(--font-serif), serif;
+  font-weight: 400;
+  font-size: clamp(2.6rem, 5.2vw, 4.6rem);
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  color: var(--line);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .h1 em,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"])
+.h2 em,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"])
+.ctaH em {
+  font-style: italic;
+  color: var(--line);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .lede {
+  margin: 1.5rem 0 0;
+  max-width: 32rem;
+  font-size: clamp(1.02rem, 1.25vw, 1.15rem);
+  line-height: 1.55;
+  color: var(--chalk);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .ctas {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .primary {
+  display: inline-block;
+  padding: 0.9rem 1.3rem;
+  background: var(--line);
+  color: var(--blue-deep);
+  font-family: var(--font-draft), sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition:
+    background 0.2s,
+    transform 0.2s;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .primary:hover {
+  background: #fff;
+  transform: translateY(-1px);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .secondary {
+  font-family: var(--font-draft), sans-serif;
+  font-weight: 500;
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--line);
+  border-bottom: 1px solid var(--line-faded);
+  padding-bottom: 2px;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .titleBlock {
+  margin-top: 2.5rem;
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-draft), sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: 1px solid var(--line-faded);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .titleBlock th,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"])
+.titleBlock td {
+  padding: 0.5rem 0.7rem;
+  border: 1px solid var(--line-faded);
+  text-align: left;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .titleBlock th {
+  font-weight: 500;
+  color: var(--line-faded);
+  width: 18%;
+  white-space: nowrap;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .titleBlock td {
+  font-weight: 600;
+  color: var(--line);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .pencil {
+  color: var(--pencil) !important;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .heroPlan {
+  min-width: 0;
+}
+
+/* ---- sections ---- */
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .sectionHead {
+  max-width: 44rem;
+  margin-bottom: 2.5rem;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .h2 {
+  margin: 0;
+  font-family: var(--font-serif), serif;
+  font-weight: 400;
+  font-size: clamp(1.9rem, 3.2vw, 2.9rem);
+  line-height: 1.08;
+  letter-spacing: -0.015em;
+  color: var(--line);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .sectionLede,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"])
+.body {
+  margin: 1rem 0 0;
+  font-size: 1.05rem;
+  line-height: 1.55;
+  color: var(--chalk);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .walk {
+  padding: clamp(3rem, 7vh, 5rem) 0;
+  border-top: 1px solid var(--line-faded);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .rooms {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem 2.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .room {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line-faded);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .roomNum {
+  font-family: var(--font-draft), sans-serif;
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  color: var(--pencil);
+  padding-top: 0.3rem;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .roomName {
+  margin: 0 0 0.4rem;
+  font-family: var(--font-serif), serif;
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 1.1;
+  color: var(--line);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .roomConcept {
+  display: block;
+  margin-top: 0.2rem;
+  font-family: var(--font-draft), sans-serif;
+  font-weight: 500;
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--line-faded);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .roomBody {
+  margin: 0;
+  font-size: 0.98rem;
+  line-height: 1.5;
+  color: var(--chalk);
+}
+
+/* ---- detail ---- */
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .detail {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: center;
+  padding: clamp(3rem, 7vh, 5rem) 0;
+  border-top: 1px solid var(--line-faded);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .detailFig {
+  margin: 0;
+  max-width: 380px;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .detailSvg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .detailCircle {
+  fill: none;
+  stroke: var(--line-faded);
+  stroke-width: 1;
+  stroke-dasharray: 4 4;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .detailWall {
+  fill: none;
+  stroke: var(--line);
+  stroke-width: 6;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .detailLeaf {
+  fill: none;
+  stroke: var(--line);
+  stroke-width: 2;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .detailSwing {
+  fill: none;
+  stroke: var(--line-faded);
+  stroke-width: 1.2;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .detailAxis {
+  fill: none;
+  stroke: var(--pencil);
+  stroke-width: 1.2;
+  stroke-dasharray: 5 4;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .detailArrow {
+  fill: var(--pencil);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .detailCap {
+  margin-top: 0.75rem;
+  font-family: var(--font-draft), sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--line-faded);
+}
+
+/* ---- revisions ---- */
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .revisions {
+  padding: clamp(3rem, 7vh, 5rem) 0;
+  border-top: 1px solid var(--line-faded);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .revTable {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid var(--line-faded);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .revTable th {
+  padding: 0.7rem 0.9rem;
+  text-align: left;
+  font-family: var(--font-draft), sans-serif;
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--line-faded);
+  border: 1px solid var(--line-faded);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .revTable td {
+  padding: 0.85rem 0.9rem;
+  border: 1px solid var(--line-faded);
+  font-size: 1rem;
+  color: var(--line);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .revTable td:first-child {
+  font-family: var(--font-draft), sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  width: 4rem;
+  text-align: center;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .revDate {
+  font-family: var(--font-draft), sans-serif;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+  width: 7rem;
+  color: var(--chalk) !important;
+}
+
+/* ---- cta + footer ---- */
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: clamp(3rem, 7vh, 5rem) 0;
+  border-top: 1px solid var(--line-faded);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .ctaH {
+  margin: 0;
+  font-family: var(--font-serif), serif;
+  font-weight: 400;
+  font-size: clamp(1.9rem, 3.2vw, 2.9rem);
+  line-height: 1.08;
+  color: var(--line);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line-faded);
+  font-family: var(--font-draft), sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--line-faded);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* ---- responsive ---- */
+
+@media (max-width: 1024px) {
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .rooms {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .hero,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"])
+  .detail {
+    grid-template-columns: 1fr;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .heroPlan {
+    order: -1;
+  }
+}
+
+@media (max-width: 640px) {
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .navLinks a:not(.navBtn) {
+    display: none;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .rooms {
+    grid-template-columns: 1fr;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .titleBlock {
+    font-size: 0.7rem;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .frame {
+    outline-offset: -5px;
+  }
+}

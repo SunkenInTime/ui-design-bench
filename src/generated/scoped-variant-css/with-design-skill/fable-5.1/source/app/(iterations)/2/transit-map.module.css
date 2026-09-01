@@ -1,0 +1,120 @@
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .figure {
+  margin: 0;
+  width: 100%;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .map {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .casing,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"])
+.line {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: gallery-with-design-skill-fable-5-1-source-app-iterations-2-transit-map-module-draw 1.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .casing {
+  stroke: var(--paper);
+  stroke-width: 16;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .line {
+  stroke-width: 10;
+}
+
+@keyframes gallery-with-design-skill-fable-5-1-source-app-iterations-2-transit-map-module-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .station {
+  opacity: 0;
+  animation: gallery-with-design-skill-fable-5-1-source-app-iterations-2-transit-map-module-pop 0.35s ease-out forwards;
+}
+
+@keyframes gallery-with-design-skill-fable-5-1-source-app-iterations-2-transit-map-module-pop {
+  from {
+    opacity: 0;
+    transform: translateY(3px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .stop {
+  fill: #fff;
+  stroke-width: 3.5;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .terminus {
+  fill: #fff;
+  stroke-width: 3.5;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .interchange {
+  fill: #fff;
+  stroke: var(--ink);
+  stroke-width: 3.5;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .label {
+  font-family: var(--font-grot), Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  fill: var(--ink);
+  letter-spacing: -0.005em;
+  paint-order: stroke fill;
+  stroke: var(--paper);
+  stroke-width: 4px;
+  stroke-linejoin: round;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .labelBold {
+  font-weight: 800;
+  font-size: 13.5px;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .legend {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.25rem;
+  margin-top: 1rem;
+  padding-top: 0.9rem;
+  border-top: 2px solid var(--ink);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .legendItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .badge {
+  display: inline-grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .legendNote {
+  margin-left: auto;
+  font-weight: 400;
+  color: var(--mute);
+}
