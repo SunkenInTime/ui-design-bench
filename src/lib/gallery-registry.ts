@@ -7,6 +7,7 @@ import withFable51 from "@/variants/with-design-skill/fable-5.1";
 import withGemini from "@/variants/with-design-skill/gemini";
 import withGemini35Flash from "@/variants/with-design-skill/gemini-3.5-flash";
 import withGemini37Flash from "@/variants/with-design-skill/gemini-3.7-flash";
+import withGemini38Flash from "@/variants/with-design-skill/gemini-3.8-flash";
 import withGrok45 from "@/variants/with-design-skill/grok-4.5";
 import withGrok46 from "@/variants/with-design-skill/grok-4.6";
 import withGpt54 from "@/variants/with-design-skill/gpt-5.4";
@@ -42,6 +43,7 @@ import withTasteOpus5 from "@/variants/with-taste-skill/opus-5";
 import withTasteGlm53Flash from "@/variants/with-taste-skill/glm-5.3-flash";
 import withTasteMuseSpark12 from "@/variants/with-taste-skill/muse-spark-1.2";
 import withTasteGemini37Flash from "@/variants/with-taste-skill/gemini-3.7-flash";
+import withTasteGemini38Flash from "@/variants/with-taste-skill/gemini-3.8-flash";
 import withUiShComposer20 from "@/variants/with-ui-sh-skill/composer-2.0";
 import withUiShGpt55Low from "@/variants/with-ui-sh-skill/gpt-5.5-low";
 import withUiShGpt55High from "@/variants/with-ui-sh-skill/gpt-5.5-high";
@@ -55,6 +57,7 @@ import withoutFable51 from "@/variants/without-design-skill/fable-5.1";
 import withoutGemini from "@/variants/without-design-skill/gemini";
 import withoutGemini35Flash from "@/variants/without-design-skill/gemini-3.5-flash";
 import withoutGemini37Flash from "@/variants/without-design-skill/gemini-3.7-flash";
+import withoutGemini38Flash from "@/variants/without-design-skill/gemini-3.8-flash";
 import withoutGrok45 from "@/variants/without-design-skill/grok-4.5";
 import withoutGrok46 from "@/variants/without-design-skill/grok-4.6";
 import withoutGpt54 from "@/variants/without-design-skill/gpt-5.4";
@@ -88,6 +91,7 @@ const registry: Partial<Record<RegistryKey, VariantModule>> = {
   "with-design-skill:gemini": withGemini,
   "with-design-skill:gemini-3.5-flash": withGemini35Flash,
   "with-design-skill:gemini-3.7-flash": withGemini37Flash,
+  "with-design-skill:gemini-3.8-flash": withGemini38Flash,
   "with-design-skill:grok-4.5": withGrok45,
   "with-design-skill:grok-4.6": withGrok46,
   "with-design-skill:gpt-5.4": withGpt54,
@@ -123,6 +127,7 @@ const registry: Partial<Record<RegistryKey, VariantModule>> = {
   "with-taste-skill:glm-5.3-flash": withTasteGlm53Flash,
   "with-taste-skill:muse-spark-1.2": withTasteMuseSpark12,
   "with-taste-skill:gemini-3.7-flash": withTasteGemini37Flash,
+  "with-taste-skill:gemini-3.8-flash": withTasteGemini38Flash,
   "with-ui-sh-skill:composer-2.0": withUiShComposer20,
   "with-ui-sh-skill:gpt-5.5-low": withUiShGpt55Low,
   "with-ui-sh-skill:gpt-5.5-high": withUiShGpt55High,
@@ -136,6 +141,7 @@ const registry: Partial<Record<RegistryKey, VariantModule>> = {
   "without-design-skill:gemini": withoutGemini,
   "without-design-skill:gemini-3.5-flash": withoutGemini35Flash,
   "without-design-skill:gemini-3.7-flash": withoutGemini37Flash,
+  "without-design-skill:gemini-3.8-flash": withoutGemini38Flash,
   "without-design-skill:grok-4.5": withoutGrok45,
   "without-design-skill:grok-4.6": withoutGrok46,
   "without-design-skill:gpt-5.4": withoutGpt54,
