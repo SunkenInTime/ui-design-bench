@@ -41,6 +41,7 @@ const MODEL_TO_LAB: Record<ModelSlug, ModelLab> = {
   "kimi-k-2.6": { slug: "moonshot", label: "Moonshot" },
   "kimi-k3": { slug: "moonshot", label: "Moonshot" },
   "muse-spark-1.2": { slug: "meta", label: "Meta" },
+  "muse-spark-1.3-flash": { slug: "meta", label: "Meta" },
   "opus-4.6": { slug: "anthropic", label: "Anthropic" },
   "opus-4.7": { slug: "anthropic", label: "Anthropic" },
   "opus-4.8": { slug: "anthropic", label: "Anthropic" },

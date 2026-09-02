@@ -31,6 +31,7 @@ const MODEL_BRAND_LOGO: Record<ModelSlug, ModelBrandLogoPaths> = {
   "kimi-k-2.6": { light: "/kimi-k2.webp" },
   "kimi-k3": { light: "/kimi-k2.webp" },
   "muse-spark-1.2": { light: "/meta.svg" },
+  "muse-spark-1.3-flash": { light: "/meta.svg" },
   "opus-4.6": { light: "/anthropic-claude.webp" },
   "opus-4.7": { light: "/anthropic-claude.webp" },
   "opus-4.8": { light: "/anthropic-claude.webp" },
