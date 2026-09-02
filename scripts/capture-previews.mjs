@@ -83,6 +83,9 @@ const entries = [
   { group: "with-design-skill", model: "glm-5.3-flash", iterations: ["1", "2", "3", "4", "5"] },
   { group: "with-taste-skill", model: "glm-5.3-flash", iterations: ["1", "2", "3", "4", "5"] },
   { group: "without-design-skill", model: "glm-5.3-flash", iterations: ["1", "2", "3", "4", "5"] },
+  { group: "with-design-skill", model: "gemini-3.8-flash", iterations: ["1", "2", "3", "4", "5"] },
+  { group: "with-taste-skill", model: "gemini-3.8-flash", iterations: ["1", "2", "3", "4", "5"] },
+  { group: "without-design-skill", model: "gemini-3.8-flash", iterations: ["1", "2", "3", "4", "5"] },
 ];
 
 const targetModel = process.env.TARGET_MODEL ?? null;

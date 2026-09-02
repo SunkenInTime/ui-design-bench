@@ -14,6 +14,7 @@ const MODEL_BRAND_LOGO: Record<ModelSlug, ModelBrandLogoPaths> = {
   gemini: { light: "/google-gemini.webp" },
   "gemini-3.5-flash": { light: "/google-gemini.webp" },
   "gemini-3.7-flash": { light: "/google-gemini.webp" },
+  "gemini-3.8-flash": { light: "/google-gemini.webp" },
   "glm-5-turbo": { light: "/glm.webp" },
   "glm-5.1": { light: "/glm.webp" },
   "glm-5.2": { light: "/glm.webp" },
