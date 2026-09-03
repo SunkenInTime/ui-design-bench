@@ -16,7 +16,8 @@ export default function RankingsPage() {
           Model rankings
         </h1>
         <p className="mt-4 text-[15px] leading-relaxed text-[var(--gallery-text-secondary)]">
-          This is a ranking based off my taste.
+          My current ranking for frontend design. This is based on taste, not a
+          formal benchmark.
         </p>
       </header>
 

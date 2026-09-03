@@ -294,7 +294,7 @@
   color: #d8b98a;
   margin-bottom: 0.8rem;
 }
-:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="glm-5.3-flash"]) .sb-method h2,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="glm-5.3-flash"])
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="glm-5.3-flash"]) .sb-method h2,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="glm-5.3-flash"]) 
 .sb-feats h2 {
   font-family: var(--f-display), Georgia, serif;
   font-size: clamp(1.9rem, 3.4vw, 2.7rem);
@@ -432,7 +432,7 @@
   color: var(--pencil);
   padding-bottom: 0.6rem;
 }
-:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="glm-5.3-flash"]) .duecard th,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="glm-5.3-flash"])
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="glm-5.3-flash"]) .duecard th,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="glm-5.3-flash"]) 
 .duecard td {
   border: 1px solid rgba(110, 99, 83, 0.4);
   padding: 0.35rem 0.6rem;
@@ -490,8 +490,8 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="glm-5.3-flash"]) .sb *,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="glm-5.3-flash"])
-  .sb *::before,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="glm-5.3-flash"])
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="glm-5.3-flash"]) .sb *,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="glm-5.3-flash"]) 
+  .sb *::before,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="glm-5.3-flash"]) 
   .sb *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;

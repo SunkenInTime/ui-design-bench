@@ -158,8 +158,8 @@
   stroke-width: 2;
 }
 
-:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.6"]) .hotspot:hover .label,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.6"])
-.hotspot:focus .label,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.6"])
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.6"]) .hotspot:hover .label,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.6"]) 
+.hotspot:focus .label,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.6"]) 
 .hotspot:focus-visible .label {
   font-weight: 700;
   fill: var(--peak);
@@ -230,7 +230,7 @@
     grid-template-columns: 1fr;
   }
 
-  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.6"]) .map,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.6"])
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.6"]) .map,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.6"]) 
   .terrain {
     min-height: 420px;
   }

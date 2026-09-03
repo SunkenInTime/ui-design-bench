@@ -244,7 +244,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.6"]) .cta,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.6"])
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.6"]) .cta,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.6"]) 
   .drawer {
     transition: none;
   }

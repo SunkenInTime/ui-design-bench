@@ -80,8 +80,8 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  :where(.gallery-generation[data-gallery-group="without-design-skill"][data-gallery-model="grok-4.6"]) .marquee-track,:where(.gallery-generation[data-gallery-group="without-design-skill"][data-gallery-model="grok-4.6"])
-  .graph-node,:where(.gallery-generation[data-gallery-group="without-design-skill"][data-gallery-model="grok-4.6"])
+  :where(.gallery-generation[data-gallery-group="without-design-skill"][data-gallery-model="grok-4.6"]) .marquee-track,:where(.gallery-generation[data-gallery-group="without-design-skill"][data-gallery-model="grok-4.6"]) 
+  .graph-node,:where(.gallery-generation[data-gallery-group="without-design-skill"][data-gallery-model="grok-4.6"]) 
   .drift {
     animation: none;
   }

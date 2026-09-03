@@ -289,7 +289,7 @@
   order: -1;
 }
 @media (max-width: 860px) {
-  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="glm-5.3-flash"]) .statement,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="glm-5.3-flash"])
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="glm-5.3-flash"]) .statement,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="glm-5.3-flash"]) 
   .statement:nth-of-type(even) {
     grid-template-columns: 1fr;
   }
@@ -518,8 +518,8 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="glm-5.3-flash"]) .hp *,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="glm-5.3-flash"])
-  .hp *::before,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="glm-5.3-flash"])
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="glm-5.3-flash"]) .hp *,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="glm-5.3-flash"]) 
+  .hp *::before,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="glm-5.3-flash"]) 
   .hp *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;

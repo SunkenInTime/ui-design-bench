@@ -151,7 +151,7 @@
   min-height: 0;
 }
 
-:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.6"]) .room:hover,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.6"])
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.6"]) .room:hover,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.6"]) 
 .room:focus-within {
   background: rgba(238, 248, 255, 0.08);
 }
@@ -268,7 +268,7 @@
     border-right: 0;
   }
 
-  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.6"]) .cell:nth-child(1),:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.6"])
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.6"]) .cell:nth-child(1),:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.6"]) 
   .cell:nth-child(2) {
     border-bottom: 1px solid var(--line);
   }

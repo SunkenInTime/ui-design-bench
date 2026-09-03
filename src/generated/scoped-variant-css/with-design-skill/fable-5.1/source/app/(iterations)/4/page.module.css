@@ -104,8 +104,8 @@
   color: var(--line);
 }
 
-:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .h1 em,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"])
-.h2 em,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"])
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .h1 em,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) 
+.h2 em,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) 
 .ctaH em {
   font-style: italic;
   color: var(--line);
@@ -169,7 +169,7 @@
   border: 1px solid var(--line-faded);
 }
 
-:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .titleBlock th,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"])
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .titleBlock th,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) 
 .titleBlock td {
   padding: 0.5rem 0.7rem;
   border: 1px solid var(--line-faded);
@@ -213,7 +213,7 @@
   color: var(--line);
 }
 
-:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .sectionLede,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"])
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .sectionLede,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) 
 .body {
   margin: 1rem 0 0;
   font-size: 1.05rem;
@@ -446,7 +446,7 @@
 }
 
 @media (max-width: 900px) {
-  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .hero,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"])
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .hero,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) 
   .detail {
     grid-template-columns: 1fr;
   }

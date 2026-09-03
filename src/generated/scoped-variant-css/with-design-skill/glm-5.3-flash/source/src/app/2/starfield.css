@@ -168,7 +168,7 @@
   order: 2;
 }
 @media (max-width: 840px) {
-  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="glm-5.3-flash"]) .plate,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="glm-5.3-flash"])
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="glm-5.3-flash"]) .plate,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="glm-5.3-flash"]) 
   .plate:nth-child(even) {
     grid-template-columns: 1fr;
   }
@@ -203,9 +203,9 @@
   border: 1px solid var(--line);
   padding: 1.4rem;
 }
-:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="glm-5.3-flash"]) .plate-chart::before,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="glm-5.3-flash"])
-.plate-chart::after,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="glm-5.3-flash"])
-.plate-chart .tick-b::before,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="glm-5.3-flash"])
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="glm-5.3-flash"]) .plate-chart::before,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="glm-5.3-flash"]) 
+.plate-chart::after,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="glm-5.3-flash"]) 
+.plate-chart .tick-b::before,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="glm-5.3-flash"]) 
 .plate-chart .tick-b::after {
   content: "";
   position: absolute;
@@ -371,8 +371,8 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="glm-5.3-flash"]) .pl *,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="glm-5.3-flash"])
-  .pl *::before,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="glm-5.3-flash"])
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="glm-5.3-flash"]) .pl *,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="glm-5.3-flash"]) 
+  .pl *::before,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="glm-5.3-flash"]) 
   .pl *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;

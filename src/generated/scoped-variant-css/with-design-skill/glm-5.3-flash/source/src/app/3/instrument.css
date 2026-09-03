@@ -519,8 +519,8 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="glm-5.3-flash"]) .ins *,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="glm-5.3-flash"])
-  .ins *::before,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="glm-5.3-flash"])
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="glm-5.3-flash"]) .ins *,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="glm-5.3-flash"]) 
+  .ins *::before,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="glm-5.3-flash"]) 
   .ins *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;

@@ -162,6 +162,16 @@ test("rankings page lists eight models with previews", async ({ page }) => {
   await page.goto("/rankings");
   await expect(page.getByRole("heading", { name: "Model rankings" })).toBeVisible();
   await expect(page.getByRole("listitem")).toHaveCount(8);
+  await expect(page.locator("main ol h2")).toHaveText([
+    "Fable 5.1",
+    "Opus 5",
+    "Kimi K3",
+    "GLM 5.3 Flash",
+    "Gemini 3.8 Flash",
+    "Grok 4.6",
+    "GPT-5.6 Sol",
+    "Sonnet 5",
+  ]);
 });
 
 test("gallery shell background stays consistent after client navigation into a variant", async ({ page }) => {

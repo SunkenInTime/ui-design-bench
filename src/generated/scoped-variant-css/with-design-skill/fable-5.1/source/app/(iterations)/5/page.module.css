@@ -18,11 +18,11 @@
   outline-offset: 3px;
 }
 
-:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .running,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"])
-.folio,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"])
-.apparatus,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"])
-.spread,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"])
-.cta,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"])
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .running,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) 
+.folio,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) 
+.apparatus,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) 
+.spread,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) 
+.cta,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) 
 .colophon {
   width: min(1240px, 100% - 3rem);
   margin-inline: auto;
@@ -81,7 +81,7 @@
   padding: clamp(3rem, 8vh, 6rem) 0 clamp(3rem, 7vh, 5rem);
 }
 
-:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .marginLeft,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"])
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .marginLeft,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) 
 .marginRight {
   display: flex;
   flex-direction: column;
@@ -137,7 +137,7 @@
   font-size: 0.75em;
 }
 
-:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .gloss:hover,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"])
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .gloss:hover,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) 
 .gloss:focus-visible {
   color: var(--ink);
 }
@@ -182,12 +182,12 @@
 
 /* cross-highlight: hovering a gloss lights the phrase it annotates, and back */
 
-:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .folio:has(.gloss[data-ref="a"]:is(:hover, :focus-visible)) .ref[data-ref="a"],:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"])
-.folio:has(.gloss[data-ref="b"]:is(:hover, :focus-visible)) .ref[data-ref="b"],:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"])
-.folio:has(.gloss[data-ref="c"]:is(:hover, :focus-visible)) .ref[data-ref="c"],:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"])
-.folio:has(.gloss[data-ref="d"]:is(:hover, :focus-visible)) .ref[data-ref="d"],:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"])
-.folio:has(.gloss[data-ref="e"]:is(:hover, :focus-visible)) .ref[data-ref="e"],:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"])
-.folio:has(.gloss[data-ref="f"]:is(:hover, :focus-visible)) .ref[data-ref="f"],:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"])
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .folio:has(.gloss[data-ref="a"]:is(:hover, :focus-visible)) .ref[data-ref="a"],:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) 
+.folio:has(.gloss[data-ref="b"]:is(:hover, :focus-visible)) .ref[data-ref="b"],:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) 
+.folio:has(.gloss[data-ref="c"]:is(:hover, :focus-visible)) .ref[data-ref="c"],:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) 
+.folio:has(.gloss[data-ref="d"]:is(:hover, :focus-visible)) .ref[data-ref="d"],:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) 
+.folio:has(.gloss[data-ref="e"]:is(:hover, :focus-visible)) .ref[data-ref="e"],:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) 
+.folio:has(.gloss[data-ref="f"]:is(:hover, :focus-visible)) .ref[data-ref="f"],:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) 
 .ref:hover {
   background-color: var(--wash);
   box-shadow:
@@ -195,11 +195,11 @@
     0 2px 0 3px var(--lapis);
 }
 
-:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .folio:has(.ref[data-ref="a"]:hover) .gloss[data-ref="a"],:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"])
-.folio:has(.ref[data-ref="b"]:hover) .gloss[data-ref="b"],:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"])
-.folio:has(.ref[data-ref="c"]:hover) .gloss[data-ref="c"],:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"])
-.folio:has(.ref[data-ref="d"]:hover) .gloss[data-ref="d"],:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"])
-.folio:has(.ref[data-ref="e"]:hover) .gloss[data-ref="e"],:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"])
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .folio:has(.ref[data-ref="a"]:hover) .gloss[data-ref="a"],:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) 
+.folio:has(.ref[data-ref="b"]:hover) .gloss[data-ref="b"],:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) 
+.folio:has(.ref[data-ref="c"]:hover) .gloss[data-ref="c"],:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) 
+.folio:has(.ref[data-ref="d"]:hover) .gloss[data-ref="d"],:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) 
+.folio:has(.ref[data-ref="e"]:hover) .gloss[data-ref="e"],:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) 
 .folio:has(.ref[data-ref="f"]:hover) .gloss[data-ref="f"] {
   color: var(--ink);
 }
@@ -326,7 +326,7 @@
   );
 }
 
-:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .verso,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"])
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .verso,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) 
 .recto {
   padding: clamp(1.5rem, 3vw, 3rem);
 }
@@ -377,7 +377,7 @@
   line-height: 1.55;
 }
 
-:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .noteLinks,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"])
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .noteLinks,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) 
 .noteBacklinks {
   margin: 0 0 0.4rem;
   font-family: var(--font-sans), sans-serif;
@@ -385,7 +385,7 @@
   color: var(--gloss);
 }
 
-:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .noteLinks a,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"])
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .noteLinks a,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) 
 .noteBacklinks a {
   color: var(--lapis);
   text-decoration: underline;
@@ -446,7 +446,7 @@
       "right";
     row-gap: 2rem;
   }
-  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .marginLeft,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"])
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .marginLeft,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) 
   .marginRight {
     padding-top: 0;
     text-align: left;

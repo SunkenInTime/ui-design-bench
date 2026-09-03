@@ -16,8 +16,8 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) *,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"])
-  *::before,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"])
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) *,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) 
+  *::before,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) 
   *::after {
     animation-duration: 0.01ms !important;
     animation-delay: 0ms !important;

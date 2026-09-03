@@ -12,12 +12,12 @@
   padding-bottom: 72px;
 }
 
-:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .navInner,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"])
-.hero,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"])
-.how,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"])
-.transfers,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"])
-.service,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"])
-.ctaInner,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"])
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .navInner,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) 
+.hero,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) 
+.how,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) 
+.transfers,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) 
+.service,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) 
+.ctaInner,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) 
 .footerInner {
   width: min(1200px, 100% - 3rem);
   margin-inline: auto;
@@ -422,7 +422,7 @@
 /* ---- responsive ---- */
 
 @media (max-width: 960px) {
-  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .hero,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"])
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .hero,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) 
   .transfers {
     grid-template-columns: 1fr;
   }

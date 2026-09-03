@@ -50,7 +50,7 @@
   opacity: 0.72;
 }
 
-:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"]) .link:hover,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"])
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"]) .link:hover,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gemini-3.7-flash"]) 
 .link:focus-visible {
   opacity: 1;
   background: rgba(255, 255, 255, 0.08);

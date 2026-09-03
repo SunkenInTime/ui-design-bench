@@ -28,10 +28,10 @@
   fill-opacity: 0.1;
 }
 
-:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .wallOuter,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"])
-.wallInner,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"])
-.door,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"])
-.furniture,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"])
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .wallOuter,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) 
+.wallInner,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) 
+.door,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) 
+.furniture,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) 
 .corridorLine {
   fill: none;
   stroke-linecap: square;
@@ -87,7 +87,7 @@
   }
 }
 
-:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .labelGroup,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"])
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) .labelGroup,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="fable-5.1"]) 
 .dims {
   opacity: 0;
   animation: gallery-with-design-skill-fable-5-1-source-app-iterations-4-palace-plan-module-fade 0.6s ease forwards;
