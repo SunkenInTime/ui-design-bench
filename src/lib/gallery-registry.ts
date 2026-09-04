@@ -1,4 +1,7 @@
 import type { GalleryGroupSlug, ModelSlug, VariantModule } from "@/lib/gallery-types";
+import withAstra from "@/variants/with-design-skill/gpt-6-astra";
+import withTasteAstra from "@/variants/with-taste-skill/gpt-6-astra";
+import withoutAstra from "@/variants/without-design-skill/gpt-6-astra";
 import withComposer15 from "@/variants/with-design-skill/composer-1.5";
 import withComposer20 from "@/variants/with-design-skill/composer-2.0";
 import withComposer25 from "@/variants/with-design-skill/composer-2.5";
@@ -86,6 +89,10 @@ import withoutMuseSpark13Flash from "@/variants/without-design-skill/muse-spark-
 type RegistryKey = `${GalleryGroupSlug}:${ModelSlug}`;
 
 const registry: Partial<Record<RegistryKey, VariantModule>> = {
+  "with-design-skill:gpt-6-astra": withAstra,
+  "with-taste-skill:gpt-6-astra": withTasteAstra,
+  "without-design-skill:gpt-6-astra": withoutAstra,
+
   "with-design-skill:composer-1.5": withComposer15,
   "with-design-skill:composer-2.0": withComposer20,
   "with-design-skill:composer-2.5": withComposer25,

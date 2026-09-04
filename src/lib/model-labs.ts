@@ -34,6 +34,7 @@ const MODEL_TO_LAB: Record<ModelSlug, ModelLab> = {
   "gpt-5.4": { slug: "gpt", label: "GPT" },
   "gpt-5.5-low": { slug: "gpt", label: "GPT" },
   "gpt-5.5-high": { slug: "gpt", label: "GPT" },
+  "gpt-6-astra": { slug: "gpt", label: "GPT" },
   sol: { slug: "gpt", label: "GPT" },
   luna: { slug: "gpt", label: "GPT" },
   terra: { slug: "gpt", label: "GPT" },
