@@ -53,6 +53,18 @@ export function GalleryGroupSection({
           Design Skill
         </Link>
       </>
+    ) : group === "with-taste-skill" ? (
+      <>
+        With{" "}
+        <Link
+          href="https://www.tasteskill.dev/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline decoration-2 decoration-[var(--gallery-text-tertiary)] underline-offset-[6px] transition-colors hover:text-[var(--gallery-accent)] hover:decoration-[var(--gallery-accent)]"
+        >
+          Taste Skill
+        </Link>
+      </>
     ) : group === "with-ui-sh-skill" ? (
       "With UI SH Skill"
     ) : group === "miscellaneous" ? (
