@@ -47,6 +47,26 @@ const sampleRouteSmokeCases = [
   { group: "without-design-skill", model: "gpt-6-astra", iteration: "4" },
   { group: "without-design-skill", model: "gpt-6-astra", iteration: "5" },
 
+  { group: "without-design-skill", model: "gpt-6-astra-preview", iteration: "1" },
+  { group: "without-design-skill", model: "gpt-6-astra-preview", iteration: "2" },
+  { group: "without-design-skill", model: "gpt-6-astra-preview", iteration: "3" },
+  { group: "without-design-skill", model: "gpt-6-astra-preview", iteration: "4" },
+  { group: "without-design-skill", model: "gpt-6-astra-preview", iteration: "5" },
+  { group: "with-design-skill", model: "gpt-6-astra-preview", iteration: "1" },
+  { group: "with-design-skill", model: "gpt-6-astra-preview", iteration: "2" },
+  { group: "with-design-skill", model: "gpt-6-astra-preview", iteration: "3" },
+  { group: "with-design-skill", model: "gpt-6-astra-preview", iteration: "4" },
+  { group: "with-design-skill", model: "gpt-6-astra-preview", iteration: "5" },
+  { group: "with-taste-skill", model: "gpt-6-astra-preview", iteration: "1" },
+  { group: "with-taste-skill", model: "gpt-6-astra-preview", iteration: "2" },
+  { group: "with-taste-skill", model: "gpt-6-astra-preview", iteration: "3" },
+  { group: "with-taste-skill", model: "gpt-6-astra-preview", iteration: "4" },
+  { group: "with-taste-skill", model: "gpt-6-astra-preview", iteration: "5" },
+  { group: "miscellaneous", model: "gpt-6-astra-preview", iteration: "1" },
+  { group: "miscellaneous", model: "gpt-6-astra-preview", iteration: "2" },
+  { group: "miscellaneous", model: "gpt-6-astra-preview", iteration: "3" },
+  { group: "miscellaneous", model: "gpt-6-astra-preview", iteration: "4" },
+  { group: "miscellaneous", model: "gpt-6-astra-preview", iteration: "5" },
   { group: "with-design-skill", model: "composer-2.5", iteration: "5" },
   { group: "with-design-skill", model: "grok-4.5", iteration: "3" },
   { group: "with-design-skill", model: "grok-4.6", iteration: "3" },
@@ -113,6 +133,19 @@ test("legacy Ox Alpha routes redirect to GLM 5.3 Flash", async ({ page }) => {
 
   await page.goto("/preview/with-taste-skill/ox-alpha/3");
   await expect(page).toHaveURL("/preview/with-taste-skill/glm-5.3-flash/3");
+});
+
+test("Theo's Astra previews are archived in all four groups", async ({ page }) => {
+  await page.goto("/");
+  const cards = page.getByTestId("gallery-card").filter({ hasText: "GPT-6 Astra (preview)" });
+  await expect(cards).toHaveCount(0);
+  while ((await page.getByRole("button", { name: "Show Archived" }).count()) > 0) {
+    await page.getByRole("button", { name: "Show Archived" }).first().click();
+  }
+  await expect(cards).toHaveCount(4);
+  const entries = galleryManifest.filter((entry) => entry.model === "gpt-6-astra-preview");
+  expect(entries.flatMap((entry) => entry.iterations)).toHaveLength(20);
+  expect(getModelLab("gpt-6-astra-preview").slug).toBe("gpt");
 });
 
 test("home page archives Opus 4.7 cards", async ({ page }) => {
