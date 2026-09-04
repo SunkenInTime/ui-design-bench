@@ -31,6 +31,22 @@ const latestRouteSmokeCases = galleryManifest
   }));
 
 const sampleRouteSmokeCases = [
+  { group: "with-design-skill", model: "gpt-6-astra", iteration: "1" },
+  { group: "with-design-skill", model: "gpt-6-astra", iteration: "2" },
+  { group: "with-design-skill", model: "gpt-6-astra", iteration: "3" },
+  { group: "with-design-skill", model: "gpt-6-astra", iteration: "4" },
+  { group: "with-design-skill", model: "gpt-6-astra", iteration: "5" },
+  { group: "with-taste-skill", model: "gpt-6-astra", iteration: "1" },
+  { group: "with-taste-skill", model: "gpt-6-astra", iteration: "2" },
+  { group: "with-taste-skill", model: "gpt-6-astra", iteration: "3" },
+  { group: "with-taste-skill", model: "gpt-6-astra", iteration: "4" },
+  { group: "with-taste-skill", model: "gpt-6-astra", iteration: "5" },
+  { group: "without-design-skill", model: "gpt-6-astra", iteration: "1" },
+  { group: "without-design-skill", model: "gpt-6-astra", iteration: "2" },
+  { group: "without-design-skill", model: "gpt-6-astra", iteration: "3" },
+  { group: "without-design-skill", model: "gpt-6-astra", iteration: "4" },
+  { group: "without-design-skill", model: "gpt-6-astra", iteration: "5" },
+
   { group: "with-design-skill", model: "composer-2.5", iteration: "5" },
   { group: "with-design-skill", model: "grok-4.5", iteration: "3" },
   { group: "with-design-skill", model: "grok-4.6", iteration: "3" },

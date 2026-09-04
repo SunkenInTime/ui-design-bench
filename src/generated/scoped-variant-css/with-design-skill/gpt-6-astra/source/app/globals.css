@@ -1,0 +1,4832 @@
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) {
+  color-scheme: light;
+  font-family: var(--font-sans), sans-serif;
+  color: #193e2b;
+  background: #f3f7f0;
+  font-synthesis: none;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) * {
+  box-sizing: border-box;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) {
+  scroll-behavior: smooth;
+  scroll-padding-top: 32px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) button,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) 
+input,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) 
+textarea {
+  font: inherit;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) button,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) 
+a,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) 
+input,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) 
+textarea,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) 
+summary {
+  -webkit-tap-highlight-color: transparent;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) button,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) 
+a {
+  touch-action: manipulation;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) button {
+  cursor: pointer;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) a {
+  color: inherit;
+  text-decoration: none;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) button {
+  color: inherit;
+  border: 0;
+  background: none;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) button:disabled {
+  cursor: default;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) button:focus-visible,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) 
+a:focus-visible,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) 
+summary:focus-visible,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) 
+input:focus-visible,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) 
+textarea:focus-visible {
+  outline: 3px solid #839bdb;
+  outline-offset: 5px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) input,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) 
+textarea {
+  min-width: 0;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) svg {
+  flex-shrink: 0;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) h1,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) 
+h2,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) 
+h3,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) 
+p {
+  margin: 0;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) h1,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) 
+h2,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) 
+h3 {
+  font-weight: 500;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) ::selection {
+  background: #d2dfa4;
+  color: #193e2b;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .landing {
+  overflow: clip;
+  min-height: 100vh;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .site-header {
+  height: 108px;
+  max-width: 1440px;
+  padding: 0 64px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  position: relative;
+  z-index: 10;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  flex-shrink: 0;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .brand span {
+  font-family: var(--font-display), sans-serif;
+  font-size: 31px;
+  font-weight: 650;
+  letter-spacing: -1.8px;
+  line-height: 1;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .header-nav {
+  display: flex;
+  gap: 34px;
+  margin-left: 75px;
+  align-items: center;
+  font-size: 13px;
+  font-weight: 500;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .header-nav a {
+  padding: 9px 0;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .header-nav a:hover {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .start-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  background: var(--button-bg, #193e2b);
+  color: var(--button-ink, white);
+  border-radius: 7px;
+  padding: 18px 24px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.2;
+  transition:
+    filter 0.16s,
+    transform 0.16s;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .start-button:hover {
+  filter: brightness(1.12);
+  transform: translateY(-2px);
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .header-open {
+  padding: 13px 19px;
+  font-size: 12px;
+  border-radius: 5px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .icon-button {
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .icon-button:hover {
+  background: #00000009;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .menu-button {
+  display: none;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 27px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .quiet-link {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  font-size: 13px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .quiet-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .hero-footnote {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  margin-top: 18px;
+  opacity: 0.7;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .design-switcher {
+  position: fixed;
+  z-index: 50;
+  bottom: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  padding: 6px 7px 6px 15px;
+  gap: 14px;
+  background: #ffffffed;
+  border: 1px solid #0000000d;
+  box-shadow:
+    0 4px 20px #00000014,
+    0 1px 3px #0000000c;
+  border-radius: 100px;
+  color: #544c55;
+  backdrop-filter: blur(15px);
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .switcher-label {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 11px;
+  font-weight: 550;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .design-switcher > div {
+  display: flex;
+  gap: 4px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .design-switcher a {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 11px;
+  color: #69616c;
+  transition: background 0.15s;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .design-switcher a:hover {
+  background: #ece9ef;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .design-switcher a[aria-current="page"] {
+  color: white;
+  background: var(--swatch);
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .faq-section {
+  max-width: 1312px;
+  margin: 0 auto;
+  padding: 100px 0 110px;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 80px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .faq-section h2 {
+  font-family: var(--font-display), sans-serif;
+  font-size: 46px;
+  line-height: 1.1;
+  letter-spacing: -1.5px;
+  margin-bottom: 16px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .faq-section > div > p {
+  font-size: 14px;
+  opacity: 0.7;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .faq-list details {
+  border-bottom: 1px solid #0000001c;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .faq-list details:first-child {
+  border-top: 1px solid #0000001c;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .faq-list summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 23px 0;
+  font-size: 14px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .faq-list summary::-webkit-details-marker {
+  display: none;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .faq-list details[open] summary svg {
+  transform: rotate(45deg);
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .faq-list details p {
+  font-size: 13px;
+  line-height: 1.8;
+  opacity: 0.75;
+  max-width: 58ch;
+  padding-bottom: 24px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .site-footer {
+  max-width: 1440px;
+  margin: auto;
+  padding: 35px 64px 100px;
+  border-top: 1px solid #00000013;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .site-footer .brand span {
+  font-size: 26px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .site-footer .brand svg {
+  width: 29px;
+  height: 29px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .site-footer p {
+  font-size: 12px;
+  opacity: 0.7;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .site-footer > span {
+  margin-left: auto;
+  font-size: 11px;
+  opacity: 0.6;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .feature-line {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .feature-line > svg {
+  margin-top: 3px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .feature-line h3 {
+  font-size: 17px;
+  margin-bottom: 9px;
+  font-weight: 550;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .feature-line p {
+  font-size: 13px;
+  line-height: 1.8;
+  max-width: 36ch;
+  opacity: 0.75;
+}
+
+/* A functional shared notebook, opened by every primary call to action. */
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .notebook-dialog {
+  border: 1px solid #dae2d5;
+  border-radius: 16px;
+  padding: 0;
+  width: min(980px, calc(100% - 32px));
+  max-height: calc(100dvh - 48px);
+  color: #234331;
+  background: #fff;
+  box-shadow: 0 35px 100px #00000033;
+  overflow: hidden;
+  margin: auto;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .notebook-dialog::backdrop {
+  background: #14251bb3;
+  backdrop-filter: blur(7px);
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .notebook-shell {
+  display: flex;
+  flex-direction: column;
+  height: min(650px, calc(100dvh - 52px));
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .notebook-header {
+  height: 76px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 26px;
+  border-bottom: 1px solid #e7ebe4;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .notebook-header .brand span {
+  font-size: 24px;
+  letter-spacing: -1px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .notebook-header .brand svg {
+  width: 29px;
+  height: 29px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .notebook-body {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  flex: 1;
+  min-height: 0;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .notebook-sidebar {
+  padding: 22px 14px;
+  background: #f6f8f3;
+  border-right: 1px solid #e7ebe4;
+  overflow-y: auto;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .notebook-new {
+  background: #244c34;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: 7px;
+  font-size: 13px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .notebook-search {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 13px 8px;
+  margin: 10px 0;
+  border-bottom: 1px solid #dde4d9;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .notebook-search input {
+  width: 100%;
+  border: 0;
+  background: transparent;
+  font-size: 12px;
+  outline-offset: 1px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .notebook-note-list {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .notebook-note-list button {
+  padding: 13px 11px;
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  font-size: 12px;
+  line-height: 1.5;
+  text-align: left;
+  border-radius: 7px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .notebook-note-list button.selected {
+  background: #e4ebdc;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .notebook-note-list button:hover {
+  background: #eaf0e4;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .empty-search {
+  font-size: 12px;
+  line-height: 1.6;
+  padding: 10px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .notebook-editor {
+  padding: 32px 40px 20px;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .notebook-collection {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 11px;
+  color: #788471;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .note-title-input {
+  border: 0;
+  width: 100%;
+  font-family: var(--font-display), sans-serif;
+  font-size: 30px;
+  font-weight: 550;
+  letter-spacing: -1px;
+  margin: 21px 0;
+  background: transparent;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .notebook-editor textarea {
+  resize: none;
+  flex: 1;
+  width: 100%;
+  border: 0;
+  font-size: 14px;
+  line-height: 1.9;
+  color: #485c49;
+  min-height: 120px;
+  background: transparent;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .save-status {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 10px;
+  opacity: 0.65;
+  padding-top: 17px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .notebook-disclaimer {
+  flex-shrink: 0;
+  background: #fafbf8;
+  border-top: 1px solid #e7ebe4;
+  padding: 12px 24px;
+  font-size: 10px;
+  color: #65705f;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]):has(.notebook-dialog[open]) {
+  overflow: hidden;
+}
+
+/* One — the thought garden. */
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden {
+  background: #f3f7f0;
+  color: #193e2b;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-hero {
+  position: relative;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 54px 64px 70px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  min-height: 666px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-intro {
+  position: relative;
+  z-index: 2;
+  padding-bottom: 6px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-intro-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  margin-bottom: 25px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .tiny-flower {
+  font-size: 23px;
+  line-height: 1;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden h1 {
+  font-family: var(--font-display), sans-serif;
+  font-size: clamp(74px, 7.1vw, 106px);
+  font-weight: 550;
+  line-height: 0.99;
+  letter-spacing: -6.5px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-intro > p {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #61705d;
+  margin: 26px 0 27px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-collage {
+  position: relative;
+  height: 560px;
+  width: 620px;
+  justify-self: center;
+  margin-left: -25px;
+  margin-top: -10px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-circle {
+  position: absolute;
+  width: 415px;
+  height: 415px;
+  border-radius: 50%;
+  background: #e5ecd9;
+  top: 80px;
+  left: 118px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .botanical-art {
+  position: absolute;
+  height: 470px;
+  width: 400px;
+  left: 136px;
+  top: 23px;
+  transform: rotate(12deg);
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-thread {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  inset: 0;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-note {
+  position: absolute;
+  text-align: left;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-note:hover {
+  transform: rotate(0) translateY(-6px);
+  z-index: 4;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-note-white {
+  width: 245px;
+  padding: 23px 23px 24px;
+  background: #fff;
+  top: 42px;
+  left: 8px;
+  transform: rotate(-7deg);
+  box-shadow: 0 12px 25px #2035200c;
+  border: 1px solid #dfe4d8;
+  border-radius: 5px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .note-topline {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 9px;
+  opacity: 0.7;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .note-topline > span {
+  margin-left: auto;
+  font-size: 14px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-note h3 {
+  font-family: var(--font-display), sans-serif;
+  font-size: 25px;
+  line-height: 1.16;
+  letter-spacing: -0.8px;
+  margin: 19px 0 12px;
+  font-weight: 500;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-note p {
+  font-size: 10px;
+  line-height: 1.65;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .note-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 8px;
+  border: 1px solid #193e2b20;
+  padding: 5px 8px;
+  border-radius: 4px;
+  margin-top: 24px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-note-purple {
+  width: 204px;
+  padding: 22px 22px 20px;
+  color: #4d4163;
+  background: #e4dff0;
+  top: 234px;
+  right: 0;
+  transform: rotate(8deg);
+  box-shadow: 0 10px 20px #26361e0c;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-note-purple h3 {
+  font-family: var(--font-serif), serif;
+  font-size: 30px;
+  letter-spacing: -0.5px;
+  line-height: 1.06;
+  margin: 21px 0 14px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-note-purple .note-tag {
+  margin-top: 17px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-note-green {
+  width: 243px;
+  min-height: 196px;
+  background: #274f34;
+  color: #eff3d9;
+  left: 107px;
+  bottom: 43px;
+  padding: 21px;
+  transform: rotate(-4deg);
+  border-radius: 4px;
+  box-shadow: 0 14px 30px #1c392814;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-note-green > svg {
+  position: absolute;
+  right: 22px;
+  top: 23px;
+  color: #bdcf8b;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-note-green h3 {
+  margin-top: 4px;
+  font-size: 26px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-note-green p {
+  opacity: 0.8;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .note-mini-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 8px;
+  padding-top: 20px;
+  opacity: 0.7;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-handwritten {
+  position: absolute;
+  left: 80px;
+  bottom: 0;
+  font-family: var(--font-hand), cursive;
+  font-size: 24px;
+  transform: rotate(-4deg);
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-handwritten svg {
+  position: absolute;
+  width: 67px;
+  right: -65px;
+  top: -11px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-connected {
+  position: absolute;
+  top: 67px;
+  right: 3px;
+  display: flex;
+  gap: 7px;
+  align-items: center;
+  font-size: 9px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-connected > span {
+  height: 5px;
+  width: 5px;
+  background: #608154;
+  border-radius: 50%;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-belonging {
+  max-width: 1312px;
+  padding: 27px 0;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 25px;
+  align-items: center;
+  border-top: 1px solid #193e2b19;
+  border-bottom: 1px solid #193e2b19;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-belonging > span {
+  font-size: 11px;
+  color: #68785f;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-belonging > div {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 11px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-workflow {
+  max-width: 1312px;
+  margin: auto;
+  padding: 102px 0 105px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-section-intro {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 49px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden h2 {
+  font-family: var(--font-display), sans-serif;
+  font-size: 51px;
+  line-height: 1.08;
+  letter-spacing: -2.5px;
+  font-weight: 500;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-section-intro > p {
+  color: #68785f;
+  font-size: 14px;
+  line-height: 1.8;
+  padding-right: 75px;
+  padding-bottom: 6px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-workflow-content {
+  display: grid;
+  grid-template-columns: 0.72fr 1.28fr;
+  gap: 85px;
+  align-items: center;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-tabs > button {
+  display: flex;
+  align-items: flex-start;
+  gap: 19px;
+  padding: 24px 22px;
+  text-align: left;
+  border-radius: 9px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-tabs > button.active {
+  background: #e7eddd;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-tabs > button > svg {
+  margin-top: 2px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-tabs h3 {
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: -0.3px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-tabs p {
+  font-size: 12px;
+  line-height: 1.9;
+  color: #5c6c54;
+  margin-top: 11px;
+  max-width: 30ch;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .thought-preview {
+  width: 100%;
+  color: #3b4d39;
+  background: #fff;
+  border: 1px solid #dfe5d8;
+  border-radius: 9px;
+  overflow: hidden;
+  box-shadow: 0 12px 42px #193e2b08;
+  text-align: left;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .preview-window-bar {
+  height: 36px;
+  padding: 0 13px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fcfdf9;
+  border-bottom: 1px solid #e6eadf;
+  font-size: 8px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .window-dots {
+  display: flex;
+  gap: 4px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .window-dots i {
+  width: 6px;
+  height: 6px;
+  background: #dce2d7;
+  border-radius: 50%;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .preview-window-bar > span:nth-child(2) {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .preview-window-bar > span > svg {
+  width: 14px;
+  height: 14px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .preview-inner {
+  display: grid;
+  grid-template-columns: 165px 1fr;
+  min-height: 386px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .preview-sidebar {
+  padding: 21px 12px;
+  background: #f8faf5;
+  display: flex;
+  flex-direction: column;
+  font-size: 9px;
+  border-right: 1px solid #e6eadf;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .preview-person {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 9px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .preview-person > span {
+  display: grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  background: #e1e6d4;
+  border-radius: 50%;
+  font-size: 9px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .preview-search {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: white;
+  border: 1px solid #e3e8de;
+  padding: 6px;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .preview-search input {
+  width: 100%;
+  border: 0;
+  background: transparent;
+  font-size: 8px;
+  padding: 0;
+  outline-offset: 1px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .preview-nav-label {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 9px;
+  font-weight: 600;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .preview-sidebar > button {
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+  text-align: left;
+  font-size: 8px;
+  line-height: 1.5;
+  padding: 9px 7px;
+  margin: 2px -3px;
+  border-radius: 4px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .preview-sidebar > button.active {
+  background: #e5eddc;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .preview-sidebar > button:hover {
+  background: #eaf0e5;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .preview-sidebar .preview-new {
+  margin-top: 13px;
+  opacity: 0.6;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .preview-sidebar-bottom {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 20px;
+  font-size: 8px;
+  opacity: 0.5;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .preview-document {
+  padding: 22px 34px 26px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .preview-breadcrumb {
+  font-size: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #7e8775;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .preview-emoji {
+  display: block;
+  font-size: 27px;
+  margin: 28px 0 15px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .preview-document h3 {
+  font-family: var(--font-display), sans-serif;
+  font-size: 25px;
+  font-weight: 500;
+  letter-spacing: -1px;
+  line-height: 1.12;
+  margin-bottom: 17px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .preview-document > p {
+  font-size: 9px;
+  color: #788071;
+  line-height: 1.9;
+  margin-bottom: 12px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .preview-document blockquote {
+  border-left: 2px solid #bccb9f;
+  margin: 18px 0;
+  padding: 4px 0 4px 11px;
+  color: #647154;
+  font-family: var(--font-serif), serif;
+  font-size: 17px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .preview-related {
+  margin-top: 24px;
+  border-top: 1px solid #e6ebe0;
+  padding-top: 13px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .preview-related > span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 8px;
+  color: #89917f;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .preview-related > button {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 9px;
+  width: 100%;
+  text-align: left;
+  padding: 8px;
+  background: #f1f5ea;
+  font-size: 8px;
+  border-radius: 4px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .preview-related > button > svg:last-child {
+  margin-left: auto;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .preview-empty {
+  font-size: 8px;
+  opacity: 0.6;
+  padding: 8px 0;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-promise {
+  position: relative;
+  max-width: 1312px;
+  margin: 0 auto;
+  background: #e4ebda;
+  border-radius: 14px;
+  padding: 67px 65px;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 110px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-promise > svg {
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  top: -35px;
+  right: 30px;
+  color: #cad8b9;
+  --flower-center: #e4ebda;
+  transform: rotate(20deg);
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-promise h2 {
+  font-size: 44px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-promise > div > p {
+  max-width: 42ch;
+  margin: 22px 0 28px;
+  font-size: 13px;
+  line-height: 1.8;
+  color: #637456;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-promise .start-button {
+  font-size: 12px;
+  padding: 16px 20px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-promise-features {
+  display: flex;
+  flex-direction: column;
+  gap: 29px;
+  padding-top: 38px;
+  position: relative;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-promise-features h3 {
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-promise-features p {
+  font-size: 11px;
+}
+@media (min-width: 1600px) {
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-hero {
+    padding-top: 75px;
+    padding-bottom: 90px;
+  }
+}
+
+/* Two — the electric workspace. */
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric {
+  background: #fafbff;
+  color: #1d2860;
+  --button-bg: #f7ee96;
+  --button-ink: #263879;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric .site-header {
+  background: #2448e8;
+  color: white;
+  max-width: none;
+  padding-left: max(64px, calc((100vw - 1312px) / 2));
+  padding-right: max(64px, calc((100vw - 1312px) / 2));
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric .header-open {
+  background: white;
+  color: #2448e8;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric .brand span {
+  font-weight: 700;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-hero {
+  background: #2448e8;
+  color: white;
+  padding: 55px max(64px, calc((100vw - 1312px) / 2)) 85px;
+  display: grid;
+  grid-template-columns: 1fr 1.08fr;
+  min-height: 683px;
+  gap: 35px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-hero-copy {
+  padding-top: 8px;
+  position: relative;
+  z-index: 2;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-hello {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 11px;
+  color: #cfd7ff;
+  margin-bottom: 25px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-hello > span {
+  width: 7px;
+  height: 7px;
+  background: #f7ee96;
+  border-radius: 50%;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric h1 {
+  font-family: var(--font-display), sans-serif;
+  font-size: clamp(72px, 7.5vw, 108px);
+  font-weight: 750;
+  line-height: 0.99;
+  letter-spacing: -5.5px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-hero-copy > p {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #dfe4ff;
+  margin: 27px 0 29px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric .start-button {
+  border-radius: 4px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-demo-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: white;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-demo-link > span {
+  display: grid;
+  place-items: center;
+  border: 1px solid #ffffff60;
+  width: 25px;
+  height: 25px;
+  font-size: 8px;
+  border-radius: 50%;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-hero-copy > p.electric-fine-print {
+  font-size: 10px;
+  margin-top: 19px;
+  color: #ced7ff;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-stage {
+  position: relative;
+  min-width: 0;
+  height: 527px;
+  margin-top: 28px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-preview-wrap {
+  position: relative;
+  width: 650px;
+  transform: rotate(-3deg);
+  top: 8px;
+  left: -8px;
+  box-shadow: 0 25px 45px #0b249030;
+  border-radius: 8px;
+  z-index: 1;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .preview-electric {
+  border: 3px solid #f6f7ff;
+  color: #353952;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .preview-electric .preview-inner {
+  grid-template-columns: 174px 1fr;
+  min-height: 422px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .preview-electric .preview-sidebar {
+  background: #f0f1fa;
+  border-color: #e4e5ef;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .preview-electric .preview-window-bar {
+  height: 38px;
+  background: #f0f1fa;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .preview-electric .window-dots i {
+  background: #c9cde2;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .preview-electric .preview-document {
+  padding: 25px 35px 35px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .preview-electric .preview-person > span {
+  background: #dadcf6;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .preview-electric .preview-sidebar > button.active {
+  background: #dee2fb;
+  color: #344bcc;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .preview-electric .preview-document h3 {
+  font-size: 28px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .preview-electric .preview-document > p {
+  font-size: 10px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .preview-electric .preview-related > button {
+  background: #ebedf9;
+  color: #505ca6;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .preview-electric .preview-document blockquote {
+  border-color: #95a4eb;
+  color: #5362a3;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-big-star {
+  position: absolute;
+  color: #adbdfd;
+  font-family: sans-serif;
+  font-size: 230px;
+  line-height: 1;
+  top: -85px;
+  right: -90px;
+  transform: rotate(15deg);
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-sticky {
+  position: absolute;
+  right: -35px;
+  bottom: -12px;
+  z-index: 3;
+  background: #f7ee96;
+  color: #273774;
+  padding: 29px 28px 23px;
+  width: 239px;
+  text-align: left;
+  transform: rotate(9deg);
+  box-shadow: 2px 8px 0 #1a38b2;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-sticky > span:nth-child(2) {
+  font-family: var(--font-hand), cursive;
+  font-size: 35px;
+  line-height: 1.05;
+  font-weight: 600;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-sticky-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  font-size: 8px;
+  margin-top: 23px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .sticky-pin {
+  position: absolute;
+  top: -10px;
+  left: 40%;
+  height: 26px;
+  width: 65px;
+  background: #dfe5f99c;
+  transform: rotate(-11deg);
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-caption {
+  display: flex;
+  align-items: center;
+  font-family: var(--font-hand), cursive;
+  font-size: 22px;
+  position: absolute;
+  left: -10px;
+  bottom: 0;
+  color: #dde4ff;
+  transform: rotate(-3deg);
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-caption > svg {
+  margin-top: -20px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-marquee {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 20px;
+  background: #f7ee96;
+  padding: 20px 30px;
+  color: #2b3d92;
+  font-family: var(--font-display), sans-serif;
+  font-size: 23px;
+  letter-spacing: -0.5px;
+  font-weight: 500;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-marquee > svg {
+  height: 35px;
+  width: 35px;
+  --flower-center: #f7ee96;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-workflow {
+  max-width: 1312px;
+  margin: auto;
+  padding: 106px 0 100px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 50px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric h2 {
+  font-family: var(--font-display), sans-serif;
+  font-size: 53px;
+  font-weight: 650;
+  line-height: 1.04;
+  letter-spacing: -2.2px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-section-heading > p {
+  font-size: 13px;
+  line-height: 1.8;
+  color: #707695;
+  padding-bottom: 4px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-feature-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-capture > h3,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) 
+.electric-connect > h3 {
+  margin-top: 26px;
+  font-size: 21px;
+  font-weight: 550;
+  letter-spacing: -0.5px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-capture > p,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) 
+.electric-connect > p {
+  font-size: 13px;
+  line-height: 1.8;
+  color: #707695;
+  margin-top: 9px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-tab-bar {
+  display: flex;
+  gap: 7px;
+  background: #e8ecfd;
+  padding: 21px 24px 0;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-tab-bar > button {
+  padding: 7px 16px;
+  border-radius: 20px;
+  font-size: 11px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-tab-bar > button[aria-selected="true"] {
+  background: #2448e8;
+  color: white;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-example-note {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  background: #e8ecfd;
+  width: 100%;
+  padding: 26px 34px 28px;
+  min-height: 239px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-example-note > h3 {
+  font-family: var(--font-display), sans-serif;
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 1.12;
+  letter-spacing: -0.8px;
+  max-width: 21ch;
+  margin: 13px 0 12px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-example-note > p {
+  font-size: 11px;
+  color: #6a739b;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-example-note > span {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 9px;
+  margin-top: 22px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-link-demo {
+  height: 296px;
+  position: relative;
+  background: #ece7fb;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-link-demo > svg {
+  position: absolute;
+  inset: 24px 24px 0;
+  width: calc(100% - 48px);
+  height: 235px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-bubble {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  position: absolute;
+  font-size: 12px;
+  padding: 19px 20px;
+  border-radius: 7px;
+  box-shadow: 0 3px 0 #36277b10;
+  z-index: 1;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .bubble-a {
+  top: 42px;
+  left: 23px;
+  background: white;
+  transform: rotate(-5deg);
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .bubble-b {
+  top: 78px;
+  right: 22px;
+  background: #d2d8fc;
+  transform: rotate(6deg);
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .bubble-c {
+  left: 50%;
+  bottom: 32px;
+  transform: translateX(-50%);
+  background: #2448e8;
+  color: white;
+  white-space: nowrap;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-manifesto {
+  background: #bcc8ff;
+  display: grid;
+  grid-template-columns: 145px 1.2fr 1fr;
+  align-items: center;
+  padding: 70px max(64px, calc((100vw - 1312px) / 2));
+  gap: 60px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-manifesto > svg {
+  width: 145px;
+  height: 145px;
+  color: #2448e8;
+  --flower-center: #bcc8ff;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-manifesto h2 {
+  font-size: 58px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-manifesto > div > p {
+  font-size: 14px;
+  line-height: 1.8;
+  max-width: 36ch;
+  margin-bottom: 19px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-manifesto .start-button {
+  background: #2448e8;
+  color: white;
+  margin-top: 6px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-benefits {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 1312px;
+  margin: 0 auto;
+  padding: 64px 0 0;
+  gap: 45px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric .faq-section {
+  padding-top: 93px;
+}
+
+/* Three — the quiet library. */
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .library {
+  color: #48384f;
+  background: #f8f6fb;
+  --button-bg: #65506e;
+  --button-ink: #fff;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .library .brand span {
+  font-family: var(--font-serif), serif;
+  font-size: 39px;
+  letter-spacing: -1.8px;
+  font-weight: 400;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .library .brand > svg {
+  width: 30px;
+  height: 30px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .library .header-open {
+  background: transparent;
+  color: #57405d;
+  border: 1px solid #beb0c5;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .library .start-button {
+  border-radius: 4px;
+  gap: 26px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .library-hero {
+  text-align: center;
+  padding: 10px 24px 0;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .library-hero-ornament {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 17px;
+  color: #9887a4;
+  margin-bottom: 12px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .library-hero-ornament > span {
+  width: 26px;
+  height: 1px;
+  background: #cbbfd1;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .library h1 {
+  font-family: var(--font-serif), serif;
+  font-size: clamp(70px, 6.4vw, 94px);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -2.8px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .library-hero > p {
+  font-size: 14px;
+  line-height: 1.85;
+  color: #776381;
+  margin: 23px 0 25px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .library-hero .start-button {
+  font-size: 12px;
+  padding: 17px 22px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .library-small-note {
+  display: block;
+  font-size: 10px;
+  margin-top: 16px;
+  color: #806b89;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .library-pages {
+  height: 426px;
+  width: 950px;
+  position: relative;
+  margin: 32px auto 0;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .library-sheet {
+  position: absolute;
+  padding: 28px 30px;
+  text-align: left;
+  box-shadow:
+    0 3px 5px #3b264207,
+    0 15px 35px #3b26420c;
+  transition: transform 0.22s;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .library-sheet:hover {
+  transform: rotate(0) translateY(-9px);
+  z-index: 4;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .sheet-category {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 9px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .sheet-left {
+  background: #e4ddee;
+  width: 280px;
+  height: 355px;
+  left: 60px;
+  top: 37px;
+  transform: rotate(-10deg);
+  color: #665271;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .sheet-left h3 {
+  font-family: var(--font-serif), serif;
+  font-size: 39px;
+  line-height: 0.99;
+  margin-top: 23px;
+  letter-spacing: -0.5px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .sheet-left > p {
+  font-family: var(--font-serif), serif;
+  font-size: 21px;
+  line-height: 1.22;
+  margin-top: 17px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .sheet-attribution {
+  display: block;
+  font-size: 9px;
+  opacity: 0.65;
+  margin-top: 14px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .sheet-book-art {
+  position: absolute;
+  right: 32px;
+  top: 156px;
+  width: 49px;
+  height: 65px;
+  border: 1px solid #9a80ac;
+  border-radius: 1px 4px 4px 1px;
+  transform: rotate(10deg);
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .sheet-book-art:before {
+  content: "";
+  position: absolute;
+  left: 5px;
+  height: 100%;
+  width: 1px;
+  background: #9a80ac;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .sheet-book-art:after {
+  content: "";
+  position: absolute;
+  left: 17px;
+  top: 15px;
+  height: 26px;
+  width: 18px;
+  border: 1px solid #9a80ac;
+  border-radius: 50%;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .sheet-middle {
+  left: 304px;
+  top: 0;
+  background: white;
+  width: 340px;
+  height: 416px;
+  z-index: 2;
+  border: 1px solid #ebe4ed;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .sheet-date {
+  display: block;
+  color: #a69bad;
+  font-size: 8px;
+  margin-top: 20px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .sheet-middle h3 {
+  font-family: var(--font-serif), serif;
+  font-size: 38px;
+  line-height: 0.98;
+  margin: 11px 0 18px;
+  letter-spacing: -0.7px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .sheet-middle > p {
+  font-size: 10px;
+  line-height: 1.9;
+  color: #8b7f93;
+  margin-bottom: 12px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .sheet-highlight {
+  display: inline;
+  box-decoration-break: clone;
+  font-family: var(--font-serif), serif;
+  font-size: 19px;
+  line-height: 1.35;
+  background: #eee7f3;
+  padding: 2px 3px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .sheet-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 19px;
+  padding-top: 14px;
+  border-top: 1px solid #eae3ee;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .sheet-footer > span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 8px;
+  color: #948199;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .sheet-right {
+  right: 61px;
+  top: 42px;
+  width: 275px;
+  height: 353px;
+  background: #efdfe3;
+  transform: rotate(10deg);
+  color: #936c7a;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .sheet-right h3 {
+  font-family: var(--font-serif), serif;
+  font-size: 42px;
+  line-height: 0.97;
+  margin-top: 26px;
+  letter-spacing: -1px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .library-plant {
+  width: 100px;
+  height: 120px;
+  position: absolute;
+  right: 15px;
+  bottom: 45px;
+  transform: rotate(7deg);
+  color: #a98591;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .sheet-right .sheet-attribution {
+  position: absolute;
+  bottom: 30px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .library-whisper {
+  position: relative;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+  background: #eee8f3;
+  color: #765d81;
+  padding: 22px;
+  font-size: 11px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .library-reading-room {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  max-width: 1184px;
+  margin: auto;
+  padding: 111px 0;
+  gap: 100px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .library h2 {
+  font-family: var(--font-serif), serif;
+  font-size: 62px;
+  line-height: 1.02;
+  font-weight: 400;
+  letter-spacing: -1.7px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .library-reading-intro > p {
+  max-width: 34ch;
+  font-size: 13px;
+  line-height: 1.9;
+  color: #796582;
+  margin-top: 23px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .library-reading-intro > p + p {
+  margin-top: 14px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .library-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 25px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .library-filter button {
+  border: 1px solid #d7cdde;
+  padding: 7px 13px;
+  border-radius: 30px;
+  font-size: 10px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .library-filter button[aria-pressed="true"] {
+  background: #6b5377;
+  color: white;
+  border-color: #6b5377;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .library-catalog {
+  padding-top: 9px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .library-catalog-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #776381;
+  font-size: 11px;
+  padding-bottom: 21px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .library-catalog-heading > span:last-child {
+  font-size: 9px;
+  opacity: 0.7;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .library-catalog-note {
+  display: flex;
+  align-items: center;
+  text-align: left;
+  gap: 20px;
+  padding: 22px 0;
+  border-top: 1px solid #dfd5e6;
+  width: 100%;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .library-catalog-note > span:nth-child(2) {
+  min-width: 0;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .library-catalog-note > svg {
+  margin-left: auto;
+  color: #8f7b99;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .catalog-note-cover {
+  height: 69px;
+  width: 53px;
+  background: #e2d9eb;
+  box-shadow: inset 4px 0 #00000009;
+  display: grid;
+  place-items: center;
+  color: #8e709f;
+  border-radius: 1px 3px 3px 1px;
+  flex-shrink: 0;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .catalog-note-cover.cover-1 {
+  background: #e8ead9;
+  color: #83946b;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .catalog-note-cover.cover-2 {
+  background: #f0dee2;
+  color: #ad8191;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .catalog-note-cover.cover-3 {
+  background: #dedfee;
+  color: #8481a4;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .library-catalog-note small {
+  color: #7b6884;
+  font-size: 8px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .library-catalog-note h3 {
+  font-family: var(--font-serif), serif;
+  font-size: 25px;
+  margin-top: 3px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .library-catalog-note p {
+  color: #796582;
+  font-size: 9px;
+  margin-top: 7px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 39ch;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .library-catalog-note:hover h3 {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .library-philosophy {
+  background: #ebe4f1;
+  text-align: center;
+  padding: 55px 64px 72px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .library-quote-mark {
+  font-family: var(--font-serif), serif;
+  font-size: 95px;
+  line-height: 1;
+  height: 61px;
+  color: #b5a3c1;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .library-philosophy h2 {
+  font-size: 60px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .library-philosophy > p {
+  font-size: 13px;
+  color: #73597d;
+  line-height: 1.9;
+  margin: 22px 0 43px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .library-principles {
+  display: flex;
+  justify-content: center;
+  gap: 83px;
+  text-align: left;
+  margin-bottom: 37px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .library-principles .feature-line {
+  gap: 13px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .library-principles .feature-line > svg {
+  color: #9a7cab;
+  width: 19px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .library-principles h3 {
+  font-size: 13px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .library-principles p {
+  font-size: 10px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .library-philosophy .start-button {
+  font-size: 11px;
+  padding: 15px 25px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .library .faq-section {
+  max-width: 1184px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .library .faq-section h2 {
+  font-size: 53px;
+}
+
+/* Four — the connection map. */
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .connections {
+  background: #2b2036;
+  color: #f4c5d6;
+  --button-bg: #f4c5d6;
+  --button-ink: #3f2b48;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .connections .brand span {
+  font-family: var(--font-space), sans-serif;
+  font-size: 28px;
+  font-weight: 600;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .connections .header-nav {
+  color: #c8b5cf;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .connections .header-open {
+  background: #f4c5d6;
+  color: #3d2947;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .connections-hero {
+  display: grid;
+  grid-template-columns: 0.83fr 1.17fr;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 30px 35px 43px 64px;
+  gap: 0;
+  min-height: 650px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .connections-copy {
+  padding: 48px 0 0;
+  position: relative;
+  z-index: 2;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .connections-label {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #b8a3c4;
+  font-size: 10px;
+  margin-bottom: 24px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .connections-label > span {
+  width: 6px;
+  height: 6px;
+  background: #f4c5d6;
+  border-radius: 50%;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .connections-label > span:nth-child(2) {
+  background: #c7ddcf;
+  margin-left: -5px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .connections h1 {
+  font-family: var(--font-space), sans-serif;
+  font-size: clamp(65px, 6.15vw, 89px);
+  line-height: 1.04;
+  letter-spacing: -5.6px;
+  font-weight: 500;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .connections-copy > p {
+  font-size: 14px;
+  line-height: 1.85;
+  color: #beabc9;
+  margin: 27px 0 30px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .connections .start-button {
+  padding: 17px 21px;
+  border-radius: 5px;
+  font-size: 12px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .connections-explore-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 11px;
+  color: #b8a2c6;
+  margin-top: 19px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .graph-stage {
+  position: relative;
+  height: 582px;
+  min-width: 0;
+  background-image: radial-gradient(#8e769029 0.7px, transparent 0.7px);
+  background-size: 19px 19px;
+  margin-right: -15px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .graph-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 8px;
+  color: #b19bbd;
+  padding: 15px 17px 10px 24px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .graph-topbar > span {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .graph-topbar > div {
+  display: flex;
+  gap: 3px;
+  padding: 3px;
+  background: #35283f;
+  border: 1px solid #624d693b;
+  border-radius: 20px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .graph-topbar button {
+  padding: 5px 9px;
+  border-radius: 20px;
+  font-size: 8px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .graph-topbar button[aria-pressed="true"] {
+  background: #574361;
+  color: #f0d7ed;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .thought-graph {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  width: 100%;
+  height: 500px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .graph-edges {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  inset: 0;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .graph-edges > path {
+  stroke: #78608160;
+  stroke-width: 1;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .graph-edges > path.edge-active {
+  stroke: #b78ca6;
+  stroke-width: 1.25;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .graph-node {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  min-width: 116px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+  padding: 8px;
+  border-radius: 20px;
+  color: #d4b5dd;
+  font-size: 10px;
+  transition: opacity 0.2s;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .graph-node-icon {
+  display: grid;
+  place-items: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 19px;
+  background: #48374f;
+  border: 1px solid #93739466;
+  color: #d7b5d2;
+  box-shadow: 0 0 0 7px #2b2036;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .graph-node:hover .graph-node-icon {
+  transform: scale(1.09);
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .node-mint {
+  color: #c7ddcf;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .node-mint .graph-node-icon {
+  background: #344641;
+  color: #c7ddcf;
+  border-color: #7eaa9266;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .node-lilac {
+  color: #c6b8e7;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .node-lilac .graph-node-icon {
+  background: #443754;
+  color: #c6b8e7;
+  border-color: #9380bb66;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .graph-node:first-of-type {
+  min-width: 172px;
+  font-size: 14px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .graph-node:first-of-type .graph-node-icon {
+  width: 89px;
+  height: 89px;
+  border-radius: 29px;
+  background: #f4c5d6;
+  color: #573549;
+  border: none;
+  box-shadow:
+    0 0 0 10px #f4c5d609,
+    0 0 0 22px #f4c5d605;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .graph-node small {
+  font-size: 8px;
+  color: #a88bb1;
+  margin-top: -4px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .node-selected .graph-node-icon {
+  box-shadow:
+    0 0 0 6px #2b2036,
+    0 0 0 7px #ccadc788;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .node-muted {
+  opacity: 0.27;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .graph-bottom {
+  position: absolute;
+  bottom: 9px;
+  left: 24px;
+  right: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #af98ba;
+  font-size: 8px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .graph-bottom > span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .graph-legend > i {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  background: #c7ddcf;
+  border-radius: 50%;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .connection-inspector {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1.25fr 1fr 26px;
+  gap: 30px;
+  align-items: center;
+  max-width: 1312px;
+  margin: 0 auto;
+  padding: 30px;
+  border: 1px solid #7d5d813d;
+  background: #35283f;
+  border-radius: 9px;
+  min-height: 138px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .inspector-note {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .inspector-icon {
+  display: grid;
+  place-items: center;
+  background: #4d394f;
+  border: 1px solid #98779b33;
+  width: 49px;
+  height: 49px;
+  border-radius: 13px;
+  flex-shrink: 0;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .inspector-label {
+  font-size: 8px;
+  color: #ad90bb;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .connection-inspector h2 {
+  font-family: var(--font-space), sans-serif;
+  font-size: 16px;
+  letter-spacing: -0.5px;
+  margin-top: 4px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .connection-inspector > p {
+  font-size: 11px;
+  line-height: 1.8;
+  color: #c2abce;
+  max-width: 40ch;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .inspector-related > span {
+  font-size: 8px;
+  color: #ad90bb;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .inspector-related > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 10px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .inspector-related button {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #d6bedc;
+  background: #493653;
+  border-radius: 4px;
+  padding: 5px 6px;
+  font-size: 7px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .inspector-related button:hover {
+  background: #674c70;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .inspector-open {
+  color: #b498be;
+  padding: 5px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .connections-story {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 100px;
+  max-width: 1184px;
+  margin: auto;
+  padding: 110px 0 100px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .connections h2 {
+  font-family: var(--font-space), sans-serif;
+  font-size: 54px;
+  line-height: 1.1;
+  letter-spacing: -2.7px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .connections .connection-inspector h2 {
+  font-size: 16px;
+  letter-spacing: -0.5px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .connections-story > div > p {
+  font-size: 20px;
+  color: #997ca7;
+  margin-top: 24px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .connections-story-features {
+  display: flex;
+  flex-direction: column;
+  gap: 29px;
+  padding-top: 3px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .connections .feature-line {
+  gap: 20px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .connections .feature-line > svg {
+  color: #bfa0cd;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .connections .feature-line h3 {
+  font-size: 15px;
+  color: #dfc7e6;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .connections .feature-line p {
+  font-size: 12px;
+  color: #ae94bb;
+  opacity: 1;
+  max-width: 42ch;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .connections-cta {
+  position: relative;
+  background: #382b42;
+  border-top: 1px solid #95759d20;
+  border-bottom: 1px solid #95759d20;
+  text-align: center;
+  padding: 59px 24px 67px;
+  overflow: hidden;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .connections-cta h2 {
+  position: relative;
+  font-size: 55px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .connections-cta .start-button {
+  position: relative;
+  margin-top: 30px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .orbit-mark {
+  position: absolute;
+  width: 240px;
+  height: 240px;
+  left: calc(50% - 525px);
+  top: 50px;
+  transform: rotate(-15deg);
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .orbit-mark > span {
+  position: absolute;
+  border: 1px solid #88678c;
+  height: 230px;
+  width: 100px;
+  border-radius: 50%;
+  left: 70px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .orbit-mark > span:nth-child(2) {
+  transform: rotate(60deg);
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .orbit-mark > span:nth-child(3) {
+  transform: rotate(120deg);
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .orbit-mark > i {
+  display: block;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #c7ddcf;
+  position: absolute;
+  top: 103px;
+  left: 105px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .connections .faq-section {
+  max-width: 1184px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .connections .faq-section h2 {
+  font-size: 46px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .connections .faq-section > div > p {
+  color: #ac92b8;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .connections .faq-list details {
+  border-color: #9e7da132;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .connections .faq-list summary {
+  color: #d6bedd;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .connections .faq-list details p {
+  color: #baa0c7;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .connections .site-footer {
+  border-color: #9e7da132;
+}
+
+/* Five — the open pinboard. */
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pinboard {
+  color: #602d3d;
+  background: #fff0e8;
+  --button-bg: #602d3d;
+  --button-ink: #fff0e8;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pinboard .brand span {
+  font-family: var(--font-space), sans-serif;
+  font-weight: 600;
+  font-size: 30px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pinboard .header-open {
+  border: 1px solid #602d3d;
+  color: #602d3d;
+  background: transparent;
+  border-radius: 20px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pinboard-hero {
+  height: 798px;
+  position: relative;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pinboard-title {
+  position: absolute;
+  top: 81px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 800px;
+  text-align: center;
+  z-index: 2;
+  pointer-events: none;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pinboard-title button {
+  pointer-events: auto;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pinboard-intro {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 11px;
+  margin-bottom: 22px;
+  color: #925756;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pinboard h1 {
+  font-family: var(--font-space), sans-serif;
+  font-size: clamp(70px, 6.6vw, 97px);
+  line-height: 1.035;
+  letter-spacing: -6.2px;
+  font-weight: 500;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pinboard-title > p {
+  font-size: 13px;
+  line-height: 1.9;
+  color: #8f5959;
+  margin: 25px 0 27px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pinboard .start-button {
+  border-radius: 50px;
+  gap: 28px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pinboard-footnote {
+  display: block;
+  font-size: 9px;
+  color: #8f605a;
+  margin-top: 15px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-note {
+  position: absolute;
+  --offset-x: 0px;
+  --offset-y: 0px;
+  transform: translate(var(--offset-x), var(--offset-y))
+    rotate(var(--rotation, 0deg));
+  box-shadow:
+    0 6px 14px #61372f0a,
+    0 1px 2px #61372f0b;
+  text-align: left;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-note:has(.pin-drag-handle:active) {
+  z-index: 6;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-drag-handle {
+  position: absolute;
+  top: 7px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+  width: 62px;
+  height: 22px;
+  z-index: 2;
+  cursor: grab;
+  touch-action: none;
+  border-radius: 5px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-drag-handle:active {
+  cursor: grabbing;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-drag-handle > span {
+  width: 3px;
+  height: 3px;
+  background: currentColor;
+  opacity: 0.25;
+  border-radius: 50%;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-content-button {
+  display: block;
+  text-align: left;
+  width: 100%;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-small-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 8px;
+  opacity: 0.7;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-idea {
+  background: #dad1f0;
+  --rotation: -9deg;
+  left: 50px;
+  top: 55px;
+  width: 218px;
+  padding: 31px 22px 21px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-idea h3 {
+  font-family: var(--font-space), sans-serif;
+  font-size: 20px;
+  letter-spacing: -0.7px;
+  line-height: 1.2;
+  margin-top: 18px;
+  font-weight: 500;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-idea p {
+  font-size: 9px;
+  line-height: 1.7;
+  margin-top: 11px;
+  opacity: 0.75;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-scribble {
+  position: absolute;
+  color: #8b72b3;
+  font-size: 53px;
+  right: 17px;
+  bottom: 40px;
+  transform: rotate(15deg);
+  line-height: 1;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 7px;
+  border: 1px solid #602d3d30;
+  border-radius: 20px;
+  padding: 5px 7px;
+  margin-top: 33px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-photo {
+  --rotation: 8deg;
+  right: 52px;
+  top: 54px;
+  width: 222px;
+  background: #fffdfa;
+  padding: 13px 12px 19px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-photo .pin-drag-handle {
+  top: -13px;
+  height: 30px;
+  width: 65px;
+  background: #e8ccb6ab;
+  border-radius: 0;
+  transform: translateX(-50%) rotate(-6deg);
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .landscape-art {
+  width: 100%;
+  height: auto;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-photo .pin-content-button > span {
+  font-family: var(--font-hand), cursive;
+  font-size: 22px;
+  display: block;
+  margin-top: 9px;
+  text-align: center;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-photo small {
+  display: block;
+  font-size: 7px;
+  text-align: center;
+  margin-top: 5px;
+  opacity: 0.6;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-quote {
+  --rotation: 6deg;
+  width: 215px;
+  left: 97px;
+  top: 373px;
+  background: #fae69a;
+  padding: 13px 24px 20px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-quote-mark {
+  font-family: var(--font-serif), serif;
+  font-size: 70px;
+  line-height: 1;
+  display: block;
+  height: 53px;
+  color: #b98940;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-quote h3 {
+  font-family: var(--font-serif), serif;
+  font-size: 34px;
+  line-height: 0.98;
+  letter-spacing: -0.4px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-quote p {
+  font-size: 9px;
+  margin-top: 17px;
+  opacity: 0.6;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-quote .pin-tag {
+  margin-top: 21px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-weekend {
+  --rotation: -7deg;
+  right: 68px;
+  top: 369px;
+  width: 249px;
+  background: #f9faf2;
+  padding: 33px 25px 33px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-weekend h3 {
+  font-family: var(--font-space), sans-serif;
+  font-size: 25px;
+  font-weight: 500;
+  letter-spacing: -0.8px;
+  line-height: 1.07;
+  margin-bottom: 22px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-weekend label {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 9px;
+  margin-top: 13px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-weekend input {
+  accent-color: #8c9670;
+  width: 12px;
+  height: 12px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-checked > span {
+  text-decoration: line-through;
+  opacity: 0.4;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-weekend-star {
+  position: absolute;
+  right: 21px;
+  top: 35px;
+  font-size: 32px;
+  color: #a7ad83;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-reminder {
+  --rotation: -5deg;
+  bottom: 80px;
+  left: calc(50% - 94px);
+  width: 202px;
+  background: #ef9273;
+  color: #743b3b;
+  padding: 24px 23px 18px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-reminder .pin-content-button > span {
+  font-size: 9px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-reminder h3 {
+  font-family: var(--font-hand), cursive;
+  font-size: 31px;
+  line-height: 0.95;
+  margin: 9px 0 8px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-yours {
+  --rotation: 4deg;
+  width: 210px;
+  padding: 29px 24px;
+  background: #d7e5cb;
+  top: 485px;
+  left: calc(50% + 145px);
+  z-index: 4;
+  min-height: 145px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-yours > p {
+  font-family: var(--font-hand), cursive;
+  font-size: 25px;
+  line-height: 1.15;
+  overflow-wrap: anywhere;
+  margin-top: 14px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-remove {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  opacity: 0.5;
+  padding: 4px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pinboard-tools {
+  position: absolute;
+  left: 50%;
+  bottom: 16px;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 33px;
+  width: max-content;
+  z-index: 8;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pinboard-tools > span {
+  font-family: var(--font-hand), cursive;
+  font-size: 19px;
+  color: #925f52;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pinboard-tools > span > svg {
+  position: absolute;
+  left: -47px;
+  top: -13px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pinboard-tools > div {
+  display: flex;
+  gap: 7px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pinboard-tools > div > button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid #dcc2b6;
+  padding: 10px 14px;
+  border-radius: 22px;
+  font-size: 10px;
+  background: #fff6f0;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pinboard-tools > div > button:hover {
+  background: #f7dece;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-add-form {
+  position: absolute;
+  right: 0;
+  bottom: 55px;
+  width: 300px;
+  padding: 20px;
+  background: #fffdf8;
+  box-shadow: 0 7px 30px #602d3d22;
+  border: 1px solid #e2cbbe;
+  border-radius: 10px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-add-form label {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 12px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-add-form input {
+  width: 100%;
+  padding: 10px;
+  background: #fff6f0;
+  border: 1px solid #e2cbbe;
+  border-radius: 4px;
+  font-size: 12px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-add-form button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #602d3d;
+  color: white;
+  font-size: 11px;
+  padding: 10px 15px;
+  border-radius: 5px;
+  margin-top: 12px;
+  margin-left: auto;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pinboard-how {
+  max-width: 1184px;
+  margin: 30px auto 0;
+  padding: 80px 0 83px;
+  border-top: 1px solid #eacdbf;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pinboard-how-heading {
+  display: flex;
+  gap: 37px;
+  align-items: center;
+  margin-bottom: 45px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pinboard-how-heading > svg {
+  color: #d9825e;
+  --flower-center: #fff0e8;
+  width: 92px;
+  height: 92px;
+  transform: rotate(17deg);
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pinboard h2 {
+  font-family: var(--font-space), sans-serif;
+  font-size: 48px;
+  line-height: 1.08;
+  letter-spacing: -2.5px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pinboard-features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 53px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pinboard-features .feature-line {
+  gap: 16px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pinboard-features .feature-line > svg {
+  color: #b17569;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pinboard-features h3 {
+  font-size: 16px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pinboard-features p {
+  font-size: 12px;
+  color: #86534d;
+  opacity: 1;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pinboard-invite {
+  background: #f7ddc9;
+  max-width: 1312px;
+  padding: 64px 78px;
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 110px;
+  margin: auto;
+  border-radius: 17px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-invite-handwriting {
+  font-family: var(--font-hand), cursive;
+  font-size: 24px;
+  color: #935942;
+  display: block;
+  margin-bottom: 14px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pinboard-invite h2 {
+  font-size: 54px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pinboard-invite p {
+  font-size: 13px;
+  line-height: 1.8;
+  color: #86534d;
+  margin: 24px 0 28px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pinboard-invite .start-button {
+  font-size: 12px;
+  padding: 17px 22px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-invite-art {
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-envelope {
+  position: relative;
+  width: 290px;
+  height: 217px;
+  background: #fff8ea;
+  box-shadow: 0 8px 14px #945e3c14;
+  transform: rotate(9deg);
+  border: 1px solid #e4c8ae;
+  padding: 38px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-envelope:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  clip-path: polygon(0 0, 100% 0, 50% 43%);
+  background: #f1e4cf;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-envelope > span {
+  font-family: var(--font-hand), cursive;
+  font-size: 40px;
+  line-height: 0.95;
+  position: relative;
+  top: 37px;
+  transform: rotate(-9deg);
+  display: block;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-envelope > svg {
+  position: absolute;
+  right: 15px;
+  top: 21px;
+  color: #be7663;
+  --flower-center: #fff8ea;
+  width: 60px;
+  height: 60px;
+  transform: rotate(-25deg);
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-postmark {
+  position: absolute;
+  right: -14px;
+  bottom: 3px;
+  color: #b17c66;
+  border: 1px solid #c99a82;
+  border-radius: 50%;
+  height: 84px;
+  width: 84px;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.6;
+  transform: rotate(-12deg);
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pinboard .faq-section {
+  max-width: 1184px;
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pinboard .faq-section h2 {
+  font-size: 46px;
+}
+
+/* Keep generous, consistent gutters as screens narrow. */
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-belonging,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) 
+.garden-workflow,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) 
+.garden-promise,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) 
+.faq-section,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) 
+.electric-workflow,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) 
+.electric-benefits,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) 
+.library-reading-room,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) 
+.connection-inspector,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) 
+.connections-story,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) 
+.pinboard-how,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) 
+.pinboard-invite {
+  width: calc(100% - 128px);
+}
+@media (max-width: 1199px) {
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .site-header {
+    padding: 0 40px;
+    height: 95px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .header-nav {
+    margin-left: 0;
+    gap: 24px;
+    font-size: 12px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-belonging,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) 
+  .garden-workflow,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) 
+  .garden-promise,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) 
+  .faq-section,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) 
+  .electric-workflow,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) 
+  .electric-benefits,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) 
+  .library-reading-room,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) 
+  .connection-inspector,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) 
+  .connections-story,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) 
+  .pinboard-how,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) 
+  .pinboard-invite {
+    width: calc(100% - 80px);
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-hero {
+    padding: 30px 40px 50px;
+    min-height: 610px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden h1 {
+    font-size: 83px;
+    letter-spacing: -5px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-collage {
+    transform: scale(0.85);
+    transform-origin: 49% 50%;
+    margin-left: -15px;
+    width: 570px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-intro > p {
+    font-size: 13px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .hero-actions {
+    gap: 20px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .start-button {
+    padding: 16px 20px;
+    font-size: 12px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .quiet-link {
+    font-size: 11px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-belonging {
+    gap: 15px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-belonging > span {
+    max-width: 110px;
+    line-height: 1.6;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-belonging > div {
+    font-size: 9px;
+    gap: 7px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-belonging > div > svg {
+    width: 16px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-workflow-content {
+    gap: 35px;
+    grid-template-columns: 0.8fr 1.2fr;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden h2 {
+    font-size: 44px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-section-intro > p {
+    padding-right: 0;
+    font-size: 12px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .preview-inner {
+    grid-template-columns: 136px 1fr;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .preview-document {
+    padding: 22px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-promise {
+    padding: 50px 42px;
+    gap: 50px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-promise h2 {
+    font-size: 39px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .faq-section {
+    gap: 60px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .site-footer {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric .site-header {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-hero {
+    padding: 50px 40px 85px;
+    grid-template-columns: 1fr 1fr;
+    min-height: 630px;
+    gap: 20px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric h1 {
+    font-size: 88px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-hero-copy > p {
+    font-size: 13px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-stage {
+    transform: scale(0.85);
+    transform-origin: 0 0;
+    margin-top: 20px;
+    height: 510px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-preview-wrap {
+    width: 590px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-sticky {
+    right: -90px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-caption {
+    bottom: -7px;
+    left: 10px;
+    font-size: 20px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-marquee {
+    font-size: 20px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric h2 {
+    font-size: 45px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-section-heading {
+    gap: 40px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-section-heading > p {
+    font-size: 12px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-feature-grid {
+    gap: 35px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-bubble {
+    padding: 16px 14px;
+    font-size: 10px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-manifesto {
+    grid-template-columns: 100px 1.2fr 1fr;
+    gap: 35px;
+    padding: 60px 40px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-manifesto > svg {
+    width: 100px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-manifesto h2 {
+    font-size: 48px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-manifesto > div > p {
+    font-size: 12px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .library-reading-room {
+    gap: 60px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .library h2 {
+    font-size: 54px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .library-principles {
+    gap: 40px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .connections-hero {
+    padding-left: 40px;
+    padding-right: 20px;
+    grid-template-columns: 0.95fr 1.05fr;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .connections h1 {
+    font-size: 73px;
+    letter-spacing: -4.5px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .connections-copy > p {
+    font-size: 13px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .graph-stage {
+    height: 552px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .thought-graph {
+    height: 460px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .graph-topbar {
+    padding-left: 10px;
+    flex-wrap: wrap;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .graph-node {
+    font-size: 8px;
+    min-width: 100px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .graph-node-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 17px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .graph-node:first-of-type {
+    min-width: 134px;
+    font-size: 11px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .graph-node:first-of-type .graph-node-icon {
+    width: 75px;
+    height: 75px;
+    border-radius: 23px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .graph-bottom {
+    left: 10px;
+    right: 0;
+    font-size: 7px;
+    gap: 12px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .connection-inspector {
+    grid-template-columns: 1fr 1.2fr 1fr 20px;
+    gap: 22px;
+    padding: 25px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .inspector-note {
+    gap: 10px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .inspector-icon {
+    width: 40px;
+    height: 40px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .connections .connection-inspector h2 {
+    font-size: 14px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .connections-story {
+    gap: 70px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .connections h2 {
+    font-size: 47px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pinboard-hero {
+    height: 768px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pinboard-title {
+    top: 95px;
+    width: 700px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pinboard h1 {
+    font-size: 80px;
+    letter-spacing: -5px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-idea {
+    left: 20px;
+    top: 31px;
+    width: 189px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-idea h3 {
+    font-size: 18px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-idea p {
+    font-size: 8px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-photo {
+    right: 24px;
+    width: 180px;
+    top: 32px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-photo .pin-content-button > span {
+    font-size: 19px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-quote {
+    left: 35px;
+    top: 373px;
+    width: 195px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-weekend {
+    right: 32px;
+    width: 219px;
+    top: 365px;
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-reminder {
+    bottom: 65px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pinboard-invite {
+    padding: 55px 45px;
+    gap: 60px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pinboard-invite h2 {
+    font-size: 47px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pinboard-features {
+    gap: 30px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-envelope {
+    width: 250px;
+    height: 204px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-postmark {
+    right: -18px;
+  }
+}
+@media (max-width: 900px) {
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .site-header {
+    padding: 0 28px;
+    height: 88px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .brand span {
+    font-size: 27px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .brand > svg {
+    width: 31px;
+    height: 31px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .header-nav {
+    gap: 20px;
+    font-size: 10px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .header-open {
+    font-size: 10px;
+    padding: 12px 15px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-belonging,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) 
+  .garden-workflow,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) 
+  .garden-promise,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) 
+  .faq-section,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) 
+  .electric-workflow,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) 
+  .electric-benefits,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) 
+  .library-reading-room,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) 
+  .connection-inspector,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) 
+  .connections-story,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) 
+  .pinboard-how,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) 
+  .pinboard-invite {
+    width: calc(100% - 56px);
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-hero {
+    padding: 28px 28px 38px;
+    min-height: 575px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden h1 {
+    font-size: 67px;
+    letter-spacing: -4px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-intro-label {
+    font-size: 10px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-intro > p {
+    font-size: 12px;
+    max-width: 30ch;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .desktop-break {
+    display: none;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-collage {
+    transform: scale(0.67);
+    width: 570px;
+    margin-left: -54px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden .hero-actions {
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-belonging {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px 35px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-belonging > span {
+    max-width: none;
+    width: 100%;
+    text-align: center;
+    font-size: 10px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-workflow {
+    padding: 70px 0;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-section-intro {
+    margin-bottom: 33px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden h2 {
+    font-size: 36px;
+    letter-spacing: -1.5px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-workflow-content {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-tabs {
+    flex-direction: row;
+    gap: 5px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-tabs > button {
+    flex: 1;
+    padding: 15px;
+    gap: 10px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-tabs h3 {
+    font-size: 12px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-tabs p {
+    font-size: 10px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-tabs svg {
+    width: 18px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .preview-inner {
+    grid-template-columns: 180px 1fr;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .preview-document {
+    padding: 25px 35px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-promise {
+    gap: 40px;
+    padding: 43px 32px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-promise h2 {
+    font-size: 31px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-promise > svg {
+    width: 120px;
+    height: 120px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-promise > div > p {
+    font-size: 11px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-promise-features {
+    padding-top: 30px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-promise-features h3 {
+    font-size: 12px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-promise-features p {
+    font-size: 10px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-promise .feature-line {
+    gap: 13px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .faq-section {
+    padding: 70px 0;
+    gap: 35px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .faq-section h2 {
+    font-size: 35px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .faq-section > div > p {
+    font-size: 12px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .faq-list summary {
+    font-size: 12px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .site-footer {
+    padding-left: 28px;
+    padding-right: 28px;
+    gap: 24px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .site-footer p {
+    font-size: 10px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .site-footer > span {
+    font-size: 9px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric .site-header {
+    padding-left: 28px;
+    padding-right: 28px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-hero {
+    padding: 35px 28px 65px;
+    min-height: 555px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric h1 {
+    font-size: 71px;
+    letter-spacing: -4px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-hello {
+    font-size: 9px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-hero-copy > p {
+    font-size: 12px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-stage {
+    transform: scale(0.65);
+    margin-top: 49px;
+    height: 450px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-sticky {
+    right: -185px;
+    bottom: -66px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-caption {
+    bottom: -90px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-hero .hero-actions {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-marquee {
+    font-size: 16px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-marquee > svg {
+    width: 28px;
+    height: 28px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-workflow {
+    padding: 70px 0;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-section-heading {
+    align-items: flex-start;
+    gap: 25px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric h2 {
+    font-size: 36px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-section-heading > p {
+    font-size: 11px;
+    max-width: 29ch;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-feature-grid {
+    gap: 25px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-example-note {
+    padding: 24px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-example-note > h3 {
+    font-size: 26px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-bubble {
+    padding: 13px 11px;
+    font-size: 9px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-bubble > svg {
+    width: 15px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .bubble-a {
+    left: 15px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .bubble-b {
+    right: 10px;
+    top: 108px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-manifesto {
+    padding: 47px 28px;
+    gap: 22px;
+    grid-template-columns: 60px 1fr 1fr;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-manifesto > svg {
+    width: 60px;
+    height: 80px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-manifesto h2 {
+    font-size: 38px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-benefits {
+    gap: 25px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-benefits .feature-line {
+    gap: 11px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-benefits h3 {
+    font-size: 12px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-benefits p {
+    font-size: 10px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .library-hero {
+    padding-top: 30px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .library h1 {
+    font-size: 72px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .library-pages {
+    width: 760px;
+    height: 379px;
+    margin-top: 39px;
+    transform: scale(0.84);
+    transform-origin: top center;
+    margin-bottom: -55px;
+    left: 50%;
+    margin-left: -380px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .sheet-left {
+    left: 2px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .sheet-middle {
+    left: 210px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .sheet-right {
+    right: 2px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .library-reading-room {
+    padding: 77px 0;
+    gap: 35px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .library h2 {
+    font-size: 46px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .library-catalog-note {
+    gap: 12px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .library-catalog-note h3 {
+    font-size: 21px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .library-catalog-note p {
+    max-width: 27ch;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .library-reading-intro > p {
+    font-size: 12px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .library-philosophy {
+    padding: 50px 28px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .library-principles {
+    gap: 27px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .library-principles .feature-line {
+    display: block;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .library-principles .feature-line > svg {
+    margin-bottom: 10px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .connections-hero {
+    padding: 15px 20px 25px 28px;
+    min-height: 574px;
+    grid-template-columns: 1fr 1.1fr;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .connections h1 {
+    font-size: 59px;
+    letter-spacing: -3.9px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .connections-label {
+    font-size: 8px;
+    gap: 7px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .connections-copy > p {
+    font-size: 12px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .graph-stage {
+    height: 522px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .thought-graph {
+    height: 420px;
+    top: 60px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .graph-topbar {
+    gap: 14px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .graph-node {
+    font-size: 7px;
+    min-width: 80px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .graph-node-icon {
+    width: 43px;
+    height: 43px;
+    border-radius: 13px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .graph-node-icon > svg {
+    width: 18px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .graph-node:first-of-type {
+    font-size: 10px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .graph-node:first-of-type .graph-node-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 21px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .graph-node small {
+    font-size: 6px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .graph-bottom > span:last-child {
+    display: none;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .connection-inspector {
+    padding: 23px;
+    grid-template-columns: 1fr 1.2fr 20px;
+    gap: 23px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .inspector-related {
+    display: none;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .connections-story {
+    padding: 75px 0;
+    gap: 35px;
+    grid-template-columns: 1fr 1fr;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .connections h2 {
+    font-size: 36px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .connections-story > div > p {
+    font-size: 16px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .connections .feature-line h3 {
+    font-size: 13px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .connections .feature-line p {
+    font-size: 11px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .connections-cta h2 {
+    font-size: 45px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .orbit-mark {
+    left: -110px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pinboard-hero {
+    height: 938px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pinboard-title {
+    top: 21px;
+    width: 100%;
+    padding: 0 20px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pinboard h1 {
+    font-size: 76px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-idea {
+    left: 33px;
+    top: 404px;
+    width: 184px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-photo {
+    right: 27px;
+    top: 406px;
+    width: 197px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-quote {
+    left: 55px;
+    top: 652px;
+    width: 190px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-quote h3 {
+    font-size: 29px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-quote-mark {
+    font-size: 55px;
+    height: 43px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-weekend {
+    right: 32px;
+    top: 646px;
+    width: 205px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-weekend h3 {
+    font-size: 21px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-weekend label {
+    font-size: 8px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-reminder {
+    bottom: auto;
+    top: 561px;
+    left: calc(50% - 80px);
+    width: 170px;
+    z-index: 3;
+    padding: 27px 19px 20px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-reminder h3 {
+    font-size: 27px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-reminder svg {
+    width: 130px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-yours {
+    left: calc(50% - 105px);
+    top: 725px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pinboard-tools {
+    bottom: -20px;
+    gap: 18px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pinboard-tools > span {
+    font-size: 16px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pinboard-tools > span > svg {
+    display: none;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pinboard-tools > div > button {
+    padding: 9px 11px;
+    font-size: 9px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pinboard-how {
+    margin-top: 55px;
+    padding: 57px 0;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pinboard h2 {
+    font-size: 36px;
+    letter-spacing: -1.7px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pinboard-how-heading > svg {
+    width: 70px;
+    height: 70px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pinboard-features {
+    gap: 25px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pinboard-features .feature-line {
+    display: block;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pinboard-features .feature-line > svg {
+    margin-bottom: 13px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pinboard-features h3 {
+    font-size: 14px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pinboard-features p {
+    font-size: 11px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pinboard-invite {
+    padding: 42px 33px;
+    gap: 30px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-invite-handwriting {
+    font-size: 21px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pinboard-invite h2 {
+    font-size: 36px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pinboard-invite p {
+    font-size: 11px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-envelope {
+    width: 195px;
+    height: 180px;
+    padding: 26px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-envelope > span {
+    font-size: 34px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-envelope > svg {
+    width: 45px;
+    height: 45px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-postmark {
+    width: 65px;
+    height: 65px;
+    font-size: 10px;
+    right: -5px;
+    bottom: 5px;
+  }
+}
+@media (max-width: 600px) {
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) {
+    scroll-padding-top: 20px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .site-header {
+    height: 82px;
+    padding: 0 23px;
+    gap: 16px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .brand {
+    gap: 5px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .brand span {
+    font-size: 28px;
+    letter-spacing: -1.6px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .brand > svg {
+    width: 30px;
+    height: 30px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .header-actions {
+    gap: 6px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .header-open {
+    font-size: 9px;
+    padding: 10px 12px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .menu-button {
+    display: flex;
+    width: 28px;
+    height: 32px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .header-nav {
+    display: none;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .header-nav.is-open {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    left: 20px;
+    right: 20px;
+    top: 72px;
+    padding: 12px 20px;
+    gap: 0;
+    border-radius: 9px;
+    background: #ffffff;
+    color: #493b4e;
+    box-shadow: 0 10px 35px #0000001c;
+    border: 1px solid #0000000a;
+    font-size: 13px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .header-nav.is-open a {
+    padding: 14px 0;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .start-button {
+    font-size: 12px;
+    padding: 17px 20px;
+    gap: 21px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .hero-actions {
+    gap: 23px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .quiet-link {
+    font-size: 11px;
+    gap: 6px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .design-switcher {
+    bottom: 13px;
+    gap: 10px;
+    padding: 5px 6px 5px 12px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .design-switcher a {
+    width: 32px;
+    height: 32px;
+    font-size: 11px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .switcher-label {
+    font-size: 10px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-belonging,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) 
+  .garden-workflow,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) 
+  .garden-promise,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) 
+  .faq-section,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) 
+  .electric-workflow,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) 
+  .electric-benefits,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) 
+  .library-reading-room,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) 
+  .connection-inspector,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) 
+  .connections-story,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) 
+  .pinboard-how,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) 
+  .pinboard-invite {
+    width: calc(100% - 46px);
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .faq-section {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding: 57px 0;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .faq-section h2 {
+    margin-bottom: 11px;
+    font-size: 37px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .faq-section > div > p {
+    font-size: 12px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .faq-list summary {
+    padding: 19px 0;
+    font-size: 12px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .faq-list details p {
+    font-size: 12px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .site-footer {
+    flex-wrap: wrap;
+    padding: 28px 23px 91px;
+    gap: 15px 20px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .site-footer .brand span {
+    font-size: 26px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .site-footer p {
+    max-width: 24ch;
+    font-size: 10px;
+    margin-left: auto;
+    text-align: right;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .site-footer > span {
+    width: 100%;
+    margin: 4px 0 0;
+    text-align: center;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-hero {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 23px 32px;
+    min-height: 0;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-intro {
+    width: 100%;
+    padding-bottom: 0;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-intro-label {
+    margin-bottom: 23px;
+    font-size: 11px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden h1 {
+    font-size: clamp(64px, 17vw, 84px);
+    letter-spacing: -4.5px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-intro > p {
+    font-size: 13px;
+    line-height: 1.85;
+    margin: 23px 0;
+    max-width: 35ch;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden .hero-actions {
+    flex-wrap: nowrap;
+    gap: 21px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden .hero-actions .start-button {
+    font-size: 11px;
+    padding: 16px 18px;
+    gap: 15px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .hero-footnote {
+    font-size: 9px;
+    margin-top: 15px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-collage {
+    width: 620px;
+    height: 560px;
+    transform: scale(0.57);
+    transform-origin: top center;
+    margin: 29px 0 -230px;
+    flex-shrink: 0;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-note-white {
+    left: 20px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-note-purple {
+    right: 22px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-connected {
+    right: 28px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-belonging {
+    padding: 22px 0;
+    gap: 16px 25px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-belonging > div {
+    font-size: 9px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-belonging > div:last-child {
+    width: 100%;
+    justify-content: center;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-workflow {
+    padding: 53px 0;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-section-intro {
+    display: block;
+    margin-bottom: 24px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden h2 {
+    font-size: 37px;
+    letter-spacing: -1.7px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-section-intro > p {
+    font-size: 12px;
+    margin-top: 18px;
+    padding: 0;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-section-intro > p br {
+    display: none;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-tabs {
+    gap: 3px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-tabs > button {
+    display: block;
+    padding: 13px 10px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-tabs > button > svg {
+    margin-bottom: 10px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-tabs h3 {
+    font-size: 10px;
+    line-height: 1.5;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-tabs p {
+    display: none;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-workflow-content {
+    gap: 17px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .preview-inner {
+    grid-template-columns: 101px 1fr;
+    min-height: 340px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .preview-sidebar {
+    padding: 15px 8px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .preview-person {
+    font-size: 7px;
+    gap: 4px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .preview-person > span {
+    width: 16px;
+    height: 16px;
+    font-size: 8px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .preview-search {
+    padding: 5px 3px;
+    gap: 2px;
+    margin-bottom: 14px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .preview-search input {
+    font-size: 6px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .preview-search > svg {
+    width: 10px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .preview-sidebar > button {
+    font-size: 7px;
+    gap: 4px;
+    padding: 7px 4px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .preview-sidebar > button > svg {
+    width: 11px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .preview-nav-label {
+    font-size: 7px;
+    gap: 4px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .preview-document {
+    padding: 17px 15px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .preview-breadcrumb {
+    font-size: 6px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .preview-document h3 {
+    font-size: 23px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .preview-document > p {
+    font-size: 8px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .preview-emoji {
+    margin-top: 22px;
+    font-size: 24px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .preview-document blockquote {
+    font-size: 16px;
+    margin: 15px 0;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .preview-related {
+    margin-top: 18px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .preview-related > span,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) 
+  .preview-related > button {
+    font-size: 6px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .preview-related > button {
+    padding: 6px;
+    gap: 4px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-promise {
+    grid-template-columns: 1fr;
+    padding: 35px 28px;
+    gap: 32px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-promise h2 {
+    font-size: 31px;
+    position: relative;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-promise > div > p {
+    font-size: 12px;
+    margin: 19px 0 24px;
+    position: relative;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-promise > svg {
+    width: 90px;
+    height: 90px;
+    top: -21px;
+    right: 1px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-promise-features {
+    padding-top: 0;
+    gap: 24px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-promise-features h3 {
+    font-size: 14px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-promise-features p {
+    font-size: 11px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-promise .start-button {
+    padding: 14px 16px;
+    font-size: 11px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric .site-header {
+    padding-left: 23px;
+    padding-right: 23px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-hero {
+    display: flex;
+    flex-direction: column;
+    padding: 26px 23px 45px;
+    gap: 15px;
+    min-height: 0;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-hero-copy {
+    padding-top: 0;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-hello {
+    font-size: 10px;
+    margin-bottom: 23px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric h1 {
+    font-size: clamp(58px, 16.3vw, 77px);
+    letter-spacing: -4.5px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-hero-copy > p {
+    font-size: 13px;
+    line-height: 1.85;
+    margin: 23px 0;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-hero .hero-actions {
+    flex-wrap: nowrap;
+    gap: 25px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-hero-copy > p.electric-fine-print {
+    font-size: 9px;
+    margin-top: 16px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-stage {
+    width: 620px;
+    height: 570px;
+    transform: scale(0.55);
+    transform-origin: top left;
+    margin: 35px 0 -240px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-preview-wrap {
+    width: 620px;
+    left: 2px;
+    top: 0;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .preview-electric .preview-inner {
+    grid-template-columns: 168px 1fr;
+    min-height: 403px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .preview-electric .preview-person {
+    font-size: 9px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .preview-electric .preview-sidebar > button {
+    font-size: 9px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .preview-electric .preview-search input {
+    font-size: 8px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .preview-electric .preview-sidebar {
+    padding: 17px 11px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .preview-electric .preview-document > p {
+    font-size: 11px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .preview-electric .preview-document blockquote {
+    font-size: 21px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .preview-electric .preview-related > button {
+    font-size: 8px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-big-star {
+    top: -73px;
+    right: -19px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-sticky {
+    right: -15px;
+    bottom: 8px;
+    width: 225px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-caption {
+    left: -20px;
+    bottom: 0;
+    font-size: 23px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-caption > svg {
+    width: 49px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-marquee {
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 19px 14px;
+    gap: 10px 13px;
+    font-size: 14px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-marquee > span:last-child,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) 
+  .electric-marquee > svg:last-of-type {
+    display: none;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-marquee > svg {
+    width: 25px;
+    height: 25px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-workflow {
+    padding: 55px 0;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-section-heading {
+    display: block;
+    margin-bottom: 27px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric h2 {
+    font-size: 39px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-section-heading > p {
+    max-width: 40ch;
+    font-size: 12px;
+    margin-top: 18px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-feature-grid {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-capture > h3,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) 
+  .electric-connect > h3 {
+    font-size: 20px;
+    margin-top: 22px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-capture > p,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) 
+  .electric-connect > p {
+    font-size: 12px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-example-note > h3 {
+    font-size: 28px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-link-demo {
+    height: 280px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-bubble {
+    font-size: 10px;
+    padding: 16px 13px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .bubble-b {
+    top: 109px;
+    right: 19px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-manifesto {
+    grid-template-columns: 1fr;
+    padding: 43px 23px;
+    gap: 23px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-manifesto > svg {
+    display: none;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-manifesto h2 {
+    font-size: 49px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-manifesto > div > p {
+    font-size: 13px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-benefits {
+    grid-template-columns: 1fr;
+    padding-top: 43px;
+    gap: 27px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-benefits .feature-line {
+    gap: 19px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-benefits h3 {
+    font-size: 15px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-benefits p {
+    font-size: 12px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric .faq-section {
+    padding-top: 56px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .library .brand span {
+    font-size: 34px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .library-hero {
+    padding: 22px 18px 0;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .library-hero-ornament {
+    margin-bottom: 20px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .library h1 {
+    font-size: clamp(52px, 13.7vw, 68px);
+    letter-spacing: -1.8px;
+    line-height: 1.02;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .library-hero > p {
+    font-size: 12px;
+    max-width: 36ch;
+    margin: 21px auto 23px;
+    line-height: 1.9;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .library-hero > p br {
+    display: none;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .library-small-note {
+    font-size: 8px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .library-pages {
+    transform: scale(0.46);
+    height: 426px;
+    margin-top: 37px;
+    margin-bottom: -223px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .library-whisper {
+    gap: 10px;
+    padding: 18px 23px;
+    font-size: 9px;
+    line-height: 1.7;
+    text-align: left;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .library-whisper > p {
+    max-width: 42ch;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .library-whisper > svg {
+    width: 17px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .library-reading-room {
+    grid-template-columns: 1fr;
+    padding: 52px 0;
+    gap: 35px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .library h2 {
+    font-size: 47px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .library-reading-intro > p {
+    font-size: 12px;
+    max-width: 42ch;
+    margin-top: 18px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .library-reading-intro > p + p {
+    margin-top: 11px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .library-filter {
+    margin-top: 23px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .library-filter button {
+    font-size: 10px;
+    padding: 8px 14px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .library-catalog {
+    padding: 0;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .library-catalog-heading {
+    padding-bottom: 15px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .library-catalog-note {
+    padding: 18px 0;
+    gap: 14px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .library-catalog-note h3 {
+    font-size: 24px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .library-catalog-note p {
+    font-size: 8px;
+    max-width: 27ch;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .catalog-note-cover {
+    width: 46px;
+    height: 62px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .library-philosophy {
+    padding: 40px 23px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .library-philosophy h2 {
+    font-size: 42px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .library-philosophy > p {
+    font-size: 12px;
+    margin-bottom: 28px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .library-philosophy > p br {
+    display: none;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .library-principles {
+    flex-direction: column;
+    gap: 24px;
+    margin: 32px auto;
+    width: max-content;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .library-principles .feature-line {
+    display: flex;
+    gap: 14px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .library-principles .feature-line > svg {
+    margin-bottom: 0;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .library-principles h3 {
+    font-size: 14px;
+    margin-bottom: 6px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .library-principles p {
+    font-size: 11px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .library .faq-section h2 {
+    font-size: 45px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .connections .brand span {
+    font-size: 26px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .connections .header-open {
+    font-size: 9px;
+    padding: 10px 12px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .connections-hero {
+    display: flex;
+    flex-direction: column;
+    padding: 14px 23px 20px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .connections-copy {
+    padding: 11px 0 0;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .connections-label {
+    font-size: 9px;
+    margin-bottom: 22px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .connections h1 {
+    font-size: clamp(50px, 14vw, 66px);
+    letter-spacing: -4px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .connections-copy > p {
+    font-size: 13px;
+    margin: 23px 0;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .connections .start-button {
+    font-size: 11px;
+    padding: 16px 19px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .connections-explore-link {
+    font-size: 10px;
+    margin-top: 19px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .graph-stage {
+    height: 425px;
+    margin: 34px -12px 0;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .graph-topbar {
+    flex-wrap: nowrap;
+    padding: 0 8px;
+    font-size: 7px;
+    gap: 7px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .graph-topbar > span {
+    gap: 4px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .graph-topbar > span > svg {
+    width: 11px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .graph-topbar button {
+    font-size: 7px;
+    padding: 5px 7px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .thought-graph {
+    top: 31px;
+    height: 358px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .graph-node {
+    font-size: 7px;
+    min-width: 81px;
+    gap: 10px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .graph-node-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 14px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .graph-node:first-of-type {
+    font-size: 11px;
+    min-width: 127px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .graph-node:first-of-type .graph-node-icon {
+    width: 65px;
+    height: 65px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .graph-node small {
+    font-size: 6px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .graph-bottom {
+    bottom: 0;
+    font-size: 7px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .graph-bottom > span:last-child {
+    display: flex;
+    max-width: 150px;
+    font-size: 6px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .connection-inspector {
+    grid-template-columns: 1fr 20px;
+    gap: 18px;
+    padding: 20px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .inspector-note {
+    gap: 13px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .connections .connection-inspector h2 {
+    font-size: 17px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .connection-inspector > p {
+    grid-row: 2;
+    grid-column: 1 / 3;
+    max-width: none;
+    font-size: 12px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .inspector-related {
+    display: block;
+    grid-row: 3;
+    grid-column: 1 / 3;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .inspector-related button {
+    font-size: 8px;
+    padding: 6px 7px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .inspector-open {
+    grid-row: 1;
+    grid-column: 2;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .connections-story {
+    grid-template-columns: 1fr;
+    padding: 56px 0;
+    gap: 34px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .connections h2 {
+    font-size: 39px;
+    letter-spacing: -2px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .connections-story > div > p {
+    font-size: 18px;
+    margin-top: 16px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .connections .feature-line h3 {
+    font-size: 15px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .connections .feature-line p {
+    font-size: 12px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .connections-cta {
+    padding: 44px 23px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .connections-cta h2 {
+    font-size: 37px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .orbit-mark {
+    width: 180px;
+    height: 180px;
+    left: -185px;
+    opacity: 0.5;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .connections .faq-section h2 {
+    font-size: 37px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pinboard .brand span {
+    font-size: 27px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pinboard-hero {
+    height: 1122px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pinboard-title {
+    top: 23px;
+    padding: 0 17px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pinboard-intro {
+    font-size: 9px;
+    margin-bottom: 21px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pinboard h1 {
+    font-size: clamp(52px, 14vw, 74px);
+    letter-spacing: -3.8px;
+    line-height: 1.06;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pinboard-title > p {
+    max-width: 35ch;
+    font-size: 12px;
+    margin: 21px auto 24px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pinboard-title > p br {
+    display: none;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pinboard-title .start-button {
+    font-size: 12px;
+    padding: 16px 25px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pinboard-footnote {
+    font-size: 8px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-idea {
+    left: 25px;
+    top: 387px;
+    width: 156px;
+    padding: 28px 16px 17px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-small-label {
+    font-size: 6px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-idea h3 {
+    font-size: 17px;
+    margin-top: 14px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-idea p {
+    font-size: 8px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-scribble {
+    font-size: 34px;
+    bottom: 26px;
+    right: 13px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-tag {
+    font-size: 6px;
+    padding: 4px 5px;
+    margin-top: 24px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-photo {
+    right: 21px;
+    top: 410px;
+    width: 151px;
+    padding: 10px 9px 14px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-photo .pin-content-button > span {
+    font-size: 16px;
+    margin-top: 6px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-photo small {
+    font-size: 5px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-photo .pin-drag-handle {
+    width: 53px;
+    height: 25px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-quote {
+    width: 157px;
+    left: 24px;
+    top: 624px;
+    padding: 15px 19px 18px;
+    --rotation: 3deg;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-quote h3 {
+    font-size: 28px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-quote-mark {
+    height: 36px;
+    font-size: 53px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-quote p {
+    font-size: 7px;
+    margin-top: 13px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-quote .pin-tag {
+    margin-top: 18px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-weekend {
+    width: 161px;
+    right: 20px;
+    top: 635px;
+    padding: 31px 17px 22px;
+    --rotation: -5deg;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-weekend h3 {
+    font-size: 20px;
+    letter-spacing: -0.7px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-weekend label {
+    font-size: 7px;
+    gap: 5px;
+    margin-top: 12px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-weekend input {
+    width: 10px;
+    height: 10px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-weekend-star {
+    font-size: 23px;
+    top: 19px;
+    right: 11px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-reminder {
+    width: 177px;
+    left: calc(50% - 88px);
+    top: 858px;
+    padding: 25px 19px 16px;
+    --rotation: -5deg;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-reminder h3 {
+    font-size: 29px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-yours {
+    top: 859px;
+    left: calc(50% - 65px);
+    width: 184px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pinboard-tools {
+    width: 100%;
+    bottom: -6px;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0 20px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pinboard-tools > span {
+    font-size: 17px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pinboard-tools > div > button {
+    font-size: 10px;
+    padding: 11px 15px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-add-form {
+    right: 23px;
+    bottom: 55px;
+    max-width: calc(100% - 46px);
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pinboard-how {
+    margin-top: 48px;
+    padding: 43px 0;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pinboard-how-heading {
+    gap: 15px;
+    align-items: flex-start;
+    margin-bottom: 33px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pinboard-how-heading > svg {
+    width: 44px;
+    height: 44px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pinboard h2 {
+    font-size: 34px;
+    line-height: 1.13;
+    letter-spacing: -1.7px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pinboard-how h2 {
+    font-size: 28px;
+    letter-spacing: -1.1px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pinboard-how h2 br {
+    display: none;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pinboard-features {
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pinboard-features .feature-line {
+    display: flex;
+    gap: 18px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pinboard-features h3 {
+    font-size: 16px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pinboard-features p {
+    font-size: 12px;
+    max-width: 39ch;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pinboard-invite {
+    grid-template-columns: 1fr;
+    padding: 35px 26px;
+    gap: 24px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-invite-handwriting {
+    font-size: 21px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pinboard-invite p {
+    font-size: 12px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pinboard-invite .start-button {
+    font-size: 11px;
+    padding: 16px 20px;
+    gap: 13px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-invite-art {
+    height: 210px;
+    margin-top: 7px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-envelope {
+    width: 228px;
+    height: 175px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-envelope > span {
+    font-size: 37px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-postmark {
+    right: -1px;
+    bottom: 6px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pinboard .faq-section h2 {
+    font-size: 36px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .notebook-dialog {
+    width: calc(100% - 20px);
+    max-height: calc(100dvh - 24px);
+    border-radius: 12px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .notebook-shell {
+    height: calc(100dvh - 28px);
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .notebook-header {
+    height: 62px;
+    padding: 0 18px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .notebook-header .brand span {
+    font-size: 23px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .notebook-body {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .notebook-sidebar {
+    padding: 12px;
+    border-right: 0;
+    border-bottom: 1px solid #e7ebe4;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 9px;
+    overflow: hidden;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .notebook-new {
+    padding: 9px 10px;
+    font-size: 11px;
+    gap: 5px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .notebook-search {
+    padding: 6px;
+    margin: 0;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .notebook-search input {
+    font-size: 10px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .notebook-note-list {
+    grid-column: 1 / 3;
+    flex-direction: row;
+    overflow: auto;
+    padding: 3px 0;
+    gap: 6px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .notebook-note-list button {
+    font-size: 9px;
+    min-width: 130px;
+    max-width: 155px;
+    flex-shrink: 0;
+    gap: 5px;
+    padding: 8px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .notebook-note-list button > svg {
+    width: 13px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .notebook-editor {
+    padding: 22px 20px 18px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .note-title-input {
+    font-size: 25px;
+    margin: 18px 0;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .notebook-editor textarea {
+    font-size: 13px;
+    line-height: 1.8;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .notebook-collection {
+    font-size: 10px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .notebook-disclaimer {
+    font-size: 8px;
+    padding: 10px 18px;
+    line-height: 1.6;
+  }
+}
+@media (max-width: 360px) {
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .site-header {
+    padding: 0 16px;
+    gap: 9px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .header-open {
+    padding: 9px 10px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-hero {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden h1 {
+    font-size: 59px;
+    letter-spacing: -3.7px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden .hero-actions {
+    gap: 14px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden .hero-actions .start-button {
+    padding: 15px;
+    font-size: 10px;
+    gap: 11px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .quiet-link {
+    font-size: 10px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .garden-collage {
+    transform: scale(0.5);
+    margin-bottom: -270px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric .site-header {
+    padding: 0 16px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-stage {
+    transform: scale(0.48);
+    margin-bottom: -290px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric h1 {
+    font-size: 52px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric .hero-actions {
+    gap: 18px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric .hero-actions .start-button {
+    padding: 16px;
+    font-size: 11px;
+    gap: 15px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .electric-demo-link {
+    font-size: 10px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .library-pages {
+    transform: scale(0.4);
+    margin-bottom: -250px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pinboard h1 {
+    font-size: clamp(42px, 13.1vw, 47px);
+    letter-spacing: -3px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-idea {
+    left: 14px;
+    width: 140px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-photo {
+    right: 14px;
+    width: 136px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-quote {
+    left: 13px;
+    width: 141px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-weekend {
+    right: 10px;
+    width: 149px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .pin-weekend label {
+    font-size: 6px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .graph-topbar > span {
+    font-size: 6px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) .graph-topbar button {
+    padding: 5px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) {
+    scroll-behavior: auto;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) *,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) 
+  *::before,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="gpt-6-astra"]) 
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

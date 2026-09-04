@@ -89,6 +89,9 @@ const entries = [
   { group: "with-design-skill", model: "muse-spark-1.3-flash", iterations: ["1", "2", "3", "4", "5"] },
   { group: "with-taste-skill", model: "muse-spark-1.3-flash", iterations: ["1", "2", "3", "4", "5"] },
   { group: "without-design-skill", model: "muse-spark-1.3-flash", iterations: ["1", "2", "3", "4", "5"] },
+  { group: "with-design-skill", model: "gpt-6-astra", iterations: ["1", "2", "3", "4", "5"] },
+  { group: "with-taste-skill", model: "gpt-6-astra", iterations: ["1", "2", "3", "4", "5"] },
+  { group: "without-design-skill", model: "gpt-6-astra", iterations: ["1", "2", "3", "4", "5"] },
 ];
 
 const targetModel = process.env.TARGET_MODEL ?? null;
