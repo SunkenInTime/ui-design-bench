@@ -31,6 +31,10 @@ const latestRouteSmokeCases = galleryManifest
   }));
 
 const sampleRouteSmokeCases = [
+  { group: "without-design-skill", model: "gpt-6-astra-preview", iteration: "1" },
+  { group: "with-design-skill", model: "gpt-6-astra-preview", iteration: "1" },
+  { group: "with-taste-skill", model: "gpt-6-astra-preview", iteration: "1" },
+  { group: "miscellaneous", model: "gpt-6-astra-preview", iteration: "1" },
   { group: "with-design-skill", model: "composer-2.5", iteration: "5" },
   { group: "with-design-skill", model: "grok-4.5", iteration: "3" },
   { group: "with-design-skill", model: "grok-4.6", iteration: "3" },
