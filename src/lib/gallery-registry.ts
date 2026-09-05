@@ -1,3 +1,7 @@
+import withoutAstraPreview from "@/variants/without-design-skill/gpt-6-astra-preview";
+import withAstraPreview from "@/variants/with-design-skill/gpt-6-astra-preview";
+import withTasteAstraPreview from "@/variants/with-taste-skill/gpt-6-astra-preview";
+import miscAstraPreview from "@/variants/miscellaneous/gpt-6-astra-preview";
 import type { GalleryGroupSlug, ModelSlug, VariantModule } from "@/lib/gallery-types";
 import withAstra from "@/variants/with-design-skill/gpt-6-astra";
 import withTasteAstra from "@/variants/with-taste-skill/gpt-6-astra";
@@ -93,6 +97,10 @@ const registry: Partial<Record<RegistryKey, VariantModule>> = {
   "with-taste-skill:gpt-6-astra": withTasteAstra,
   "without-design-skill:gpt-6-astra": withoutAstra,
 
+  "without-design-skill:gpt-6-astra-preview": withoutAstraPreview,
+  "with-design-skill:gpt-6-astra-preview": withAstraPreview,
+  "with-taste-skill:gpt-6-astra-preview": withTasteAstraPreview,
+  "miscellaneous:gpt-6-astra-preview": miscAstraPreview,
   "with-design-skill:composer-1.5": withComposer15,
   "with-design-skill:composer-2.0": withComposer20,
   "with-design-skill:composer-2.5": withComposer25,
