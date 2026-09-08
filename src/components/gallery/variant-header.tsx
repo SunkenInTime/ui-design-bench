@@ -2,23 +2,38 @@
 
 import clsx from "clsx";
 import Link from "next/link";
-import { Check, Home, Palette, Search } from "lucide-react";
+import { Check, Home, Palette, PanelLeft, PanelRight, Search } from "lucide-react";
 import { useRouter } from "next/navigation";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState, useSyncExternalStore } from "react";
 import { ModelBrandLogo } from "@/components/gallery/model-brand-logo";
 import { buildCompareHref } from "@/lib/compare";
 import { galleryManifest } from "@/lib/gallery-manifest";
 import { sortGalleryEntriesForHome } from "@/lib/gallery-model-order";
 import type { GalleryEntry, GalleryGroupSlug, IterationId, ModelSlug } from "@/lib/gallery-types";
 import { buildVariantHref } from "@/lib/gallery-paths";
+import {
+  getServerGallerySwitcherSide,
+  getStoredGallerySwitcherSide,
+  setStoredGallerySwitcherSide,
+  subscribeGallerySwitcherSide,
+  type GallerySwitcherSide,
+} from "@/lib/gallery-switcher-side";
 
 type PickerMode = "compare" | "model" | "skill" | null;
 
 const switcherButtonClass =
   "inline-flex size-7 cursor-pointer items-center justify-center rounded-md text-[var(--gallery-text-secondary)] transition-colors outline-none hover:bg-[var(--gallery-hover-bg)] hover:text-[var(--gallery-text-primary)] focus-visible:ring-1 focus-visible:ring-[var(--gallery-accent)]";
 
-const popoverClass =
-  "absolute top-0 right-[calc(100%+0.5rem)] z-[120] flex max-h-[min(26rem,calc(100vh-3rem))] w-[min(19rem,calc(100vw-5.5rem))] flex-col gap-1.5 overflow-auto rounded-lg border border-[var(--gallery-border)] bg-[var(--gallery-body-bg)] p-2 text-[var(--gallery-text-primary)] shadow-[var(--gallery-shadow-md)] backdrop-blur-[12px]";
+const popoverBaseClass =
+  "absolute top-0 z-[120] flex max-h-[min(26rem,calc(100vh-3rem))] w-[min(19rem,calc(100vw-5.5rem))] flex-col gap-1.5 overflow-auto rounded-lg border border-[var(--gallery-border)] bg-[var(--gallery-body-bg)] p-2 text-[var(--gallery-text-primary)] shadow-[var(--gallery-shadow-md)] backdrop-blur-[12px]";
+
+// Popovers open away from the screen edge the switcher is docked to.
+function getPopoverClass(side: GallerySwitcherSide) {
+  return clsx(
+    popoverBaseClass,
+    side === "left" ? "left-[calc(100%+0.5rem)]" : "right-[calc(100%+0.5rem)]",
+  );
+}
 
 function getGroupLabel(group: GalleryGroupSlug): string {
   if (group === "with-design-skill") return "With Design Skill";
@@ -99,6 +114,13 @@ export function VariantSwitcher({
 }) {
   const router = useRouter();
   const [openPicker, setOpenPicker] = useState<PickerMode>(null);
+  // Docked side is a stored preference; the server snapshot keeps hydration in sync.
+  const side = useSyncExternalStore(
+    subscribeGallerySwitcherSide,
+    getStoredGallerySwitcherSide,
+    getServerGallerySwitcherSide,
+  );
+  const popoverClass = getPopoverClass(side);
   const [compareSearch, setCompareSearch] = useState("");
   const [modelSearch, setModelSearch] = useState("");
   const pickerRef = useRef<HTMLElement | null>(null);
@@ -148,6 +170,10 @@ export function VariantSwitcher({
   }, [modelOptions, modelSearch]);
   const firstAvailableCompareMatch = filteredCompareOptions.find((option) => option.href);
   const firstAvailableModelMatch = filteredModelOptions.find((option) => option.href);
+
+  function toggleSide() {
+    setStoredGallerySwitcherSide(side === "left" ? "right" : "left");
+  }
 
   useEffect(() => {
     if (!openPicker) return;
@@ -217,7 +243,11 @@ export function VariantSwitcher({
     <nav
       ref={pickerRef}
       aria-label={`${entry.modelLabel} gallery navigation`}
-      className="gallery-variant-switcher fixed top-5 right-5 z-[100] flex w-auto flex-col items-center gap-1 rounded-lg border border-[var(--gallery-border)] bg-[var(--gallery-nav-bg)] px-1 py-1 text-[var(--gallery-text-tertiary)] shadow-[var(--gallery-shadow-sm)] backdrop-blur-[12px] sm:top-6 sm:right-6 gallery-elevated-surface"
+      data-side={side}
+      className={clsx(
+        "gallery-variant-switcher gallery-elevated-surface fixed top-5 z-[100] flex w-auto flex-col items-center gap-1 rounded-lg border border-[var(--gallery-border)] bg-[var(--gallery-nav-bg)] px-1 py-1 text-[var(--gallery-text-tertiary)] shadow-[var(--gallery-shadow-sm)] backdrop-blur-[12px] sm:top-6",
+        side === "left" ? "left-5 sm:left-6" : "right-5 sm:right-6",
+      )}
     >
       <Link
         href="/"
@@ -528,6 +558,23 @@ export function VariantSwitcher({
           );
         })}
       </div>
+      <div
+        className="h-px w-full shrink-0 bg-[var(--gallery-border)]"
+        aria-hidden="true"
+      />
+      <button
+        type="button"
+        onClick={toggleSide}
+        aria-label={side === "left" ? "Dock sidebar on the right" : "Dock sidebar on the left"}
+        title={side === "left" ? "Dock right" : "Dock left"}
+        className={switcherButtonClass}
+      >
+        {side === "left" ? (
+          <PanelRight className="size-4 shrink-0 opacity-80" aria-hidden="true" />
+        ) : (
+          <PanelLeft className="size-4 shrink-0 opacity-80" aria-hidden="true" />
+        )}
+      </button>
     </nav>
   );
 }

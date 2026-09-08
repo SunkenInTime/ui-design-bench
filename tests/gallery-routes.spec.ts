@@ -314,6 +314,44 @@ test("gallery switcher text colors stay isolated from generated variant CSS", as
   expect(["#fff", "#ffffff"]).toContain(cssVariables.generationBackground);
 });
 
+test("gallery switcher can dock on the left and remembers the side", async ({ page }) => {
+  await page.goto("/with-design-skill/gpt-5.5-high/1");
+
+  const switcher = page.getByRole("navigation", { name: /gallery navigation/ });
+  await expect(switcher).toBeVisible();
+  await expect(switcher).toHaveAttribute("data-side", "right");
+
+  const viewportWidth = page.viewportSize()?.width ?? 0;
+  const rightBox = await switcher.boundingBox();
+  expect(rightBox).not.toBeNull();
+  expect(rightBox!.x).toBeGreaterThan(viewportWidth / 2);
+
+  await page.getByRole("button", { name: "Dock sidebar on the left" }).click();
+  await expect(switcher).toHaveAttribute("data-side", "left");
+
+  const leftBox = await switcher.boundingBox();
+  expect(leftBox).not.toBeNull();
+  expect(leftBox!.x).toBeLessThan(viewportWidth / 2);
+
+  // Popovers open away from the docked edge so they stay on screen.
+  await page.getByRole("button", { name: /Switch model from/ }).click();
+  const menu = page.getByRole("menu", { name: "Switch model" });
+  await expect(menu).toBeVisible();
+  const menuBox = await menu.boundingBox();
+  expect(menuBox).not.toBeNull();
+  expect(menuBox!.x).toBeGreaterThan(leftBox!.x + leftBox!.width);
+  await page.keyboard.press("Escape");
+
+  await page.reload();
+  await expect(switcher).toHaveAttribute("data-side", "left");
+  await expect(
+    page.getByRole("link", { name: "Open iteration 2" }),
+  ).toBeVisible();
+
+  await page.getByRole("button", { name: "Dock sidebar on the right" }).click();
+  await expect(switcher).toHaveAttribute("data-side", "right");
+});
+
 for (const { group, model, iteration, source } of routeSmokeCases) {
   const entry = galleryManifest.find((item) => item.group === group && item.model === model);
   if (!entry) {
