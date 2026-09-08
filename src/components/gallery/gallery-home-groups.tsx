@@ -52,7 +52,7 @@ export function GalleryHomeGroups({
 
   return (
     <>
-      <div className="mt-10">
+      <div className="mt-8">
         <GallerySearch
           query={query}
           onQueryChange={setQuery}

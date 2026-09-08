@@ -76,9 +76,6 @@ export default function HomePage() {
               <span>Fund more generations</span>
             </Link>
           </div>
-          <p className="mt-6 text-sm italic text-[var(--gallery-text-quaternary)]">
-            This site was designed by Composer 2.0 LOL
-          </p>
         </header>
 
         <GalleryHomeGroups

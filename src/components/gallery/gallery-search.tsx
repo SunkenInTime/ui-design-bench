@@ -43,7 +43,7 @@ export function GallerySearch({
     <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
       <label
         className={clsx(
-          "group/search relative flex h-10 w-full max-w-sm items-center gap-2 rounded-lg border bg-[var(--gallery-surface)] pl-3 pr-2 shadow-[var(--gallery-shadow-sm)] transition-[border-color,box-shadow] duration-150",
+          "group/search relative flex h-10 w-full max-w-2xl items-center gap-2 rounded-lg border bg-[var(--gallery-surface)] pl-3 pr-2 shadow-[var(--gallery-shadow-sm)] transition-[border-color,box-shadow] duration-150",
           "focus-within:border-[var(--gallery-accent)] focus-within:shadow-[0_0_0_3px_color-mix(in_srgb,var(--gallery-accent)_16%,transparent)]",
           active
             ? "border-[var(--gallery-divider-strong)]"
