@@ -9,7 +9,10 @@ import {
   UNCODEXIFY_SKILL_URL,
 } from "@/lib/gallery-anthropic-skill";
 import { GalleryCard } from "@/components/gallery/gallery-card";
-import { filterGalleryEntriesForArchiveVisibility } from "@/lib/gallery-archived";
+import {
+  filterGalleryEntriesForArchiveVisibility,
+  isGalleryModelArchivedWithinGroup,
+} from "@/lib/gallery-archived";
 
 function groupHasArchivedRow(entries: GalleryEntry[]): boolean {
   const visibleWhenHidden = filterGalleryEntriesForArchiveVisibility(entries, false);
@@ -19,14 +22,22 @@ function groupHasArchivedRow(entries: GalleryEntry[]): boolean {
 export function GalleryGroupSection({
   group,
   entries,
+  allEntries = entries,
+  searching = false,
 }: {
   group: GalleryGroupSlug;
   entries: GalleryEntry[];
+  /** Full group membership, used to decide archive status when `entries` is a filtered subset. */
+  allEntries?: GalleryEntry[];
+  /** While a search is active every match is shown, archived or not, and the toggle is hidden. */
+  searching?: boolean;
 }) {
   const [showArchived, setShowArchived] = useState(false);
-  const visibleEntries = filterGalleryEntriesForArchiveVisibility(entries, showArchived);
+  const visibleEntries = searching
+    ? entries
+    : filterGalleryEntriesForArchiveVisibility(entries, showArchived);
   const labelId = useId();
-  const hasArchived = groupHasArchivedRow(entries);
+  const hasArchived = !searching && groupHasArchivedRow(entries);
 
   const label =
     group === "with-design-skill" ? (
@@ -103,7 +114,11 @@ export function GalleryGroupSection({
       </div>
       <div className="grid gap-8 sm:grid-cols-2 xl:grid-cols-4 xl:gap-6">
         {visibleEntries.map((entry) => (
-          <GalleryCard key={`${entry.group}-${entry.model}`} entry={entry} />
+          <GalleryCard
+            key={`${entry.group}-${entry.model}`}
+            entry={entry}
+            archived={searching && isGalleryModelArchivedWithinGroup(allEntries, entry)}
+          />
         ))}
       </div>
     </section>

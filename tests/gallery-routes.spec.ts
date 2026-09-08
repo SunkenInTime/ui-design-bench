@@ -195,6 +195,41 @@ test("home page hides superseded-generation cards until Show Archived", async ({
   await expect(page.locator('a[title="Compare"]')).toHaveCount(await page.getByTestId("gallery-card").count());
 });
 
+test("home search surfaces archived rows and syncs the URL", async ({ page }) => {
+  await page.goto("/");
+  await expect(page.getByTestId("gallery-card").filter({ hasText: "GPT 5.5 low" })).toHaveCount(0);
+
+  const search = page.getByRole("searchbox", { name: "Search models" });
+  await search.fill("5.5");
+
+  const lowCards = page.getByTestId("gallery-card").filter({ hasText: "GPT 5.5 low" });
+  await expect(lowCards).toHaveCount(3);
+  await expect(lowCards.first()).toContainText("Archived");
+  await expect(page.getByTestId("gallery-card").filter({ hasText: "Opus 5" })).toHaveCount(0);
+  await expect(page.getByRole("button", { name: "Show Archived" })).toHaveCount(0);
+  await expect(page).toHaveURL(/\?q=5\.5$/);
+
+  await search.fill("no such model");
+  await expect(page.getByTestId("gallery-card")).toHaveCount(0);
+  await expect(page.getByText("No models match")).toBeVisible();
+
+  await page.getByRole("button", { name: "Clear search" }).last().click();
+  await expect(page.getByTestId("gallery-card").filter({ hasText: "Opus 5" })).not.toHaveCount(0);
+  await expect(page).toHaveURL(/\/$/);
+});
+
+test("home search opens from a ?q= link and the slash key focuses it", async ({ page }) => {
+  await page.goto("/?q=astra");
+  const search = page.getByRole("searchbox", { name: "Search models" });
+  await expect(search).toHaveValue("astra");
+  await expect(page.getByTestId("gallery-card").filter({ hasText: "GPT-6 Astra" })).not.toHaveCount(0);
+  await expect(page.getByTestId("gallery-card").filter({ hasText: "Opus 5" })).toHaveCount(0);
+
+  await page.getByRole("heading", { level: 1 }).click();
+  await page.keyboard.press("/");
+  await expect(search).toBeFocused();
+});
+
 test("home page sorts newer same-family models first", async ({ page }) => {
   await page.goto("/");
   while ((await page.getByRole("button", { name: "Show Archived" }).count()) > 0) {

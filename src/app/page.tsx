@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Coffee, Github } from "lucide-react";
 import { GalleryRankingsNav } from "@/components/gallery/gallery-rankings-nav";
-import { GalleryGroupSection } from "@/components/gallery/gallery-group-section";
+import { GalleryHomeGroups } from "@/components/gallery/gallery-home-groups";
 import { GenerationPrompt } from "@/components/gallery/generation-prompt";
 import {
   ANTHROPIC_FRONTEND_DESIGN_SKILL_URL,
@@ -81,16 +81,14 @@ export default function HomePage() {
           </p>
         </header>
 
-        <div className="mt-10 space-y-12">
-          {groups.map((group) => {
-            const entries = sortGalleryEntriesForHome(
+        <GalleryHomeGroups
+          groups={groups.map((group) => ({
+            group,
+            entries: sortGalleryEntriesForHome(
               galleryManifest.filter((entry) => entry.group === group),
-            );
-            return (
-              <GalleryGroupSection key={group} group={group} entries={entries} />
-            );
-          })}
-        </div>
+            ),
+          }))}
+        />
 
         <section
           aria-labelledby="sponsors-heading"

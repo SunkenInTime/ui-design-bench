@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeftRight } from "lucide-react";
+import { Archive, ArrowLeftRight } from "lucide-react";
 import { GalleryCardLeavingSoonBookmark } from "@/components/gallery/gallery-card-leaving-soon";
 import { ModelBrandLogo } from "@/components/gallery/model-brand-logo";
 import { buildCompareHrefForSelection } from "@/lib/compare";
@@ -8,7 +8,14 @@ import { isGalleryModelLeavingSoon } from "@/lib/gallery-archived";
 import type { GalleryEntry } from "@/lib/gallery-types";
 import { buildVariantHref } from "@/lib/gallery-paths";
 
-export function GalleryCard({ entry }: { entry: GalleryEntry }) {
+export function GalleryCard({
+  entry,
+  archived = false,
+}: {
+  entry: GalleryEntry;
+  /** Shown when an archived row surfaces outside its "Show Archived" fold, e.g. in search results. */
+  archived?: boolean;
+}) {
   const leavingSoon = isGalleryModelLeavingSoon(entry.model);
   return (
     <article
@@ -36,7 +43,15 @@ export function GalleryCard({ entry }: { entry: GalleryEntry }) {
       </Link>
       <div className="flex flex-1 flex-col gap-2 p-5">
         <div className="space-y-1">
-          <p className="text-xs text-[var(--gallery-text-tertiary)]">{entry.groupLabel}</p>
+          <p className="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-[var(--gallery-text-tertiary)]">
+            <span>{entry.groupLabel}</span>
+            {archived ? (
+              <span className="inline-flex items-center gap-1 rounded border border-[var(--gallery-border)] bg-[var(--gallery-surface-subtle)] px-1.5 py-px text-[11px] font-medium text-[var(--gallery-text-quaternary)]">
+                <Archive className="size-3 opacity-80" aria-hidden />
+                Archived
+              </span>
+            ) : null}
+          </p>
           <h3 className="flex flex-wrap items-center gap-2 text-lg font-medium tracking-tight text-[var(--gallery-text-primary)]">
             <span>{entry.modelLabel}</span>
             <ModelBrandLogo
