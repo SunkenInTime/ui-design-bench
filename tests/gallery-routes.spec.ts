@@ -218,6 +218,28 @@ test("home search surfaces archived rows and syncs the URL", async ({ page }) =>
   await expect(page).toHaveURL(/\/$/);
 });
 
+test("home search understands hidden aliases", async ({ page }) => {
+  const cards = page.getByTestId("gallery-card");
+  const search = page.getByRole("searchbox", { name: "Search models" });
+  await page.goto("/");
+
+  await search.fill("openai");
+  await expect(cards.filter({ hasText: "GPT" })).not.toHaveCount(0);
+  await expect(cards.filter({ hasText: "Opus" })).toHaveCount(0);
+
+  await search.fill("claude");
+  await expect(cards.filter({ hasText: "Opus 5" })).not.toHaveCount(0);
+  await expect(cards.filter({ hasText: "Gemini" })).toHaveCount(0);
+
+  await search.fill("theo");
+  await expect(cards.filter({ hasText: "GPT-6 Astra (preview)" })).toHaveCount(4);
+
+  await search.fill("uncodexify");
+  await expect(cards).not.toHaveCount(0);
+  const groupLabels = await cards.locator("p > span:first-child").allInnerTexts();
+  expect(new Set(groupLabels)).toEqual(new Set(["With Uncodexify skill"]));
+});
+
 test("home search opens from a ?q= link and the slash key focuses it", async ({ page }) => {
   await page.goto("/?q=astra");
   const search = page.getByRole("searchbox", { name: "Search models" });
