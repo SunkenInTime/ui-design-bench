@@ -1,0 +1,29 @@
+
+        .lg-page {
+          --paper: #FAF8F5;
+          --ink: #0C0C0C;
+          --verm: #C23B22;
+          --rule: #0C0C0C;
+          --soft: #3F3A34;
+          font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+        .lg-page .sans {
+          font-family: 'Avenir Next', 'Segoe UI', system-ui, sans-serif;
+        }
+        .lg-page .mono {
+          font-family: 'SF Mono', Consolas, monospace;
+        }
+        .lg-drop::first-letter {
+          float: left;
+          font-size: 3.4em;
+          line-height: 0.8;
+          padding: 0.08em 0.1em 0 0;
+          color: #C23B22;
+          font-weight: 700;
+        }
+        .lg-rule {
+          border-top: 1px solid rgba(12, 12, 12, 0.2);
+        }
+        .lg-heavy-rule {
+          border-top: 3px solid #0C0C0C;
+        }

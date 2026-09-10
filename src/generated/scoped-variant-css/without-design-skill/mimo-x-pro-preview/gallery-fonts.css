@@ -1,0 +1,3 @@
+/* Preserve source font utilities after gallery CSS scoping. */
+:where(.gallery-generation[data-gallery-group="without-design-skill"][data-gallery-model="mimo-x-pro-preview"]) .font-sans { font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif; }
+:where(.gallery-generation[data-gallery-group="without-design-skill"][data-gallery-model="mimo-x-pro-preview"]) .font-mono { font-family: var(--font-geist-mono), ui-monospace, monospace; }

@@ -1,0 +1,16 @@
+
+        .nr-pulse { animation: nr-pulse 3.2s ease-in-out infinite; }
+        .nr-pulse-d { animation-delay: 0.8s; }
+        .nr-pulse-d2 { animation-delay: 1.6s; }
+        @keyframes nr-pulse {
+          0%, 100% { opacity: 0.35; }
+          50% { opacity: 0.85; }
+        }
+        .nr-fade { animation: nr-fade 0.9s ease both; }
+        @keyframes nr-fade {
+          from { opacity: 0; transform: translateY(12px); }
+          to { opacity: 1; transform: none; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .nr-pulse, .nr-fade { animation: none; opacity: 1; }
+        }

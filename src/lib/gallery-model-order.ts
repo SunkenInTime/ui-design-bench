@@ -1,6 +1,7 @@
 import type { GalleryEntry, ModelSlug } from "@/lib/gallery-types";
 
 const MODEL_HOME_ORDER: Record<ModelSlug, { familyOrder: number; tier: number }> = {
+  "mimo-x-pro-preview": { familyOrder: 8, tier: 1 },
   fable: { familyOrder: 0, tier: 50 },
   "fable-5.1": { familyOrder: 0, tier: 51 },
   "opus-4.6": { familyOrder: 1, tier: 46 },

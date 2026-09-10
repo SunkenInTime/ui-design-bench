@@ -1,0 +1,11 @@
+
+        :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="mimo-x-pro-preview"]) .qs-float-a { animation: gallery-with-design-skill-mimo-x-pro-preview-source-app-1-page-qs-drift 7s ease-in-out infinite; }
+        :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="mimo-x-pro-preview"]) .qs-float-b { animation: gallery-with-design-skill-mimo-x-pro-preview-source-app-1-page-qs-drift 9s ease-in-out infinite reverse; }
+        :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="mimo-x-pro-preview"]) .qs-float-c { animation: gallery-with-design-skill-mimo-x-pro-preview-source-app-1-page-qs-drift 8s ease-in-out 1s infinite; }
+        @keyframes gallery-with-design-skill-mimo-x-pro-preview-source-app-1-page-qs-drift {
+          0%, 100% { transform: translateY(0) rotate(var(--r, 0deg)); }
+          50% { transform: translateY(-10px) rotate(var(--r, 0deg)); }
+        }
+        @media (prefers-reduced-motion: reduce) {
+          :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="mimo-x-pro-preview"]) .qs-float-a,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="mimo-x-pro-preview"])  .qs-float-b,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="mimo-x-pro-preview"])  .qs-float-c { animation: none; }
+        }

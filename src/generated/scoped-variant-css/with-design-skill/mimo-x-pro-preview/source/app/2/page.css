@@ -1,0 +1,16 @@
+
+        :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="mimo-x-pro-preview"]) .nr-pulse { animation: gallery-with-design-skill-mimo-x-pro-preview-source-app-2-page-nr-pulse 3.2s ease-in-out infinite; }
+        :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="mimo-x-pro-preview"]) .nr-pulse-d { animation-delay: 0.8s; }
+        :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="mimo-x-pro-preview"]) .nr-pulse-d2 { animation-delay: 1.6s; }
+        @keyframes gallery-with-design-skill-mimo-x-pro-preview-source-app-2-page-nr-pulse {
+          0%, 100% { opacity: 0.35; }
+          50% { opacity: 0.85; }
+        }
+        :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="mimo-x-pro-preview"]) .nr-fade { animation: gallery-with-design-skill-mimo-x-pro-preview-source-app-2-page-nr-fade 0.9s ease both; }
+        @keyframes gallery-with-design-skill-mimo-x-pro-preview-source-app-2-page-nr-fade {
+          from { opacity: 0; transform: translateY(12px); }
+          to { opacity: 1; transform: none; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+          :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="mimo-x-pro-preview"]) .nr-pulse,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="mimo-x-pro-preview"])  .nr-fade { animation: none; opacity: 1; }
+        }
