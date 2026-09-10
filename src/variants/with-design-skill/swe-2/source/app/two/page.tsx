@@ -233,7 +233,7 @@ export default function Two() {
       <section className="d2-start" id="start">
         <h2>Start mapping your thinking.</h2>
         <p>Free for the first thousand notes. Syncs end-to-end encrypted.</p>
-        <Link className="d2-btn" href="/two">
+        <Link className="d2-btn" href="/with-design-skill/swe-2/2">
           Open your vault
         </Link>
       </section>

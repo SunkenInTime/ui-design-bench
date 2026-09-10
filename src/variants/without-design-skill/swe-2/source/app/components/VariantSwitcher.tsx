@@ -79,7 +79,7 @@ export function VariantSwitcher() {
           return (
             <Link
               key={v.n}
-              href={`/${v.n}`}
+              href={`/without-design-skill/swe-2/${v.n}`}
               title={v.name}
               aria-current={isActive ? "page" : undefined}
               className={`grid h-9 w-9 place-items-center rounded-full text-sm font-medium transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white ${

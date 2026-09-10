@@ -124,7 +124,7 @@ export default function One() {
           Free for the first thousand entries. Plain text underneath, always
           exportable.
         </p>
-        <Link className="d1-btn" href="/one">
+        <Link className="d1-btn" href="/with-design-skill/swe-2/1">
           Open the first page
         </Link>
       </section>

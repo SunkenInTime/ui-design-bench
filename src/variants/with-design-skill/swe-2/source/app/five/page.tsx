@@ -76,7 +76,7 @@ export default function Five() {
           <p className="d5-rate-desc">
             A thousand notes, one device, the whole system.
           </p>
-          <Link className="d5-rate-btn" href="/five">
+          <Link className="d5-rate-btn" href="/with-design-skill/swe-2/5">
             Choose Reader
           </Link>
         </div>
@@ -86,7 +86,7 @@ export default function Five() {
           <p className="d5-rate-desc">
             Unlimited notes, encrypted sync, daily resurfacing.
           </p>
-          <Link className="d5-rate-btn" href="/five">
+          <Link className="d5-rate-btn" href="/with-design-skill/swe-2/5">
             Choose Keeper
           </Link>
         </div>

@@ -276,7 +276,7 @@ export default function CalmPage() {
             Free for your first five hundred notes. Quietly priced after that.
           </p>
           <Link
-            href="/5"
+            href="/with-taste-skill/swe-2/5"
             className="mt-9 inline-block rounded-full bg-white px-8 py-3.5 text-[14.5px] font-semibold transition active:scale-[0.98]"
             style={{ color: green }}
           >

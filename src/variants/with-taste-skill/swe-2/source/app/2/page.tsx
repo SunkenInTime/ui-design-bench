@@ -193,7 +193,7 @@ export default function TerminalPage() {
               get.commonplace.sh | sh
             </code>
             <Link
-              href="/2"
+              href="/with-taste-skill/swe-2/2"
               className="px-5 py-2.5 text-center text-[13px] font-semibold whitespace-nowrap transition active:translate-y-[1px]"
               style={{ background: amber, color: "#1a1509" }}
             >

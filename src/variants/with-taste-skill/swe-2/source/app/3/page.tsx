@@ -214,7 +214,7 @@ export default function ConstellationPage() {
               keep.
             </p>
             <Link
-              href="/3"
+              href="/with-taste-skill/swe-2/3"
               className="relative mt-9 inline-block rounded-full px-8 py-3.5 text-[14px] font-semibold transition active:translate-y-[1px]"
               style={{ background: ice, color: "#0a1220" }}
             >

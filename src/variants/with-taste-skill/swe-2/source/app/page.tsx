@@ -1,5 +1,5 @@
 import { redirect } from "next/navigation";
 
 export default function Home() {
-  redirect("/1");
+  redirect("/with-taste-skill/swe-2/1");
 }

@@ -332,7 +332,7 @@ export default function ArchivePage() {
             readable by anything, forever.
           </p>
           <Link
-            href="/1"
+            href="/with-taste-skill/swe-2/1"
             className="mt-9 inline-block px-8 py-3.5 text-[14px] font-medium text-white transition active:translate-y-[1px]"
             style={{ background: ink }}
           >

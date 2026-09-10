@@ -28,7 +28,7 @@ export function DesignSwitcher() {
     >
       <div className="flex items-center gap-1 rounded-full border border-white/15 bg-neutral-900/90 py-1.5 pr-2 pl-1.5 text-neutral-100 shadow-2xl shadow-black/30 backdrop-blur-md">
         <Link
-          href={`/${prev}`}
+          href={`/with-taste-skill/swe-2/${prev}`}
           aria-label={`Previous design: ${DESIGNS[prev - 1].name}`}
           className="grid size-8 place-items-center rounded-full text-neutral-400 transition hover:bg-white/10 hover:text-white active:scale-95"
         >
@@ -38,7 +38,7 @@ export function DesignSwitcher() {
           {DESIGNS.map((d) => (
             <Link
               key={d.n}
-              href={`/${d.n}`}
+              href={`/with-taste-skill/swe-2/${d.n}`}
               aria-current={d.n === current ? "page" : undefined}
               className={`grid h-8 min-w-8 place-items-center rounded-full px-1 text-[13px] font-medium tabular-nums transition active:scale-95 ${
                 d.n === current
@@ -51,7 +51,7 @@ export function DesignSwitcher() {
           ))}
         </div>
         <Link
-          href={`/${next}`}
+          href={`/with-taste-skill/swe-2/${next}`}
           aria-label={`Next design: ${DESIGNS[next - 1].name}`}
           className="grid size-8 place-items-center rounded-full text-neutral-400 transition hover:bg-white/10 hover:text-white active:scale-95"
         >

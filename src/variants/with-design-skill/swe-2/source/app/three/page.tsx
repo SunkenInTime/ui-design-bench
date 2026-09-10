@@ -170,7 +170,7 @@ export default function Three() {
             <p className="d3-card-body">
               A thousand slips, one device, the whole filing system.
             </p>
-            <Link className="d3-rate-link" href="/three">
+            <Link className="d3-rate-link" href="/with-design-skill/swe-2/3">
               Choose Reader
             </Link>
           </div>
@@ -183,7 +183,7 @@ export default function Three() {
             <p className="d3-card-body">
               Unlimited slips, encrypted sync, daily resurfacing.
             </p>
-            <Link className="d3-rate-link" href="/three">
+            <Link className="d3-rate-link" href="/with-design-skill/swe-2/3">
               Choose Keeper
             </Link>
           </div>
@@ -196,7 +196,7 @@ export default function Three() {
             <p className="d3-card-body">
               Family vaults, shared drawers, and a printed annual index.
             </p>
-            <Link className="d3-rate-link" href="/three">
+            <Link className="d3-rate-link" href="/with-design-skill/swe-2/3">
               Choose Archive
             </Link>
           </div>

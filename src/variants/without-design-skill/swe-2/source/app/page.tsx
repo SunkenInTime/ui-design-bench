@@ -55,7 +55,7 @@ export default function Home() {
           {VARIANTS.map((v) => (
             <li key={v.n}>
               <Link
-                href={`/${v.n}`}
+                href={`/without-design-skill/swe-2/${v.n}`}
                 className="group flex items-baseline gap-6 py-6 transition-colors focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-neutral-900 sm:gap-10"
               >
                 <span className="w-10 shrink-0 text-3xl font-semibold tracking-tight text-neutral-300 transition-colors group-hover:text-neutral-900">

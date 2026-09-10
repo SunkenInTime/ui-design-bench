@@ -4,11 +4,11 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const designs = [
-  { n: "1", href: "/one", name: "Archive" },
-  { n: "2", href: "/two", name: "Observatory" },
-  { n: "3", href: "/three", name: "Slip-box" },
-  { n: "4", href: "/four", name: "Buffer" },
-  { n: "5", href: "/five", name: "Placard" },
+  { n: "1", href: "/with-design-skill/swe-2/1", name: "Archive" },
+  { n: "2", href: "/with-design-skill/swe-2/2", name: "Observatory" },
+  { n: "3", href: "/with-design-skill/swe-2/3", name: "Slip-box" },
+  { n: "4", href: "/with-design-skill/swe-2/4", name: "Buffer" },
+  { n: "5", href: "/with-design-skill/swe-2/5", name: "Placard" },
 ];
 
 export default function DesignSwitcher() {

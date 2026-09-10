@@ -233,7 +233,7 @@ export default function PosterPage() {
             </h2>
             <div className="flex flex-col items-start gap-4">
               <Link
-                href="/4"
+                href="/with-taste-skill/swe-2/4"
                 className="px-8 py-4 text-[15px] font-bold uppercase transition active:translate-y-[1px]"
                 style={{ background: orange, color: "#16150f" }}
               >

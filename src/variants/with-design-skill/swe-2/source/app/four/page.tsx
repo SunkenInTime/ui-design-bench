@@ -54,7 +54,7 @@ export default function Four() {
         </h2>
         <p className="d4-l">
           <span className="d4-m">- </span>write{" "}
-          <Link className="d4-wiki" href="/four">
+          <Link className="d4-wiki" href="/with-design-skill/swe-2/4">
             [[tea ceremony]]
           </Link>{" "}
           mid-sentence and it links itself
@@ -94,7 +94,7 @@ export default function Four() {
           <span className="d4-m">## </span>start
         </h2>
         <p className="d4-l">
-          <Link className="d4-cmd d4-cmd--primary" href="/four">
+          <Link className="d4-cmd d4-cmd--primary" href="/with-design-skill/swe-2/4">
             [ open your vault ]
           </Link>{" "}
           <span className="d4-dim">free for a thousand notes</span>
