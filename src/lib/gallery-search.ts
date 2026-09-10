@@ -15,6 +15,7 @@ const LAB_ALIASES: Record<LabSlug, string[]> = {
   moonshot: ["moonshot ai", "kimi"],
   "z-ai": ["zai", "zhipu", "zhipu ai", "glm"],
   cursor: ["anysphere", "composer"],
+  cognition: ["devin", "swe", "swe bench", "swe-bench", "windsurf"],
 };
 
 const MODEL_ALIASES: Partial<Record<ModelSlug, string[]>> = {
@@ -35,6 +36,7 @@ const MODEL_ALIASES: Partial<Record<ModelSlug, string[]>> = {
   "kimi-k3": ["kimi k3", "k3"],
   "glm-5.3-flash": ["ox alpha", "ox-alpha", "ox"],
   "muse-spark-1.3-flash": ["muse", "spark"],
+  "swe-2": ["swe2", "swe 2", "swe-2 max"],
 };
 
 const GROUP_ALIASES: Record<GalleryGroupSlug, string[]> = {

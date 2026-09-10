@@ -39,7 +39,8 @@ export type ModelSlug =
   | "sonnet-5"
   | "sol"
   | "luna"
-  | "terra";
+  | "terra"
+  | "swe-2";
 export type IterationId = "1" | "2" | "3" | "4" | "5";
 export type SourceAppType = "next" | "vite";
 

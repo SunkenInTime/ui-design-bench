@@ -1,0 +1,7 @@
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="swe-2"]) {
+  scroll-behavior: smooth;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="swe-2"]) {
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}

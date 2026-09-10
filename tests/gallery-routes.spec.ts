@@ -109,6 +109,9 @@ const sampleRouteSmokeCases = [
   { group: "with-design-skill", model: "muse-spark-1.3-flash", iteration: "1" },
   { group: "with-taste-skill", model: "muse-spark-1.3-flash", iteration: "3" },
   { group: "without-design-skill", model: "muse-spark-1.3-flash", iteration: "5" },
+  { group: "with-design-skill", model: "swe-2", iteration: "1" },
+  { group: "with-taste-skill", model: "swe-2", iteration: "3" },
+  { group: "without-design-skill", model: "swe-2", iteration: "5" },
 ] as const;
 
 const routeSmokeCases = [
