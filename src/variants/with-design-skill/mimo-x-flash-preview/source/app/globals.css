@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+body {
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+}
+
+@keyframes cairn-ticker {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes cairn-pulse {
+  0%, 100% {
+    opacity: 0.35;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.cairn-ticker {
+  animation: cairn-ticker 28s linear infinite;
+}
+
+.cairn-pulse {
+  animation: cairn-pulse 2.4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cairn-ticker, .cairn-pulse {
+    animation: none;
+  }
+}

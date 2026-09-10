@@ -17,6 +17,7 @@ export interface ModelLab {
 }
 
 const MODEL_TO_LAB: Record<ModelSlug, ModelLab> = {
+  "mimo-x-flash-preview": { slug: "xiaomi", label: "Xiaomi" },
   "mimo-x-pro-preview": { slug: "xiaomi", label: "Xiaomi" },
   "composer-1.5": { slug: "cursor", label: "Cursor" },
   "composer-2.0": { slug: "cursor", label: "Cursor" },

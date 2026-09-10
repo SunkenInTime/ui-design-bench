@@ -31,6 +31,21 @@ const latestRouteSmokeCases = galleryManifest
   }));
 
 const sampleRouteSmokeCases = [
+  { group: "with-taste-skill", model: "mimo-x-flash-preview", iteration: "1" },
+  { group: "with-taste-skill", model: "mimo-x-flash-preview", iteration: "2" },
+  { group: "with-taste-skill", model: "mimo-x-flash-preview", iteration: "3" },
+  { group: "with-taste-skill", model: "mimo-x-flash-preview", iteration: "4" },
+  { group: "with-taste-skill", model: "mimo-x-flash-preview", iteration: "5" },
+  { group: "with-design-skill", model: "mimo-x-flash-preview", iteration: "1" },
+  { group: "with-design-skill", model: "mimo-x-flash-preview", iteration: "2" },
+  { group: "with-design-skill", model: "mimo-x-flash-preview", iteration: "3" },
+  { group: "with-design-skill", model: "mimo-x-flash-preview", iteration: "4" },
+  { group: "with-design-skill", model: "mimo-x-flash-preview", iteration: "5" },
+  { group: "without-design-skill", model: "mimo-x-flash-preview", iteration: "1" },
+  { group: "without-design-skill", model: "mimo-x-flash-preview", iteration: "2" },
+  { group: "without-design-skill", model: "mimo-x-flash-preview", iteration: "3" },
+  { group: "without-design-skill", model: "mimo-x-flash-preview", iteration: "4" },
+  { group: "without-design-skill", model: "mimo-x-flash-preview", iteration: "5" },
   { group: "with-taste-skill", model: "mimo-x-pro-preview", iteration: "1" },
   { group: "with-taste-skill", model: "mimo-x-pro-preview", iteration: "2" },
   { group: "with-taste-skill", model: "mimo-x-pro-preview", iteration: "3" },

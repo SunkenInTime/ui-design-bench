@@ -1,0 +1,35 @@
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="mimo-x-flash-preview"]) {
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+}
+
+@keyframes gallery-with-design-skill-mimo-x-flash-preview-source-app-globals-cairn-ticker {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes gallery-with-design-skill-mimo-x-flash-preview-source-app-globals-cairn-pulse {
+  0%, 100% {
+    opacity: 0.35;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="mimo-x-flash-preview"]) .cairn-ticker {
+  animation: gallery-with-design-skill-mimo-x-flash-preview-source-app-globals-cairn-ticker 28s linear infinite;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="mimo-x-flash-preview"]) .cairn-pulse {
+  animation: gallery-with-design-skill-mimo-x-flash-preview-source-app-globals-cairn-pulse 2.4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="mimo-x-flash-preview"]) .cairn-ticker,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="mimo-x-flash-preview"])  .cairn-pulse {
+    animation: none;
+  }
+}

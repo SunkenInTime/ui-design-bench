@@ -5,6 +5,9 @@ import miscAstraPreview from "@/variants/miscellaneous/gpt-6-astra-preview";
 import withoutMimo from "@/variants/without-design-skill/mimo-x-pro-preview";
 import withMimo from "@/variants/with-design-skill/mimo-x-pro-preview";
 import withTasteMimo from "@/variants/with-taste-skill/mimo-x-pro-preview";
+import withoutMimoFlash from "@/variants/without-design-skill/mimo-x-flash-preview";
+import withMimoFlash from "@/variants/with-design-skill/mimo-x-flash-preview";
+import withTasteMimoFlash from "@/variants/with-taste-skill/mimo-x-flash-preview";
 import type { GalleryGroupSlug, ModelSlug, VariantModule } from "@/lib/gallery-types";
 import withAstra from "@/variants/with-design-skill/gpt-6-astra";
 import withTasteAstra from "@/variants/with-taste-skill/gpt-6-astra";
@@ -96,6 +99,9 @@ import withoutMuseSpark13Flash from "@/variants/without-design-skill/muse-spark-
 type RegistryKey = `${GalleryGroupSlug}:${ModelSlug}`;
 
 const registry: Partial<Record<RegistryKey, VariantModule>> = {
+  "with-taste-skill:mimo-x-flash-preview": withTasteMimoFlash,
+  "with-design-skill:mimo-x-flash-preview": withMimoFlash,
+  "without-design-skill:mimo-x-flash-preview": withoutMimoFlash,
   "with-taste-skill:mimo-x-pro-preview": withTasteMimo,
   "with-design-skill:mimo-x-pro-preview": withMimo,
   "without-design-skill:mimo-x-pro-preview": withoutMimo,
