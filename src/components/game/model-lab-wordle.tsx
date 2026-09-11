@@ -64,6 +64,7 @@ const GUESS_OPTIONS: GuessOption[] = [
   { slug: "moonshot", label: "Kimi", logoLightPath: "/kimi-k2.webp" },
   { slug: "z-ai", label: "GLM", logoLightPath: "/glm.webp" },
   { slug: "cursor", label: "Composer", logoLightPath: "/cursor-composer.webp" },
+  { slug: "cognition", label: "SWE", logoLightPath: "/cognition.svg", logoDarkPath: "/cognition-dark.svg" },
 ] as const;
 
 function shuffle<T>(items: readonly T[]): T[] {

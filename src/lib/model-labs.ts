@@ -8,7 +8,8 @@ export type LabSlug =
   | "x-ai"
   | "moonshot"
   | "z-ai"
-  | "cursor";
+  | "cursor"
+  | "cognition";
 
 export interface ModelLab {
   slug: LabSlug;
@@ -49,6 +50,7 @@ const MODEL_TO_LAB: Record<ModelSlug, ModelLab> = {
   "opus-4.8": { slug: "anthropic", label: "Anthropic" },
   "opus-5": { slug: "anthropic", label: "Anthropic" },
   "sonnet-5": { slug: "anthropic", label: "Anthropic" },
+  "swe-2": { slug: "cognition", label: "Cognition" },
 };
 
 export const LAB_OPTIONS: ModelLab[] = [
@@ -60,6 +62,7 @@ export const LAB_OPTIONS: ModelLab[] = [
   { slug: "moonshot", label: "Moonshot" },
   { slug: "z-ai", label: "Z.ai" },
   { slug: "cursor", label: "Cursor" },
+  { slug: "cognition", label: "Cognition" },
 ];
 
 export function getModelLab(model: ModelSlug): ModelLab {

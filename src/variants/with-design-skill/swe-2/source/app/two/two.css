@@ -1,0 +1,503 @@
+/* ------------------------------------------------------------- */
+/* 02 · OBSERVATORY — the second brain as a night-sky constellation */
+/* ------------------------------------------------------------- */
+
+.d2 {
+  --sky: #0c1120;
+  --panel: #141b30;
+  --ink: #d8deec;
+  --dim: #8a93ac;
+  --amber: #e8b45f;
+  --peri: #93a7f2;
+  --line: #3d4b75;
+
+  background: radial-gradient(
+      120% 90% at 70% 0%,
+      #101a36 0%,
+      var(--sky) 55%
+    )
+    var(--sky);
+  color: var(--ink);
+  font-family: var(--font-grotesk), system-ui, sans-serif;
+  min-height: 100vh;
+  overflow-x: clip;
+}
+
+.d2 a {
+  color: inherit;
+}
+
+.d2 a:focus-visible {
+  outline: 2px solid var(--peri);
+  outline-offset: 3px;
+}
+
+/* ---- header ---- */
+
+.d2-head {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 22px 28px;
+}
+
+.d2-wordmark {
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: -0.01em;
+}
+
+.d2-nav {
+  display: flex;
+  gap: 26px;
+  margin-left: auto;
+  font-size: 14px;
+}
+
+.d2-nav a {
+  color: var(--dim);
+  text-decoration: none;
+}
+
+.d2-nav a:hover {
+  color: var(--ink);
+}
+
+.d2-navcta {
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--ink);
+  text-decoration: none;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 8px 16px;
+}
+
+.d2-navcta:hover {
+  border-color: var(--peri);
+}
+
+/* ---- hero: the constellation is the hero ---- */
+
+.d2-hero {
+  position: relative;
+  height: clamp(620px, 84vh, 900px);
+  max-width: 1240px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.d2-sky {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* keep the lower sky quiet so the copy reads over it */
+.d2-hero::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 48%;
+  background: linear-gradient(
+    to top,
+    rgba(12, 17, 32, 0.94) 0%,
+    rgba(12, 17, 32, 0.55) 55%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+
+.d2-stars circle {
+  fill: #5b6785;
+  opacity: 0.8;
+}
+
+.d2-edges line {
+  stroke: var(--line);
+  stroke-width: 1;
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  animation: d2-draw 1.1s ease-out forwards;
+  animation-delay: var(--d, 0s);
+}
+
+.d2-node {
+  fill: #aab6d4;
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: d2-in 0.6s ease-out forwards;
+  animation-delay: var(--d, 0s);
+}
+
+.d2-node--hot {
+  fill: var(--amber);
+  stroke: rgba(232, 180, 95, 0.35);
+  stroke-width: 6;
+}
+
+.d2-nodes text {
+  font-family: var(--font-plex-mono), monospace;
+  font-size: 11px;
+  fill: var(--dim);
+  opacity: 0;
+  animation: d2-fade 0.8s ease-out forwards;
+  animation-delay: var(--d, 0s);
+}
+
+.d2-readout {
+  position: absolute;
+  left: 54.5%;
+  top: 44%;
+  z-index: 3;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 12px 16px;
+  opacity: 0;
+  animation: d2-fade 0.8s ease-out forwards;
+  animation-delay: 2.4s;
+}
+
+.d2-readout-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--amber);
+  margin: 0 0 3px;
+}
+
+.d2-readout-meta {
+  font-family: var(--font-plex-mono), monospace;
+  font-size: 10.5px;
+  color: var(--dim);
+  margin: 0;
+}
+
+@keyframes d2-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes d2-in {
+  from {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes d2-fade {
+  to {
+    opacity: 1;
+  }
+}
+
+.d2-hero-copy {
+  position: relative;
+  z-index: 2;
+  max-width: 560px;
+  padding: min(44vh, 320px) 28px 72px;
+}
+
+.d2-hero-copy h1 {
+  font-size: clamp(38px, 5.4vw, 64px);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1.04;
+  margin: 0 0 20px;
+}
+
+.d2-hero-copy p {
+  font-size: 17.5px;
+  line-height: 1.65;
+  color: var(--dim);
+  max-width: 46ch;
+  margin: 0 0 30px;
+}
+
+.d2-cta {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  flex-wrap: wrap;
+}
+
+.d2-btn {
+  display: inline-block;
+  background: var(--amber);
+  color: #181207;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 13px 26px;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.d2-btn:hover {
+  background: #f0c379;
+}
+
+.d2-quiet {
+  font-size: 14.5px;
+  color: var(--peri);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(147, 167, 242, 0.4);
+  padding-bottom: 2px;
+}
+
+.d2-quiet:hover {
+  color: var(--ink);
+  border-color: var(--ink);
+}
+
+/* ---- mechanisms ---- */
+
+.d2-mech {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: clamp(60px, 10vh, 110px) 28px 0;
+}
+
+.d2-mech h2,
+.d2-hood h2 {
+  font-size: clamp(24px, 2.8vw, 32px);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin: 0 0 34px;
+}
+
+.d2-mech-rows {
+  border-top: 1px solid var(--line);
+}
+
+.d2-mech-row {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: 28px;
+  align-items: center;
+  padding: 26px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.d2-mech-row svg {
+  width: 56px;
+  height: 28px;
+  overflow: visible;
+}
+
+.d2-mech-row svg circle {
+  fill: none;
+  stroke: var(--peri);
+  stroke-width: 1.4;
+}
+
+.d2-mech-row svg circle.fill {
+  fill: var(--amber);
+  stroke: none;
+}
+
+.d2-mech-row svg line,
+.d2-mech-row svg path {
+  stroke: var(--line);
+  stroke-width: 1.2;
+  fill: none;
+}
+
+.d2-mech-row h3 {
+  font-size: 17px;
+  font-weight: 600;
+  margin: 0 0 6px;
+}
+
+.d2-mech-row p {
+  font-size: 15.5px;
+  line-height: 1.6;
+  color: var(--dim);
+  margin: 0;
+  max-width: 56ch;
+}
+
+/* ---- neighborhood ---- */
+
+.d2-hood {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: clamp(70px, 12vh, 130px) 28px 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(40px, 6vw, 90px);
+  align-items: start;
+}
+
+.d2-hood-copy p {
+  font-size: 16.5px;
+  line-height: 1.7;
+  color: var(--dim);
+  max-width: 50ch;
+  margin: 0;
+}
+
+.d2-catalog {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  padding: 24px 26px;
+}
+
+.d2-cat-name {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0 0 4px;
+}
+
+.d2-cat-meta {
+  font-family: var(--font-plex-mono), monospace;
+  font-size: 11.5px;
+  color: var(--dim);
+  margin: 0 0 18px;
+}
+
+.d2-catalog ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.d2-catalog li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  padding: 11px 0;
+  border-top: 1px solid rgba(61, 75, 117, 0.5);
+  font-size: 15px;
+}
+
+.d2-cat-rel {
+  font-family: var(--font-plex-mono), monospace;
+  font-size: 11px;
+  color: var(--dim);
+  white-space: nowrap;
+}
+
+/* ---- readouts ---- */
+
+.d2-stats {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: clamp(70px, 11vh, 120px) 28px 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.d2-stat {
+  border-top: 1px solid var(--line);
+  padding-top: 20px;
+}
+
+.d2-stat-n {
+  font-size: clamp(36px, 4.6vw, 56px);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--amber);
+  margin: 0 0 6px;
+  font-variant-numeric: tabular-nums;
+}
+
+.d2-stat-l {
+  font-family: var(--font-plex-mono), monospace;
+  font-size: 12px;
+  color: var(--dim);
+  margin: 0;
+}
+
+/* ---- start ---- */
+
+.d2-start {
+  max-width: 1240px;
+  margin: clamp(80px, 13vh, 140px) auto 0;
+  padding: 0 28px;
+}
+
+.d2-start::before {
+  content: "";
+  display: block;
+  border-top: 1px solid var(--line);
+}
+
+.d2-start h2 {
+  font-size: clamp(30px, 4vw, 44px);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin: clamp(56px, 9vh, 90px) 0 14px;
+}
+
+.d2-start p {
+  color: var(--dim);
+  font-size: 16px;
+  margin: 0 0 30px;
+}
+
+/* ---- footer ---- */
+
+.d2-foot {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 90px 28px 110px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 14px;
+}
+
+.d2-foot-dim {
+  color: var(--dim);
+  font-family: var(--font-plex-mono), monospace;
+  font-size: 12px;
+}
+
+/* ---- responsive + motion ---- */
+
+@media (max-width: 860px) {
+  .d2-nav {
+    display: none;
+  }
+
+  .d2-hero {
+    height: clamp(560px, 92vh, 760px);
+  }
+
+  .d2-hero-copy {
+    padding-top: 40vh;
+  }
+
+  .d2-hood {
+    grid-template-columns: 1fr;
+  }
+
+  .d2-stats {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .d2-edges line,
+  .d2-node,
+  .d2-nodes text,
+  .d2-readout {
+    animation: none;
+    opacity: 1;
+    stroke-dashoffset: 0;
+  }
+}

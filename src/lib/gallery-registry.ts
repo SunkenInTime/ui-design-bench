@@ -37,6 +37,7 @@ import withLuna from "@/variants/with-design-skill/luna";
 import withTerra from "@/variants/with-design-skill/terra";
 import withMuseSpark12 from "@/variants/with-design-skill/muse-spark-1.2";
 import withMuseSpark13Flash from "@/variants/with-design-skill/muse-spark-1.3-flash";
+import withSwe2 from "@/variants/with-design-skill/swe-2";
 import withTasteFable from "@/variants/with-taste-skill/fable";
 import withTasteFable51 from "@/variants/with-taste-skill/fable-5.1";
 import withTasteGrok45 from "@/variants/with-taste-skill/grok-4.5";
@@ -53,6 +54,7 @@ import withTasteMuseSpark12 from "@/variants/with-taste-skill/muse-spark-1.2";
 import withTasteMuseSpark13Flash from "@/variants/with-taste-skill/muse-spark-1.3-flash";
 import withTasteGemini37Flash from "@/variants/with-taste-skill/gemini-3.7-flash";
 import withTasteGemini38Flash from "@/variants/with-taste-skill/gemini-3.8-flash";
+import withTasteSwe2 from "@/variants/with-taste-skill/swe-2";
 import withUiShComposer20 from "@/variants/with-ui-sh-skill/composer-2.0";
 import withUiShGpt55Low from "@/variants/with-ui-sh-skill/gpt-5.5-low";
 import withUiShGpt55High from "@/variants/with-ui-sh-skill/gpt-5.5-high";
@@ -89,6 +91,7 @@ import withoutLuna from "@/variants/without-design-skill/luna";
 import withoutTerra from "@/variants/without-design-skill/terra";
 import withoutMuseSpark12 from "@/variants/without-design-skill/muse-spark-1.2";
 import withoutMuseSpark13Flash from "@/variants/without-design-skill/muse-spark-1.3-flash";
+import withoutSwe2 from "@/variants/without-design-skill/swe-2";
 
 type RegistryKey = `${GalleryGroupSlug}:${ModelSlug}`;
 
@@ -132,6 +135,7 @@ const registry: Partial<Record<RegistryKey, VariantModule>> = {
   "with-design-skill:terra": withTerra,
   "with-design-skill:muse-spark-1.2": withMuseSpark12,
   "with-design-skill:muse-spark-1.3-flash": withMuseSpark13Flash,
+  "with-design-skill:swe-2": withSwe2,
   "with-taste-skill:fable": withTasteFable,
   "with-taste-skill:fable-5.1": withTasteFable51,
   "with-taste-skill:grok-4.5": withTasteGrok45,
@@ -148,6 +152,7 @@ const registry: Partial<Record<RegistryKey, VariantModule>> = {
   "with-taste-skill:muse-spark-1.3-flash": withTasteMuseSpark13Flash,
   "with-taste-skill:gemini-3.7-flash": withTasteGemini37Flash,
   "with-taste-skill:gemini-3.8-flash": withTasteGemini38Flash,
+  "with-taste-skill:swe-2": withTasteSwe2,
   "with-ui-sh-skill:composer-2.0": withUiShComposer20,
   "with-ui-sh-skill:gpt-5.5-low": withUiShGpt55Low,
   "with-ui-sh-skill:gpt-5.5-high": withUiShGpt55High,
@@ -184,6 +189,7 @@ const registry: Partial<Record<RegistryKey, VariantModule>> = {
   "without-design-skill:terra": withoutTerra,
   "without-design-skill:muse-spark-1.2": withoutMuseSpark12,
   "without-design-skill:muse-spark-1.3-flash": withoutMuseSpark13Flash,
+  "without-design-skill:swe-2": withoutSwe2,
 };
 
 export function getVariantModule(group: GalleryGroupSlug, model: ModelSlug) {

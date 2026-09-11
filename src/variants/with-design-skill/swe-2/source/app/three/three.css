@@ -1,0 +1,479 @@
+/* ------------------------------------------------------------ */
+/* 03 · SLIP-BOX — the second brain as a card-catalog drawer      */
+/* ------------------------------------------------------------ */
+
+.d3 {
+  --desk: #dfe0d8;
+  --card: #f7f4ea;
+  --ink: #23211b;
+  --dim: #6b6759;
+  --pine: #1d4b38;
+  --red-rule: #c05b4d;
+  --clay: #c96f4a;
+  --ochre: #d9a93c;
+  --sage: #5e8c7b;
+  --drawer: #d3d1c4;
+
+  background-color: var(--desk);
+  color: var(--ink);
+  font-family: var(--font-archivo), system-ui, sans-serif;
+  min-height: 100vh;
+  padding-bottom: 110px;
+  overflow-x: clip;
+}
+
+.d3 a:focus-visible {
+  outline: 2px solid var(--pine);
+  outline-offset: 3px;
+}
+
+/* ---- the card itself ---- */
+
+.d3-card {
+  position: relative;
+  background:
+    linear-gradient(
+      to right,
+      transparent 0,
+      transparent 42px,
+      rgba(192, 91, 77, 0.45) 42px,
+      rgba(192, 91, 77, 0.45) 43.5px,
+      transparent 43.5px
+    ),
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent 27px,
+      rgba(35, 33, 27, 0.12) 27px,
+      rgba(35, 33, 27, 0.12) 28px
+    ),
+    var(--card);
+  border-radius: 3px;
+  padding: 26px 26px 22px 58px;
+  box-shadow:
+    0 1px 0 rgba(35, 33, 27, 0.14),
+    0 10px 18px -10px rgba(60, 52, 30, 0.35);
+}
+
+.d3-tab {
+  position: absolute;
+  top: -9px;
+  left: 34px;
+  width: 56px;
+  height: 12px;
+  border-radius: 3px 3px 0 0;
+  box-shadow: inset 0 -1px 0 rgba(35, 33, 27, 0.2);
+}
+
+.d3-tab--clay {
+  background: var(--clay);
+}
+
+.d3-tab--ochre {
+  background: var(--ochre);
+}
+
+.d3-tab--sage {
+  background: var(--sage);
+}
+
+.d3-tab--pine {
+  background: var(--pine);
+}
+
+.d3-card-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 10px;
+}
+
+.d3-card-head h3 {
+  font-family: var(--font-newsreader), Georgia, serif;
+  font-size: 21px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+.d3-id {
+  font-family: var(--font-archivo), sans-serif;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--pine);
+  border: 1.5px solid var(--pine);
+  border-radius: 2px;
+  padding: 1px 7px;
+  white-space: nowrap;
+}
+
+.d3-card-body {
+  font-family: var(--font-newsreader), Georgia, serif;
+  font-size: 16.5px;
+  line-height: 28px;
+  margin: 0;
+}
+
+.d3-card-cf {
+  font-family: var(--font-newsreader), Georgia, serif;
+  font-style: italic;
+  font-size: 13.5px;
+  color: var(--dim);
+  margin: 14px 0 0;
+}
+
+.d3-card-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 16px 0 0;
+}
+
+.d3-card-links span {
+  font-family: var(--font-archivo), sans-serif;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--pine);
+  background: rgba(29, 75, 56, 0.09);
+  border-radius: 2px;
+  padding: 3px 9px;
+}
+
+/* ---- header: a labeled drawer pull ---- */
+
+.d3-head {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 26px 28px 0;
+  display: flex;
+  align-items: center;
+  gap: 34px;
+}
+
+.d3-label {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 10px;
+  border: 1.5px solid rgba(35, 33, 27, 0.55);
+  border-radius: 3px;
+  padding: 9px 18px 8px;
+  background: rgba(247, 244, 234, 0.55);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.5),
+    0 2px 0 rgba(35, 33, 27, 0.16);
+}
+
+.d3-label-name {
+  font-weight: 800;
+  font-size: 16.5px;
+  letter-spacing: -0.01em;
+}
+
+.d3-label-sub {
+  font-family: var(--font-newsreader), serif;
+  font-style: italic;
+  font-size: 13px;
+  color: var(--dim);
+}
+
+.d3-nav {
+  display: flex;
+  gap: 26px;
+  margin-left: auto;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.d3-nav a {
+  color: var(--dim);
+  text-decoration: none;
+}
+
+.d3-nav a:hover {
+  color: var(--ink);
+}
+
+.d3-signin {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--pine);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1.5px;
+}
+
+/* ---- hero ---- */
+
+.d3-hero {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: clamp(56px, 11vh, 110px) 28px 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: clamp(40px, 6vw, 80px);
+  align-items: center;
+}
+
+.d3-hero-copy h1 {
+  font-size: clamp(42px, 5.6vw, 66px);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.0;
+  margin: 0 0 22px;
+}
+
+.d3-hero-copy p {
+  font-size: 17px;
+  line-height: 1.62;
+  color: var(--dim);
+  max-width: 48ch;
+  margin: 0 0 32px;
+}
+
+.d3-cta {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  flex-wrap: wrap;
+}
+
+.d3-btn {
+  background: var(--pine);
+  color: #f2f0e6;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 14px 28px;
+  border-radius: 3px;
+  text-decoration: none;
+  box-shadow: 0 3px 0 rgba(35, 33, 27, 0.35);
+}
+
+.d3-btn:hover {
+  background: #173b2c;
+}
+
+.d3-btn:active {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 rgba(35, 33, 27, 0.35);
+}
+
+.d3-quiet {
+  font-size: 14.5px;
+  font-weight: 500;
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+
+/* the fanned stack in the hero */
+
+.d3-stack {
+  position: relative;
+  min-height: 380px;
+}
+
+.d3-stack .d3-card {
+  position: absolute;
+  inset: 40px 0 auto;
+  min-height: 240px;
+}
+
+.d3-card--ghost1 {
+  transform: rotate(-3.5deg) translateY(-14px);
+  opacity: 0.55;
+}
+
+.d3-card--ghost2 {
+  transform: rotate(2deg) translateY(-4px);
+  opacity: 0.8;
+}
+
+.d3-card--top {
+  transform: rotate(-0.6deg);
+}
+
+/* ---- sections ---- */
+
+.d3-section {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: clamp(80px, 13vh, 140px) 28px 0;
+}
+
+.d3-h2 {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: clamp(26px, 3vw, 36px);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  margin: 0 0 40px;
+}
+
+.d3-slip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  height: 40px;
+  padding: 0 10px;
+  background: var(--card);
+  border: 1.5px solid rgba(35, 33, 27, 0.5);
+  border-radius: 3px;
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--pine);
+  box-shadow: 0 2px 0 rgba(35, 33, 27, 0.18);
+}
+
+/* method cards */
+
+.d3-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+  padding-top: 10px;
+}
+
+/* anatomy */
+
+.d3-anatomy {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: clamp(36px, 5vw, 70px);
+  align-items: start;
+  padding-top: 10px;
+}
+
+.d3-card--big {
+  padding-top: 32px;
+  transform: rotate(-0.4deg);
+}
+
+.d3-card--big .d3-card-head h3 {
+  font-size: 26px;
+}
+
+.d3-spec {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.d3-spec li {
+  display: grid;
+  grid-template-columns: 7.5em 1fr;
+  gap: 18px;
+  padding: 16px 0;
+  border-top: 1px solid rgba(35, 33, 27, 0.2);
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.d3-spec li:last-child {
+  border-bottom: 1px solid rgba(35, 33, 27, 0.2);
+}
+
+.d3-spec-k {
+  font-weight: 700;
+  color: var(--pine);
+}
+
+/* rates drawer */
+
+.d3-drawer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+  padding: 34px;
+  padding-top: 44px;
+  background: var(--drawer);
+  border: 1.5px solid rgba(35, 33, 27, 0.4);
+  border-radius: 4px;
+  box-shadow:
+    inset 0 2px 8px rgba(35, 33, 27, 0.14),
+    0 3px 0 rgba(35, 33, 27, 0.2);
+}
+
+.d3-rate-link {
+  display: inline-block;
+  margin-top: 18px;
+  font-family: var(--font-archivo), sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--pine);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* ---- footer ---- */
+
+.d3-foot {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: clamp(70px, 11vh, 120px) 28px 0;
+}
+
+.d3-foot p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--dim);
+}
+
+.d3-foot-name {
+  font-weight: 800;
+  font-size: 16px;
+  color: var(--ink) !important;
+  margin-bottom: 4px !important;
+}
+
+/* ---- responsive ---- */
+
+@media (max-width: 940px) {
+  .d3-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .d3-stack {
+    min-height: 340px;
+    max-width: 520px;
+  }
+
+  .d3-cards,
+  .d3-drawer {
+    grid-template-columns: 1fr;
+  }
+
+  .d3-anatomy {
+    grid-template-columns: 1fr;
+  }
+
+  .d3-nav {
+    display: none;
+  }
+}
+
+@media (max-width: 560px) {
+  .d3-card {
+    padding-left: 40px;
+    background:
+      linear-gradient(
+        to right,
+        transparent 0,
+        transparent 26px,
+        rgba(192, 91, 77, 0.45) 26px,
+        rgba(192, 91, 77, 0.45) 27.5px,
+        transparent 27.5px
+      ),
+      repeating-linear-gradient(
+        to bottom,
+        transparent 0,
+        transparent 27px,
+        rgba(35, 33, 27, 0.12) 27px,
+        rgba(35, 33, 27, 0.12) 28px
+      ),
+      var(--card);
+  }
+}

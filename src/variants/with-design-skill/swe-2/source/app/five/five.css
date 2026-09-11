@@ -1,0 +1,375 @@
+/* ------------------------------------------------------------ */
+/* 05 · PLACARD — the landing page as a pasted poster             */
+/* ------------------------------------------------------------ */
+
+.d5 {
+  --bone: #f1eee6;
+  --cobalt: #1d33d8;
+  --ink: #15140f;
+  --orange: #e8480f;
+
+  background: var(--bone);
+  color: var(--ink);
+  font-family: var(--font-archivo), system-ui, sans-serif;
+  min-height: 100vh;
+  overflow-x: clip;
+}
+
+.d5 a:focus-visible {
+  outline: 3px solid var(--orange);
+  outline-offset: 3px;
+}
+
+/* ---- header ---- */
+
+.d5-head {
+  display: flex;
+  align-items: baseline;
+  gap: 18px;
+  padding: 26px clamp(20px, 4vw, 48px);
+}
+
+.d5-wordmark {
+  font-family: var(--font-anton), Impact, sans-serif;
+  font-size: 22px;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+}
+
+.d5-dot {
+  color: var(--orange);
+}
+
+.d5-head-note {
+  font-size: 14px;
+  font-style: italic;
+  color: rgba(21, 20, 15, 0.6);
+}
+
+.d5-head-cta {
+  margin-left: auto;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--bone);
+  background: var(--ink);
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 2px;
+}
+
+.d5-head-cta:hover {
+  background: var(--cobalt);
+}
+
+/* ---- hero: stacked poster type ---- */
+
+.d5-hero {
+  padding: clamp(24px, 5vh, 60px) clamp(20px, 4vw, 48px) 0;
+}
+
+.d5-hero h1 {
+  font-family: var(--font-anton), Impact, sans-serif;
+  text-transform: uppercase;
+  font-size: clamp(64px, 15.5vw, 220px);
+  line-height: 0.94;
+  letter-spacing: 0;
+  margin: 0;
+}
+
+.d5-hero h1 span {
+  display: block;
+}
+
+.d5-hero h1 span:nth-child(2) {
+  margin-left: 0.5em;
+}
+
+.d5-blue {
+  color: var(--cobalt);
+}
+
+.d5-hero-sub {
+  margin-top: clamp(36px, 6vh, 64px);
+  max-width: 1180px;
+  display: grid;
+  grid-template-columns: minmax(0, 44ch) 1fr;
+  gap: 40px;
+  align-items: end;
+  padding-bottom: clamp(56px, 9vh, 100px);
+}
+
+.d5-hero-sub p {
+  font-size: clamp(16px, 1.5vw, 19px);
+  line-height: 1.6;
+  margin: 0;
+  color: rgba(21, 20, 15, 0.78);
+}
+
+.d5-cta {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-self: end;
+}
+
+.d5-btn {
+  display: inline-block;
+  background: var(--cobalt);
+  color: var(--bone);
+  font-size: 16px;
+  font-weight: 700;
+  padding: 16px 34px;
+  border-radius: 2px;
+  text-decoration: none;
+}
+
+.d5-btn:hover {
+  background: var(--ink);
+}
+
+.d5-fine {
+  font-size: 13.5px;
+  font-style: italic;
+  color: rgba(21, 20, 15, 0.55);
+}
+
+/* ---- cobalt band ---- */
+
+.d5-band {
+  background: var(--cobalt);
+  color: var(--bone);
+  padding: clamp(40px, 7vh, 80px) clamp(20px, 4vw, 48px);
+}
+
+.d5-band-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 24px;
+  align-items: baseline;
+  padding: 26px 0;
+  border-top: 1px solid rgba(241, 238, 230, 0.35);
+  max-width: 1280px;
+}
+
+.d5-band-row:last-child {
+  border-bottom: 1px solid rgba(241, 238, 230, 0.35);
+}
+
+.d5-band-row h2 {
+  font-family: var(--font-anton), Impact, sans-serif;
+  text-transform: uppercase;
+  font-size: clamp(44px, 7vw, 96px);
+  line-height: 1;
+  margin: 0;
+}
+
+.d5-band-row p {
+  font-size: clamp(15px, 1.5vw, 18px);
+  line-height: 1.55;
+  margin: 0;
+  max-width: 40ch;
+  color: rgba(241, 238, 230, 0.85);
+}
+
+/* ---- the number ---- */
+
+.d5-stat {
+  padding: clamp(90px, 16vh, 170px) clamp(20px, 4vw, 48px);
+}
+
+.d5-stat p {
+  font-family: var(--font-anton), Impact, sans-serif;
+  font-size: clamp(40px, 7.5vw, 108px);
+  line-height: 1.04;
+  text-transform: uppercase;
+  max-width: 16ch;
+  margin: 0;
+}
+
+/* ---- quote ---- */
+
+.d5-quote {
+  padding: 0 clamp(20px, 4vw, 48px) clamp(90px, 15vh, 160px);
+}
+
+.d5-quote blockquote {
+  font-size: clamp(26px, 3.4vw, 44px);
+  font-weight: 300;
+  font-style: italic;
+  letter-spacing: -0.02em;
+  line-height: 1.18;
+  max-width: 26ch;
+  margin: 0 0 18px;
+}
+
+.d5-quote cite {
+  font-style: normal;
+  font-size: 14px;
+  color: rgba(21, 20, 15, 0.6);
+}
+
+/* ---- rates ---- */
+
+.d5-rates {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border-top: 2px solid var(--ink);
+  border-bottom: 2px solid var(--ink);
+}
+
+.d5-rate {
+  padding: clamp(36px, 6vh, 64px) clamp(20px, 4vw, 48px);
+}
+
+.d5-rate:first-child {
+  border-right: 2px solid var(--ink);
+}
+
+.d5-rate--blue {
+  background: var(--cobalt);
+  color: var(--bone);
+}
+
+.d5-rate-name {
+  font-size: 14px;
+  font-weight: 700;
+  margin: 0 0 14px;
+  color: rgba(21, 20, 15, 0.6);
+}
+
+.d5-rate--blue .d5-rate-name {
+  color: rgba(241, 238, 230, 0.7);
+}
+
+.d5-rate-price {
+  font-family: var(--font-anton), Impact, sans-serif;
+  font-size: clamp(52px, 7vw, 96px);
+  line-height: 1;
+  margin: 0 0 16px;
+  text-transform: uppercase;
+}
+
+.d5-rate-desc {
+  font-size: 15.5px;
+  line-height: 1.55;
+  margin: 0 0 28px;
+  max-width: 34ch;
+  color: rgba(21, 20, 15, 0.75);
+}
+
+.d5-rate--blue .d5-rate-desc {
+  color: rgba(241, 238, 230, 0.85);
+}
+
+.d5-rate-btn {
+  display: inline-block;
+  font-size: 14.5px;
+  font-weight: 700;
+  color: var(--ink);
+  border: 2px solid var(--ink);
+  padding: 12px 26px;
+  border-radius: 2px;
+  text-decoration: none;
+}
+
+.d5-rate-btn:hover {
+  background: var(--ink);
+  color: var(--bone);
+}
+
+.d5-rate--blue .d5-rate-btn {
+  color: var(--bone);
+  border-color: var(--bone);
+}
+
+.d5-rate--blue .d5-rate-btn:hover {
+  background: var(--bone);
+  color: var(--cobalt);
+}
+
+/* ---- the asterisk footnote ---- */
+
+.d5-nolock {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: clamp(70px, 11vh, 120px) clamp(20px, 4vw, 48px);
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.d5-star {
+  color: var(--orange);
+  font-size: 22px;
+  line-height: 0;
+}
+
+.d5-nolock-note {
+  font-weight: 400;
+  font-style: italic;
+  color: rgba(21, 20, 15, 0.55);
+  margin-left: 14px;
+}
+
+/* ---- footer: the wordmark runs off the page ---- */
+
+.d5-foot {
+  overflow: hidden;
+  padding: 0 clamp(20px, 4vw, 48px);
+}
+
+.d5-giant {
+  font-family: var(--font-anton), Impact, sans-serif;
+  font-size: clamp(90px, 17.5vw, 320px);
+  text-transform: uppercase;
+  line-height: 0.8;
+  letter-spacing: 0;
+  margin: 0 0 -0.18em;
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+/* ---- responsive ---- */
+
+@media (max-width: 560px) {
+  .d5-head-note {
+    display: none;
+  }
+}
+
+@media (max-width: 820px) {
+  .d5-hero-sub {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .d5-cta {
+    justify-self: start;
+  }
+
+  .d5-band-row {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .d5-rates {
+    grid-template-columns: 1fr;
+  }
+
+  .d5-rate:first-child {
+    border-right: none;
+    border-bottom: 2px solid var(--ink);
+  }
+
+  .d5-nolock {
+    flex-wrap: wrap;
+  }
+
+  .d5-nolock-note {
+    margin-left: 0;
+    width: 100%;
+  }
+}
