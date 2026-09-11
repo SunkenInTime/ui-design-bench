@@ -35,7 +35,7 @@ const MODEL_ALIASES: Partial<Record<ModelSlug, string[]>> = {
   "grok-4.6": ["grok4.6"],
   "kimi-k3": ["kimi k3", "k3"],
   "glm-5.3-flash": ["ox alpha", "ox-alpha", "ox"],
-  "muse-spark-1.3-flash": ["muse", "spark"],
+  "muse-spark-1.3": ["muse", "spark"],
   "swe-2": ["swe2", "swe 2", "swe-2 max"],
 };
 
