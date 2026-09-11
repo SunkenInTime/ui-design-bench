@@ -4,7 +4,7 @@ import Page2 from "./source/app/2/page";
 import Page3 from "./source/app/3/page";
 import Page4 from "./source/app/4/page";
 import Page5 from "./source/app/5/page";
-import "@/generated/scoped-variant-css/without-design-skill/muse-spark-1.3-flash/source/app/globals.css";
+import "@/generated/scoped-variant-css/with-taste-skill/muse-spark-1.3/source/app/globals.css";
 
 const pages = { "1": Page1, "2": Page2, "3": Page3, "4": Page4, "5": Page5 } as const;
 
