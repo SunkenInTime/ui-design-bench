@@ -1,0 +1,23 @@
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="kimi-k3"]) *,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="kimi-k3"]) 
+*::before,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="kimi-k3"]) 
+*::after {
+  box-sizing: border-box;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="kimi-k3"]),:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="kimi-k3"]) {
+  margin: 0;
+  padding: 0;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="kimi-k3"]) {
+  background: #ffffff;
+  color: #171717;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="kimi-k3"]) img,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="kimi-k3"]) 
+svg,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="kimi-k3"]) 
+canvas {
+  display: block;
+  max-width: 100%;
+}

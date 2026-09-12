@@ -1,0 +1,83 @@
+.page {
+  min-height: 100vh;
+  padding: clamp(3rem, 9vw, 7rem) clamp(1.25rem, 5vw, 4rem) 8rem;
+  background: #0d0e11;
+  color: #e8e8e6;
+  font-family: ui-sans-serif, -apple-system, "Segoe UI", system-ui, sans-serif;
+}
+
+.inner {
+  max-width: 60rem;
+  margin: 0 auto;
+}
+
+.eyebrow {
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #7c7f88;
+}
+
+.title {
+  margin-top: 1.25rem;
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+}
+
+.intro {
+  max-width: 44ch;
+  margin-top: 1.25rem;
+  color: #9a9da5;
+  font-size: 1.0625rem;
+}
+
+.list {
+  margin-top: clamp(2.5rem, 6vw, 4rem);
+  border-top: 1px solid #24262c;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 3.5rem 1fr auto;
+  align-items: baseline;
+  gap: 1.5rem;
+  padding: 1.5rem 0.75rem 1.5rem 0;
+  border-bottom: 1px solid #24262c;
+  transition: background-color 140ms ease;
+}
+
+.row:hover {
+  background: #14161a;
+}
+
+.num {
+  font-variant-numeric: tabular-nums;
+  font-size: 0.875rem;
+  color: #5f626b;
+}
+
+.name {
+  display: block;
+  font-size: 1.375rem;
+  font-weight: 500;
+  letter-spacing: -0.015em;
+}
+
+.premise {
+  display: block;
+  margin-top: 0.35rem;
+  color: #8b8e97;
+  font-size: 0.9375rem;
+}
+
+.arrow {
+  color: #5f626b;
+  transition: transform 140ms ease, color 140ms ease;
+}
+
+.row:hover .arrow {
+  color: #e8e8e6;
+  transform: translateX(3px);
+}

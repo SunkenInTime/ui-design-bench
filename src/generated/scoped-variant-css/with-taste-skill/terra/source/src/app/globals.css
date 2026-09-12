@@ -1,0 +1,1180 @@
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) * {
+  box-sizing: border-box;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) {
+  min-height: 100%;
+  scroll-behavior: smooth;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) {
+  min-height: 100%;
+  margin: 0;
+  font-family: var(--font-geist-sans), Arial, sans-serif;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) a {
+  color: inherit;
+  text-decoration: none;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) button,:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) 
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .direction {
+  --button-radius: 999px;
+  --surface-radius: 22px;
+  min-height: 100dvh;
+  overflow: clip;
+  padding-bottom: 6.5rem;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .site-header,:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) 
+.site-footer {
+  width: min(100% - 4rem, 1360px);
+  margin: 0 auto;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .site-header {
+  display: flex;
+  min-height: 72px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .wordmark {
+  font-size: 1.08rem;
+  font-weight: 650;
+  letter-spacing: -0.06em;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .site-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  font-size: 0.88rem;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .site-nav a,:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) 
+.text-link {
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .site-nav a:hover,:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) 
+.text-link:hover {
+  opacity: 0.65;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .site-nav a:focus-visible,:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) 
+.text-link:focus-visible,:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) 
+.button:focus-visible,:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) 
+.wordmark:focus-visible,:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) 
+.site-footer a:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 5px;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .kicker,:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) 
+.section-label {
+  margin: 0;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.67rem;
+  font-weight: 650;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .hero-copy {
+  max-width: 31rem;
+  margin: 1.65rem 0 0;
+  font-size: clamp(1rem, 1.35vw, 1.17rem);
+  line-height: 1.55;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 2rem;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .button {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  padding: 0.78rem 1.2rem;
+  border: 1px solid transparent;
+  border-radius: var(--button-radius);
+  font-size: 0.88rem;
+  font-weight: 620;
+  line-height: 1;
+  white-space: nowrap;
+  transition: transform 180ms ease, background-color 180ms ease, color 180ms ease, border-color 180ms ease;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .button:hover {
+  transform: translateY(-2px);
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .button:active,:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) 
+.iteration-switcher__button:active {
+  transform: translateY(-1px) scale(0.98);
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .text-link {
+  display: inline-block;
+  margin-top: 1.75rem;
+  font-size: 0.9rem;
+  font-weight: 650;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.32rem;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .site-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 3rem 0 1rem;
+  font-size: 0.78rem;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .site-footer a {
+  font-weight: 650;
+  text-decoration: underline;
+  text-underline-offset: 0.28rem;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .enter {
+  opacity: 0;
+  transform: translateY(18px);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  :where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .enter {
+    animation: gallery-with-taste-skill-terra-source-src-app-globals-rise-in 700ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  :where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .enter--two {
+    animation-delay: 130ms;
+  }
+}
+
+@keyframes gallery-with-taste-skill-terra-source-src-app-globals-rise-in {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) {
+    scroll-behavior: auto;
+  }
+
+  :where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) *,:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) 
+  *::before,:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) 
+  *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 1ms !important;
+  }
+}
+
+/* Buttons are pill-shaped. All image and surface containers share the same soft radius. */
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .direction-one {
+  color: #18342b;
+  background: #f4f5ef;
+  color-scheme: light;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .one-header {
+  color: #18342b;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .one-hero {
+  display: grid;
+  width: min(100% - 4rem, 1360px);
+  min-height: calc(100dvh - 72px);
+  margin: 0 auto;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  align-items: center;
+  gap: clamp(2rem, 5vw, 7rem);
+  padding: 2.4rem 0 5rem;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .one-hero__copy {
+  padding: 1rem 0;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .one-hero h1 {
+  max-width: 9ch;
+  margin: 1.05rem 0 0;
+  font-size: clamp(3.7rem, 7.1vw, 6.9rem);
+  font-weight: 560;
+  letter-spacing: -0.085em;
+  line-height: 0.94;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .one-hero .kicker,:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) 
+.one-flow .section-label {
+  color: #4d6d5d;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .one-hero .hero-copy,:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) 
+.one-return__copy p,:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) 
+.one-flow__list p {
+  color: #506258;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .one-hero .button--solid {
+  color: #f6f8f2;
+  background: #183f31;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .one-hero .button--solid:hover {
+  background: #25503f;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .one-hero .button--quiet {
+  border-color: #a9b5aa;
+  color: #183f31;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .one-hero__media,:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) 
+.one-return__image {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--surface-radius);
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .one-hero__media {
+  min-height: clamp(420px, 57vw, 650px);
+  box-shadow: 0 32px 80px rgb(37 57 48 / 0.16);
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .one-hero__media img {
+  object-fit: cover;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .one-flow {
+  display: grid;
+  width: min(100% - 4rem, 1160px);
+  margin: 0 auto;
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+  gap: clamp(2.5rem, 9vw, 10rem);
+  padding: 7.5rem 0;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .one-flow h2,:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) 
+.one-return h2 {
+  margin: 1rem 0 0;
+  font-size: clamp(2.35rem, 4.5vw, 4.5rem);
+  font-weight: 560;
+  letter-spacing: -0.075em;
+  line-height: 0.98;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .one-flow__list {
+  display: grid;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .one-flow__list li {
+  padding-bottom: 1.7rem;
+  border-bottom: 1px solid #cbd2c9;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .one-flow__list strong {
+  font-size: 1.25rem;
+  font-weight: 580;
+  letter-spacing: -0.04em;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .one-flow__list p {
+  max-width: 29rem;
+  margin: 0.6rem 0 0;
+  line-height: 1.6;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .one-return {
+  display: grid;
+  width: min(100% - 4rem, 1360px);
+  margin: 0 auto;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  align-items: center;
+  gap: clamp(2.5rem, 8vw, 9rem);
+  padding: 3rem 0 5rem;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .one-return__image {
+  min-height: 400px;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .one-return__image img {
+  object-fit: cover;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .one-return__copy {
+  max-width: 34rem;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .one-return__copy p {
+  margin: 1.3rem 0 0;
+  line-height: 1.65;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .one-footer {
+  color: #506258;
+}
+
+/* Direction two keeps every surface in the same midnight-blue theme. */
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .direction-two {
+  color: #e5ebf2;
+  background: #0f1929;
+  color-scheme: dark;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .two-header {
+  color: #e8eef6;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .two-header .site-nav {
+  color: #aab8ca;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .two-hero {
+  display: grid;
+  width: min(100% - 4rem, 1280px);
+  min-height: calc(100dvh - 72px);
+  margin: 0 auto;
+  grid-template-columns: minmax(0, 0.95fr) minmax(280px, 0.7fr);
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(2rem, 7vw, 9rem);
+  padding: 2rem 0 5rem;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .two-hero__copy {
+  max-width: 43rem;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .two-hero h1 {
+  max-width: 8.5ch;
+  margin: 1.1rem 0 0;
+  font-size: clamp(3.4rem, 6.6vw, 6.6rem);
+  font-weight: 520;
+  letter-spacing: -0.09em;
+  line-height: 0.93;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .two-hero .kicker,:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) 
+.two-reading .section-label {
+  color: #7f9fc7;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .two-hero .hero-copy,:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) 
+.two-attention__copy,:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) 
+.two-reading__copy > p {
+  color: #aebdce;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .two-hero .button--solid {
+  color: #101a29;
+  background: #c5d7ed;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .two-hero .button--solid:hover {
+  background: #e3edf8;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .two-hero .button--quiet {
+  border-color: #55657c;
+  color: #d4dfeb;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .two-hero__image {
+  position: relative;
+  min-height: clamp(440px, 60vw, 690px);
+  overflow: hidden;
+  border: 1px solid #31425a;
+  border-radius: var(--surface-radius);
+  box-shadow: 0 38px 90px rgb(1 5 12 / 0.42);
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .two-hero__image img,:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) 
+.two-reading__image img {
+  object-fit: cover;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .two-attention {
+  width: min(100% - 4rem, 1000px);
+  margin: 0 auto;
+  padding: 7rem 0;
+  text-align: center;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .two-attention__lede {
+  margin: 0;
+  color: #7f9fc7;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.8rem;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .two-attention h2 {
+  max-width: 16ch;
+  margin: 1.5rem auto 0;
+  font-size: clamp(2.6rem, 6vw, 5.8rem);
+  font-weight: 510;
+  letter-spacing: -0.085em;
+  line-height: 0.96;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .two-attention__rule {
+  width: min(16rem, 34vw);
+  height: 1px;
+  margin: 2.5rem auto 1.7rem;
+  background: #44536a;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .two-attention__copy {
+  max-width: 34rem;
+  margin: 0 auto;
+  line-height: 1.65;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .two-reading {
+  display: grid;
+  width: min(100% - 4rem, 1280px);
+  margin: 0 auto;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  align-items: center;
+  gap: clamp(2.5rem, 8vw, 9rem);
+  padding: 4rem 0 5rem;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .two-reading__image {
+  position: relative;
+  min-height: 390px;
+  overflow: hidden;
+  border: 1px solid #31425a;
+  border-radius: var(--surface-radius);
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .two-reading__copy {
+  max-width: 29rem;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .two-reading h2 {
+  margin: 1rem 0 0;
+  font-size: clamp(2.5rem, 4.9vw, 4.7rem);
+  font-weight: 530;
+  letter-spacing: -0.075em;
+  line-height: 0.97;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .two-reading__copy > p {
+  margin: 1.2rem 0 0;
+  line-height: 1.65;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .two-reading .text-link,:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) 
+.two-footer {
+  color: #bfd0e7;
+}
+
+/* Direction three uses coral throughout, from page field to button accent. */
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .direction-three {
+  color: #4a241d;
+  background: #ffe9df;
+  color-scheme: light;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .three-header {
+  color: #5d2f27;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .three-hero {
+  display: grid;
+  width: min(100% - 4rem, 1360px);
+  min-height: calc(100dvh - 72px);
+  margin: 0 auto;
+  grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
+  align-items: center;
+  gap: clamp(2rem, 5vw, 7rem);
+  padding: 2rem 0 5rem;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .three-hero h1 {
+  max-width: 9ch;
+  margin: 1.1rem 0 0;
+  font-size: clamp(3.55rem, 6.8vw, 6.5rem);
+  font-weight: 550;
+  letter-spacing: -0.09em;
+  line-height: 0.92;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .three-hero .kicker,:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) 
+.three-gather .section-label {
+  color: #a64b39;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .three-hero .hero-copy,:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) 
+.three-gather__ideas p,:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) 
+.three-shape__copy p {
+  color: #7d5147;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .three-hero .button--solid {
+  color: #fff6f1;
+  background: #a6412d;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .three-hero .button--solid:hover {
+  background: #803322;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .three-hero .button--quiet {
+  border-color: #d58c7d;
+  color: #873424;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .three-hero__image {
+  position: relative;
+  min-height: clamp(430px, 54vw, 650px);
+  overflow: hidden;
+  border-radius: var(--surface-radius);
+  box-shadow: 0 30px 80px rgb(135 56 38 / 0.18);
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .three-hero__image img,:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) 
+.three-shape__image img {
+  object-fit: cover;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .three-gather {
+  display: grid;
+  width: min(100% - 4rem, 1180px);
+  margin: 0 auto;
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+  gap: clamp(2.5rem, 10vw, 11rem);
+  padding: 7.5rem 0;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .three-gather h2,:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) 
+.three-shape h2 {
+  margin: 1rem 0 0;
+  font-size: clamp(2.55rem, 4.9vw, 4.7rem);
+  font-weight: 550;
+  letter-spacing: -0.08em;
+  line-height: 0.95;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .three-gather__ideas {
+  display: grid;
+  gap: 1.4rem;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .three-gather__ideas article {
+  padding: 0 0 1.35rem;
+  border-bottom: 1px solid #e2aa9c;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .three-gather__ideas strong {
+  font-size: 1.2rem;
+  font-weight: 640;
+  letter-spacing: -0.045em;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .three-gather__ideas p {
+  max-width: 28rem;
+  margin: 0.45rem 0 0;
+  line-height: 1.6;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .three-shape {
+  display: grid;
+  width: min(100% - 4rem, 1360px);
+  margin: 0 auto;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  align-items: center;
+  gap: clamp(2.5rem, 8vw, 9rem);
+  padding: 3rem 0 5rem;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .three-shape__copy {
+  max-width: 32rem;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .three-shape__copy p {
+  margin: 1.25rem 0 0;
+  line-height: 1.65;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .three-shape__image {
+  position: relative;
+  min-height: 410px;
+  overflow: hidden;
+  border-radius: var(--surface-radius);
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .three-footer {
+  color: #7d5147;
+}
+
+/* Direction four holds to a single dark technical palette. */
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .direction-four {
+  color: #e8eff8;
+  background: #101720;
+  color-scheme: dark;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .four-header {
+  color: #e9f0f8;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .four-header .site-nav {
+  color: #afbed0;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .four-hero {
+  display: grid;
+  width: min(100% - 4rem, 1360px);
+  min-height: calc(100dvh - 72px);
+  margin: 0 auto;
+  grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+  align-items: center;
+  gap: clamp(2rem, 5vw, 7rem);
+  padding: 2rem 0 5rem;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .four-hero h1 {
+  max-width: 8ch;
+  margin: 1rem 0 0;
+  font-size: clamp(3.55rem, 6.8vw, 6.6rem);
+  font-weight: 560;
+  letter-spacing: -0.09em;
+  line-height: 0.92;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .four-hero .kicker,:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) 
+.four-thread .section-label {
+  color: #79aaff;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .four-hero .hero-copy,:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) 
+.four-thread__copy > p,:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) 
+.four-source p {
+  color: #a9b9ca;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .four-hero .button--solid {
+  color: #101720;
+  background: #d6e6fa;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .four-hero .button--solid:hover {
+  background: #f0f6ff;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .four-hero .button--quiet {
+  border-color: #4a617d;
+  color: #d7e4f5;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .four-hero__image,:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) 
+.four-thread__image {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #27384c;
+  border-radius: var(--surface-radius);
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .four-hero__image {
+  min-height: clamp(410px, 54vw, 645px);
+  box-shadow: 0 34px 90px rgb(0 0 0 / 0.32);
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .four-hero__image img,:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) 
+.four-thread__image img {
+  object-fit: cover;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .four-thread {
+  display: grid;
+  width: min(100% - 4rem, 1220px);
+  margin: 0 auto;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  align-items: center;
+  gap: clamp(2.5rem, 8vw, 9rem);
+  padding: 7rem 0 4rem;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .four-thread__copy {
+  max-width: 31rem;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .four-thread h2,:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) 
+.four-source h2 {
+  margin: 1rem 0 0;
+  font-size: clamp(2.55rem, 5vw, 4.8rem);
+  font-weight: 550;
+  letter-spacing: -0.08em;
+  line-height: 0.95;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .four-thread__copy > p {
+  margin: 1.3rem 0 0;
+  line-height: 1.65;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .four-thread__image {
+  min-height: 410px;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .four-source {
+  display: grid;
+  width: min(100% - 4rem, 1220px);
+  margin: 0 auto;
+  grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.3fr);
+  gap: clamp(2rem, 8vw, 9rem);
+  padding: 7rem 0 5rem;
+  border-top: 1px solid #29394c;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .four-source__lead {
+  margin: 0;
+  color: #79aaff;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.78rem;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .four-source > div {
+  max-width: 36rem;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .four-source p:not(.four-source__lead) {
+  max-width: 29rem;
+  margin: 1.25rem 0 0;
+  line-height: 1.65;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .four-source .text-link,:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) 
+.four-footer {
+  color: #c5d9f2;
+}
+
+/* Direction five is a light sage system with a sharper typographic composition. */
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .direction-five {
+  color: #18342b;
+  background: #f2f5ed;
+  color-scheme: light;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .five-header {
+  color: #18342b;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .five-hero {
+  display: grid;
+  width: min(100% - 4rem, 1360px);
+  min-height: calc(100dvh - 72px);
+  margin: 0 auto;
+  grid-template-columns: minmax(0, 0.83fr) minmax(0, 1.17fr);
+  align-items: center;
+  gap: clamp(2rem, 5vw, 7rem);
+  padding: 2rem 0 5rem;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .five-hero h1 {
+  max-width: 8ch;
+  margin: 1rem 0 0;
+  font-size: clamp(3.45rem, 6.6vw, 6.5rem);
+  font-weight: 560;
+  letter-spacing: -0.09em;
+  line-height: 0.93;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .five-hero .kicker,:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) 
+.five-library .section-label {
+  color: #557061;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .five-hero .hero-copy,:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) 
+.five-practice__copy p {
+  color: #53675c;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .five-hero .button--solid {
+  color: #f4f7f0;
+  background: #1d3e33;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .five-hero .button--solid:hover {
+  background: #2c5547;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .five-hero .button--quiet {
+  border-color: #aebbb0;
+  color: #1d3e33;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .five-hero__image,:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) 
+.five-practice__image {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--surface-radius);
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .five-hero__image {
+  min-height: clamp(410px, 53vw, 640px);
+  box-shadow: 0 30px 80px rgb(43 77 63 / 0.14);
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .five-hero__image img,:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) 
+.five-practice__image img {
+  object-fit: cover;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .five-library {
+  width: min(100% - 4rem, 1150px);
+  margin: 0 auto;
+  padding: 7rem 0 5rem;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .five-library h2 {
+  max-width: 12ch;
+  margin: 1rem 0 0;
+  font-size: clamp(2.7rem, 5.6vw, 5.8rem);
+  font-weight: 540;
+  letter-spacing: -0.09em;
+  line-height: 0.93;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .five-library__terms {
+  display: grid;
+  margin-top: 4rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-top: 1px solid #bdc8bb;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .five-library__terms span {
+  padding: 1rem 0.75rem 0 0;
+  color: #5f7367;
+  font-size: clamp(1.15rem, 2vw, 1.55rem);
+  font-weight: 540;
+  letter-spacing: -0.05em;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .five-practice {
+  display: grid;
+  width: min(100% - 4rem, 1360px);
+  margin: 0 auto;
+  grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
+  align-items: center;
+  gap: clamp(2.5rem, 8vw, 9rem);
+  padding: 3rem 0 5rem;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .five-practice__image {
+  min-height: 440px;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .five-practice__copy {
+  max-width: 35rem;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .five-practice h2 {
+  margin: 0;
+  font-size: clamp(2.45rem, 4.9vw, 4.7rem);
+  font-weight: 540;
+  letter-spacing: -0.08em;
+  line-height: 0.96;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .five-practice__copy p {
+  margin: 1.25rem 0 0;
+  line-height: 1.65;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .five-footer {
+  color: #53675c;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .iteration-switcher {
+  position: fixed;
+  z-index: 10;
+  right: 1.4rem;
+  bottom: 1.4rem;
+  display: grid;
+  justify-items: end;
+  gap: 0.65rem;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .iteration-switcher__button {
+  min-height: 42px;
+  padding: 0.7rem 0.95rem;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  color: inherit;
+  background: transparent;
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 650;
+  line-height: 1;
+  cursor: pointer;
+  transition: background-color 180ms ease, color 180ms ease, transform 180ms ease;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .iteration-switcher__button:hover {
+  transform: translateY(-2px);
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .iteration-switcher__button:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .iteration-switcher__menu {
+  display: grid;
+  min-width: 224px;
+  gap: 0.2rem;
+  padding: 0.75rem;
+  border: 1px solid currentColor;
+  border-radius: 16px;
+  backdrop-filter: blur(18px);
+  box-shadow: 0 16px 45px rgb(10 20 17 / 0.13);
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .iteration-switcher__eyebrow {
+  margin: 0.15rem 0.3rem 0.5rem;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.62rem;
+  font-weight: 650;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .iteration-switcher__link {
+  display: grid;
+  min-height: 36px;
+  grid-template-columns: 2.25rem 1fr;
+  align-items: center;
+  padding: 0.15rem 0.3rem;
+  border-radius: 9px;
+  transition: background-color 150ms ease, transform 150ms ease;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .iteration-switcher__link:hover {
+  transform: translateX(-2px);
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .iteration-switcher__link span {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.66rem;
+  opacity: 0.72;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .iteration-switcher__link strong {
+  font-size: 0.8rem;
+  font-weight: 620;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .iteration-switcher--light {
+  color: #17352b;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .iteration-switcher--light .iteration-switcher__button {
+  background: rgb(244 247 240 / 0.94);
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .iteration-switcher--light .iteration-switcher__button:hover,:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) 
+.iteration-switcher--light .iteration-switcher__link:hover,:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) 
+.iteration-switcher--light .iteration-switcher__link.is-current {
+  background: #dfe9dd;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .iteration-switcher--light .iteration-switcher__menu {
+  background: rgb(244 247 240 / 0.92);
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .iteration-switcher--dark {
+  color: #dfeafa;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .iteration-switcher--dark .iteration-switcher__button {
+  background: rgb(15 24 37 / 0.92);
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .iteration-switcher--dark .iteration-switcher__button:hover,:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) 
+.iteration-switcher--dark .iteration-switcher__link:hover,:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) 
+.iteration-switcher--dark .iteration-switcher__link.is-current {
+  background: #263852;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .iteration-switcher--dark .iteration-switcher__menu {
+  background: rgb(15 24 37 / 0.93);
+  box-shadow: 0 16px 45px rgb(0 0 0 / 0.34);
+}
+
+@media (max-width: 767px) {
+  :where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .direction {
+    padding-bottom: 6rem;
+  }
+
+  :where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .site-header,:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) 
+  .site-footer,:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) 
+  .one-hero,:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) 
+  .one-flow,:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) 
+  .one-return,:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) 
+  .two-hero,:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) 
+  .two-reading,:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) 
+  .three-hero,:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) 
+  .three-gather,:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) 
+  .three-shape,:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) 
+  .four-hero,:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) 
+  .four-thread,:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) 
+  .four-source,:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) 
+  .five-hero,:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) 
+  .five-library,:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) 
+  .five-practice {
+    width: min(100% - 2rem, 680px);
+  }
+
+  :where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .site-header {
+    min-height: 64px;
+  }
+
+  :where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .site-nav {
+    gap: 0.95rem;
+    font-size: 0.78rem;
+  }
+
+  :where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .one-hero,:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) 
+  .two-hero,:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) 
+  .three-hero,:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) 
+  .four-hero,:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) 
+  .five-hero {
+    min-height: auto;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    padding: 3rem 0 5.2rem;
+  }
+
+  :where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .one-hero__copy,:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) 
+  .two-hero__copy,:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) 
+  .three-hero__copy,:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) 
+  .four-hero__copy,:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) 
+  .five-hero__copy {
+    padding: 0;
+  }
+
+  :where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .one-hero h1,:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) 
+  .two-hero h1,:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) 
+  .three-hero h1,:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) 
+  .four-hero h1,:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) 
+  .five-hero h1 {
+    max-width: 11ch;
+    font-size: clamp(3.25rem, 14vw, 5.1rem);
+  }
+
+  :where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .one-hero__media,:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) 
+  .two-hero__image,:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) 
+  .three-hero__image,:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) 
+  .four-hero__image,:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) 
+  .five-hero__image {
+    min-height: min(112vw, 560px);
+  }
+
+  :where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .two-hero__image {
+    min-height: min(126vw, 650px);
+  }
+
+  :where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .one-flow,:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) 
+  .two-reading,:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) 
+  .three-gather,:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) 
+  .three-shape,:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) 
+  .four-thread,:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) 
+  .four-source,:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) 
+  .five-practice {
+    grid-template-columns: 1fr;
+    gap: 2.4rem;
+    padding: 5rem 0;
+  }
+
+  :where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .one-return {
+    grid-template-columns: 1fr;
+    gap: 2.4rem;
+    padding: 1rem 0 4rem;
+  }
+
+  :where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .one-return__image,:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) 
+  .two-reading__image,:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) 
+  .three-shape__image,:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) 
+  .four-thread__image,:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) 
+  .five-practice__image {
+    min-height: 340px;
+  }
+
+  :where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .two-attention {
+    width: min(100% - 2rem, 680px);
+    padding: 5.5rem 0;
+    text-align: left;
+  }
+
+  :where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .two-attention h2,:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) 
+  .two-attention__copy {
+    margin-left: 0;
+  }
+
+  :where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .two-attention__rule {
+    margin-left: 0;
+  }
+
+  :where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .two-attention h2 {
+    max-width: 9ch;
+  }
+
+  :where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .three-gather__ideas {
+    gap: 1.25rem;
+  }
+
+  :where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .four-source {
+    border-top: 1px solid #29394c;
+  }
+
+  :where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .five-library {
+    padding: 5rem 0 4rem;
+  }
+
+  :where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .five-library__terms {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.2rem 0.4rem;
+  }
+
+  :where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .site-footer {
+    flex-direction: column;
+    padding-top: 2rem;
+  }
+
+  :where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .iteration-switcher {
+    right: 1rem;
+    bottom: 1rem;
+  }
+
+  :where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="terra"]) .iteration-switcher__menu {
+    min-width: 212px;
+  }
+}

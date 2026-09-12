@@ -1,0 +1,376 @@
+/* ------------------------------------------------------------------ */
+/* 01 · ARCHIVE — a typeset commonplace-book page with live marginalia */
+/* ------------------------------------------------------------------ */
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="swe-2"]) .d1 {
+  --paper: #e9eae3;
+  --ink: #21231e;
+  --ink-soft: #565a4e;
+  --indigo: #35418f;
+  --oxide: #a63a2b;
+  --rule: rgba(33, 35, 30, 0.22);
+
+  background-color: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-spectral), Georgia, serif;
+  min-height: 100vh;
+  padding: clamp(20px, 4vw, 56px) 0 96px;
+  position: relative;
+  overflow-x: clip;
+}
+
+/* faint laid-paper tooth */
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="swe-2"]) .d1::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* the plate mark — a book page's impressed border */
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="swe-2"]) .d1 .plate {
+  position: fixed;
+  inset: 14px;
+  border: 1px solid rgba(33, 35, 30, 0.16);
+  pointer-events: none;
+  z-index: 5;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="swe-2"]) .d1 a {
+  color: var(--indigo);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="swe-2"]) .d1 a:focus-visible {
+  outline: 2px solid var(--indigo);
+  outline-offset: 3px;
+}
+
+/* ---- title page ---- */
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="swe-2"]) .d1-head {
+  text-align: center;
+  padding-top: clamp(24px, 6vh, 72px);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="swe-2"]) .d1-nav {
+  display: flex;
+  justify-content: center;
+  gap: clamp(24px, 5vw, 56px);
+  font-size: 14px;
+  margin-bottom: clamp(40px, 8vh, 88px);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="swe-2"]) .d1-nav a {
+  color: var(--ink-soft);
+  text-decoration: none;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="swe-2"]) .d1-nav a:hover {
+  color: var(--indigo);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="swe-2"]) .d1-wordmark {
+  font-size: clamp(52px, 9vw, 108px);
+  font-weight: 300;
+  letter-spacing: -0.015em;
+  line-height: 1;
+  margin: 0;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="swe-2"]) .d1-rule {
+  width: min(420px, 60vw);
+  border: none;
+  border-top: 1px solid var(--rule);
+  margin: clamp(20px, 3.5vh, 34px) auto;
+  position: relative;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="swe-2"]) .d1-rule::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -3.5px;
+  width: 7px;
+  height: 7px;
+  transform: translateX(-50%) rotate(45deg);
+  background: var(--paper);
+  border: 1px solid var(--rule);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="swe-2"]) .d1-subtitle {
+  font-style: italic;
+  font-size: clamp(16px, 2.2vw, 21px);
+  color: var(--ink-soft);
+  margin: 0;
+}
+
+/* ---- lede ---- */
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="swe-2"]) .d1-intro {
+  max-width: 60ch;
+  margin: clamp(48px, 9vh, 96px) auto 0;
+  padding: 0 24px;
+  text-align: center;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="swe-2"]) .d1-lede {
+  font-size: clamp(17px, 1.6vw, 19.5px);
+  line-height: 1.78;
+  margin: 0;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="swe-2"]) .d1-cta {
+  margin-top: 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="swe-2"]) .d1 a.d1-btn {
+  display: inline-block;
+  background: var(--indigo);
+  color: #f4f3ee;
+  font-size: 16px;
+  padding: 13px 30px;
+  text-decoration: none;
+  border-radius: 2px;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="swe-2"]) .d1 a.d1-btn:hover {
+  background: #2a3478;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="swe-2"]) .d1 a.d1-quiet {
+  font-size: 14.5px;
+  font-style: italic;
+}
+
+/* ---- specimen entry with marginalia ---- */
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="swe-2"]) .d1-specimen {
+  max-width: 920px;
+  margin: clamp(72px, 14vh, 140px) auto 0;
+  padding: 0 24px;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="swe-2"]) .d1-spec-label {
+  font-size: 13.5px;
+  font-style: italic;
+  color: var(--ink-soft);
+  margin: 0 0 18px;
+  padding-left: 2px;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="swe-2"]) .d1-entry {
+  max-width: 56ch;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="swe-2"]) .d1-entry h2 {
+  font-size: clamp(26px, 3vw, 34px);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  margin: 0 0 20px;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="swe-2"]) .d1-entry > p {
+  font-size: 17.5px;
+  line-height: 1.8;
+  margin: 0 0 1.2em;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="swe-2"]) .d1-entry:not(.d1-entry--small) > p:first-of-type::first-letter {
+  font-size: 3.4em;
+  line-height: 0.85;
+  float: left;
+  padding: 4px 10px 0 0;
+  font-weight: 500;
+  color: var(--indigo);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="swe-2"]) .d1-entry::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="swe-2"]) .d1-margin-note {
+  float: right;
+  clear: right;
+  width: 200px;
+  margin: 0.35em -236px 1.1em 28px;
+  font-size: 13.5px;
+  font-style: italic;
+  line-height: 1.5;
+  color: var(--oxide);
+  padding-left: 14px;
+  border-left: 1px solid rgba(166, 58, 43, 0.4);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="swe-2"]) .d1-filed {
+  clear: both;
+  font-size: 14.5px;
+  font-style: italic;
+  color: var(--ink-soft);
+  border-top: 1px solid var(--rule);
+  padding-top: 14px;
+  margin-top: 8px;
+}
+
+/* ---- the method, set as a ledger ---- */
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="swe-2"]) .d1-method {
+  max-width: 60ch;
+  margin: clamp(80px, 15vh, 150px) auto 0;
+  padding: 0 24px;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="swe-2"]) .d1-section-title {
+  font-size: clamp(24px, 2.6vw, 30px);
+  font-weight: 500;
+  text-align: center;
+  margin: 0 0 28px;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="swe-2"]) .d1-ledger {
+  margin: 0;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="swe-2"]) .d1-ledger-row {
+  display: grid;
+  grid-template-columns: 9.5em 1fr;
+  gap: 24px;
+  padding: 22px 0;
+  border-top: 1px solid var(--rule);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="swe-2"]) .d1-ledger-row:last-child {
+  border-bottom: 1px solid var(--rule);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="swe-2"]) .d1-ledger dt {
+  font-weight: 600;
+  font-size: 16.5px;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="swe-2"]) .d1-ledger dd {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.72;
+  color: var(--ink);
+}
+
+/* ---- Locke ---- */
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="swe-2"]) .d1-locke {
+  max-width: 56ch;
+  margin: clamp(80px, 14vh, 140px) auto 0;
+  padding: 34px 24px;
+  border-top: 3px double var(--rule);
+  border-bottom: 3px double var(--rule);
+  text-align: center;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="swe-2"]) .d1-locke p {
+  font-size: 16.5px;
+  line-height: 1.8;
+  margin: 0;
+}
+
+/* ---- backlinks specimen ---- */
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="swe-2"]) .d1-backlinks {
+  max-width: 920px;
+  margin: clamp(72px, 12vh, 120px) auto 0;
+  padding: 0 24px;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="swe-2"]) .d1-entry--small {
+  border: 1px solid var(--rule);
+  padding: 26px 30px;
+  background: rgba(255, 255, 255, 0.28);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="swe-2"]) .d1-entry--small h3 {
+  margin: 0 0 8px;
+  font-size: 19px;
+  font-weight: 600;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="swe-2"]) .d1-mentioned {
+  margin: 0;
+  font-size: 15px;
+  font-style: italic;
+  line-height: 1.7;
+  color: var(--ink-soft);
+}
+
+/* ---- begin ---- */
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="swe-2"]) .d1-begin {
+  text-align: center;
+  margin: clamp(90px, 16vh, 160px) auto 0;
+  padding: 0 24px;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="swe-2"]) .d1-begin h2 {
+  font-size: clamp(30px, 4.4vw, 46px);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  margin: 0 0 16px;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="swe-2"]) .d1-begin p {
+  font-size: 16.5px;
+  line-height: 1.7;
+  color: var(--ink-soft);
+  margin: 0 0 30px;
+}
+
+/* ---- colophon ---- */
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="swe-2"]) .d1-colophon {
+  text-align: center;
+  margin-top: clamp(80px, 14vh, 140px);
+  padding: 0 24px;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="swe-2"]) .d1-colophon p {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.9;
+  color: var(--ink-soft);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="swe-2"]) .d1-colophon p:first-child {
+  font-size: 15px;
+  font-style: italic;
+  color: var(--ink);
+}
+
+/* ---- small screens: marginalia become footnote blocks ---- */
+
+@media (max-width: 880px) {
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="swe-2"]) .d1 .plate {
+    inset: 8px;
+  }
+
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="swe-2"]) .d1-margin-note {
+    float: none;
+    width: auto;
+    display: block;
+    margin: 1em 0;
+  }
+
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="swe-2"]) .d1-ledger-row {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+}

@@ -1,0 +1,77 @@
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="glm-5.2"]) {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="glm-5.2"]) {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="glm-5.2"]) {
+  scroll-padding-top: 5rem;
+  -webkit-text-size-adjust: 100%;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="glm-5.2"]) {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="glm-5.2"]) ::selection {
+  background: rgb(16 185 129 / 0.25);
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="glm-5.2"]) :focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+@keyframes gallery-with-taste-skill-glm-5-2-source-src-app-globals-marquee-x {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="glm-5.2"]) .animate-marquee {
+  animation: gallery-with-taste-skill-glm-5-2-source-src-app-globals-marquee-x 38s linear infinite;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="glm-5.2"]) .marquee-mask {
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 8%,
+    black 92%,
+    transparent
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 8%,
+    black 92%,
+    transparent
+  );
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="glm-5.2"]) *,:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="glm-5.2"]) 
+  *::before,:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="glm-5.2"]) 
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  :where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="glm-5.2"]) .animate-marquee {
+    animation: none;
+  }
+}

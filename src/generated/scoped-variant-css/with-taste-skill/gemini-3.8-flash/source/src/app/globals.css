@@ -1,0 +1,31 @@
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="gemini-3.8-flash"]) {
+  --background: #090a0f;
+  --foreground: #f1f5f9;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="gemini-3.8-flash"]) {
+  scroll-behavior: smooth;
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="gemini-3.8-flash"]) {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom subtle scrollbar */
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="gemini-3.8-flash"]) ::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="gemini-3.8-flash"]) ::-webkit-scrollbar-track {
+  background: transparent;
+}
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="gemini-3.8-flash"]) ::-webkit-scrollbar-thumb {
+  background: rgba(150, 150, 150, 0.2);
+  border-radius: 9999px;
+}
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="gemini-3.8-flash"]) ::-webkit-scrollbar-thumb:hover {
+  background: rgba(150, 150, 150, 0.4);
+}

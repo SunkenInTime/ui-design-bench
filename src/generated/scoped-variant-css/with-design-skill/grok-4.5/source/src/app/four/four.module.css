@@ -1,0 +1,252 @@
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .page {
+  --page: #eef1f5;
+  --ink: #1a2330;
+  --margin: #2f5fa8;
+  --rule: #c8d0db;
+  --note: #5a6575;
+  --highlight: #cfe0f7;
+  --gutter: #e4e9f0;
+
+  min-height: 100vh;
+  color: var(--ink);
+  background:
+    linear-gradient(90deg, var(--gutter) 0%, var(--gutter) 18%, transparent 18%),
+    radial-gradient(ellipse at 85% 5%, rgba(47, 95, 168, 0.08), transparent 40%),
+    var(--page);
+  font-family: var(--font-instrument-sans), "Instrument Sans", sans-serif;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem clamp(1.25rem, 5vw, 4rem);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .brand {
+  font-family: var(--font-literata), Literata, serif;
+  font-size: 1.45rem;
+  font-weight: 600;
+  font-style: italic;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .navLinks {
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
+  font-size: 0.92rem;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .navLinks a {
+  text-decoration: none;
+  color: var(--note);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .navLinks a:hover {
+  color: var(--ink);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .hero {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  min-height: calc(100vh - 5rem);
+  padding: 1rem clamp(1.25rem, 5vw, 4rem) 3rem;
+  align-items: center;
+}
+
+@media (min-width: 920px) {
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .hero {
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    gap: 3rem;
+  }
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .copy {
+  max-width: 34rem;
+  padding-left: clamp(0rem, 8vw, 4rem);
+  animation: gallery-with-design-skill-grok-4-5-source-src-app-four-four-module-rise 850ms ease both;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .brandMark {
+  display: block;
+  margin-bottom: 1.1rem;
+  font-family: var(--font-literata), Literata, serif;
+  font-size: clamp(3.5rem, 8vw, 5.8rem);
+  font-weight: 600;
+  font-style: italic;
+  letter-spacing: -0.04em;
+  line-height: 0.92;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .headline {
+  margin: 0 0 1rem;
+  font-family: var(--font-literata), Literata, serif;
+  font-size: clamp(1.55rem, 3vw, 2.2rem);
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .lede {
+  margin: 0 0 1.75rem;
+  max-width: 30rem;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--note);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .primary,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) 
+.secondary {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.85rem;
+  padding: 0.65rem 1.2rem;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .primary {
+  background: var(--ink);
+  color: var(--page);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .secondary {
+  color: var(--margin);
+  text-decoration: underline;
+  text-underline-offset: 0.28em;
+  text-decoration-thickness: 1.5px;
+  padding-left: 0.25rem;
+  background: transparent;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .spread {
+  position: relative;
+  min-height: min(58vh, 32rem);
+  padding: 2rem 1.5rem 2rem 2.25rem;
+  background: #f8fafc;
+  border: 1px solid var(--rule);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.7) inset,
+    12px 18px 40px rgba(30, 36, 48, 0.08);
+  animation: gallery-with-design-skill-grok-4-5-source-src-app-four-four-module-rise 950ms ease both 150ms;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .spread::before {
+  content: "";
+  position: absolute;
+  left: 1.35rem;
+  top: 1.25rem;
+  bottom: 1.25rem;
+  width: 1px;
+  background: color-mix(in srgb, var(--margin) 55%, transparent);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .bodyText {
+  margin: 0;
+  font-family: var(--font-literata), Literata, serif;
+  font-size: clamp(1rem, 1.8vw, 1.15rem);
+  line-height: 1.75;
+  max-width: 28ch;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .mark {
+  background: linear-gradient(180deg, transparent 55%, var(--highlight) 55%);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .annotation {
+  position: absolute;
+  right: 8%;
+  top: 28%;
+  max-width: 11rem;
+  padding: 0.35rem 0;
+  font-size: 0.82rem;
+  line-height: 1.4;
+  color: var(--margin);
+  font-weight: 500;
+  transform: rotate(-2deg);
+  animation: gallery-with-design-skill-grok-4-5-source-src-app-four-four-module-scribble 700ms ease both 500ms;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .annotation::before {
+  content: "";
+  position: absolute;
+  left: -1.6rem;
+  top: 0.7rem;
+  width: 1.3rem;
+  height: 1px;
+  background: var(--margin);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .annotationTwo {
+  top: auto;
+  bottom: 22%;
+  right: 10%;
+  transform: rotate(1.5deg);
+  animation-delay: 700ms;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .section {
+  padding: 4.5rem clamp(1.25rem, 5vw, 4rem) 6rem;
+  border-top: 1px solid var(--rule);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .sectionTitle {
+  margin: 0 0 0.75rem;
+  font-family: var(--font-literata), Literata, serif;
+  font-size: clamp(1.7rem, 3vw, 2.3rem);
+  font-weight: 600;
+  font-style: italic;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .sectionBody {
+  margin: 0;
+  max-width: 36rem;
+  color: var(--note);
+  line-height: 1.6;
+  padding-left: clamp(0rem, 8vw, 4rem);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .footer {
+  padding: 0 clamp(1.25rem, 5vw, 4rem) 5.5rem;
+  font-size: 0.9rem;
+  color: var(--note);
+}
+
+@keyframes gallery-with-design-skill-grok-4-5-source-src-app-four-four-module-rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes gallery-with-design-skill-grok-4-5-source-src-app-four-four-module-scribble {
+  from {
+    opacity: 0;
+    transform: translateX(8px) rotate(-2deg);
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .copy,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) 
+  .spread,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) 
+  .annotation {
+    animation: none;
+  }
+}

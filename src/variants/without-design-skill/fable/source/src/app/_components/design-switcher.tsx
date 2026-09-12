@@ -7,7 +7,7 @@ const DESIGNS = ["1", "2", "3", "4", "5"];
 
 export function DesignSwitcher() {
   const pathname = usePathname();
-  const current = DESIGNS.indexOf(pathname.replace(/^\//, ""));
+  const current = DESIGNS.indexOf(pathname?.replace(/^\//, "") ?? "");
   const prev = DESIGNS[(current - 1 + DESIGNS.length) % DESIGNS.length];
   const next = DESIGNS[(current + 1) % DESIGNS.length];
 

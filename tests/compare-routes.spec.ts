@@ -56,7 +56,7 @@ test("a valid arbitrary cross-model compare URL renders", async ({ page }) => {
 test("compare CTAs on home, model, and iteration pages point to valid compare URLs", async ({ page }) => {
   await page.goto("/");
   await expect(
-    page.getByRole("link", { name: "Compare With Design Skill GPT-5.4" }),
+    page.getByRole("navigation", { name: "Site navigation" }).getByRole("link", { name: "Compare" }),
   ).toHaveAttribute("href", DEFAULT_COMPARE_PATH);
 
   await page.goto("/miscellaneous/gpt-5.4");
@@ -70,10 +70,5 @@ test("compare CTAs on home, model, and iteration pages point to valid compare UR
   );
 
   await page.goto("/with-design-skill/composer-2.0/4");
-  await expect(
-    page.getByRole("link", { name: "Compare Composer 2.0 iteration 4" }),
-  ).toHaveAttribute(
-    "href",
-    "/compare?leftGroup=with-design-skill&leftModel=composer-2.0&leftIteration=4&rightGroup=without-design-skill&rightModel=composer-2.0&rightIteration=4",
-  );
+  await expect(page.getByRole("button", { name: "Compare Composer 2.0 iteration 4" })).toBeVisible();
 });

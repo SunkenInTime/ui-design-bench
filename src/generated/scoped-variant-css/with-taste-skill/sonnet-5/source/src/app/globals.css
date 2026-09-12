@@ -1,0 +1,22 @@
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="sonnet-5"]),:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="sonnet-5"]) {
+  background: #0a0a0a;
+}
+
+@keyframes gallery-with-taste-skill-sonnet-5-source-src-app-globals-marquee {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+:where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="sonnet-5"]) .animate-marquee {
+  animation: gallery-with-taste-skill-sonnet-5-source-src-app-globals-marquee 28s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :where(.gallery-generation[data-gallery-group="with-taste-skill"][data-gallery-model="sonnet-5"]) .animate-marquee {
+    animation: none;
+  }
+}

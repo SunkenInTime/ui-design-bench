@@ -1,0 +1,551 @@
+/* ============================================================
+   DESIGN 4 — THE INSTRUMENT
+   A lab-grade recording instrument for thought. Lab-white bench,
+   charcoal module, one phosphor-amber trace, green status LED.
+   ============================================================ */
+
+.d4 {
+  --lab: #f2f3f1;
+  --charcoal: #20241f;
+  --charcoal-2: #2a2f29;
+  --amber: #f0a840;
+  --ink: #1c1f1c;
+  --steel: #7d857e;
+  --led: #39d353;
+
+  min-height: 100vh;
+  background:
+    linear-gradient(rgba(28, 31, 28, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(28, 31, 28, 0.045) 1px, transparent 1px),
+    var(--lab);
+  background-size:
+    28px 28px,
+    28px 28px,
+    auto;
+  color: var(--ink);
+  font-family: var(--d4-body), "Helvetica Neue", Arial, sans-serif;
+  padding-bottom: 88px;
+}
+
+.d4 a:focus-visible,
+.d4 button:focus-visible {
+  outline: 3px solid var(--amber);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ---------- nav ---------- */
+
+.d4-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 28px 32px 8px;
+}
+
+.d4-wordmark {
+  font-family: var(--d4-display), sans-serif;
+  font-size: 20px;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--ink);
+}
+
+.d4-model {
+  font-family: var(--d4-mono), ui-monospace, monospace;
+  font-size: 10.5px;
+  letter-spacing: 0.14em;
+  border: 1px solid var(--ink);
+  padding: 3px 8px;
+  border-radius: 3px;
+}
+
+.d4-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.d4-nav-links a {
+  text-decoration: none;
+  color: var(--steel);
+}
+
+.d4-nav-links a:hover {
+  color: var(--ink);
+}
+
+.d4-nav-cta {
+  background: var(--charcoal);
+  color: var(--lab) !important;
+  padding: 9px 18px;
+  border-radius: 4px;
+  transition: background 150ms ease;
+}
+
+.d4-nav-cta:hover {
+  background: var(--ink);
+}
+
+/* ---------- hero ---------- */
+
+.d4-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: 56px;
+  align-items: center;
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 72px 32px 0;
+}
+
+.d4-eyebrow {
+  font-family: var(--d4-mono), ui-monospace, monospace;
+  font-size: 11.5px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--steel);
+  margin: 0 0 24px;
+}
+
+.d4-headline {
+  font-family: var(--d4-display), sans-serif;
+  font-size: clamp(52px, 7.4vw, 96px);
+  line-height: 0.92;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  margin: 0 0 26px;
+}
+
+.d4-sub {
+  font-size: 16.5px;
+  line-height: 1.65;
+  color: var(--steel);
+  max-width: 46ch;
+  margin: 0 0 34px;
+}
+
+.d4-hero-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 22px;
+  margin-bottom: 44px;
+}
+
+.d4-button {
+  display: inline-block;
+  background: var(--charcoal);
+  color: var(--lab);
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.02em;
+  padding: 14px 28px;
+  border-radius: 4px;
+  text-decoration: none;
+  box-shadow: 0 10px 24px rgba(28, 31, 28, 0.22);
+  transition:
+    transform 150ms ease,
+    box-shadow 150ms ease;
+}
+
+.d4-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 30px rgba(28, 31, 28, 0.28);
+}
+
+.d4-mono-link {
+  font-family: var(--d4-mono), ui-monospace, monospace;
+  font-size: 13px;
+  color: var(--steel);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(125, 133, 126, 0.5);
+  padding-bottom: 2px;
+}
+
+.d4-mono-link:hover {
+  color: var(--ink);
+  border-color: var(--ink);
+}
+
+/* telemetry */
+
+.d4-telemetry {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 36px;
+  margin: 0;
+}
+
+.d4-telemetry dt {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--d4-mono), ui-monospace, monospace;
+  font-size: 10.5px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--steel);
+  margin-bottom: 8px;
+}
+
+.d4-telemetry dd {
+  margin: 0;
+  font-family: var(--d4-mono), ui-monospace, monospace;
+  font-weight: 500;
+  font-size: 24px;
+  color: var(--ink);
+}
+
+.d4-led {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--led);
+}
+
+/* ---------- the instrument module (signature) ---------- */
+
+.d4-module {
+  position: relative;
+  background: var(--charcoal);
+  border: 1px solid #3a403a;
+  border-radius: 12px;
+  padding: 22px 24px 20px;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    0 24px 60px rgba(28, 31, 28, 0.3);
+}
+
+.d4-screw {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #5a615a, #2c312c 70%);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+.d4-screw::after {
+  content: "";
+  position: absolute;
+  left: 1px;
+  right: 1px;
+  top: 50%;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.55);
+  transform: rotate(38deg);
+}
+
+.d4-screw--tl {
+  top: 8px;
+  left: 8px;
+}
+.d4-screw--tr {
+  top: 8px;
+  right: 8px;
+}
+.d4-screw--bl {
+  bottom: 8px;
+  left: 8px;
+}
+.d4-screw--br {
+  bottom: 8px;
+  right: 8px;
+}
+
+.d4-module-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--d4-mono), ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  color: rgba(242, 243, 241, 0.75);
+  padding-bottom: 14px;
+}
+
+.d4-module-head-right {
+  margin-left: auto;
+  color: rgba(242, 243, 241, 0.4);
+}
+
+.d4-led--live {
+  box-shadow: 0 0 8px var(--led);
+  animation: d4-pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes d4-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+
+.d4-trace {
+  position: relative;
+  height: 190px;
+  border-radius: 6px;
+  overflow: hidden;
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      rgba(240, 168, 64, 0.07) 0 1px,
+      transparent 1px 24px
+    ),
+    repeating-linear-gradient(
+      to right,
+      rgba(240, 168, 64, 0.07) 0 1px,
+      transparent 1px 24px
+    ),
+    var(--charcoal-2);
+  border: 1px solid rgba(240, 168, 64, 0.14);
+}
+
+.d4-trace-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.d4-trace-motion {
+  stroke: var(--amber);
+  stroke-width: 2;
+  filter: drop-shadow(0 0 6px rgba(240, 168, 64, 0.55));
+  animation: d4-sweep 6s linear infinite;
+}
+
+@keyframes d4-sweep {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-120px);
+  }
+}
+
+.d4-module-foot {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 14px;
+  font-family: var(--d4-mono), ui-monospace, monospace;
+  font-size: 10.5px;
+  letter-spacing: 0.12em;
+  color: rgba(242, 243, 241, 0.5);
+}
+
+/* ---------- sections ---------- */
+
+.d4-section {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 104px 32px 0;
+}
+
+.d4-section > .d4-eyebrow {
+  text-align: center;
+}
+
+.d4-section-title {
+  font-family: var(--d4-display), sans-serif;
+  font-size: clamp(26px, 4vw, 40px);
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  text-align: center;
+  margin: 0 0 56px;
+}
+
+/* ---------- spec sheet ---------- */
+
+.d4-spec-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
+}
+
+.d4-spec {
+  background: #ffffff;
+  border: 1px solid rgba(28, 31, 28, 0.14);
+  border-radius: 6px;
+  padding: 20px 22px 24px;
+  transition:
+    border-color 150ms ease,
+    transform 150ms ease;
+}
+
+.d4-spec:hover {
+  border-color: var(--amber);
+  transform: translateY(-3px);
+}
+
+.d4-spec-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-family: var(--d4-mono), ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  margin-bottom: 16px;
+}
+
+.d4-spec-id {
+  color: var(--steel);
+}
+
+.d4-spec-value {
+  color: var(--amber);
+  font-weight: 500;
+  background: var(--charcoal);
+  padding: 3px 8px;
+  border-radius: 3px;
+}
+
+.d4-spec h3 {
+  font-family: var(--d4-display), sans-serif;
+  font-size: 21px;
+  text-transform: uppercase;
+  margin: 0 0 10px;
+}
+
+.d4-spec p {
+  font-size: 14px;
+  line-height: 1.62;
+  color: var(--steel);
+  margin: 0;
+}
+
+/* ---------- printout ---------- */
+
+.d4-printout {
+  max-width: 720px;
+  margin: 0 auto;
+  background: #ffffff;
+  border: 1px solid rgba(28, 31, 28, 0.14);
+  border-left: 4px solid var(--amber);
+  border-radius: 4px;
+  padding: 28px 32px;
+}
+
+.d4-printout-line {
+  font-family: var(--d4-mono), ui-monospace, monospace;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: var(--steel);
+  margin: 0;
+}
+
+.d4-printout blockquote {
+  margin: 16px 0;
+  font-size: clamp(19px, 2.6vw, 24px);
+  line-height: 1.5;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+/* ---------- order ---------- */
+
+.d4-order {
+  background: var(--charcoal);
+  border-radius: 12px;
+  text-align: center;
+  padding: 72px 24px;
+  color: var(--lab);
+  box-shadow: 0 24px 60px rgba(28, 31, 28, 0.3);
+}
+
+.d4-eyebrow--amber {
+  color: var(--amber);
+}
+
+.d4-order h2 {
+  font-family: var(--d4-display), sans-serif;
+  font-size: clamp(34px, 5.4vw, 56px);
+  text-transform: uppercase;
+  margin: 0 0 16px;
+}
+
+.d4-order p {
+  color: rgba(242, 243, 241, 0.65);
+  font-size: 16px;
+  margin: 0 auto 36px;
+  max-width: 46ch;
+}
+
+.d4-button--amber {
+  background: var(--amber);
+  color: var(--charcoal);
+  font-weight: 700;
+}
+
+/* ---------- footer ---------- */
+
+.d4-footer {
+  max-width: 1160px;
+  margin: 96px auto 0;
+  padding: 0 32px;
+}
+
+.d4-plate {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  border: 1px solid rgba(28, 31, 28, 0.3);
+  border-radius: 4px;
+  padding: 16px;
+  font-family: var(--d4-mono), ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  color: var(--steel);
+}
+
+@media (max-width: 880px) {
+  .d4-hero {
+    grid-template-columns: 1fr;
+    gap: 44px;
+    padding-top: 48px;
+  }
+}
+
+@media (max-width: 640px) {
+  .d4-nav {
+    padding: 20px;
+  }
+  .d4-nav-links a:not(.d4-nav-cta) {
+    display: none;
+  }
+  .d4-nav-cta {
+    white-space: nowrap;
+  }
+  .d4-module-foot {
+    flex-direction: column;
+    gap: 4px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .d4-trace-motion {
+    animation: none;
+  }
+  .d4-led--live {
+    animation: none;
+  }
+  .d4-button,
+  .d4-spec {
+    transition: none;
+  }
+}

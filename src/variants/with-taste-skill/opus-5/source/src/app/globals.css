@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+/*
+  This app hosts five independent art directions at /1 .. /5. There is deliberately
+  no global palette: each route owns its own colour system and locks one theme.
+  Only what every route genuinely shares lives here.
+
+  Font contract: each route declares its own `next/font` instances so only the
+  families that route actually renders get preloaded. The route applies the
+  returned `.variable` classes to its own page wrapper. The `--f-*` names below
+  are what those instances must use; the `--font-*` theme tokens turn them into
+  Tailwind `font-…` utilities.
+*/
+@theme inline {
+  --font-sans: var(--f-geist);
+  --font-mono: var(--f-geist-mono);
+  --font-garamond: var(--f-garamond);
+  --font-outfit: var(--f-outfit);
+  --font-archivo: var(--f-archivo);
+  --font-jet: var(--f-jet);
+  --font-grotesk: var(--f-grotesk);
+}
+
+/*
+  Each route wrapper sets `data-theme` so the browser paints scrollbars and form
+  controls to match that route's locked theme.
+*/
+[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+[data-theme="light"] {
+  color-scheme: light;
+}
+
+/*
+  Safety net. Routes degrade their own motion first, each in the idiom of whatever
+  library it uses: Motion's `useReducedMotion` on /2 and /3, `gsap.matchMedia` with a
+  `prefers-reduced-motion: no-preference` query on /5, and no motion library at all on
+  /1 and /4. This block additionally cuts any CSS-driven animation.
+*/
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

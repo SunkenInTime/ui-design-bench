@@ -7,23 +7,39 @@ import sharp from "sharp";
 import { chromium } from "@playwright/test";
 
 const entries = [
+  { group: "without-design-skill", model: "gpt-6-astra-preview", iterations: ["1", "2", "3", "4", "5"] },
+  { group: "with-design-skill", model: "gpt-6-astra-preview", iterations: ["1", "2", "3", "4", "5"] },
+  { group: "with-taste-skill", model: "gpt-6-astra-preview", iterations: ["1", "2", "3", "4", "5"] },
+  { group: "miscellaneous", model: "gpt-6-astra-preview", iterations: ["1", "2", "3", "4", "5"] },
   { group: "with-design-skill", model: "composer-1.5", iterations: ["1", "2", "3", "4", "5"] },
   { group: "with-design-skill", model: "composer-2.0", iterations: ["1", "2", "3", "4", "5"] },
   { group: "with-design-skill", model: "composer-2.5", iterations: ["1", "2", "3", "4", "5"] },
   { group: "with-design-skill", model: "fable", iterations: ["1", "2", "3", "4", "5"] },
+  { group: "with-design-skill", model: "fable-5.1", iterations: ["1", "2", "3", "4", "5"] },
   { group: "with-design-skill", model: "gemini", iterations: ["1", "2", "3", "4", "5"] },
   { group: "with-design-skill", model: "gemini-3.5-flash", iterations: ["1", "2", "3", "4", "5"] },
+  { group: "with-design-skill", model: "grok-4.5", iterations: ["1", "2", "3", "4", "5"] },
+  { group: "with-design-skill", model: "grok-4.6", iterations: ["1", "2", "3", "4", "5"] },
   { group: "with-design-skill", model: "gpt-5.4", iterations: ["1", "2", "3", "4", "5"] },
   { group: "with-design-skill", model: "gpt-5.5-low", iterations: ["1", "2", "3", "4", "5"] },
   { group: "with-design-skill", model: "gpt-5.5-high", iterations: ["1", "2", "3", "4", "5"] },
   { group: "with-design-skill", model: "kimi-k-2.5", iterations: ["1", "2", "3", "4", "5"] },
   { group: "with-design-skill", model: "kimi-k-2.6", iterations: ["1", "2", "3", "4", "5"] },
+  { group: "with-design-skill", model: "kimi-k3", iterations: ["1", "2", "3", "4", "5"] },
   { group: "with-design-skill", model: "opus-4.6", iterations: ["1", "2", "3", "4", "5"] },
   { group: "with-design-skill", model: "opus-4.7", iterations: ["1", "2", "3", "4", "5"] },
   { group: "with-design-skill", model: "opus-4.8", iterations: ["1", "2", "3", "4", "5"] },
   { group: "with-design-skill", model: "glm-5-turbo", iterations: ["1", "2", "3", "4", "5"] },
   { group: "with-design-skill", model: "glm-5.1", iterations: ["1", "2", "3", "4", "5"] },
+  { group: "with-design-skill", model: "glm-5.2", iterations: ["1", "2", "3", "4", "5"] },
+  { group: "with-design-skill", model: "sonnet-5", iterations: ["1", "2", "3", "4", "5"] },
   { group: "with-taste-skill", model: "fable", iterations: ["1", "2", "3", "4", "5"] },
+  { group: "with-taste-skill", model: "fable-5.1", iterations: ["1", "2", "3", "4", "5"] },
+  { group: "with-taste-skill", model: "grok-4.5", iterations: ["1", "2", "3", "4", "5"] },
+  { group: "with-taste-skill", model: "grok-4.6", iterations: ["1", "2", "3", "4", "5"] },
+  { group: "with-taste-skill", model: "kimi-k3", iterations: ["1", "2", "3", "4", "5"] },
+  { group: "with-taste-skill", model: "glm-5.2", iterations: ["1", "2", "3", "4", "5"] },
+  { group: "with-taste-skill", model: "sonnet-5", iterations: ["1", "2", "3", "4", "5"] },
   { group: "with-ui-sh-skill", model: "composer-2.0", iterations: ["1", "2", "3", "4", "5"] },
   { group: "with-ui-sh-skill", model: "gpt-5.5-low", iterations: ["1", "2", "3", "4", "5"] },
   { group: "with-ui-sh-skill", model: "gpt-5.5-high", iterations: ["1", "2", "3", "4", "5"] },
@@ -32,18 +48,57 @@ const entries = [
   { group: "without-design-skill", model: "composer-2.0", iterations: ["1", "2", "3", "4", "5"] },
   { group: "without-design-skill", model: "composer-2.5", iterations: ["1", "2", "3", "4", "5"] },
   { group: "without-design-skill", model: "fable", iterations: ["1", "2", "3", "4", "5"] },
+  { group: "without-design-skill", model: "fable-5.1", iterations: ["1", "2", "3", "4", "5"] },
   { group: "without-design-skill", model: "gemini", iterations: ["1", "2", "3", "4", "5"] },
   { group: "without-design-skill", model: "gemini-3.5-flash", iterations: ["1", "2", "3", "4", "5"] },
+  { group: "without-design-skill", model: "grok-4.5", iterations: ["1", "2", "3", "4", "5"] },
+  { group: "without-design-skill", model: "grok-4.6", iterations: ["1", "2", "3", "4", "5"] },
   { group: "without-design-skill", model: "gpt-5.4", iterations: ["1", "2", "3", "4", "5"] },
   { group: "without-design-skill", model: "gpt-5.5-low", iterations: ["1", "2", "3", "4", "5"] },
   { group: "without-design-skill", model: "gpt-5.5-high", iterations: ["1", "2", "3", "4", "5"] },
   { group: "without-design-skill", model: "kimi-k-2.5", iterations: ["1", "2", "3", "4", "5"] },
   { group: "without-design-skill", model: "kimi-k-2.6", iterations: ["1", "2", "3", "4", "5"] },
+  { group: "without-design-skill", model: "kimi-k3", iterations: ["1", "2", "3", "4", "5"] },
   { group: "without-design-skill", model: "opus-4.6", iterations: ["1", "2", "3", "4", "5"] },
   { group: "without-design-skill", model: "opus-4.7", iterations: ["1", "2", "3", "4", "5"] },
   { group: "without-design-skill", model: "opus-4.8", iterations: ["1", "2", "3", "4", "5"] },
   { group: "without-design-skill", model: "glm-5-turbo", iterations: ["1", "2", "3", "4", "5"] },
   { group: "without-design-skill", model: "glm-5.1", iterations: ["1", "2", "3", "4", "5"] },
+  { group: "without-design-skill", model: "glm-5.2", iterations: ["1", "2", "3", "4", "5"] },
+  { group: "without-design-skill", model: "sonnet-5", iterations: ["1", "2", "3", "4", "5"] },
+  { group: "with-design-skill", model: "sol", iterations: ["1", "2", "3", "4", "5"] },
+  { group: "with-taste-skill", model: "sol", iterations: ["1", "2", "3", "4", "5"] },
+  { group: "without-design-skill", model: "sol", iterations: ["1", "2", "3", "4", "5"] },
+  { group: "with-design-skill", model: "luna", iterations: ["1", "2", "3", "4", "5"] },
+  { group: "with-taste-skill", model: "luna", iterations: ["1", "2", "3", "4", "5"] },
+  { group: "without-design-skill", model: "luna", iterations: ["1", "2", "3", "4", "5"] },
+  { group: "with-design-skill", model: "terra", iterations: ["1", "2", "3", "4", "5"] },
+  { group: "with-taste-skill", model: "terra", iterations: ["1", "2", "3", "4", "5"] },
+  { group: "without-design-skill", model: "terra", iterations: ["1", "2", "3", "4", "5"] },
+  { group: "with-design-skill", model: "muse-spark-1.2", iterations: ["1", "2", "3", "4", "5"] },
+  { group: "with-taste-skill", model: "muse-spark-1.2", iterations: ["1", "2", "3", "4", "5"] },
+  { group: "without-design-skill", model: "muse-spark-1.2", iterations: ["1", "2", "3", "4", "5"] },
+  { group: "with-design-skill", model: "opus-5", iterations: ["1", "2", "3", "4", "5"] },
+  { group: "with-taste-skill", model: "opus-5", iterations: ["1", "2", "3", "4", "5"] },
+  { group: "without-design-skill", model: "opus-5", iterations: ["1", "2", "3", "4", "5"] },
+  { group: "with-design-skill", model: "gemini-3.7-flash", iterations: ["1", "2", "3", "4", "5"] },
+  { group: "with-taste-skill", model: "gemini-3.7-flash", iterations: ["1", "2", "3", "4", "5"] },
+  { group: "without-design-skill", model: "gemini-3.7-flash", iterations: ["1", "2", "3", "4", "5"] },
+  { group: "with-design-skill", model: "glm-5.3-flash", iterations: ["1", "2", "3", "4", "5"] },
+  { group: "with-taste-skill", model: "glm-5.3-flash", iterations: ["1", "2", "3", "4", "5"] },
+  { group: "without-design-skill", model: "glm-5.3-flash", iterations: ["1", "2", "3", "4", "5"] },
+  { group: "with-design-skill", model: "gemini-3.8-flash", iterations: ["1", "2", "3", "4", "5"] },
+  { group: "with-taste-skill", model: "gemini-3.8-flash", iterations: ["1", "2", "3", "4", "5"] },
+  { group: "without-design-skill", model: "gemini-3.8-flash", iterations: ["1", "2", "3", "4", "5"] },
+  { group: "with-design-skill", model: "muse-spark-1.3", iterations: ["1", "2", "3", "4", "5"] },
+  { group: "with-taste-skill", model: "muse-spark-1.3", iterations: ["1", "2", "3", "4", "5"] },
+  { group: "without-design-skill", model: "muse-spark-1.3", iterations: ["1", "2", "3", "4", "5"] },
+  { group: "with-design-skill", model: "gpt-6-astra", iterations: ["1", "2", "3", "4", "5"] },
+  { group: "with-taste-skill", model: "gpt-6-astra", iterations: ["1", "2", "3", "4", "5"] },
+  { group: "without-design-skill", model: "gpt-6-astra", iterations: ["1", "2", "3", "4", "5"] },
+  { group: "with-design-skill", model: "swe-2", iterations: ["1", "2", "3", "4", "5"] },
+  { group: "with-taste-skill", model: "swe-2", iterations: ["1", "2", "3", "4", "5"] },
+  { group: "without-design-skill", model: "swe-2", iterations: ["1", "2", "3", "4", "5"] },
 ];
 
 const targetModel = process.env.TARGET_MODEL ?? null;
@@ -120,9 +175,9 @@ async function main() {
       }
 
       for (const iteration of iterations) {
-        const url = `${baseUrl}/${group}/${model}/${iteration}?preview=1`;
+        const url = `${baseUrl}/preview/${group}/${model}/${iteration}`;
         const outputPath = path.join(outputDir, `${iteration}.webp`);
-        const response = await page.goto(url, { waitUntil: "domcontentloaded" });
+        const response = await page.goto(url, { waitUntil: "domcontentloaded", timeout: 120_000 });
         if (!response || !response.ok()) {
           throw new Error(`Preview capture failed for ${url} with status ${response?.status() ?? "unknown"}`);
         }
@@ -133,6 +188,14 @@ async function main() {
         }
 
         await sleep(PREVIEW_SETTLE_MS);
+
+        // Next.js injects its development toolbar into otherwise valid previews.
+        // Keep capture output limited to the submitted design itself.
+        await page.locator("nextjs-portal").evaluateAll((portals) => {
+          for (const portal of portals) {
+            portal.style.display = "none";
+          }
+        });
 
         const pngBuffer = await page.screenshot();
         const webpBuffer = await sharp(pngBuffer).webp({ quality: 85 }).toBuffer();

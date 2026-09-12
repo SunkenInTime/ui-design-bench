@@ -4,9 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build --webpack",
     "predev": "node scripts/scope-variant-css.mjs",
-    "prebuild": "node scripts/scope-variant-css.mjs",
+    "prebuild": "node scripts/patch-next-font-fetch.mjs && node scripts/scope-variant-css.mjs",
     "start": "next start",
     "lint": "eslint",
     "capture-previews": "node scripts/capture-previews.mjs",
@@ -23,9 +23,11 @@
     "html-to-image": "^1.11.13",
     "lucide-react": "^0.542.0",
     "motion": "^12.38.0",
+    "motion-astra": "npm:motion@13.2.0",
     "next": "16.2.0",
     "react": "19.2.4",
-    "react-dom": "19.2.4"
+    "react-dom": "19.2.4",
+    "simple-icons": "^16.29.0"
   },
   "devDependencies": {
     "@playwright/test": "^1.55.0",

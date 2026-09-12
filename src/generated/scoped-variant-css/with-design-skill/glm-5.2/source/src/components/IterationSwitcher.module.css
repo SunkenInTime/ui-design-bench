@@ -1,0 +1,85 @@
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="glm-5.2"]) .switcher {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 6px;
+  border-radius: 999px;
+  background: rgba(12, 12, 14, 0.74);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  -webkit-backdrop-filter: blur(14px) saturate(150%);
+  backdrop-filter: blur(14px) saturate(150%);
+  color: #f4f1ea;
+  font-family: var(--font-jetbrains), ui-monospace, monospace;
+  box-shadow: 0 12px 34px rgba(0, 0, 0, 0.38);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="glm-5.2"]) .btn {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: inherit;
+  font-size: 19px;
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="glm-5.2"]) .btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="glm-5.2"]) .btn:focus-visible {
+  outline: 2px solid #f4f1ea;
+  outline-offset: 2px;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="glm-5.2"]) .center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 14px;
+  min-width: 128px;
+  line-height: 1.1;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="glm-5.2"]) .count {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: rgba(244, 241, 234, 0.96);
+  font-variant-numeric: tabular-nums;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="glm-5.2"]) .countTotal {
+  color: rgba(244, 241, 234, 0.42);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="glm-5.2"]) .name {
+  margin-top: 2px;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: rgba(244, 241, 234, 0.66);
+  text-transform: uppercase;
+}
+
+@media (max-width: 480px) {
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="glm-5.2"]) .switcher {
+    bottom: 14px;
+  }
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="glm-5.2"]) .center {
+    min-width: 104px;
+    padding: 2px 8px;
+  }
+}

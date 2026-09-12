@@ -1,0 +1,1126 @@
+/* ==========================================================================
+   Cairn — direction 3, "Overprint".
+   A risograph proof: pale sage stock, two ink plates knocked slightly out of
+   registration, a third colour only where they cross.
+   ========================================================================== */
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .page {
+  /* Stock and inks */
+  --paper-stock: #e3e7de;
+  --ink-pink: #ff48b0;
+  --ink-blue: #0b4fd8;
+  --ink-yellow: #ffc61e;
+  --ink-overprint: #4a2a8c;
+  --ink-black: #1a1a1a;
+
+  /* Derived, for hairlines and quiet type only */
+  --ink-soft: #4c5049;
+  --rule: rgba(26, 26, 26, 0.3);
+
+  --font-display: var(--font-bricolage), "Helvetica Neue", Arial, sans-serif;
+  --font-body: var(--font-karla), system-ui, sans-serif;
+  --mono: ui-monospace, "SFMono-Regular", "Consolas", monospace;
+
+  position: relative;
+  min-height: 100vh;
+  padding: clamp(26px, 3.2vw, 44px) 0 8rem;
+  overflow-x: clip;
+
+  background-color: var(--paper-stock);
+  color: var(--ink-black);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.6;
+  font-synthesis-weight: none;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .page :focus-visible {
+  outline: 3px solid var(--ink-overprint);
+  outline-offset: 3px;
+}
+
+/* --- Paper grain -------------------------------------------------------- */
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .grain {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  opacity: 0.1;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+/* --- Trim edge, crop marks, registration bullseyes ---------------------- */
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .trim {
+  position: absolute;
+  inset: clamp(12px, 1.6vw, 22px);
+  border: 1px solid var(--rule);
+  pointer-events: none;
+  z-index: 3;
+  color: var(--ink-overprint);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .crop {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .cropTL {
+  top: -10px;
+  left: -10px;
+  border-top: 1px solid var(--ink-black);
+  border-left: 1px solid var(--ink-black);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .cropTR {
+  top: -10px;
+  right: -10px;
+  border-top: 1px solid var(--ink-black);
+  border-right: 1px solid var(--ink-black);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .cropBL {
+  bottom: -10px;
+  left: -10px;
+  border-bottom: 1px solid var(--ink-black);
+  border-left: 1px solid var(--ink-black);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .cropBR {
+  bottom: -10px;
+  right: -10px;
+  border-bottom: 1px solid var(--ink-black);
+  border-right: 1px solid var(--ink-black);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .regMark {
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  opacity: 0.75;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .regMarkTop {
+  top: -13px;
+  left: 50%;
+  margin-left: -13px;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .regMarkBottom {
+  bottom: -13px;
+  right: 14%;
+}
+
+/* --- Sheet -------------------------------------------------------------- */
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .sheet {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 clamp(26px, 5vw, 72px);
+}
+
+/* --- Masthead ----------------------------------------------------------- */
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .masthead {
+  display: flex;
+  align-items: center;
+  gap: clamp(16px, 3vw, 40px);
+  flex-wrap: wrap;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--rule);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .wordmark {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.4rem;
+  letter-spacing: -0.045em;
+  color: var(--ink-overprint);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .cairnMark {
+  width: 21px;
+  height: auto;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .nav {
+  display: flex;
+  gap: clamp(12px, 2vw, 26px);
+  flex-wrap: wrap;
+  margin-left: auto;
+  font-size: 13.5px;
+  letter-spacing: 0.02em;
+  color: var(--ink-black);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .nav a {
+  padding-bottom: 2px;
+  border-bottom: 1.5px solid transparent;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .nav a:hover {
+  border-bottom-color: var(--ink-pink);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .mastheadCta {
+  padding: 10px 15px;
+  background: var(--ink-blue);
+  color: var(--paper-stock);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: -0.01em;
+  transform: rotate(-1.4deg);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .mastheadCta:hover {
+  background: var(--ink-overprint);
+}
+
+/* --- Hero --------------------------------------------------------------- */
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .hero {
+  position: relative;
+  padding-top: clamp(30px, 5vw, 60px);
+}
+
+/* Yellow halftone field, bleeding off the right trim */
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .hero::before {
+  content: "";
+  position: absolute;
+  top: -1vw;
+  right: -14vw;
+  width: min(52vw, 460px);
+  height: min(52vw, 460px);
+  background-image: radial-gradient(var(--ink-yellow) 2.2px, transparent 2.3px);
+  background-size: 9px 9px;
+  transform: rotate(-4deg);
+  mask-image: radial-gradient(closest-side, #000 38%, transparent 100%);
+  -webkit-mask-image: radial-gradient(closest-side, #000 38%, transparent 100%);
+  pointer-events: none;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .jobDocket {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.19em;
+  color: var(--ink-soft);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .docketRule {
+  width: 26px;
+  height: 1px;
+  background: currentColor;
+}
+
+/* THE SIGNATURE: one headline, two ink passes, one sheet. */
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .heroInk {
+  position: relative;
+  isolation: isolate;
+  margin-top: clamp(18px, 2.6vw, 30px);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .overprint {
+  display: grid;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .plate {
+  grid-area: 1 / 1;
+  margin-left: -0.055em;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(2.7rem, 12.4vw, 10.5rem);
+  line-height: 0.82;
+  letter-spacing: -0.052em;
+  overflow-wrap: normal;
+  mix-blend-mode: multiply;
+  transition: transform 150ms linear;
+  will-change: transform;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .plateLine {
+  display: block;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .platePink {
+  color: var(--ink-pink);
+  transform: translate(var(--reg-x, 5.5px), var(--reg-y, 3.5px));
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .plateBlue {
+  color: var(--ink-blue);
+  /*
+   * Riso ink is translucent, and that is the whole argument of this page: at
+   * full density the blue pass simply buries the pink one and the overlap is
+   * just blue. Letting the drum run a little light lands the crossing on the
+   * overprint violet, so the third colour is visible rather than claimed.
+   */
+  opacity: 0.8;
+  transform: translate(calc(var(--reg-x, 5.5px) * -1), calc(var(--reg-y, 3.5px) * -1));
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .regRow {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px 24px;
+  flex-wrap: wrap;
+  margin-top: clamp(22px, 3vw, 34px);
+  padding-top: 14px;
+  border-top: 1px dashed var(--rule);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .regReadout {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  font-size: 11.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--ink-soft);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .regTag {
+  color: var(--ink-overprint);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .regValue {
+  display: inline-block;
+  min-width: 18ch;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.1em;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .regButton {
+  padding: 10px 15px;
+  background: transparent;
+  border: 1px solid var(--ink-black);
+  color: var(--ink-black);
+  font-size: 11.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  cursor: pointer;
+  transition: background-color 120ms linear, color 120ms linear;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .regButton:hover {
+  background: var(--ink-overprint);
+  border-color: var(--ink-overprint);
+  color: var(--paper-stock);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .heroFoot {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: clamp(24px, 4vw, 56px);
+  margin-top: clamp(34px, 4vw, 52px);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .deck {
+  flex: 1 1 30ch;
+  max-width: 48ch;
+  font-size: clamp(17px, 0.6vw + 15px, 20px);
+  line-height: 1.55;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .code {
+  padding: 1px 5px;
+  background: var(--ink-yellow);
+  color: var(--ink-black);
+  font-family: var(--mono);
+  font-size: 0.86em;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .heroActions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+  padding-top: 3px;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .primaryCta {
+  display: inline-block;
+  padding: 15px 22px;
+  background: var(--ink-blue);
+  color: var(--paper-stock);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: -0.015em;
+  transform: rotate(-1.1deg);
+  transition: background-color 120ms linear;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .primaryCta:hover {
+  background: var(--ink-overprint);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .secondaryCta {
+  padding-bottom: 3px;
+  border-bottom: 2px solid var(--ink-pink);
+  font-size: 15.5px;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .secondaryCta:hover {
+  border-bottom-color: var(--ink-overprint);
+}
+
+/* --- Colour bar (bleeds past the trim) ---------------------------------- */
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .colourBar {
+  display: flex;
+  flex-wrap: nowrap;
+  width: calc(100% + 16vw);
+  margin: clamp(56px, 7vw, 92px) 0 0 -8vw;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .swatch {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .swatchChip {
+  display: block;
+  height: 34px;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .swatchName {
+  display: block;
+  padding: 7px 8px 0 0;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.11em;
+  color: var(--ink-soft);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .swatch[data-ink="pink"] .swatchChip {
+  background: var(--ink-pink);
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .swatch[data-ink="blue"] .swatchChip {
+  background: var(--ink-blue);
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .swatch[data-ink="violet"] .swatchChip {
+  background: var(--ink-overprint);
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .swatch[data-ink="yellow"] .swatchChip {
+  background: var(--ink-yellow);
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .swatch[data-ink="black"] .swatchChip {
+  background: var(--ink-black);
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .swatch[data-ink="paper"] .swatchChip {
+  background: var(--paper-stock);
+  box-shadow: inset 0 0 0 1px var(--rule);
+}
+
+/* --- Section furniture -------------------------------------------------- */
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .section {
+  position: relative;
+  padding-top: clamp(74px, 9vw, 132px);
+  scroll-margin-top: 24px;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .sectionHead {
+  max-width: 64ch;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .sectionTag {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.19em;
+  color: var(--ink-soft);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .sectionTag::before {
+  content: "";
+  width: 30px;
+  height: 1px;
+  background: var(--ink-pink);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .sectionTitle {
+  margin-top: 14px;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(2rem, 4.7vw, 3.4rem);
+  line-height: 0.96;
+  letter-spacing: -0.04em;
+  max-width: 20ch;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .sectionBody {
+  margin-top: 20px;
+  max-width: 58ch;
+  font-size: 17px;
+  line-height: 1.62;
+}
+
+/* --- Two plates: links and backlinks ------------------------------------ */
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .plateStack {
+  margin-top: clamp(44px, 5vw, 72px);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .plates {
+  --band: 108px;
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: auto var(--band) auto;
+  padding: 22px 18px 28px;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .geoOne {
+  grid-column: 1 / 10;
+  grid-row: 1 / 3;
+  transform: rotate(-1.4deg);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .geoTwo {
+  grid-column: 4 / 13;
+  grid-row: 2 / 4;
+  transform: rotate(1.9deg);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .ink {
+  mix-blend-mode: multiply;
+  background-image: radial-gradient(rgba(26, 26, 26, 0.11) 0.9px, transparent 1px);
+  background-size: 6px 6px;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .inkOne {
+  background-color: var(--ink-blue);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .inkTwo {
+  background-color: var(--ink-pink);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .plateCard {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  padding: 28px clamp(20px, 2.4vw, 32px);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .cardOne {
+  color: var(--paper-stock);
+  padding-bottom: calc(var(--band) + 10px);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .cardTwo {
+  color: var(--ink-black);
+  padding-top: calc(var(--band) + 10px);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .plateTag {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.17em;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .swatchDot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .swatchDot[data-ink="blue"] {
+  background: var(--paper-stock);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .swatchDot[data-ink="pink"] {
+  background: var(--ink-black);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .plateTitle {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(1.4rem, 2.7vw, 2rem);
+  line-height: 1.02;
+  letter-spacing: -0.035em;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .plateExcerpt {
+  max-width: 44ch;
+  font-size: 15.5px;
+  line-height: 1.5;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .plateBacklink {
+  padding-left: 11px;
+  border-left: 2px solid currentColor;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.11em;
+  line-height: 1.45;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .plateMeta {
+  margin-top: auto;
+  padding-top: 6px;
+  font-size: 11.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.13em;
+}
+
+/* The violet band is the only place both inks land. The link lives there. */
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .overlapBand {
+  grid-column: 5 / 9;
+  grid-row: 2 / 3;
+  z-index: 3;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 0 10px;
+  text-align: center;
+  color: var(--paper-stock);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .overlapLabel {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.19em;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .overlapLink {
+  font-family: var(--mono);
+  font-size: 13px;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .plateControls {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: clamp(30px, 3.4vw, 44px);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .plateControlsLabel {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.19em;
+  color: var(--ink-soft);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .plateButtons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .plateButton {
+  padding: 10px 15px;
+  background: transparent;
+  border: 1px solid var(--rule);
+  color: var(--ink-black);
+  font-size: 13.5px;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 120ms linear, color 120ms linear;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .plateButton:hover {
+  border-color: var(--ink-black);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .plateButton[aria-pressed="true"] {
+  background: var(--ink-overprint);
+  border-color: var(--ink-overprint);
+  color: var(--paper-stock);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .plateShared {
+  max-width: 52ch;
+  padding-left: 15px;
+  border-left: 3px solid var(--ink-yellow);
+  font-size: 16px;
+}
+
+/* --- Resurface: the plate rack ------------------------------------------ */
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .sectionResurface .sectionTag::before {
+  background: var(--ink-blue);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .rack {
+  margin-top: clamp(40px, 4.6vw, 64px);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .rackToday {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  flex-wrap: wrap;
+  padding-bottom: 13px;
+  border-bottom: 1px dashed var(--rule);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .rackTodayTag {
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.19em;
+  color: var(--ink-soft);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .rackTodayTitle {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.2rem;
+  letter-spacing: -0.03em;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .rackStage {
+  position: relative;
+  margin-top: clamp(36px, 4vw, 52px);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .rackShim {
+  position: absolute;
+  inset: 0;
+  border: 1px solid var(--rule);
+  background: var(--paper-stock);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .rackShimA {
+  transform: rotate(-2.8deg) translate(-12px, 9px);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .rackShimB {
+  transform: rotate(1.9deg) translate(13px, -7px);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .rackPlate {
+  position: relative;
+  padding: clamp(26px, 3.4vw, 40px);
+  background: var(--ink-overprint);
+  color: var(--paper-stock);
+  transform: rotate(-0.8deg);
+  overflow: hidden;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .rackPlate::after {
+  content: "";
+  position: absolute;
+  top: -26px;
+  right: -26px;
+  width: 130px;
+  height: 130px;
+  background-image: radial-gradient(var(--ink-yellow) 2px, transparent 2.1px);
+  background-size: 8px 8px;
+  mask-image: radial-gradient(closest-side, #000 45%, transparent 100%);
+  -webkit-mask-image: radial-gradient(closest-side, #000 45%, transparent 100%);
+  pointer-events: none;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .rackPlateTag {
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.19em;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .rackPlateTitle {
+  margin-top: 10px;
+  max-width: 16ch;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(1.7rem, 3.9vw, 2.7rem);
+  line-height: 0.99;
+  letter-spacing: -0.04em;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .rackPlateLine {
+  margin-top: 16px;
+  max-width: 42ch;
+  font-size: 16.5px;
+  line-height: 1.5;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .rackPlateMeta {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  flex-wrap: wrap;
+  margin-top: 22px;
+  font-size: 11.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .rackDivider {
+  display: block;
+  width: 22px;
+  height: 1px;
+  background: currentColor;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .rackControls {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-top: clamp(26px, 3vw, 36px);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .rackButton {
+  padding: 13px 19px;
+  border: 0;
+  background: var(--ink-black);
+  color: var(--paper-stock);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: -0.01em;
+  cursor: pointer;
+  transform: rotate(0.9deg);
+  transition: background-color 120ms linear, color 120ms linear;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .rackButton:hover {
+  background: var(--ink-pink);
+  color: var(--ink-black);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .rackCount {
+  font-size: 11.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--ink-soft);
+}
+
+/* --- Run sheet ---------------------------------------------------------- */
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .specList {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  margin-top: clamp(40px, 4.6vw, 62px);
+  background: var(--rule);
+  border: 1px solid var(--rule);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .specItem {
+  padding: clamp(22px, 2.4vw, 30px);
+  background: var(--paper-stock);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .specItem:last-child {
+  grid-column: 1 / -1;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .specChip {
+  display: block;
+  width: 26px;
+  height: 26px;
+  margin-bottom: 16px;
+  transform: rotate(-3.5deg);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .specChip[data-ink="blue"] {
+  background: var(--ink-blue);
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .specChip[data-ink="pink"] {
+  background: var(--ink-pink);
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .specChip[data-ink="yellow"] {
+  background: var(--ink-yellow);
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .specChip[data-ink="violet"] {
+  background: var(--ink-overprint);
+}
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .specChip[data-ink="black"] {
+  background: var(--ink-black);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .specTitle {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.3rem;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .specBody {
+  margin-top: 11px;
+  max-width: 52ch;
+  font-size: 15.5px;
+  line-height: 1.6;
+}
+
+/* --- Press run (pricing) ------------------------------------------------ */
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .priceRow {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(22px, 3vw, 36px);
+  margin-top: clamp(40px, 4.6vw, 62px);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .priceCard {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: clamp(26px, 3vw, 36px);
+  border: 1.5px solid var(--ink-black);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .priceFree {
+  transform: rotate(-0.9deg);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .pricePaid {
+  background: var(--ink-blue);
+  border-color: var(--ink-blue);
+  color: var(--paper-stock);
+  transform: rotate(0.8deg);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .pricePaid :focus-visible {
+  outline-color: var(--ink-yellow);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .priceTag {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.19em;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .priceFigure {
+  margin-top: 8px;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(2.6rem, 6vw, 3.9rem);
+  line-height: 1;
+  letter-spacing: -0.045em;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .priceUnit {
+  font-family: var(--font-body);
+  font-size: 0.28em;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .priceList {
+  display: grid;
+  gap: 11px;
+  margin-top: 22px;
+  font-size: 15.5px;
+  line-height: 1.5;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .priceList li {
+  position: relative;
+  padding-left: 24px;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .priceList li::before {
+  content: "";
+  position: absolute;
+  top: 0.7em;
+  left: 0;
+  width: 13px;
+  height: 1px;
+  background: currentColor;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .priceCta {
+  margin-top: 28px;
+  padding: 13px 20px;
+  background: var(--ink-black);
+  color: var(--paper-stock);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 15.5px;
+  letter-spacing: -0.01em;
+  transition: background-color 120ms linear, color 120ms linear;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .priceFree .priceCta:hover {
+  background: var(--ink-overprint);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .pricePaid .priceCta {
+  background: var(--paper-stock);
+  color: var(--ink-black);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .pricePaid .priceCta:hover {
+  background: var(--ink-yellow);
+}
+
+/* --- Colophon ----------------------------------------------------------- */
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .colophon {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: clamp(24px, 3.4vw, 48px);
+  align-items: start;
+  margin-top: clamp(84px, 10vw, 148px);
+  padding-top: 24px;
+  border-top: 2px solid var(--ink-black);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .colophonMark {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.25rem;
+  letter-spacing: -0.045em;
+  color: var(--ink-overprint);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .colophonTitle {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 0.98rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .colophonBody p {
+  max-width: 60ch;
+  margin-top: 12px;
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: var(--ink-soft);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .colophonNav {
+  display: grid;
+  gap: 9px;
+  font-size: 13.5px;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .colophonNav a {
+  border-bottom: 1.5px solid transparent;
+  justify-self: start;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .colophonNav a:hover {
+  border-bottom-color: var(--ink-pink);
+}
+
+/* --- Narrower sheets ---------------------------------------------------- */
+
+@media (max-width: 900px) {
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .colophon {
+    grid-template-columns: 1fr;
+  }
+
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .specList {
+    grid-template-columns: 1fr;
+  }
+
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .specItem:last-child {
+    grid-column: 1;
+  }
+
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .priceRow {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .plates {
+    --band: 96px;
+    grid-template-columns: 1fr;
+    padding: 14px 8px 20px;
+  }
+
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .geoOne {
+    grid-column: 1;
+    grid-row: 1 / 3;
+    transform: rotate(-1deg);
+  }
+
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .geoTwo {
+    grid-column: 1;
+    grid-row: 2 / 4;
+    transform: rotate(1.3deg);
+  }
+
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .overlapBand {
+    grid-column: 1;
+    grid-row: 2 / 3;
+  }
+
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .colourBar {
+    width: calc(100% + 12vw);
+    margin-left: -6vw;
+  }
+}
+
+@media (max-width: 560px) {
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .nav {
+    order: 3;
+    width: 100%;
+    margin-left: 0;
+  }
+
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .mastheadCta {
+    margin-left: auto;
+  }
+
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .colourBar .swatch:nth-child(n + 5) {
+    display: none;
+  }
+
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .heroActions {
+    width: 100%;
+  }
+
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .primaryCta,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) 
+  .secondaryCta {
+    text-align: center;
+  }
+
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .primaryCta {
+    align-self: stretch;
+  }
+}
+
+/* Registration stops breathing; the deliberate offset stays. */
+@media (prefers-reduced-motion: reduce) {
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="opus-5"]) .plate {
+    transition: none;
+    will-change: auto;
+  }
+}

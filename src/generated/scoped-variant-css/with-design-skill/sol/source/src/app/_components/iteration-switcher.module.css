@@ -1,0 +1,101 @@
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="sol"]) .switcher {
+  position: fixed;
+  z-index: 100;
+  left: 50%;
+  bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 48px;
+  padding: 5px;
+  color: #f8f8f5;
+  border: 1px solid rgb(255 255 255 / 18%);
+  border-radius: 999px;
+  background: rgb(13 15 20 / 88%);
+  box-shadow: 0 14px 40px rgb(0 0 0 / 24%);
+  backdrop-filter: blur(18px);
+  transform: translateX(-50%);
+  font-family: var(--font-plex-mono), monospace;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="sol"]) .label {
+  margin-left: 8px;
+  margin-right: 4px;
+  color: rgb(255 255 255 / 58%);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="sol"]) .steps {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="sol"]) .step,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="sol"]) 
+.arrow {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  transition:
+    color 180ms ease,
+    background 180ms ease,
+    transform 180ms ease;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="sol"]) .step {
+  color: rgb(255 255 255 / 64%);
+  font-size: 11px;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="sol"]) .step:hover,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="sol"]) 
+.arrow:hover {
+  color: #fff;
+  background: rgb(255 255 255 / 11%);
+  transform: translateY(-1px);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="sol"]) .step.active {
+  color: #121318;
+  background: #fff;
+  box-shadow: 0 2px 9px rgb(0 0 0 / 32%);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="sol"]) .arrow {
+  color: rgb(255 255 255 / 72%);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="sol"]) .arrow svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.7;
+}
+
+@media (max-width: 560px) {
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="sol"]) .switcher {
+    bottom: 10px;
+  }
+
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="sol"]) .label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+  }
+
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="sol"]) .step,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="sol"]) 
+  .arrow {
+    width: 32px;
+    height: 32px;
+  }
+}

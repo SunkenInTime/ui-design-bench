@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+/* Per-iteration display fonts. The CSS variables are injected by the
+   route-level layouts that load each font via next/font/google. */
+.f-ebg {
+  font-family: var(--font-ebg), "Georgia", serif;
+}
+.f-grotesk {
+  font-family: var(--font-grotesk), "Arial", sans-serif;
+}
+.f-tight {
+  font-family: var(--font-tight), "Helvetica Neue", sans-serif;
+}
+.f-archivo {
+  font-family: var(--font-archivo), "Arial Black", sans-serif;
+}
+
+body {
+  background: #ffffff;
+  color: #171717;
+}
+
+/* Single marquee, used once per page where the design calls for it. */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.animate-marquee {
+  animation: marquee 32s linear infinite;
+}

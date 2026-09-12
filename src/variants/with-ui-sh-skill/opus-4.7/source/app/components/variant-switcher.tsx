@@ -13,7 +13,7 @@ const variants = [
 
 export function VariantSwitcher() {
   const pathname = usePathname();
-  const match = pathname.match(/^\/(\d)/);
+  const match = pathname?.match(/^\/(\d)/);
   const active = match ? Number(match[1]) : null;
 
   return (

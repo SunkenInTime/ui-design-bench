@@ -1,0 +1,266 @@
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .page {
+  --paper: #f7f4ef;
+  --ink: #1a1a1a;
+  --rule: #d8d2c8;
+  --cursor: #2f6fed;
+  --mute: #6b6560;
+  --surface: #fffdf9;
+
+  min-height: 100vh;
+  color: var(--ink);
+  background:
+    linear-gradient(90deg, transparent 79px, rgba(47, 111, 237, 0.08) 79px, rgba(47, 111, 237, 0.08) 81px, transparent 81px),
+    repeating-linear-gradient(
+      transparent,
+      transparent 31px,
+      var(--rule) 31px,
+      var(--rule) 32px
+    ),
+    var(--paper);
+  font-family: var(--font-ibm-plex-sans), "IBM Plex Sans", sans-serif;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.1rem clamp(1rem, 4vw, 3rem);
+  background: color-mix(in srgb, var(--paper) 88%, white);
+  border-bottom: 1px solid var(--rule);
+  backdrop-filter: blur(8px);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .brand {
+  font-family: var(--font-ibm-plex-mono), "IBM Plex Mono", monospace;
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  text-decoration: none;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .navMeta {
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
+  font-family: var(--font-ibm-plex-mono), "IBM Plex Mono", monospace;
+  font-size: 0.78rem;
+  color: var(--mute);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .navMeta a {
+  text-decoration: none;
+  color: var(--ink);
+  font-weight: 500;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .hero {
+  display: grid;
+  min-height: calc(100vh - 4rem);
+  padding: 2.5rem clamp(1rem, 4vw, 3rem) 3rem;
+  align-content: center;
+  gap: 2rem;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .brandHero {
+  margin: 0;
+  font-family: var(--font-ibm-plex-mono), "IBM Plex Mono", monospace;
+  font-size: clamp(3rem, 9vw, 6.5rem);
+  font-weight: 600;
+  letter-spacing: -0.06em;
+  line-height: 0.95;
+  animation: gallery-with-design-skill-grok-4-5-source-src-app-two-two-module-rise 700ms ease both;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .headline {
+  margin: 0;
+  max-width: 22ch;
+  font-size: clamp(1.35rem, 2.6vw, 1.85rem);
+  font-weight: 500;
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+  animation: gallery-with-design-skill-grok-4-5-source-src-app-two-two-module-rise 700ms ease both 200ms;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .lede {
+  margin: 0;
+  max-width: 36rem;
+  font-size: 1.05rem;
+  line-height: 1.55;
+  color: var(--mute);
+  animation: gallery-with-design-skill-grok-4-5-source-src-app-two-two-module-rise 700ms ease both 320ms;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .editor {
+  position: relative;
+  max-width: 44rem;
+  margin-top: 0.5rem;
+  padding: 1.35rem 1.35rem 1.35rem 1.1rem;
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  box-shadow: 8px 8px 0 rgba(26, 26, 26, 0.04);
+  animation: gallery-with-design-skill-grok-4-5-source-src-app-two-two-module-rise 800ms ease both 420ms;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .gutter {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2.6rem;
+  border-right: 1px solid var(--rule);
+  background: color-mix(in srgb, var(--paper) 70%, white);
+  font-family: var(--font-ibm-plex-mono), "IBM Plex Mono", monospace;
+  font-size: 0.72rem;
+  color: #a39c93;
+  padding-top: 1.45rem;
+  text-align: right;
+  line-height: 1.7;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .gutter span {
+  display: block;
+  padding-right: 0.55rem;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .editorBody {
+  margin-left: 2.2rem;
+  font-family: var(--font-ibm-plex-mono), "IBM Plex Mono", monospace;
+  font-size: clamp(0.95rem, 1.6vw, 1.05rem);
+  line-height: 1.7;
+  white-space: pre-wrap;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .lineMuted {
+  color: #9a938a;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .caret {
+  display: inline-block;
+  width: 0.55ch;
+  height: 1.15em;
+  margin-left: 1px;
+  vertical-align: text-bottom;
+  background: var(--cursor);
+  animation: gallery-with-design-skill-grok-4-5-source-src-app-two-two-module-blink 1s steps(1, end) infinite;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.25rem;
+  animation: gallery-with-design-skill-grok-4-5-source-src-app-two-two-module-rise 700ms ease both 520ms;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .primary,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) 
+.ghost {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  padding: 0.65rem 1.1rem;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .primary {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .ghost {
+  border: 1px solid var(--ink);
+  color: var(--ink);
+  background: transparent;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .section {
+  padding: 4.5rem clamp(1rem, 4vw, 3rem);
+  border-top: 1px solid var(--rule);
+  background: color-mix(in srgb, var(--surface) 80%, transparent);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .sectionTitle {
+  margin: 0 0 0.75rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .sectionBody {
+  margin: 0 0 2rem;
+  max-width: 36rem;
+  color: var(--mute);
+  line-height: 1.55;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .commands {
+  display: grid;
+  gap: 0.85rem;
+  max-width: 36rem;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .command {
+  display: grid;
+  grid-template-columns: 7.5rem 1fr;
+  gap: 1rem;
+  align-items: baseline;
+  padding: 0.85rem 0;
+  border-top: 1px dashed var(--rule);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .command:last-child {
+  border-bottom: 1px dashed var(--rule);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .command kbd {
+  font-family: var(--font-ibm-plex-mono), "IBM Plex Mono", monospace;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--cursor);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .command p {
+  margin: 0;
+  font-size: 0.98rem;
+  line-height: 1.45;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .footer {
+  padding: 1.5rem clamp(1rem, 4vw, 3rem) 5.5rem;
+  font-family: var(--font-ibm-plex-mono), "IBM Plex Mono", monospace;
+  font-size: 0.78rem;
+  color: var(--mute);
+  border-top: 1px solid var(--rule);
+}
+
+@keyframes gallery-with-design-skill-grok-4-5-source-src-app-two-two-module-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes gallery-with-design-skill-grok-4-5-source-src-app-two-two-module-rise {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .brandHero,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) 
+  .headline,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) 
+  .lede,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) 
+  .editor,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) 
+  .actions,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) 
+  .caret {
+    animation: none;
+  }
+}

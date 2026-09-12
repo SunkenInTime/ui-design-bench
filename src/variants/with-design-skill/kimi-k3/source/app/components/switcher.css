@@ -1,0 +1,141 @@
+/* Floating design switcher — intentionally neutral so it sits on top of all
+   five design systems without clashing. */
+
+.switcher {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+  font-family:
+    ui-monospace, "SF Mono", "Cascadia Mono", Menlo, Consolas, monospace;
+}
+
+.switcher-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  background: rgba(16, 17, 20, 0.82);
+  color: #f5f5f4;
+  font: inherit;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.35);
+  transition:
+    transform 160ms ease,
+    background 160ms ease;
+}
+
+.switcher-button:hover {
+  transform: translateY(-1px);
+  background: rgba(16, 17, 20, 0.92);
+}
+
+.switcher-button:focus-visible,
+.switcher-link:focus-visible {
+  outline: 2px solid #7dd3fc;
+  outline-offset: 2px;
+}
+
+.switcher-caret {
+  display: inline-grid;
+  place-items: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  font-size: 12px;
+  line-height: 1;
+}
+
+.switcher-menu {
+  min-width: 240px;
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 14px;
+  background: rgba(16, 17, 20, 0.9);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.45);
+  animation: switcher-pop 160ms ease-out;
+}
+
+@keyframes switcher-pop {
+  from {
+    opacity: 0;
+    transform: translateY(6px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.switcher-menu-title {
+  margin: 4px 8px 8px;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: rgba(245, 245, 244, 0.5);
+}
+
+.switcher-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 2px;
+}
+
+.switcher-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  border-radius: 9px;
+  color: #e7e7e4;
+  text-decoration: none;
+  font-size: 13px;
+  transition: background 120ms ease;
+}
+
+.switcher-link:hover {
+  background: rgba(255, 255, 255, 0.09);
+}
+
+.switcher-link.is-active {
+  background: rgba(125, 211, 252, 0.14);
+  color: #bae6fd;
+}
+
+.switcher-num {
+  display: inline-grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 7px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  font-size: 11px;
+}
+
+.switcher-link.is-active .switcher-num {
+  border-color: rgba(125, 211, 252, 0.6);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .switcher-menu {
+    animation: none;
+  }
+  .switcher-button {
+    transition: none;
+  }
+}

@@ -1,0 +1,58 @@
+:where(.gallery-generation[data-gallery-group="without-design-skill"][data-gallery-model="sol"]) {
+  color-scheme: light;
+  --font-system: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+:where(.gallery-generation[data-gallery-group="without-design-skill"][data-gallery-model="sol"]) * {
+  box-sizing: border-box;
+}
+
+:where(.gallery-generation[data-gallery-group="without-design-skill"][data-gallery-model="sol"]) {
+  scroll-behavior: smooth;
+}
+
+:where(.gallery-generation[data-gallery-group="without-design-skill"][data-gallery-model="sol"]) {
+  margin: 0;
+  min-width: 320px;
+  background: #fff;
+  color: #171717;
+  font-family: var(--font-system);
+  text-rendering: optimizeLegibility;
+}
+
+:where(.gallery-generation[data-gallery-group="without-design-skill"][data-gallery-model="sol"]) button,:where(.gallery-generation[data-gallery-group="without-design-skill"][data-gallery-model="sol"]) 
+input,:where(.gallery-generation[data-gallery-group="without-design-skill"][data-gallery-model="sol"]) 
+textarea,:where(.gallery-generation[data-gallery-group="without-design-skill"][data-gallery-model="sol"]) 
+select {
+  font: inherit;
+}
+
+:where(.gallery-generation[data-gallery-group="without-design-skill"][data-gallery-model="sol"]) button,:where(.gallery-generation[data-gallery-group="without-design-skill"][data-gallery-model="sol"]) 
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+:where(.gallery-generation[data-gallery-group="without-design-skill"][data-gallery-model="sol"]) a {
+  color: inherit;
+  text-decoration: none;
+}
+
+:where(.gallery-generation[data-gallery-group="without-design-skill"][data-gallery-model="sol"]) button {
+  border: 0;
+}
+
+:where(.gallery-generation[data-gallery-group="without-design-skill"][data-gallery-model="sol"]) ::selection {
+  background: #1d1d1d;
+  color: #fff;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :where(.gallery-generation[data-gallery-group="without-design-skill"][data-gallery-model="sol"]) *,:where(.gallery-generation[data-gallery-group="without-design-skill"][data-gallery-model="sol"]) 
+  *::before,:where(.gallery-generation[data-gallery-group="without-design-skill"][data-gallery-model="sol"]) 
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -13,7 +13,7 @@ const iterations = [
 
 export default function IterationNav() {
   const pathname = usePathname();
-  const current = pathname.split("/").filter(Boolean)[0] || "one";
+  const current = pathname?.split("/").filter(Boolean)[0] || "one";
 
   return (
     <nav className="iteration-nav">

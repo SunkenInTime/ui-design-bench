@@ -1,0 +1,376 @@
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .page {
+  --ink: #1c2430;
+  --mist: #d7e2ea;
+  --lichen: #6f8f78;
+  --stone: #8b939c;
+  --snow: #f3f6f8;
+  --trail: #3d5a4c;
+  --sky: #9eb6c7;
+
+  min-height: 100vh;
+  color: var(--ink);
+  font-family: var(--font-source-sans), "Source Sans 3", sans-serif;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  isolation: isolate;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 90% 60% at 70% 10%, rgba(158, 182, 199, 0.45), transparent 55%),
+    radial-gradient(ellipse 70% 50% at 15% 85%, rgba(111, 143, 120, 0.18), transparent 50%),
+    linear-gradient(165deg, #e8eef2 0%, var(--snow) 42%, #dfe8e4 100%);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .visual {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .visualSky {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(158, 182, 199, 0.4) 0%, transparent 42%),
+    linear-gradient(180deg, transparent 50%, rgba(111, 143, 120, 0.28) 100%),
+    repeating-linear-gradient(
+      -12deg,
+      transparent,
+      transparent 18px,
+      rgba(28, 36, 48, 0.03) 18px,
+      rgba(28, 36, 48, 0.03) 19px
+    );
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .ridge {
+  position: absolute;
+  left: -5%;
+  right: -5%;
+  bottom: 0;
+  height: 46%;
+  background: linear-gradient(180deg, #9aa7b0 0%, #7d8893 100%);
+  clip-path: polygon(0 48%, 12% 28%, 24% 42%, 38% 18%, 52% 36%, 68% 12%, 82% 30%, 100% 8%, 100% 100%, 0 100%);
+  opacity: 0.5;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .ridgeFar {
+  bottom: 10%;
+  height: 52%;
+  background: linear-gradient(180deg, #b7c4cd 0%, #95a3ad 100%);
+  opacity: 0.38;
+  clip-path: polygon(0 60%, 18% 35%, 34% 52%, 50% 22%, 70% 44%, 88% 18%, 100% 38%, 100% 100%, 0 100%);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .cairn {
+  position: absolute;
+  right: clamp(6%, 14vw, 18%);
+  bottom: 16%;
+  width: min(34vw, 14rem);
+  display: grid;
+  gap: 0.45rem;
+  justify-items: center;
+  animation: gallery-with-design-skill-grok-4-5-source-src-app-one-one-module-settle 1.4s cubic-bezier(0.22, 1, 0.36, 1) both 280ms;
+}
+
+@media (max-width: 800px) {
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .cairn {
+    left: 50%;
+    right: auto;
+    bottom: 7%;
+    width: min(46vw, 10rem);
+    opacity: 0.7;
+    translate: -50% 0;
+  }
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .stone {
+  display: block;
+  height: 1.85rem;
+  border-radius: 999px 999px 40% 40%;
+  background:
+    linear-gradient(135deg, #aeb8c2 0%, #6f7a86 48%, #4d5660 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.4),
+    0 10px 20px rgba(28, 36, 48, 0.28);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .stone:nth-child(1) {
+  width: 28%;
+  height: 1.25rem;
+  animation: gallery-with-design-skill-grok-4-5-source-src-app-one-one-module-floaty 5s ease-in-out infinite;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .stone:nth-child(2) {
+  width: 48%;
+  height: 1.55rem;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .stone:nth-child(3) {
+  width: 68%;
+  height: 1.85rem;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .stone:nth-child(4) {
+  width: 86%;
+  height: 2.1rem;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .stone:nth-child(5) {
+  width: 100%;
+  height: 2.4rem;
+  border-radius: 40% 50% 35% 45%;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .mistLayer {
+  position: absolute;
+  inset: auto 0 0;
+  height: 38%;
+  background: linear-gradient(180deg, transparent, rgba(243, 246, 248, 0.88));
+  animation: gallery-with-design-skill-grok-4-5-source-src-app-one-one-module-drift 8s ease-in-out infinite alternate;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .nav {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.4rem clamp(1.25rem, 4vw, 3.5rem);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .brand {
+  font-family: var(--font-fraunces), Fraunces, serif;
+  font-size: 1.55rem;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  text-decoration: none;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .navLinks {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  font-size: 0.95rem;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .navLinks a {
+  text-decoration: none;
+  color: color-mix(in srgb, var(--ink) 72%, transparent);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .navLinks a:hover,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) 
+.navLinks a:focus-visible {
+  color: var(--ink);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .navCta {
+  padding: 0.55rem 1rem;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--snow) !important;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .copy {
+  position: relative;
+  z-index: 2;
+  max-width: 34rem;
+  margin-top: auto;
+  margin-bottom: clamp(4rem, 12vh, 8rem);
+  padding: 0 clamp(1.25rem, 4vw, 3.5rem);
+  animation: gallery-with-design-skill-grok-4-5-source-src-app-one-one-module-rise 900ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .brandMark {
+  display: block;
+  margin-bottom: 1.25rem;
+  font-family: var(--font-fraunces), Fraunces, serif;
+  font-size: clamp(3.4rem, 8vw, 5.8rem);
+  font-weight: 600;
+  line-height: 0.92;
+  letter-spacing: -0.045em;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .headline {
+  margin: 0 0 1rem;
+  font-family: var(--font-fraunces), Fraunces, serif;
+  font-size: clamp(1.55rem, 3.2vw, 2.15rem);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: color-mix(in srgb, var(--ink) 88%, var(--trail));
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .lede {
+  margin: 0 0 1.75rem;
+  max-width: 28rem;
+  font-size: 1.08rem;
+  line-height: 1.55;
+  color: color-mix(in srgb, var(--ink) 70%, transparent);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .primary,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) 
+.secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.9rem;
+  padding: 0.7rem 1.25rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.98rem;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .primary {
+  background: var(--trail);
+  color: #f4f8f5;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .primary:hover {
+  background: color-mix(in srgb, var(--trail) 88%, black);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .secondary {
+  border: 1px solid color-mix(in srgb, var(--ink) 18%, transparent);
+  background: color-mix(in srgb, white 55%, transparent);
+  color: var(--ink);
+  backdrop-filter: blur(8px);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .section {
+  padding: 5rem clamp(1.25rem, 4vw, 3.5rem);
+  background: var(--snow);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .sectionNarrow {
+  max-width: 40rem;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .sectionTitle {
+  margin: 0 0 0.85rem;
+  font-family: var(--font-fraunces), Fraunces, serif;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 550;
+  letter-spacing: -0.03em;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .sectionBody {
+  margin: 0;
+  font-size: 1.08rem;
+  line-height: 1.6;
+  color: color-mix(in srgb, var(--ink) 72%, transparent);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .trail {
+  display: grid;
+  gap: 2.5rem;
+  padding: 4.5rem clamp(1.25rem, 4vw, 3.5rem) 6rem;
+  border-top: 1px solid color-mix(in srgb, var(--ink) 8%, transparent);
+  background: #eef3f1;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .trailItem {
+  display: grid;
+  gap: 0.6rem;
+  max-width: 28rem;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .trailItem:nth-child(2) {
+  margin-left: clamp(0rem, 12vw, 8rem);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .trailItem:nth-child(3) {
+  margin-left: clamp(0rem, 24vw, 16rem);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .trailLabel {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--lichen);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .trailItem h3 {
+  margin: 0;
+  font-family: var(--font-fraunces), Fraunces, serif;
+  font-size: 1.45rem;
+  font-weight: 550;
+  letter-spacing: -0.02em;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .trailItem p {
+  margin: 0;
+  line-height: 1.55;
+  color: color-mix(in srgb, var(--ink) 68%, transparent);
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .footer {
+  padding: 2rem clamp(1.25rem, 4vw, 3.5rem) 5.5rem;
+  font-size: 0.92rem;
+  color: color-mix(in srgb, var(--ink) 55%, transparent);
+  background: #eef3f1;
+}
+
+@keyframes gallery-with-design-skill-grok-4-5-source-src-app-one-one-module-rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes gallery-with-design-skill-grok-4-5-source-src-app-one-one-module-settle {
+  from {
+    opacity: 0;
+    translate: 0 24px;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+@keyframes gallery-with-design-skill-grok-4-5-source-src-app-one-one-module-floaty {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes gallery-with-design-skill-grok-4-5-source-src-app-one-one-module-drift {
+  from {
+    opacity: 0.7;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-8px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) .copy,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) 
+  .cairn,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) 
+  .mistLayer,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="grok-4.5"]) 
+  .stone:nth-child(1) {
+    animation: none;
+  }
+}

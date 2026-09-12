@@ -2,9 +2,9 @@
 
 import clsx from "clsx";
 import { toBlob } from "html-to-image";
-import Image from "next/image";
 import { Check, ChevronDown, Share2 } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
+import { ThemeAwareLogo } from "@/components/gallery/theme-aware-logo";
 import { galleryManifest } from "@/lib/gallery-manifest";
 import { buildPreviewHref, buildVariantHref } from "@/lib/gallery-paths";
 import { type LabSlug, getModelLab } from "@/lib/model-labs";
@@ -25,7 +25,8 @@ type GuessTone = "yes" | "no" | "maybe" | "idle";
 type GuessOption = {
   slug: LabSlug;
   label: string;
-  logoPath: string;
+  logoLightPath: string;
+  logoDarkPath?: string;
 };
 
 const TOTAL_ROUNDS = 5;
@@ -55,12 +56,15 @@ const pickerOptionClass = (selected: boolean, disabled = false) =>
 const pickerWidthClass = "w-[min(18rem,calc(100vw-3rem))]";
 
 const GUESS_OPTIONS: GuessOption[] = [
-  { slug: "gpt", label: "GPT", logoPath: "/openai-gpt.svg" },
-  { slug: "anthropic", label: "Claude", logoPath: "/anthropic-claude.webp" },
-  { slug: "google", label: "Gemini", logoPath: "/google-gemini.webp" },
-  { slug: "moonshot", label: "Kimi", logoPath: "/kimi-k2.webp" },
-  { slug: "z-ai", label: "GLM", logoPath: "/glm.webp" },
-  { slug: "cursor", label: "Composer", logoPath: "/cursor-composer.webp" },
+  { slug: "gpt", label: "GPT", logoLightPath: "/openai-gpt.svg", logoDarkPath: "/openai-gpt-dark.svg" },
+  { slug: "anthropic", label: "Claude", logoLightPath: "/anthropic-claude.webp" },
+  { slug: "google", label: "Gemini", logoLightPath: "/google-gemini.webp" },
+  { slug: "meta", label: "Meta", logoLightPath: "/meta.svg" },
+  { slug: "x-ai", label: "X AI", logoLightPath: "/xai-light.svg", logoDarkPath: "/xai-dark.svg" },
+  { slug: "moonshot", label: "Kimi", logoLightPath: "/kimi-k2.webp" },
+  { slug: "z-ai", label: "GLM", logoLightPath: "/glm.webp" },
+  { slug: "cursor", label: "Composer", logoLightPath: "/cursor-composer.webp" },
+  { slug: "cognition", label: "SWE", logoLightPath: "/cognition.svg", logoDarkPath: "/cognition-dark.svg" },
 ] as const;
 
 function shuffle<T>(items: readonly T[]): T[] {
@@ -629,8 +633,9 @@ export function ModelLabWordle() {
                     >
                       <div className="lab-missed-reveal-popup relative flex max-w-[min(100%,26rem)] items-center gap-3.5 overflow-hidden rounded-2xl border border-[var(--gallery-border)] bg-[var(--gallery-nav-bg)] px-5 py-4 shadow-[0_18px_48px_rgba(0,0,0,0.14)] backdrop-blur-[12px] sm:gap-4 sm:px-6 sm:py-4">
                         {answerOption ? (
-                          <Image
-                            src={answerOption.logoPath}
+                          <ThemeAwareLogo
+                            lightSrc={answerOption.logoLightPath}
+                            darkSrc={answerOption.logoDarkPath}
                             alt=""
                             width={36}
                             height={36}
@@ -672,8 +677,9 @@ export function ModelLabWordle() {
                       />
                       <span className="relative z-10 flex items-center gap-3">
                         {selectedOption ? (
-                          <Image
-                            src={selectedOption.logoPath}
+                          <ThemeAwareLogo
+                            lightSrc={selectedOption.logoLightPath}
+                            darkSrc={selectedOption.logoDarkPath}
                             alt=""
                             width={18}
                             height={18}
@@ -726,8 +732,9 @@ export function ModelLabWordle() {
                               )}
                             >
                               <span className="flex min-w-0 flex-1 items-center gap-3">
-                                <Image
-                                  src={option.logoPath}
+                                <ThemeAwareLogo
+                                  lightSrc={option.logoLightPath}
+                                  darkSrc={option.logoDarkPath}
                                   alt=""
                                   width={18}
                                   height={18}
@@ -879,8 +886,9 @@ export function ModelLabWordle() {
                       {idx + 1}
                     </span>
                     {answerOption ? (
-                      <Image
-                        src={answerOption.logoPath}
+                      <ThemeAwareLogo
+                        lightSrc={answerOption.logoLightPath}
+                        darkSrc={answerOption.logoDarkPath}
                         alt=""
                         width={22}
                         height={22}

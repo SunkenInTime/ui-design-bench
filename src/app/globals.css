@@ -137,6 +137,12 @@ body {
 
 .gallery-variant-switcher .gallery-variant-switcher__iteration {
   color: var(--gallery-text-secondary);
+  cursor: pointer !important;
+}
+
+.gallery-variant-switcher button:not(:disabled),
+.gallery-variant-switcher a[href] {
+  cursor: pointer !important;
 }
 
 .gallery-variant-switcher .gallery-variant-switcher__iteration:hover {
