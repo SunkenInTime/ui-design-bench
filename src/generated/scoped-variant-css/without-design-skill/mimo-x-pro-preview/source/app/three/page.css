@@ -1,0 +1,40 @@
+
+        :where(.gallery-generation[data-gallery-group="without-design-skill"][data-gallery-model="mimo-x-pro-preview"]) .ix-page {
+          --paper: #F1F1EF;
+          --ink: #0A0A0A;
+          --accent: #FF4D00;
+          --muted: #5C5C58;
+          font-family: 'Avenir Next', 'Segoe UI', system-ui, sans-serif;
+        }
+        :where(.gallery-generation[data-gallery-group="without-design-skill"][data-gallery-model="mimo-x-pro-preview"]) .ix-page .display {
+          font-family: 'Avenir Next', 'Segoe UI', system-ui, sans-serif;
+          font-weight: 800;
+          letter-spacing: -0.04em;
+        }
+        :where(.gallery-generation[data-gallery-group="without-design-skill"][data-gallery-model="mimo-x-pro-preview"]) .ix-page .mono {
+          font-family: 'SF Mono', Consolas, 'Courier New', monospace;
+        }
+        :where(.gallery-generation[data-gallery-group="without-design-skill"][data-gallery-model="mimo-x-pro-preview"]) .ix-rule { border-color: #0A0A0A; }
+        :where(.gallery-generation[data-gallery-group="without-design-skill"][data-gallery-model="mimo-x-pro-preview"]) .ix-num {
+          font-variant-numeric: tabular-nums;
+          line-height: 0.85;
+        }
+        :where(.gallery-generation[data-gallery-group="without-design-skill"][data-gallery-model="mimo-x-pro-preview"]) .ix-crosshair::before,:where(.gallery-generation[data-gallery-group="without-design-skill"][data-gallery-model="mimo-x-pro-preview"])  .ix-crosshair::after {
+          content: '';
+          position: absolute;
+          background: var(--accent);
+        }
+        :where(.gallery-generation[data-gallery-group="without-design-skill"][data-gallery-model="mimo-x-pro-preview"]) .ix-crosshair::before {
+          width: 1px;
+          height: 14px;
+          left: 50%;
+          top: -7px;
+          transform: translateX(-50%);
+        }
+        :where(.gallery-generation[data-gallery-group="without-design-skill"][data-gallery-model="mimo-x-pro-preview"]) .ix-crosshair::after {
+          height: 1px;
+          width: 14px;
+          top: 50%;
+          left: -7px;
+          transform: translateY(-50%);
+        }

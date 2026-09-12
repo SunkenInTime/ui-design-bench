@@ -1,0 +1,11 @@
+
+        .qs-float-a { animation: qs-drift 7s ease-in-out infinite; }
+        .qs-float-b { animation: qs-drift 9s ease-in-out infinite reverse; }
+        .qs-float-c { animation: qs-drift 8s ease-in-out 1s infinite; }
+        @keyframes qs-drift {
+          0%, 100% { transform: translateY(0) rotate(var(--r, 0deg)); }
+          50% { transform: translateY(-10px) rotate(var(--r, 0deg)); }
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .qs-float-a, .qs-float-b, .qs-float-c { animation: none; }
+        }

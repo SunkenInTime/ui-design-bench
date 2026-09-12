@@ -1,0 +1,3 @@
+/* Preserve source @theme font utilities after gallery CSS scoping. */
+.font-sans { font-family: var(--font-geist-sans); }
+.font-mono { font-family: var(--font-geist-mono); }

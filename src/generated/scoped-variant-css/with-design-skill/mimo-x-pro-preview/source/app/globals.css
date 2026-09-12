@@ -1,0 +1,20 @@
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="mimo-x-pro-preview"]) {
+  scroll-behavior: smooth;
+}
+
+:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="mimo-x-pro-preview"]) {
+  margin: 0;
+  min-height: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="mimo-x-pro-preview"]) {
+    scroll-behavior: auto;
+  }
+
+  :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="mimo-x-pro-preview"]) *,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="mimo-x-pro-preview"])  *::before,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="mimo-x-pro-preview"])  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

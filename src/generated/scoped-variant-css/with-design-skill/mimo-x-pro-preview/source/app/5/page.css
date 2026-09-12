@@ -1,0 +1,17 @@
+
+        :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="mimo-x-pro-preview"]) .or-blob {
+          border-radius: 60% 40% 55% 45% / 50% 55% 45% 50%;
+        }
+        :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="mimo-x-pro-preview"]) .or-spin-slow { animation: gallery-with-design-skill-mimo-x-pro-preview-source-app-5-page-or-spin 28s linear infinite; }
+        @keyframes gallery-with-design-skill-mimo-x-pro-preview-source-app-5-page-or-spin {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
+        }
+        :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="mimo-x-pro-preview"]) .or-bob { animation: gallery-with-design-skill-mimo-x-pro-preview-source-app-5-page-or-bob 4.5s ease-in-out infinite; }
+        @keyframes gallery-with-design-skill-mimo-x-pro-preview-source-app-5-page-or-bob {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-8px); }
+        }
+        @media (prefers-reduced-motion: reduce) {
+          :where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="mimo-x-pro-preview"]) .or-spin-slow,:where(.gallery-generation[data-gallery-group="with-design-skill"][data-gallery-model="mimo-x-pro-preview"])  .or-bob { animation: none; }
+        }

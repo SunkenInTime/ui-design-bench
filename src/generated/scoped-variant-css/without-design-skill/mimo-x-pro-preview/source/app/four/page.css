@@ -1,0 +1,36 @@
+
+        :where(.gallery-generation[data-gallery-group="without-design-skill"][data-gallery-model="mimo-x-pro-preview"]) .sp-page {
+          --bg: #FAFAFA;
+          --ink: #18181B;
+          --muted: #71717A;
+          --violet: #7C3AED;
+          --violet-soft: #EDE9FE;
+          --card: #FFFFFF;
+          font-family: 'Avenir Next', 'Segoe UI', system-ui, sans-serif;
+        }
+        :where(.gallery-generation[data-gallery-group="without-design-skill"][data-gallery-model="mimo-x-pro-preview"]) .sp-page .mono {
+          font-family: 'SF Mono', Consolas, monospace;
+        }
+        :where(.gallery-generation[data-gallery-group="without-design-skill"][data-gallery-model="mimo-x-pro-preview"]) .sp-mesh {
+          background:
+            radial-gradient(ellipse 60% 50% at 15% 20%, rgba(124, 58, 237, 0.16), transparent 55%), radial-gradient(ellipse 50% 45% at 85% 15%, rgba(236, 72, 153, 0.12), transparent 50%), radial-gradient(ellipse 55% 50% at 70% 80%, rgba(56, 189, 248, 0.12), transparent 55%), #FAFAFA;
+        }
+        :where(.gallery-generation[data-gallery-group="without-design-skill"][data-gallery-model="mimo-x-pro-preview"]) .sp-card {
+          background: var(--card);
+          box-shadow:
+            0 1px 2px rgba(24, 24, 27, 0.04), 0 12px 32px rgba(24, 24, 27, 0.06);
+        }
+        :where(.gallery-generation[data-gallery-group="without-design-skill"][data-gallery-model="mimo-x-pro-preview"]) .sp-float {
+          transform: rotate(var(--r, 0deg));
+        }
+        @media (prefers-reduced-motion: no-preference) {
+          :where(.gallery-generation[data-gallery-group="without-design-skill"][data-gallery-model="mimo-x-pro-preview"]) .sp-float {
+            animation: gallery-without-design-skill-mimo-x-pro-preview-source-app-four-page-sp-float 8s ease-in-out infinite;
+          }
+          :where(.gallery-generation[data-gallery-group="without-design-skill"][data-gallery-model="mimo-x-pro-preview"]) .sp-float:nth-child(2) { animation-delay: -2s; }
+          :where(.gallery-generation[data-gallery-group="without-design-skill"][data-gallery-model="mimo-x-pro-preview"]) .sp-float:nth-child(3) { animation-delay: -4s; }
+          @keyframes gallery-without-design-skill-mimo-x-pro-preview-source-app-four-page-sp-float {
+            0%, 100% { transform: rotate(var(--r, 0deg)) translateY(0); }
+            50% { transform: rotate(var(--r, 0deg)) translateY(-8px); }
+          }
+        }

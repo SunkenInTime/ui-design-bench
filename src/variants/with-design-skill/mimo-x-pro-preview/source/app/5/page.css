@@ -1,0 +1,17 @@
+
+        .or-blob {
+          border-radius: 60% 40% 55% 45% / 50% 55% 45% 50%;
+        }
+        .or-spin-slow { animation: or-spin 28s linear infinite; }
+        @keyframes or-spin {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
+        }
+        .or-bob { animation: or-bob 4.5s ease-in-out infinite; }
+        @keyframes or-bob {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-8px); }
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .or-spin-slow, .or-bob { animation: none; }
+        }

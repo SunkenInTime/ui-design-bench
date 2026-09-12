@@ -1,0 +1,36 @@
+
+        :where(.gallery-generation[data-gallery-group="without-design-skill"][data-gallery-model="mimo-x-pro-preview"]) .fn-page {
+          --paper: #F6F1E7;
+          --ink: #1C1917;
+          --sage: #3D6B4F;
+          --brown: #6B5344;
+          --gold: #B08D57;
+          --rule: rgba(28, 25, 23, 0.12);
+          --soft: rgba(28, 25, 23, 0.62);
+          font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+        :where(.gallery-generation[data-gallery-group="without-design-skill"][data-gallery-model="mimo-x-pro-preview"]) .fn-page .sans {
+          font-family: 'Avenir Next', 'Segoe UI', system-ui, sans-serif;
+        }
+        :where(.gallery-generation[data-gallery-group="without-design-skill"][data-gallery-model="mimo-x-pro-preview"]) .fn-page .mono {
+          font-family: 'SF Mono', Consolas, 'Courier New', monospace;
+        }
+        :where(.gallery-generation[data-gallery-group="without-design-skill"][data-gallery-model="mimo-x-pro-preview"]) .fn-ruled {
+          background-image: repeating-linear-gradient(
+            transparent, transparent 27px, rgba(61, 107, 79, 0.12) 27px, rgba(61, 107, 79, 0.12) 28px
+          );
+        }
+        :where(.gallery-generation[data-gallery-group="without-design-skill"][data-gallery-model="mimo-x-pro-preview"]) .fn-margin-rule {
+          border-left: 1px solid var(--rule);
+        }
+        @media (prefers-reduced-motion: no-preference) {
+          :where(.gallery-generation[data-gallery-group="without-design-skill"][data-gallery-model="mimo-x-pro-preview"]) .fn-dot {
+            animation: gallery-without-design-skill-mimo-x-pro-preview-source-app-one-page-fn-pulse 4.5s ease-in-out infinite;
+          }
+          :where(.gallery-generation[data-gallery-group="without-design-skill"][data-gallery-model="mimo-x-pro-preview"]) .fn-dot:nth-child(odd) { animation-delay: 0.6s; }
+          :where(.gallery-generation[data-gallery-group="without-design-skill"][data-gallery-model="mimo-x-pro-preview"]) .fn-dot:nth-child(3n) { animation-delay: 1.2s; }
+          @keyframes gallery-without-design-skill-mimo-x-pro-preview-source-app-one-page-fn-pulse {
+            0%, 100% { opacity: 0.85; }
+            50% { opacity: 0.35; }
+          }
+        }

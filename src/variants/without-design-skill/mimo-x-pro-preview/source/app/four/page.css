@@ -1,0 +1,36 @@
+
+        .sp-page {
+          --bg: #FAFAFA;
+          --ink: #18181B;
+          --muted: #71717A;
+          --violet: #7C3AED;
+          --violet-soft: #EDE9FE;
+          --card: #FFFFFF;
+          font-family: 'Avenir Next', 'Segoe UI', system-ui, sans-serif;
+        }
+        .sp-page .mono {
+          font-family: 'SF Mono', Consolas, monospace;
+        }
+        .sp-mesh {
+          background:
+            radial-gradient(ellipse 60% 50% at 15% 20%, rgba(124, 58, 237, 0.16), transparent 55%), radial-gradient(ellipse 50% 45% at 85% 15%, rgba(236, 72, 153, 0.12), transparent 50%), radial-gradient(ellipse 55% 50% at 70% 80%, rgba(56, 189, 248, 0.12), transparent 55%), #FAFAFA;
+        }
+        .sp-card {
+          background: var(--card);
+          box-shadow:
+            0 1px 2px rgba(24, 24, 27, 0.04), 0 12px 32px rgba(24, 24, 27, 0.06);
+        }
+        .sp-float {
+          transform: rotate(var(--r, 0deg));
+        }
+        @media (prefers-reduced-motion: no-preference) {
+          .sp-float {
+            animation: sp-float 8s ease-in-out infinite;
+          }
+          .sp-float:nth-child(2) { animation-delay: -2s; }
+          .sp-float:nth-child(3) { animation-delay: -4s; }
+          @keyframes sp-float {
+            0%, 100% { transform: rotate(var(--r, 0deg)) translateY(0); }
+            50% { transform: rotate(var(--r, 0deg)) translateY(-8px); }
+          }
+        }

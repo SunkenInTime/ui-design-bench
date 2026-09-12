@@ -1,0 +1,41 @@
+
+        .nr-page {
+          --bg: #070B10;
+          --panel: #0D141C;
+          --line: rgba(34, 211, 238, 0.18);
+          --cyan: #22D3EE;
+          --lime: #A3E635;
+          --muted: #7C8B9A;
+          --ink: #E8EEF5;
+          font-family: 'Avenir Next', 'Segoe UI', system-ui, sans-serif;
+        }
+        .nr-page .mono {
+          font-family: 'Cascadia Code', 'SF Mono', Consolas, monospace;
+        }
+        .nr-grid {
+          background-image:
+            linear-gradient(rgba(34, 211, 238, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(34, 211, 238, 0.05) 1px, transparent 1px);
+          background-size: 48px 48px;
+        }
+        .nr-scan {
+          background: linear-gradient(
+            180deg, transparent 0%, rgba(34, 211, 238, 0.08) 50%, transparent 100%
+          );
+          background-size: 100% 220%;
+        }
+        @media (prefers-reduced-motion: no-preference) {
+          .nr-scan { animation: nr-scan 7s linear infinite; }
+          .nr-pulse { animation: nr-pulse 2.8s ease-in-out infinite; }
+          @keyframes nr-scan {
+            0% { background-position: 0% -20%; }
+            100% { background-position: 0% 120%; }
+          }
+          @keyframes nr-pulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(34, 211, 238, 0.35); }
+            50% { box-shadow: 0 0 0 8px rgba(34, 211, 238, 0); }
+          }
+        }
+        .nr-terminal {
+          background: #0D141C;
+          border: 1px solid rgba(34, 211, 238, 0.22);
+        }

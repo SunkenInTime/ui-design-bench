@@ -6,6 +6,8 @@ export interface ModelBrandLogoPaths {
 }
 
 const MODEL_BRAND_LOGO: Record<ModelSlug, ModelBrandLogoPaths> = {
+  "mimo-x-flash-preview": { light: "/xiaomi.svg" },
+  "mimo-x-pro-preview": { light: "/xiaomi.svg" },
   "composer-1.5": { light: "/cursor-composer.webp" },
   "composer-2.0": { light: "/cursor-composer.webp" },
   "composer-2.5": { light: "/cursor-composer.webp" },
