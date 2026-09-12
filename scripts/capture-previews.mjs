@@ -7,6 +7,12 @@ import sharp from "sharp";
 import { chromium } from "@playwright/test";
 
 const entries = [
+  { group: "without-design-skill", model: "mimo-x-pro-preview", iterations: ["1", "2", "3", "4", "5"] },
+  { group: "with-design-skill", model: "mimo-x-pro-preview", iterations: ["1", "2", "3", "4", "5"] },
+  { group: "with-taste-skill", model: "mimo-x-pro-preview", iterations: ["1", "2", "3", "4", "5"] },
+  { group: "without-design-skill", model: "mimo-x-flash-preview", iterations: ["1", "2", "3", "4", "5"] },
+  { group: "with-design-skill", model: "mimo-x-flash-preview", iterations: ["1", "2", "3", "4", "5"] },
+  { group: "with-taste-skill", model: "mimo-x-flash-preview", iterations: ["1", "2", "3", "4", "5"] },
   { group: "without-design-skill", model: "gpt-6-astra-preview", iterations: ["1", "2", "3", "4", "5"] },
   { group: "with-design-skill", model: "gpt-6-astra-preview", iterations: ["1", "2", "3", "4", "5"] },
   { group: "with-taste-skill", model: "gpt-6-astra-preview", iterations: ["1", "2", "3", "4", "5"] },
