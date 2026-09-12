@@ -6,7 +6,7 @@ import { Check, Home, Palette, PanelLeft, PanelRight, Search } from "lucide-reac
 import { useRouter } from "next/navigation";
 import { useEffect, useMemo, useRef, useState, useSyncExternalStore } from "react";
 import { ModelBrandLogo } from "@/components/gallery/model-brand-logo";
-import { buildCompareHref } from "@/lib/compare";
+import { buildCompareHref, buildCompareHrefForSelection } from "@/lib/compare";
 import { galleryManifest } from "@/lib/gallery-manifest";
 import { sortGalleryEntriesForHome } from "@/lib/gallery-model-order";
 import type { GalleryEntry, GalleryGroupSlug, IterationId, ModelSlug } from "@/lib/gallery-types";
@@ -238,6 +238,53 @@ export function VariantSwitcher({
 
     return () => window.clearTimeout(focusTimer);
   }, [openPicker]);
+
+  useEffect(() => {
+    const onKeyDown = (e: KeyboardEvent) => {
+      const target = e.target as HTMLElement | null;
+      if (
+        e.defaultPrevented ||
+        e.isComposing ||
+        e.ctrlKey ||
+        e.metaKey ||
+        e.altKey ||
+        target?.tagName === "INPUT" ||
+        target?.tagName === "TEXTAREA" ||
+        target?.tagName === "SELECT" ||
+        target?.isContentEditable
+      ) {
+        return;
+      }
+
+      const key = e.key.toLowerCase();
+
+      if (key === "h") {
+        e.preventDefault();
+        router.push("/");
+        return;
+      }
+
+      if (key === "c") {
+        e.preventDefault();
+        router.push(
+          buildCompareHrefForSelection({
+            group: entry.group,
+            model: entry.model,
+            iteration,
+          }),
+        );
+        return;
+      }
+
+      if (entry.iterations.some((item) => item.id === key)) {
+        e.preventDefault();
+        router.push(buildVariantHref(entry.group, entry.model, key as IterationId));
+      }
+    };
+
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [entry.group, entry.model, entry.iterations, iteration, router]);
 
   return (
     <nav
